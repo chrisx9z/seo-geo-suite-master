@@ -1,0 +1,58 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# === Virtual Environment ===
+venv/
+env/
+.venv/
+
+# === Credentials & Personal Data (NEVER COMMIT) ===
+.env
+.env.*
+config.json
+config.local.*
+secrets.json
+credentials.json
+*.key
+wp_sites.json
+sites_config.json
+*_passwords.*
+*_credentials.*
+
+# === Generated Output & Reports ===
+reports/
+generated_posts/
+*.webp
+
+# === Logs ===
+*.log
+logs/
+
+# === IDE & System ===
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# === Node.js ===
+node_modules/
+npm-debug.log*
+
+# === Temp / Cache ===
+.cache/
+tmp/
+temp/
+temp_wp_rocket/
+*.tmp
+
+# === Project-specific excludes ===
+vibemmo_*/
+*_assets/
+Newspaper-child.zip
+repos/
+vps-auto-wp/

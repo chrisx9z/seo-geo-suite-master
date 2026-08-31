@@ -61,4 +61,19 @@ Tài liệu này định nghĩa các nguyên tắc cốt lõi và tiêu chuẩn 
 
 ---
 
+## ✍️ 5. Quy Tắc Tiêu Đề Heading & Văn Phong Tự Nhiên (Natural Heading Standards)
+
+1. **Tuyệt đối KHÔNG đánh số cơ học cho tất cả Heading:**
+   - Việc gắn số thứ tự `1. `, `2. `, `3. `, `4. `, `1.1 `, `1.2 ` một cách máy móc cho toàn bộ các thẻ Heading (H2, H3, H4) tạo cảm giác bài viết do AI sinh tự động, làm mất đi tính tự nhiên của văn phong báo chí/chuyên gia.
+   - Chỉ sử dụng số thứ tự trong các trường hợp đặc biệt: bài viết dạng danh sách xếp hạng (Top Listicle: "Top 10...", "5 Bước..."), hoặc các quy trình kỹ thuật bắt buộc thực thi tuần tự.
+
+2. **Kiểm soát biểu tượng (Icon) ở Heading:**
+   - Hạn chế việc gắn icon (📌, 📊, 🚀, ❓, 🎯, 🔥) đồng loạt ở đầu mọi đề mục. Icon chỉ nên dùng có chọn lọc để làm nổi bật 1-2 điểm nhấn quan trọng nhất.
+
+3. **Hạn mức khống chế:**
+   - **Tỷ lệ tiêu đề có số thứ tự hoặc icon KHÔNG ĐƯỢC VƯỢT QUÁ 20%** tổng số thẻ Heading trong toàn bộ bài viết. 80% tiêu đề còn lại phải là câu chữ tự nhiên, ngắn gọn, súc tích và hấp dẫn.
+
+---
+
 *Quy tắc này có hiệu lực từ tháng 08/2026 và áp dụng cho toàn bộ codebase và workflow vận hành.*
+

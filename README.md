@@ -88,6 +88,7 @@ GEMINI_API_KEY=your_key_here
 - 📸 **Hình ảnh:** Tối thiểu 1 hình ảnh — tối đa 5 hình ảnh chuyên nghiệp (16:9, sơ đồ, infographic sắc nét, alt tag chuẩn).
 - 🖼️ **Ảnh đại diện (Featured Image):** Bắt buộc 100% cho mọi bài viết — đây là tiêu chuẩn mặc định trong SEO.
 - 📝 **Độ dài & Chống Thin Content:** Bài viết phải dài **tối thiểu 1.000 từ**, không có giới hạn tối đa (tùy thuộc độ sâu từ khóa có thể 2.000 - 5.000+ từ). Tuyệt đối không xuất bản thin content.
+- ✍️ **Văn phong tiêu đề tự nhiên:** Không đánh số cơ học (1., 2., 3., 1.1) cho toàn bộ heading; tỷ lệ heading có số thứ tự hoặc icon **không được vượt quá 20%**.
 - 🚫 **Tránh ăn thịt từ khóa:** Mỗi bài viết phân bổ theo 1 Search Intent độc lập, kiểm tra trùng lặp trước khi xuất bản.
 - 🔗 **URL Slug:** Chuẩn tiếng Việt không dấu `/tu-khoa-chinh/`.
 
@@ -181,6 +182,7 @@ GEMINI_API_KEY=your_key_here
 - 📸 **图片数量：** 每篇文章最少 1 张图片，最多 5 张专业高清图（16:9 比例，包含清晰架构图/信息图，完整 Alt 标签）。
 - 🖼️ **特色图片（Featured Image）：** 100% 强制要求为每篇文章设置特色图片——这是 SEO 标准默认配置。
 - 📝 **文章字数与拒绝薄弱内容（No Thin Content）：** 文章长度**最少 1,000 字**，无上限要求（根据关键词深度可达 2,000 - 5,000+ 字）。
+- ✍️ **标题自然表达与限制编号：** 禁止机械式给所有标题编号（1., 2., 3., 1.1），标题带有序号或图标的比例**不得超过 20%**。
 - 🚫 **防止关键词冲突（Anti-Cannibalization）：** 独立划分搜索意图（Search Intent），发文前对比现有词库。
 - 🔗 **规范 URL Slug：** 使用小写、无重音连字符格式 `/keyword-slug/`。
 
@@ -226,6 +228,7 @@ It ships with an interactive CLI, a visual Web Dashboard, and a WordPress REST A
 - 📸 **In-Content Images:** Minimum 1 image — Maximum 5 professional images per post (16:9 aspect ratio, clean architecture charts/infographics, proper SEO alt text).
 - 🖼️ **Featured Image:** 100% Mandatory for all published posts — default industry standard for SEO and social indexing.
 - 📝 **Word Count & No Thin Content:** Minimum **1,000 words** per article with NO maximum limit (can scale to 2,000 - 5,000+ words based on entity depth).
+- ✍️ **Natural Heading Tone:** Avoid mechanical sequential numbering (1., 2., 3., 1.1). Total percentage of numbered headings or icons **must not exceed 20%**.
 - 🚫 **Anti-Keyword Cannibalization:** Single search intent per cluster, strict pre-publishing slug verification.
 - 🔗 **Clean URL Slugs:** Lowercase hyphenated `/keyword-slug/` format.
 

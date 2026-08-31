@@ -26,10 +26,10 @@ Yêu cầu định dạng bắt buộc cho GEO & SEO (Đảm bảo tối ưu hó
 1. ĐỘ DÀI & NỘI DUNG: Bài viết phải dài TỐI THIỂU 1.000 từ (không có giới hạn tối đa, phân tích càng sâu càng tốt dựa trên từ khóa). Tuyệt đối KHÔNG có "thin content".
 2. HÌNH ẢNH: Đề xuất và tích hợp từ 1 đến 5 vị trí hình ảnh chuyên nghiệp (kèm thẻ mô tả alt chuẩn SEO, hình minh họa sơ đồ/bảng số liệu).
 3. ẢNH ĐẠI DIỆN: Bắt buộc phải có ảnh đại diện (Featured Image) đại diện cho thực thể bài viết.
-4. TIÊU ĐỀ: H1 hấp dẫn, chuẩn SEO chứa từ khóa chính không dấu và có dấu tự nhiên.
+4. TIÊU ĐỀ HEADING TỰ NHIÊN: Tuyệt đối KHÔNG đánh số cơ học (1., 2., 3., 1.1) cho các đề mục H2, H3. Hạn chế dùng icon ở tiêu đề. Tỷ lệ heading có số hoặc icon không được vượt quá 20%. Sử dụng câu văn phong tự nhiên, súc tích chuẩn báo chí.
 5. DIRECT ANSWER: Đoạn trả lời trực tiếp mở đầu (60-80 từ) giải quyết cốt lõi câu hỏi để AI trích dẫn làm Featured Snippet.
 6. BẢNG BIỂU: Bảng tóm tắt Key Takeaways / Số liệu chính dạng Markdown Table.
-7. PHÂN TÍCH: Các phần H2, H3 phân tích chi tiết, số liệu thực tế, nghiên cứu ca bệnh (case study) và các bước thực thi rõ ràng.
+7. PHÂN TÍCH CHUYÊN SÂU: Các phần H2, H3 phân tích chi tiết, số liệu thực tế, nghiên cứu ca bệnh (case study) và các bước thực thi rõ ràng.
 8. FAQ: Phần Hỏi & Đáp thường gặp gồm ít nhất 4 câu hỏi thực tế.
 9. KẾT LUẬN: Lời khuyên hành động thực tế cho độc giả.
 """
@@ -109,13 +109,13 @@ Yêu cầu định dạng bắt buộc cho GEO & SEO (Đảm bảo tối ưu hó
 
 ---
 
-## 📌 Câu trả lời trực tiếp (Direct Answer)
+## Câu Trả Lời Trực Tiếp (Direct Answer)
 
 **{topic}** là giải pháp then chốt giúp tối ưu hóa hiệu quả hiện diện thương hiệu cả trên công cụ tìm kiếm truyền thống (Google SEO) và các mô hình tìm kiếm tạo sinh AI (GEO - Generative Engine Optimization như ChatGPT, Perplexity, Gemini). Việc áp dụng chiến lược **{keyword}** bài bản giúp tăng khả năng được AI trích dẫn nguồn lên hơn **40%** và cải thiện lưu lượng truy cập tự nhiên bền vững.
 
 ---
 
-## 📊 Bảng tổng quan thông số & Tiêu chí cốt lõi
+## Bảng Tổng Quan Thông Số & Tiêu Chí Cốt Lõi
 
 | Tiêu chí | Phương pháp truyền thống | Chiến lược Tối ưu GEO/SEO 2026 |
 | :--- | :--- | :--- |
@@ -126,33 +126,33 @@ Yêu cầu định dạng bắt buộc cho GEO & SEO (Đảm bảo tối ưu hó
 
 ---
 
-## 🚀 4 Bước Triển Khai {keyword} Hiệu Quả Nhất
+## Quy Trình Triển Khai {keyword} Hiệu Quả
 
-### 1. Phân Tích & Xác Định Thực Thể Ngữ Nghĩa (Semantic Entities)
+### Phân Tích & Xác Định Thực Thể Ngữ Nghĩa
 Thay vì chỉ tập trung vào một từ khóa đơn lẻ, hãy xây dựng một mạng lưới các khái niệm liên quan mật thiết đến **{keyword}**. Điều này giúp các hệ thống RAG (Retrieval-Augmented Generation) của AI dễ dàng nhận diện website của bạn là nguồn uy tín bậc nhất.
 
-### 2. Thiết Kế Nội Dung Dạng Bảng Biểu & Danh Sách
+### Thiết Kế Nội Dung Dạng Bảng Biểu & Danh Sách
 Các công cụ tìm kiếm AI ưu tiên trích xuất dữ liệu có cấu trúc logic. Hãy luôn bổ sung các bảng so sánh và danh sách có thứ tự trong mỗi bài viết.
 
-### 3. Tích Hợp Schema.org Toàn Diện
+### Tích Hợp Schema.org Toàn Diện
 Cung cấp dữ liệu dạng máy đọc (JSON-LD) cho loại hình Article, FAQPage và Organization.
 
-### 4. Tối Ưu File llms.txt Cho AI Crawlers
+### Tối Ưu File llms.txt Cho AI Crawlers
 Tạo đường dẫn súc tích tại /llms.txt trỏ đến các bài viết trụ cột (Pillar Content) của website.
 
 ---
 
-## ❓ Câu Hỏi Thường Gặp (FAQ)
+## Câu Hỏi Thường Gặp (FAQ)
 
-### 1. {keyword} có thay thế hoàn toàn SEO truyền thống không?
+### {keyword} có thay thế hoàn toàn SEO truyền thống không?
 **Trả lời:** Không. GEO không thay thế SEO mà là bước tiến hóa của SEO trong kỷ nguyên AI Search, kết hợp kỹ thuật kỹ thuật số với khả năng hiển thị trên AI.
 
-### 2. Mất bao lâu để thấy hiệu quả khi tối ưu {keyword}?
+### Mất bao lâu để thấy hiệu quả khi tối ưu {keyword}?
 **Trả lời:** Thông thường các tín hiệu AI Citability bắt đầu xuất hiện trong vòng 2-4 tuần sau khi lập chỉ mục và tối ưu cấu trúc dữ liệu.
 
 ---
 
-## 🎯 Kết Luận
+## Kết Luận
 Đầu tư vào **{topic}** với định hướng **{keyword}** ngay hôm nay là bước đi chiến lược để đón đầu làn sóng tìm kiếm bằng AI. Hãy bắt đầu từ việc chuẩn hóa dữ liệu On-page và cấu trúc bài viết rõ ràng!
 """
 

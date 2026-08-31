@@ -54,5 +54,8 @@ temp_wp_rocket/
 vibemmo_*/
 *_assets/
 Newspaper-child.zip
+Newspaper-child/
+package-lock.json
 repos/
 vps-auto-wp/
+

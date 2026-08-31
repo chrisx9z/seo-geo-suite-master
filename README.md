@@ -83,6 +83,14 @@ pip install -r requirements.txt
 GEMINI_API_KEY=your_key_here
 ```
 
+### Quy Tắc Tiêu Chuẩn Nội Dung (SEO & GEO Rules)
+
+- 📸 **Hình ảnh:** Tối thiểu 1 hình ảnh — tối đa 5 hình ảnh chuyên nghiệp (16:9, sơ đồ, infographic sắc nét, alt tag chuẩn).
+- 🖼️ **Ảnh đại diện (Featured Image):** Bắt buộc 100% cho mọi bài viết — đây là tiêu chuẩn mặc định trong SEO.
+- 📝 **Độ dài & Chống Thin Content:** Bài viết phải dài **tối thiểu 1.000 từ**, không có giới hạn tối đa (tùy thuộc độ sâu từ khóa có thể 2.000 - 5.000+ từ). Tuyệt đối không xuất bản thin content.
+- 🚫 **Tránh ăn thịt từ khóa:** Mỗi bài viết phân bổ theo 1 Search Intent độc lập, kiểm tra trùng lặp trước khi xuất bản.
+- 🔗 **URL Slug:** Chuẩn tiếng Việt không dấu `/tu-khoa-chinh/`.
+
 ---
 
 ### Những Gì Đã Học & Cải Tiến
@@ -91,7 +99,7 @@ GEMINI_API_KEY=your_key_here
 - ✅ WP REST API nonce phải lấy fresh mỗi session, không tái sử dụng
 - ✅ `_elementor_data` là protected meta — chỉ update được qua Elementor AJAX nonce riêng
 - ✅ Purge WP Rocket cache sau mỗi thay đổi nội dung
-- ✅ Ảnh đại diện: dùng ảnh thật (Wikimedia/Unsplash), không dùng text banner
+- ✅ Ảnh đại diện: dùng ảnh thật (Wikimedia/Unsplash/AI Render chất lượng cao), không dùng text banner
 - ✅ `sync_wp.py`: credentials nhận qua params — không hardcode domain hay mật khẩu
 - ✅ `geo_writer.py`: API key đọc từ `os.environ`, không inline trong code
 
@@ -168,13 +176,23 @@ GEMINI_API_KEY=your_key_here
 
 ---
 
+### 内容质量标准与规则 (SEO & GEO Content Rules)
+
+- 📸 **图片数量：** 每篇文章最少 1 张图片，最多 5 张专业高清图（16:9 比例，包含清晰架构图/信息图，完整 Alt 标签）。
+- 🖼️ **特色图片（Featured Image）：** 100% 强制要求为每篇文章设置特色图片——这是 SEO 标准默认配置。
+- 📝 **文章字数与拒绝薄弱内容（No Thin Content）：** 文章长度**最少 1,000 字**，无上限要求（根据关键词深度可达 2,000 - 5,000+ 字）。
+- 🚫 **防止关键词冲突（Anti-Cannibalization）：** 独立划分搜索意图（Search Intent），发文前对比现有词库。
+- 🔗 **规范 URL Slug：** 使用小写、无重音连字符格式 `/keyword-slug/`。
+
+---
+
 ### 学习记录与改进
 
 - ✅ URL slug 规范：`/keyword-slug/`，连字符分隔，去除变音符号
 - ✅ WP REST API nonce 每次会话重新获取，禁止复用
 - ✅ `_elementor_data` 为 protected meta，只能通过 Elementor 专属 AJAX nonce 更新
 - ✅ 内容变更后必须清除 WP Rocket 缓存
-- ✅ 特色图片：使用真实照片（Wikimedia/Unsplash），禁用文字卡片
+- ✅ 特色图片：使用真实照片或高水准 AI 渲染，禁用文字卡片
 - ✅ `sync_wp.py`：凭据通过参数传入，域名与密码不得硬编码
 - ✅ `geo_writer.py`：API Key 通过 `os.environ` 读取，禁止内联写死
 
@@ -200,6 +218,16 @@ It ships with an interactive CLI, a visual Web Dashboard, and a WordPress REST A
 | 4 | **Keyword Planner & Roadmap** | Google Suggest scraping, PAA clustering, semantic TF-IDF/KMeans grouping, 30-day content plan |
 | 5 | **Asset Builder & Featured Images** | Local 1200×630 WebP generation via Pillow — no external API required |
 | 6 | **CSS Fixer & WP Sync** | Detects layout-breaking CSS, syncs posts & media to WordPress via REST API |
+
+---
+
+### SEO & GEO Content Rules & Quality Standards
+
+- 📸 **In-Content Images:** Minimum 1 image — Maximum 5 professional images per post (16:9 aspect ratio, clean architecture charts/infographics, proper SEO alt text).
+- 🖼️ **Featured Image:** 100% Mandatory for all published posts — default industry standard for SEO and social indexing.
+- 📝 **Word Count & No Thin Content:** Minimum **1,000 words** per article with NO maximum limit (can scale to 2,000 - 5,000+ words based on entity depth).
+- 🚫 **Anti-Keyword Cannibalization:** Single search intent per cluster, strict pre-publishing slug verification.
+- 🔗 **Clean URL Slugs:** Lowercase hyphenated `/keyword-slug/` format.
 
 ---
 

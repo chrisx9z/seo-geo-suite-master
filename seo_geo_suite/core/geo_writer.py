@@ -22,13 +22,16 @@ class GeoWriter:
 Hãy viết một bài viết toàn diện, chuyên sâu chuẩn E-E-A-T bằng tiếng Việt về chủ đề: "{topic}".
 Từ khóa chính: "{target_keyword}"
 
-Yêu cầu định dạng bắt buộc cho GEO (để các công cụ AI như ChatGPT, Perplexity, Google AI Overviews dễ trích nguồn):
-1. Tiêu đề H1 hấp dẫn, chuẩn SEO chứa từ khóa chính.
-2. Đoạn Direct-Answer mở đầu (60-80 từ): Trả lời trực tiếp và súc tích câu hỏi cốt lõi để AI trích dẫn làm đoạn trích nổi bật.
-3. Bảng tóm tắt Key Takeaways / Số liệu chính dạng Markdown Table.
-4. Các phần H2, H3 phân tích chi tiết, kèm số liệu cụ thể, ví dụ thực tế và các bước thực thi rõ ràng.
-5. Phần Hỏi & Đáp thường gặp (FAQ) gồm ít nhất 4 câu hỏi thực tế.
-6. Kết luận và lời khuyên hành động.
+Yêu cầu định dạng bắt buộc cho GEO & SEO (Đảm bảo tối ưu hóa công cụ tìm kiếm và AI Search):
+1. ĐỘ DÀI & NỘI DUNG: Bài viết phải dài TỐI THIỂU 1.000 từ (không có giới hạn tối đa, phân tích càng sâu càng tốt dựa trên từ khóa). Tuyệt đối KHÔNG có "thin content".
+2. HÌNH ẢNH: Đề xuất và tích hợp từ 1 đến 5 vị trí hình ảnh chuyên nghiệp (kèm thẻ mô tả alt chuẩn SEO, hình minh họa sơ đồ/bảng số liệu).
+3. ẢNH ĐẠI DIỆN: Bắt buộc phải có ảnh đại diện (Featured Image) đại diện cho thực thể bài viết.
+4. TIÊU ĐỀ: H1 hấp dẫn, chuẩn SEO chứa từ khóa chính không dấu và có dấu tự nhiên.
+5. DIRECT ANSWER: Đoạn trả lời trực tiếp mở đầu (60-80 từ) giải quyết cốt lõi câu hỏi để AI trích dẫn làm Featured Snippet.
+6. BẢNG BIỂU: Bảng tóm tắt Key Takeaways / Số liệu chính dạng Markdown Table.
+7. PHÂN TÍCH: Các phần H2, H3 phân tích chi tiết, số liệu thực tế, nghiên cứu ca bệnh (case study) và các bước thực thi rõ ràng.
+8. FAQ: Phần Hỏi & Đáp thường gặp gồm ít nhất 4 câu hỏi thực tế.
+9. KẾT LUẬN: Lời khuyên hành động thực tế cho độc giả.
 """
                 resp = client.models.generate_content(
                     model="gemini-2.5-flash",

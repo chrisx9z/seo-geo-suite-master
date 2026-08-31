@@ -137,6 +137,27 @@ class OnpageChecker:
         issues = []
         recommendations = []
 
+        # Check Thin Content (< 1000 words)
+        word_count = geo_signals["content_word_count"]
+        if word_count < 500:
+            score -= 25
+            issues.append(f"Cảnh báo Thin Content nghiêm trọng ({word_count} từ, yêu cầu tối thiểu 1.000 từ)")
+            recommendations.append("Mở rộng nội dung bài viết chuyên sâu tối thiểu 1.000 từ để đảm bảo E-E-A-T và tránh bị phạt Thin Content.")
+        elif word_count < 1000:
+            score -= 10
+            issues.append(f"Nội dung hơi ngắn ({word_count} từ, khuyến nghị tối thiểu 1.000 từ)")
+            recommendations.append("Bổ sung thêm phân tích thực tế, case studies và câu hỏi thường gặp để đạt độ dài chuẩn trên 1.000 từ.")
+
+        # Check Images Count (1 - 5 images)
+        if total_images < 1:
+            score -= 15
+            issues.append("Bài viết chưa có hình ảnh minh họa nào (yêu cầu 1-5 hình ảnh chuyên nghiệp)")
+            recommendations.append("Bổ sung ít nhất 1-5 hình ảnh hoặc infographic chuyên nghiệp (16:9) kèm thẻ alt chuẩn SEO.")
+        elif total_images > 5:
+            score -= 5
+            issues.append(f"Có quá nhiều hình ảnh trong bài viết ({total_images} ảnh, khuyến nghị tối đa 5 ảnh để tối ưu tốc độ tải trang)")
+            recommendations.append("Cân nhắc rút gọn hoặc tối ưu số lượng hình ảnh về mức 1-5 ảnh trọng tâm.")
+
         if title_status == "error":
             score -= 20
             issues.append("Thiếu thẻ Title (<title>)")
@@ -178,8 +199,9 @@ class OnpageChecker:
             recommendations.append("Bổ sung Schema Article/Organization/FAQPage để hỗ trợ AI bot trích xuất.")
 
         if not og_tags.get("og:image"):
-            score -= 5
-            issues.append("Thiếu thẻ OpenGraph Image (og:image) khi chia sẻ lên mạng xã hội")
+            score -= 10
+            issues.append("Thiếu thẻ OpenGraph Image (og:image) / Ảnh đại diện (Featured Image)")
+            recommendations.append("Bắt buộc phải có ảnh đại diện (Featured Image) và thẻ og:image để hiển thị thumbnail chuẩn trên mạng xã hội và SERP.")
 
         score = max(0, min(100, score))
 
@@ -189,7 +211,8 @@ class OnpageChecker:
         if geo_signals["has_author_or_entity"]: geo_score += 25
         if geo_signals["has_direct_faq"]: geo_score += 20
         if geo_signals["has_tables_or_lists"]: geo_score += 15
-        if geo_signals["content_word_count"] > 500: geo_score += 15
+        if geo_signals["content_word_count"] >= 1000: geo_score += 15
+        elif geo_signals["content_word_count"] >= 500: geo_score += 8
 
         return {
             "url": url,

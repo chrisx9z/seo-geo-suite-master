@@ -19,25 +19,35 @@ class WordPressSyncEngine:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
         }
 
-    def generate_featured_banner(self, title, site_name='My Website', category='Top List', output_path='reports/temp_banner.png'):
+    def generate_featured_banner(self, title, site_name='My Website', category='Top List', output_path='reports/temp_banner.webp'):
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         w, h = 1200, 630
         img = Image.new('RGB', (w, h), color=(15, 23, 42))
         draw = ImageDraw.Draw(img)
         
+        # Load fonts with fallback
+        try:
+            font_title = ImageFont.truetype("arial.ttf", 36)
+            font_sub = ImageFont.truetype("arial.ttf", 22)
+            font_footer = ImageFont.truetype("arial.ttf", 18)
+        except Exception:
+            font_title = ImageFont.load_default()
+            font_sub = font_title
+            font_footer = font_title
+
         # Decorative accents
         draw.rectangle([(0, 0), (w, 10)], fill=(59, 130, 246))
         draw.rectangle([(80, 80), (320, 84)], fill=(99, 102, 241))
         
-        draw.text((80, 110), f'{site_name.upper()} | {category.upper()}', fill=(96, 165, 250))
-        draw.text((80, 200), title[:70], fill=(255, 255, 255))
+        draw.text((80, 110), f'{site_name.upper()} | {category.upper()}', fill=(96, 165, 250), font=font_sub)
+        draw.text((80, 200), title[:70], fill=(255, 255, 255), font=font_title)
         if len(title) > 70:
-            draw.text((80, 270), title[70:140], fill=(255, 255, 255))
+            draw.text((80, 260), title[70:140], fill=(255, 255, 255), font=font_title)
             
-        draw.text((80, 520), f'{site_name} - Powered by SEO & GEO Suite', fill=(148, 163, 184))
+        draw.text((80, 520), f'{site_name} - Powered by SEO & GEO Suite', fill=(148, 163, 184), font=font_footer)
         
         # Save as optimized WebP
-        webp_path = output_path.replace('.png', '.webp')
+        webp_path = os.path.splitext(output_path)[0] + '.webp'
         img.save(webp_path, 'WEBP', quality=88)
         return webp_path
 

@@ -158,6 +158,22 @@ class OnpageChecker:
             issues.append(f"Có quá nhiều hình ảnh trong bài viết ({total_images} ảnh, khuyến nghị tối đa 5 ảnh để tối ưu tốc độ tải trang)")
             recommendations.append("Cân nhắc rút gọn hoặc tối ưu số lượng hình ảnh về mức 1-5 ảnh trọng tâm.")
 
+        # Check Natural Heading Standards (RULES.md Section 5)
+        all_subheadings = []
+        for h_level in ["h2", "h3", "h4"]:
+            all_subheadings.extend(headings.get(h_level, []))
+        if all_subheadings:
+            numbered_or_icon_count = 0
+            for h_text in all_subheadings:
+                if re.match(r"^(\d+[\.\)]|\d+\.\d+|[IVXLCDM]+[\.\)]|[A-Z][\.\)])\s+", h_text) or \
+                   re.match(r"^[\U00010000-\U0010ffff\u2600-\u27bf\ufe0f\u200d\u2300-\u23ff\u2b50\u2b55]", h_text):
+                    numbered_or_icon_count += 1
+            heading_ratio = numbered_or_icon_count / len(all_subheadings)
+            if len(all_subheadings) >= 3 and heading_ratio > 0.20:
+                score -= 10
+                issues.append(f"Tỷ lệ tiêu đề đánh số cơ học hoặc icon vượt quá mức cho phép ({int(heading_ratio * 100)}% > 20% theo RULES.md)")
+                recommendations.append("Hạn chế đánh số 1., 2., 3. và lạm dụng icon ở thẻ H2, H3 để văn phong bài viết tự nhiên chuẩn báo chí.")
+
         if title_status == "error":
             score -= 20
             issues.append("Thiếu thẻ Title (<title>)")

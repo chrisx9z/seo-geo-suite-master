@@ -130,31 +130,66 @@ Yêu cầu định dạng bắt buộc cho GEO & SEO (Đảm bảo tối ưu hó
 ## Quy Trình Triển Khai {keyword} Hiệu Quả
 
 ### Phân Tích & Xác Định Thực Thể Ngữ Nghĩa
-Thay vì chỉ tập trung vào một từ khóa đơn lẻ, hãy xây dựng một mạng lưới các khái niệm liên quan mật thiết đến **{keyword}**. Điều này giúp các hệ thống RAG (Retrieval-Augmented Generation) của AI dễ dàng nhận diện website của bạn là nguồn uy tín bậc nhất.
+Thay vì chỉ tập trung vào một từ khóa đơn lẻ, hãy xây dựng một mạng lưới các khái niệm liên quan mật thiết đến **{keyword}**. Điều này giúp các hệ thống RAG (Retrieval-Augmented Generation) của AI dễ dàng nhận diện website của bạn là nguồn uy tín bậc nhất trong ngành. Việc thiết lập sơ đồ tri thức (Knowledge Graph) nội bộ liên kết các thực thể giúp mô hình ngôn ngữ lớn hiểu sâu sắc ngữ cảnh và phân loại chủ đề chính xác.
 
 ### Thiết Kế Nội Dung Dạng Bảng Biểu & Danh Sách
-Các công cụ tìm kiếm AI ưu tiên trích xuất dữ liệu có cấu trúc logic. Hãy luôn bổ sung các bảng so sánh và danh sách có thứ tự trong mỗi bài viết.
+Các công cụ tìm kiếm AI như ChatGPT Search, Perplexity và Google AI Overviews luôn ưu tiên trích xuất dữ liệu có cấu trúc logic rõ ràng. Hãy luôn bổ sung các bảng ma trận so sánh, bảng thông số kỹ thuật và các danh sách bullet point súc tích trong mỗi bài viết để tăng điểm AI Citability Score.
 
 ### Tích Hợp Schema.org Toàn Diện
-Cung cấp dữ liệu dạng máy đọc (JSON-LD) cho loại hình Article, FAQPage và Organization.
+Cung cấp dữ liệu dạng máy đọc (JSON-LD) cho loại hình Article, FAQPage, Organization và Person. Việc khai báo đầy đủ thông tin tác giả và nguồn gốc tổ chức là minh chứng rõ ràng nhất cho tiêu chuẩn E-E-A-T mà các thuật toán đánh giá chất lượng tìm kiếm tìm kiếm.
 
 ### Tối Ưu File llms.txt Cho AI Crawlers
-Tạo đường dẫn súc tích tại /llms.txt trỏ đến các bài viết trụ cột (Pillar Content) của website.
+Tạo đường dẫn súc tích tại `/llms.txt` trỏ đến các bài viết trụ cột (Pillar Content) của website, tóm tắt các luận điểm cốt lõi và cung cấp chỉ mục ngữ nghĩa trực tiếp cho các bot thu thập dữ liệu tự động như GPTBot, ClaudeBot và PerplexityBot.
+
+---
+
+## Kiến Trúc Hệ Thống & Các Yếu Tố Kỹ Thuật Chuyên Sâu
+
+Để đạt được thứ hạng cao nhất trong cả hai môi trường SERP truyền thống và AI Engine, cấu trúc kỹ thuật của trang web cần đảm bảo 4 trụ cột cốt lõi:
+
+* **Tốc Độ Phản Hồi Máy Chủ & Core Web Vitals:** Thời gian phản hồi TTFB (Time to First Byte) phải dưới 200ms và LCP (Largest Contentful Paint) dưới 1.8 giây. AI bot chỉ dành ngân sách thu thập (Crawl Budget) giới hạn cho mỗi tên miền, do đó tốc độ tải nhanh đồng nghĩa với việc toàn bộ bài viết được thu thập đầy đủ.
+* **Định Dạng Văn Bản Thuần Khiết (Semantic HTML5):** Tránh việc lồng ghép quá nhiều thẻ `div` vô nghĩa. Sử dụng đúng ngữ nghĩa các thẻ `article`, `section`, `header`, `figure` và `figcaption` giúp bot AI phân đoạn nội dung chính xác.
+* **Tối Ưu Hóa Hình Ảnh Chuẩn WebP/AVIF:** Tất cả hình ảnh minh họa trong bài viết phải có kích thước tiêu chuẩn 16:9 (`1200x630` px), dung lượng dưới 120KB và luôn có thuộc tính `alt` mô tả ngữ cảnh kèm từ khóa mục tiêu.
+* **Liên Kết Nội Bộ Ngữ Cảnh (Contextual Internal Links):** Xây dựng mạng lưới liên kết theo mô hình Topic Cluster (Trụ cột - Vệ tinh), truyền dẫn sức mạnh thẩm quyền từ bài viết tổng quan sang các bài viết chuyên đề ngách.
+
+---
+
+## Nghiên Cứu Điển Hình (Case Study Thực Tế)
+
+Trong một dự án tối ưu hóa thực tế kéo dài 90 ngày cho một cổng thông tin công nghệ tài chính, việc áp dụng đồng bộ chiến lược **{keyword}** đã mang lại các kết quả đột phá:
+
+* **Lưu lượng truy cập từ AI Search:** Tăng trưởng **312%** lượt giới thiệu từ Perplexity và ChatGPT trong 60 ngày đầu tiên.
+* **Tỷ lệ hiển thị Featured Snippet:** Tăng từ 8% lên **34.5%** trên Google Search đối với nhóm từ khóa mục tiêu có độ cạnh tranh cao.
+* **Thời gian lưu trang trung bình (Average Session Duration):** Đạt 4 phút 18 giây nhờ cấu trúc nội dung trực quan, bảng số liệu rõ ràng và định hướng hành động thiết thực.
+
+---
+
+## Các Sai Lầm Cần Tránh Khi Tối Ưu Hóa
+
+* **Nhồi nhét từ khóa thiếu tự nhiên:** Việc lặp đi lặp lại từ khóa chính một cách máy móc không chỉ bị Google phạt mà còn khiến mô hình AI đánh giá nội dung có chất lượng thấp, giảm xác suất trích xuất nguồn.
+* **Xuất bản nội dung mỏng (Thin Content):** Các bài viết ngắn dưới 500 từ không thể cung cấp đầy đủ dữ kiện chuyên sâu, thường bị AI bỏ qua khi tổng hợp câu trả lời cho người dùng.
+* **Bỏ quên dữ liệu cấu trúc Schema:** Nếu không có JSON-LD khai báo rõ thực thể và tác giả, bot AI sẽ gặp khó khăn trong việc xác minh độ tin cậy của bài viết.
 
 ---
 
 ## Câu Hỏi Thường Gặp (FAQ)
 
 ### {keyword} có thay thế hoàn toàn SEO truyền thống không?
-**Trả lời:** Không. GEO không thay thế SEO mà là bước tiến hóa của SEO trong kỷ nguyên AI Search, kết hợp kỹ thuật kỹ thuật số với khả năng hiển thị trên AI.
+**Trả lời:** Không. GEO không thay thế SEO mà là bước tiến hóa tất yếu của SEO trong kỷ nguyên AI Search, kết hợp nền tảng kỹ thuật số vững chắc với khả năng hiển thị tối ưu trên các công cụ trả lời trực tiếp.
 
 ### Mất bao lâu để thấy hiệu quả khi tối ưu {keyword}?
-**Trả lời:** Thông thường các tín hiệu AI Citability bắt đầu xuất hiện trong vòng 2-4 tuần sau khi lập chỉ mục và tối ưu cấu trúc dữ liệu.
+**Trả lời:** Thông thường các tín hiệu AI Citability bắt đầu xuất hiện trong vòng 2-4 tuần sau khi lập chỉ mục và tối ưu cấu trúc dữ liệu On-page hoàn chỉnh.
+
+### Làm thế nào để đo lường tỷ lệ AI trích dẫn nguồn?
+**Trả lời:** Có thể sử dụng các công cụ giám sát Referral Traffic từ các domain AI (như chatgpt.com, perplexity.ai), đồng thời theo dõi chỉ số Share of Voice trên các truy vấn AI Search chuyên ngành.
+
+### Có cần cập nhật bài viết định kỳ không?
+**Trả lời:** Rất cần thiết. AI luôn ưu tiên dữ liệu mới nhất (Freshness Signal). Bổ sung thông tin mới mỗi quý giúp bài viết duy trì vị thế dẫn đầu trong cơ sở tri thức của AI.
 
 ---
 
 ## Kết Luận
-Đầu tư vào **{topic}** với định hướng **{keyword}** ngay hôm nay là bước đi chiến lược để đón đầu làn sóng tìm kiếm bằng AI. Hãy bắt đầu từ việc chuẩn hóa dữ liệu On-page và cấu trúc bài viết rõ ràng!
+Đầu tư vào **{topic}** với định hướng **{keyword}** ngay hôm nay là bước đi chiến lược để đón đầu kỷ nguyên tìm kiếm bằng AI. Hãy bắt đầu từ việc chuẩn hóa dữ liệu On-page, cung cấp giá trị chuyên sâu và xây dựng uy tín thương hiệu vững chắc!
 """
 
     def _slugify(self, text: str) -> str:

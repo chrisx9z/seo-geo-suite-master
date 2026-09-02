@@ -15,6 +15,10 @@ from seo_geo_suite.core.keyword_planner import KeywordPlanner
 app = FastAPI(title="SEO & GEO Master Suite Dashboard")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+static_dir = os.path.join(BASE_DIR, "static")
+os.makedirs(static_dir, exist_ok=True)
+app.mount("/static", StaticFiles(directory=static_dir), name="static")
+
 templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
 
 onpage_checker = OnpageChecker()

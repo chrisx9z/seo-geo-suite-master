@@ -181,11 +181,13 @@ def main():
 
     # 1. Onpage
     onpage_parser = subparsers.add_parser("onpage", help="Kiểm tra Onpage SEO & GEO Citability")
-    onpage_parser.add_argument("url", help="URL cần kiểm tra")
+    onpage_parser.add_argument("url", nargs="?", default=None, help="URL cần kiểm tra")
+    onpage_parser.add_argument("--url", "-u", dest="url_opt", help="URL cần kiểm tra (dạng cờ)")
 
     # 2. Audit
     audit_parser = subparsers.add_parser("audit", help="Audit toàn diện website & robots.txt / sitemap / link hỏng")
-    audit_parser.add_argument("url", help="Domain hoặc URL website")
+    audit_parser.add_argument("url", nargs="?", default=None, help="Domain hoặc URL website")
+    audit_parser.add_argument("--url", "-u", dest="url_opt", help="Domain hoặc URL website (dạng cờ)")
 
     # 3. Write
     write_parser = subparsers.add_parser("write", help="Viết bài chuẩn SEO/GEO")
@@ -203,7 +205,8 @@ def main():
 
     # 6. CSS
     css_parser = subparsers.add_parser("css", help="Kiểm tra và chuẩn đoán lỗi CSS")
-    css_parser.add_argument("file", help="Đường dẫn file CSS")
+    css_parser.add_argument("file", nargs="?", default=None, help="Đường dẫn file CSS")
+    css_parser.add_argument("--file", "-f", dest="file_opt", help="Đường dẫn file CSS (dạng cờ)")
 
     # 7. Dashboard
     subparsers.add_parser("dashboard", help="Khởi chạy Web Dashboard giao diện trực quan")
@@ -211,11 +214,19 @@ def main():
     args = parser.parse_args()
 
     if args.command == "onpage":
-        run_onpage(args.url)
+        target_url = args.url or args.url_opt
+        if not target_url:
+            console.print("[bold red]❌ Vui lòng cung cấp URL cần kiểm tra.[/]")
+            return
+        run_onpage(target_url)
     elif args.command == "audit":
-        console.print(f"[bold green]🔍 Đang chạy Audit cho:[/] [yellow]{args.url}[/]")
+        target_url = args.url or args.url_opt
+        if not target_url:
+            console.print("[bold red]❌ Vui lòng cung cấp Domain hoặc URL website cần audit.[/]")
+            return
+        console.print(f"[bold green]🔍 Đang chạy Audit cho:[/] [yellow]{target_url}[/]")
         auditor = WebsiteAuditor()
-        data = auditor.audit_robots_and_sitemap(args.url)
+        data = auditor.audit_robots_and_sitemap(target_url)
         console.print(f"Robots.txt: {'[green]Tìm thấy[/]' if data['robots']['found'] else '[red]Thiếu[/]'}")
         console.print(f"Sitemap.xml: {'[green]Tìm thấy ' + str(data['sitemap']['urls_count']) + ' URLs[/]' if data['sitemap']['found'] else '[red]Thiếu[/]'}")
         console.print(f"llms.txt (AI Crawlers): {'[green]Đã cấu hình[/]' if data['llms_txt']['found'] else '[yellow]Chưa có (Nên bổ sung)[/]'}")
@@ -226,7 +237,11 @@ def main():
     elif args.command == "ui":
         run_ui_asset(args.type, args.brand)
     elif args.command == "css":
-        run_css_audit(args.file)
+        target_file = args.file or args.file_opt
+        if not target_file:
+            console.print("[bold red]❌ Vui lòng cung cấp đường dẫn file CSS.[/]")
+            return
+        run_css_audit(target_file)
     elif args.command == "dashboard":
         console.print("[bold green]🚀 Đang khởi động Web Dashboard tại http://localhost:8000 ...[/]")
         os.system(f"{sys.executable} -m uvicorn seo_geo_suite.dashboard.app:app --host 0.0.0.0 --port 8000 --reload")

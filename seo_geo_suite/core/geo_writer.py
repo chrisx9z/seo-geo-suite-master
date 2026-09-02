@@ -97,6 +97,7 @@ Yêu cầu định dạng bắt buộc cho GEO & SEO (Đảm bảo tối ưu hó
             "title": f"{topic} - Hướng Dẫn Chi Tiết & Tối Ưu GEO 2026",
             "meta_description": f"Tìm hiểu toàn diện về {topic} với từ khóa {target_keyword}. Hướng dẫn chi tiết, bảng số liệu và cấu trúc chuẩn AI Search.",
             "content_markdown": content_md,
+            "content": content_md,
             "article_schema_json": json.dumps(article_schema, ensure_ascii=False, indent=2),
             "faq_schema_json": json.dumps(faq_schema, ensure_ascii=False, indent=2),
             "llms_entry": llms_entry

@@ -219,6 +219,7 @@ class OnpageChecker:
             "status": "success",
             "response_time_ms": response_time_ms,
             "seo_score": score,
+            "score": score,
             "geo_citability_score": geo_score,
             "title": {"text": title_text, "length": title_len, "status": title_status},
             "meta_description": {"text": desc_text, "length": desc_len, "status": desc_status},

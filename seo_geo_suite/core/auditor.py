@@ -16,6 +16,22 @@ class WebsiteAuditor:
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
         }
 
+    def analyze_robots_txt(self, content: str) -> Dict[str, Any]:
+        """Analyzes raw robots.txt content for AI bot directives and sitemaps."""
+        ai_bots = ["GPTBot", "ChatGPT-User", "CCBot", "Google-Extended", "PerplexityBot", "ClaudeBot", "Bytespider"]
+        ai_status = {}
+        for bot in ai_bots:
+            if re.search(rf"User-agent:\s*{bot}[\s\S]*?Disallow:\s*/", content, re.I):
+                ai_status[bot] = "Blocked"
+            else:
+                ai_status[bot] = "Allowed"
+        sitemaps = re.findall(r"Sitemap:\s*(https?://[^\s]+)", content, re.I)
+        return {
+            "ai_bots": ai_status,
+            "sitemaps": sitemaps,
+            "has_ai_bot_restrictions": any(v == "Blocked" for v in ai_status.values())
+        }
+
     def audit_robots_and_sitemap(self, domain_url: str) -> Dict[str, Any]:
         parsed = urlparse(domain_url)
         base = f"{parsed.scheme or 'https'}://{parsed.netloc or domain_url.rstrip('/')}"
@@ -28,14 +44,9 @@ class WebsiteAuditor:
             if r.status_code == 200:
                 robots_data["found"] = True
                 robots_data["content"] = r.text
-                
-                # Check AI bot directives
-                ai_bots = ["GPTBot", "ChatGPT-User", "CCBot", "Google-Extended", "PerplexityBot", "ClaudeBot", "Bytespider"]
-                for bot in ai_bots:
-                    if re.search(rf"User-agent:\\s*{bot}[\\s\\S]*?Disallow:\\s*/", r.text, re.I):
-                        robots_data["ai_bots"][bot] = "Blocked"
-                    else:
-                        robots_data["ai_bots"][bot] = "Allowed"
+                analyzed = self.analyze_robots_txt(r.text)
+                robots_data["ai_bots"] = analyzed["ai_bots"]
+                robots_data["sitemaps"] = analyzed["sitemaps"]
         except Exception as e:
             robots_data["error"] = str(e)
 

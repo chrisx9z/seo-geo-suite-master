@@ -92,13 +92,16 @@ def get_site_session(site):
     session = requests.Session()
     session.headers.update({"User-Agent": "Mozilla/5.0 Master-SEO-CLI"})
     admin_user = site.get("admin_user", os.getenv("WP_ADMIN_USER", "admin"))
-    admin_pass = site.get("admin_password", os.getenv("WP_ADMIN_PASSWORD", ""))
-    env_file = os.path.join(os.path.dirname(__file__), "..", ".env")
-    if os.path.exists(env_file):
-        with open(env_file, "r", encoding="utf-8") as ef:
-            for line in ef:
-                if line.startswith("WP_ADMIN_PASSWORD="):
-                    admin_pass = line.split("=", 1)[1].strip()
+    admin_pass = site.get("admin_pass") or site.get("admin_password") or os.getenv("WP_ADMIN_PASSWORD", "")
+    if not admin_pass:
+        env_file = os.path.join(os.path.dirname(__file__), "..", ".env")
+        if os.path.exists(env_file):
+            with open(env_file, "r", encoding="utf-8") as ef:
+                for line in ef:
+                    if line.startswith("WP_ADMIN_PASSWORD="):
+                        val = line.split("=", 1)[1].strip()
+                        if val:
+                            admin_pass = val
     session.post(f"{site['url']}/wp-login.php",
         data={"log": admin_user, "pwd": admin_pass, "wp-submit": "Log In"}, timeout=20)
     return session
@@ -110,9 +113,10 @@ def deploy_site(site):
     with open(plugin_file, "r", encoding="utf-8") as pf:
         plugin_code = pf.read()
 
+    slug = site.get("plugin_slug") or ("vibemmo-header-nav-master" if "vibemmo" in site.get("url", "") else "auto-seo-geo-master-suite")
     zip_buf = io.BytesIO()
     with zipfile.ZipFile(zip_buf, "w", zipfile.ZIP_DEFLATED) as zf:
-        zf.writestr("auto-seo-geo-master-suite/auto-seo-geo-master-suite.php", plugin_code)
+        zf.writestr(f"{slug}/{slug}.php", plugin_code)
     zip_buf.seek(0)
     zip_data = zip_buf.read()
 
@@ -340,7 +344,7 @@ def audit_internal_links_site(site):
     from modules.link_sentinel.link_sentinel import InternalLinkSentinel
     print(f"\n=== Running Internal Link Sentinel on {site['name']} ===")
     session = get_site_session(site)
-    r = session.get(f"{site['url']}/wp-json/wp/v2/posts?per_page=30")
+    r = session.get(f"{site['url']}/wp-json/wp/v2/posts?per_page=30", timeout=25)
     posts = r.json() if r.status_code == 200 else []
     sentinel = InternalLinkSentinel(site['url'])
     res = sentinel.audit_and_heal_posts(posts, session)

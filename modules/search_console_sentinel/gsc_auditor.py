@@ -21,11 +21,19 @@ class SearchConsoleAuditor:
         score = 100
 
         try:
-            r = requests.get(url, timeout=12)
+            headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
+            r = requests.get(url, headers=headers, timeout=15)
             html = r.text
             soup = BeautifulSoup(html, "html.parser")
         except Exception as e:
-            return {"url": url, "error": str(e), "score": 0}
+            return {
+                "url": url,
+                "error": str(e),
+                "onpage_score": 0,
+                "status": "ERROR",
+                "issues": [f"Request failed: {str(e)}"],
+                "metrics": {"total_images": 0, "images_with_cls_protection": 0}
+            }
 
         # 1. Check Title Tag
         title_tag = soup.find("title")

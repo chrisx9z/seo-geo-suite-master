@@ -66,19 +66,19 @@ def load_config():
     print(f"Error: Config file not found at {CONFIG_PATH} or {PRIVATE_CONFIG_PATH}")
     sys.exit(1)
 
-def get_target_site(args):
+def get_target_sites(args):
     config = load_config()
     sites = config.get("sites", [])
     if not sites:
         print("Error: No sites found in configuration.")
         sys.exit(1)
-    if args.site:
+    if getattr(args, "site", None):
         for s in sites:
-            if s.get("site_id") == args.site:
-                return s
+            if s.get("site_id") == args.site or args.site in s.get("url", ""):
+                return [s]
         print(f"Error: Site '{args.site}' not found in configuration.")
         sys.exit(1)
-    return sites[0]
+    return sites
 
 def get_site(site_id):
     config = load_config()
@@ -372,10 +372,71 @@ def audit_onpage_speed_site(site, target_url=None):
     else:
         print("✅ Zero critical technical SEO or Core Web Vitals bottlenecks found!")
 
+def optimize_site(site):
+    print(f"\n{'='*75}")
+    print(f"🚀 MASTER ENTERPRISE OPTIMIZATION: {site['name']} ({site['url']})")
+    print(f"{'='*75}")
+    
+    # 1. Universal Plugin Deploy
+    try:
+        deploy_site(site)
+    except Exception as e:
+        print(f"⚠️ Plugin Deploy: {e}")
+
+    # 2. Comprehensive Multilingual & On-Page Technical Audit
+    try:
+        audit_site(site)
+    except Exception as e:
+        print(f"⚠️ Audit: {e}")
+
+    # 3. Internal Link Sentinel (ThreadPool multi-threaded auto-scan & healing)
+    try:
+        audit_internal_links_site(site)
+    except Exception as e:
+        print(f"⚠️ Link Sentinel: {e}")
+
+    # 4. Semantic Silo & Topic Clusters
+    try:
+        build_silo_site(site)
+    except Exception as e:
+        print(f"⚠️ Silo Builder: {e}")
+
+    # 5. Orphan Post Healer (Contextual Bridging to Pillar content)
+    try:
+        heal_orphans_site(site)
+    except Exception as e:
+        print(f"⚠️ Orphan Healer: {e}")
+
+    # 6. Keyword Cannibalization Detection
+    try:
+        audit_cannibalization_site(site)
+    except Exception as e:
+        print(f"⚠️ Cannibalization: {e}")
+
+    # 7. Fast Indexing (Bing IndexNow Protocol)
+    try:
+        fast_index_site(site)
+    except Exception as e:
+        print(f"⚠️ IndexNow: {e}")
+
+    # 8. Cloudflare Global Edge CDN Warming
+    try:
+        warm_edge_site(site)
+    except Exception as e:
+        print(f"⚠️ Edge Warming: {e}")
+
+    # 9. Google News XML Sitemap Verification
+    try:
+        check_news_sitemap_site(site)
+    except Exception as e:
+        print(f"⚠️ News Sitemap: {e}")
+
+    print(f"\n🎉 100% ENTERPRISE OPTIMIZATION COMPLETED FOR: {site['name']} ({site['url']})\n")
+
 def main():
     parser = argparse.ArgumentParser(description="Master Auto SEO GEO Suite CLI")
-    parser.add_argument("command", choices=["deploy", "audit", "fast-index", "auto-link", "list-sites", "write-post", "heal-404", "news-sitemap", "serp-gap", "cannibalization", "build-silo", "inject-eeat", "heal-orphans", "warm-edge", "audit-links", "audit-onpage"], help="Action to perform")
-    parser.add_argument("--site", default=None, help="Site ID to target")
+    parser.add_argument("command", choices=["optimize", "optimize-all", "deploy", "audit", "fast-index", "auto-link", "list-sites", "write-post", "heal-404", "news-sitemap", "serp-gap", "cannibalization", "build-silo", "inject-eeat", "heal-orphans", "warm-edge", "audit-links", "audit-onpage"], help="Action to perform")
+    parser.add_argument("--site", default=None, help="Site ID or domain to target (omit to apply to ALL sites)")
     parser.add_argument("--post-id", type=int, default=665, help="Post ID for EEAT injection")
     parser.add_argument("--topic", help="Topic for AI article writer")
     parser.add_argument("--category", type=int, default=4, help="Category ID (default 4: Cong Nghe & SaaS)")
@@ -388,50 +449,51 @@ def main():
 
     if args.command == "list-sites":
         list_sites()
-    elif args.command == "deploy":
-        if args.all:
-            for s in load_config().get("sites", []):
-                deploy_site(s)
-        else:
-            deploy_site(get_target_site(args))
-    elif args.command == "audit":
-        if args.all:
-            for s in load_config().get("sites", []):
-                audit_site(s)
-        else:
-            audit_site(get_target_site(args))
-    elif args.command == "fast-index":
-        fast_index_site(get_target_site(args))
-    elif args.command == "auto-link":
-        auto_link_site(get_target_site(args))
-    elif args.command == "heal-404":
-        test_404_healer_site(get_target_site(args), test_slug="sample-post" if not args.url else args.url)
-    elif args.command == "news-sitemap":
-        check_news_sitemap_site(get_target_site(args))
-    elif args.command == "serp-gap":
+        return
+
+    if args.command == "serp-gap":
         if not args.url:
             print("Error: --url <competitor_url> is required for serp-gap.")
             sys.exit(1)
         analyze_serp_gap(args.url)
-    elif args.command == "cannibalization":
-        audit_cannibalization_site(get_target_site(args))
-    elif args.command == "build-silo":
-        build_silo_site(get_target_site(args))
-    elif args.command == "inject-eeat":
-        inject_eeat_site(get_target_site(args), post_id=args.post_id)
-    elif args.command == "heal-orphans":
-        heal_orphans_site(get_target_site(args))
-    elif args.command == "warm-edge":
-        warm_edge_site(get_target_site(args))
-    elif args.command == "audit-links":
-        audit_internal_links_site(get_target_site(args))
-    elif args.command == "audit-onpage":
-        audit_onpage_speed_site(get_target_site(args), target_url=args.url)
-    elif args.command == "write-post":
-        if not args.topic:
-            print("Error: --topic is required for write-post command.")
-            sys.exit(1)
-        write_post_site(get_target_site(args), args.topic, args.category, args.status, args.date)
+        return
+
+    targets = get_target_sites(args)
+
+    for s in targets:
+        if args.command in ["optimize", "optimize-all"]:
+            optimize_site(s)
+        elif args.command == "deploy":
+            deploy_site(s)
+        elif args.command == "audit":
+            audit_site(s)
+        elif args.command == "fast-index":
+            fast_index_site(s)
+        elif args.command == "auto-link":
+            auto_link_site(s)
+        elif args.command == "heal-404":
+            test_404_healer_site(s, test_slug="sample-post" if not args.url else args.url)
+        elif args.command == "news-sitemap":
+            check_news_sitemap_site(s)
+        elif args.command == "cannibalization":
+            audit_cannibalization_site(s)
+        elif args.command == "build-silo":
+            build_silo_site(s)
+        elif args.command == "inject-eeat":
+            inject_eeat_site(s, post_id=args.post_id)
+        elif args.command == "heal-orphans":
+            heal_orphans_site(s)
+        elif args.command == "warm-edge":
+            warm_edge_site(s)
+        elif args.command == "audit-links":
+            audit_internal_links_site(s)
+        elif args.command == "audit-onpage":
+            audit_onpage_speed_site(s, target_url=args.url)
+        elif args.command == "write-post":
+            if not args.topic:
+                print("Error: --topic is required for write-post command.")
+                sys.exit(1)
+            write_post_site(s, args.topic, args.category, args.status, args.date)
 
 if __name__ == "__main__":
     main()

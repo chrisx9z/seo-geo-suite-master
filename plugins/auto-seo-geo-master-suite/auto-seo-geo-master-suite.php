@@ -26,6 +26,7 @@ class Auto_SEO_GEO_Master_Suite {
         add_action('template_redirect', array($this, 'auto_heal_404_fuzzy_redirect'));
         add_action('wp_head', array($this, 'render_head_seo_tags'), 1);
         add_action('wp_head', array($this, 'render_self_canonical'), 2);
+        add_action('wp_head', array($this, 'render_site_favicon'), 2);
         add_filter('rank_math/canonical', array($this, 'filter_rankmath_canonical'), 9999);
         if (!shortcode_exists('ez-toc')) {
             add_shortcode('ez-toc', array($this, 'render_ez_toc_fallback'));
@@ -276,6 +277,17 @@ class Auto_SEO_GEO_Master_Suite {
             return esc_url(strtok(get_permalink(), '?'));
         }
         return $canonical;
+    }
+
+    /**
+     * Rule: Ensure High-Resolution Favicon & PWA Theme Color Meta Tags
+     */
+    public function render_site_favicon() {
+        if (!has_site_icon()) {
+            $fav = home_url('/favicon.ico');
+            echo '<link rel="shortcut icon" href="' . esc_url($fav) . '" />' . "\n";
+        }
+        echo '<meta name="theme-color" content="#0f172a" />' . "\n";
     }
 
     /**

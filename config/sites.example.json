@@ -1,0 +1,82 @@
+{
+  "$schema": "./schema.json",
+  "description": "Master Auto SEO GEO Suite - Multi-Site Configuration Registry",
+  "sites": [
+    {
+      "site_id": "example_ai_portal",
+      "name": "Global Tech Portal",
+      "url": "https://example.com",
+      "admin_user": "admin",
+      "admin_password_env": "WP_ADMIN_PASSWORD",
+      "theme_type": "universal",
+      "container_width": "1170px",
+      "brand": {
+        "favicon_url": "https://example.com/assets/favicon_512.png",
+        "logo_url": "https://example.com/assets/logo.png",
+        "gradient_primary": "linear-gradient(90deg, #ff9800 0%, #ffa726 100%)",
+        "border_color": "#e68900"
+      },
+      "languages": {
+        "supported": [
+          "vi",
+          "en",
+          "zh"
+        ],
+        "default": "vi",
+        "hreflang_tags": {
+          "vi": "vi",
+          "en": "en",
+          "zh": "zh-CN",
+          "x-default": "en"
+        }
+      },
+      "seo": {
+        "vi": {
+          "title": "Tên Website - Cổng Thông Tin Trí Tuệ Nhân Tạo & Công Nghệ Hàng Đầu",
+          "tagline": "Tin Tức AI Mới Nhất, Đánh Giá Top AI Tools & Giải Pháp Tự Động Hóa 2026",
+          "description": "Chuyên trang cập nhật tin tức Trí Tuệ Nhân Tạo, đánh giá Top AI Tools, SaaS công nghệ và giải pháp tự động hóa thế hệ mới.",
+          "keywords": "AI, trí tuệ nhân tạo, công nghệ SaaS, top AI tools, tự động hóa"
+        },
+        "en": {
+          "title": "Site Name - Leading AI News, Top AI Tools & Tech Innovation Hub",
+          "tagline": "The Future of Artificial Intelligence, SaaS Tech & Automated Systems 2026",
+          "description": "The premier hub for cutting-edge Artificial Intelligence insights, in-depth AI tool reviews, SaaS technology trends, and automated systems.",
+          "keywords": "AI news, artificial intelligence, top AI tools, SaaS technology, automation"
+        },
+        "zh": {
+          "title": "网站名称 - 前沿人工智能资讯、AI工具评测与科技商业门户",
+          "tagline": "聚焦最新AI科技前沿、精选AI工具评测与数字化商业 2026",
+          "description": "领先的人工智能与数字商业门户，专注于前沿AI技术洞察、精选AI工具评测、SaaS软件及自动化商业策略。",
+          "keywords": "人工智能, AI工具评测, SaaS, 数字化商业, 自动化"
+        }
+      },
+      "mobile_pills": [
+        {
+          "label": "⚡ Mới Nhất",
+          "url": "/",
+          "active": true
+        },
+        {
+          "label": "🤖 AI & LLMs",
+          "url": "/category/ai-llms/",
+          "active": false
+        },
+        {
+          "label": "⚙️ SaaS Tech",
+          "url": "/category/saas-tech/",
+          "active": false
+        },
+        {
+          "label": "🛠️ Top AI Tools",
+          "url": "/category/top-ai-tools/",
+          "active": false
+        },
+        {
+          "label": "🔥 Tin Nóng",
+          "url": "/category/trending/",
+          "active": false
+        }
+      ]
+    }
+  ]
+}

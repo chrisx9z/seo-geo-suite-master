@@ -14,6 +14,7 @@ env/
 # === Credentials & Personal Data (NEVER COMMIT) ===
 .env
 .env.*
+!.env.example
 private/
 config.json
 config.local.*

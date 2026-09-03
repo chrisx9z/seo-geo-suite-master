@@ -113,7 +113,7 @@ def deploy_site(site):
     with open(plugin_file, "r", encoding="utf-8") as pf:
         plugin_code = pf.read()
 
-    slug = site.get("plugin_slug") or ("vibemmo-header-nav-master" if "vibemmo" in site.get("url", "") else "auto-seo-geo-master-suite")
+    slug = site.get("plugin_slug", "auto-seo-geo-master-suite")
     zip_buf = io.BytesIO()
     with zipfile.ZipFile(zip_buf, "w", zipfile.ZIP_DEFLATED) as zf:
         zf.writestr(f"{slug}/{slug}.php", plugin_code)

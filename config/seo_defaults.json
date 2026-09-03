@@ -1,0 +1,167 @@
+{
+  "_metadata": {
+    "title": "Universal Auto SEO GEO Suite - Enterprise Default Standards",
+    "version": "6.0.0",
+    "status": "active_default",
+    "description": "All settings in this file are applied by default across all tools, CLI commands, and WordPress sites without requiring manual configuration."
+  },
+  "content_standards": {
+    "min_word_count": 1000,
+    "target_word_count_min": 1500,
+    "target_word_count_max": 2500,
+    "prevent_thin_content": true
+  },
+  "rankmath_scoring": {
+    "keyword_density_min": 1.0,
+    "keyword_density_max": 1.5,
+    "title_length_min": 50,
+    "title_length_max": 60,
+    "meta_desc_length_min": 140,
+    "meta_desc_length_max": 160,
+    "keyword_in_title": true,
+    "keyword_in_lead": true,
+    "keyword_in_h2": true,
+    "pillar_content_flag": true
+  },
+  "url_and_slug": {
+    "core_keyword_slug": true,
+    "strip_stop_words": true,
+    "auto_301_on_slug_change": true,
+    "self_referencing_canonical": true,
+    "strip_query_parameters": true
+  },
+  "feature_1_geo_key_takeaways_engine": {
+    "enabled_by_default": true,
+    "mode": "selective_intent_only",
+    "prevent_spam": true,
+    "description": "Only triggers for question, comparison, or quick-answer search intents. Standard general articles skip this block to avoid repetitive spam.",
+    "trigger_words": [
+      "là gì",
+      "như thế nào",
+      "tại sao",
+      "how",
+      "what",
+      "so sánh",
+      "có nên",
+      "hướng dẫn cách",
+      "ưu nhược điểm",
+      "top",
+      "chi phí",
+      "giải thích"
+    ]
+  },
+  "feature_4_dual_image_avif_webp": {
+    "enabled_by_default": true,
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "responsive_picture_tag": true,
+    "max_file_size_kb": 50,
+    "require_featured_image": true,
+    "require_in_content_illustration": true,
+    "aspect_ratio": "16:9",
+    "width": 1200,
+    "height": 675,
+    "zero_cls_protection": true,
+    "lazy_loading": true,
+    "async_decoding": true
+  },
+  "feature_5_internal_link_sentinel": {
+    "enabled_by_default": true,
+    "concurrency_threads": 10,
+    "auto_heal_404": true,
+    "auto_heal_301_stale_redirects": true,
+    "description": "Multi-threaded ThreadPool sentinel scans all internal links across site posts, heals broken links and rewrites redirects directly in database."
+  },
+  "feature_6_tiered_satellite_network": {
+    "enabled_by_default": true,
+    "hierarchy": {
+      "tier_2": "Niche Satellite Sites",
+      "tier_1": "High Authority Cluster Hubs",
+      "money_site": "Core Production Revenue Sites"
+    },
+    "allowed_link_flow": [
+      [
+        "tier_2",
+        "tier_1"
+      ],
+      [
+        "tier_1",
+        "money_site"
+      ],
+      [
+        "tier_2",
+        "money_site"
+      ]
+    ],
+    "prohibit_downward_links": true,
+    "anchor_text_ratios": {
+      "natural_contextual_keyword": 0.7,
+      "brand_name": 0.2,
+      "naked_url": 0.1
+    }
+  },
+  "feature_7_faq_and_schema": {
+    "force_faq_section": false,
+    "selective_faq_only": true,
+    "description": "FAQ sections are NOT forced arbitrarily on every post. Technical JSON-LD schemas (Article, BreadcrumbList, WebSite) are ALWAYS generated automatically 100%.",
+    "schemas_always_active": [
+      "Article",
+      "BreadcrumbList",
+      "WebSite",
+      "Organization"
+    ]
+  },
+  "feature_8_search_console_and_onpage_auditor": {
+    "enabled_by_default": true,
+    "target_tiers": [
+      "money_site",
+      "tier_1"
+    ],
+    "min_acceptable_score": 85,
+    "auto_audit_on_publish": true,
+    "rules": {
+      "check_title_length": true,
+      "check_meta_description_length": true,
+      "check_self_canonical": true,
+      "check_single_h1": true,
+      "check_zero_cls_image_dimensions": true,
+      "check_lazy_loading": true,
+      "check_image_alt_text": true
+    }
+  },
+  "table_of_contents": {
+    "plugin_standard": "easy-table-of-contents",
+    "shortcode": "[ez-toc]",
+    "auto_fallback_engine": true
+  },
+  "citations_and_links": {
+    "outbound_citation_max_probability": 0.15,
+    "prohibit_competitor_domains": true,
+    "whitelist_only": true,
+    "authority_whitelist": [
+      {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com"
+      },
+      {
+        "name": "W3C Standards",
+        "url": "https://www.w3.org"
+      },
+      {
+        "name": "ArXiv",
+        "url": "https://arxiv.org"
+      },
+      {
+        "name": "IETF Standards",
+        "url": "https://www.ietf.org"
+      }
+    ],
+    "link_attributes": "target=\"_blank\" rel=\"noopener noreferrer\""
+  }
+}

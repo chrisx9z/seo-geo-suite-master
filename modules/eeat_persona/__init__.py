@@ -1,1 +1,2 @@
-"""Dynamic E-E-A-T Author Persona Manager."""
+from .persona_manager import EeatPersonaManager
+__all__ = ['EeatPersonaManager']

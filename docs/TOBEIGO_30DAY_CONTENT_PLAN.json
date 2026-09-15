@@ -1,0 +1,3242 @@
+[
+  {
+    "day": 1,
+    "date": "2026-09-08",
+    "topic": "Du Lịch Đà Nẵng Toàn Tập 2026",
+    "category": "Du Lịch Đà Nẵng",
+    "posts": [
+      {
+        "keyword": "kinh nghiệm du lịch đà nẵng 3 ngày 2 đêm 2026",
+        "slug": "kinh-nghiem-du-lich-da-nang-3-ngay-2-dem-2026",
+        "volume": 21500,
+        "intent": "Cẩm nang",
+        "lsi": "chi phí đi đà nẵng 3 ngày 2 đêm, lịch trình đà nẵng hội an 3n2đ, khách sạn đà nẵng gần biển",
+        "category_id": 398,
+        "category_name": "Du Lịch Đà Nẵng",
+        "schedule_date": "2026-09-08T08:00:00"
+      },
+      {
+        "keyword": "giá vé các điểm tham quan đà nẵng 2026",
+        "slug": "gia-ve-cac-diem-tham-quan-da-nang-2026",
+        "volume": 18200,
+        "intent": "Bảng giá",
+        "lsi": "bảng giá vé bà nà hills núi thần tài ngũ hành sơn 2026, vé du thuyền sông hàn",
+        "category_id": 398,
+        "category_name": "Du Lịch Đà Nẵng",
+        "schedule_date": "2026-09-08T08:05:00"
+      },
+      {
+        "keyword": "top 10 quán hải sản ngon rẻ ở đà nẵng",
+        "slug": "top-10-quan-hai-san-ngon-re-o-da-nang",
+        "volume": 14300,
+        "intent": "Ẩm thực",
+        "lsi": "hải sản năm đảnh đà nẵng, quán bé mặn đà nẵng, hải sản bà thôi đà nẵng",
+        "category_id": 398,
+        "category_name": "Du Lịch Đà Nẵng",
+        "schedule_date": "2026-09-08T08:10:00"
+      },
+      {
+        "keyword": "bán đảo sơn trà các điểm check in tuyệt đẹp",
+        "slug": "ban-dao-son-tra-cac-diem-check-in-tuyet-dep",
+        "volume": 12700,
+        "intent": "Khám phá",
+        "lsi": "chùa linh ứng bãi bụt, cây đa ngàn năm sơn trà, đỉnh bàn cờ ngắm toàn cảnh đà nẵng",
+        "category_id": 398,
+        "category_name": "Du Lịch Đà Nẵng",
+        "schedule_date": "2026-09-08T08:15:00"
+      },
+      {
+        "keyword": "bãi biển non nước đà nẵng cẩm nang nghỉ dưỡng",
+        "slug": "bai-bien-non-nuoc-da-nang-cam-nang",
+        "volume": 9800,
+        "intent": "Nghỉ dưỡng",
+        "lsi": "resort bãi biển non nước, tắm biển non nước có an toàn không, làng đá mỹ nghệ",
+        "category_id": 398,
+        "category_name": "Du Lịch Đà Nẵng",
+        "schedule_date": "2026-09-08T08:20:00"
+      },
+      {
+        "keyword": "chơi gì ở đà nẵng về đêm 2026",
+        "slug": "choi-gi-o-da-nang-ve-dem-2026",
+        "volume": 15400,
+        "intent": "Trải nghiệm",
+        "lsi": "cầu rồng phun lửa thứ mấy, chợ đêm helio đà nẵng, du thuyền sông hàn ngắm cầu quay",
+        "category_id": 398,
+        "category_name": "Du Lịch Đà Nẵng",
+        "schedule_date": "2026-09-08T08:25:00"
+      },
+      {
+        "keyword": "thuê xe máy đà nẵng giao tận khách sạn sân bay",
+        "slug": "thue-xe-may-da-nang-giao-tan-noi",
+        "volume": 11200,
+        "intent": "Dịch vụ",
+        "lsi": "địa chỉ thuê xe máy đà nẵng uy tín, giá thuê xe máy theo ngày đà nẵng",
+        "category_id": 398,
+        "category_name": "Du Lịch Đà Nẵng",
+        "schedule_date": "2026-09-08T08:30:00"
+      },
+      {
+        "keyword": "suối mơ đà nẵng điểm dã ngoại trốn nóng lý tưởng",
+        "slug": "suoi-mo-da-nang-diem-da-ngoai",
+        "volume": 7600,
+        "intent": "Dã ngoại",
+        "lsi": "đường đi suối mơ hòa vang, tắm suối mơ đà nẵng, chuẩn bị đồ ăn cắm trại suối mơ",
+        "category_id": 398,
+        "category_name": "Du Lịch Đà Nẵng",
+        "schedule_date": "2026-09-08T08:35:00"
+      },
+      {
+        "keyword": "cẩm nang đi công viên châu á asia park đà nẵng",
+        "slug": "cong-vien-chau-a-asia-park-da-nang",
+        "volume": 13100,
+        "intent": "Giải trí",
+        "lsi": "giá vé vòng quay sun wheel đà nẵng, trò chơi cảm giác mạnh asia park",
+        "category_id": 398,
+        "category_name": "Du Lịch Đà Nẵng",
+        "schedule_date": "2026-09-08T08:40:00"
+      },
+      {
+        "keyword": "đặc sản đà nẵng mua về làm quà biếu",
+        "slug": "dac-san-da-nang-mua-ve-lam-qua",
+        "volume": 16800,
+        "intent": "Mua sắm",
+        "lsi": "chả bò đà nẵng bà hường, tré bà đệ đà nẵng, mực một nắng đà nẵng mua ở đâu",
+        "category_id": 398,
+        "category_name": "Du Lịch Đà Nẵng",
+        "schedule_date": "2026-09-08T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 2,
+    "date": "2026-09-09",
+    "topic": "Du Lịch Khánh Hòa & Nha Trang 2026",
+    "category": "Du Lịch Khánh Hòa",
+    "posts": [
+      {
+        "keyword": "kinh nghiệm du lịch nha trang tự túc 2026 trọn gói",
+        "slug": "kinh-nghiem-du-lich-nha-trang-tu-tuc-2026",
+        "volume": 23000,
+        "intent": "Cẩm nang",
+        "lsi": "lịch trình nha trang 4 ngày 3 đêm, chi phí du lịch nha trang, khách sạn trần phú nha trang",
+        "category_id": 343,
+        "category_name": "Du Lịch Khánh Hòa",
+        "schedule_date": "2026-09-09T08:00:00"
+      },
+      {
+        "keyword": "vinwonders nha trang cẩm nang vui chơi từ a-z",
+        "slug": "vinwonders-nha-trang-cam-nang-vui-choi",
+        "volume": 25400,
+        "intent": "Giải trí",
+        "lsi": "giá vé cáp treo vinwonders nha trang 2026, show diễn tata show, vịnh phao nổi khổng lồ",
+        "category_id": 343,
+        "category_name": "Du Lịch Khánh Hòa",
+        "schedule_date": "2026-09-09T08:05:00"
+      },
+      {
+        "keyword": "tour 3 đảo nha trang cano cao tốc lặn san hô",
+        "slug": "tour-3-dao-nha-trang-cano-cao-toc",
+        "volume": 17200,
+        "intent": "Trải nghiệm",
+        "lsi": "hòn mun lặn ngắm san hô, hòn tằm tắm bùn khoáng, làng chài nha trang ăn hải sản",
+        "category_id": 343,
+        "category_name": "Du Lịch Khánh Hòa",
+        "schedule_date": "2026-09-09T08:10:00"
+      },
+      {
+        "keyword": "viện hải dương học nha trang ngắm thủy cung sinh vật biển",
+        "slug": "vien-hai-duong-hoc-nha-trang",
+        "volume": 13800,
+        "intent": "Tham quan",
+        "lsi": "giá vé viện hải dương học nha trang 2026, đường hầm thủy cung nha trang, bộ xương cá voi khổng lồ",
+        "category_id": 343,
+        "category_name": "Du Lịch Khánh Hòa",
+        "schedule_date": "2026-09-09T08:15:00"
+      },
+      {
+        "keyword": "tháp bà ponagar nha trang kiến trúc chăm pa cổ kính",
+        "slug": "thap-ba-ponagar-nha-trang-kien-truc",
+        "volume": 12100,
+        "intent": "Văn hóa",
+        "lsi": "lễ hội tháp bà ponagar tháng mấy, trang phục khi vào viếng tháp bà, tắm bùn tháp bà",
+        "category_id": 343,
+        "category_name": "Du Lịch Khánh Hòa",
+        "schedule_date": "2026-09-09T08:20:00"
+      },
+      {
+        "keyword": "món ngon nha trang đậm đà vị biển",
+        "slug": "mon-ngon-nha-trang-dam-da-vi-bien",
+        "volume": 18500,
+        "intent": "Ẩm thực",
+        "lsi": "bún chả cá nha trang quán nào ngon, bánh căn nha trang, nem nướng ninh hòa chuẩn vị",
+        "category_id": 343,
+        "category_name": "Du Lịch Khánh Hòa",
+        "schedule_date": "2026-09-09T08:25:00"
+      },
+      {
+        "keyword": "vịnh vĩnh hy và cung đường biển bình tiên tuyệt mỹ",
+        "slug": "vinh-vinh-hy-va-cung-duong-binh-tien",
+        "volume": 11400,
+        "intent": "Khám phá",
+        "lsi": "thuê tàu đáy kính ngắm san hô vĩnh hy, resort amanoi vĩnh hy, check in vườn nho thái an",
+        "category_id": 343,
+        "category_name": "Du Lịch Khánh Hòa",
+        "schedule_date": "2026-09-09T08:30:00"
+      },
+      {
+        "keyword": "đảo điệp sơn con đường đi bộ giữa biển độc nhất vô nhị",
+        "slug": "dao-diep-son-con-duong-giua-bien",
+        "volume": 14600,
+        "intent": "Trải nghiệm",
+        "lsi": "thời điểm con đường cát điệp sơn nổi lên, cách đi ra đảo điệp sơn vạn giã, chèo kayak điệp sơn",
+        "category_id": 343,
+        "category_name": "Du Lịch Khánh Hòa",
+        "schedule_date": "2026-09-09T08:35:00"
+      },
+      {
+        "keyword": "bãi dài cam ranh thiên đường resort cát trắng mịn",
+        "slug": "bai-dai-cam-ranh-thien-duong-resort",
+        "volume": 9700,
+        "intent": "Nghỉ dưỡng",
+        "lsi": "top resort bãi dài cam ranh đẹp nhất, tắm biển bãi dài có sóng không, hải sản đầm thủy triều",
+        "category_id": 343,
+        "category_name": "Du Lịch Khánh Hòa",
+        "schedule_date": "2026-09-09T08:40:00"
+      },
+      {
+        "keyword": "kinh nghiệm mua yến sào khánh hòa chuẩn chất lượng",
+        "slug": "kinh-nghiem-mua-yen-sao-khanh-hoa",
+        "volume": 8900,
+        "intent": "Cẩm nang",
+        "lsi": "phân biệt yến sào khánh hòa thật giả, giá yến tinh chế khánh hòa, địa chỉ showroom uy tín",
+        "category_id": 343,
+        "category_name": "Du Lịch Khánh Hòa",
+        "schedule_date": "2026-09-09T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 3,
+    "date": "2026-09-10",
+    "topic": "Du Lịch Bình Định & Quy Nhơn 2026",
+    "category": "Du Lịch Bình Định",
+    "posts": [
+      {
+        "keyword": "kinh nghiệm du lịch quy nhơn tự túc 2026 tiết kiệm",
+        "slug": "kinh-nghiem-du-lich-quy-nhon-tu-tuc-2026",
+        "volume": 19500,
+        "intent": "Cẩm nang",
+        "lsi": "lịch trình quy nhơn 3 ngày 2 đêm, chi phí đi quy nhơn tự túc, khách sạn đường xuân diệu",
+        "category_id": 328,
+        "category_name": "Du Lịch Bình Định",
+        "schedule_date": "2026-09-10T08:00:00"
+      },
+      {
+        "keyword": "kỳ co eo gió quy nhơn maldives của việt nam",
+        "slug": "ky-co-eo-gio-quy-nhon-maldives",
+        "volume": 22100,
+        "intent": "Khám phá",
+        "lsi": "giá vé kỳ co eo gió 2026, đi kỳ co bằng cano hay đường bộ, con đường ven biển eo gió",
+        "category_id": 328,
+        "category_name": "Du Lịch Bình Định",
+        "schedule_date": "2026-09-10T08:05:00"
+      },
+      {
+        "keyword": "cù lao xanh quy nhơn viên ngọc thô giữa biển khơi",
+        "slug": "cu-lao-xanh-quy-nhon-vien-ngoc-tho",
+        "volume": 11800,
+        "intent": "Trải nghiệm",
+        "lsi": "cano đi cù lao xanh từ bến hàm tử, ngọn hải đăng cù lao xanh, cắm trại bãi gala",
+        "category_id": 328,
+        "category_name": "Du Lịch Bình Định",
+        "schedule_date": "2026-09-10T08:10:00"
+      },
+      {
+        "keyword": "ghềnh ráng tiên sa bãi tắm hoàng hậu và mộ hàn mạc tử",
+        "slug": "ghenh-rang-tien-sa-bai-tam-hoang-hau",
+        "volume": 13400,
+        "intent": "Tham quan",
+        "lsi": "bãi đá trứng nam phương hoàng hậu, thi sĩ hàn mạc tử ghềnh ráng, quán cafe đồi mộng cầm",
+        "category_id": 328,
+        "category_name": "Du Lịch Bình Định",
+        "schedule_date": "2026-09-10T08:15:00"
+      },
+      {
+        "keyword": "tháp đôi quy nhơn di tích kiến trúc champa độc đáo",
+        "slug": "thap-doi-quy-nhon-kien-truc-champa",
+        "volume": 8700,
+        "intent": "Văn hóa",
+        "lsi": "tháp bánh ít bình định, giá vé tháp đôi quy nhơn, chụp ảnh phong cách cổ kính champa",
+        "category_id": 328,
+        "category_name": "Du Lịch Bình Định",
+        "schedule_date": "2026-09-10T08:20:00"
+      },
+      {
+        "keyword": "món ngon quy nhơn ăn là mê quên lối về",
+        "slug": "mon-ngon-quy-nhon-an-la-me",
+        "volume": 15200,
+        "intent": "Ẩm thực",
+        "lsi": "bánh xèo tôm nhảy rau mầm quán nào ngon, bánh hỏi cháo lòng quy nhơn, bún sứa nước lèo",
+        "category_id": 328,
+        "category_name": "Du Lịch Bình Định",
+        "schedule_date": "2026-09-10T08:25:00"
+      },
+      {
+        "keyword": "đồi cát phương mai quy nhơn trải nghiệm trượt cát",
+        "slug": "doi-cat-phuong-mai-quy-nhon-truot-cat",
+        "volume": 9400,
+        "intent": "Trải nghiệm",
+        "lsi": "thời điểm trượt cát phương mai đẹp nhất, cầu thị nại vượt biển dài nhất, chụp ảnh đồi cát",
+        "category_id": 328,
+        "category_name": "Du Lịch Bình Định",
+        "schedule_date": "2026-09-10T08:30:00"
+      },
+      {
+        "keyword": "hòn khô quy nhơn mùa cây cầu gỗ ven vách đá",
+        "slug": "hon-kho-quy-nhon-cay-cau-go-ven-bien",
+        "volume": 12300,
+        "intent": "Khám phá",
+        "lsi": "lặn ngắm san hô hòn khô, con đường đi bộ xuyên biển hòn khô khi thủy triều rút",
+        "category_id": 328,
+        "category_name": "Du Lịch Bình Định",
+        "schedule_date": "2026-09-10T08:35:00"
+      },
+      {
+        "keyword": "làng chài nhơn hải bình định nhịp sống bình yên",
+        "slug": "lang-chai-nhon-hai-binh-dinh",
+        "volume": 7800,
+        "intent": "Văn hóa",
+        "lsi": "homestay làng chài nhơn hải ven biển, thưởng thức mực tươi nướng tại bè, ngắm hoàng hôn",
+        "category_id": 328,
+        "category_name": "Du Lịch Bình Định",
+        "schedule_date": "2026-09-10T08:40:00"
+      },
+      {
+        "keyword": "đặc sản bình định mua làm quà trứ danh đất võ",
+        "slug": "dac-san-binh-dinh-mua-lam-qua",
+        "volume": 10600,
+        "intent": "Mua sắm",
+        "lsi": "rượu bầu đá chính gốc bình định, nem chợ huyện, bánh ít lá gai, bánh tráng nước dừa tam quan",
+        "category_id": 328,
+        "category_name": "Du Lịch Bình Định",
+        "schedule_date": "2026-09-10T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 4,
+    "date": "2026-09-11",
+    "topic": "Du Lịch Hà Giang Hùng Vĩ 2026",
+    "category": "Du Lịch Hà Giang",
+    "posts": [
+      {
+        "keyword": "sông nho quế hẻm tu sản",
+        "slug": "song-nho-que-hem-tu-san",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm sông nho quế hẻm tu sản, giá vé sông nho quế hẻm tu sản 2026, địa điểm ăn uống sông nho quế hẻm tu sản",
+        "category_id": 298,
+        "category_name": "Du Lịch Hà Giang",
+        "schedule_date": "2026-09-11T08:00:00"
+      },
+      {
+        "keyword": "đèo mã pí lèng",
+        "slug": "eo-ma-pi-leng",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đèo mã pí lèng, giá vé đèo mã pí lèng 2026, địa điểm ăn uống đèo mã pí lèng",
+        "category_id": 298,
+        "category_name": "Du Lịch Hà Giang",
+        "schedule_date": "2026-09-11T08:05:00"
+      },
+      {
+        "keyword": "cột cờ lũng cú",
+        "slug": "cot-co-lung-cu",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cột cờ lũng cú, giá vé cột cờ lũng cú 2026, địa điểm ăn uống cột cờ lũng cú",
+        "category_id": 298,
+        "category_name": "Du Lịch Hà Giang",
+        "schedule_date": "2026-09-11T08:10:00"
+      },
+      {
+        "keyword": "dốc thẩm mã",
+        "slug": "doc-tham-ma",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm dốc thẩm mã, giá vé dốc thẩm mã 2026, địa điểm ăn uống dốc thẩm mã",
+        "category_id": 298,
+        "category_name": "Du Lịch Hà Giang",
+        "schedule_date": "2026-09-11T08:15:00"
+      },
+      {
+        "keyword": "dinh thự vua mèo",
+        "slug": "dinh-thu-vua-meo",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm dinh thự vua mèo, giá vé dinh thự vua mèo 2026, địa điểm ăn uống dinh thự vua mèo",
+        "category_id": 298,
+        "category_name": "Du Lịch Hà Giang",
+        "schedule_date": "2026-09-11T08:20:00"
+      },
+      {
+        "keyword": "phố cổ đồng văn",
+        "slug": "pho-co-ong-van",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm phố cổ đồng văn, giá vé phố cổ đồng văn 2026, địa điểm ăn uống phố cổ đồng văn",
+        "category_id": 298,
+        "category_name": "Du Lịch Hà Giang",
+        "schedule_date": "2026-09-11T08:25:00"
+      },
+      {
+        "keyword": "mùa hoa tam giác mạch",
+        "slug": "mua-hoa-tam-giac-mach",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm mùa hoa tam giác mạch, giá vé mùa hoa tam giác mạch 2026, địa điểm ăn uống mùa hoa tam giác mạch",
+        "category_id": 298,
+        "category_name": "Du Lịch Hà Giang",
+        "schedule_date": "2026-09-11T08:30:00"
+      },
+      {
+        "keyword": "cổng trời quản bạ",
+        "slug": "cong-troi-quan-ba",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cổng trời quản bạ, giá vé cổng trời quản bạ 2026, địa điểm ăn uống cổng trời quản bạ",
+        "category_id": 298,
+        "category_name": "Du Lịch Hà Giang",
+        "schedule_date": "2026-09-11T08:35:00"
+      },
+      {
+        "keyword": "làng lô lô chải",
+        "slug": "lang-lo-lo-chai",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm làng lô lô chải, giá vé làng lô lô chải 2026, địa điểm ăn uống làng lô lô chải",
+        "category_id": 298,
+        "category_name": "Du Lịch Hà Giang",
+        "schedule_date": "2026-09-11T08:40:00"
+      },
+      {
+        "keyword": "phượt hà giang loop",
+        "slug": "phuot-ha-giang-loop",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm phượt hà giang loop, giá vé phượt hà giang loop 2026, địa điểm ăn uống phượt hà giang loop",
+        "category_id": 298,
+        "category_name": "Du Lịch Hà Giang",
+        "schedule_date": "2026-09-11T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 5,
+    "date": "2026-09-12",
+    "topic": "Du Lịch Lào Cai & Sa Pa 2026",
+    "category": "Du Lịch Lào Cai",
+    "posts": [
+      {
+        "keyword": "fansipan nóc nhà đông dương",
+        "slug": "fansipan-noc-nha-ong-duong",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm fansipan nóc nhà đông dương, giá vé fansipan nóc nhà đông dương 2026, địa điểm ăn uống fansipan nóc nhà đông dương",
+        "category_id": 297,
+        "category_name": "Du Lịch Lào Cai",
+        "schedule_date": "2026-09-12T08:00:00"
+      },
+      {
+        "keyword": "bản cát cát",
+        "slug": "ban-cat-cat",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bản cát cát, giá vé bản cát cát 2026, địa điểm ăn uống bản cát cát",
+        "category_id": 297,
+        "category_name": "Du Lịch Lào Cai",
+        "schedule_date": "2026-09-12T08:05:00"
+      },
+      {
+        "keyword": "bản tả van",
+        "slug": "ban-ta-van",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bản tả van, giá vé bản tả van 2026, địa điểm ăn uống bản tả van",
+        "category_id": 297,
+        "category_name": "Du Lịch Lào Cai",
+        "schedule_date": "2026-09-12T08:10:00"
+      },
+      {
+        "keyword": "đèo ô quy hồ",
+        "slug": "eo-o-quy-ho",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đèo ô quy hồ, giá vé đèo ô quy hồ 2026, địa điểm ăn uống đèo ô quy hồ",
+        "category_id": 297,
+        "category_name": "Du Lịch Lào Cai",
+        "schedule_date": "2026-09-12T08:15:00"
+      },
+      {
+        "keyword": "cổng trời sa pa",
+        "slug": "cong-troi-sa-pa",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cổng trời sa pa, giá vé cổng trời sa pa 2026, địa điểm ăn uống cổng trời sa pa",
+        "category_id": 297,
+        "category_name": "Du Lịch Lào Cai",
+        "schedule_date": "2026-09-12T08:20:00"
+      },
+      {
+        "keyword": "thác bạc sa pa",
+        "slug": "thac-bac-sa-pa",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm thác bạc sa pa, giá vé thác bạc sa pa 2026, địa điểm ăn uống thác bạc sa pa",
+        "category_id": 297,
+        "category_name": "Du Lịch Lào Cai",
+        "schedule_date": "2026-09-12T08:25:00"
+      },
+      {
+        "keyword": "nhà thờ đá sa pa",
+        "slug": "nha-tho-a-sa-pa",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm nhà thờ đá sa pa, giá vé nhà thờ đá sa pa 2026, địa điểm ăn uống nhà thờ đá sa pa",
+        "category_id": 297,
+        "category_name": "Du Lịch Lào Cai",
+        "schedule_date": "2026-09-12T08:30:00"
+      },
+      {
+        "keyword": "lẩu cá hồi sa pa",
+        "slug": "lau-ca-hoi-sa-pa",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm lẩu cá hồi sa pa, giá vé lẩu cá hồi sa pa 2026, địa điểm ăn uống lẩu cá hồi sa pa",
+        "category_id": 297,
+        "category_name": "Du Lịch Lào Cai",
+        "schedule_date": "2026-09-12T08:35:00"
+      },
+      {
+        "keyword": "chợ đêm sa pa",
+        "slug": "cho-em-sa-pa",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chợ đêm sa pa, giá vé chợ đêm sa pa 2026, địa điểm ăn uống chợ đêm sa pa",
+        "category_id": 297,
+        "category_name": "Du Lịch Lào Cai",
+        "schedule_date": "2026-09-12T08:40:00"
+      },
+      {
+        "keyword": "mùa lúa chín mường hoa",
+        "slug": "mua-lua-chin-muong-hoa",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm mùa lúa chín mường hoa, giá vé mùa lúa chín mường hoa 2026, địa điểm ăn uống mùa lúa chín mường hoa",
+        "category_id": 297,
+        "category_name": "Du Lịch Lào Cai",
+        "schedule_date": "2026-09-12T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 6,
+    "date": "2026-09-13",
+    "topic": "Du Lịch Ninh Bình Tràng An 2026",
+    "category": "Du Lịch Ninh Bình",
+    "posts": [
+      {
+        "keyword": "quần thể danh thắng tràng an",
+        "slug": "quan-the-danh-thang-trang-an",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm quần thể danh thắng tràng an, giá vé quần thể danh thắng tràng an 2026, địa điểm ăn uống quần thể danh thắng tràng an",
+        "category_id": 391,
+        "category_name": "Du Lịch Ninh Bình",
+        "schedule_date": "2026-09-13T08:00:00"
+      },
+      {
+        "keyword": "hang múa đỉnh ngọa long",
+        "slug": "hang-mua-inh-ngoa-long",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm hang múa đỉnh ngọa long, giá vé hang múa đỉnh ngọa long 2026, địa điểm ăn uống hang múa đỉnh ngọa long",
+        "category_id": 391,
+        "category_name": "Du Lịch Ninh Bình",
+        "schedule_date": "2026-09-13T08:05:00"
+      },
+      {
+        "keyword": "động thiên hà",
+        "slug": "ong-thien-ha",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm động thiên hà, giá vé động thiên hà 2026, địa điểm ăn uống động thiên hà",
+        "category_id": 391,
+        "category_name": "Du Lịch Ninh Bình",
+        "schedule_date": "2026-09-13T08:10:00"
+      },
+      {
+        "keyword": "đầm vân long",
+        "slug": "am-van-long",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đầm vân long, giá vé đầm vân long 2026, địa điểm ăn uống đầm vân long",
+        "category_id": 391,
+        "category_name": "Du Lịch Ninh Bình",
+        "schedule_date": "2026-09-13T08:15:00"
+      },
+      {
+        "keyword": "cố đô hoa lư",
+        "slug": "co-o-hoa-lu",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cố đô hoa lư, giá vé cố đô hoa lư 2026, địa điểm ăn uống cố đô hoa lư",
+        "category_id": 391,
+        "category_name": "Du Lịch Ninh Bình",
+        "schedule_date": "2026-09-13T08:20:00"
+      },
+      {
+        "keyword": "chùa bái đính",
+        "slug": "chua-bai-inh",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chùa bái đính, giá vé chùa bái đính 2026, địa điểm ăn uống chùa bái đính",
+        "category_id": 391,
+        "category_name": "Du Lịch Ninh Bình",
+        "schedule_date": "2026-09-13T08:25:00"
+      },
+      {
+        "keyword": "vườn chim thung nham",
+        "slug": "vuon-chim-thung-nham",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm vườn chim thung nham, giá vé vườn chim thung nham 2026, địa điểm ăn uống vườn chim thung nham",
+        "category_id": 391,
+        "category_name": "Du Lịch Ninh Bình",
+        "schedule_date": "2026-09-13T08:30:00"
+      },
+      {
+        "keyword": "thịt dê cơm cháy ninh bình",
+        "slug": "thit-de-com-chay-ninh-binh",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm thịt dê cơm cháy ninh bình, giá vé thịt dê cơm cháy ninh bình 2026, địa điểm ăn uống thịt dê cơm cháy ninh bình",
+        "category_id": 391,
+        "category_name": "Du Lịch Ninh Bình",
+        "schedule_date": "2026-09-13T08:35:00"
+      },
+      {
+        "keyword": "phố cổ hoa lư",
+        "slug": "pho-co-hoa-lu",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm phố cổ hoa lư, giá vé phố cổ hoa lư 2026, địa điểm ăn uống phố cổ hoa lư",
+        "category_id": 391,
+        "category_name": "Du Lịch Ninh Bình",
+        "schedule_date": "2026-09-13T08:40:00"
+      },
+      {
+        "keyword": "tam cốc bích động",
+        "slug": "tam-coc-bich-ong",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm tam cốc bích động, giá vé tam cốc bích động 2026, địa điểm ăn uống tam cốc bích động",
+        "category_id": 391,
+        "category_name": "Du Lịch Ninh Bình",
+        "schedule_date": "2026-09-13T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 7,
+    "date": "2026-09-14",
+    "topic": "Du Lịch Bình Thuận & Mũi Né 2026",
+    "category": "Du Lịch Bình Thuận",
+    "posts": [
+      {
+        "keyword": "đồi cát bay mũi né",
+        "slug": "oi-cat-bay-mui-ne",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đồi cát bay mũi né, giá vé đồi cát bay mũi né 2026, địa điểm ăn uống đồi cát bay mũi né",
+        "category_id": 308,
+        "category_name": "Du Lịch Bình Thuận",
+        "schedule_date": "2026-09-14T08:00:00"
+      },
+      {
+        "keyword": "bàu trắng xe jeep cát",
+        "slug": "bau-trang-xe-jeep-cat",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bàu trắng xe jeep cát, giá vé bàu trắng xe jeep cát 2026, địa điểm ăn uống bàu trắng xe jeep cát",
+        "category_id": 308,
+        "category_name": "Du Lịch Bình Thuận",
+        "schedule_date": "2026-09-14T08:05:00"
+      },
+      {
+        "keyword": "suối tiên mũi né",
+        "slug": "suoi-tien-mui-ne",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm suối tiên mũi né, giá vé suối tiên mũi né 2026, địa điểm ăn uống suối tiên mũi né",
+        "category_id": 308,
+        "category_name": "Du Lịch Bình Thuận",
+        "schedule_date": "2026-09-14T08:10:00"
+      },
+      {
+        "keyword": "làng chài mũi né",
+        "slug": "lang-chai-mui-ne",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm làng chài mũi né, giá vé làng chài mũi né 2026, địa điểm ăn uống làng chài mũi né",
+        "category_id": 308,
+        "category_name": "Du Lịch Bình Thuận",
+        "schedule_date": "2026-09-14T08:15:00"
+      },
+      {
+        "keyword": "hải đăng kê gà",
+        "slug": "hai-ang-ke-ga",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm hải đăng kê gà, giá vé hải đăng kê gà 2026, địa điểm ăn uống hải đăng kê gà",
+        "category_id": 308,
+        "category_name": "Du Lịch Bình Thuận",
+        "schedule_date": "2026-09-14T08:20:00"
+      },
+      {
+        "keyword": "lâu đài rượu vang mũi né",
+        "slug": "lau-ai-ruou-vang-mui-ne",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm lâu đài rượu vang mũi né, giá vé lâu đài rượu vang mũi né 2026, địa điểm ăn uống lâu đài rượu vang mũi né",
+        "category_id": 308,
+        "category_name": "Du Lịch Bình Thuận",
+        "schedule_date": "2026-09-14T08:25:00"
+      },
+      {
+        "keyword": "bãi đá ông địa",
+        "slug": "bai-a-ong-ia",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bãi đá ông địa, giá vé bãi đá ông địa 2026, địa điểm ăn uống bãi đá ông địa",
+        "category_id": 308,
+        "category_name": "Du Lịch Bình Thuận",
+        "schedule_date": "2026-09-14T08:30:00"
+      },
+      {
+        "keyword": "bánh canh chả cá phan thiết",
+        "slug": "banh-canh-cha-ca-phan-thiet",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bánh canh chả cá phan thiết, giá vé bánh canh chả cá phan thiết 2026, địa điểm ăn uống bánh canh chả cá phan thiết",
+        "category_id": 308,
+        "category_name": "Du Lịch Bình Thuận",
+        "schedule_date": "2026-09-14T08:35:00"
+      },
+      {
+        "keyword": "lẩu thả mũi né",
+        "slug": "lau-tha-mui-ne",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm lẩu thả mũi né, giá vé lẩu thả mũi né 2026, địa điểm ăn uống lẩu thả mũi né",
+        "category_id": 308,
+        "category_name": "Du Lịch Bình Thuận",
+        "schedule_date": "2026-09-14T08:40:00"
+      },
+      {
+        "keyword": "tháp chàm poshanu",
+        "slug": "thap-cham-poshanu",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm tháp chàm poshanu, giá vé tháp chàm poshanu 2026, địa điểm ăn uống tháp chàm poshanu",
+        "category_id": 308,
+        "category_name": "Du Lịch Bình Thuận",
+        "schedule_date": "2026-09-14T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 8,
+    "date": "2026-09-15",
+    "topic": "Du Lịch Bà Rịa - Vũng Tàu 2026",
+    "category": "Du Lịch Bà Rịa - Vũng Tàu",
+    "posts": [
+      {
+        "keyword": "tượng chúa kito giang tay",
+        "slug": "tuong-chua-kito-giang-tay",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm tượng chúa kito giang tay, giá vé tượng chúa kito giang tay 2026, địa điểm ăn uống tượng chúa kito giang tay",
+        "category_id": 409,
+        "category_name": "Du Lịch Bà Rịa - Vũng Tàu",
+        "schedule_date": "2026-09-15T08:00:00"
+      },
+      {
+        "keyword": "mũi nghinh phong cổng trời",
+        "slug": "mui-nghinh-phong-cong-troi",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm mũi nghinh phong cổng trời, giá vé mũi nghinh phong cổng trời 2026, địa điểm ăn uống mũi nghinh phong cổng trời",
+        "category_id": 409,
+        "category_name": "Du Lịch Bà Rịa - Vũng Tàu",
+        "schedule_date": "2026-09-15T08:05:00"
+      },
+      {
+        "keyword": "hải đăng vũng tàu",
+        "slug": "hai-ang-vung-tau",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm hải đăng vũng tàu, giá vé hải đăng vũng tàu 2026, địa điểm ăn uống hải đăng vũng tàu",
+        "category_id": 409,
+        "category_name": "Du Lịch Bà Rịa - Vũng Tàu",
+        "schedule_date": "2026-09-15T08:10:00"
+      },
+      {
+        "keyword": "bến thuyền marina vũng tàu",
+        "slug": "ben-thuyen-marina-vung-tau",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bến thuyền marina vũng tàu, giá vé bến thuyền marina vũng tàu 2026, địa điểm ăn uống bến thuyền marina vũng tàu",
+        "category_id": 409,
+        "category_name": "Du Lịch Bà Rịa - Vũng Tàu",
+        "schedule_date": "2026-09-15T08:15:00"
+      },
+      {
+        "keyword": "bánh khọt vũng tàu",
+        "slug": "banh-khot-vung-tau",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bánh khọt vũng tàu, giá vé bánh khọt vũng tàu 2026, địa điểm ăn uống bánh khọt vũng tàu",
+        "category_id": 409,
+        "category_name": "Du Lịch Bà Rịa - Vũng Tàu",
+        "schedule_date": "2026-09-15T08:20:00"
+      },
+      {
+        "keyword": "biển hồ tràm",
+        "slug": "bien-ho-tram",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm biển hồ tràm, giá vé biển hồ tràm 2026, địa điểm ăn uống biển hồ tràm",
+        "category_id": 409,
+        "category_name": "Du Lịch Bà Rịa - Vũng Tàu",
+        "schedule_date": "2026-09-15T08:25:00"
+      },
+      {
+        "keyword": "suối nước nóng bình châu",
+        "slug": "suoi-nuoc-nong-binh-chau",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm suối nước nóng bình châu, giá vé suối nước nóng bình châu 2026, địa điểm ăn uống suối nước nóng bình châu",
+        "category_id": 409,
+        "category_name": "Du Lịch Bà Rịa - Vũng Tàu",
+        "schedule_date": "2026-09-15T08:30:00"
+      },
+      {
+        "keyword": "đồi con heo vũng tàu",
+        "slug": "oi-con-heo-vung-tau",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đồi con heo vũng tàu, giá vé đồi con heo vũng tàu 2026, địa điểm ăn uống đồi con heo vũng tàu",
+        "category_id": 409,
+        "category_name": "Du Lịch Bà Rịa - Vũng Tàu",
+        "schedule_date": "2026-09-15T08:35:00"
+      },
+      {
+        "keyword": "chợ đêm vũng tàu",
+        "slug": "cho-em-vung-tau",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chợ đêm vũng tàu, giá vé chợ đêm vũng tàu 2026, địa điểm ăn uống chợ đêm vũng tàu",
+        "category_id": 409,
+        "category_name": "Du Lịch Bà Rịa - Vũng Tàu",
+        "schedule_date": "2026-09-15T08:40:00"
+      },
+      {
+        "keyword": "bạch dinh vũng tàu",
+        "slug": "bach-dinh-vung-tau",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bạch dinh vũng tàu, giá vé bạch dinh vũng tàu 2026, địa điểm ăn uống bạch dinh vũng tàu",
+        "category_id": 409,
+        "category_name": "Du Lịch Bà Rịa - Vũng Tàu",
+        "schedule_date": "2026-09-15T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 9,
+    "date": "2026-09-16",
+    "topic": "Du Lịch Kiên Giang & Phú Quốc 2026",
+    "category": "Du Lịch Kiên Giang",
+    "posts": [
+      {
+        "keyword": "tour 4 đảo phú quốc",
+        "slug": "tour-4-ao-phu-quoc",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm tour 4 đảo phú quốc, giá vé tour 4 đảo phú quốc 2026, địa điểm ăn uống tour 4 đảo phú quốc",
+        "category_id": 419,
+        "category_name": "Du Lịch Kiên Giang",
+        "schedule_date": "2026-09-16T08:00:00"
+      },
+      {
+        "keyword": "cáp treo hòn thơm vượt biển",
+        "slug": "cap-treo-hon-thom-vuot-bien",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cáp treo hòn thơm vượt biển, giá vé cáp treo hòn thơm vượt biển 2026, địa điểm ăn uống cáp treo hòn thơm vượt biển",
+        "category_id": 419,
+        "category_name": "Du Lịch Kiên Giang",
+        "schedule_date": "2026-09-16T08:05:00"
+      },
+      {
+        "keyword": "grand world phú quốc",
+        "slug": "grand-world-phu-quoc",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm grand world phú quốc, giá vé grand world phú quốc 2026, địa điểm ăn uống grand world phú quốc",
+        "category_id": 419,
+        "category_name": "Du Lịch Kiên Giang",
+        "schedule_date": "2026-09-16T08:10:00"
+      },
+      {
+        "keyword": "vinpearl safari phú quốc",
+        "slug": "vinpearl-safari-phu-quoc",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm vinpearl safari phú quốc, giá vé vinpearl safari phú quốc 2026, địa điểm ăn uống vinpearl safari phú quốc",
+        "category_id": 419,
+        "category_name": "Du Lịch Kiên Giang",
+        "schedule_date": "2026-09-16T08:15:00"
+      },
+      {
+        "keyword": "làng chài rạch vẹm",
+        "slug": "lang-chai-rach-vem",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm làng chài rạch vẹm, giá vé làng chài rạch vẹm 2026, địa điểm ăn uống làng chài rạch vẹm",
+        "category_id": 419,
+        "category_name": "Du Lịch Kiên Giang",
+        "schedule_date": "2026-09-16T08:20:00"
+      },
+      {
+        "keyword": "bãi sao phú quốc",
+        "slug": "bai-sao-phu-quoc",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bãi sao phú quốc, giá vé bãi sao phú quốc 2026, địa điểm ăn uống bãi sao phú quốc",
+        "category_id": 419,
+        "category_name": "Du Lịch Kiên Giang",
+        "schedule_date": "2026-09-16T08:25:00"
+      },
+      {
+        "keyword": "bún quậy kiến xây",
+        "slug": "bun-quay-kien-xay",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bún quậy kiến xây, giá vé bún quậy kiến xây 2026, địa điểm ăn uống bún quậy kiến xây",
+        "category_id": 419,
+        "category_name": "Du Lịch Kiên Giang",
+        "schedule_date": "2026-09-16T08:30:00"
+      },
+      {
+        "keyword": "sunset sanato phú quốc",
+        "slug": "sunset-sanato-phu-quoc",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm sunset sanato phú quốc, giá vé sunset sanato phú quốc 2026, địa điểm ăn uống sunset sanato phú quốc",
+        "category_id": 419,
+        "category_name": "Du Lịch Kiên Giang",
+        "schedule_date": "2026-09-16T08:35:00"
+      },
+      {
+        "keyword": "chùa hộ quốc phú quốc",
+        "slug": "chua-ho-quoc-phu-quoc",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chùa hộ quốc phú quốc, giá vé chùa hộ quốc phú quốc 2026, địa điểm ăn uống chùa hộ quốc phú quốc",
+        "category_id": 419,
+        "category_name": "Du Lịch Kiên Giang",
+        "schedule_date": "2026-09-16T08:40:00"
+      },
+      {
+        "keyword": "chợ đêm phú quốc",
+        "slug": "cho-em-phu-quoc",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chợ đêm phú quốc, giá vé chợ đêm phú quốc 2026, địa điểm ăn uống chợ đêm phú quốc",
+        "category_id": 419,
+        "category_name": "Du Lịch Kiên Giang",
+        "schedule_date": "2026-09-16T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 10,
+    "date": "2026-09-17",
+    "topic": "Du Lịch Lâm Đồng & Đà Lạt 2026",
+    "category": "Du Lịch Lâm Đồng",
+    "posts": [
+      {
+        "keyword": "săn mây đồi đa phú",
+        "slug": "san-may-oi-a-phu",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm săn mây đồi đa phú, giá vé săn mây đồi đa phú 2026, địa điểm ăn uống săn mây đồi đa phú",
+        "category_id": 406,
+        "category_name": "Du Lịch Lâm Đồng",
+        "schedule_date": "2026-09-17T08:00:00"
+      },
+      {
+        "keyword": "đồi cỏ hồng đà lạt",
+        "slug": "oi-co-hong-a-lat",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đồi cỏ hồng đà lạt, giá vé đồi cỏ hồng đà lạt 2026, địa điểm ăn uống đồi cỏ hồng đà lạt",
+        "category_id": 406,
+        "category_name": "Du Lịch Lâm Đồng",
+        "schedule_date": "2026-09-17T08:05:00"
+      },
+      {
+        "keyword": "hồ tuyền lâm chèo sup",
+        "slug": "ho-tuyen-lam-cheo-sup",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm hồ tuyền lâm chèo sup, giá vé hồ tuyền lâm chèo sup 2026, địa điểm ăn uống hồ tuyền lâm chèo sup",
+        "category_id": 406,
+        "category_name": "Du Lịch Lâm Đồng",
+        "schedule_date": "2026-09-17T08:10:00"
+      },
+      {
+        "keyword": "thác dalanta máng trượt",
+        "slug": "thac-dalanta-mang-truot",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm thác dalanta máng trượt, giá vé thác dalanta máng trượt 2026, địa điểm ăn uống thác dalanta máng trượt",
+        "category_id": 406,
+        "category_name": "Du Lịch Lâm Đồng",
+        "schedule_date": "2026-09-17T08:15:00"
+      },
+      {
+        "keyword": "ga đà lạt",
+        "slug": "ga-a-lat",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm ga đà lạt, giá vé ga đà lạt 2026, địa điểm ăn uống ga đà lạt",
+        "category_id": 406,
+        "category_name": "Du Lịch Lâm Đồng",
+        "schedule_date": "2026-09-17T08:20:00"
+      },
+      {
+        "keyword": "lẩu gà lá é tao ngộ",
+        "slug": "lau-ga-la-e-tao-ngo",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm lẩu gà lá é tao ngộ, giá vé lẩu gà lá é tao ngộ 2026, địa điểm ăn uống lẩu gà lá é tao ngộ",
+        "category_id": 406,
+        "category_name": "Du Lịch Lâm Đồng",
+        "schedule_date": "2026-09-17T08:25:00"
+      },
+      {
+        "keyword": "bánh tráng nướng đà lạt",
+        "slug": "banh-trang-nuong-a-lat",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bánh tráng nướng đà lạt, giá vé bánh tráng nướng đà lạt 2026, địa điểm ăn uống bánh tráng nướng đà lạt",
+        "category_id": 406,
+        "category_name": "Du Lịch Lâm Đồng",
+        "schedule_date": "2026-09-17T08:30:00"
+      },
+      {
+        "keyword": "quán cafe view đồi mây",
+        "slug": "quan-cafe-view-oi-may",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm quán cafe view đồi mây, giá vé quán cafe view đồi mây 2026, địa điểm ăn uống quán cafe view đồi mây",
+        "category_id": 406,
+        "category_name": "Du Lịch Lâm Đồng",
+        "schedule_date": "2026-09-17T08:35:00"
+      },
+      {
+        "keyword": "nông trại cún puppy farm",
+        "slug": "nong-trai-cun-puppy-farm",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm nông trại cún puppy farm, giá vé nông trại cún puppy farm 2026, địa điểm ăn uống nông trại cún puppy farm",
+        "category_id": 406,
+        "category_name": "Du Lịch Lâm Đồng",
+        "schedule_date": "2026-09-17T08:40:00"
+      },
+      {
+        "keyword": "quảng trường lâm viên",
+        "slug": "quang-truong-lam-vien",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm quảng trường lâm viên, giá vé quảng trường lâm viên 2026, địa điểm ăn uống quảng trường lâm viên",
+        "category_id": 406,
+        "category_name": "Du Lịch Lâm Đồng",
+        "schedule_date": "2026-09-17T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 11,
+    "date": "2026-09-18",
+    "topic": "Du Lịch Huế Cố Đô 2026",
+    "category": "Du Lịch Huế",
+    "posts": [
+      {
+        "keyword": "đại nội huế hoàng thành",
+        "slug": "ai-noi-hue-hoang-thanh",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đại nội huế hoàng thành, giá vé đại nội huế hoàng thành 2026, địa điểm ăn uống đại nội huế hoàng thành",
+        "category_id": 397,
+        "category_name": "Du Lịch Huế",
+        "schedule_date": "2026-09-18T08:00:00"
+      },
+      {
+        "keyword": "lăng khải định",
+        "slug": "lang-khai-inh",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm lăng khải định, giá vé lăng khải định 2026, địa điểm ăn uống lăng khải định",
+        "category_id": 397,
+        "category_name": "Du Lịch Huế",
+        "schedule_date": "2026-09-18T08:05:00"
+      },
+      {
+        "keyword": "lăng minh mạng",
+        "slug": "lang-minh-mang",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm lăng minh mạng, giá vé lăng minh mạng 2026, địa điểm ăn uống lăng minh mạng",
+        "category_id": 397,
+        "category_name": "Du Lịch Huế",
+        "schedule_date": "2026-09-18T08:10:00"
+      },
+      {
+        "keyword": "chùa thiên mụ sông hương",
+        "slug": "chua-thien-mu-song-huong",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chùa thiên mụ sông hương, giá vé chùa thiên mụ sông hương 2026, địa điểm ăn uống chùa thiên mụ sông hương",
+        "category_id": 397,
+        "category_name": "Du Lịch Huế",
+        "schedule_date": "2026-09-18T08:15:00"
+      },
+      {
+        "keyword": "đồi thiên an hồ thủy tiên",
+        "slug": "oi-thien-an-ho-thuy-tien",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đồi thiên an hồ thủy tiên, giá vé đồi thiên an hồ thủy tiên 2026, địa điểm ăn uống đồi thiên an hồ thủy tiên",
+        "category_id": 397,
+        "category_name": "Du Lịch Huế",
+        "schedule_date": "2026-09-18T08:20:00"
+      },
+      {
+        "keyword": "bún bò huế chuẩn vị",
+        "slug": "bun-bo-hue-chuan-vi",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bún bò huế chuẩn vị, giá vé bún bò huế chuẩn vị 2026, địa điểm ăn uống bún bò huế chuẩn vị",
+        "category_id": 397,
+        "category_name": "Du Lịch Huế",
+        "schedule_date": "2026-09-18T08:25:00"
+      },
+      {
+        "keyword": "vịnh lăng cô đầm lập an",
+        "slug": "vinh-lang-co-am-lap-an",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm vịnh lăng cô đầm lập an, giá vé vịnh lăng cô đầm lập an 2026, địa điểm ăn uống vịnh lăng cô đầm lập an",
+        "category_id": 397,
+        "category_name": "Du Lịch Huế",
+        "schedule_date": "2026-09-18T08:30:00"
+      },
+      {
+        "keyword": "làng hương thủy xuân",
+        "slug": "lang-huong-thuy-xuan",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm làng hương thủy xuân, giá vé làng hương thủy xuân 2026, địa điểm ăn uống làng hương thủy xuân",
+        "category_id": 397,
+        "category_name": "Du Lịch Huế",
+        "schedule_date": "2026-09-18T08:35:00"
+      },
+      {
+        "keyword": "chè hẻm huế 20 món",
+        "slug": "che-hem-hue-20-mon",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chè hẻm huế 20 món, giá vé chè hẻm huế 20 món 2026, địa điểm ăn uống chè hẻm huế 20 món",
+        "category_id": 397,
+        "category_name": "Du Lịch Huế",
+        "schedule_date": "2026-09-18T08:40:00"
+      },
+      {
+        "keyword": "chợ đông ba",
+        "slug": "cho-ong-ba",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chợ đông ba, giá vé chợ đông ba 2026, địa điểm ăn uống chợ đông ba",
+        "category_id": 397,
+        "category_name": "Du Lịch Huế",
+        "schedule_date": "2026-09-18T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 12,
+    "date": "2026-09-19",
+    "topic": "Du Lịch Quảng Bình Hang Động 2026",
+    "category": "Du Lịch Quảng Bình",
+    "posts": [
+      {
+        "keyword": "động thiên đường hoàng cung trong lòng đất",
+        "slug": "ong-thien-uong-hoang-cung-trong-long-at",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm động thiên đường hoàng cung trong lòng đất, giá vé động thiên đường hoàng cung trong lòng đất 2026, địa điểm ăn uống động thiên đường hoàng cung trong lòng đất",
+        "category_id": 395,
+        "category_name": "Du Lịch Quảng Bình",
+        "schedule_date": "2026-09-19T08:00:00"
+      },
+      {
+        "keyword": "suối nước moọc xanh ngọc",
+        "slug": "suoi-nuoc-mooc-xanh-ngoc",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm suối nước moọc xanh ngọc, giá vé suối nước moọc xanh ngọc 2026, địa điểm ăn uống suối nước moọc xanh ngọc",
+        "category_id": 395,
+        "category_name": "Du Lịch Quảng Bình",
+        "schedule_date": "2026-09-19T08:05:00"
+      },
+      {
+        "keyword": "sông chày hang tối zipline",
+        "slug": "song-chay-hang-toi-zipline",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm sông chày hang tối zipline, giá vé sông chày hang tối zipline 2026, địa điểm ăn uống sông chày hang tối zipline",
+        "category_id": 395,
+        "category_name": "Du Lịch Quảng Bình",
+        "schedule_date": "2026-09-19T08:10:00"
+      },
+      {
+        "keyword": "động phong nha kỳ quan",
+        "slug": "ong-phong-nha-ky-quan",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm động phong nha kỳ quan, giá vé động phong nha kỳ quan 2026, địa điểm ăn uống động phong nha kỳ quan",
+        "category_id": 395,
+        "category_name": "Du Lịch Quảng Bình",
+        "schedule_date": "2026-09-19T08:15:00"
+      },
+      {
+        "keyword": "cồn cát quang phú trượt cát",
+        "slug": "con-cat-quang-phu-truot-cat",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cồn cát quang phú trượt cát, giá vé cồn cát quang phú trượt cát 2026, địa điểm ăn uống cồn cát quang phú trượt cát",
+        "category_id": 395,
+        "category_name": "Du Lịch Quảng Bình",
+        "schedule_date": "2026-09-19T08:20:00"
+      },
+      {
+        "keyword": "bãi biển nhật lệ",
+        "slug": "bai-bien-nhat-le",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bãi biển nhật lệ, giá vé bãi biển nhật lệ 2026, địa điểm ăn uống bãi biển nhật lệ",
+        "category_id": 395,
+        "category_name": "Du Lịch Quảng Bình",
+        "schedule_date": "2026-09-19T08:25:00"
+      },
+      {
+        "keyword": "bánh bèo đồng hới",
+        "slug": "banh-beo-ong-hoi",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bánh bèo đồng hới, giá vé bánh bèo đồng hới 2026, địa điểm ăn uống bánh bèo đồng hới",
+        "category_id": 395,
+        "category_name": "Du Lịch Quảng Bình",
+        "schedule_date": "2026-09-19T08:30:00"
+      },
+      {
+        "keyword": "hang sơn đoòng đắt đỏ",
+        "slug": "hang-son-oong-at-o",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm hang sơn đoòng đắt đỏ, giá vé hang sơn đoòng đắt đỏ 2026, địa điểm ăn uống hang sơn đoòng đắt đỏ",
+        "category_id": 395,
+        "category_name": "Du Lịch Quảng Bình",
+        "schedule_date": "2026-09-19T08:35:00"
+      },
+      {
+        "keyword": "suối khoáng bang",
+        "slug": "suoi-khoang-bang",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm suối khoáng bang, giá vé suối khoáng bang 2026, địa điểm ăn uống suối khoáng bang",
+        "category_id": 395,
+        "category_name": "Du Lịch Quảng Bình",
+        "schedule_date": "2026-09-19T08:40:00"
+      },
+      {
+        "keyword": "chợ đêm đồng hới",
+        "slug": "cho-em-ong-hoi",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chợ đêm đồng hới, giá vé chợ đêm đồng hới 2026, địa điểm ăn uống chợ đêm đồng hới",
+        "category_id": 395,
+        "category_name": "Du Lịch Quảng Bình",
+        "schedule_date": "2026-09-19T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 13,
+    "date": "2026-09-20",
+    "topic": "Du Lịch Phú Yên Xứ Hoa Vàng 2026",
+    "category": "Du Lịch Phú Yên",
+    "posts": [
+      {
+        "keyword": "gành đá đĩa kỳ quan",
+        "slug": "ganh-a-ia-ky-quan",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm gành đá đĩa kỳ quan, giá vé gành đá đĩa kỳ quan 2026, địa điểm ăn uống gành đá đĩa kỳ quan",
+        "category_id": 401,
+        "category_name": "Du Lịch Phú Yên",
+        "schedule_date": "2026-09-20T08:00:00"
+      },
+      {
+        "keyword": "mũi điện ngọn hải đăng bình minh",
+        "slug": "mui-ien-ngon-hai-ang-binh-minh",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm mũi điện ngọn hải đăng bình minh, giá vé mũi điện ngọn hải đăng bình minh 2026, địa điểm ăn uống mũi điện ngọn hải đăng bình minh",
+        "category_id": 401,
+        "category_name": "Du Lịch Phú Yên",
+        "schedule_date": "2026-09-20T08:05:00"
+      },
+      {
+        "keyword": "bãi xép hoa vàng cỏ xanh",
+        "slug": "bai-xep-hoa-vang-co-xanh",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bãi xép hoa vàng cỏ xanh, giá vé bãi xép hoa vàng cỏ xanh 2026, địa điểm ăn uống bãi xép hoa vàng cỏ xanh",
+        "category_id": 401,
+        "category_name": "Du Lịch Phú Yên",
+        "schedule_date": "2026-09-20T08:10:00"
+      },
+      {
+        "keyword": "tháp nghinh phong biểu tượng",
+        "slug": "thap-nghinh-phong-bieu-tuong",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm tháp nghinh phong biểu tượng, giá vé tháp nghinh phong biểu tượng 2026, địa điểm ăn uống tháp nghinh phong biểu tượng",
+        "category_id": 401,
+        "category_name": "Du Lịch Phú Yên",
+        "schedule_date": "2026-09-20T08:15:00"
+      },
+      {
+        "keyword": "vịnh vũng rô di tích",
+        "slug": "vinh-vung-ro-di-tich",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm vịnh vũng rô di tích, giá vé vịnh vũng rô di tích 2026, địa điểm ăn uống vịnh vũng rô di tích",
+        "category_id": 401,
+        "category_name": "Du Lịch Phú Yên",
+        "schedule_date": "2026-09-20T08:20:00"
+      },
+      {
+        "keyword": "đầm ô loan sò huyết",
+        "slug": "am-o-loan-so-huyet",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đầm ô loan sò huyết, giá vé đầm ô loan sò huyết 2026, địa điểm ăn uống đầm ô loan sò huyết",
+        "category_id": 401,
+        "category_name": "Du Lịch Phú Yên",
+        "schedule_date": "2026-09-20T08:25:00"
+      },
+      {
+        "keyword": "hòn yến ngắm san hô",
+        "slug": "hon-yen-ngam-san-ho",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm hòn yến ngắm san hô, giá vé hòn yến ngắm san hô 2026, địa điểm ăn uống hòn yến ngắm san hô",
+        "category_id": 401,
+        "category_name": "Du Lịch Phú Yên",
+        "schedule_date": "2026-09-20T08:30:00"
+      },
+      {
+        "keyword": "mắt cá ngừ đại dương",
+        "slug": "mat-ca-ngu-ai-duong",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm mắt cá ngừ đại dương, giá vé mắt cá ngừ đại dương 2026, địa điểm ăn uống mắt cá ngừ đại dương",
+        "category_id": 401,
+        "category_name": "Du Lịch Phú Yên",
+        "schedule_date": "2026-09-20T08:35:00"
+      },
+      {
+        "keyword": "cầu gỗ ông cọp dài nhất",
+        "slug": "cau-go-ong-cop-dai-nhat",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cầu gỗ ông cọp dài nhất, giá vé cầu gỗ ông cọp dài nhất 2026, địa điểm ăn uống cầu gỗ ông cọp dài nhất",
+        "category_id": 401,
+        "category_name": "Du Lịch Phú Yên",
+        "schedule_date": "2026-09-20T08:40:00"
+      },
+      {
+        "keyword": "cù lao mái nhà",
+        "slug": "cu-lao-mai-nha",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cù lao mái nhà, giá vé cù lao mái nhà 2026, địa điểm ăn uống cù lao mái nhà",
+        "category_id": 401,
+        "category_name": "Du Lịch Phú Yên",
+        "schedule_date": "2026-09-20T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 14,
+    "date": "2026-09-21",
+    "topic": "Du Lịch Kon Tum & Gia Lai 2026",
+    "category": "Du Lịch Kon Tum",
+    "posts": [
+      {
+        "keyword": "nhà thờ gỗ kon tum",
+        "slug": "nha-tho-go-kon-tum",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm nhà thờ gỗ kon tum, giá vé nhà thờ gỗ kon tum 2026, địa điểm ăn uống nhà thờ gỗ kon tum",
+        "category_id": 301,
+        "category_name": "Du Lịch Kon Tum",
+        "schedule_date": "2026-09-21T08:00:00"
+      },
+      {
+        "keyword": "tòa giám mục kon tum",
+        "slug": "toa-giam-muc-kon-tum",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm tòa giám mục kon tum, giá vé tòa giám mục kon tum 2026, địa điểm ăn uống tòa giám mục kon tum",
+        "category_id": 301,
+        "category_name": "Du Lịch Kon Tum",
+        "schedule_date": "2026-09-21T08:05:00"
+      },
+      {
+        "keyword": "cầu treo kon klor",
+        "slug": "cau-treo-kon-klor",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cầu treo kon klor, giá vé cầu treo kon klor 2026, địa điểm ăn uống cầu treo kon klor",
+        "category_id": 301,
+        "category_name": "Du Lịch Kon Tum",
+        "schedule_date": "2026-09-21T08:10:00"
+      },
+      {
+        "keyword": "măng đen đà lạt thứ hai",
+        "slug": "mang-en-a-lat-thu-hai",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm măng đen đà lạt thứ hai, giá vé măng đen đà lạt thứ hai 2026, địa điểm ăn uống măng đen đà lạt thứ hai",
+        "category_id": 301,
+        "category_name": "Du Lịch Kon Tum",
+        "schedule_date": "2026-09-21T08:15:00"
+      },
+      {
+        "keyword": "biển hồ t nưng pleiku",
+        "slug": "bien-ho-t-nung-pleiku",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm biển hồ t nưng pleiku, giá vé biển hồ t nưng pleiku 2026, địa điểm ăn uống biển hồ t nưng pleiku",
+        "category_id": 301,
+        "category_name": "Du Lịch Kon Tum",
+        "schedule_date": "2026-09-21T08:20:00"
+      },
+      {
+        "keyword": "hàng thông trăm tuổi chư păng ya",
+        "slug": "hang-thong-tram-tuoi-chu-pang-ya",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm hàng thông trăm tuổi chư păng ya, giá vé hàng thông trăm tuổi chư păng ya 2026, địa điểm ăn uống hàng thông trăm tuổi chư păng ya",
+        "category_id": 301,
+        "category_name": "Du Lịch Kon Tum",
+        "schedule_date": "2026-09-21T08:25:00"
+      },
+      {
+        "keyword": "cơm lam gà nướng kon tum",
+        "slug": "com-lam-ga-nuong-kon-tum",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cơm lam gà nướng kon tum, giá vé cơm lam gà nướng kon tum 2026, địa điểm ăn uống cơm lam gà nướng kon tum",
+        "category_id": 301,
+        "category_name": "Du Lịch Kon Tum",
+        "schedule_date": "2026-09-21T08:30:00"
+      },
+      {
+        "keyword": "thác pa sỹ măng đen",
+        "slug": "thac-pa-sy-mang-en",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm thác pa sỹ măng đen, giá vé thác pa sỹ măng đen 2026, địa điểm ăn uống thác pa sỹ măng đen",
+        "category_id": 301,
+        "category_name": "Du Lịch Kon Tum",
+        "schedule_date": "2026-09-21T08:35:00"
+      },
+      {
+        "keyword": "chùa bác ái kon tum",
+        "slug": "chua-bac-ai-kon-tum",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chùa bác ái kon tum, giá vé chùa bác ái kon tum 2026, địa điểm ăn uống chùa bác ái kon tum",
+        "category_id": 301,
+        "category_name": "Du Lịch Kon Tum",
+        "schedule_date": "2026-09-21T08:40:00"
+      },
+      {
+        "keyword": "làng kon k tu",
+        "slug": "lang-kon-k-tu",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm làng kon k tu, giá vé làng kon k tu 2026, địa điểm ăn uống làng kon k tu",
+        "category_id": 301,
+        "category_name": "Du Lịch Kon Tum",
+        "schedule_date": "2026-09-21T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 15,
+    "date": "2026-09-22",
+    "topic": "Du Lịch Đắk Lắk & Buôn Ma Thuột 2026",
+    "category": "Du Lịch Đắk Lắk",
+    "posts": [
+      {
+        "keyword": "thác dray nur hùng vĩ",
+        "slug": "thac-dray-nur-hung-vi",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm thác dray nur hùng vĩ, giá vé thác dray nur hùng vĩ 2026, địa điểm ăn uống thác dray nur hùng vĩ",
+        "category_id": 404,
+        "category_name": "Du Lịch Đắk Lắk",
+        "schedule_date": "2026-09-22T08:00:00"
+      },
+      {
+        "keyword": "bảo tàng thế giới cà phê buôn ma thuột",
+        "slug": "bao-tang-the-gioi-ca-phe-buon-ma-thuot",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bảo tàng thế giới cà phê buôn ma thuột, giá vé bảo tàng thế giới cà phê buôn ma thuột 2026, địa điểm ăn uống bảo tàng thế giới cà phê buôn ma thuột",
+        "category_id": 404,
+        "category_name": "Du Lịch Đắk Lắk",
+        "schedule_date": "2026-09-22T08:05:00"
+      },
+      {
+        "keyword": "hồ lắk chèo thuyền độc mộc",
+        "slug": "ho-lak-cheo-thuyen-oc-moc",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm hồ lắk chèo thuyền độc mộc, giá vé hồ lắk chèo thuyền độc mộc 2026, địa điểm ăn uống hồ lắk chèo thuyền độc mộc",
+        "category_id": 404,
+        "category_name": "Du Lịch Đắk Lắk",
+        "schedule_date": "2026-09-22T08:10:00"
+      },
+      {
+        "keyword": "buôn đôn thuần dưỡng voi",
+        "slug": "buon-on-thuan-duong-voi",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm buôn đôn thuần dưỡng voi, giá vé buôn đôn thuần dưỡng voi 2026, địa điểm ăn uống buôn đôn thuần dưỡng voi",
+        "category_id": 404,
+        "category_name": "Du Lịch Đắk Lắk",
+        "schedule_date": "2026-09-22T08:15:00"
+      },
+      {
+        "keyword": "bún đỏ buôn ma thuột",
+        "slug": "bun-o-buon-ma-thuot",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bún đỏ buôn ma thuột, giá vé bún đỏ buôn ma thuột 2026, địa điểm ăn uống bún đỏ buôn ma thuột",
+        "category_id": 404,
+        "category_name": "Du Lịch Đắk Lắk",
+        "schedule_date": "2026-09-22T08:20:00"
+      },
+      {
+        "keyword": "chùa sắc tứ khải đoan",
+        "slug": "chua-sac-tu-khai-oan",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chùa sắc tứ khải đoan, giá vé chùa sắc tứ khải đoan 2026, địa điểm ăn uống chùa sắc tứ khải đoan",
+        "category_id": 404,
+        "category_name": "Du Lịch Đắk Lắk",
+        "schedule_date": "2026-09-22T08:25:00"
+      },
+      {
+        "keyword": "đường sách cà phê buôn ma thuột",
+        "slug": "uong-sach-ca-phe-buon-ma-thuot",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đường sách cà phê buôn ma thuột, giá vé đường sách cà phê buôn ma thuột 2026, địa điểm ăn uống đường sách cà phê buôn ma thuột",
+        "category_id": 404,
+        "category_name": "Du Lịch Đắk Lắk",
+        "schedule_date": "2026-09-22T08:30:00"
+      },
+      {
+        "keyword": "lẩu lá rừng tây nguyên",
+        "slug": "lau-la-rung-tay-nguyen",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm lẩu lá rừng tây nguyên, giá vé lẩu lá rừng tây nguyên 2026, địa điểm ăn uống lẩu lá rừng tây nguyên",
+        "category_id": 404,
+        "category_name": "Du Lịch Đắk Lắk",
+        "schedule_date": "2026-09-22T08:35:00"
+      },
+      {
+        "keyword": "vườn quốc gia chư yang sin",
+        "slug": "vuon-quoc-gia-chu-yang-sin",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm vườn quốc gia chư yang sin, giá vé vườn quốc gia chư yang sin 2026, địa điểm ăn uống vườn quốc gia chư yang sin",
+        "category_id": 404,
+        "category_name": "Du Lịch Đắk Lắk",
+        "schedule_date": "2026-09-22T08:40:00"
+      },
+      {
+        "keyword": "làng cà phê trung nguyên",
+        "slug": "lang-ca-phe-trung-nguyen",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm làng cà phê trung nguyên, giá vé làng cà phê trung nguyên 2026, địa điểm ăn uống làng cà phê trung nguyên",
+        "category_id": 404,
+        "category_name": "Du Lịch Đắk Lắk",
+        "schedule_date": "2026-09-22T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 16,
+    "date": "2026-09-23",
+    "topic": "Du Lịch Côn Đảo Linh Thiêng 2026",
+    "category": "Du Lịch Bà Rịa - Vũng Tàu",
+    "posts": [
+      {
+        "keyword": "viếng mộ cô sáu nghĩa trang hàng dương",
+        "slug": "vieng-mo-co-sau-nghia-trang-hang-duong",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm viếng mộ cô sáu nghĩa trang hàng dương, giá vé viếng mộ cô sáu nghĩa trang hàng dương 2026, địa điểm ăn uống viếng mộ cô sáu nghĩa trang hàng dương",
+        "category_id": 409,
+        "category_name": "Du Lịch Bà Rịa - Vũng Tàu",
+        "schedule_date": "2026-09-23T08:00:00"
+      },
+      {
+        "keyword": "nhà tù côn đảo chuồng cọp",
+        "slug": "nha-tu-con-ao-chuong-cop",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm nhà tù côn đảo chuồng cọp, giá vé nhà tù côn đảo chuồng cọp 2026, địa điểm ăn uống nhà tù côn đảo chuồng cọp",
+        "category_id": 409,
+        "category_name": "Du Lịch Bà Rịa - Vũng Tàu",
+        "schedule_date": "2026-09-23T08:05:00"
+      },
+      {
+        "keyword": "bãi đầm trầu biển xanh cát trắng",
+        "slug": "bai-am-trau-bien-xanh-cat-trang",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bãi đầm trầu biển xanh cát trắng, giá vé bãi đầm trầu biển xanh cát trắng 2026, địa điểm ăn uống bãi đầm trầu biển xanh cát trắng",
+        "category_id": 409,
+        "category_name": "Du Lịch Bà Rịa - Vũng Tàu",
+        "schedule_date": "2026-09-23T08:10:00"
+      },
+      {
+        "keyword": "hòn bảy cạnh xem rùa đẻ trứng",
+        "slug": "hon-bay-canh-xem-rua-e-trung",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm hòn bảy cạnh xem rùa đẻ trứng, giá vé hòn bảy cạnh xem rùa đẻ trứng 2026, địa điểm ăn uống hòn bảy cạnh xem rùa đẻ trứng",
+        "category_id": 409,
+        "category_name": "Du Lịch Bà Rịa - Vũng Tàu",
+        "schedule_date": "2026-09-23T08:15:00"
+      },
+      {
+        "keyword": "vịnh đầm tre hoang sơ",
+        "slug": "vinh-am-tre-hoang-so",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm vịnh đầm tre hoang sơ, giá vé vịnh đầm tre hoang sơ 2026, địa điểm ăn uống vịnh đầm tre hoang sơ",
+        "category_id": 409,
+        "category_name": "Du Lịch Bà Rịa - Vũng Tàu",
+        "schedule_date": "2026-09-23T08:20:00"
+      },
+      {
+        "keyword": "miếu bà phi yến an sơn miếu",
+        "slug": "mieu-ba-phi-yen-an-son-mieu",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm miếu bà phi yến an sơn miếu, giá vé miếu bà phi yến an sơn miếu 2026, địa điểm ăn uống miếu bà phi yến an sơn miếu",
+        "category_id": 409,
+        "category_name": "Du Lịch Bà Rịa - Vũng Tàu",
+        "schedule_date": "2026-09-23T08:25:00"
+      },
+      {
+        "keyword": "hải sản côn đảo ốc vú nàng",
+        "slug": "hai-san-con-ao-oc-vu-nang",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm hải sản côn đảo ốc vú nàng, giá vé hải sản côn đảo ốc vú nàng 2026, địa điểm ăn uống hải sản côn đảo ốc vú nàng",
+        "category_id": 409,
+        "category_name": "Du Lịch Bà Rịa - Vũng Tàu",
+        "schedule_date": "2026-09-23T08:30:00"
+      },
+      {
+        "keyword": "tàu cao tốc đi côn đảo",
+        "slug": "tau-cao-toc-i-con-ao",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm tàu cao tốc đi côn đảo, giá vé tàu cao tốc đi côn đảo 2026, địa điểm ăn uống tàu cao tốc đi côn đảo",
+        "category_id": 409,
+        "category_name": "Du Lịch Bà Rịa - Vũng Tàu",
+        "schedule_date": "2026-09-23T08:35:00"
+      },
+      {
+        "keyword": "bãi nhát hoàng hôn đỉnh tình yêu",
+        "slug": "bai-nhat-hoang-hon-inh-tinh-yeu",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bãi nhát hoàng hôn đỉnh tình yêu, giá vé bãi nhát hoàng hôn đỉnh tình yêu 2026, địa điểm ăn uống bãi nhát hoàng hôn đỉnh tình yêu",
+        "category_id": 409,
+        "category_name": "Du Lịch Bà Rịa - Vũng Tàu",
+        "schedule_date": "2026-09-23T08:40:00"
+      },
+      {
+        "keyword": "bảo tàng côn đảo",
+        "slug": "bao-tang-con-ao",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bảo tàng côn đảo, giá vé bảo tàng côn đảo 2026, địa điểm ăn uống bảo tàng côn đảo",
+        "category_id": 409,
+        "category_name": "Du Lịch Bà Rịa - Vũng Tàu",
+        "schedule_date": "2026-09-23T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 17,
+    "date": "2026-09-24",
+    "topic": "Du Lịch Cần Thơ Miền Tây 2026",
+    "category": "Du Lịch Cần Thơ",
+    "posts": [
+      {
+        "keyword": "chợ nổi cái răng ăn sáng trên ghe",
+        "slug": "cho-noi-cai-rang-an-sang-tren-ghe",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chợ nổi cái răng ăn sáng trên ghe, giá vé chợ nổi cái răng ăn sáng trên ghe 2026, địa điểm ăn uống chợ nổi cái răng ăn sáng trên ghe",
+        "category_id": 412,
+        "category_name": "Du Lịch Cần Thơ",
+        "schedule_date": "2026-09-24T08:00:00"
+      },
+      {
+        "keyword": "bến ninh kiều và cầu đi bộ",
+        "slug": "ben-ninh-kieu-va-cau-i-bo",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bến ninh kiều và cầu đi bộ, giá vé bến ninh kiều và cầu đi bộ 2026, địa điểm ăn uống bến ninh kiều và cầu đi bộ",
+        "category_id": 412,
+        "category_name": "Du Lịch Cần Thơ",
+        "schedule_date": "2026-09-24T08:05:00"
+      },
+      {
+        "keyword": "nhà cổ bình thủy bối cảnh phim",
+        "slug": "nha-co-binh-thuy-boi-canh-phim",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm nhà cổ bình thủy bối cảnh phim, giá vé nhà cổ bình thủy bối cảnh phim 2026, địa điểm ăn uống nhà cổ bình thủy bối cảnh phim",
+        "category_id": 412,
+        "category_name": "Du Lịch Cần Thơ",
+        "schedule_date": "2026-09-24T08:10:00"
+      },
+      {
+        "keyword": "vườn trái cây mỹ khánh",
+        "slug": "vuon-trai-cay-my-khanh",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm vườn trái cây mỹ khánh, giá vé vườn trái cây mỹ khánh 2026, địa điểm ăn uống vườn trái cây mỹ khánh",
+        "category_id": 412,
+        "category_name": "Du Lịch Cần Thơ",
+        "schedule_date": "2026-09-24T08:15:00"
+      },
+      {
+        "keyword": "lẩu mắm cần thơ dạ lý",
+        "slug": "lau-mam-can-tho-da-ly",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm lẩu mắm cần thơ dạ lý, giá vé lẩu mắm cần thơ dạ lý 2026, địa điểm ăn uống lẩu mắm cần thơ dạ lý",
+        "category_id": 412,
+        "category_name": "Du Lịch Cần Thơ",
+        "schedule_date": "2026-09-24T08:20:00"
+      },
+      {
+        "keyword": "chợ đêm tây đô cần thơ",
+        "slug": "cho-em-tay-o-can-tho",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chợ đêm tây đô cần thơ, giá vé chợ đêm tây đô cần thơ 2026, địa điểm ăn uống chợ đêm tây đô cần thơ",
+        "category_id": 412,
+        "category_name": "Du Lịch Cần Thơ",
+        "schedule_date": "2026-09-24T08:25:00"
+      },
+      {
+        "keyword": "chùa ông cần thơ linh thiêng",
+        "slug": "chua-ong-can-tho-linh-thieng",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chùa ông cần thơ linh thiêng, giá vé chùa ông cần thơ linh thiêng 2026, địa điểm ăn uống chùa ông cần thơ linh thiêng",
+        "category_id": 412,
+        "category_name": "Du Lịch Cần Thơ",
+        "schedule_date": "2026-09-24T08:30:00"
+      },
+      {
+        "keyword": "bánh cống cần thơ quán ngon",
+        "slug": "banh-cong-can-tho-quan-ngon",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bánh cống cần thơ quán ngon, giá vé bánh cống cần thơ quán ngon 2026, địa điểm ăn uống bánh cống cần thơ quán ngon",
+        "category_id": 412,
+        "category_name": "Du Lịch Cần Thơ",
+        "schedule_date": "2026-09-24T08:35:00"
+      },
+      {
+        "keyword": "cồn sơn làm bánh dân gian",
+        "slug": "con-son-lam-banh-dan-gian",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cồn sơn làm bánh dân gian, giá vé cồn sơn làm bánh dân gian 2026, địa điểm ăn uống cồn sơn làm bánh dân gian",
+        "category_id": 412,
+        "category_name": "Du Lịch Cần Thơ",
+        "schedule_date": "2026-09-24T08:40:00"
+      },
+      {
+        "keyword": "resort cồn ấu nghỉ dưỡng",
+        "slug": "resort-con-au-nghi-duong",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm resort cồn ấu nghỉ dưỡng, giá vé resort cồn ấu nghỉ dưỡng 2026, địa điểm ăn uống resort cồn ấu nghỉ dưỡng",
+        "category_id": 412,
+        "category_name": "Du Lịch Cần Thơ",
+        "schedule_date": "2026-09-24T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 18,
+    "date": "2026-09-25",
+    "topic": "Du Lịch An Giang Mùa Nước Nổi 2026",
+    "category": "Du Lịch An Giang",
+    "posts": [
+      {
+        "keyword": "rừng tràm trà sư tắc ráng bèo cám",
+        "slug": "rung-tram-tra-su-tac-rang-beo-cam",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm rừng tràm trà sư tắc ráng bèo cám, giá vé rừng tràm trà sư tắc ráng bèo cám 2026, địa điểm ăn uống rừng tràm trà sư tắc ráng bèo cám",
+        "category_id": 418,
+        "category_name": "Du Lịch An Giang",
+        "schedule_date": "2026-09-25T08:00:00"
+      },
+      {
+        "keyword": "miếu bà chúa xứ núi sam châu đốc",
+        "slug": "mieu-ba-chua-xu-nui-sam-chau-oc",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm miếu bà chúa xứ núi sam châu đốc, giá vé miếu bà chúa xứ núi sam châu đốc 2026, địa điểm ăn uống miếu bà chúa xứ núi sam châu đốc",
+        "category_id": 418,
+        "category_name": "Du Lịch An Giang",
+        "schedule_date": "2026-09-25T08:05:00"
+      },
+      {
+        "keyword": "lăng thoại ngọc hầu",
+        "slug": "lang-thoai-ngoc-hau",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm lăng thoại ngọc hầu, giá vé lăng thoại ngọc hầu 2026, địa điểm ăn uống lăng thoại ngọc hầu",
+        "category_id": 418,
+        "category_name": "Du Lịch An Giang",
+        "schedule_date": "2026-09-25T08:10:00"
+      },
+      {
+        "keyword": "chợ châu đốc vương quốc mắm",
+        "slug": "cho-chau-oc-vuong-quoc-mam",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chợ châu đốc vương quốc mắm, giá vé chợ châu đốc vương quốc mắm 2026, địa điểm ăn uống chợ châu đốc vương quốc mắm",
+        "category_id": 418,
+        "category_name": "Du Lịch An Giang",
+        "schedule_date": "2026-09-25T08:15:00"
+      },
+      {
+        "keyword": "lẩu mắm bông điên điển",
+        "slug": "lau-mam-bong-ien-ien",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm lẩu mắm bông điên điển, giá vé lẩu mắm bông điên điển 2026, địa điểm ăn uống lẩu mắm bông điên điển",
+        "category_id": 418,
+        "category_name": "Du Lịch An Giang",
+        "schedule_date": "2026-09-25T08:20:00"
+      },
+      {
+        "keyword": "làng bè sắc màu ngã ba sông",
+        "slug": "lang-be-sac-mau-nga-ba-song",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm làng bè sắc màu ngã ba sông, giá vé làng bè sắc màu ngã ba sông 2026, địa điểm ăn uống làng bè sắc màu ngã ba sông",
+        "category_id": 418,
+        "category_name": "Du Lịch An Giang",
+        "schedule_date": "2026-09-25T08:25:00"
+      },
+      {
+        "keyword": "thánh đường hồi giáo an giang",
+        "slug": "thanh-uong-hoi-giao-an-giang",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm thánh đường hồi giáo an giang, giá vé thánh đường hồi giáo an giang 2026, địa điểm ăn uống thánh đường hồi giáo an giang",
+        "category_id": 418,
+        "category_name": "Du Lịch An Giang",
+        "schedule_date": "2026-09-25T08:30:00"
+      },
+      {
+        "keyword": "hồ tà pạ tri tôn tuyệt tình cốc",
+        "slug": "ho-ta-pa-tri-ton-tuyet-tinh-coc",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm hồ tà pạ tri tôn tuyệt tình cốc, giá vé hồ tà pạ tri tôn tuyệt tình cốc 2026, địa điểm ăn uống hồ tà pạ tri tôn tuyệt tình cốc",
+        "category_id": 418,
+        "category_name": "Du Lịch An Giang",
+        "schedule_date": "2026-09-25T08:35:00"
+      },
+      {
+        "keyword": "thốt nốt an giang bánh bò tươi",
+        "slug": "thot-not-an-giang-banh-bo-tuoi",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm thốt nốt an giang bánh bò tươi, giá vé thốt nốt an giang bánh bò tươi 2026, địa điểm ăn uống thốt nốt an giang bánh bò tươi",
+        "category_id": 418,
+        "category_name": "Du Lịch An Giang",
+        "schedule_date": "2026-09-25T08:40:00"
+      },
+      {
+        "keyword": "cổng trời chùa koh kas",
+        "slug": "cong-troi-chua-koh-kas",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cổng trời chùa koh kas, giá vé cổng trời chùa koh kas 2026, địa điểm ăn uống cổng trời chùa koh kas",
+        "category_id": 418,
+        "category_name": "Du Lịch An Giang",
+        "schedule_date": "2026-09-25T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 19,
+    "date": "2026-09-26",
+    "topic": "Du Lịch Đồng Tháp & Cà Mau 2026",
+    "category": "Du Lịch Đồng Tháp",
+    "posts": [
+      {
+        "keyword": "vườn quốc gia tràm chim sếu đầu đỏ",
+        "slug": "vuon-quoc-gia-tram-chim-seu-au-o",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm vườn quốc gia tràm chim sếu đầu đỏ, giá vé vườn quốc gia tràm chim sếu đầu đỏ 2026, địa điểm ăn uống vườn quốc gia tràm chim sếu đầu đỏ",
+        "category_id": 417,
+        "category_name": "Du Lịch Đồng Tháp",
+        "schedule_date": "2026-09-26T08:00:00"
+      },
+      {
+        "keyword": "làng hoa sa đéc thủ phủ kiểng",
+        "slug": "lang-hoa-sa-ec-thu-phu-kieng",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm làng hoa sa đéc thủ phủ kiểng, giá vé làng hoa sa đéc thủ phủ kiểng 2026, địa điểm ăn uống làng hoa sa đéc thủ phủ kiểng",
+        "category_id": 417,
+        "category_name": "Du Lịch Đồng Tháp",
+        "schedule_date": "2026-09-26T08:05:00"
+      },
+      {
+        "keyword": "nhà cổ huỳnh thủy lê mối tình",
+        "slug": "nha-co-huynh-thuy-le-moi-tinh",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm nhà cổ huỳnh thủy lê mối tình, giá vé nhà cổ huỳnh thủy lê mối tình 2026, địa điểm ăn uống nhà cổ huỳnh thủy lê mối tình",
+        "category_id": 417,
+        "category_name": "Du Lịch Đồng Tháp",
+        "schedule_date": "2026-09-26T08:10:00"
+      },
+      {
+        "keyword": "chùa lá sen khổng lồ phước kiển",
+        "slug": "chua-la-sen-khong-lo-phuoc-kien",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chùa lá sen khổng lồ phước kiển, giá vé chùa lá sen khổng lồ phước kiển 2026, địa điểm ăn uống chùa lá sen khổng lồ phước kiển",
+        "category_id": 417,
+        "category_name": "Du Lịch Đồng Tháp",
+        "schedule_date": "2026-09-26T08:15:00"
+      },
+      {
+        "keyword": "nem lai vung đặc sản",
+        "slug": "nem-lai-vung-ac-san",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm nem lai vung đặc sản, giá vé nem lai vung đặc sản 2026, địa điểm ăn uống nem lai vung đặc sản",
+        "category_id": 417,
+        "category_name": "Du Lịch Đồng Tháp",
+        "schedule_date": "2026-09-26T08:20:00"
+      },
+      {
+        "keyword": "mũi cà mau cột mốc gps 0001",
+        "slug": "mui-ca-mau-cot-moc-gps-0001",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm mũi cà mau cột mốc gps 0001, giá vé mũi cà mau cột mốc gps 0001 2026, địa điểm ăn uống mũi cà mau cột mốc gps 0001",
+        "category_id": 417,
+        "category_name": "Du Lịch Đồng Tháp",
+        "schedule_date": "2026-09-26T08:25:00"
+      },
+      {
+        "keyword": "rừng ngập mặn mũi cà mau",
+        "slug": "rung-ngap-man-mui-ca-mau",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm rừng ngập mặn mũi cà mau, giá vé rừng ngập mặn mũi cà mau 2026, địa điểm ăn uống rừng ngập mặn mũi cà mau",
+        "category_id": 417,
+        "category_name": "Du Lịch Đồng Tháp",
+        "schedule_date": "2026-09-26T08:30:00"
+      },
+      {
+        "keyword": "cua cà mau năm căn gạch son",
+        "slug": "cua-ca-mau-nam-can-gach-son",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cua cà mau năm căn gạch son, giá vé cua cà mau năm căn gạch son 2026, địa điểm ăn uống cua cà mau năm căn gạch son",
+        "category_id": 417,
+        "category_name": "Du Lịch Đồng Tháp",
+        "schedule_date": "2026-09-26T08:35:00"
+      },
+      {
+        "keyword": "hòn đá bạc cà mau danh thắng",
+        "slug": "hon-a-bac-ca-mau-danh-thang",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm hòn đá bạc cà mau danh thắng, giá vé hòn đá bạc cà mau danh thắng 2026, địa điểm ăn uống hòn đá bạc cà mau danh thắng",
+        "category_id": 417,
+        "category_name": "Du Lịch Đồng Tháp",
+        "schedule_date": "2026-09-26T08:40:00"
+      },
+      {
+        "keyword": "rừng u minh hạ gác kèo ong",
+        "slug": "rung-u-minh-ha-gac-keo-ong",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm rừng u minh hạ gác kèo ong, giá vé rừng u minh hạ gác kèo ong 2026, địa điểm ăn uống rừng u minh hạ gác kèo ong",
+        "category_id": 417,
+        "category_name": "Du Lịch Đồng Tháp",
+        "schedule_date": "2026-09-26T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 20,
+    "date": "2026-09-27",
+    "topic": "Du Lịch Bạc Liêu & Sóc Trăng 2026",
+    "category": "Du Lịch Bạc Liêu",
+    "posts": [
+      {
+        "keyword": "nhà công tử bạc liêu cổ kính",
+        "slug": "nha-cong-tu-bac-lieu-co-kinh",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm nhà công tử bạc liêu cổ kính, giá vé nhà công tử bạc liêu cổ kính 2026, địa điểm ăn uống nhà công tử bạc liêu cổ kính",
+        "category_id": 312,
+        "category_name": "Du Lịch Bạc Liêu",
+        "schedule_date": "2026-09-27T08:00:00"
+      },
+      {
+        "keyword": "cánh đồng điện gió quạt gió bạc liêu",
+        "slug": "canh-ong-ien-gio-quat-gio-bac-lieu",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cánh đồng điện gió quạt gió bạc liêu, giá vé cánh đồng điện gió quạt gió bạc liêu 2026, địa điểm ăn uống cánh đồng điện gió quạt gió bạc liêu",
+        "category_id": 312,
+        "category_name": "Du Lịch Bạc Liêu",
+        "schedule_date": "2026-09-27T08:05:00"
+      },
+      {
+        "keyword": "nhà hát nón lá ba nón bạc liêu",
+        "slug": "nha-hat-non-la-ba-non-bac-lieu",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm nhà hát nón lá ba nón bạc liêu, giá vé nhà hát nón lá ba nón bạc liêu 2026, địa điểm ăn uống nhà hát nón lá ba nón bạc liêu",
+        "category_id": 312,
+        "category_name": "Du Lịch Bạc Liêu",
+        "schedule_date": "2026-09-27T08:10:00"
+      },
+      {
+        "keyword": "chùa xiêm cán kiến trúc khmer lộng lẫy",
+        "slug": "chua-xiem-can-kien-truc-khmer-long-lay",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chùa xiêm cán kiến trúc khmer lộng lẫy, giá vé chùa xiêm cán kiến trúc khmer lộng lẫy 2026, địa điểm ăn uống chùa xiêm cán kiến trúc khmer lộng lẫy",
+        "category_id": 312,
+        "category_name": "Du Lịch Bạc Liêu",
+        "schedule_date": "2026-09-27T08:15:00"
+      },
+      {
+        "keyword": "bún nước lèo sóc trăng",
+        "slug": "bun-nuoc-leo-soc-trang",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bún nước lèo sóc trăng, giá vé bún nước lèo sóc trăng 2026, địa điểm ăn uống bún nước lèo sóc trăng",
+        "category_id": 312,
+        "category_name": "Du Lịch Bạc Liêu",
+        "schedule_date": "2026-09-27T08:20:00"
+      },
+      {
+        "keyword": "chùa dơi sóc trăng hàng vạn con dơi",
+        "slug": "chua-doi-soc-trang-hang-van-con-doi",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chùa dơi sóc trăng hàng vạn con dơi, giá vé chùa dơi sóc trăng hàng vạn con dơi 2026, địa điểm ăn uống chùa dơi sóc trăng hàng vạn con dơi",
+        "category_id": 312,
+        "category_name": "Du Lịch Bạc Liêu",
+        "schedule_date": "2026-09-27T08:25:00"
+      },
+      {
+        "keyword": "chùa chén kiểu sóc trăng khảm sành",
+        "slug": "chua-chen-kieu-soc-trang-kham-sanh",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chùa chén kiểu sóc trăng khảm sành, giá vé chùa chén kiểu sóc trăng khảm sành 2026, địa điểm ăn uống chùa chén kiểu sóc trăng khảm sành",
+        "category_id": 312,
+        "category_name": "Du Lịch Bạc Liêu",
+        "schedule_date": "2026-09-27T08:30:00"
+      },
+      {
+        "keyword": "bánh pía sóc trăng lò thủ công",
+        "slug": "banh-pia-soc-trang-lo-thu-cong",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bánh pía sóc trăng lò thủ công, giá vé bánh pía sóc trăng lò thủ công 2026, địa điểm ăn uống bánh pía sóc trăng lò thủ công",
+        "category_id": 312,
+        "category_name": "Du Lịch Bạc Liêu",
+        "schedule_date": "2026-09-27T08:35:00"
+      },
+      {
+        "keyword": "khu lưu niệm cao văn lầu",
+        "slug": "khu-luu-niem-cao-van-lau",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm khu lưu niệm cao văn lầu, giá vé khu lưu niệm cao văn lầu 2026, địa điểm ăn uống khu lưu niệm cao văn lầu",
+        "category_id": 312,
+        "category_name": "Du Lịch Bạc Liêu",
+        "schedule_date": "2026-09-27T08:40:00"
+      },
+      {
+        "keyword": "bãi biển nhân tạo bạc liêu",
+        "slug": "bai-bien-nhan-tao-bac-lieu",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bãi biển nhân tạo bạc liêu, giá vé bãi biển nhân tạo bạc liêu 2026, địa điểm ăn uống bãi biển nhân tạo bạc liêu",
+        "category_id": 312,
+        "category_name": "Du Lịch Bạc Liêu",
+        "schedule_date": "2026-09-27T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 21,
+    "date": "2026-09-28",
+    "topic": "Du Lịch Bến Tre & Tiền Giang 2026",
+    "category": "Du Lịch Bến Tre",
+    "posts": [
+      {
+        "keyword": "cồn phụng di tích đạo dừa",
+        "slug": "con-phung-di-tich-ao-dua",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cồn phụng di tích đạo dừa, giá vé cồn phụng di tích đạo dừa 2026, địa điểm ăn uống cồn phụng di tích đạo dừa",
+        "category_id": 414,
+        "category_name": "Du Lịch Bến Tre",
+        "schedule_date": "2026-09-28T08:00:00"
+      },
+      {
+        "keyword": "chèo xuồng ba lá rừng dừa nước",
+        "slug": "cheo-xuong-ba-la-rung-dua-nuoc",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chèo xuồng ba lá rừng dừa nước, giá vé chèo xuồng ba lá rừng dừa nước 2026, địa điểm ăn uống chèo xuồng ba lá rừng dừa nước",
+        "category_id": 414,
+        "category_name": "Du Lịch Bến Tre",
+        "schedule_date": "2026-09-28T08:05:00"
+      },
+      {
+        "keyword": "làng nghề kẹo dừa bến tre truyền thống",
+        "slug": "lang-nghe-keo-dua-ben-tre-truyen-thong",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm làng nghề kẹo dừa bến tre truyền thống, giá vé làng nghề kẹo dừa bến tre truyền thống 2026, địa điểm ăn uống làng nghề kẹo dừa bến tre truyền thống",
+        "category_id": 414,
+        "category_name": "Du Lịch Bến Tre",
+        "schedule_date": "2026-09-28T08:10:00"
+      },
+      {
+        "keyword": "vườn trái cây cái mơn sầu riêng chôm chôm",
+        "slug": "vuon-trai-cay-cai-mon-sau-rieng-chom-chom",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm vườn trái cây cái mơn sầu riêng chôm chôm, giá vé vườn trái cây cái mơn sầu riêng chôm chôm 2026, địa điểm ăn uống vườn trái cây cái mơn sầu riêng chôm chôm",
+        "category_id": 414,
+        "category_name": "Du Lịch Bến Tre",
+        "schedule_date": "2026-09-28T08:15:00"
+      },
+      {
+        "keyword": "cồn quy bến tre đờn ca tài tử",
+        "slug": "con-quy-ben-tre-on-ca-tai-tu",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cồn quy bến tre đờn ca tài tử, giá vé cồn quy bến tre đờn ca tài tử 2026, địa điểm ăn uống cồn quy bến tre đờn ca tài tử",
+        "category_id": 414,
+        "category_name": "Du Lịch Bến Tre",
+        "schedule_date": "2026-09-28T08:20:00"
+      },
+      {
+        "keyword": "chợ nổi cái bè tiền giang",
+        "slug": "cho-noi-cai-be-tien-giang",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chợ nổi cái bè tiền giang, giá vé chợ nổi cái bè tiền giang 2026, địa điểm ăn uống chợ nổi cái bè tiền giang",
+        "category_id": 414,
+        "category_name": "Du Lịch Bến Tre",
+        "schedule_date": "2026-09-28T08:25:00"
+      },
+      {
+        "keyword": "trại rắn đồng tâm tiền giang",
+        "slug": "trai-ran-ong-tam-tien-giang",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm trại rắn đồng tâm tiền giang, giá vé trại rắn đồng tâm tiền giang 2026, địa điểm ăn uống trại rắn đồng tâm tiền giang",
+        "category_id": 414,
+        "category_name": "Du Lịch Bến Tre",
+        "schedule_date": "2026-09-28T08:30:00"
+      },
+      {
+        "keyword": "chùa vĩnh tràng mỹ tho ngôi chùa lớn nhất",
+        "slug": "chua-vinh-trang-my-tho-ngoi-chua-lon-nhat",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chùa vĩnh tràng mỹ tho ngôi chùa lớn nhất, giá vé chùa vĩnh tràng mỹ tho ngôi chùa lớn nhất 2026, địa điểm ăn uống chùa vĩnh tràng mỹ tho ngôi chùa lớn nhất",
+        "category_id": 414,
+        "category_name": "Du Lịch Bến Tre",
+        "schedule_date": "2026-09-28T08:35:00"
+      },
+      {
+        "keyword": "hủ tiếu mỹ tho quán ngon",
+        "slug": "hu-tieu-my-tho-quan-ngon",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm hủ tiếu mỹ tho quán ngon, giá vé hủ tiếu mỹ tho quán ngon 2026, địa điểm ăn uống hủ tiếu mỹ tho quán ngon",
+        "category_id": 414,
+        "category_name": "Du Lịch Bến Tre",
+        "schedule_date": "2026-09-28T08:40:00"
+      },
+      {
+        "keyword": "cồn thới sơn chèo thuyền thưởng thức trà mật ong",
+        "slug": "con-thoi-son-cheo-thuyen-thuong-thuc-tra-mat-ong",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cồn thới sơn chèo thuyền thưởng thức trà mật ong, giá vé cồn thới sơn chèo thuyền thưởng thức trà mật ong 2026, địa điểm ăn uống cồn thới sơn chèo thuyền thưởng thức trà mật ong",
+        "category_id": 414,
+        "category_name": "Du Lịch Bến Tre",
+        "schedule_date": "2026-09-28T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 22,
+    "date": "2026-09-29",
+    "topic": "Du Lịch Hà Nội 36 Phố Phường 2026",
+    "category": "Du Lịch Hà Nội",
+    "posts": [
+      {
+        "keyword": "phố cổ hà nội cẩm nang dạo quanh",
+        "slug": "pho-co-ha-noi-cam-nang-dao-quanh",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm phố cổ hà nội cẩm nang dạo quanh, giá vé phố cổ hà nội cẩm nang dạo quanh 2026, địa điểm ăn uống phố cổ hà nội cẩm nang dạo quanh",
+        "category_id": 384,
+        "category_name": "Du Lịch Hà Nội",
+        "schedule_date": "2026-09-29T08:00:00"
+      },
+      {
+        "keyword": "food tour hà nội phở bún chả bánh tôm",
+        "slug": "food-tour-ha-noi-pho-bun-cha-banh-tom",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm food tour hà nội phở bún chả bánh tôm, giá vé food tour hà nội phở bún chả bánh tôm 2026, địa điểm ăn uống food tour hà nội phở bún chả bánh tôm",
+        "category_id": 384,
+        "category_name": "Du Lịch Hà Nội",
+        "schedule_date": "2026-09-29T08:05:00"
+      },
+      {
+        "keyword": "làng gốm bát tràng làm gốm",
+        "slug": "lang-gom-bat-trang-lam-gom",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm làng gốm bát tràng làm gốm, giá vé làng gốm bát tràng làm gốm 2026, địa điểm ăn uống làng gốm bát tràng làm gốm",
+        "category_id": 384,
+        "category_name": "Du Lịch Hà Nội",
+        "schedule_date": "2026-09-29T08:10:00"
+      },
+      {
+        "keyword": "chùa hương suối yến động hương tích",
+        "slug": "chua-huong-suoi-yen-ong-huong-tich",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chùa hương suối yến động hương tích, giá vé chùa hương suối yến động hương tích 2026, địa điểm ăn uống chùa hương suối yến động hương tích",
+        "category_id": 384,
+        "category_name": "Du Lịch Hà Nội",
+        "schedule_date": "2026-09-29T08:15:00"
+      },
+      {
+        "keyword": "hồ quan sơn mỹ đức",
+        "slug": "ho-quan-son-my-uc",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm hồ quan sơn mỹ đức, giá vé hồ quan sơn mỹ đức 2026, địa điểm ăn uống hồ quan sơn mỹ đức",
+        "category_id": 384,
+        "category_name": "Du Lịch Hà Nội",
+        "schedule_date": "2026-09-29T08:20:00"
+      },
+      {
+        "keyword": "làng cổ đường lâm cổng đá ong",
+        "slug": "lang-co-uong-lam-cong-a-ong",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm làng cổ đường lâm cổng đá ong, giá vé làng cổ đường lâm cổng đá ong 2026, địa điểm ăn uống làng cổ đường lâm cổng đá ong",
+        "category_id": 384,
+        "category_name": "Du Lịch Hà Nội",
+        "schedule_date": "2026-09-29T08:25:00"
+      },
+      {
+        "keyword": "vườn quốc gia ba vì săn mây",
+        "slug": "vuon-quoc-gia-ba-vi-san-may",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm vườn quốc gia ba vì săn mây, giá vé vườn quốc gia ba vì săn mây 2026, địa điểm ăn uống vườn quốc gia ba vì săn mây",
+        "category_id": 384,
+        "category_name": "Du Lịch Hà Nội",
+        "schedule_date": "2026-09-29T08:30:00"
+      },
+      {
+        "keyword": "hoàng hôn hồ tây cafe chill",
+        "slug": "hoang-hon-ho-tay-cafe-chill",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm hoàng hôn hồ tây cafe chill, giá vé hoàng hôn hồ tây cafe chill 2026, địa điểm ăn uống hoàng hôn hồ tây cafe chill",
+        "category_id": 384,
+        "category_name": "Du Lịch Hà Nội",
+        "schedule_date": "2026-09-29T08:35:00"
+      },
+      {
+        "keyword": "lăng chủ tịch hồ chí minh và hoàng thành",
+        "slug": "lang-chu-tich-ho-chi-minh-va-hoang-thanh",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm lăng chủ tịch hồ chí minh và hoàng thành, giá vé lăng chủ tịch hồ chí minh và hoàng thành 2026, địa điểm ăn uống lăng chủ tịch hồ chí minh và hoàng thành",
+        "category_id": 384,
+        "category_name": "Du Lịch Hà Nội",
+        "schedule_date": "2026-09-29T08:40:00"
+      },
+      {
+        "keyword": "bảo tàng mỹ thuật hà nội sống ảo",
+        "slug": "bao-tang-my-thuat-ha-noi-song-ao",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bảo tàng mỹ thuật hà nội sống ảo, giá vé bảo tàng mỹ thuật hà nội sống ảo 2026, địa điểm ăn uống bảo tàng mỹ thuật hà nội sống ảo",
+        "category_id": 384,
+        "category_name": "Du Lịch Hà Nội",
+        "schedule_date": "2026-09-29T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 23,
+    "date": "2026-09-30",
+    "topic": "Du Lịch Hải Phòng & Cát Bà 2026",
+    "category": "Du Lịch Hải Phòng",
+    "posts": [
+      {
+        "keyword": "food tour hải phòng bánh đa cua bánh mì que",
+        "slug": "food-tour-hai-phong-banh-a-cua-banh-mi-que",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm food tour hải phòng bánh đa cua bánh mì que, giá vé food tour hải phòng bánh đa cua bánh mì que 2026, địa điểm ăn uống food tour hải phòng bánh đa cua bánh mì que",
+        "category_id": 385,
+        "category_name": "Du Lịch Hải Phòng",
+        "schedule_date": "2026-09-30T08:00:00"
+      },
+      {
+        "keyword": "đảo cát bà vịnh lan hạ",
+        "slug": "ao-cat-ba-vinh-lan-ha",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đảo cát bà vịnh lan hạ, giá vé đảo cát bà vịnh lan hạ 2026, địa điểm ăn uống đảo cát bà vịnh lan hạ",
+        "category_id": 385,
+        "category_name": "Du Lịch Hải Phòng",
+        "schedule_date": "2026-09-30T08:05:00"
+      },
+      {
+        "keyword": "bãi biển đồ sơn",
+        "slug": "bai-bien-o-son",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bãi biển đồ sơn, giá vé bãi biển đồ sơn 2026, địa điểm ăn uống bãi biển đồ sơn",
+        "category_id": 385,
+        "category_name": "Du Lịch Hải Phòng",
+        "schedule_date": "2026-09-30T08:10:00"
+      },
+      {
+        "keyword": "pháo đài thần công cát bà",
+        "slug": "phao-ai-than-cong-cat-ba",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm pháo đài thần công cát bà, giá vé pháo đài thần công cát bà 2026, địa điểm ăn uống pháo đài thần công cát bà",
+        "category_id": 385,
+        "category_name": "Du Lịch Hải Phòng",
+        "schedule_date": "2026-09-30T08:15:00"
+      },
+      {
+        "keyword": "vịnh lan hạ chèo thuyền kayak",
+        "slug": "vinh-lan-ha-cheo-thuyen-kayak",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm vịnh lan hạ chèo thuyền kayak, giá vé vịnh lan hạ chèo thuyền kayak 2026, địa điểm ăn uống vịnh lan hạ chèo thuyền kayak",
+        "category_id": 385,
+        "category_name": "Du Lịch Hải Phòng",
+        "schedule_date": "2026-09-30T08:20:00"
+      },
+      {
+        "keyword": "làng chài cái bèo cổ nhất việt nam",
+        "slug": "lang-chai-cai-beo-co-nhat-viet-nam",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm làng chài cái bèo cổ nhất việt nam, giá vé làng chài cái bèo cổ nhất việt nam 2026, địa điểm ăn uống làng chài cái bèo cổ nhất việt nam",
+        "category_id": 385,
+        "category_name": "Du Lịch Hải Phòng",
+        "schedule_date": "2026-09-30T08:25:00"
+      },
+      {
+        "keyword": "tháp tường long đồ sơn",
+        "slug": "thap-tuong-long-o-son",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm tháp tường long đồ sơn, giá vé tháp tường long đồ sơn 2026, địa điểm ăn uống tháp tường long đồ sơn",
+        "category_id": 385,
+        "category_name": "Du Lịch Hải Phòng",
+        "schedule_date": "2026-09-30T08:30:00"
+      },
+      {
+        "keyword": "lẩu cua đồng hải phòng quán ngon",
+        "slug": "lau-cua-ong-hai-phong-quan-ngon",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm lẩu cua đồng hải phòng quán ngon, giá vé lẩu cua đồng hải phòng quán ngon 2026, địa điểm ăn uống lẩu cua đồng hải phòng quán ngon",
+        "category_id": 385,
+        "category_name": "Du Lịch Hải Phòng",
+        "schedule_date": "2026-09-30T08:35:00"
+      },
+      {
+        "keyword": "tuyệt tình cốc hải phòng hồ nước xanh",
+        "slug": "tuyet-tinh-coc-hai-phong-ho-nuoc-xanh",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm tuyệt tình cốc hải phòng hồ nước xanh, giá vé tuyệt tình cốc hải phòng hồ nước xanh 2026, địa điểm ăn uống tuyệt tình cốc hải phòng hồ nước xanh",
+        "category_id": 385,
+        "category_name": "Du Lịch Hải Phòng",
+        "schedule_date": "2026-09-30T08:40:00"
+      },
+      {
+        "keyword": "chợ cát bi thiên đường ăn vặt giá sinh viên",
+        "slug": "cho-cat-bi-thien-uong-an-vat-gia-sinh-vien",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chợ cát bi thiên đường ăn vặt giá sinh viên, giá vé chợ cát bi thiên đường ăn vặt giá sinh viên 2026, địa điểm ăn uống chợ cát bi thiên đường ăn vặt giá sinh viên",
+        "category_id": 385,
+        "category_name": "Du Lịch Hải Phòng",
+        "schedule_date": "2026-09-30T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 24,
+    "date": "2026-10-01",
+    "topic": "Du Lịch Quảng Ninh & Hạ Long 2026",
+    "category": "Du Lịch Cao Bằng",
+    "posts": [
+      {
+        "keyword": "du thuyền vịnh hạ long ngủ đêm 5 sao",
+        "slug": "du-thuyen-vinh-ha-long-ngu-em-5-sao",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm du thuyền vịnh hạ long ngủ đêm 5 sao, giá vé du thuyền vịnh hạ long ngủ đêm 5 sao 2026, địa điểm ăn uống du thuyền vịnh hạ long ngủ đêm 5 sao",
+        "category_id": 380,
+        "category_name": "Du Lịch Cao Bằng",
+        "schedule_date": "2026-10-01T08:00:00"
+      },
+      {
+        "keyword": "đảo ti tốp leo đỉnh ngắm vịnh",
+        "slug": "ao-ti-top-leo-inh-ngam-vinh",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đảo ti tốp leo đỉnh ngắm vịnh, giá vé đảo ti tốp leo đỉnh ngắm vịnh 2026, địa điểm ăn uống đảo ti tốp leo đỉnh ngắm vịnh",
+        "category_id": 380,
+        "category_name": "Du Lịch Cao Bằng",
+        "schedule_date": "2026-10-01T08:05:00"
+      },
+      {
+        "keyword": "hang sửng sốt kỳ quan hang đá vôi",
+        "slug": "hang-sung-sot-ky-quan-hang-a-voi",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm hang sửng sốt kỳ quan hang đá vôi, giá vé hang sửng sốt kỳ quan hang đá vôi 2026, địa điểm ăn uống hang sửng sốt kỳ quan hang đá vôi",
+        "category_id": 380,
+        "category_name": "Du Lịch Cao Bằng",
+        "schedule_date": "2026-10-01T08:10:00"
+      },
+      {
+        "keyword": "bảo tàng quảng ninh viên ngọc đen",
+        "slug": "bao-tang-quang-ninh-vien-ngoc-en",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bảo tàng quảng ninh viên ngọc đen, giá vé bảo tàng quảng ninh viên ngọc đen 2026, địa điểm ăn uống bảo tàng quảng ninh viên ngọc đen",
+        "category_id": 380,
+        "category_name": "Du Lịch Cao Bằng",
+        "schedule_date": "2026-10-01T08:15:00"
+      },
+      {
+        "keyword": "sun world hạ long bãi cháy",
+        "slug": "sun-world-ha-long-bai-chay",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm sun world hạ long bãi cháy, giá vé sun world hạ long bãi cháy 2026, địa điểm ăn uống sun world hạ long bãi cháy",
+        "category_id": 380,
+        "category_name": "Du Lịch Cao Bằng",
+        "schedule_date": "2026-10-01T08:20:00"
+      },
+      {
+        "keyword": "chả mực giã tay hạ long",
+        "slug": "cha-muc-gia-tay-ha-long",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chả mực giã tay hạ long, giá vé chả mực giã tay hạ long 2026, địa điểm ăn uống chả mực giã tay hạ long",
+        "category_id": 380,
+        "category_name": "Du Lịch Cao Bằng",
+        "schedule_date": "2026-10-01T08:25:00"
+      },
+      {
+        "keyword": "làng chài cửa vạn",
+        "slug": "lang-chai-cua-van",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm làng chài cửa vạn, giá vé làng chài cửa vạn 2026, địa điểm ăn uống làng chài cửa vạn",
+        "category_id": 380,
+        "category_name": "Du Lịch Cao Bằng",
+        "schedule_date": "2026-10-01T08:30:00"
+      },
+      {
+        "keyword": "chùa ba vàng uông bí",
+        "slug": "chua-ba-vang-uong-bi",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chùa ba vàng uông bí, giá vé chùa ba vàng uông bí 2026, địa điểm ăn uống chùa ba vàng uông bí",
+        "category_id": 380,
+        "category_name": "Du Lịch Cao Bằng",
+        "schedule_date": "2026-10-01T08:35:00"
+      },
+      {
+        "keyword": "non thiêng yên tử cáp treo chùa đồng",
+        "slug": "non-thieng-yen-tu-cap-treo-chua-ong",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm non thiêng yên tử cáp treo chùa đồng, giá vé non thiêng yên tử cáp treo chùa đồng 2026, địa điểm ăn uống non thiêng yên tử cáp treo chùa đồng",
+        "category_id": 380,
+        "category_name": "Du Lịch Cao Bằng",
+        "schedule_date": "2026-10-01T08:40:00"
+      },
+      {
+        "keyword": "đảo cô tô ngọc bích bắc bộ",
+        "slug": "ao-co-to-ngoc-bich-bac-bo",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đảo cô tô ngọc bích bắc bộ, giá vé đảo cô tô ngọc bích bắc bộ 2026, địa điểm ăn uống đảo cô tô ngọc bích bắc bộ",
+        "category_id": 380,
+        "category_name": "Du Lịch Cao Bằng",
+        "schedule_date": "2026-10-01T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 25,
+    "date": "2026-10-02",
+    "topic": "Du Lịch Nghệ An & Cửa Lò 2026",
+    "category": "Du Lịch Nghệ An",
+    "posts": [
+      {
+        "keyword": "biển cửa lò cẩm nang tắm biển ăn hải sản",
+        "slug": "bien-cua-lo-cam-nang-tam-bien-an-hai-san",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm biển cửa lò cẩm nang tắm biển ăn hải sản, giá vé biển cửa lò cẩm nang tắm biển ăn hải sản 2026, địa điểm ăn uống biển cửa lò cẩm nang tắm biển ăn hải sản",
+        "category_id": 393,
+        "category_name": "Du Lịch Nghệ An",
+        "schedule_date": "2026-10-02T08:00:00"
+      },
+      {
+        "keyword": "làng sen quê bác nam đàn về thăm cội nguồn",
+        "slug": "lang-sen-que-bac-nam-an-ve-tham-coi-nguon",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm làng sen quê bác nam đàn về thăm cội nguồn, giá vé làng sen quê bác nam đàn về thăm cội nguồn 2026, địa điểm ăn uống làng sen quê bác nam đàn về thăm cội nguồn",
+        "category_id": 393,
+        "category_name": "Du Lịch Nghệ An",
+        "schedule_date": "2026-10-02T08:05:00"
+      },
+      {
+        "keyword": "đồi chè thanh chương đảo chè xanh mướt",
+        "slug": "oi-che-thanh-chuong-ao-che-xanh-muot",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đồi chè thanh chương đảo chè xanh mướt, giá vé đồi chè thanh chương đảo chè xanh mướt 2026, địa điểm ăn uống đồi chè thanh chương đảo chè xanh mướt",
+        "category_id": 393,
+        "category_name": "Du Lịch Nghệ An",
+        "schedule_date": "2026-10-02T08:10:00"
+      },
+      {
+        "keyword": "cánh đồng hoa hướng dương nghĩa đàn",
+        "slug": "canh-ong-hoa-huong-duong-nghia-an",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cánh đồng hoa hướng dương nghĩa đàn, giá vé cánh đồng hoa hướng dương nghĩa đàn 2026, địa điểm ăn uống cánh đồng hoa hướng dương nghĩa đàn",
+        "category_id": 393,
+        "category_name": "Du Lịch Nghệ An",
+        "schedule_date": "2026-10-02T08:15:00"
+      },
+      {
+        "keyword": "vườn quốc gia pù mát thác khe kèm",
+        "slug": "vuon-quoc-gia-pu-mat-thac-khe-kem",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm vườn quốc gia pù mát thác khe kèm, giá vé vườn quốc gia pù mát thác khe kèm 2026, địa điểm ăn uống vườn quốc gia pù mát thác khe kèm",
+        "category_id": 393,
+        "category_name": "Du Lịch Nghệ An",
+        "schedule_date": "2026-10-02T08:20:00"
+      },
+      {
+        "keyword": "cháo lươn xứ nghệ chuẩn vị cay nồng",
+        "slug": "chao-luon-xu-nghe-chuan-vi-cay-nong",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cháo lươn xứ nghệ chuẩn vị cay nồng, giá vé cháo lươn xứ nghệ chuẩn vị cay nồng 2026, địa điểm ăn uống cháo lươn xứ nghệ chuẩn vị cay nồng",
+        "category_id": 393,
+        "category_name": "Du Lịch Nghệ An",
+        "schedule_date": "2026-10-02T08:25:00"
+      },
+      {
+        "keyword": "đền cuông thờ thục phán an dương vương",
+        "slug": "en-cuong-tho-thuc-phan-an-duong-vuong",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đền cuông thờ thục phán an dương vương, giá vé đền cuông thờ thục phán an dương vương 2026, địa điểm ăn uống đền cuông thờ thục phán an dương vương",
+        "category_id": 393,
+        "category_name": "Du Lịch Nghệ An",
+        "schedule_date": "2026-10-02T08:30:00"
+      },
+      {
+        "keyword": "đảo lan châu cửa lò ngắm hoàng hôn",
+        "slug": "ao-lan-chau-cua-lo-ngam-hoang-hon",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đảo lan châu cửa lò ngắm hoàng hôn, giá vé đảo lan châu cửa lò ngắm hoàng hôn 2026, địa điểm ăn uống đảo lan châu cửa lò ngắm hoàng hôn",
+        "category_id": 393,
+        "category_name": "Du Lịch Nghệ An",
+        "schedule_date": "2026-10-02T08:35:00"
+      },
+      {
+        "keyword": "biển bãi lữ resort nghỉ dưỡng",
+        "slug": "bien-bai-lu-resort-nghi-duong",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm biển bãi lữ resort nghỉ dưỡng, giá vé biển bãi lữ resort nghỉ dưỡng 2026, địa điểm ăn uống biển bãi lữ resort nghỉ dưỡng",
+        "category_id": 393,
+        "category_name": "Du Lịch Nghệ An",
+        "schedule_date": "2026-10-02T08:40:00"
+      },
+      {
+        "keyword": "chợ hải sản bến cá cửa lò",
+        "slug": "cho-hai-san-ben-ca-cua-lo",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chợ hải sản bến cá cửa lò, giá vé chợ hải sản bến cá cửa lò 2026, địa điểm ăn uống chợ hải sản bến cá cửa lò",
+        "category_id": 393,
+        "category_name": "Du Lịch Nghệ An",
+        "schedule_date": "2026-10-02T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 26,
+    "date": "2026-10-03",
+    "topic": "Du Lịch Thái Lan Tự Túc 2026",
+    "category": "Blog",
+    "posts": [
+      {
+        "keyword": "du lịch bangkok tự túc cung điện hoàng gia wat arun",
+        "slug": "du-lich-bangkok-tu-tuc-cung-ien-hoang-gia-wat-arun",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm du lịch bangkok tự túc cung điện hoàng gia wat arun, giá vé du lịch bangkok tự túc cung điện hoàng gia wat arun 2026, địa điểm ăn uống du lịch bangkok tự túc cung điện hoàng gia wat arun",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-03T08:00:00"
+      },
+      {
+        "keyword": "chợ đêm jodd fairs bangkok sườn cay khổng lồ",
+        "slug": "cho-em-jodd-fairs-bangkok-suon-cay-khong-lo",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chợ đêm jodd fairs bangkok sườn cay khổng lồ, giá vé chợ đêm jodd fairs bangkok sườn cay khổng lồ 2026, địa điểm ăn uống chợ đêm jodd fairs bangkok sườn cay khổng lồ",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-03T08:05:00"
+      },
+      {
+        "keyword": "chiang mai thả đèn trời yee peng",
+        "slug": "chiang-mai-tha-en-troi-yee-peng",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chiang mai thả đèn trời yee peng, giá vé chiang mai thả đèn trời yee peng 2026, địa điểm ăn uống chiang mai thả đèn trời yee peng",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-03T08:10:00"
+      },
+      {
+        "keyword": "đảo phuket vịnh phang nga đảo phi phi",
+        "slug": "ao-phuket-vinh-phang-nga-ao-phi-phi",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đảo phuket vịnh phang nga đảo phi phi, giá vé đảo phuket vịnh phang nga đảo phi phi 2026, địa điểm ăn uống đảo phuket vịnh phang nga đảo phi phi",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-03T08:15:00"
+      },
+      {
+        "keyword": "pattaya cano đảo koh larn cát trắng",
+        "slug": "pattaya-cano-ao-koh-larn-cat-trang",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm pattaya cano đảo koh larn cát trắng, giá vé pattaya cano đảo koh larn cát trắng 2026, địa điểm ăn uống pattaya cano đảo koh larn cát trắng",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-03T08:20:00"
+      },
+      {
+        "keyword": "ẩm thực đường phố thái lan tom yum pad thai",
+        "slug": "am-thuc-uong-pho-thai-lan-tom-yum-pad-thai",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm ẩm thực đường phố thái lan tom yum pad thai, giá vé ẩm thực đường phố thái lan tom yum pad thai 2026, địa điểm ăn uống ẩm thực đường phố thái lan tom yum pad thai",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-03T08:25:00"
+      },
+      {
+        "keyword": "mua sắm icon siam central world hoàn thuế",
+        "slug": "mua-sam-icon-siam-central-world-hoan-thue",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm mua sắm icon siam central world hoàn thuế, giá vé mua sắm icon siam central world hoàn thuế 2026, địa điểm ăn uống mua sắm icon siam central world hoàn thuế",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-03T08:30:00"
+      },
+      {
+        "keyword": "sim thái lan 4g 5g sân bay và đổi tiền bath",
+        "slug": "sim-thai-lan-4g-5g-san-bay-va-oi-tien-bath",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm sim thái lan 4g 5g sân bay và đổi tiền bath, giá vé sim thái lan 4g 5g sân bay và đổi tiền bath 2026, địa điểm ăn uống sim thái lan 4g 5g sân bay và đổi tiền bath",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-03T08:35:00"
+      },
+      {
+        "keyword": "chùa wat pho tượng phật nằm khổng lồ",
+        "slug": "chua-wat-pho-tuong-phat-nam-khong-lo",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chùa wat pho tượng phật nằm khổng lồ, giá vé chùa wat pho tượng phật nằm khổng lồ 2026, địa điểm ăn uống chùa wat pho tượng phật nằm khổng lồ",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-03T08:40:00"
+      },
+      {
+        "keyword": "chợ nổi damnoen saduak đi thuyền",
+        "slug": "cho-noi-damnoen-saduak-i-thuyen",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chợ nổi damnoen saduak đi thuyền, giá vé chợ nổi damnoen saduak đi thuyền 2026, địa điểm ăn uống chợ nổi damnoen saduak đi thuyền",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-03T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 27,
+    "date": "2026-10-04",
+    "topic": "Du Lịch Singapore & Malaysia 2026",
+    "category": "Blog",
+    "posts": [
+      {
+        "keyword": "du lịch singapore tự túc gardens by the bay siêu cây",
+        "slug": "du-lich-singapore-tu-tuc-gardens-by-the-bay-sieu-cay",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm du lịch singapore tự túc gardens by the bay siêu cây, giá vé du lịch singapore tự túc gardens by the bay siêu cây 2026, địa điểm ăn uống du lịch singapore tự túc gardens by the bay siêu cây",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-04T08:00:00"
+      },
+      {
+        "keyword": "đảo sentosa universal studios singapore",
+        "slug": "ao-sentosa-universal-studios-singapore",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đảo sentosa universal studios singapore, giá vé đảo sentosa universal studios singapore 2026, địa điểm ăn uống đảo sentosa universal studios singapore",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-04T08:05:00"
+      },
+      {
+        "keyword": "marina bay sands tượng sư tử biển merlion",
+        "slug": "marina-bay-sands-tuong-su-tu-bien-merlion",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm marina bay sands tượng sư tử biển merlion, giá vé marina bay sands tượng sư tử biển merlion 2026, địa điểm ăn uống marina bay sands tượng sư tử biển merlion",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-04T08:10:00"
+      },
+      {
+        "keyword": "ẩm thực singapore cơm gà hải nam cháo ếch",
+        "slug": "am-thuc-singapore-com-ga-hai-nam-chao-ech",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm ẩm thực singapore cơm gà hải nam cháo ếch, giá vé ẩm thực singapore cơm gà hải nam cháo ếch 2026, địa điểm ăn uống ẩm thực singapore cơm gà hải nam cháo ếch",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-04T08:15:00"
+      },
+      {
+        "keyword": "du lịch kuala lumpur malaysia tháp đôi petronas",
+        "slug": "du-lich-kuala-lumpur-malaysia-thap-oi-petronas",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm du lịch kuala lumpur malaysia tháp đôi petronas, giá vé du lịch kuala lumpur malaysia tháp đôi petronas 2026, địa điểm ăn uống du lịch kuala lumpur malaysia tháp đôi petronas",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-04T08:20:00"
+      },
+      {
+        "keyword": "động batu malaysia cầu thang 272 bậc cầu vồng",
+        "slug": "ong-batu-malaysia-cau-thang-272-bac-cau-vong",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm động batu malaysia cầu thang 272 bậc cầu vồng, giá vé động batu malaysia cầu thang 272 bậc cầu vồng 2026, địa điểm ăn uống động batu malaysia cầu thang 272 bậc cầu vồng",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-04T08:25:00"
+      },
+      {
+        "keyword": "cao nguyên genting cáp treo mây",
+        "slug": "cao-nguyen-genting-cap-treo-may",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cao nguyên genting cáp treo mây, giá vé cao nguyên genting cáp treo mây 2026, địa điểm ăn uống cao nguyên genting cáp treo mây",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-04T08:30:00"
+      },
+      {
+        "keyword": "phố cổ penang tranh tường nghệ thuật",
+        "slug": "pho-co-penang-tranh-tuong-nghe-thuat",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm phố cổ penang tranh tường nghệ thuật, giá vé phố cổ penang tranh tường nghệ thuật 2026, địa điểm ăn uống phố cổ penang tranh tường nghệ thuật",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-04T08:35:00"
+      },
+      {
+        "keyword": "đảo langkawi malaysia cầu treo giữa rừng",
+        "slug": "ao-langkawi-malaysia-cau-treo-giua-rung",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đảo langkawi malaysia cầu treo giữa rừng, giá vé đảo langkawi malaysia cầu treo giữa rừng 2026, địa điểm ăn uống đảo langkawi malaysia cầu treo giữa rừng",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-04T08:40:00"
+      },
+      {
+        "keyword": "ẩm thực malaysia roti canai trà sữa teh tarik",
+        "slug": "am-thuc-malaysia-roti-canai-tra-sua-teh-tarik",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm ẩm thực malaysia roti canai trà sữa teh tarik, giá vé ẩm thực malaysia roti canai trà sữa teh tarik 2026, địa điểm ăn uống ẩm thực malaysia roti canai trà sữa teh tarik",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-04T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 28,
+    "date": "2026-10-05",
+    "topic": "Du Lịch Bali Indonesia Tự Túc 2026",
+    "category": "Blog",
+    "posts": [
+      {
+        "keyword": "du lịch bali tự túc đền tanah lot ngắm hoàng hôn",
+        "slug": "du-lich-bali-tu-tuc-en-tanah-lot-ngam-hoang-hon",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm du lịch bali tự túc đền tanah lot ngắm hoàng hôn, giá vé du lịch bali tự túc đền tanah lot ngắm hoàng hôn 2026, địa điểm ăn uống du lịch bali tự túc đền tanah lot ngắm hoàng hôn",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-05T08:00:00"
+      },
+      {
+        "keyword": "cổng trời lempuyang bali kinh nghiệm xếp hàng chụp ảnh",
+        "slug": "cong-troi-lempuyang-bali-kinh-nghiem-xep-hang-chup-anh",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cổng trời lempuyang bali kinh nghiệm xếp hàng chụp ảnh, giá vé cổng trời lempuyang bali kinh nghiệm xếp hàng chụp ảnh 2026, địa điểm ăn uống cổng trời lempuyang bali kinh nghiệm xếp hàng chụp ảnh",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-05T08:05:00"
+      },
+      {
+        "keyword": "ruộng bậc thang tegalalang xích đu bali swing",
+        "slug": "ruong-bac-thang-tegalalang-xich-u-bali-swing",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm ruộng bậc thang tegalalang xích đu bali swing, giá vé ruộng bậc thang tegalalang xích đu bali swing 2026, địa điểm ăn uống ruộng bậc thang tegalalang xích đu bali swing",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-05T08:10:00"
+      },
+      {
+        "keyword": "đảo nusa penida bãi biển khủng long kelingking",
+        "slug": "ao-nusa-penida-bai-bien-khung-long-kelingking",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đảo nusa penida bãi biển khủng long kelingking, giá vé đảo nusa penida bãi biển khủng long kelingking 2026, địa điểm ăn uống đảo nusa penida bãi biển khủng long kelingking",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-05T08:15:00"
+      },
+      {
+        "keyword": "đền uluwatu xem múa kecak vách đá",
+        "slug": "en-uluwatu-xem-mua-kecak-vach-a",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm đền uluwatu xem múa kecak vách đá, giá vé đền uluwatu xem múa kecak vách đá 2026, địa điểm ăn uống đền uluwatu xem múa kecak vách đá",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-05T08:20:00"
+      },
+      {
+        "keyword": "ẩm thực bali cơm babi guling vịt nướng bebek",
+        "slug": "am-thuc-bali-com-babi-guling-vit-nuong-bebek",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm ẩm thực bali cơm babi guling vịt nướng bebek, giá vé ẩm thực bali cơm babi guling vịt nướng bebek 2026, địa điểm ăn uống ẩm thực bali cơm babi guling vịt nướng bebek",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-05T08:25:00"
+      },
+      {
+        "keyword": "rừng khỉ ubud monkey forest khám phá hoang dã",
+        "slug": "rung-khi-ubud-monkey-forest-kham-pha-hoang-da",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm rừng khỉ ubud monkey forest khám phá hoang dã, giá vé rừng khỉ ubud monkey forest khám phá hoang dã 2026, địa điểm ăn uống rừng khỉ ubud monkey forest khám phá hoang dã",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-05T08:30:00"
+      },
+      {
+        "keyword": "thác nước tukad cepung lòng hang",
+        "slug": "thac-nuoc-tukad-cepung-long-hang",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm thác nước tukad cepung lòng hang, giá vé thác nước tukad cepung lòng hang 2026, địa điểm ăn uống thác nước tukad cepung lòng hang",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-05T08:35:00"
+      },
+      {
+        "keyword": "thuê xe máy và đổi tiền idr du lịch bali",
+        "slug": "thue-xe-may-va-oi-tien-idr-du-lich-bali",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm thuê xe máy và đổi tiền idr du lịch bali, giá vé thuê xe máy và đổi tiền idr du lịch bali 2026, địa điểm ăn uống thuê xe máy và đổi tiền idr du lịch bali",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-05T08:40:00"
+      },
+      {
+        "keyword": "biển kuta bali lướt ván và tắm biển",
+        "slug": "bien-kuta-bali-luot-van-va-tam-bien",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm biển kuta bali lướt ván và tắm biển, giá vé biển kuta bali lướt ván và tắm biển 2026, địa điểm ăn uống biển kuta bali lướt ván và tắm biển",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-05T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 29,
+    "date": "2026-10-06",
+    "topic": "Du Lịch Đài Loan Tự Túc 2026",
+    "category": "Blog",
+    "posts": [
+      {
+        "keyword": "du lịch đài loan tự túc thủ tục visa evisa lịch trình",
+        "slug": "du-lich-ai-loan-tu-tuc-thu-tuc-visa-evisa-lich-trinh",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm du lịch đài loan tự túc thủ tục visa evisa lịch trình, giá vé du lịch đài loan tự túc thủ tục visa evisa lịch trình 2026, địa điểm ăn uống du lịch đài loan tự túc thủ tục visa evisa lịch trình",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-06T08:00:00"
+      },
+      {
+        "keyword": "làng cổ cửu phần jiufen spirited away lãng mạn",
+        "slug": "lang-co-cuu-phan-jiufen-spirited-away-lang-man",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm làng cổ cửu phần jiufen spirited away lãng mạn, giá vé làng cổ cửu phần jiufen spirited away lãng mạn 2026, địa điểm ăn uống làng cổ cửu phần jiufen spirited away lãng mạn",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-06T08:05:00"
+      },
+      {
+        "keyword": "thả đèn trời thập phần shifen cầu bình an",
+        "slug": "tha-en-troi-thap-phan-shifen-cau-binh-an",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm thả đèn trời thập phần shifen cầu bình an, giá vé thả đèn trời thập phần shifen cầu bình an 2026, địa điểm ăn uống thả đèn trời thập phần shifen cầu bình an",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-06T08:10:00"
+      },
+      {
+        "keyword": "tháp taipei 101 đài quan sát ngắm toàn cảnh đài bắc",
+        "slug": "thap-taipei-101-ai-quan-sat-ngam-toan-canh-ai-bac",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm tháp taipei 101 đài quan sát ngắm toàn cảnh đài bắc, giá vé tháp taipei 101 đài quan sát ngắm toàn cảnh đài bắc 2026, địa điểm ăn uống tháp taipei 101 đài quan sát ngắm toàn cảnh đài bắc",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-06T08:15:00"
+      },
+      {
+        "keyword": "chợ đêm shilin sĩ lâm trà sữa gà khổng lồ",
+        "slug": "cho-em-shilin-si-lam-tra-sua-ga-khong-lo",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm chợ đêm shilin sĩ lâm trà sữa gà khổng lồ, giá vé chợ đêm shilin sĩ lâm trà sữa gà khổng lồ 2026, địa điểm ăn uống chợ đêm shilin sĩ lâm trà sữa gà khổng lồ",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-06T08:20:00"
+      },
+      {
+        "keyword": "hồ nhật nguyệt sun moon lake đạp xe quanh hồ",
+        "slug": "ho-nhat-nguyet-sun-moon-lake-ap-xe-quanh-ho",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm hồ nhật nguyệt sun moon lake đạp xe quanh hồ, giá vé hồ nhật nguyệt sun moon lake đạp xe quanh hồ 2026, địa điểm ăn uống hồ nhật nguyệt sun moon lake đạp xe quanh hồ",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-06T08:25:00"
+      },
+      {
+        "keyword": "nông trường thanh cảnh cingjing thảo nguyên cừu",
+        "slug": "nong-truong-thanh-canh-cingjing-thao-nguyen-cuu",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm nông trường thanh cảnh cingjing thảo nguyên cừu, giá vé nông trường thanh cảnh cingjing thảo nguyên cừu 2026, địa điểm ăn uống nông trường thanh cảnh cingjing thảo nguyên cừu",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-06T08:30:00"
+      },
+      {
+        "keyword": "bảo tàng cố cung đài bắc báu vật cổ vật",
+        "slug": "bao-tang-co-cung-ai-bac-bau-vat-co-vat",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bảo tàng cố cung đài bắc báu vật cổ vật, giá vé bảo tàng cố cung đài bắc báu vật cổ vật 2026, địa điểm ăn uống bảo tàng cố cung đài bắc báu vật cổ vật",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-06T08:35:00"
+      },
+      {
+        "keyword": "làng mèo hầu đồng houtong vương quốc mèo",
+        "slug": "lang-meo-hau-ong-houtong-vuong-quoc-meo",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm làng mèo hầu đồng houtong vương quốc mèo, giá vé làng mèo hầu đồng houtong vương quốc mèo 2026, địa điểm ăn uống làng mèo hầu đồng houtong vương quốc mèo",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-06T08:40:00"
+      },
+      {
+        "keyword": "thẻ easycard tàu cao tốc thsr đài loan di chuyển",
+        "slug": "the-easycard-tau-cao-toc-thsr-ai-loan-di-chuyen",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm thẻ easycard tàu cao tốc thsr đài loan di chuyển, giá vé thẻ easycard tàu cao tốc thsr đài loan di chuyển 2026, địa điểm ăn uống thẻ easycard tàu cao tốc thsr đài loan di chuyển",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-06T08:45:00"
+      }
+    ]
+  },
+  {
+    "day": 30,
+    "date": "2026-10-07",
+    "topic": "Du Lịch Trung Quốc Tự Túc 2026",
+    "category": "Blog",
+    "posts": [
+      {
+        "keyword": "du lịch trung quốc tự túc hướng dẫn xin visa app alipay wechat",
+        "slug": "du-lich-trung-quoc-tu-tuc-huong-dan-xin-visa-app-alipay-wechat",
+        "volume": 18500,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm du lịch trung quốc tự túc hướng dẫn xin visa app alipay wechat, giá vé du lịch trung quốc tự túc hướng dẫn xin visa app alipay wechat 2026, địa điểm ăn uống du lịch trung quốc tự túc hướng dẫn xin visa app alipay wechat",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-07T08:00:00"
+      },
+      {
+        "keyword": "phượng hoàng cổ trấn trấn cổ ngàn năm đà giang lung linh",
+        "slug": "phuong-hoang-co-tran-tran-co-ngan-nam-a-giang-lung-linh",
+        "volume": 17400,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm phượng hoàng cổ trấn trấn cổ ngàn năm đà giang lung linh, giá vé phượng hoàng cổ trấn trấn cổ ngàn năm đà giang lung linh 2026, địa điểm ăn uống phượng hoàng cổ trấn trấn cổ ngàn năm đà giang lung linh",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-07T08:05:00"
+      },
+      {
+        "keyword": "trương gia giới công viên avatar thiên môn sơn 99 khúc cua",
+        "slug": "truong-gia-gioi-cong-vien-avatar-thien-mon-son-99-khuc-cua",
+        "volume": 16300,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm trương gia giới công viên avatar thiên môn sơn 99 khúc cua, giá vé trương gia giới công viên avatar thiên môn sơn 99 khúc cua 2026, địa điểm ăn uống trương gia giới công viên avatar thiên môn sơn 99 khúc cua",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-07T08:10:00"
+      },
+      {
+        "keyword": "cầu kính trương gia giới đại hiệp cốc thử thách lòng can đảm",
+        "slug": "cau-kinh-truong-gia-gioi-ai-hiep-coc-thu-thach-long-can-am",
+        "volume": 15200,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm cầu kính trương gia giới đại hiệp cốc thử thách lòng can đảm, giá vé cầu kính trương gia giới đại hiệp cốc thử thách lòng can đảm 2026, địa điểm ăn uống cầu kính trương gia giới đại hiệp cốc thử thách lòng can đảm",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-07T08:15:00"
+      },
+      {
+        "keyword": "vạn lý trường thành bắc kinh bát đạt lĩnh cáp treo",
+        "slug": "van-ly-truong-thanh-bac-kinh-bat-at-linh-cap-treo",
+        "volume": 14100,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm vạn lý trường thành bắc kinh bát đạt lĩnh cáp treo, giá vé vạn lý trường thành bắc kinh bát đạt lĩnh cáp treo 2026, địa điểm ăn uống vạn lý trường thành bắc kinh bát đạt lĩnh cáp treo",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-07T08:20:00"
+      },
+      {
+        "keyword": "tử cấm thành cố cung bắc kinh kinh nghiệm săn vé trước",
+        "slug": "tu-cam-thanh-co-cung-bac-kinh-kinh-nghiem-san-ve-truoc",
+        "volume": 13000,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm tử cấm thành cố cung bắc kinh kinh nghiệm săn vé trước, giá vé tử cấm thành cố cung bắc kinh kinh nghiệm săn vé trước 2026, địa điểm ăn uống tử cấm thành cố cung bắc kinh kinh nghiệm săn vé trước",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-07T08:25:00"
+      },
+      {
+        "keyword": "bến thượng hải tháp truyền hình đông phương minh châu",
+        "slug": "ben-thuong-hai-thap-truyen-hinh-ong-phuong-minh-chau",
+        "volume": 11900,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm bến thượng hải tháp truyền hình đông phương minh châu, giá vé bến thượng hải tháp truyền hình đông phương minh châu 2026, địa điểm ăn uống bến thượng hải tháp truyền hình đông phương minh châu",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-07T08:30:00"
+      },
+      {
+        "keyword": "ô trấn thủy trấn giang nam đẹp như tranh thủy mặc",
+        "slug": "o-tran-thuy-tran-giang-nam-ep-nhu-tranh-thuy-mac",
+        "volume": 10800,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm ô trấn thủy trấn giang nam đẹp như tranh thủy mặc, giá vé ô trấn thủy trấn giang nam đẹp như tranh thủy mặc 2026, địa điểm ăn uống ô trấn thủy trấn giang nam đẹp như tranh thủy mặc",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-07T08:35:00"
+      },
+      {
+        "keyword": "ẩm thực trung hoa vịt quay bắc kinh lẩu cay tứ xuyên",
+        "slug": "am-thuc-trung-hoa-vit-quay-bac-kinh-lau-cay-tu-xuyen",
+        "volume": 9700,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm ẩm thực trung hoa vịt quay bắc kinh lẩu cay tứ xuyên, giá vé ẩm thực trung hoa vịt quay bắc kinh lẩu cay tứ xuyên 2026, địa điểm ăn uống ẩm thực trung hoa vịt quay bắc kinh lẩu cay tứ xuyên",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-07T08:40:00"
+      },
+      {
+        "keyword": "mua esim trung quốc vượt tường lửa lướt mạng thả ga",
+        "slug": "mua-esim-trung-quoc-vuot-tuong-lua-luot-mang-tha-ga",
+        "volume": 8600,
+        "intent": "Cẩm nang / Khám phá / Ẩm thực",
+        "lsi": "kinh nghiệm mua esim trung quốc vượt tường lửa lướt mạng thả ga, giá vé mua esim trung quốc vượt tường lửa lướt mạng thả ga 2026, địa điểm ăn uống mua esim trung quốc vượt tường lửa lướt mạng thả ga",
+        "category_id": 654,
+        "category_name": "Blog",
+        "schedule_date": "2026-10-07T08:45:00"
+      }
+    ]
+  }
+]

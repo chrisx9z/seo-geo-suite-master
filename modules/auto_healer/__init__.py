@@ -1,1 +1,3 @@
-"""Auto 404 Healer & 301 Redirect Engine."""
+from .healer import Auto404Healer
+AutoHealer = Auto404Healer
+__all__ = ['Auto404Healer', 'AutoHealer']

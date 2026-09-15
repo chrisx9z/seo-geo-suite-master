@@ -8,6 +8,7 @@ build/
 
 # === Virtual Environment ===
 venv/
+venv
 env/
 .venv/
 
@@ -30,6 +31,8 @@ sites_config.json
 reports/
 generated_posts/
 *.webp
+output/
+cache/
 
 # === Logs ===
 *.log
@@ -61,3 +64,25 @@ package-lock.json
 repos/
 vps-auto-wp/
 
+# === Workspace Non-Suite Artifacts ===
+.agents/
+*.mp4
+*.srt
+NASA_*
+XianxiaBlender/
+blender/
+boss_anim_*
+game/
+generate_uap_video.py
+kamargo/
+references/
+renders/
+scratch/
+scripts/
+tools/
+veo_clips/
+veo_generator.py
+work/
+run_player.bat
+run_qa*.bat
+assets/

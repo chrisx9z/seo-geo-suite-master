@@ -16,9 +16,9 @@ class KeywordResearcher:
         and constructs an Onpage SEO outline.
         """
         cleaned = re.sub(r"[\(\)\[\]\{\}\:\?\!\|\,\.]", " ", topic)
-        words = [w.strip() for w in cleaned.split() if len(w.strip()) > 2]
+        words = [w.strip() for w in cleaned.split() if len(w.strip()) > 0]
         
-        primary_kw = " ".join(words[:4]) if len(words) >= 4 else topic
+        primary_kw = " ".join(words[:5]) if len(words) >= 5 else topic
         
         # Build secondary / LSI keyword pool
         lsi_keywords = [

@@ -1,1 +1,2 @@
-"""Interactive Widgets & Calculators Generator."""
+from .widget_generator import InteractiveWidgetGenerator
+__all__ = ['InteractiveWidgetGenerator']

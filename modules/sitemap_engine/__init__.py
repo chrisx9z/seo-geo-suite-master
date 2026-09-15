@@ -1,1 +1,3 @@
-"""Google News & Discover XML Sitemap Engine."""
+from .news_sitemap import NewsSitemapGenerator
+NewsSitemapEngine = NewsSitemapGenerator
+__all__ = ['NewsSitemapGenerator', 'NewsSitemapEngine']

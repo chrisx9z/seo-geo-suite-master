@@ -1,1 +1,2 @@
-"""Semantic Silo & Topic Cluster Graph Builder."""
+from .silo_builder import SemanticSiloBuilder
+__all__ = ['SemanticSiloBuilder']

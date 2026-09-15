@@ -1,1 +1,2 @@
-"""Schema & GEO Rich Snippets Module."""
+from .rich_snippets_generator import RichSnippetsGenerator
+__all__ = ['RichSnippetsGenerator']

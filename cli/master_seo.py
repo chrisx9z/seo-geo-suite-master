@@ -433,10 +433,53 @@ def optimize_site(site):
 
     print(f"\n🎉 100% ENTERPRISE OPTIMIZATION COMPLETED FOR: {site['name']} ({site['url']})\n")
 
+def schedule_travel_site(site, plan_path=None, days=None, max_posts=None):
+    from modules.travel_scheduler.travel_batch_scheduler import TravelBatchScheduler
+    
+    if not plan_path:
+        base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+        if "mmdidau" in site.get("site_id", "") or "mmdidau" in site.get("url", ""):
+            plan_path = os.path.join(base_dir, "docs", "MMDIDAU_30DAY_CONTENT_PLAN.json")
+        elif "tobeigo" in site.get("site_id", "") or "tobeigo" in site.get("url", ""):
+            plan_path = os.path.join(base_dir, "docs", "TOBEIGO_30DAY_CONTENT_PLAN.json")
+        else:
+            plan_path = os.path.join(base_dir, "docs", f"{site.get('site_id')}_30DAY_CONTENT_PLAN.json")
+            
+    if not os.path.exists(plan_path):
+        print(f"Error: Plan file not found at {plan_path}")
+        return
+        
+    admin_user = site.get("admin_user", os.getenv("WP_ADMIN_USER", "admin"))
+    admin_pass = site.get("admin_pass") or site.get("admin_password") or os.getenv("WP_ADMIN_PASSWORD", "")
+    
+    target_days = None
+    if days:
+        if "-" in str(days):
+            start, end = str(days).split("-")
+            target_days = list(range(int(start), int(end) + 1))
+        elif "," in str(days):
+            target_days = [int(x.strip()) for x in str(days).split(",")]
+        elif str(days).lower() != "all":
+            target_days = [int(days)]
+            
+    scheduler = TravelBatchScheduler(
+        wp_url=site["url"],
+        admin_user=admin_user,
+        admin_pass=admin_pass,
+        plan_file=plan_path
+    )
+    scheduler.run_batch(target_days=target_days, max_posts=max_posts)
+
 def main():
     parser = argparse.ArgumentParser(description="Master Auto SEO GEO Suite CLI")
-    parser.add_argument("command", choices=["optimize", "optimize-all", "deploy", "audit", "fast-index", "auto-link", "list-sites", "write-post", "heal-404", "news-sitemap", "serp-gap", "cannibalization", "build-silo", "inject-eeat", "heal-orphans", "warm-edge", "audit-links", "audit-onpage"], help="Action to perform")
+    parser.add_argument("command", choices=["optimize", "optimize-all", "deploy", "audit", "fast-index", "auto-link", "list-sites", "write-post", "heal-404", "news-sitemap", "serp-gap", "cannibalization", "build-silo", "inject-eeat", "heal-orphans", "warm-edge", "audit-links", "audit-onpage", "schedule-travel", "clone-site"], help="Action to perform")
     parser.add_argument("--site", default=None, help="Site ID or domain to target (omit to apply to ALL sites)")
+    parser.add_argument("--from-site", default="mmdidau", help="Source site ID to clone from (for clone-site)")
+    parser.add_argument("--to-domain", default="triptip.cc", help="Target domain to clone to (for clone-site)")
+    parser.add_argument("--to-brand", default="TripTip", help="Target brand name (for clone-site)")
+    parser.add_argument("--days", help="Day number or range for travel scheduler (e.g. 1, 1-5, all)")
+    parser.add_argument("--plan", help="Custom path to content plan JSON")
+    parser.add_argument("--max-posts", type=int, default=None, help="Maximum posts to schedule in this run")
     parser.add_argument("--post-id", type=int, default=665, help="Post ID for EEAT injection")
     parser.add_argument("--topic", help="Topic for AI article writer")
     parser.add_argument("--category", type=int, default=4, help="Category ID (default 4: Cong Nghe & SaaS)")
@@ -449,6 +492,16 @@ def main():
 
     if args.command == "list-sites":
         list_sites()
+        return
+
+    if args.command == "clone-site":
+        from modules.migration.wp_clone_packager import WPClonePackager
+        packager = WPClonePackager(
+            source_site_id=args.from_site or "mmdidau",
+            target_domain=args.to_domain or "triptip.cc",
+            target_name=args.to_brand or "TripTip"
+        )
+        packager.run_all()
         return
 
     if args.command == "serp-gap":
@@ -494,6 +547,8 @@ def main():
                 print("Error: --topic is required for write-post command.")
                 sys.exit(1)
             write_post_site(s, args.topic, args.category, args.status, args.date)
+        elif args.command == "schedule-travel":
+            schedule_travel_site(s, plan_path=args.plan, days=args.days, max_posts=args.max_posts)
 
 if __name__ == "__main__":
     main()

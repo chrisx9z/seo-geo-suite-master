@@ -1,1 +1,2 @@
-"""Cloudflare Edge Caching & Worker Pre-renderer."""
+from .worker_generator import CloudflareEdgeManager
+__all__ = ['CloudflareEdgeManager']

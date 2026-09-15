@@ -12,12 +12,29 @@ from seo_geo_suite.core.css_fixer import CssFixer
 from seo_geo_suite.core.asset_builder import AssetBuilder
 from seo_geo_suite.core.keyword_planner import KeywordPlanner
 
-app = FastAPI(title="SEO & GEO Master Suite Dashboard")
+import sys
+from typing import Optional
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", ".."))
+if ROOT_DIR not in sys.path:
+    sys.path.insert(0, ROOT_DIR)
+
+from modules.wp_ai_autopilot.autopilot_orchestrator import WpAiAutopilot
+
+app = FastAPI(title="SEO & GEO Master Suite Dashboard")
+
 static_dir = os.path.join(BASE_DIR, "static")
 os.makedirs(static_dir, exist_ok=True)
 app.mount("/static", StaticFiles(directory=static_dir), name="static")
+
+assets_dir = os.path.join(ROOT_DIR, "assets")
+os.makedirs(assets_dir, exist_ok=True)
+app.mount("/assets", StaticFiles(directory=assets_dir), name="assets")
+
+output_dir = os.path.join(ROOT_DIR, "output")
+os.makedirs(output_dir, exist_ok=True)
+app.mount("/output", StaticFiles(directory=output_dir), name="output")
 
 templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
 
@@ -72,3 +89,78 @@ async def api_ui(type: str = Form(...), brand: str = Form("MyBrand")):
 async def api_css(css_code: str = Form(...)):
     res = css_fixer.check_css_string(css_code)
     return JSONResponse(content=res)
+
+@app.get("/api/autopilot/sites")
+async def api_autopilot_sites():
+    """Returns list of configured sites for M-Auto-Pilot."""
+    sites = []
+    for c_rel in [os.path.join("private", "sites.local.json"), "config.json", os.path.join("config", "sites.json")]:
+        c_path = os.path.abspath(os.path.join(ROOT_DIR, c_rel))
+        if os.path.exists(c_path):
+            try:
+                with open(c_path, "r", encoding="utf-8") as f:
+                    conf = json.load(f)
+                    for s in conf.get("sites", []):
+                        sites.append({
+                            "site_id": s.get("site_id", ""),
+                            "name": s.get("name", s.get("site_id", "")),
+                            "url": s.get("url", ""),
+                            "admin_user": s.get("admin_user", "admin")
+                        })
+                    if sites:
+                        break
+            except Exception:
+                pass
+    return JSONResponse(content={"sites": sites})
+
+@app.post("/api/autopilot/publish")
+async def api_autopilot_publish(
+    site_id: str = Form(...),
+    topic: str = Form(...),
+    status: str = Form("publish"),
+    category: int = Form(4),
+    date: Optional[str] = Form(None),
+    dry_run: bool = Form(False)
+):
+    """Executes M-Auto-Pilot pipeline for specified site."""
+    wp_url = site_id if site_id.startswith("http") else f"https://{site_id}"
+    admin_user = os.getenv("WP_ADMIN_USER", "admin")
+    admin_pass = os.getenv("WP_ADMIN_PASSWORD", "")
+
+    # Look up site credentials
+    for c_rel in [os.path.join("private", "sites.local.json"), "config.json", os.path.join("config", "sites.json")]:
+        c_path = os.path.abspath(os.path.join(ROOT_DIR, c_rel))
+        if os.path.exists(c_path):
+            try:
+                with open(c_path, "r", encoding="utf-8") as f:
+                    conf = json.load(f)
+                    for s in conf.get("sites", []):
+                        if site_id == s.get("site_id") or site_id in s.get("url", "") or site_id in s.get("name", "").lower():
+                            wp_url = s.get("url", wp_url)
+                            admin_user = s.get("admin_user", admin_user)
+                            admin_pass = s.get("admin_pass") or s.get("admin_password") or admin_pass
+                            break
+            except Exception:
+                pass
+        if admin_pass:
+            break
+
+    try:
+        autopilot = WpAiAutopilot(wp_url=wp_url, admin_user=admin_user, admin_pass=admin_pass)
+        res = autopilot.produce_and_publish(
+            topic=topic,
+            category_ids=[category],
+            status=status,
+            schedule_date=date,
+            dry_run=dry_run
+        )
+        # Convert absolute local asset paths to relative URLs for dashboard display
+        if "banner_path" in res and res["banner_path"]:
+            res["banner_url"] = f"/assets/banners/{os.path.basename(res['banner_path'])}"
+        if "diagram_path" in res and res["diagram_path"]:
+            res["diagram_url"] = f"/assets/banners/{os.path.basename(res['diagram_path'])}"
+        if "link" in res and res["link"].startswith(ROOT_DIR):
+            res["preview_url"] = f"/output/posts/{os.path.basename(res['link'])}"
+        return JSONResponse(content=res)
+    except Exception as e:
+        return JSONResponse(status_code=500, content={"status": "error", "message": str(e)})

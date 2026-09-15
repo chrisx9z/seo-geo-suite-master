@@ -1,1 +1,2 @@
-"""Fast Indexing Module."""
+from .instant_indexer import InstantIndexer
+__all__ = ['InstantIndexer']

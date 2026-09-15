@@ -1,1 +1,2 @@
-"""AI Featured Image Generator Module."""
+from .image_pipeline import FeaturedImagePipeline
+__all__ = ['FeaturedImagePipeline']

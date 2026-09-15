@@ -26,6 +26,7 @@ def main():
     parser.add_argument("--status", default="publish", choices=["publish", "future", "draft"], help="Post status")
     parser.add_argument("--date", default=None, help="Schedule date ISO string (e.g. 2026-09-04T08:00:00) when status=future")
     parser.add_argument("--category", type=int, default=4, help="Category ID (default 4: Cong Nghe & SaaS)")
+    parser.add_argument("--dry-run", action="store_true", help="Generate content and assets locally without publishing to WordPress")
 
     args = parser.parse_args()
 
@@ -74,7 +75,8 @@ def main():
         topic=args.topic,
         category_ids=[args.category],
         status=args.status,
-        schedule_date=args.date
+        schedule_date=args.date,
+        dry_run=args.dry_run
     )
 
 if __name__ == "__main__":

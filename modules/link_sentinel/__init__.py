@@ -1,1 +1,2 @@
-"""Automated Internal Link Sentinel & 404 Healer."""
+from .link_sentinel import InternalLinkSentinel
+__all__ = ['InternalLinkSentinel']

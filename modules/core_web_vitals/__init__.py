@@ -1,1 +1,2 @@
-"""Core Web Vitals & PageSpeed Speed Booster."""
+from .speed_booster import CoreWebVitalsBooster
+__all__ = ['CoreWebVitalsBooster']

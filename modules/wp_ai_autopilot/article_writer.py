@@ -9,6 +9,8 @@ Enforces:
 6. Strict No Thin Content (>= 1,000 words, target 1,200 - 2,000 words)
 """
 
+import os
+import json
 import re
 import random
 from datetime import datetime
@@ -246,3 +248,6 @@ class SystemController:
             "keyword_density": round(density, 2),
             "has_outbound_link": should_include_outbound
         }
+
+# Alias for consistent naming
+WpAiArticleWriter = ArticleWriter

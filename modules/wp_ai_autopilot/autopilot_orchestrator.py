@@ -42,11 +42,14 @@ class WpAiAutopilot:
         self.indexer = InstantIndexer(host=self.host)
 
     def _authenticate(self):
-        self.session.post(f"{self.wp_url}/wp-login.php",
-            data={"log": self.admin_user, "pwd": self.admin_pass, "wp-submit": "Log In"}, timeout=20)
-        r_admin = self.session.get(f"{self.wp_url}/wp-admin/edit.php", timeout=20)
-        m = re.search(r'"nonce":"([a-f0-9]+)"', r_admin.text)
-        self.nonce = m.group(1) if m else ""
+        try:
+            self.session.post(f"{self.wp_url}/wp-login.php",
+                data={"log": self.admin_user, "pwd": self.admin_pass, "wp-submit": "Log In"}, timeout=10)
+            r_admin = self.session.get(f"{self.wp_url}/wp-admin/edit.php", timeout=10)
+            m = re.search(r'"nonce":"([a-f0-9]+)"', r_admin.text)
+            self.nonce = m.group(1) if m else ""
+        except Exception:
+            self.nonce = ""
 
     def upload_webp_media(self, file_path: str, alt_text: str, title: str) -> Optional[Dict[str, Any]]:
         """Uploads a WebP image and configures Alt Text containing Focus Keyword."""
@@ -71,9 +74,10 @@ class WpAiAutopilot:
                 return {"id": mid, "url": source_url}
         return None
 
-    def produce_and_publish(self, topic: str, category_ids: list = [4], status: str = "publish", schedule_date: Optional[str] = None) -> Dict[str, Any]:
+    def produce_and_publish(self, topic: str, category_ids: list = [4], status: str = "publish", schedule_date: Optional[str] = None, dry_run: bool = False) -> Dict[str, Any]:
         print(f"\n{'='*70}")
-        print(f"🤖 WP AI AUTOPILOT: STRICT RANKMATH SEO STANDARDS FOR {self.host.upper()}")
+        mode_str = "[DRY-RUN LOCAL PREVIEW]" if dry_run else f"STRICT RANKMATH SEO STANDARDS FOR {self.host.upper()}"
+        print(f"🤖 WP AI AUTOPILOT: {mode_str}")
         print(f"Topic: {topic}")
         print(f"{'='*70}")
 
@@ -90,11 +94,14 @@ class WpAiAutopilot:
         banner_path = self.banner_gen.generate_banner(topic, category="TECH & AI", slug=slug)
         diagram_path = self.banner_gen.generate_in_content_illustration(focus_keyword=focus_keyword, slug=slug)
 
-        featured_upload = self.upload_webp_media(banner_path, alt_text=f"{focus_keyword} ảnh đại diện", title=f"{focus_keyword} Banner")
-        diagram_upload = self.upload_webp_media(diagram_path, alt_text=f"{focus_keyword} sơ đồ kiến trúc kỹ thuật chi tiết", title=f"{focus_keyword} Architecture Diagram")
-
-        diagram_url = diagram_upload["url"] if diagram_upload else ""
-        featured_id = featured_upload["id"] if featured_upload else None
+        if dry_run:
+            diagram_url = f"file://{os.path.abspath(diagram_path)}"
+            featured_id = None
+        else:
+            featured_upload = self.upload_webp_media(banner_path, alt_text=f"{focus_keyword} ảnh đại diện", title=f"{focus_keyword} Banner")
+            diagram_upload = self.upload_webp_media(diagram_path, alt_text=f"{focus_keyword} sơ đồ kiến trúc kỹ thuật chi tiết", title=f"{focus_keyword} Architecture Diagram")
+            diagram_url = diagram_upload["url"] if diagram_upload else ""
+            featured_id = featured_upload["id"] if featured_upload else None
 
         # Step 3: Write Deep Article (> 1,000 words guaranteed)
         print("\n[3/6] Synthesizing Deep Structured Content (Enforcing > 1,000 Words & RankMath)...")
@@ -107,10 +114,36 @@ class WpAiAutopilot:
         print(f"  📄 Meta Description: {meta_desc} ({len(meta_desc)} chars)")
         print(f"  📊 Word Count: {word_count} words (Strictly No Thin Content)")
 
+        if dry_run:
+            out_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "output", "posts"))
+            os.makedirs(out_dir, exist_ok=True)
+            local_file = os.path.join(out_dir, f"{slug}.html")
+            with open(local_file, "w", encoding="utf-8") as f:
+                f.write(f"<!-- Title: {seo_title} -->\n<!-- Meta: {meta_desc} -->\n<!-- Focus Keyword: {focus_keyword} -->\n" + html_content)
+            print(f"\n✨ [DRY RUN] Bài viết và hình ảnh WebP đã được tạo thành công cục bộ!")
+            print(f"  💾 Tệp HTML: {local_file}")
+            print(f"  🖼️ Featured Banner: {banner_path}")
+            print(f"  📊 In-Content Diagram: {diagram_path}")
+            print(f"{'='*70}\n")
+            return {
+                "status": "dry_run_success",
+                "post_id": 0,
+                "title": seo_title,
+                "slug": slug,
+                "link": local_file,
+                "words": word_count,
+                "focus_keyword": focus_keyword,
+                "banner_path": banner_path,
+                "diagram_path": diagram_path
+            }
+
         # Step 4: Internal Linking
         print("\n[4/6] Injecting contextual internal links...")
-        r_posts = self.session.get(f"{self.wp_url}/wp-json/wp/v2/posts?per_page=30", timeout=20)
-        existing_posts = r_posts.json() if r_posts.status_code == 200 else []
+        try:
+            r_posts = self.session.get(f"{self.wp_url}/wp-json/wp/v2/posts?per_page=30", timeout=15)
+            existing_posts = r_posts.json() if r_posts.status_code == 200 else []
+        except Exception:
+            existing_posts = []
         linked_content, links_count = self.link_engine.inject_links(html_content, existing_posts, current_post_id=0)
 
         # Step 5: WordPress REST API Dispatch with RankMath Post Meta

@@ -1,1 +1,2 @@
-"""Automated Tiered Satellite Network Flow Controller."""
+from .tiered_linker import TieredNetworkLinker
+__all__ = ['TieredNetworkLinker']

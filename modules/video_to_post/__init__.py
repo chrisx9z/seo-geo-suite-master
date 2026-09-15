@@ -1,1 +1,2 @@
-"""YouTube Video-to-Post Pipeline."""
+from .transcribe_pipeline import VideoToPostPipeline
+__all__ = ['VideoToPostPipeline']

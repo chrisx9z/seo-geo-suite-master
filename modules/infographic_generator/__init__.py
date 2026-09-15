@@ -1,1 +1,2 @@
-"""AI Visual Infographic & Data Chart Synthesizer."""
+from .infographic_builder import InfographicBuilder
+__all__ = ['InfographicBuilder']

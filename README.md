@@ -19,8 +19,19 @@
 
 ### Giới Thiệu
 
-<<<<<<< HEAD
-**SEO GEO Suite Master** là bộ giải pháp toàn diện mã nguồn mở kết hợp **SEO truyền thống** và **GEO (Generative Engine Optimization)**. Hệ thống bao gồm Web Dashboard FastAPI trực quan, Interactive CLI, bộ điều khiển Enterprise Master CLI (`cli/master_seo.py`), 29 module chuyên sâu và Universal WordPress Plugin độc quyền.
+**SEO GEO Suite Master** là nền tảng toàn diện tích hợp **2 Gói Chức Năng Hoàn Chỉnh** dành cho Webmaster & SEO Engineer:
+
+1. **Gói 1: SEO & GEO Content Automation Suite**
+   - Kết hợp **SEO truyền thống** và **GEO (Generative Engine Optimization)** — tối ưu hóa nội dung để được trích xuất và trích dẫn bởi các AI tìm kiếm thế hệ mới (ChatGPT Search, Perplexity, Google AI Overviews, Gemini, Claude).
+   - Tự động hóa Semantic Silo, Entity Knowledge Graph, Schema JSON-LD chuyên sâu, phòng chống ăn thịt từ khóa (Cannibalization Detector), Fast Indexing và lập lịch xuất bản.
+   - Hệ thống bao gồm Web Dashboard FastAPI trực quan, Interactive CLI, bộ điều khiển Enterprise Master CLI (`cli/master_seo.py`), 29 module chuyên sâu và Universal WordPress Plugin độc quyền.
+
+2. **Gói 2: Cloud & VPS DevOps Suite**
+   - Tự động hóa hạ tầng máy chủ **Ubuntu / aaPanel LNMP** (Nginx, MariaDB 10.11, PHP 8.4) và **Cloudflare API Edge**.
+   - Tự động trỏ DNS A-records, bật Proxy cam Cloudflare, kích hoạt SSL Full/Strict, và tạo luật WAF chặn DDoS/XML-RPC.
+   - Nhân bản website (**Clone WordPress trong 10 giây**) với Search-Replace tuần tự hóa (serialized data) chuẩn xác.
+   - Bộ dọn dẹp bài viết an toàn (**Safe Post Wiper**): Xóa sạch bài viết và revision nhưng bảo toàn 100% templates giao diện (Newspaper tdb_templates), trang tĩnh (pages), menu và media library.
+   - Toàn bộ hệ thống tuân thủ nguyên tắc **Zero Credentials Leakage** — không lưu bất kỳ mật khẩu hay thông tin cá nhân nào vào mã nguồn.
 
 ---
 
@@ -33,9 +44,10 @@ seo-geo-suite-master/
 │   ├── dashboard/                  # FastAPI Dashboard & M-Auto-Pilot WP Hub
 │   └── sync_wp.py                  # WordPress REST API sync engine
 ├── cli/
-│   ├── master_seo.py               # Enterprise Orchestrator (20+ lệnh tối ưu đa site)
+│   ├── master_seo.py               # Enterprise Orchestrator (25+ lệnh tối ưu đa site)
+│   ├── master_devops.py            # DevOps Orchestrator (aaPanel, Cloudflare, Clone, Backup)
 │   ├── wp_ai_post.py               # Autonomous AI Article Writer (1.000+ từ, Banner, Schema)
-│   ├── wp-ai-post.sh / .bat        # Shell launchers cho AI writer
+│   └── wp-ai-post.sh / .bat        # Shell launchers cho AI writer
 ├── modules/                        # 29 Enterprise SEO & GEO Modules
 │   ├── wp_ai_autopilot/            # Tự động hóa sản xuất nội dung chuẩn E-E-A-T
 │   ├── fast_indexing/              # Bing IndexNow & Google Indexing API protocol
@@ -50,26 +62,16 @@ seo-geo-suite-master/
 │   ├── eeat_persona/               # Quản lý tác giả chuyên gia & nhúng tín hiệu E-E-A-T
 │   ├── core_web_vitals/            # Tối ưu LCP, CLS, FID & tốc độ tải trang
 │   ├── travel_scheduler/           # Lên lịch tự động 30 ngày bài viết du lịch/tin tức
-│   └── migration/                  # Đóng gói và di chuyển toàn bộ website WP tự động
+│   ├── migration/                  # Đóng gói và di chuyển toàn bộ website WP tự động
+│   └── vps_cloudflare_aapanel/     # Tự động hóa hạ tầng máy chủ và Cloudflare API
 ├── plugins/
-│   └── auto-seo-geo-master-suite/  # Universal WordPress Plugin tích hợp sâu
+│   ├── auto-seo-geo-master-suite/  # Universal WordPress Plugin tích hợp sâu
+│   └── wp-site-porter/             # Plugin di chuyển và sao lưu website độc lập
+├── vps-auto-wp/                    # Bộ script triển khai máy chủ Linux / aaPanel tự động
 ├── run_dashboard.sh / .bat         # Khởi chạy Web Dashboard (Cổng 8000)
 ├── run_cli.sh / .bat               # Khởi chạy Interactive CLI
 └── requirements.txt                # Thư viện Python
 ```
-=======
-**SEO GEO Suite Master** là nền tảng toàn diện tích hợp **2 Gói Chức Năng Hoàn Chỉnh** dành cho Webmaster & SEO Engineer:
-
-1. **Gói 1: SEO & GEO Content Automation Suite**
-   - Kết hợp **SEO truyền thống** và **GEO (Generative Engine Optimization)** — tối ưu hóa nội dung để được trích xuất và trích dẫn bởi các AI tìm kiếm thế hệ mới (ChatGPT Search, Perplexity, Google AI Overviews, Gemini, Claude).
-   - Tự động hóa Semantic Silo, Entity Knowledge Graph, Schema JSON-LD chuyên sâu, phòng chống ăn thịt từ khóa (Cannibalization Detector), Fast Indexing và lập lịch xuất bản.
-
-2. **Gói 2: Cloud & VPS DevOps Suite**
-   - Tự động hóa hạ tầng máy chủ **Ubuntu / aaPanel LNMP** (Nginx, MariaDB 10.11, PHP 8.4) và **Cloudflare API Edge**.
-   - Tự động trỏ DNS A-records, bật Proxy cam Cloudflare, kích hoạt SSL Full/Strict, và tạo luật WAF chặn DDoS/XML-RPC.
-   - Nhân bản website (**Clone WordPress trong 10 giây**) với Search-Replace tuần tự hóa (serialized data) chuẩn xác.
-   - Bộ dọn dẹp bài viết an toàn (**Safe Post Wiper**): Xóa sạch bài viết và revision nhưng bảo toàn 100% templates giao diện (Newspaper tdb_templates), trang tĩnh (pages), menu và media library.
-   - Toàn bộ hệ thống tuân thủ nguyên tắc **Zero Credentials Leakage** — không lưu bất kỳ mật khẩu hay thông tin cá nhân nào vào mã nguồn.
 
 ---
 
@@ -84,7 +86,6 @@ seo-geo-suite-master/
 | 4 | **Kế Hoạch Từ Khóa & Roadmap** | Google Suggest, PAA clustering, Semantic TF-IDF/KMeans, lộ trình 30 ngày không ăn thịt từ khóa |
 | 5 | **Tạo Assets & Featured Image** | Tự động sinh ảnh đại diện 1200×630 WebP bằng Pillow, không cần API ngoài |
 | 6 | **Sửa Lỗi CSS & Đồng Bộ WP** | Phát hiện lỗi CSS layout, đồng bộ bài viết/ảnh lên WordPress qua REST API |
->>>>>>> 5f974e3 (feat: integrate Cloud & VPS DevOps Suite with SEO GEO Suite into unified architecture)
 
 #### 🛠️ Gói 2: Cloud & VPS DevOps Suite
 | # | Công cụ / Module | Chức Năng |

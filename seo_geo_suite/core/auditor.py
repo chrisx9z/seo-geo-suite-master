@@ -1,5 +1,6 @@
 import os
 import re
+import sys
 import json
 import subprocess
 import requests
@@ -171,3 +172,84 @@ class WebsiteAuditor:
             "message": "Lighthouse CLI run finished or fallback used",
             "scores": {"performance": 88, "accessibility": 92, "best_practices": 90, "seo": 95}
         }
+
+    def _run_upstream_script(self, script_name: str, args: List[str], timeout: int = 120) -> Dict[str, Any]:
+        """Runs an upstream script from repos/ultimate-seo-geo/scripts and parses JSON output."""
+        base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+        venv_py = os.path.join(base_dir, "venv", "Scripts", "python.exe")
+        py_bin = venv_py if os.path.exists(venv_py) else sys.executable
+        script_path = os.path.join(base_dir, "repos", "ultimate-seo-geo", "scripts", script_name)
+
+        if not os.path.exists(script_path):
+            return {"status": "error", "error": f"Upstream script not found: {script_path}"}
+
+        cmd = [py_bin, script_path] + args
+        try:
+            res = subprocess.run(cmd, cwd=base_dir, capture_output=True, text=True, timeout=timeout, encoding="utf-8", errors="replace")
+            stdout = res.stdout.strip()
+            if stdout:
+                try:
+                    return json.loads(stdout)
+                except json.JSONDecodeError:
+                    return {"status": "success", "raw_output": stdout, "stderr": res.stderr.strip()}
+            return {"status": "empty", "stderr": res.stderr.strip(), "code": res.returncode}
+        except Exception as e:
+            return {"status": "error", "error": str(e)}
+
+    def audit_site_graph(self, domain_url: str, max_pages: int = 60, depth: int = 2) -> Dict[str, Any]:
+        """Crawls site once and builds reusable structural graph with link regions (header, footer, nav, body)."""
+        args = [domain_url, "--max-pages", str(max_pages), "--depth", str(depth), "--json"]
+        return self._run_upstream_script("site_graph.py", args, timeout=120)
+
+    def audit_site_architecture(self, domain_url: str, site_type: str = "auto", max_pages: int = 60) -> Dict[str, Any]:
+        """Audits site's section structure, link equity distribution, hubs and URL hygiene."""
+        args = [domain_url, "--site-type", site_type, "--max-pages", str(max_pages), "--json"]
+        return self._run_upstream_script("site_architecture.py", args, timeout=120)
+
+    def audit_navigation(self, domain_url: str, site_type: str = "auto") -> Dict[str, Any]:
+        """Audits global navigation, footers, breadcrumbs, and money-page accessibility."""
+        args = [domain_url, "--site-type", site_type, "--json"]
+        return self._run_upstream_script("navigation_checker.py", args, timeout=60)
+
+    def audit_sitemap_freshness(self, domain_url: str, lastmod: bool = True, structure: bool = True) -> Dict[str, Any]:
+        """Validates sitemap discovery, structure, and checks <lastmod> freshness against HTTP headers."""
+        args = [domain_url, "--json"]
+        if lastmod:
+            args.append("--lastmod")
+        if structure:
+            args.append("--structure")
+        return self._run_upstream_script("sitemap_checker.py", args, timeout=90)
+
+    def generate_enterprise_report(self, domain_url: str, output_path: str = None, format: str = "html", previous_json: str = None, accent: str = None) -> Dict[str, Any]:
+        """Generates interactive SEO & GEO report (HTML/PDF/JSON) using modern Tobto design tokens."""
+        base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+        venv_py = os.path.join(base_dir, "venv", "Scripts", "python.exe")
+        py_bin = venv_py if os.path.exists(venv_py) else sys.executable
+        script_path = os.path.join(base_dir, "repos", "ultimate-seo-geo", "scripts", "generate_report.py")
+
+        if not output_path and format != "none":
+            reports_dir = os.path.join(base_dir, "reports")
+            os.makedirs(reports_dir, exist_ok=True)
+            domain = urlparse(domain_url).netloc.replace(":", "_") or "site"
+            ext = "html" if format == "html" else ("pdf" if format == "pdf" else "xlsx")
+            output_path = os.path.join(reports_dir, f"seo-geo-audit-{domain}.{ext}")
+
+        args = [domain_url, "--format", format]
+        if output_path:
+            args.extend(["--output", output_path])
+        if previous_json and os.path.exists(previous_json):
+            args.extend(["--previous", previous_json])
+        if accent:
+            args.extend(["--accent", accent])
+
+        cmd = [py_bin, script_path] + args
+        try:
+            res = subprocess.run(cmd, cwd=base_dir, capture_output=True, text=True, timeout=180, encoding="utf-8", errors="replace")
+            return {
+                "status": "success" if res.returncode == 0 else "completed_with_warnings",
+                "output_path": output_path,
+                "stdout": res.stdout.strip(),
+                "stderr": res.stderr.strip()
+            }
+        except Exception as e:
+            return {"status": "error", "error": str(e)}

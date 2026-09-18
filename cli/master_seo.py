@@ -18,6 +18,7 @@ import json
 import os
 import sys
 import requests
+import subprocess
 import zipfile
 import io
 import time
@@ -372,6 +373,192 @@ def audit_onpage_speed_site(site, target_url=None):
     else:
         print("✅ Zero critical technical SEO or Core Web Vitals bottlenecks found!")
 
+def geo_audit_site(site, target_url=None):
+    url = target_url or site['url']
+    print(f"\n{'='*75}")
+    print(f"🤖 GENERATIVE ENGINE OPTIMIZATION (GEO) & AI AUDIT: {url}")
+    print(f"{'='*75}")
+
+    scripts_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "repos", "ultimate-seo-geo", "scripts"))
+    py_bin = sys.executable
+
+    # 1. AI Bot Crawler Access Check
+    ai_bot_script = os.path.join(scripts_dir, "ai_bot_access.py")
+    if os.path.exists(ai_bot_script):
+        print("\n--- [1/3] AI Search Engine & Bot Crawler Access ---")
+        p = subprocess.run([py_bin, ai_bot_script, url, "--json"], capture_output=True, text=True, encoding="utf-8", errors="replace")
+        if p.returncode == 0:
+            try:
+                data = json.loads(p.stdout)
+                bots = data.get("bots") or data.get("crawlers", {})
+                score = data.get("score")
+                if score is not None:
+                    print(f"  ⭐ AI Bot Access Score: {score}/100")
+                for c_name, c_info in bots.items():
+                    verdict = c_info.get("verdict", "")
+                    allowed = c_info.get("allowed", verdict == "allowed")
+                    status_emoji = "✅ ALLOWED" if allowed else "❌ BLOCKED"
+                    role = f"({c_info.get('role', 'bot')})"
+                    print(f"  • {c_name.ljust(22)} {role.ljust(12)}: {status_emoji} (HTTP {c_info.get('status')})")
+            except Exception:
+                print(p.stdout.strip())
+        else:
+            print(f"  Note: {p.stderr.strip() or p.stdout.strip()}")
+
+    # 2. LLMS.txt Compliance Check
+    llms_script = os.path.join(scripts_dir, "llms_txt_checker.py")
+    if os.path.exists(llms_script):
+        print("\n--- [2/3] llms.txt Discovery & AI Readiness ---")
+        p = subprocess.run([py_bin, llms_script, url, "--json"], capture_output=True, text=True, encoding="utf-8", errors="replace")
+        if p.returncode == 0:
+            try:
+                data = json.loads(p.stdout)
+                found = data.get("found", False)
+                if found:
+                    print(f"  ✅ llms.txt found! ({data.get('size_bytes', 0)} bytes, {data.get('entries_count', 0)} entries)")
+                else:
+                    print(f"  ℹ️ llms.txt not detected on domain (Status: {data.get('status', 'Not found')}).")
+            except Exception:
+                print(p.stdout.strip())
+        else:
+            print(f"  Note: {p.stderr.strip() or p.stdout.strip()}")
+
+    # 3. Citability & Structural Readability
+    citability_script = os.path.join(scripts_dir, "citability_checker.py")
+    if os.path.exists(citability_script):
+        print("\n--- [3/3] AI Citability & Content Readability Structure ---")
+        p = subprocess.run([py_bin, citability_script, "--url", url, "--json"], capture_output=True, text=True, encoding="utf-8", errors="replace")
+        if p.returncode == 0:
+            try:
+                data = json.loads(p.stdout)
+                score = data.get("score")
+                if score is not None:
+                    print(f"  ⭐ AI Citability Score: {score}/100")
+                findings = data.get("findings", [])
+                if findings:
+                    print(f"  Key Insights ({len(findings)}):")
+                    for f in findings[:5]:
+                        print(f"    - [{f.get('severity', 'info').upper()}] {f.get('message') or f.get('title')}")
+                else:
+                    print("  ✅ Content structure is highly citable by LLMs!")
+            except Exception:
+                print(p.stdout.strip())
+        else:
+            print(f"  Note: {p.stderr.strip() or p.stdout.strip()}")
+
+    print(f"\n🎉 Completed GEO & AI Readiness Audit for {url}!\n")
+
+def audit_graph_site(site, target_url=None, max_pages=50, depth=2):
+    url = target_url or site['url']
+    print(f"\n{'='*75}")
+    print(f"🕸️ SITE GRAPH & CRAWL COMPLETENESS AUDIT: {url}")
+    print(f"{'='*75}")
+    from seo_geo_suite.core.auditor import WebsiteAuditor
+    auditor = WebsiteAuditor()
+    res = auditor.audit_site_graph(url, max_pages=max_pages, depth=depth)
+    if isinstance(res, dict) and ("site" in res or "nodes" in res or "pages" in res):
+        total_pages = res.get("total_pages") or len(res.get("nodes", [])) or len(res.get("pages", {}))
+        print(f"✅ Crawled {total_pages} pages successfully (Depth: {depth}).")
+        verdict = res.get("verdict") or res.get("completeness", {})
+        if verdict:
+            print(f"  • Completeness Verdict: {verdict}")
+    else:
+        print(f"Result: {json.dumps(res, indent=2, ensure_ascii=False)[:500]}")
+
+def audit_arch_site(site, target_url=None, site_type="auto"):
+    url = target_url or site['url']
+    print(f"\n{'='*75}")
+    print(f"🏛️ SITE ARCHITECTURE & LINK EQUITY AUDIT: {url}")
+    print(f"{'='*75}")
+    from seo_geo_suite.core.auditor import WebsiteAuditor
+    auditor = WebsiteAuditor()
+    res = auditor.audit_site_architecture(url, site_type=site_type)
+    if isinstance(res, dict) and "site" in res:
+        print(f"Site: {res.get('site')} | Type: {res.get('site_type')}")
+        inv = res.get("inventory", {})
+        print(f"  • Total Pages: {inv.get('total', 0)} (Fetched: {inv.get('fetched', 0)})")
+        sections = res.get("sections", {})
+        if sections:
+            print(f"  • Site Sections ({len(sections)}):")
+            for sec_name, sec_info in list(sections.items())[:5]:
+                equity = sec_info.get("equity") or sec_info.get("page_count", 0)
+                print(f"    - /{sec_name}/ : {equity}")
+        issues = res.get("issues", [])
+        if issues:
+            print(f"  ⚠️ Architecture Warnings ({len(issues)}):")
+            for iss in issues[:5]:
+                print(f"    - {iss}")
+        else:
+            print("  ✅ Architecture hierarchy and link equity are well balanced!")
+    else:
+        print(f"Result: {json.dumps(res, indent=2, ensure_ascii=False)[:500]}")
+
+def audit_nav_site(site, target_url=None, site_type="auto"):
+    url = target_url or site['url']
+    print(f"\n{'='*75}")
+    print(f"🧭 GLOBAL NAVIGATION, BREADCRUMBS & FOOTER AUDIT: {url}")
+    print(f"{'='*75}")
+    from seo_geo_suite.core.auditor import WebsiteAuditor
+    auditor = WebsiteAuditor()
+    res = auditor.audit_navigation(url, site_type=site_type)
+    if isinstance(res, dict) and ("navigation" in res or "global_nav" in res or "site" in res):
+        print(f"Navigation Audit for: {url}")
+        nav_info = res.get("navigation", {})
+        print(f"  • Header Links: {nav_info.get('header_links_count', 'OK')}")
+        print(f"  • Footer Links: {nav_info.get('footer_links_count', 'OK')}")
+        print(f"  • Breadcrumbs: {'Present' if nav_info.get('breadcrumbs_found') else 'Missing/Incomplete'}")
+        issues = res.get("issues", [])
+        if issues:
+            print(f"  ⚠️ Navigation Issues ({len(issues)}):")
+            for iss in issues[:5]:
+                print(f"    - {iss}")
+        else:
+            print("  ✅ Navigation menus & breadcrumb schema passed all checks!")
+    else:
+        print(f"Result: {json.dumps(res, indent=2, ensure_ascii=False)[:500]}")
+
+def audit_sitemap_freshness_site(site):
+    url = site['url']
+    print(f"\n{'='*75}")
+    print(f"🗺️ SITEMAP FRESHNESS & <LASTMOD> VALIDATION AUDIT: {url}")
+    print(f"{'='*75}")
+    from seo_geo_suite.core.auditor import WebsiteAuditor
+    auditor = WebsiteAuditor()
+    res = auditor.audit_sitemap_freshness(url, lastmod=True, structure=True)
+    if isinstance(res, dict) and "url" in res:
+        print(f"Sitemap URL: {res.get('primary_sitemap_url') or res.get('url')}")
+        print(f"  • Estimated URLs: {res.get('url_count_estimate', 0)}")
+        lastmod_info = res.get("lastmod", {})
+        if lastmod_info:
+            print(f"  • Lastmod Coverage: {lastmod_info.get('coverage_pct', 'N/A')}%")
+            print(f"  • Plausibility: {'✅ Plausible' if lastmod_info.get('plausible') else '⚠️ Stale or in future'}")
+        issues = res.get("issues", [])
+        if issues:
+            print(f"  ⚠️ Sitemap Issues ({len(issues)}):")
+            for iss in issues[:5]:
+                print(f"    - {iss}")
+        else:
+            print("  ✅ XML Sitemap is fresh, correctly structured and fully valid!")
+    else:
+        print(f"Result: {json.dumps(res, indent=2, ensure_ascii=False)[:500]}")
+
+def generate_report_site(site, target_url=None, format="html", previous=None, accent=None):
+    url = target_url or site['url']
+    print(f"\n{'='*75}")
+    print(f"📊 GENERATING ENTERPRISE AUDIT REPORT (TOBTO DESIGN TOKENS): {url}")
+    print(f"{'='*75}")
+    from seo_geo_suite.core.auditor import WebsiteAuditor
+    auditor = WebsiteAuditor()
+    res = auditor.generate_enterprise_report(url, format=format, previous_json=previous, accent=accent)
+    if res.get("status") in ["success", "completed_with_warnings"]:
+        print(f"✅ Audit report generated successfully!")
+        print(f"  • Output File: {res.get('output_path')}")
+        print(f"  • Format: {format.upper()}")
+        if res.get("stderr"):
+            print(f"  • Notes: {res.get('stderr')[:200]}")
+    else:
+        print(f"❌ Report generation failed: {res.get('error')}")
+
 def optimize_site(site):
     print(f"\n{'='*75}")
     print(f"🚀 MASTER ENTERPRISE OPTIMIZATION: {site['name']} ({site['url']})")
@@ -472,7 +659,14 @@ def schedule_travel_site(site, plan_path=None, days=None, max_posts=None):
 
 def main():
     parser = argparse.ArgumentParser(description="Master Auto SEO GEO Suite CLI")
-    parser.add_argument("command", choices=["optimize", "optimize-all", "deploy", "audit", "fast-index", "auto-link", "list-sites", "write-post", "heal-404", "news-sitemap", "serp-gap", "cannibalization", "build-silo", "inject-eeat", "heal-orphans", "warm-edge", "audit-links", "audit-onpage", "schedule-travel", "clone-site"], help="Action to perform")
+    parser.add_argument("command", choices=[
+        "optimize", "optimize-all", "deploy", "audit", "geo-audit", 
+        "fast-index", "auto-link", "list-sites", "write-post", "heal-404", 
+        "news-sitemap", "serp-gap", "cannibalization", "build-silo", 
+        "inject-eeat", "heal-orphans", "warm-edge", "audit-links", 
+        "audit-onpage", "schedule-travel", "clone-site",
+        "audit-graph", "audit-arch", "audit-nav", "audit-sitemap-freshness", "generate-report"
+    ], help="Action to perform")
     parser.add_argument("--site", default=None, help="Site ID or domain to target (omit to apply to ALL sites)")
     parser.add_argument("--from-site", default="mmdidau", help="Source site ID to clone from (for clone-site)")
     parser.add_argument("--to-domain", default="triptip.cc", help="Target domain to clone to (for clone-site)")
@@ -486,6 +680,11 @@ def main():
     parser.add_argument("--status", default="publish", choices=["publish", "future", "draft"], help="Post status")
     parser.add_argument("--date", help="Schedule date ISO string (e.g. 2026-09-04T08:00:00)")
     parser.add_argument("--url", help="URL for testing or competitor analysis")
+    parser.add_argument("--depth", type=int, default=2, help="Crawl depth for graph/audit (default: 2)")
+    parser.add_argument("--site-type", default="auto", choices=["auto", "ecommerce", "publisher", "saas", "local", "corporate"], help="Site type classification (default: auto)")
+    parser.add_argument("--format", default="html", choices=["html", "pdf", "xlsx", "none"], help="Enterprise report output format (default: html)")
+    parser.add_argument("--previous", help="Path to previous audit JSON file for delta/regression comparison")
+    parser.add_argument("--accent", help="Brand accent hex color for report theme (e.g. #0057B7 or #FF6A1A)")
     parser.add_argument("--all", action="store_true", help="Apply to all configured sites")
 
     args = parser.parse_args()
@@ -542,6 +741,18 @@ def main():
             audit_internal_links_site(s)
         elif args.command == "audit-onpage":
             audit_onpage_speed_site(s, target_url=args.url)
+        elif args.command == "geo-audit":
+            geo_audit_site(s, target_url=args.url)
+        elif args.command == "audit-graph":
+            audit_graph_site(s, target_url=args.url, max_pages=args.max_posts or 50, depth=args.depth or 2)
+        elif args.command == "audit-arch":
+            audit_arch_site(s, target_url=args.url, site_type=getattr(args, 'site_type', 'auto'))
+        elif args.command == "audit-nav":
+            audit_nav_site(s, target_url=args.url, site_type=getattr(args, 'site_type', 'auto'))
+        elif args.command == "audit-sitemap-freshness":
+            audit_sitemap_freshness_site(s)
+        elif args.command == "generate-report":
+            generate_report_site(s, target_url=args.url, format=args.format, previous=args.previous, accent=args.accent)
         elif args.command == "write-post":
             if not args.topic:
                 print("Error: --topic is required for write-post command.")

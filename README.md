@@ -19,6 +19,7 @@
 
 ### Giới Thiệu
 
+<<<<<<< HEAD
 **SEO GEO Suite Master** là bộ giải pháp toàn diện mã nguồn mở kết hợp **SEO truyền thống** và **GEO (Generative Engine Optimization)**. Hệ thống bao gồm Web Dashboard FastAPI trực quan, Interactive CLI, bộ điều khiển Enterprise Master CLI (`cli/master_seo.py`), 29 module chuyên sâu và Universal WordPress Plugin độc quyền.
 
 ---
@@ -56,6 +57,44 @@ seo-geo-suite-master/
 ├── run_cli.sh / .bat               # Khởi chạy Interactive CLI
 └── requirements.txt                # Thư viện Python
 ```
+=======
+**SEO GEO Suite Master** là nền tảng toàn diện tích hợp **2 Gói Chức Năng Hoàn Chỉnh** dành cho Webmaster & SEO Engineer:
+
+1. **Gói 1: SEO & GEO Content Automation Suite**
+   - Kết hợp **SEO truyền thống** và **GEO (Generative Engine Optimization)** — tối ưu hóa nội dung để được trích xuất và trích dẫn bởi các AI tìm kiếm thế hệ mới (ChatGPT Search, Perplexity, Google AI Overviews, Gemini, Claude).
+   - Tự động hóa Semantic Silo, Entity Knowledge Graph, Schema JSON-LD chuyên sâu, phòng chống ăn thịt từ khóa (Cannibalization Detector), Fast Indexing và lập lịch xuất bản.
+
+2. **Gói 2: Cloud & VPS DevOps Suite**
+   - Tự động hóa hạ tầng máy chủ **Ubuntu / aaPanel LNMP** (Nginx, MariaDB 10.11, PHP 8.4) và **Cloudflare API Edge**.
+   - Tự động trỏ DNS A-records, bật Proxy cam Cloudflare, kích hoạt SSL Full/Strict, và tạo luật WAF chặn DDoS/XML-RPC.
+   - Nhân bản website (**Clone WordPress trong 10 giây**) với Search-Replace tuần tự hóa (serialized data) chuẩn xác.
+   - Bộ dọn dẹp bài viết an toàn (**Safe Post Wiper**): Xóa sạch bài viết và revision nhưng bảo toàn 100% templates giao diện (Newspaper tdb_templates), trang tĩnh (pages), menu và media library.
+   - Toàn bộ hệ thống tuân thủ nguyên tắc **Zero Credentials Leakage** — không lưu bất kỳ mật khẩu hay thông tin cá nhân nào vào mã nguồn.
+
+---
+
+### Hai Gói Chức Năng Cốt Lõi
+
+#### 📦 Gói 1: SEO & GEO Content Suite
+| # | Module | Chức Năng |
+|:-:|:---|:---|
+| 1 | **Audit Website & Technical SEO** | Kiểm tra Robots.txt, Sitemap.xml, quyền truy cập AI Bots (GPTBot, ClaudeBot, PerplexityBot), link hỏng |
+| 2 | **Kiểm Tra On-page & Schema** | Đánh giá Title, Meta, H1-H6, Canonical, Alt ảnh, JSON-LD Schema, tính điểm GEO Citability |
+| 3 | **Viết Bài Chuẩn GEO & SEO** | Sinh bài E-E-A-T với Direct Answer, bảng so sánh, FAQ, Schema JSON-LD, llms.txt |
+| 4 | **Kế Hoạch Từ Khóa & Roadmap** | Google Suggest, PAA clustering, Semantic TF-IDF/KMeans, lộ trình 30 ngày không ăn thịt từ khóa |
+| 5 | **Tạo Assets & Featured Image** | Tự động sinh ảnh đại diện 1200×630 WebP bằng Pillow, không cần API ngoài |
+| 6 | **Sửa Lỗi CSS & Đồng Bộ WP** | Phát hiện lỗi CSS layout, đồng bộ bài viết/ảnh lên WordPress qua REST API |
+>>>>>>> 5f974e3 (feat: integrate Cloud & VPS DevOps Suite with SEO GEO Suite into unified architecture)
+
+#### 🛠️ Gói 2: Cloud & VPS DevOps Suite
+| # | Công cụ / Module | Chức Năng |
+|:-:|:---|:---|
+| 1 | **auto-site** | Tự động tạo 100% site mới trên aaPanel (MariaDB isolated user/db, VHost Nginx, WP Core, 4 plugins) |
+| 2 | **cf-dns & cf-waf** | Tự động trỏ DNS Cloudflare qua API, bật Proxy cam, SSL Full và tích hợp Fail2ban chặn IP |
+| 3 | **wp-clone** | Clone website trong 10 giây trên VPS với MySQL export, rsync, và search-replace domain chuẩn |
+| 4 | **wp-clean-posts** | Dọn sạch toàn bộ bài viết và revisions, xóa cache, tuyệt đối bảo toàn templates giao diện & pages |
+| 5 | **wp-site-porter** | Plugin và engine Python di chuyển website từ xa không cần quyền root ban đầu |
+| 6 | **wp-backup** | Tự động sao lưu toàn bộ mã nguồn + database, dọn dẹp sau 3 ngày và sync lên Google Drive/Rclone |
 
 ---
 
@@ -102,6 +141,21 @@ python cli/master_seo.py heal-orphans --site "mmdidau"
 
 # Viết và đăng bài tự động chuẩn SEO 1000+ từ:
 python cli/master_seo.py write-post --site "vibemmo" --topic "Top Game MMO Đáng Chơi 2026" --category 4 --status publish
+```
+
+#### 4. Sử Dụng Gói Cloud & VPS DevOps
+```bash
+# Chạy CLI DevOps trên máy tính:
+.\run_devops.bat cf-dns --domain example.com --ip 1.2.3.4
+.\run_devops.bat cf-purge --domain example.com
+.\run_devops.bat clean-posts-sql
+
+# Hoặc chạy trực tiếp trên VPS Ubuntu / aaPanel:
+sudo bash vps-auto-wp/install.sh
+auto-site domain-moi.com
+cf-dns domain-moi.com
+wp-clone site-cu.com site-moi.com
+wp-clean-posts domain-moi.com --force
 ```
 
 ---
@@ -163,17 +217,43 @@ python cli/master_seo.py write-post --site "vibemmo" --topic "2026 年最佳 MMO
 
 ### Quick Start
 
+#### 1. Web Dashboard & Interactive CLI
 ```bash
 # Web Dashboard
 ./run_dashboard.sh            # Linux/macOS
 .\run_dashboard.bat           # Windows
 # Open http://localhost:8000
 
+# Interactive CLI
+./run_cli.sh                  # Linux/macOS
+.\run_cli.bat                 # Windows
+```
+
+#### 2. Master SEO Enterprise CLI
+```bash
 # Master Optimization for All Configured Sites
 python cli/master_seo.py optimize-all
 
 # Autonomous AI Post Generation (1,000+ words, WebP Banner, Schema)
 python cli/master_seo.py write-post --site "mysite" --topic "Future of AI in SEO 2026" --status publish
+
+# Instant IndexNow submission
+python cli/master_seo.py fast-index --site "mysite"
+```
+
+#### 3. Cloud & VPS DevOps Suite
+```bash
+# Local DevOps CLI
+.\run_devops.bat cf-dns --domain example.com --ip 1.2.3.4
+.\run_devops.bat cf-purge --domain example.com
+.\run_devops.bat clean-posts-sql
+
+# On Ubuntu VPS / aaPanel:
+sudo bash vps-auto-wp/install.sh
+auto-site new-domain.com
+cf-dns new-domain.com
+wp-clone old-domain.com new-domain.com
+wp-clean-posts new-domain.com --force
 ```
 
 ---
@@ -188,6 +268,79 @@ source .venv/bin/activate       # macOS/Linux (Windows: .venv\Scripts\activate)
 pip install -r requirements.txt
 ```
 
+**Environment variables (copy from `.env.example`):**
+```bash
+# .env  ← Strictly ignored by git
+GEMINI_API_KEY=your_key_here
+CLOUDFLARE_API_TOKEN=your_cf_token
+CLOUDFLARE_EMAIL=your_email
+CLOUDFLARE_API_KEY=your_global_key
+```
+
+---
+
+### Project Architecture (Dual-Suite Design)
+
+```
+seo-geo-suite-master/
+├── seo_geo_suite/             # [SUITE 1] SEO & GEO Content Engine
+│   ├── core/
+│   │   ├── onpage.py          # On-page SEO + GEO citability analysis
+│   │   ├── auditor.py         # Full technical SEO audit
+│   │   ├── geo_writer.py      # Gemini-powered article generator
+│   │   ├── css_fixer.py       # CSS lint & auto-fix
+│   │   ├── asset_builder.py   # Featured image generator (Pillow)
+│   │   └── keyword_planner.py # Keyword clustering & slug generator
+│   ├── dashboard/             # Flask/FastAPI Web Dashboard UI
+│   ├── sync_wp.py             # WordPress REST API sync engine
+│   └── cli.py                 # Rich interactive CLI
+├── modules/                   # Enterprise Modules
+│   ├── vps_cloudflare_aapanel/# Cloudflare & aaPanel Python Engine
+│   ├── migration/             # In-flight WP Clone & Packager
+│   ├── travel_scheduler/      # 30-Day Batch Publishing Engine
+│   ├── internal_linking/      # Semantic Linking & SILO Engine
+│   ├── schema_geo/            # Rich Snippets & JSON-LD Generator
+│   └── fast_indexing/         # IndexNow & Google Indexing API
+├── vps-auto-wp/               # [SUITE 2] Cloud & VPS DevOps Toolkit
+│   ├── install.sh             # Master installer for Ubuntu & aaPanel
+│   ├── auto-site.sh           # 100% automated WordPress provisioner
+│   ├── cf-dns.sh              # Cloudflare DNS A-record & Proxy automation
+│   ├── wp-clone.sh            # 10-second site cloner with serialized search-replace
+│   ├── wp-clean-posts.sh      # Safe post wiper (preserves theme templates)
+│   ├── install-child-theme.sh # Newspaper child theme generator
+│   ├── setup-cloudflare-waf.sh# Cloudflare WAF + Fail2ban integration
+│   └── wp-backup.sh           # Multi-site backup with 3-day retention
+├── plugins/
+│   └── wp-site-porter/        # Remote WP migration & diagnostic plugin
+├── cli/
+│   ├── master_seo.py          # Master SEO CLI
+│   └── master_devops.py       # Master Cloud & VPS DevOps CLI
+├── run_cli.bat                # Windows SEO CLI launcher
+├── run_devops.bat             # Windows DevOps CLI launcher
+├── run_dashboard.bat          # Windows dashboard launcher
+├── requirements.txt
+└── .gitignore                 # Excludes all credentials & personal data
+```
+
+---
+
+### Lessons Learned (Real-world fixes)
+
+- ✅ URL slugs must be `/keyword-slug/` — lowercase, hyphenated, no diacritics
+- ✅ WP REST API nonce must be fetched fresh per session — never reused
+- ✅ `_elementor_data` is a protected meta key — only writable via Elementor's own AJAX nonce
+- ✅ Always purge WP Rocket cache after any content change
+- ✅ Featured images: use real photos (Wikimedia/Unsplash), not text-card banners
+- ✅ `sync_wp.py`: credentials injected via constructor params — no hardcoded domains or passwords
+- ✅ `geo_writer.py`: API key read from `os.environ("GEMINI_API_KEY")` — never inline
+
+---
+
+### Security
+
+- 🔒 No passwords, API keys, or site URLs hardcoded in any source file
+- 🔒 All credentials provided at runtime via CLI args or environment variables
+- 🔒 `.gitignore` covers `.env`, `config.json`, `secrets.json`, and all credential files
 ---
 
 <div align="center">

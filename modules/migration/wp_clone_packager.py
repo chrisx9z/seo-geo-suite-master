@@ -261,5 +261,13 @@ class WPClonePackager:
 
 
 if __name__ == '__main__':
-    packager = WPClonePackager(source_site_id='mmdidau', target_domain='triptip.cc', target_name='TripTip')
+    import argparse
+    parser = argparse.ArgumentParser(description="WP Clone Packager Engine")
+    parser.add_argument("--source", default="source_site", help="Source site ID in sites.local.json or sites.json")
+    parser.add_argument("--target", default="target.domain", help="Target domain (e.g. example.com)")
+    parser.add_argument("--brand", default="TargetBrand", help="Target brand name")
+    args = parser.parse_args()
+
+    packager = WPClonePackager(source_site_id=args.source, target_domain=args.target, target_name=args.brand)
     packager.run_all()
+

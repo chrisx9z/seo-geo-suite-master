@@ -52,6 +52,7 @@ npm-debug.log*
 .cache/
 tmp/
 temp/
+scratch/
 temp_wp_rocket/
 *.tmp
 
@@ -62,7 +63,41 @@ Newspaper-child.zip
 Newspaper-child/
 package-lock.json
 repos/
-vps-auto-wp/
+.agents/
+XianxiaBlender/
+blender/
+boss_anim_*
+game/
+kamargo/
+references/
+renders/
+scripts/
+tools/
+veo_clips/
+veo_generator.py
+generate_uap_video.py
+work/
+run_player.bat
+run_qa.bat
+run_qa_gate.bat
+NASA_UAP_*
+*.mp4
+*.srt
+cache/
+assets/
+config/kamargo_workflow.json
+docs/ALPHA_RELEASE_CHECKLIST.md
+docs/ART_DIRECTION.md
+docs/BETA_PLAYTEST_CHECKLIST.md
+docs/CAMPAIGN_CHAPTER_1.md
+docs/CHAPTER_2_BRIEF.md
+docs/PLAYER_ONBOARDING.md
+docs/QA.md
+docs/STATUS.md
+docs/STYLE_TARGET.md
+
+
+
 
 # === Workspace Non-Suite Artifacts ===
 .agents/

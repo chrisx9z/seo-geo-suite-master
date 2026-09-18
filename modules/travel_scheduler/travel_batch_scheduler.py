@@ -80,28 +80,41 @@ class TravelBatchScheduler:
         upload_url = f"{self.wp_url}/wp-json/wp/v2/media"
         headers = {
             "Content-Disposition": f'attachment; filename="{filename}"',
-            "Content-Type": "image/webp",
-            "X-WP-Nonce": self.nonce
+            "Content-Type": "image/webp"
         }
-        try:
-            with open(file_path, "rb") as f_img:
-                r = self.session.post(upload_url, headers=headers, data=f_img, timeout=40)
+
+        with open(file_path, "rb") as f_img:
+            img_bytes = f_img.read()
+
+        for attempt in range(1, 4):
+            try:
+                if self.nonce:
+                    headers["X-WP-Nonce"] = self.nonce
+                r = self.session.post(upload_url, headers=headers, data=img_bytes, timeout=40)
                 if r.status_code in [200, 201]:
                     data = r.json()
                     mid = data.get("id")
                     source_url = data.get("source_url", "")
                     # Update alt text and title
-                    self.session.post(
-                        f"{upload_url}/{mid}",
-                        headers={"X-WP-Nonce": self.nonce},
-                        json={"alt_text": alt_text, "title": title},
-                        timeout=15
-                    )
+                    try:
+                        self.session.post(
+                            f"{upload_url}/{mid}",
+                            headers={"X-WP-Nonce": self.nonce} if self.nonce else {},
+                            json={"alt_text": alt_text, "title": title},
+                            timeout=15
+                        )
+                    except Exception:
+                        pass
                     return {"id": mid, "url": source_url}
+                elif r.status_code in [401, 403]:
+                    print(f"Auth expired during upload of {filename}. Re-authenticating...")
+                    self._authenticate()
                 else:
-                    print(f"Failed to upload media {filename}: HTTP {r.status_code}")
-        except Exception as e:
-            print(f"Exception uploading {filename}: {e}")
+                    print(f"Failed to upload media {filename}: HTTP {r.status_code}. Retrying...")
+                    time.sleep(3)
+            except Exception as e:
+                print(f"Exception uploading {filename} on attempt {attempt}: {e}. Retrying in 4s...")
+                time.sleep(4)
         return None
 
     def post_exists(self, slug: str) -> bool:
@@ -189,43 +202,52 @@ class TravelBatchScheduler:
         if featured_media_id:
             payload["featured_media"] = featured_media_id
 
-        try:
-            r = self.session.post(
-                f"{self.wp_url}/wp-json/wp/v2/posts",
-                headers={"X-WP-Nonce": self.nonce},
-                json=payload,
-                timeout=30
-            )
-            if r.status_code in [200, 201]:
-                res_data = r.json()
-                post_id = res_data.get("id")
-                post_link = res_data.get("link", "")
-                print(f"     SUCCESS: Scheduled Post ID {post_id} -> {post_link}")
+        for attempt in range(1, 4):
+            try:
+                headers = {}
+                if self.nonce:
+                    headers["X-WP-Nonce"] = self.nonce
+                r = self.session.post(
+                    f"{self.wp_url}/wp-json/wp/v2/posts",
+                    headers=headers,
+                    json=payload,
+                    timeout=35
+                )
+                if r.status_code in [200, 201]:
+                    res_data = r.json()
+                    post_id = res_data.get("id")
+                    post_link = res_data.get("link", "")
+                    print(f"     SUCCESS: Scheduled Post ID {post_id} -> {post_link}")
 
-                record = {
-                    "id": post_id,
-                    "title": article["title"],
-                    "keyword": keyword,
-                    "slug": slug,
-                    "schedule_date": schedule_date,
-                    "day": post_info.get("day"),
-                    "link": post_link,
-                    "word_count": article["word_count"],
-                    "status": "future",
-                    "featured_image": featured_img_url,
-                    "intent": article.get("intent", intent),
-                    "meta_description": article.get("meta_description", ""),
-                    "image_count": article.get("image_count", len(uploaded_image_urls)),
-                    "images": uploaded_image_urls
-                }
-                self.scheduled_log["scheduled_posts"].append(record)
-                self.scheduled_log["total_scheduled"] = len(self.scheduled_log["scheduled_posts"])
-                self._save_log()
-                return record
-            else:
-                print(f"     FAILED to schedule: HTTP {r.status_code} - {r.text[:300]}")
-        except Exception as e:
-            print(f"     Exception scheduling post: {e}")
+                    record = {
+                        "id": post_id,
+                        "title": article["title"],
+                        "keyword": keyword,
+                        "slug": slug,
+                        "schedule_date": schedule_date,
+                        "day": post_info.get("day"),
+                        "link": post_link,
+                        "word_count": article["word_count"],
+                        "status": "future",
+                        "featured_image": featured_img_url,
+                        "intent": article.get("intent", intent),
+                        "meta_description": article.get("meta_description", ""),
+                        "image_count": article.get("image_count", len(uploaded_image_urls)),
+                        "images": uploaded_image_urls
+                    }
+                    self.scheduled_log["scheduled_posts"].append(record)
+                    self.scheduled_log["total_scheduled"] = len(self.scheduled_log["scheduled_posts"])
+                    self._save_log()
+                    return record
+                elif r.status_code in [401, 403]:
+                    print(f"     [*] Auth expired during post scheduling ({r.status_code}). Re-authenticating...")
+                    self._authenticate()
+                else:
+                    print(f"     FAILED to schedule: HTTP {r.status_code} - {r.text[:300]}. Retrying...")
+                    time.sleep(3)
+            except Exception as e:
+                print(f"     Exception scheduling post on attempt {attempt}: {e}. Retrying in 4s...")
+                time.sleep(4)
 
         return None
 

@@ -283,9 +283,23 @@ class RealImageFetcher:
         if not unique_photos:
             unique_photos = self.search_wikimedia_images("Vietnam travel landscape scenery", limit=15)
 
+        if not unique_photos:
+            # Fallback to local cached travel images
+            if os.path.exists(self.cache_dir):
+                cached_files = [f for f in os.listdir(self.cache_dir) if f.endswith(".webp") and not f.startswith("temp_")]
+                for f in cached_files[:15]:
+                    unique_photos.append({
+                        "title": f.replace(".webp", "").replace("-", " "),
+                        "url": f,
+                        "local_file": os.path.join(self.cache_dir, f)
+                    })
+
+        num_avail = len(unique_photos)
+        if num_avail == 0:
+            return []
+
         # Pick `count` photos with seed_index offset
         selected = []
-        num_avail = len(unique_photos)
         for i in range(count):
             idx = (seed_index + i) % num_avail
             selected.append(unique_photos[idx])
@@ -295,7 +309,15 @@ class RealImageFetcher:
         for i, p in enumerate(selected):
             suffix = suffixes[i] if i < len(suffixes) else f"hinh-{i+1}"
             filename = f"{slug}-{suffix}"
-            local_webp = self.download_and_optimize(p["url"], filename)
+            if p.get("local_file"):
+                out_file = os.path.join(self.cache_dir, f"{filename}.webp")
+                if not os.path.exists(out_file):
+                    import shutil
+                    shutil.copyfile(p["local_file"], out_file)
+                local_webp = out_file
+            else:
+                local_webp = self.download_and_optimize(p["url"], filename)
+
             if local_webp:
                 clean_title = re.sub(r"[_\-\.]+", " ", p["title"]).strip()
                 results.append({

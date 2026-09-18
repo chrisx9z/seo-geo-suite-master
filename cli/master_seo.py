@@ -727,24 +727,10 @@ def optimize_site(site):
     print(f"\n🎉 100% ENTERPRISE OPTIMIZATION COMPLETED FOR: {site['name']} ({site['url']})\n")
 
 def schedule_travel_site(site, plan_path=None, days=None, max_posts=None):
-    from modules.travel_scheduler.travel_batch_scheduler import TravelBatchScheduler
-    
-    if not plan_path:
-        base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-        if "mmdidau" in site.get("site_id", "") or "mmdidau" in site.get("url", ""):
-            plan_path = os.path.join(base_dir, "docs", "MMDIDAU_30DAY_CONTENT_PLAN.json")
-        elif "tobeigo" in site.get("site_id", "") or "tobeigo" in site.get("url", ""):
-            plan_path = os.path.join(base_dir, "docs", "TOBEIGO_30DAY_CONTENT_PLAN.json")
-        else:
-            plan_path = os.path.join(base_dir, "docs", f"{site.get('site_id')}_30DAY_CONTENT_PLAN.json")
-            
-    if not os.path.exists(plan_path):
-        print(f"Error: Plan file not found at {plan_path}")
-        return
-        
+    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
     admin_user = site.get("admin_user", os.getenv("WP_ADMIN_USER", "admin"))
     admin_pass = site.get("admin_pass") or site.get("admin_password") or os.getenv("WP_ADMIN_PASSWORD", "")
-    
+
     target_days = None
     if days:
         if "-" in str(days):
@@ -754,14 +740,46 @@ def schedule_travel_site(site, plan_path=None, days=None, max_posts=None):
             target_days = [int(x.strip()) for x in str(days).split(",")]
         elif str(days).lower() != "all":
             target_days = [int(days)]
-            
-    scheduler = TravelBatchScheduler(
-        wp_url=site["url"],
-        admin_user=admin_user,
-        admin_pass=admin_pass,
-        plan_file=plan_path
-    )
-    scheduler.run_batch(target_days=target_days, max_posts=max_posts)
+
+    if "triptip" in site.get("site_id", "") or "triptip" in site.get("url", ""):
+        from modules.travel_scheduler.english_batch_scheduler import EnglishBatchScheduler
+        if not plan_path:
+            plan_path = os.path.join(base_dir, "config", "triptip_30day_content_plan.json")
+            if not os.path.exists(plan_path):
+                plan_path = os.path.join(base_dir, "docs", "TRIPTIP_30DAY_CONTENT_PLAN.json")
+
+        if not os.path.exists(plan_path):
+            print(f"Error: Plan file not found at {plan_path}")
+            return
+
+        scheduler = EnglishBatchScheduler(
+            wp_url=site["url"],
+            admin_user=admin_user,
+            admin_pass=admin_pass,
+            plan_file=plan_path
+        )
+        scheduler.run_batch(target_days=target_days, max_posts=max_posts)
+    else:
+        from modules.travel_scheduler.travel_batch_scheduler import TravelBatchScheduler
+        if not plan_path:
+            if "mmdidau" in site.get("site_id", "") or "mmdidau" in site.get("url", ""):
+                plan_path = os.path.join(base_dir, "docs", "MMDIDAU_30DAY_CONTENT_PLAN.json")
+            elif "tobeigo" in site.get("site_id", "") or "tobeigo" in site.get("url", ""):
+                plan_path = os.path.join(base_dir, "docs", "TOBEIGO_30DAY_CONTENT_PLAN.json")
+            else:
+                plan_path = os.path.join(base_dir, "docs", f"{site.get('site_id')}_30DAY_CONTENT_PLAN.json")
+
+        if not os.path.exists(plan_path):
+            print(f"Error: Plan file not found at {plan_path}")
+            return
+
+        scheduler = TravelBatchScheduler(
+            wp_url=site["url"],
+            admin_user=admin_user,
+            admin_pass=admin_pass,
+            plan_file=plan_path
+        )
+        scheduler.run_batch(target_days=target_days, max_posts=max_posts)
 
 def main():
     parser = argparse.ArgumentParser(description="Master Auto SEO GEO Suite CLI")

@@ -34,8 +34,12 @@ except ImportError:
     print("Error: requests library required. Install with: pip install requests")
     sys.exit(1)
 
-from robots_checker import AI_CRAWLER_ROLES
-from url_safety import validate_url
+try:
+    from .robots_checker import AI_CRAWLER_ROLES
+    from .url_safety import validate_url
+except ImportError:
+    from robots_checker import AI_CRAWLER_ROLES
+    from url_safety import validate_url
 
 
 BROWSER_USER_AGENT = (

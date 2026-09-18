@@ -48,16 +48,19 @@ seo-geo-suite-master/
 │   ├── master_devops.py            # DevOps Orchestrator (aaPanel, Cloudflare, Clone, Backup)
 │   ├── wp_ai_post.py               # Autonomous AI Article Writer (1.000+ từ, Banner, Schema)
 │   └── wp-ai-post.sh / .bat        # Shell launchers cho AI writer
-├── modules/                        # 29 Enterprise SEO & GEO Modules
+├── modules/                        # 33 Enterprise SEO & GEO Modules
 │   ├── wp_ai_autopilot/            # Tự động hóa sản xuất nội dung chuẩn E-E-A-T
 │   ├── fast_indexing/              # Bing IndexNow & Google Indexing API protocol
 │   ├── internal_linking/           # Sentinel tự động liên kết nội bộ đa luồng
+│   ├── citability_engine/          # Đánh giá cấu trúc trích dẫn AI & độ dài đoạn văn (GEO § 3)
+│   ├── prompt_injection_guard/     # Phát hiện prompt injection ẩn & gian lận AI crawler
+│   ├── ai_crawler_access/          # Kiểm tra WAF, tường lửa & robots.txt cho AI bots (GPTBot, ClaudeBot...)
 │   ├── auto_healer/                # Tự động phát hiện và chuyển hướng 301 link hỏng 404
 │   ├── cannibalization_detector/   # Quét và cảnh báo ăn thịt từ khóa (Keyword Cannibalization)
 │   ├── semantic_silo/              # Xây dựng Topic Clusters & Silo cấu trúc phân tầng
 │   ├── orphan_healer/              # Cứu bài viết mồ côi (Orphan Posts) liên kết về Pillar
 │   ├── cloudflare_edge/            # Worker CDN Edge Caching & Edge Warming
-│   ├── sitemap_engine/             # Google News & Video XML Sitemap
+│   ├── sitemap_engine/             # Google News & Deep XML Sitemap (<lastmod>, 404 sample, structure)
 │   ├── serp_gap_hunter/            # Quét khoảng trống từ khóa đối thủ (SERP Gap)
 │   ├── eeat_persona/               # Quản lý tác giả chuyên gia & nhúng tín hiệu E-E-A-T
 │   ├── core_web_vitals/            # Tối ưu LCP, CLS, FID & tốc độ tải trang
@@ -82,10 +85,14 @@ seo-geo-suite-master/
 |:-:|:---|:---|
 | 1 | **Audit Website & Technical SEO** | Kiểm tra Robots.txt, Sitemap.xml, quyền truy cập AI Bots (GPTBot, ClaudeBot, PerplexityBot), link hỏng |
 | 2 | **Kiểm Tra On-page & Schema** | Đánh giá Title, Meta, H1-H6, Canonical, Alt ảnh, JSON-LD Schema, tính điểm GEO Citability |
-| 3 | **Viết Bài Chuẩn GEO & SEO** | Sinh bài E-E-A-T với Direct Answer, bảng so sánh, FAQ, Schema JSON-LD, llms.txt |
-| 4 | **Kế Hoạch Từ Khóa & Roadmap** | Google Suggest, PAA clustering, Semantic TF-IDF/KMeans, lộ trình 30 ngày không ăn thịt từ khóa |
-| 5 | **Tạo Assets & Featured Image** | Tự động sinh ảnh đại diện 1200×630 WebP bằng Pillow, không cần API ngoài |
-| 6 | **Sửa Lỗi CSS & Đồng Bộ WP** | Phát hiện lỗi CSS layout, đồng bộ bài viết/ảnh lên WordPress qua REST API |
+| 3 | **AI Citability & Passage Shape** | Đo lường độ dài đoạn (<120 từ), passage (<350 từ), hierarchy H1-H6 để tối ưu AI citation |
+| 4 | **Prompt Injection Security Guard** | Quét văn bản ẩn CSS, HTML comment, invisible unicode nhằm bảo vệ khỏi tấn công AI crawler |
+| 5 | **AI Crawler & Firewall Access** | Đối chiếu phản hồi thực tế từ IP/WAF để đảm bảo GPTBot, ClaudeBot, PerplexityBot không bị chặn |
+| 6 | **Deep Sitemap & Lastmod Health** | Phân tích cấu trúc sitemap, tính bao phủ & tính hợp lý <lastmod>, kiểm tra mẫu 404 |
+| 7 | **Viết Bài Chuẩn GEO & SEO** | Sinh bài E-E-A-T với Direct Answer, bảng so sánh, FAQ, Schema JSON-LD, llms.txt |
+| 8 | **Kế Hoạch Từ Khóa & Roadmap** | Google Suggest, PAA clustering, Semantic TF-IDF/KMeans, lộ trình 30 ngày không ăn thịt từ khóa |
+| 9 | **Tạo Assets & Featured Image** | Tự động sinh ảnh đại diện 1200×630 WebP bằng Pillow, không cần API ngoài |
+| 10 | **Sửa Lỗi CSS & Đồng Bộ WP** | Phát hiện lỗi CSS layout, đồng bộ bài viết/ảnh lên WordPress qua REST API |
 
 #### 🛠️ Gói 2: Cloud & VPS DevOps Suite
 | # | Công cụ / Module | Chức Năng |
@@ -142,6 +149,18 @@ python cli/master_seo.py heal-orphans --site "mmdidau"
 
 # Viết và đăng bài tự động chuẩn SEO 1000+ từ:
 python cli/master_seo.py write-post --site "vibemmo" --topic "Top Game MMO Đáng Chơi 2026" --category 4 --status publish
+
+# Đánh giá cấu trúc trích dẫn AI (GEO Citability Score):
+python cli/master_seo.py citability --url "https://example.com/guide"
+
+# Quét mã độc prompt injection ẩn nhắm vào AI Crawlers:
+python cli/master_seo.py audit-injection --url "https://example.com"
+
+# Kiểm tra WAF / Tường lửa có chặn AI Search Bots hay không:
+python cli/master_seo.py check-ai-bots --site "mmdidau"
+
+# Kiểm tra sitemap sâu, độ tươi <lastmod> và link lỗi 404:
+python cli/master_seo.py check-sitemap --site "mmdidau"
 ```
 
 #### 4. Sử Dụng Gói Cloud & VPS DevOps

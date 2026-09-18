@@ -315,5 +315,8 @@ def main():
             print(f"  {issue}")
 
 
+check_robots_url = fetch_robots_txt
+
+
 if __name__ == "__main__":
     main()

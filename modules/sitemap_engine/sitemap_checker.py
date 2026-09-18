@@ -811,5 +811,8 @@ def main() -> None:
     print(json.dumps(data, indent=2))
 
 
+check_sitemap = check_sitemaps
+
+
 if __name__ == "__main__":
     main()

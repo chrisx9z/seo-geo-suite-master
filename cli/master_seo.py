@@ -559,6 +559,112 @@ def generate_report_site(site, target_url=None, format="html", previous=None, ac
     else:
         print(f"❌ Report generation failed: {res.get('error')}")
 
+def audit_citability_site(site, target_url=None):
+    url = target_url or site['url']
+    print(f"\n{'='*75}")
+    print(f"📖 AI CITABILITY & STRUCTURAL READABILITY AUDIT: {url}")
+    print(f"{'='*75}")
+    from modules.citability_engine import check_url
+    res = check_url(url)
+    if res.get("error"):
+        print(f"❌ Citability Audit Failed: {res.get('error')}")
+        return
+    if not res.get("applicable", True):
+        print(f"ℹ️ Not applicable: {res.get('reason', 'Page is not article-style')}")
+        return
+    print(f"⭐ Overall Citability Score: {res.get('score', 0)}/100")
+    print(f"  • Total Words: {res.get('words', 0)} | Sections: {res.get('sections', 0)}")
+    comps = res.get("components", {})
+    if comps:
+        print("  • Component Breakdown:")
+        for name, comp in comps.items():
+            print(f"    - {name}: {comp.get('score', 0)}/100")
+    issues = res.get("issues", [])
+    if issues:
+        print(f"  ⚠️ Readability Recommendations ({len(issues)}):")
+        for iss in issues[:5]:
+            print(f"    - [{iss.get('severity', 'info').upper()}] {iss.get('finding')}")
+    else:
+        print("  ✅ Content structure is exceptionally well-formatted for AI extraction & citation!")
+
+def audit_injection_site(site, target_url=None):
+    url = target_url or site['url']
+    print(f"\n{'='*75}")
+    print(f"🛡️ PROMPT INJECTION & HIDDEN INSTRUCTION SECURITY AUDIT: {url}")
+    print(f"{'='*75}")
+    from modules.prompt_injection_guard import check_url
+    res = check_url(url)
+    if res.get("error"):
+        print(f"❌ Prompt Injection Check Failed: {res.get('error')}")
+        return
+    score = res.get("score", 100)
+    print(f"🛡️ Security Score: {score}/100")
+    hidden = res.get("hidden_instructions", [])
+    unicode_runs = res.get("invisible_unicode", [])
+    print(f"  • Hidden Instruction Hits: {len(hidden)}")
+    print(f"  • Invisible Unicode Runs: {len(unicode_runs)}")
+    issues = res.get("issues", [])
+    if issues:
+        print(f"  ⚠️ Security & Spam Policy Issues ({len(issues)}):")
+        for iss in issues[:5]:
+            print(f"    - {iss}")
+    else:
+        print("  ✅ Zero hidden prompt injection instructions detected. Page is clean & compliant!")
+
+def check_ai_bots_site(site, target_url=None):
+    url = target_url or site['url']
+    print(f"\n{'='*75}")
+    print(f"🤖 AI SEARCH CRAWLER & BOT FIREWALL ACCESS AUDIT: {url}")
+    print(f"{'='*75}")
+    from modules.ai_crawler_access import check_access
+    res = check_access(url)
+    if res.get("error"):
+        print(f"❌ AI Bot Access Check Failed: {res.get('error')}")
+        return
+    print(f"Baseline Browser Request: HTTP {res.get('baseline', {}).get('status', 'N/A')}")
+    bots = res.get("bots", {})
+    if bots:
+        print(f"  AI Crawler Accessibility ({len(bots)} tested):")
+        for bot_name, b_info in bots.items():
+            v = b_info.get("verdict", "unknown")
+            icon = "✅" if v == "allowed" else ("⛔" if v == "blocked" else ("🛡️" if v == "challenged" else "❓"))
+            detail = f" [WAF: {b_info['challenge_vendor']}]" if b_info.get("challenge_vendor") else ""
+            print(f"    {icon} {bot_name:18} : {v.upper():10} (HTTP {b_info.get('status')}){detail}")
+    issues = res.get("issues", [])
+    if issues:
+        print(f"  ⚠️ Crawler Access Warnings ({len(issues)}):")
+        for iss in issues[:5]:
+            print(f"    - {iss}")
+    else:
+        print("  ✅ All major AI search bots can crawl pages freely without firewall blocks!")
+
+def check_sitemap_deep_site(site):
+    url = site['url']
+    print(f"\n{'='*75}")
+    print(f"🗺️ DEEP SITEMAP DISCOVERY, LASTMOD & 404 HEALTH AUDIT: {url}")
+    print(f"{'='*75}")
+    from modules.sitemap_engine import check_sitemap
+    res = check_sitemap(url, sample_size=30, lastmod=True, structure=True)
+    if res.get("error"):
+        print(f"❌ Sitemap Check Failed: {res.get('error')}")
+        return
+    print(f"⭐ Sitemap Health Score: {res.get('score', 0)}/100")
+    print(f"  • Primary Sitemap: {res.get('primary_sitemap_url') or 'None found'}")
+    print(f"  • URLs Discovered: {res.get('url_count_estimate', 0)}")
+    health = res.get("url_health", {})
+    if health:
+        print(f"  • Sample Tested: {health.get('checked', 0)} | Healthy: {health.get('healthy', 0)} | Errors: {health.get('broken', 0)}")
+    lastmod = res.get("lastmod", {})
+    if lastmod:
+        print(f"  • Lastmod Coverage: {lastmod.get('coverage_pct', 'N/A')}%")
+    issues = res.get("issues", [])
+    if issues:
+        print(f"  ⚠️ Sitemap Issues ({len(issues)}):")
+        for iss in issues[:5]:
+            print(f"    - {iss}")
+    else:
+        print("  ✅ Sitemap is fully compliant, error-free and fresh!")
+
 def optimize_site(site):
     print(f"\n{'='*75}")
     print(f"🚀 MASTER ENTERPRISE OPTIMIZATION: {site['name']} ({site['url']})")
@@ -665,7 +771,8 @@ def main():
         "news-sitemap", "serp-gap", "cannibalization", "build-silo", 
         "inject-eeat", "heal-orphans", "warm-edge", "audit-links", 
         "audit-onpage", "schedule-travel", "clone-site",
-        "audit-graph", "audit-arch", "audit-nav", "audit-sitemap-freshness", "generate-report"
+        "audit-graph", "audit-arch", "audit-nav", "audit-sitemap-freshness", "generate-report",
+        "citability", "audit-injection", "check-ai-bots", "check-sitemap"
     ], help="Action to perform")
     parser.add_argument("--site", default=None, help="Site ID or domain to target (omit to apply to ALL sites)")
     parser.add_argument("--from-site", default="mmdidau", help="Source site ID to clone from (for clone-site)")
@@ -743,6 +850,14 @@ def main():
             audit_onpage_speed_site(s, target_url=args.url)
         elif args.command == "geo-audit":
             geo_audit_site(s, target_url=args.url)
+        elif args.command == "citability":
+            audit_citability_site(s, target_url=args.url)
+        elif args.command == "audit-injection":
+            audit_injection_site(s, target_url=args.url)
+        elif args.command == "check-ai-bots":
+            check_ai_bots_site(s, target_url=args.url)
+        elif args.command == "check-sitemap":
+            check_sitemap_deep_site(s)
         elif args.command == "audit-graph":
             audit_graph_site(s, target_url=args.url, max_pages=args.max_posts or 50, depth=args.depth or 2)
         elif args.command == "audit-arch":

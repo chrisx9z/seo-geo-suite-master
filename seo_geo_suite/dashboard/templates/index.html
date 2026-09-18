@@ -27,11 +27,16 @@
     <div class="flex flex-wrap gap-2 border-b border-slate-800 pb-4 mb-8">
       <button onclick="switchTab('tab-autopilot')" id="btn-autopilot" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-emerald-600 text-white shadow-lg shadow-emerald-600/30 transition-all">🤖 M-Auto-Pilot</button>
       <button onclick="switchTab('tab-onpage')" id="btn-onpage" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 transition-all">🔍 Kiểm Tra On-Page</button>
-      <button onclick="switchTab('tab-writer')" id="btn-writer" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 transition-all">✍️ Viết Bài Chuẩn GEO/SEO</button>
-      <button onclick="switchTab('tab-keywords')" id="btn-keywords" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 transition-all">📈 Lập Kế Hoạch Từ Khóa</button>
-      <button onclick="switchTab('tab-audit')" id="btn-audit" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 transition-all">🛡️ Audit Robots & Sitemap</button>
-      <button onclick="switchTab('tab-ui')" id="btn-ui" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 transition-all">🎨 Tạo Menu / Footer / Breadcrumb</button>
-      <button onclick="switchTab('tab-css')" id="btn-css" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 transition-all">🛠️ Kiểm Tra & Sửa CSS</button>
+      <button onclick="switchTab('tab-citability')" id="btn-citability" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 transition-all">✨ GEO Citability</button>
+      <button onclick="switchTab('tab-injection')" id="btn-injection" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 transition-all">🚨 Prompt Guard</button>
+      <button onclick="switchTab('tab-aibots')" id="btn-aibots" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 transition-all">🤖 AI Bots Access</button>
+      <button onclick="switchTab('tab-sitemap')" id="btn-sitemap" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 transition-all">🗺️ Sitemap Deep</button>
+      <button onclick="switchTab('tab-writer')" id="btn-writer" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 transition-all">✍️ Viết Bài GEO/SEO</button>
+      <button onclick="switchTab('tab-keywords')" id="btn-keywords" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 transition-all">📈 Kế Hoạch Từ Khóa</button>
+      <button onclick="switchTab('tab-audit')" id="btn-audit" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 transition-all">🛡️ Audit Robots</button>
+      <button onclick="switchTab('tab-devops')" id="btn-devops" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 transition-all">☁️ Cloud DevOps</button>
+      <button onclick="switchTab('tab-ui')" id="btn-ui" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 transition-all">🎨 Tạo Menu / UI</button>
+      <button onclick="switchTab('tab-css')" id="btn-css" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 transition-all">🛠️ Sửa CSS</button>
     </div>
 
     <!-- TAB 0: M-AUTO-PILOT WORDPRESS ENGINE -->
@@ -193,6 +198,76 @@
         <button onclick="runCssCheck()" class="px-6 py-3 bg-pink-600 hover:bg-pink-500 font-semibold rounded-xl text-white shadow-lg transition">Kiểm Tra Lỗi CSS</button>
       </div>
       <div id="css-result" class="hidden space-y-4"></div>
+    </div>
+
+    <!-- TAB 7: GEO CITABILITY CHECKER -->
+    <div id="tab-citability" class="tab-content hidden space-y-6">
+      <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
+        <h3 class="text-lg font-bold text-white mb-2">Đo Lường Điểm Trích Dẫn AI & GEO Citability</h3>
+        <p class="text-sm text-slate-400 mb-4">Đánh giá độ sẵn sàng cho AI Search (ChatGPT, Perplexity, Gemini, Copilot): Direct Answer Readiness, Quotation Density, Statistical Density, Entity Attribution.</p>
+        <div class="flex gap-3">
+          <input type="text" id="citability-url" placeholder="Nhập URL bài viết cần đo lường (vd: https://example.com/bai-viet)" class="flex-1 bg-slate-950 border border-slate-700 px-4 py-3 rounded-xl text-white focus:outline-none focus:border-indigo-500">
+          <button onclick="runCitabilityCheck()" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 font-semibold rounded-xl text-white shadow-lg transition">Đo Điểm Citability</button>
+        </div>
+      </div>
+      <div id="citability-result" class="hidden space-y-4"></div>
+    </div>
+
+    <!-- TAB 8: PROMPT INJECTION GUARD -->
+    <div id="tab-injection" class="tab-content hidden space-y-6">
+      <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
+        <h3 class="text-lg font-bold text-white mb-2">Rà Soát Mối Đe Dọa AI Prompt Injection & Chỉ Thị Ẩn</h3>
+        <p class="text-sm text-slate-400 mb-4">Phát hiện các kỹ thuật giấu prompt nguy hiểm (font-size 0, màu chữ trùng nền, display:none, HTML comment độc hại) nhằm thao túng bot AI.</p>
+        <div class="flex gap-3">
+          <input type="text" id="injection-url" placeholder="Nhập URL cần quét bảo mật (vd: https://example.com)" class="flex-1 bg-slate-950 border border-slate-700 px-4 py-3 rounded-xl text-white focus:outline-none focus:border-rose-500">
+          <button onclick="runInjectionCheck()" class="px-6 py-3 bg-rose-600 hover:bg-rose-500 font-semibold rounded-xl text-white shadow-lg transition">Quét Mối Đe Dọa</button>
+        </div>
+      </div>
+      <div id="injection-result" class="hidden space-y-4"></div>
+    </div>
+
+    <!-- TAB 9: AI BOT & CRAWLER ACCESS -->
+    <div id="tab-aibots" class="tab-content hidden space-y-6">
+      <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
+        <h3 class="text-lg font-bold text-white mb-2">Kiểm Tra Quyền Thu Thập Dữ Liệu Của AI Bots & WAF</h3>
+        <p class="text-sm text-slate-400 mb-4">Phân tích robots.txt và Edge WAF để xác định trang có cho phép các bot AI lớn (GPTBot, ClaudeBot, PerplexityBot, Applebot, Google-Extended) trích dẫn hay không.</p>
+        <div class="flex gap-3">
+          <input type="text" id="aibots-url" placeholder="Nhập tên miền hoặc URL (vd: https://example.com)" class="flex-1 bg-slate-950 border border-slate-700 px-4 py-3 rounded-xl text-white focus:outline-none focus:border-amber-500">
+          <button onclick="runAiBotsCheck()" class="px-6 py-3 bg-amber-600 hover:bg-amber-500 font-semibold rounded-xl text-white shadow-lg transition">Kiểm Tra AI Bots</button>
+        </div>
+      </div>
+      <div id="aibots-result" class="hidden space-y-4"></div>
+    </div>
+
+    <!-- TAB 10: DEEP SITEMAP ENGINE -->
+    <div id="tab-sitemap" class="tab-content hidden space-y-6">
+      <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
+        <h3 class="text-lg font-bold text-white mb-2">Kiểm Tra Sâu Tính Hợp Lệ & Độ Tươi Mới Sitemap (Freshness)</h3>
+        <p class="text-sm text-slate-400 mb-4">Phân tích cấu trúc XML sitemap, đo lường tỷ lệ cập nhật gần đây (Freshness Index), phát hiện URL lỗi 404, chuỗi redirect và sitemap index lồng nhau.</p>
+        <div class="flex gap-3">
+          <input type="text" id="sitemap-url" placeholder="Nhập URL Sitemap hoặc tên miền (vd: https://example.com/sitemap_index.xml)" class="flex-1 bg-slate-950 border border-slate-700 px-4 py-3 rounded-xl text-white focus:outline-none focus:border-cyan-500">
+          <button onclick="runSitemapCheck()" class="px-6 py-3 bg-cyan-600 hover:bg-cyan-500 font-semibold rounded-xl text-white shadow-lg transition">Kiểm Tra Sitemap</button>
+        </div>
+      </div>
+      <div id="sitemap-result" class="hidden space-y-4"></div>
+    </div>
+
+    <!-- TAB 11: DEVOPS & CLOUDFLARE SUITE -->
+    <div id="tab-devops" class="tab-content hidden space-y-6">
+      <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
+        <h3 class="text-lg font-bold text-white mb-2">Quản Trị VPS Cloudflare & Tự Động Hóa Vận Hành</h3>
+        <p class="text-sm text-slate-400 mb-4">Thao tác nhanh xóa cache Cloudflare tức thì, quản trị chế độ SSL và công cụ nhân bản WordPress an toàn.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-1">Tên miền Cloudflare</label>
+            <input type="text" id="devops-domain" placeholder="VD: vibemmo.net hoặc mmdidau.com" class="w-full bg-slate-950 border border-slate-700 px-4 py-3 rounded-xl text-white focus:outline-none focus:border-blue-500">
+          </div>
+          <div class="flex items-end">
+            <button onclick="runCfPurge()" class="w-full py-3 bg-orange-600 hover:bg-orange-500 font-semibold rounded-xl text-white shadow-lg transition">🚀 Xóa Sạch Cache Cloudflare (Purge Everything)</button>
+          </div>
+        </div>
+      </div>
+      <div id="devops-result" class="hidden space-y-4"></div>
     </div>
 
   </div>
@@ -481,6 +556,141 @@
           ` + (data.recommendations.length ? `<div class="bg-emerald-950/40 border border-emerald-900/60 p-4 rounded-xl space-y-1"><div class="font-bold text-emerald-300 text-sm">Khuyến nghị tối ưu:</div><ul>` + recsHtml + `</ul></div>` : '') + `
         </div>
       `;
+    }
+
+    async function runCitabilityCheck() {
+      const url = document.getElementById('citability-url').value.trim();
+      if (!url) return alert('Vui lòng nhập URL!');
+      const resBox = document.getElementById('citability-result');
+      resBox.classList.remove('hidden');
+      resBox.innerHTML = '<div class="p-8 text-center text-indigo-400 animate-pulse">Đang đo lường điểm GEO Citability, Passage Conciseness & Structure...</div>';
+
+      const formData = new FormData();
+      formData.append('url', url);
+      try {
+        const resp = await fetch('/api/citability', { method: 'POST', body: formData });
+        const data = await resp.json();
+        const score = data.score !== undefined ? data.score : (data.citability_score || 0);
+        resBox.innerHTML = `
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl text-center">
+              <div class="text-xs text-slate-400 mb-1 font-semibold uppercase">Điểm Citability</div>
+              <div class="text-5xl font-extrabold ${score >= 70 ? 'text-emerald-400' : 'text-amber-400'}">${score}<span class="text-xl text-slate-500 font-normal">/100</span></div>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl text-center">
+              <div class="text-xs text-slate-400 mb-1 font-semibold uppercase">Độ Dài Trung Bình Đoạn</div>
+              <div class="text-4xl font-extrabold text-blue-400">${data.avg_paragraph_words || data.avg_words || 0} <span class="text-sm font-normal text-slate-400">từ</span></div>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl text-center">
+              <div class="text-xs text-slate-400 mb-1 font-semibold uppercase">Tỷ Lệ Trích Dẫn & Thống Kê</div>
+              <div class="text-4xl font-extrabold text-purple-400">${data.density_percent || data.quote_density || 'Tốt'}</div>
+            </div>
+          </div>
+          <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-3">
+            <div class="font-bold text-white text-base">Phân Tích Chi Tiết Cấu Trúc</div>
+            <pre class="bg-slate-950 p-4 rounded-xl text-xs text-slate-300 overflow-x-auto font-mono">${JSON.stringify(data, null, 2)}</pre>
+          </div>
+        `;
+      } catch (err) {
+        resBox.innerHTML = `<div class="p-4 bg-rose-950/50 border border-rose-800 text-rose-300 rounded-xl">Lỗi: ${err.message}</div>`;
+      }
+    }
+
+    async function runInjectionCheck() {
+      const url = document.getElementById('injection-url').value.trim();
+      if (!url) return alert('Vui lòng nhập URL!');
+      const resBox = document.getElementById('injection-result');
+      resBox.classList.remove('hidden');
+      resBox.innerHTML = '<div class="p-8 text-center text-rose-400 animate-pulse">Đang quét phát hiện mã độc, CSS ẩn và Prompt Injection...</div>';
+
+      const formData = new FormData();
+      formData.append('url', url);
+      try {
+        const resp = await fetch('/api/injection', { method: 'POST', body: formData });
+        const data = await resp.json();
+        const safe = data.safe !== undefined ? data.safe : (data.findings && data.findings.length === 0);
+        resBox.innerHTML = `
+          <div class="p-6 rounded-2xl border ${safe ? 'bg-emerald-950/30 border-emerald-800' : 'bg-rose-950/40 border-rose-800'} space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="font-bold text-lg ${safe ? 'text-emerald-400' : 'text-rose-400'}">${safe ? '✅ Trang Web An Toàn - Không Phát Hiện Prompt Injection' : '🚨 CẢNH BÁO: Phát Hiện Mối Đe Dọa Chỉ Thị Ẩn!'}</div>
+              <span class="px-3 py-1 text-xs font-semibold rounded-full ${safe ? 'bg-emerald-500/10 text-emerald-400' : 'bg-rose-500/10 text-rose-400'}">${safe ? 'SAFE' : 'THREAT DETECTED'}</span>
+            </div>
+            <pre class="bg-slate-950 p-4 rounded-xl text-xs text-slate-300 overflow-x-auto font-mono">${JSON.stringify(data, null, 2)}</pre>
+          </div>
+        `;
+      } catch (err) {
+        resBox.innerHTML = `<div class="p-4 bg-rose-950/50 border border-rose-800 text-rose-300 rounded-xl">Lỗi: ${err.message}</div>`;
+      }
+    }
+
+    async function runAiBotsCheck() {
+      const url = document.getElementById('aibots-url').value.trim();
+      if (!url) return alert('Vui lòng nhập tên miền/URL!');
+      const resBox = document.getElementById('aibots-result');
+      resBox.classList.remove('hidden');
+      resBox.innerHTML = '<div class="p-8 text-center text-amber-400 animate-pulse">Đang kiểm tra quyền truy cập robots.txt & WAF cho AI Crawlers...</div>';
+
+      const formData = new FormData();
+      formData.append('url', url);
+      try {
+        const resp = await fetch('/api/ai-bots', { method: 'POST', body: formData });
+        const data = await resp.json();
+        resBox.innerHTML = `
+          <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-4">
+            <div class="font-bold text-white text-base">Kết Quả Kiểm Tra Bot AI (Robots.txt & WAF)</div>
+            <pre class="bg-slate-950 p-4 rounded-xl text-xs text-slate-300 overflow-x-auto font-mono">${JSON.stringify(data, null, 2)}</pre>
+          </div>
+        `;
+      } catch (err) {
+        resBox.innerHTML = `<div class="p-4 bg-rose-950/50 border border-rose-800 text-rose-300 rounded-xl">Lỗi: ${err.message}</div>`;
+      }
+    }
+
+    async function runSitemapCheck() {
+      const url = document.getElementById('sitemap-url').value.trim();
+      if (!url) return alert('Vui lòng nhập URL Sitemap hoặc Domain!');
+      const resBox = document.getElementById('sitemap-result');
+      resBox.classList.remove('hidden');
+      resBox.innerHTML = '<div class="p-8 text-center text-cyan-400 animate-pulse">Đang quét sâu cấu trúc Sitemap, XML syntax & Freshness Index...</div>';
+
+      const formData = new FormData();
+      formData.append('url', url);
+      try {
+        const resp = await fetch('/api/sitemap-deep', { method: 'POST', body: formData });
+        const data = await resp.json();
+        resBox.innerHTML = `
+          <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-4">
+            <div class="font-bold text-white text-base">Kết Quả Kiểm Tra Sâu Sitemap</div>
+            <pre class="bg-slate-950 p-4 rounded-xl text-xs text-slate-300 overflow-x-auto font-mono">${JSON.stringify(data, null, 2)}</pre>
+          </div>
+        `;
+      } catch (err) {
+        resBox.innerHTML = `<div class="p-4 bg-rose-950/50 border border-rose-800 text-rose-300 rounded-xl">Lỗi: ${err.message}</div>`;
+      }
+    }
+
+    async function runCfPurge() {
+      const domain = document.getElementById('devops-domain').value.trim();
+      if (!domain) return alert('Vui lòng nhập tên miền!');
+      const resBox = document.getElementById('devops-result');
+      resBox.classList.remove('hidden');
+      resBox.innerHTML = '<div class="p-8 text-center text-orange-400 animate-pulse">Đang gửi lệnh xóa sạch cache Cloudflare...</div>';
+
+      const formData = new FormData();
+      formData.append('domain', domain);
+      try {
+        const resp = await fetch('/api/devops/cf-purge', { method: 'POST', body: formData });
+        const data = await resp.json();
+        resBox.innerHTML = `
+          <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-3">
+            <div class="font-bold text-white text-base">Kết Quả DevOps Cloudflare</div>
+            <div class="text-sm ${data.status === 'success' ? 'text-emerald-400' : 'text-amber-400'} font-semibold">Trạng thái: ${data.status.toUpperCase()}</div>
+            <pre class="bg-slate-950 p-4 rounded-xl text-xs text-slate-300 overflow-x-auto font-mono">${JSON.stringify(data, null, 2)}</pre>
+          </div>
+        `;
+      } catch (err) {
+        resBox.innerHTML = `<div class="p-4 bg-rose-950/50 border border-rose-800 text-rose-300 rounded-xl">Lỗi: ${err.message}</div>`;
+      }
     }
   </script>
 </body>

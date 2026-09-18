@@ -21,6 +21,11 @@ if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
 from modules.wp_ai_autopilot.autopilot_orchestrator import WpAiAutopilot
+from modules.citability_engine import check_url as check_citability
+from modules.prompt_injection_guard import check_url as check_prompt_injection
+from modules.ai_crawler_access import check_access as check_ai_bot_access
+from modules.sitemap_engine import check_sitemap as check_sitemap_deep
+from modules.vps_cloudflare_aapanel.vps_automation import CloudflareManager
 
 app = FastAPI(title="SEO & GEO Master Suite Dashboard")
 
@@ -164,3 +169,45 @@ async def api_autopilot_publish(
         return JSONResponse(content=res)
     except Exception as e:
         return JSONResponse(status_code=500, content={"status": "error", "message": str(e)})
+
+@app.post("/api/citability")
+async def api_citability(url: str = Form(...)):
+    try:
+        res = check_citability(url)
+        return JSONResponse(content=res)
+    except Exception as e:
+        return JSONResponse(status_code=500, content={"status": "error", "message": str(e)})
+
+@app.post("/api/injection")
+async def api_injection(url: str = Form(...)):
+    try:
+        res = check_prompt_injection(url)
+        return JSONResponse(content=res)
+    except Exception as e:
+        return JSONResponse(status_code=500, content={"status": "error", "message": str(e)})
+
+@app.post("/api/ai-bots")
+async def api_ai_bots(url: str = Form(...)):
+    try:
+        res = check_ai_bot_access(url)
+        return JSONResponse(content=res)
+    except Exception as e:
+        return JSONResponse(status_code=500, content={"status": "error", "message": str(e)})
+
+@app.post("/api/sitemap-deep")
+async def api_sitemap_deep(url: str = Form(...)):
+    try:
+        res = check_sitemap_deep(url)
+        return JSONResponse(content=res)
+    except Exception as e:
+        return JSONResponse(status_code=500, content={"status": "error", "message": str(e)})
+
+@app.post("/api/devops/cf-purge")
+async def api_cf_purge(domain: str = Form(...)):
+    try:
+        cf = CloudflareManager()
+        ok = cf.purge_cache(domain)
+        return JSONResponse(content={"status": "success" if ok else "failed", "domain": domain})
+    except Exception as e:
+        return JSONResponse(status_code=500, content={"status": "error", "message": str(e)})
+

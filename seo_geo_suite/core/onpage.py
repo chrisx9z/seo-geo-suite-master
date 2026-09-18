@@ -1,7 +1,7 @@
 import re
 import json
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Comment
 from typing import Dict, Any, List
 
 class OnpageChecker:
@@ -122,20 +122,65 @@ class OnpageChecker:
             elif href.startswith(("/", "#", "./", "../")):
                 internal_links += 1
 
-        # 9. GEO & Citability signals
+        # 9. AI Prompt Injection & Hidden Instruction Security Check
+        hidden_threats = []
+        injection_regex = re.compile(
+            r"\b(?:ignore|disregard|forget)\s+(?:all\s+|any\s+|the\s+)?(?:previous|prior|above|earlier)\s+(?:instructions|prompts|rules)|"
+            r"\byou\s+are\s+(?:now\s+)?(?:an?\s+)?(?:ai|assistant|chatbot|llm|chatgpt|claude|gemini)\b|"
+            r"\b(?:chatgpt|claude|gemini|perplexity|copilot|llm)\b[^.!?\n]{0,60}?\b(?:must|recommend|rank|say|cite)\b|"
+            r"(?:\bsystem\s+prompt\s*:|<\|im_start\|>|\[/?INST\])",
+            re.I
+        )
+
+        for comment in soup.find_all(string=lambda text: isinstance(text, Comment)):
+            c_text = str(comment).strip()
+            if injection_regex.search(c_text):
+                hidden_threats.append(f"Prompt injection in HTML comment: '{c_text[:80]}...'")
+
+        for hidden_el in soup.find_all(attrs={"hidden": True}):
+            h_text = hidden_el.get_text().strip()
+            if injection_regex.search(h_text):
+                hidden_threats.append(f"Prompt injection in <... hidden>: '{h_text[:80]}...'")
+
+        for el in soup.find_all(attrs={"style": re.compile(r"display\s*:\s*none|visibility\s*:\s*hidden|font-size\s*:\s*0|opacity\s*:\s*0", re.I)}):
+            el_text = el.get_text().strip()
+            if injection_regex.search(el_text):
+                hidden_threats.append(f"Prompt injection in CSS-hidden element: '{el_text[:80]}...'")
+
+        # 10. Advanced Citability Metrics
+        paragraphs = soup.find_all("p")
+        p_lengths = [len(re.findall(r"\w+", p.get_text())) for p in paragraphs if p.get_text().strip()]
+        avg_p_len = sum(p_lengths) / len(p_lengths) if p_lengths else 0
+        long_paragraphs_count = sum(1 for pl in p_lengths if pl > 120)
+        data_density_count = sum(1 for p in paragraphs if re.search(r"\d+(?:\.\d+)?%?|\$\d+", p.get_text()))
+        question_headings_count = sum(1 for h in headings.get("h2", []) + headings.get("h3", []) if h.strip().endswith("?") or re.match(r"^(what|how|why|when|where|who|is|can|should)\b", h.strip(), re.I))
+
+        # 11. GEO & Citability signals
         geo_signals = {
             "has_structured_data": len(json_ld_schemas) > 0,
             "has_direct_faq": bool(soup.find(attrs={"class": re.compile(r"faq", re.I)}) or "FAQPage" in str(schema_types)),
             "has_tables_or_lists": len(soup.find_all(["table", "ul", "ol"])) > 0,
             "has_author_or_entity": bool(soup.find(attrs={"class": re.compile(r"author|byline|profile", re.I)}) or "Person" in str(schema_types) or "Organization" in str(schema_types)),
-            "content_word_count": len(re.findall(r"\\w+", soup.get_text())),
-            "schema_types_found": schema_types
+            "content_word_count": len(re.findall(r"\w+", soup.get_text())),
+            "schema_types_found": schema_types,
+            "has_hidden_threats": len(hidden_threats) > 0,
+            "hidden_threats": hidden_threats,
+            "avg_paragraph_words": round(avg_p_len, 1),
+            "long_paragraphs_count": long_paragraphs_count,
+            "data_density_paragraphs": data_density_count,
+            "question_headings_count": question_headings_count
         }
 
         # Calculate Overall SEO Score (0-100)
         score = 100
         issues = []
         recommendations = []
+
+        # Check Hidden Threats & Malware Injection
+        if hidden_threats:
+            score -= 30
+            issues.append(f"CẢNH BÁO BẢO MẬT: Phát hiện {len(hidden_threats)} đoạn mã độc hoặc Prompt Injection ẩn nhắm vào AI")
+            recommendations.append("Xóa ngay các chỉ thị prompt ẩn trong mã HTML/CSS để tránh bị Google và các AI Search Engine đưa vào danh sách đen.")
 
         # Check Thin Content (< 1000 words)
         word_count = geo_signals["content_word_count"]

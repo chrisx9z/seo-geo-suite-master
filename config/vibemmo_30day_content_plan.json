@@ -1,0 +1,1180 @@
+{
+  "site_id": "vibemmo",
+  "site_url": "https://vibemmo.net",
+  "plan_title": "VibeMMO 30-Day AI & MMO Mastery Content Plan 2026",
+  "total_days": 30,
+  "articles_per_day": 5,
+  "total_articles": 150,
+  "clusters": [
+    {
+      "day": 1,
+      "pillar": "AI Fundamentals & Multi-Agent Systems",
+      "cluster_name": "Kiến Trúc AI Agent & Hệ Sinh Thái Tự Trị 2026",
+      "category_id": 3,
+      "cat_slug": "tri-tue-nhan-tao",
+      "items": [
+        [
+          "Kiến Trúc AI Agent Tự Trị 2026: Giải Mã Cơ Chế ReAct, Planning & Memory",
+          "kien-truc-ai-agent-tu-tri-react-memory-2026",
+          "Informational",
+          "ai agent architecture, react framework, llm planning memory, autonomous ai system"
+        ],
+        [
+          "So Sánh LangGraph vs CrewAI: Framework Nào Tối Ưu Cho Multi-Agent Swarms?",
+          "so-sanh-langgraph-vs-crewai-multi-agent-framework",
+          "Commercial",
+          "langgraph vs crewai, multi agent framework python, best agent orchestration 2026"
+        ],
+        [
+          "Hướng Dẫn Xây Dựng Agentic Workflow Tự Động Hóa Doanh Nghiệp Với Python",
+          "huong-dan-xay-dung-agentic-workflow-python",
+          "Informational",
+          "xay dung agentic workflow, python ai agent tutorial, workflow automation llm"
+        ],
+        [
+          "Mô Hình Computer Use: Đột Phá Điều Khiển Giao Diện Hệ Điều Hành Của AI",
+          "mo-hinh-computer-use-dieu-khien-giao-dien-ai",
+          "Informational",
+          "claude computer use, ai os control, gui agent automation, qwen computer use"
+        ],
+        [
+          "Tối Ưu Hóa Chi Phí Chạy Multi-Agent Swarms Bằng Mô Hình Hybrid SLM & LLM",
+          "toi-uu-chi-phi-multi-agent-hybrid-slm-llm",
+          "Commercial",
+          "reduce llm api costs, hybrid slm llm architecture, cost effective ai agents"
+        ]
+      ]
+    },
+    {
+      "day": 2,
+      "pillar": "AI Coding & Developer Productivity",
+      "cluster_name": "Lập Trình Tự Động Hóa & Kỷ Nguyên AI Engineer",
+      "category_id": 4,
+      "cat_slug": "cong-nghe-saas",
+      "items": [
+        [
+          "Top 5 AI Coding Assistants Tốt Nhất 2026: Cursor, Windsurf, Copilot & Claude Dev",
+          "top-5-ai-coding-assistants-cursor-windsurf-copilot",
+          "Commercial",
+          "cursor vs windsurf, best ai code editor 2026, github copilot alternatives"
+        ],
+        [
+          "Kỹ Thuật Sử Dụng Cursor IDE Chuyên Nghiệp: Tận Dụng .cursorrules & Composer",
+          "ky-thuat-su-dung-cursor-ide-cursorrules-composer",
+          "Informational",
+          "cursor rules best practices, cursor composer tutorial, ai pair programming tips"
+        ],
+        [
+          "Xây Dựng Ứng Dụng Full-Stack Trong 1 Giờ Bằng Vibe Coding Với Next.js & Supabase",
+          "xay-dung-fullstack-vibe-coding-nextjs-supabase",
+          "Informational",
+          "vibe coding tutorial, nextjs supabase ai app, rapid prototyping with ai"
+        ],
+        [
+          "Tự Động Viết Unit Test & Refactor Mã Nguồn Bằng AI: Chuẩn Clean Code 2026",
+          "tu-dong-viet-unit-test-refactor-ma-nguon-ai",
+          "Informational",
+          "ai automated testing, refactor code with llm, pytest jest ai automation"
+        ],
+        [
+          "Lộ Trình Trở Thành AI Engineer Đỉnh Cao: Từ Software Engineer Đến AI Architect",
+          "lo-trinh-tro-thanh-ai-engineer-dinh-cao-2026",
+          "Informational",
+          "ai engineer roadmap 2026, skills needed for ai engineer, transition to ai developer"
+        ]
+      ]
+    },
+    {
+      "day": 3,
+      "pillar": "AI MMO & Online Wealth",
+      "cluster_name": "Kiếm Tiền Online MMO Tự Động Bằng Trí Tuệ Nhân Tạo",
+      "category_id": 5,
+      "cat_slug": "ai-mmo",
+      "items": [
+        [
+          "Mô Hình Kiếm Tiền MMO Tự Động 2026: 5 Hệ Thống Tạo Thu Nhập Thụ Động Bằng AI",
+          "mo-hinh-kiem-tien-mmo-tu-dong-ai-2026",
+          "Informational",
+          "kiem tien mmo voi ai, passive income ai agents, make money online 2026"
+        ],
+        [
+          "Xây Dựng Đế Chế Nội Dung Tự Động Bằng AI Agent Swarm: Case Study $5,000/Tháng",
+          "xay-dung-de-che-noi-dung-tu-dong-ai-swarm",
+          "Informational",
+          "ai content empire case study, automated blog income, programmatic seo ai"
+        ],
+        [
+          "Hướng Dẫn Kiếm Tiền Affiliate Marketing Tự Động Với N8n & LLM API",
+          "huong-dan-kiem-tien-affiliate-marketing-n8n-llm",
+          "Commercial",
+          "automated affiliate marketing, n8n workflow affiliate, ai commission automation"
+        ],
+        [
+          "Bán Dịch Vụ AI Automation Agency (AAA): Lộ Trình Kiếm Hợp Đồng Doanh Nghiệp Đầu Tiên",
+          "ban-dich-vu-ai-automation-agency-aaa-lo-trinh",
+          "Commercial",
+          "how to start an aaa, ai automation agency guide, selling b2b ai workflows"
+        ],
+        [
+          "Khai Thác Micro-Freelancing Bằng AI: Cách Kiếm $100/Ngày Trên Upwork & Fiverr",
+          "khai-thac-micro-freelancing-ai-upwork-fiverr",
+          "Informational",
+          "freelance with ai tools, upwork ai gigs, high paying fiverr services 2026"
+        ]
+      ]
+    },
+    {
+      "day": 4,
+      "pillar": "AI Tools & Software Reviews",
+      "cluster_name": "Đánh Giá & So Sánh Top AI Tools Hàng Đầu",
+      "category_id": 6,
+      "cat_slug": "danh-gia-tools",
+      "items": [
+        [
+          "Đánh Giá Toàn Diện Claude 3.5 Sonnet vs OpenAI GPT-4o: Đâu Là Vua Trí Tuệ Nhân Tạo?",
+          "danh-gia-claude-3-5-sonnet-vs-gpt-4o-toan-dien",
+          "Commercial",
+          "claude 3.5 vs gpt 4o, best llm for coding, openai vs anthropic benchmark"
+        ],
+        [
+          "Top 7 Công Cụ Tạo Video AI Chuyên Nghiệp Nhất 2026: Sora, Runway Gen-3 & Kling",
+          "top-7-cong-cu-tao-video-ai-sora-runway-kling",
+          "Commercial",
+          "best ai video generators 2026, runway gen 3 review, sora text to video"
+        ],
+        [
+          "Midjourney v7 vs Flux.1 Schnell: Đâu Là Giải Pháp Tạo Ảnh AI Xuất Sắc Nhất?",
+          "midjourney-v7-vs-flux-1-so-sanh-chi-tiet",
+          "Commercial",
+          "flux 1 vs midjourney v7, open source image generator, realistic ai art"
+        ],
+        [
+          "Đánh Giá ElevenLabs: Công Nghệ Giọng Đọc AI & Voice Cloning Chân Thực Nhất",
+          "danh-gia-elevenlabs-giong-doc-ai-voice-cloning",
+          "Commercial",
+          "elevenlabs review, realistic ai voiceover, text to speech ai best"
+        ],
+        [
+          "Top 5 Công Cụ Tự Động Hóa Không Cần Code Tốt Nhất 2026: N8n, Make.com, Zapier",
+          "top-5-cong-cu-tu-dong-hoa-n8n-make-zapier",
+          "Commercial",
+          "n8n vs make vs zapier, best nocode automation tool, self hosted n8n"
+        ]
+      ]
+    },
+    {
+      "day": 5,
+      "pillar": "SaaS Architecture & Micro-SaaS",
+      "cluster_name": "Xây Dựng & Tăng Trưởng Micro-SaaS Với AI Wrappers",
+      "category_id": 4,
+      "cat_slug": "cong-nghe-saas",
+      "items": [
+        [
+          "Chiến Lược Xây Dựng Micro-SaaS Đạt Doanh Thu $10k MRR Trong 6 Tháng",
+          "chien-luoc-xay-dung-micro-saas-10k-mrr",
+          "Informational",
+          "micro saas ideas 2026, build micro saas with ai, bootstrapped saas guide"
+        ],
+        [
+          "Kiến Trúc Kỹ Thuật Chuẩn Cho AI Wrapper: Next.js 15, FastAPI, Redis & Stripe",
+          "kien-truc-ky-thuat-ai-wrapper-nextjs-fastapi-stripe",
+          "Informational",
+          "ai wrapper architecture, boilerplate saas ai, stripe payment integration"
+        ],
+        [
+          "Bảo Mật API Key & Chống Bị Tấn Công Gian Lận Token Trong Sản Phẩm SaaS AI",
+          "bao-mat-api-key-chong-gian-lan-token-saas-ai",
+          "Informational",
+          "secure llm api keys, prevent token abuse, rate limiting saas api"
+        ],
+        [
+          "Tối Ưu Chuyển Đổi Trang Landing Page Micro-SaaS: Bí Quyết Đạt Tỷ Lệ Đăng Ký 15%",
+          "toi-uu-chuyen-doi-landing-page-micro-saas",
+          "Commercial",
+          "saas landing page conversion, copywriting for saas, high converting hero section"
+        ],
+        [
+          "Chiến Lược Định Giá SaaS (Pricing Strategy) Tối Đa Hóa Lợi Nhuận Năm 2026",
+          "chien-luoc-dinh-gia-saas-pricing-strategy-2026",
+          "Commercial",
+          "saas pricing models, usage based pricing llm, freemium vs free trial"
+        ]
+      ]
+    },
+    {
+      "day": 6,
+      "pillar": "AI Content & Faceless Media",
+      "cluster_name": "Tự Động Hóa Kênh YouTube & TikTok Faceless Triệu View",
+      "category_id": 5,
+      "cat_slug": "ai-mmo",
+      "items": [
+        [
+          "Quy Trình Xây Dựng Kênh YouTube Faceless Tự Động 100% Bằng AI Từ A Đến Z",
+          "quy-trinh-xay-dung-youtube-faceless-tu-dong-ai",
+          "Informational",
+          "faceless youtube automation, ai video generation youtube, make money youtube without showing face"
+        ],
+        [
+          "Cách Viết Kịch Bản Video Ngắn Giữ Chân Người Xem Trên 80% Bằng Prompt Claude",
+          "viet-kich-ban-video-ngan-giu-chan-prompt-claude",
+          "Informational",
+          "viral short script prompts, tiktok scriptwriting ai, retention rate hooks"
+        ],
+        [
+          "Tự Động Tạo Video Shorts & Reels Hàng Loạt Bằng Python, MoviePy & Whisper",
+          "tu-dong-tao-shorts-reels-hang-loat-python-whisper",
+          "Informational",
+          "batch shorts creation python, auto captions whisper, automated video editing script"
+        ],
+        [
+          "Top 5 Chủ Đề Kênh YouTube Faceless Đạt Doanh Thu Quảng Cáo CPM Cao Nhất 2026",
+          "top-5-chu-de-youtube-faceless-cpm-cao-nhat",
+          "Commercial",
+          "high cpm youtube niches 2026, finance tech faceless channel, best niches for ad revenue"
+        ],
+        [
+          "Chiến Lược Kiếm Tiền Kép: Kết Hợp YouTube AdSense, Tiếp Thị Liên Kết & Bán Khóa Học",
+          "chien-luoc-kiem-tien-kep-youtube-affiliate-khoa-hoc",
+          "Commercial",
+          "monetize faceless channel, high ticket affiliate youtube, digital product funnel"
+        ]
+      ]
+    },
+    {
+      "day": 7,
+      "pillar": "Local LLMs & Open Source AI",
+      "cluster_name": "Tự Chạy & Tối Ưu Mô Hình AI Cục Bộ (Local LLMs)",
+      "category_id": 3,
+      "cat_slug": "tri-tue-nhan-tao",
+      "items": [
+        [
+          "Hướng Dẫn Cài Đặt & Chạy Local LLM Bằng Ollama, Llama.cpp & LM Studio",
+          "huong-dan-cai-dat-chay-local-llm-ollama-llama-cpp",
+          "Informational",
+          "run local llms, ollama tutorial, lm studio setup, private offline ai"
+        ],
+        [
+          "Chạy Mô Hình Qwen 2.5 & DeepSeek Cực Nhanh Trên GPU 16GB: Giải Pháp Lượng Tử Hóa IQ3/Q4",
+          "chay-qwen-2-5-deepseek-gpu-16gb-luong-tu-hoa",
+          "Informational",
+          "run 27b model on 16gb gpu, gguf quantization iq3, vllm local inference"
+        ],
+        [
+          "Xây Dựng Trợ Lý AI Cá Nhân Bảo Mật 100% Không Cần Internet Bằng Open WebUI",
+          "xay-dung-tro-ly-ai-bao-mat-open-webui",
+          "Informational",
+          "private ai assistant, open webui docker setup, offline rag local data"
+        ],
+        [
+          "So Sánh vLLM vs Ollama vs TGI: Công Cụ Serving LLM Nào Đạt Thông Lượng (Tokens/s) Cao Nhất?",
+          "so-sanh-vllm-vs-ollama-vs-tgi-serving-llm",
+          "Commercial",
+          "vllm benchmark tokens per second, ollama vs vllm, production llm serving"
+        ],
+        [
+          "Cách Fine-Tune Mô Hình Ngôn Ngữ Nhỏ (SLM) Cho Doanh Nghiệp Bằng LoRA & Unsloth",
+          "fine-tune-slm-doanh-nghiep-lora-unsloth",
+          "Informational",
+          "fine tune llm with lora, unsloth fast training, customize open source model"
+        ]
+      ]
+    },
+    {
+      "day": 8,
+      "pillar": "Reasoning Models & DeepSeek Breakthrough",
+      "cluster_name": "DeepSeek R1 & Kỷ Nguyên Mô Hình Suy Luận Reasoning",
+      "category_id": 3,
+      "cat_slug": "tri-tue-nhan-tao",
+      "items": [
+        [
+          "Giải Mã Kiến Trúc DeepSeek R1: Tại Sao Mô Hình Suy Luận Lại Thay Đổi Luật Chơi AI?",
+          "giai-ma-kien-truc-deepseek-r1-mo-hinh-suy-luan",
+          "Informational",
+          "deepseek r1 architecture, reasoning models explained, chain of thought reinforcement learning"
+        ],
+        [
+          "So Sánh DeepSeek R1 vs OpenAI o1 & o3-mini: Đánh Giá Hiệu Năng Thực Chiến",
+          "so-sanh-deepseek-r1-vs-openai-o1-o3-mini",
+          "Commercial",
+          "deepseek r1 vs openai o1, reasoning benchmark coding math, cost performance comparison"
+        ],
+        [
+          "Khai Thác Sức Mạnh DeepSeek API: Xây Dựng Ứng Dụng Xử Lý Dữ Liệu Phức Tạp Giá Rẻ",
+          "khai-thac-deepseek-api-xay-dung-ung-dung-gia-re",
+          "Informational",
+          "deepseek api python, cheap reasoning llm, structured extraction with deepseek"
+        ],
+        [
+          "Kỹ Thuật Prompting Dành Riêng Cho Reasoning Models: Bỏ Qua Chain-of-Thought Cũ",
+          "ky-thuat-prompting-reasoning-models-chain-of-thought",
+          "Informational",
+          "prompting reasoning models, deepseek r1 prompt guide, how to prompt o1 o3"
+        ],
+        [
+          "Cách Triển Khai DeepSeek R1 Distill Cục Bộ Trên Máy Tính Cá Nhân Hiệu Quả",
+          "trien-khai-deepseek-r1-distill-cuc-bo-may-tinh",
+          "Informational",
+          "run deepseek r1 distill locally, ollama deepseek r1 8b 14b, local reasoning ai"
+        ]
+      ]
+    },
+    {
+      "day": 9,
+      "pillar": "SEO & GEO (Generative Engine Optimization)",
+      "cluster_name": "Tối Ưu Hóa Tìm Kiếm AI: Perplexity, ChatGPT & Gemini SEO",
+      "category_id": 4,
+      "cat_slug": "cong-nghe-saas",
+      "items": [
+        [
+          "GEO Là Gì? Cẩm Nang Tối Ưu Hóa Generative Engine Optimization 2026",
+          "geo-la-gi-cam-nang-generative-engine-optimization-2026",
+          "Informational",
+          "what is geo search, generative engine optimization guide, ai overview ranking factors"
+        ],
+        [
+          "Làm Sao Để Được ChatGPT, Perplexity & Gemini Trích Dẫn Là Nguồn Tham Khảo Uy Tín?",
+          "lam-sao-de-chatgpt-perplexity-gemini-trich-dan-nguon",
+          "Informational",
+          "get cited by perplexity, chatgpt search optimization, llm citability score"
+        ],
+        [
+          "Cấu Trúc Bài Viết Chuẩn Information Gain: Chống Thuật Toán Đánh Sập Thin Content Của Google",
+          "cau-truc-bai-viet-information-gain-chong-thin-content",
+          "Informational",
+          "information gain seo, helpful content update defense, rankmath 100 onpage seo"
+        ],
+        [
+          "Kiến Trúc Schema JSON-LD Đa Tầng: Tăng Tỷ Lệ Xuất Hiện Trên Google AI Overviews",
+          "kien-truc-schema-json-ld-da-tang-ai-overviews",
+          "Informational",
+          "nested json ld schema, article faq breadcrumbs schema, rich snippet ai search"
+        ],
+        [
+          "Xây Dựng Topic Cluster Tự Động Bằng Thuật Toán Cosine Similarity & TF-IDF",
+          "xay-dung-topic-cluster-tu-dong-cosine-similarity-tfidf",
+          "Informational",
+          "automated topic clusters, semantic keyword clustering python, programmatic internal linking"
+        ]
+      ]
+    },
+    {
+      "day": 10,
+      "pillar": "Trading Bots & Quant Finance",
+      "cluster_name": "Bot Giao Dịch Tự Động & AI Quant Trading Crypto/Forex",
+      "category_id": 5,
+      "cat_slug": "ai-mmo",
+      "items": [
+        [
+          "Kiến Trúc Bot Giao Dịch Crypto Futures Risk-First: Xây Dựng Hệ Thống Bằng Python",
+          "kien-truc-bot-giao-dich-crypto-futures-risk-first-python",
+          "Informational",
+          "crypto futures trading bot python, risk first architecture, automated binance bot"
+        ],
+        [
+          "Ứng Dụng LLM Phân Tích Tin Tức Tài Chính Real-time Để Ra Quyết Định Giao Dịch",
+          "ung-dung-llm-phan-tich-tin-tuc-tai-chinh-realtime",
+          "Informational",
+          "sentiment analysis crypto trading, news trading bot llm, realtime financial feeds"
+        ],
+        [
+          "Tích Hợp MetaTrader 5 (MT5) Với Python: Tự Động Khớp Lệnh Theo Tín Hiệu AI",
+          "tich-hop-metatrader-5-python-khop-lenh-ai",
+          "Informational",
+          "metatrader 5 python integration, automated mt5 trading, algorithmic forex trading"
+        ],
+        [
+          "Chiến Lược Quản Trị Rủi Ro Trong Quant Trading: Tránh Cháy Tài Khoản Khi Thị Trường Sập",
+          "chien-luoc-quan-tri-rui-ro-quant-trading-tranh-chay-tai-khoan",
+          "Commercial",
+          "risk management algorithmic trading, drawdown protection, position sizing formula"
+        ],
+        [
+          "Backtesting Chiến Lược Giao Dịch Với VectorBT & Backtrader: Tránh Bẫy Overfitting",
+          "backtesting-chien-luoc-vectorbt-backtrader-overfitting",
+          "Informational",
+          "vectorbt tutorial python, backtesting trading strategy, avoid curve fitting quant"
+        ]
+      ]
+    },
+    {
+      "day": 11,
+      "pillar": "AI Marketing & Growth Hacking",
+      "cluster_name": "Tự Động Hóa Toàn Bộ Đội Ngũ Marketing Doanh Nghiệp",
+      "category_id": 6,
+      "cat_slug": "danh-gia-tools",
+      "items": [
+        [
+          "Top 10 Công Cụ AI Marketing Đỉnh Cao Thay Thế Đội Ngũ 5 Người Năm 2026",
+          "top-10-cong-cu-ai-marketing-dinh-cao-2026",
+          "Commercial",
+          "best ai marketing tools 2026, automated copywriting tools, ai social media management"
+        ],
+        [
+          "Tự Động Hóa Email Marketing Cá Nhân Hóa Bằng AI: Tăng Tỷ Lệ Mở Lên 45%",
+          "tu-dong-hoa-email-marketing-ca-nhan-hoa-ai",
+          "Commercial",
+          "personalized cold email ai, automated outreach sequence, high open rate subject lines"
+        ],
+        [
+          "Chiến Lược Phân Phối Nội Dung Đa Kênh Tự Động (Omnichannel Content Repurposing)",
+          "chien-luoc-phan-phoi-noi-dung-da-kenh-tu-dong",
+          "Informational",
+          "repurpose blog to tweet linkedin, omnichannel distribution automation, make.com social automation"
+        ],
+        [
+          "Tối Ưu Quảng Cáo Facebook & Google Ads Bằng Phân Tích Dữ Liệu Người Dùng Với AI",
+          "toi-uu-quang-cao-facebook-google-ads-bang-ai",
+          "Commercial",
+          "ai ad copy generator, optimize facebook roas with ai, predictive bidding algorithms"
+        ],
+        [
+          "Xây Dựng Phễu Bán Hàng Tự Động (Automated Sales Funnel) Tích Hợp Chatbot AI Thông Minh",
+          "xay-dung-pheu-ban-hang-tu-dong-chatbot-ai",
+          "Commercial",
+          "ai sales funnel, conversational marketing bot, lead qualification with llm"
+        ]
+      ]
+    },
+    {
+      "day": 12,
+      "pillar": "Autonomous Enterprise Agents",
+      "cluster_name": "Hệ Thống Agent Swarms Phức Hợp Cho Doanh Nghiệp",
+      "category_id": 3,
+      "cat_slug": "tri-tue-nhan-tao",
+      "items": [
+        [
+          "Thiết Kế Hệ Thống Đa Agent Phân Tầng: Supervisor, Researcher, Coder & Reviewer",
+          "thiet-ke-he-thong-da-agent-phan-tang-supervisor",
+          "Informational",
+          "hierarchical multi agent system, supervisor agent pattern, crewai process hierarchical"
+        ],
+        [
+          "Quản Lý Bộ Nhớ Dài Hạn Cho AI Agent: Tích Hợp Mem0, Zep & Semantic Memory",
+          "quan-ly-bo-nho-dai-han-ai-agent-mem0-zep",
+          "Informational",
+          "long term memory ai agents, mem0 tutorial, episodic memory llm"
+        ],
+        [
+          "Cách Xây Dựng Custom Tools Cho AI Agent: Kết Nối API, Database & File System",
+          "cach-xay-dung-custom-tools-cho-ai-agent-api-db",
+          "Informational",
+          "custom tools langchain crewai, agent tool calling function, database query agent"
+        ],
+        [
+          "Đo Lường & Giám Sát Hiệu Năng AI Agent Với Langfuse, Arize Phoenix & LangSmith",
+          "do-luong-giam-sat-hieu-nang-ai-agent-langfuse-langsmith",
+          "Commercial",
+          "llm observability tools, langfuse tutorial, monitor agent execution traces"
+        ],
+        [
+          "Case Study Doanh Nghiệp: Tự Động Hóa 90% Quy Trình CSKH Bằng Multi-Agent Swarm",
+          "case-study-tu-dong-hoa-90-phan-tram-cskh-multi-agent",
+          "Informational",
+          "ai customer support case study, automated ticket resolution, b2b multi agent enterprise"
+        ]
+      ]
+    },
+    {
+      "day": 13,
+      "pillar": "AI Newsletters & Creator Economy",
+      "cluster_name": "Mô Hình Bản Tin Newsletter AI Thu Nhập Đều Đặn",
+      "category_id": 5,
+      "cat_slug": "ai-mmo",
+      "items": [
+        [
+          "Cách Xây Dựng Bản Tin AI Đạt 10.000 Subscribers Trong 90 Ngày Với Beehiiv",
+          "xay-dung-ban-tin-ai-10000-subscribers-beehiiv",
+          "Informational",
+          "start ai newsletter, beehiiv growth strategy, monetize newsletter subscribers"
+        ],
+        [
+          "Quy Trình Thu Thập & Tổng Hợp Tin Tức AI Tự Động Hằng Ngày Bằng Python & LLM",
+          "quy-trinh-thu-thap-tong-hop-tin-tuc-ai-tu-dong-python",
+          "Informational",
+          "automated news curation bot, rss feed scraper llm, daily newsletter generator"
+        ],
+        [
+          "Chiến Lược Kiếm Tiền Từ Newsletter: Tài Trợ (Sponsorship), Khóa Học & Đăng Ký Trả Phí",
+          "chien-luoc-kiem-tien-newsletter-tai-tro-sponsorship",
+          "Commercial",
+          "newsletter sponsorship rates, paid newsletter substack, monetize newsletter audience"
+        ],
+        [
+          "Kỹ Thuật Viết Tiêu Đề Email Thu Hút Đạt Tỷ Lệ Mở 50% Dành Cho Creator",
+          "ky-thuat-viet-tieu-de-email-ti-le-mo-50-phan-tram",
+          "Informational",
+          "high open rate email subjects, newsletter copywriting tips, email marketing hooks"
+        ],
+        [
+          "Xây Dựng Cộng Đồng Trả Phí Trên Skool & Discord Kết Hợp Bản Tin AI Độc Quyền",
+          "xay-dung-cong-dong-tra-phi-skool-discord-newsletter",
+          "Commercial",
+          "paid community skool, monetize discord community, exclusive ai insider newsletter"
+        ]
+      ]
+    },
+    {
+      "day": 14,
+      "pillar": "Prompt Engineering & Red Teaming",
+      "cluster_name": "Kỹ Thuật Prompt Chuyên Sâu & Phòng Thủ Bảo Mật AI",
+      "category_id": 3,
+      "cat_slug": "tri-tue-nhan-tao",
+      "items": [
+        [
+          "Cẩm Nang Prompt Engineering Nâng Cao 2026: Few-Shot, Directional Stimulus & Meta-Prompting",
+          "cam-nang-prompt-engineering-nang-cao-few-shot-meta",
+          "Informational",
+          "advanced prompt engineering guide, few shot prompting, meta prompting techniques"
+        ],
+        [
+          "Phòng Ngừa Tấn Công Prompt Injection & Jailbreak Trong Các Ứng Dụng LLM Doanh Nghiệp",
+          "phong-ngua-tan-cong-prompt-injection-jailbreak-llm",
+          "Informational",
+          "prevent prompt injection attacks, llm security guardrails, red teaming ai apps"
+        ],
+        [
+          "Cách Tạo Structured Output JSON 100% Không Lỗi Với Pydantic & Instructor",
+          "structured-output-json-pydantic-instructor",
+          "Informational",
+          "guaranteed json output llm, instructor python library, pydantic structured extraction"
+        ],
+        [
+          "System Prompt Hacking: Kỹ Thuật Viết System Prompt Chuẩn Phòng Thủ Chống Bị Trích Xuất",
+          "system-prompt-hacking-chong-bi-trich-xuat",
+          "Informational",
+          "protect system prompt from leaking, defensive prompt engineering, llm guardrails"
+        ],
+        [
+          "Đánh Giá & Tối Ưu Tự Động Prompt Bằng DSPy: Từ Bỏ Kỹ Thuật Thủ Công Nhàm Chán",
+          "danh-gia-toi-uu-prompt-bang-dspy-python",
+          "Informational",
+          "dspy tutorial python, automated prompt optimization, compile prompts with dspy"
+        ]
+      ]
+    },
+    {
+      "day": 15,
+      "pillar": "Automated Affiliate Empires",
+      "cluster_name": "Đế Chế Tiếp Thị Liên Kết Tự Động 100% Bằng AI",
+      "category_id": 5,
+      "cat_slug": "ai-mmo",
+      "items": [
+        [
+          "Xây Dựng Hệ Thống Đánh Giá Sản Phẩm Tự Động Thu Hút Hàng Triệu Lượt Truy Cập",
+          "xay-dung-he-thong-danh-gia-san-pham-tu-dong-ai",
+          "Informational",
+          "automated product review site, affiliate blog generator, programmatic reviews seo"
+        ],
+        [
+          "Khai Thác Mạng Lưới Tiếp Thị Amazon Associates & CJ Bằng AI So Sánh Giá Realtime",
+          "khai-thac-amazon-associates-cj-ai-so-sanh-gia",
+          "Commercial",
+          "amazon affiliate automation, price comparison site script, high ticket affiliate network"
+        ],
+        [
+          "Tự Động Quét Mã Giảm Giá & Deal Khuyến Mãi Cập Nhật Từng Giờ Lên Website",
+          "tu-dong-quet-ma-giam-gia-deal-khuyen-mai-website",
+          "Informational",
+          "automated coupon website, affiliate coupon scraper, deal aggregator bot"
+        ],
+        [
+          "Bí Quyết Viết Bài So Sánh Top Sản Phẩm Đạt Tỷ Lệ Click CTR Trên 25%",
+          "bi-quyet-viet-bai-so-sanh-top-san-pham-ctr-cao",
+          "Commercial",
+          "high ctr comparison articles, affiliate call to action design, conversion rate affiliate"
+        ],
+        [
+          "Chiến Lược Xây Dựng 50 Niche Site Tiếp Thị Vệ Tinh Đạt Thu Nhập Bền Vững",
+          "chien-luoc-xay-dung-50-niche-site-ve-tinh-thu-nhap",
+          "Informational",
+          "satellite niche site empire, programmatic pbn safe seo, scalable affiliate income"
+        ]
+      ]
+    },
+    {
+      "day": 16,
+      "pillar": "Generative Art & Visual AI",
+      "cluster_name": "Nhiếp Ảnh & Thiết Kế Đồ Họa Đỉnh Cao Bằng Trí Tuệ Nhân Tạo",
+      "category_id": 6,
+      "cat_slug": "danh-gia-tools",
+      "items": [
+        [
+          "Làm Chủ Flux.1: Kỹ Thuật Prompt Tạo Ảnh Chân Dung & Phong Cảnh Siêu Thực",
+          "lam-chu-flux-1-prompt-tao-anh-sieu-thuc",
+          "Informational",
+          "flux 1 prompt guide, realistic portraits flux, open source text to image prompt"
+        ],
+        [
+          "Midjourney v7 Nâng Cao: Làm Chủ Tham Số --cref, --sref & Inpainting",
+          "midjourney-v7-nang-cao-cref-sref-inpainting",
+          "Informational",
+          "midjourney character consistency cref, style reference sref, inpainting tips"
+        ],
+        [
+          "Tạo Nhân Vật AI Ảo (AI Influencer) Kiếm Hàng Ngàn Đô La Mỗi Tháng Trên Instagram",
+          "tao-nhan-vat-ai-influencer-kiem-tien-instagram",
+          "Informational",
+          "build an ai influencer, monetize virtual influencer, consistent ai face generation"
+        ],
+        [
+          "Thiết Kế Banner & Logo Thương Hiệu Chuyên Nghiệp Bằng AI: Tiết Kiệm Chi Phí Thiết Kế",
+          "thiet-ke-banner-logo-bang-ai-tiet-kiem-chi-phi",
+          "Commercial",
+          "ai logo design, vector graphics with ai, automated branding assets generator"
+        ],
+        [
+          "Tự Host Stable Diffusion WebUI (Forge & ComfyUI) Trên Cloud GPU Tiết Kiệm Nhất",
+          "tu-host-stable-diffusion-comfyui-cloud-gpu",
+          "Informational",
+          "comfyui cloud setup, runpod stable diffusion, affordable cloud gpu for ai art"
+        ]
+      ]
+    },
+    {
+      "day": 17,
+      "pillar": "Enterprise RAG Architecture",
+      "cluster_name": "Kiến Trúc RAG Doanh Nghiệp (Retrieval-Augmented Generation)",
+      "category_id": 4,
+      "cat_slug": "cong-nghe-saas",
+      "items": [
+        [
+          "Kiến Trúc RAG Tiên Tiến 2026: Hybrid Search, Reranking & Context Compression",
+          "kien-truc-rag-tien-tien-hybrid-search-reranking",
+          "Informational",
+          "advanced rag architecture, hybrid vector keyword search, cross encoder reranking"
+        ],
+        [
+          "So Sánh Các Vector Database Tốt Nhất 2026: Pinecone, Qdrant, Milvus & pgvector",
+          "so-sanh-vector-database-pinecone-qdrant-pgvector",
+          "Commercial",
+          "pinecone vs qdrant vs pgvector, best vector database 2026, low latency embedding search"
+        ],
+        [
+          "Xây Dựng Hệ Thống Tra Cứu Tài Liệu Pháp Lý & Y Tế Bằng GraphRAG Đột Phá",
+          "xay-dung-tra-cuu-tai-lieu-graphrag-dot-pha",
+          "Informational",
+          "graphrag tutorial, knowledge graph rag, microsoft graphrag implementation"
+        ],
+        [
+          "Kỹ Thuật Chunking Tối Ưu: Semantic Chunking vs Parent Document Retrieval",
+          "ky-thuat-chunking-semantic-parent-document-retrieval",
+          "Informational",
+          "best chunking strategy rag, semantic chunking python, parent document retriever"
+        ],
+        [
+          "Giảm Thiểu Hiện Tượng Ảo Tưởng (Hallucination) Trong Hệ Thống RAG Doanh Nghiệp",
+          "giam-thieu-ao-tuong-hallucination-he-thong-rag",
+          "Informational",
+          "prevent llm hallucination, rag evaluation ragas, factual accuracy verification"
+        ]
+      ]
+    },
+    {
+      "day": 18,
+      "pillar": "E-Commerce & Print on Demand",
+      "cluster_name": "Tự Động Hóa E-Commerce & Print-on-Demand (POD) Với AI",
+      "category_id": 5,
+      "cat_slug": "ai-mmo",
+      "items": [
+        [
+          "Xây Dựng Cửa Hàng Print-on-Demand Tự Động 100% Với Shopify, Printify & Midjourney",
+          "xay-dung-cua-hang-pod-tu-dong-shopify-printify-midjourney",
+          "Informational",
+          "print on demand ai automation, shopify printify integration, automated pod store"
+        ],
+        [
+          "Nghiên Cứu Niche & Tìm Mẫu Áo Bán Chạy Trên Etsy Bằng AI Phân Tích Xu Hướng",
+          "nghien-cuu-niche-mau-ao-ban-chay-etsy-ai",
+          "Commercial",
+          "etsy trending products ai, pod niche research, find winning t shirt designs"
+        ],
+        [
+          "Tự Động Tạo Mockup Sản Phẩm Đẹp Mắt & Chèn Ảnh Bằng Python & Pillow",
+          "tu-dong-tao-mockup-san-pham-python-pillow",
+          "Informational",
+          "automated mockup generator python, batch design placement, apparel mockup script"
+        ],
+        [
+          "Tối Ưu SEO Cửa Hàng Etsy & Shopify Đạt Hạng Đầu Kết Quả Tìm Kiếm Bằng AI",
+          "toi-uu-seo-etsy-shopify-hang-dau-ai",
+          "Commercial",
+          "etsy seo tags ai generator, shopify product title optimization, rank on etsy search"
+        ],
+        [
+          "Tự Động Hóa Chăm Sóc Khách Hàng & Xử Lý Đơn Hàng Shopify Với Webhooks & N8n",
+          "tu-dong-hoa-cham-soc-khach-hang-shopify-n8n",
+          "Informational",
+          "shopify automated fulfillment, n8n shopify workflow, auto reply order tracking"
+        ]
+      ]
+    },
+    {
+      "day": 19,
+      "pillar": "AI Audio & Music Generation",
+      "cluster_name": "Kỷ Nguyên Âm Thanh & Sản Xuất Nhạc Tự Động Bằng AI",
+      "category_id": 6,
+      "cat_slug": "danh-gia-tools",
+      "items": [
+        [
+          "Làm Chủ Suno AI & Udio: Quy Trình Sáng Tác Bài Hát Hoàn Chỉnh Chuẩn Studio",
+          "lam-chu-suno-ai-udio-sang-tac-bai-hat-studio",
+          "Informational",
+          "suno ai music generation, udio prompt guide, make hit songs with ai"
+        ],
+        [
+          "Khai Thác Bản Quyền Nhạc AI: Cách Kiếm Tiền Trên Spotify, Apple Music & YouTube",
+          "khai-thac-ban-quyen-nhac-ai-spotify-youtube",
+          "Commercial",
+          "monetize ai music spotify, distribute ai tracks distrokid, ai music royalties"
+        ],
+        [
+          "Tự Xây Dựng Giọng Đọc Thuyết Minh Sách Nói (Audiobook) Chuyên Nghiệp Bằng ElevenLabs",
+          "xay-dung-giong-doc-audiobook-elevenlabs",
+          "Informational",
+          "produce audiobook with ai, acx audible ai narration, elevenlabs long form audio"
+        ],
+        [
+          "Tách Giọng Hát, Lọc Tạp Âm & Phục Hồi Âm Thanh Cực Đỉnh Bằng AI (Vocal Isolation)",
+          "tach-giong-hat-loc-tap-am-phuc-hoi-am-thanh-ai",
+          "Informational",
+          "ai vocal remover, noise removal ai audio, ultimate vocal remover tutorial"
+        ],
+        [
+          "Top 5 Thư Viện Python Xử Lý Âm Thanh & Voice AI Tốt Nhất 2026",
+          "top-5-thu-vien-python-xu-ly-am-thanh-voice-ai",
+          "Commercial",
+          "python audio libraries, whisper torchaudio soundfile, speech synthesis python"
+        ]
+      ]
+    },
+    {
+      "day": 20,
+      "pillar": "AI Voice Agents & Realtime API",
+      "cluster_name": "AI Voice Agent Đàm Thoại Thời Gian Thực (Realtime Voice)",
+      "category_id": 4,
+      "cat_slug": "cong-nghe-saas",
+      "items": [
+        [
+          "Xây Dựng Voice Agent Đàm Thoại Real-time Với OpenAI Realtime API & WebSockets",
+          "xay-dung-voice-agent-dam-thoai-realtime-api",
+          "Informational",
+          "openai realtime api voice, low latency voice agent, websocket audio streaming"
+        ],
+        [
+          "Tự Động Hóa Tổng Đài Bán Hàng & Đặt Lịch Hẹn Bằng AI Voice Agent Cho Doanh Nghiệp",
+          "tu-dong-hoa-tong-dai-ban-hang-ai-voice-agent",
+          "Commercial",
+          "outbound voice sales agent, automated booking phone call ai, b2b telemarketing ai"
+        ],
+        [
+          "Tối Ưu Độ Trễ (Latency) Dưới 500ms Cho Trợ Lý Giọng Nói Trí Tuệ Nhân Tạo",
+          "toi-uu-do-tre-duoi-500ms-tro-ly-giong-noi-ai",
+          "Informational",
+          "sub 500ms voice agent latency, vad turn detection, fast tts stt pipeline"
+        ],
+        [
+          "Tích Hợp Voice AI Vào Ứng Dụng Web & Di Động Bằng LiveKit & Daily.co",
+          "tich-hop-voice-ai-web-mobile-livekit-daily",
+          "Informational",
+          "livekit voice assistant python, daily.co webrtc ai bot, mobile voice interaction"
+        ],
+        [
+          "Kỹ Thuật Ngắt Lời Tự Nhiên (Barge-in & Interruptibility) Trong Trò Chuyện Với AI",
+          "ky-thuat-ngat-loi-tu-nhien-barge-in-voice-ai",
+          "Informational",
+          "voice ai barge in handling, conversational turn taking, interruptible speech agent"
+        ]
+      ]
+    },
+    {
+      "day": 21,
+      "pillar": "LLM Infrastructure & Token Economics",
+      "cluster_name": "Hạ Tầng AI & Kinh Tế Học Tối Ưu Chi Phí Token",
+      "category_id": 4,
+      "cat_slug": "cong-nghe-saas",
+      "items": [
+        [
+          "Chiến Lược Giảm 70% Chi Phí API OpenAI & Anthropic Bằng Prompt Caching",
+          "chien-luoc-giam-70-chi-phi-prompt-caching",
+          "Commercial",
+          "prompt caching anthropic openai, reduce llm token cost, high performance context cache"
+        ],
+        [
+          "Định Tuyến Mô Hình Thông Minh (Model Routing): Tự Động Chọn Model Rẻ Nhất Đạt Yêu Cầu",
+          "dinh-tuyen-mo-hinh-thong-minh-model-routing-ai",
+          "Informational",
+          "intelligent model routing llm, route between gpt-4o and slm, routerbench implementation"
+        ],
+        [
+          "Tự Động Đánh Giá Chất Lượng LLM (LLM-as-a-Judge) Bằng G-Eval & MT-Bench",
+          "danh-gia-chat-luong-llm-as-a-judge-geval-mtbench",
+          "Informational",
+          "llm as a judge evaluation, geval framework, automated quality scoring"
+        ],
+        [
+          "Quản Lý Rate Limit & Xây Dựng Hệ Thống Hàng Đợi (Queue) Phân Phối Tải Cho AI App",
+          "quan-ly-rate-limit-hang-doi-ai-app-redis-celery",
+          "Informational",
+          "handle openai rate limits, redis celery llm task queue, resilient ai backend architecture"
+        ],
+        [
+          "Kỹ Thuật Nén Ngữ Cảnh (Context Compression) Cho Phép Xử Lý Tài Liệu Siêu Dài",
+          "ky-thuat-nen-ngu-canh-context-compression-tai-lieu-dai",
+          "Informational",
+          "llm context compression, long document summarization, token budget optimization"
+        ]
+      ]
+    },
+    {
+      "day": 22,
+      "pillar": "Digital Products & Info Products",
+      "cluster_name": "Sáng Tạo & Kinh Doanh Khóa Học, Ebook Tự Động Với AI",
+      "category_id": 5,
+      "cat_slug": "ai-mmo",
+      "items": [
+        [
+          "Quy Trình Tạo & Đóng Gói Ebook Bán Chạy Trên Gumroad & Amazon KDP Bằng AI",
+          "quy-trinh-tao-dong-goi-ebook-gumroad-amazon-kdp",
+          "Informational",
+          "create and sell ebooks with ai, amazon kdp ai publishing, gumroad digital products guide"
+        ],
+        [
+          "Xây Dựng Khóa Học Trực Tuyến Chuyên Nghiệp Với Bài Giảng, Slide & Quiz Tự Động",
+          "xay-dung-khoa-hoc-truc-tuyen-slide-quiz-tu-dong-ai",
+          "Informational",
+          "create online course with ai, automated slide deck generation, course syllabus prompt"
+        ],
+        [
+          "Chiến Lược Bán Sản Phẩm Số Giá Cao (High-Ticket Digital Products) Không Cần Vốn",
+          "chien-luoc-ban-san-pham-so-gia-cao-khong-can-von",
+          "Commercial",
+          "high ticket digital products, value ladder marketing, selling templates workflows"
+        ],
+        [
+          "Tự Động Hóa Phễu Gửi Quà Tặng Miễn Phí (Lead Magnet) Để Thu Thập 5.000 Email Đầu Tiên",
+          "tu-dong-hoa-lead-magnet-thu-thap-5000-email",
+          "Commercial",
+          "lead magnet funnel automation, free digital download email capture, convert leads to sales"
+        ],
+        [
+          "Cách Đăng Ký & Tích Hợp Cổng Thanh Toán Quốc Tế Cho Sản Phẩm Số (Stripe & LemonSqueezy)",
+          "dang-ky-tich-hop-lemonsqueezy-stripe-san-pham-so",
+          "Commercial",
+          "lemonsqueezy merchant of record, stripe integration digital products, global payment setup"
+        ]
+      ]
+    },
+    {
+      "day": 23,
+      "pillar": "AI IDE Wars & Developer Tooling",
+      "cluster_name": "Đại Chiến AI Code Editor: Cursor, Windsurf Hay VS Code?",
+      "category_id": 6,
+      "cat_slug": "danh-gia-tools",
+      "items": [
+        [
+          "So Sánh Chi Tiết Cursor vs Windsurf: Trình Biên Soạn Mã Nguồn AI Nào Tối Thượng?",
+          "so-sanh-chi-tiet-cursor-vs-windsurf-ai-editor",
+          "Commercial",
+          "cursor vs windsurf code editor, cascade flow vs composer, best ai ide benchmark"
+        ],
+        [
+          "GitHub Copilot Workspace: Tương Lai Lập Trình Từ Issue Đến Pull Request Tự Động",
+          "github-copilot-workspace-lap-trinh-tu-issue-den-pr",
+          "Informational",
+          "copilot workspace review, spec to code ai, automated pr creation github"
+        ],
+        [
+          "Top 10 Tiện Ích Mở Rộng (Extensions) AI Tuyệt Vời Nhất Cho Visual Studio Code",
+          "top-10-tien-ich-mo-rong-ai-extensions-vs-code",
+          "Commercial",
+          "best vscode ai extensions 2026, continue dev vs code, free copilot alternatives"
+        ],
+        [
+          "Làm Chủ Phím Tắt & Luồng Làm Việc Cực Nhanh Khi Viết Code Bằng AI",
+          "lam-chu-phim-tat-luong-lam-viec-viet-code-ai",
+          "Informational",
+          "cursor keyboard shortcuts, rapid ai coding workflow, developer productivity hacks"
+        ],
+        [
+          "Cách Thiết Lập Môi Trường Lập Trình AI Cô Lập An Toàn Với Dev Containers & Docker",
+          "thiet-lap-moi-truong-ai-co-lap-dev-containers-docker",
+          "Informational",
+          "secure ai coding environment, dev containers vscode, sandbox untrusted ai code"
+        ]
+      ]
+    },
+    {
+      "day": 24,
+      "pillar": "AI Cybersecurity & Guardrails",
+      "cluster_name": "An Ninh Mạng Trí Tuệ Nhân Tạo & Phòng Thủ Doanh Nghiệp",
+      "category_id": 4,
+      "cat_slug": "cong-nghe-saas",
+      "items": [
+        [
+          "Top 10 Lỗ Hổng Bảo Mật OWASP Dành Riêng Cho Ứng Dụng LLM Năm 2026",
+          "top-10-lo-hong-bao-mat-owasp-llm-2026",
+          "Informational",
+          "owasp top 10 for llm, prompt injection data poisoning, supply chain vulnerabilities ai"
+        ],
+        [
+          "Xây Dựng Tường Lửa Bảo Vệ LLM Bằng NeMo Guardrails & Llama Guard",
+          "xay-dung-tuong-lua-llm-nemo-guardrails-llama-guard",
+          "Informational",
+          "nemo guardrails tutorial, llama guard safety filter, content moderation ai"
+        ],
+        [
+          "Nguy Cơ Rò Rỉ Dữ Liệu Nhạy Cảm (PII) Qua Prompt Và Cách Ẩn Danh Hóa Tự Động",
+          "nguy-co-ro-ri-du-lieu-pii-an-danh-hoa-tu-dong",
+          "Informational",
+          "pii anonymization llm, protect sensitive data ai, microsoft presidio tutorial"
+        ],
+        [
+          "Kỹ Thuật Red Teaming Tự Động: Tấn Công Thử Nghiệm Ứng Dụng AI Trước Khi Ra Mắt",
+          "ky-thuat-red-teaming-tu-dong-tan-cong-thu-nghiem-ai",
+          "Informational",
+          "automated red teaming llm, adversarial testing ai, pentest generative ai system"
+        ],
+        [
+          "Chiến Lược Tuân Thủ Chuẩn An Toàn & Quyền Riêng Tư Dữ Liệu Cho Sản Phẩm AI Toàn Cầu",
+          "chien-luoc-tuan-thu-chuan-an-toan-gdpr-ai-act",
+          "Commercial",
+          "eu ai act compliance, gdpr compliance for generative ai, enterprise ai governance"
+        ]
+      ]
+    },
+    {
+      "day": 25,
+      "pillar": "AI Freelancing & Agency Growth",
+      "cluster_name": "Khai Thác Thị Trường Freelance Lương Cao Bằng Công Nghệ AI",
+      "category_id": 5,
+      "cat_slug": "ai-mmo",
+      "items": [
+        [
+          "Cách Kiếm Hợp Đồng $5.000 Trên Upwork Bằng Kỹ Năng Tích Hợp AI & Tự Động Hóa",
+          "cach-kiem-hop-dong-5000-upwork-ky-nang-ai-automation",
+          "Informational",
+          "high paying upwork jobs ai, freelance ai developer, winning upwork proposals template"
+        ],
+        [
+          "Top 7 Kỹ Năng AI Được Các Doanh Nghiệp Quốc Tế Săn Đón & Chi Trả Hậu Hĩnh Nhất",
+          "top-7-ky-nang-ai-doanh-nghiep-san-don-chi-tra-cao",
+          "Commercial",
+          "most in demand ai skills 2026, highest paid ai jobs, learn ai for career change"
+        ],
+        [
+          "Xây Dựng Portfolio Chuyên Nghiệp Trưng Bày Các Dự Án AI Thực Tế Đã Triển Khai",
+          "xay-dung-portfolio-chuyen-nghiep-du-an-ai-thuc-te",
+          "Informational",
+          "ai portfolio website examples, showcase llm projects github, land freelance clients"
+        ],
+        [
+          "Bí Quyết Định Giá Dịch Vụ Theo Giá Trị (Value-Based Pricing) Thay Vì Tính Giờ",
+          "bi-quyet-dinh-gia-dich-vu-value-based-pricing",
+          "Commercial",
+          "value based pricing freelance, stop trading time for money, quote ai automation projects"
+        ],
+        [
+          "Tự Động Hóa Soạn Hợp Đồng, Xuất Hóa Đơn & Quản Lý Khách Hàng Bằng CRM AI",
+          "tu-dong-hoa-hop-dong-hoa-don-crm-ai",
+          "Informational",
+          "freelance crm automation, automated invoicing contracts, client onboarding workflow"
+        ]
+      ]
+    },
+    {
+      "day": 26,
+      "pillar": "Vector Search & Embeddings",
+      "cluster_name": "Tối Ưu Hóa Tìm Kiếm Ngữ Nghĩa & Vector Embeddings",
+      "category_id": 4,
+      "cat_slug": "cong-nghe-saas",
+      "items": [
+        [
+          "Đánh Giá Các Mô Hình Embedding Tốt Nhất 2026: OpenAI, Cohere, BGE & Voyage AI",
+          "danh-gia-mo-hinh-embedding-tot-nhat-openai-cohere-bge",
+          "Commercial",
+          "mteb leaderboard best embeddings, cohere embed v3, voyage ai benchmark"
+        ],
+        [
+          "Tối Ưu Hóa Tìm Kiếm Ngữ Nghĩa Bằng Kỹ Thuật Reranking Đa Tầng Với Cross-Encoder",
+          "toi-uu-tim-kiem-ngu-nghia-reranking-cross-encoder",
+          "Informational",
+          "cross encoder reranking python, improve search relevance rag, cohere rerank tutorial"
+        ],
+        [
+          "Tự Động Hóa Phân Loại Dữ Liệu Lớn Bằng Thuật Toán Cụm Vector (K-Means & DBSCAN)",
+          "tu-dong-hoa-phan-loai-du-lieu-cum-vector-kmeans",
+          "Informational",
+          "vector clustering python, semantic document grouping, unsupervised categorization ai"
+        ],
+        [
+          "Giảm Thiểu Kích Thước Vector Embeddings Bằng Kỹ Thuật Matryoshka & Binary Quantization",
+          "giam-kich-thuoc-vector-matryoshka-quantization",
+          "Informational",
+          "matryoshka representation learning, binary vector quantization, compress vector index"
+        ],
+        [
+          "Xây Dựng Công Cụ Tìm Kiếm Nội Bộ Cho Doanh Nghiệp Vượt Trội Hơn ElasticSearch",
+          "xay-dung-cong-cu-tim-kiem-noi-bo-doanh-nghiep-ai",
+          "Informational",
+          "enterprise semantic search engine, replace elasticsearch with vector db, internal knowledge search"
+        ]
+      ]
+    },
+    {
+      "day": 27,
+      "pillar": "AI Video Production Studio",
+      "cluster_name": "Phim Trường Ảo & Sản Xuất Video Điện Ảnh Bằng AI",
+      "category_id": 6,
+      "cat_slug": "danh-gia-tools",
+      "items": [
+        [
+          "Làm Phim Ngắn Điện Ảnh Hoàn Chỉnh Bằng AI: Từ Kịch Bản, Phân Cảnh Đến Render Cuối",
+          "lam-phim-ngan-dien-anh-bang-ai-tu-kich-ban-den-render",
+          "Informational",
+          "ai filmmaking workflow, create cinematic movie with ai, storyboard to video ai"
+        ],
+        [
+          "Tạo Hoạt Hình Anime & 3D Đẹp Mắt Bằng Công Nghệ Text-to-Video & Motion Transfer",
+          "tao-hoat-hinh-anime-3d-text-to-video-motion-transfer",
+          "Informational",
+          "ai anime animation generator, motion transfer ai video, animated storytelling ai"
+        ],
+        [
+          "Chuyển Động Camera & Góc Quay Chuyên Nghiệp Trong Runway Gen-3 & Luma Dream Machine",
+          "chuyen-dong-camera-goc-quay-runway-gen-3-luma",
+          "Informational",
+          "camera motion prompts runway, luma dream machine camera control, cinematic prompt engineering"
+        ],
+        [
+          "Tự Động Tạo Phụ Đề, Hiệu Ứng Chuyển Cảnh & Sound FX Tương Thích Với Nhịp Video",
+          "tu-dong-tao-phu-de-hieu-ung-sound-fx-ai-video",
+          "Informational",
+          "auto subtitle captions ai, sound effects generator for video, dynamic video editing script"
+        ],
+        [
+          "Kinh Doanh Dịch Vụ Sản Xuất Video Quảng Cáo Bằng AI Cho Thương Hiệu Quốc Tế",
+          "kinh-doanh-dich-vu-video-quang-cao-ai-thuong-hieu",
+          "Commercial",
+          "commercial ai video agency, selling ai video ads, high margin video production"
+        ]
+      ]
+    },
+    {
+      "day": 28,
+      "pillar": "Automated Recruitment & HR Tech",
+      "cluster_name": "Tự Động Hóa Tuyển Dụng & Nhân Sự Bằng Trí Tuệ Nhân Tạo",
+      "category_id": 4,
+      "cat_slug": "cong-nghe-saas",
+      "items": [
+        [
+          "Xây Dựng Hệ Thống Sàng Lọc & Đánh Giá CV Ứng Viên Tự Động Bằng Mô Hình Phân Tích LLM",
+          "xay-dung-he-thong-sang-loc-danh-gia-cv-ai-llm",
+          "Informational",
+          "automated resume screening llm, cv parser python, candidate evaluation score"
+        ],
+        [
+          "Tự Động Phỏng Vấn Vòng Đầu & Chấm Điểm Kỹ Năng Bằng Trợ Lý AI Khách Quan",
+          "tu-dong-phong-van-cham-diem-ky-nang-tro-ly-ai",
+          "Informational",
+          "ai interview bot, automated initial screening call, objective skill assessment"
+        ],
+        [
+          "Tạo Bản Mô Tả Công Việc (JD) Chuẩn Quốc Tế & Đăng Tải Đồng Loạt Lên 10 Kênh Việc Làm",
+          "tao-mo-ta-cong-viec-jd-dang-tai-dong-loat-10-kenh",
+          "Commercial",
+          "ai job description generator, automated multi job board posting, recruitment marketing"
+        ],
+        [
+          "Tự Động Hóa Quy Trình Tiếp Nhận Nhân Viên Mới (Onboarding) Bằng Chatbot Tương Tác",
+          "tu-dong-hoa-onboarding-nhan-vien-moi-chatbot",
+          "Informational",
+          "automated employee onboarding bot, internal policy qna ai, hr workflow automation"
+        ],
+        [
+          "Phân Tích Mức Độ Hài Lòng & Phát Hiện Nguy Cơ Nghỉ Việc Của Nhân Sự Bằng Học Máy",
+          "phan-tich-hai-long-nguy-co-nghi-viec-nhan-su-ml",
+          "Commercial",
+          "employee churn prediction ml, sentiment analysis internal surveys, talent retention ai"
+        ]
+      ]
+    },
+    {
+      "day": 29,
+      "pillar": "NoCode / LowCode Automation Mastery",
+      "cluster_name": "Làm Chủ Tự Động Hóa N8n, Make.com & Webhooks Phức Hợp",
+      "category_id": 5,
+      "cat_slug": "ai-mmo",
+      "items": [
+        [
+          "Xây Dựng Hệ Thống Tự Động Hóa Doanh Nghiệp Với N8n Self-Hosted Miễn Phí Trọn Đời",
+          "xay-dung-tu-dong-hoa-doanh-nghiep-n8n-self-hosted",
+          "Informational",
+          "self host n8n docker vps, free business automation, production n8n guide"
+        ],
+        [
+          "Kết Nối Trực Tiếp N8n Với Telegram Bot, Google Sheets & PostgreSQL Để Quản Trị Dữ Liệu",
+          "ket-noi-n8n-telegram-bot-sheets-postgres",
+          "Informational",
+          "telegram bot n8n workflow, google sheets database sync, automated data logging"
+        ],
+        [
+          "Xử Lý Lỗi Tự Động (Error Handling) & Gửi Cảnh Báo Khi Quy Trình Tự Động Hóa Bị Gián Đoạn",
+          "xu-ly-loi-tu-dong-error-handling-canh-bao-n8n-make",
+          "Informational",
+          "n8n error handling retry, automated incident alert telegram, reliable automation pipeline"
+        ],
+        [
+          "Cách Kiếm $2.000/Tháng Từ Việc Bán Các Mẫu Quy Trình Tự Động Hóa (Automation Templates)",
+          "kiem-2000-thang-ban-mau-quy-trinh-tu-dong-hoa",
+          "Commercial",
+          "sell n8n templates gumroad, make com automation marketplace, digital automation assets"
+        ],
+        [
+          "Tích Hợp Webhooks Real-time Để Kích Hoạt Các AI Agents Tự Trị Thực Thi Nhiệm Vụ",
+          "tich-hop-webhooks-realtime-kich-hoat-ai-agents",
+          "Informational",
+          "realtime webhooks ai agents, event driven architecture llm, trigger autonomous workflows"
+        ]
+      ]
+    },
+    {
+      "day": 30,
+      "pillar": "The AGI Horizon & Future Outlook",
+      "cluster_name": "Kỷ Nguyên Trí Tuệ Nhân Tạo Tổng Quát (AGI) & Tương Lai",
+      "category_id": 3,
+      "cat_slug": "tri-tue-nhan-tao",
+      "items": [
+        [
+          "Lộ Trình Tiến Tới Trí Tuệ Nhân Tạo Tổng Quát (AGI): Những Cột Mốc Quyết Định 2026-2030",
+          "lo-trinh-tien-toi-tri-tue-nhan-tao-tong-quat-agi",
+          "Informational",
+          "agi roadmap timeline, artificial general intelligence milestones, future of ai research"
+        ],
+        [
+          "Những Ngành Nghề Sẽ Thay Đổi Vĩnh Viễn & Cách Định Vị Bản Thân Không Bị Thay Thế",
+          "nhung-nganh-nghe-thay-doi-vinh-vien-dinh-vi-ban-than",
+          "Informational",
+          "jobs impacted by ai, how to stay relevant in ai age, future proof human skills"
+        ],
+        [
+          "Kỷ Nguyên Siêu Trí Tuệ (Superintelligence): Cơ Hội & Thách Thức Cho Lập Trình Viên",
+          "ky-nguyen-sieu-tri-tue-co-hoi-thach-thuc-lap-trinh-vien",
+          "Informational",
+          "superintelligence implications, future of software engineering, ai safety alignment"
+        ],
+        [
+          "Xây Dựng Lợi Thế Cạnh Tranh Cá Nhân Không Thể Bị Sao Chép Trong Thế Giới AI",
+          "xay-dung-loi-the-canh-tranh-ca-nhan-khong-bi-sao-chep",
+          "Informational",
+          "unbeatable personal advantage ai era, build personal brand tech, deep domain expertise"
+        ],
+        [
+          "Bản Tuyên Ngôn Nhà Sáng Lập AI Độc Lập (Solopreneur): Một Người Vận Hành Công Ty Triệu Đô",
+          "tuyen-ngon-nha-sang-lap-ai-solopreneur-cong-ty-trieu-do",
+          "Informational",
+          "one person billion dollar company, ai solopreneur manifesto, solo founder leverage"
+        ]
+      ]
+    }
+  ]
+}

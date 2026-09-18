@@ -741,7 +741,25 @@ def schedule_travel_site(site, plan_path=None, days=None, max_posts=None):
         elif str(days).lower() != "all":
             target_days = [int(days)]
 
-    if "triptip" in site.get("site_id", "") or "triptip" in site.get("url", ""):
+    if "vibemmo" in site.get("site_id", "") or "vibemmo" in site.get("url", ""):
+        from modules.travel_scheduler.vibe_batch_scheduler import VibeBatchScheduler
+        if not plan_path:
+            plan_path = os.path.join(base_dir, "config", "vibemmo_30day_content_plan.json")
+            if not os.path.exists(plan_path):
+                plan_path = os.path.join(base_dir, "docs", "VIBEMMO_30DAY_CONTENT_PLAN.json")
+
+        if not os.path.exists(plan_path):
+            print(f"Error: Plan file not found at {plan_path}")
+            return
+
+        scheduler = VibeBatchScheduler(
+            wp_url=site["url"],
+            admin_user=admin_user,
+            admin_pass=admin_pass,
+            plan_file=plan_path
+        )
+        scheduler.run_batch(target_days=target_days, max_posts=max_posts)
+    elif "triptip" in site.get("site_id", "") or "triptip" in site.get("url", ""):
         from modules.travel_scheduler.english_batch_scheduler import EnglishBatchScheduler
         if not plan_path:
             plan_path = os.path.join(base_dir, "config", "triptip_30day_content_plan.json")

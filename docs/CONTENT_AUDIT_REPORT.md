@@ -1,114 +1,94 @@
-# 📊 BÁO CÁO TOÀN DIỆN AUDIT NỘI DUNG MULTI-SITE (THEO BỘ QUY TẮC MỚI)
+# 📊 BÁO CÁO TOÀN DIỆN AUDIT NỘI DUNG MULTI-SITE (KHUNG TIÊU CHÍ TỐI ƯU HÓA)
 
 **Thời gian thực hiện:** Tháng 09/2026  
 **Phạm vi:** Toàn bộ 3 website hoạt động trong hệ thống: **VibeMMO (`vibemmo.net`)**, **MMDiDau (`mmdidau.com`)**, **TripTip (`triptip.cc`)**  
-**Tổng số bài viết đã quét và phân tích:** **708 bài viết**  
-**Tiêu chuẩn đánh giá:** [Bộ quy tắc tiêu chuẩn nội dung SEO & GEO (`RULES.md`)](file:///d:/Vibe%20Code/Antigravity/RULES.md) và Quy tắc chống AI Fingerprint (`.agents/rules/content-writing.md`).
+**Tổng số bài viết đã quét và phân tích:** **709 bài viết**  
+**Tiêu chuẩn đối soát:** [Bộ quy tắc tiêu chuẩn nội dung SEO & GEO (`RULES.md`)](file:///d:/Vibe%20Code/Antigravity/RULES.md) và Quy tắc chống AI Fingerprint (`.agents/rules/content-writing.md`).
 
 ---
 
-## 🎯 1. Bảng Tổng Hợp Kết Quả Audit Toàn Hệ Thống
+## 🎯 1. Bảng Tổng Hợp Kết Quả Audit Toàn Hệ Thống (Khung Tiêu Chí Tối Ưu)
 
-| Chỉ Số Đánh Giá | VibeMMO (`vibemmo.net`) | MMDiDau (`mmdidau.com`) | TripTip (`triptip.cc`) | Tổng / Trung Bình Hệ Thống |
+Bảng tổng hợp dưới đây được cấu trúc phân tầng khoa học thành 3 nhóm tiêu chuẩn: **Chỉ Số Tổng Hợp**, **Tiêu Chuẩn Kỹ Thuật & Đa Phương Tiện**, và **Bộ 6 Quy Tắc Văn Phong & Chống Dấu Vết AI**.
+
+| Nhóm Tiêu Chí Đánh Giá | VibeMMO (`vibemmo.net`) | MMDiDau (`mmdidau.com`) | TripTip (`triptip.cc`) | Toàn Bộ Hệ Thống |
 | :--- | :---: | :---: | :---: | :---: |
-| **Tổng số bài viết xuất bản** | 36 bài | 585 bài | 87 bài | **708 bài** |
-| **Điểm chất lượng trung bình** | **61.2 / 100** | **81.5 / 100** | **87.9 / 100** | **76.9 / 100** |
-| **Tỷ lệ bài Đạt chuẩn (Pass Rate)** | **0.0%** (36 Cảnh báo) | **52.8%** (309 Pass, 264 Warning, 12 Fail) | **100.0%** (87 Pass) | **55.9%** (396 Pass, 300 Warning, 12 Fail) |
-| **Thiếu ảnh đại diện (Featured Image)** | 0 bài (100% có) | **12 bài** 🔴 | 0 bài (100% có) | **12 bài** |
-| **Thiếu mật độ ảnh (< 1 ảnh / 500 từ)** | **36 bài (100%)** 🔴 | **260 bài (44.4%)** 🟡 | **0 bài (100% đạt)** 🟢 | **296 bài (41.8%)** |
-| **Thin Content (< 1.000 từ)** | 4 bài (11.1%) | **86 bài (14.7%)** 🟡 | 0 bài (100% dài >1.800w) 🟢 | **90 bài (12.7%)** |
-| **Heading máy móc (> 20% số/icon)** | 0 bài (0%) 🟢 | 5 bài (0.8%) | 0 bài (0%) 🟢 | **5 bài (0.7%)** |
-| **Từ ngữ Marketing Hype / Buzzwords** | 26 bài (72.2%) 🟡 | 119 bài (20.3%) 🟡 | 68 bài (78.2%) 🟡 | **213 bài (30.1%)** |
-| **Mở bài sáo mòn AI (AI Cliché Lead)** | 3 bài (8.3%) | 0 bài (0%) 🟢 | 2 bài (2.3%) 🟢 | **5 bài (0.7%)** |
-| **Kết luận thừa thãi kiểu AI** | 0 bài (0%) 🟢 | **53 bài (9.1%)** 🟡 | 0 bài (0%) 🟢 | **53 bài (7.5%)** |
+| **🌐 TỔNG QUAN & PHÂN HẠNG** | | | | |
+| **Tổng số bài viết đã quét** | **36 bài** | **585 bài** | **88 bài** | **709 bài** |
+| **Độ dài trung bình mỗi bài** | 1.330 từ | 1.757 từ | 1.907 từ | **1.754 từ** |
+| **Số ảnh trung bình trong thân bài** | 0.8 ảnh / bài | 3.6 ảnh / bài | 4.0 ảnh / bài | **3.5 ảnh / bài** |
+| **Điểm chất lượng nội dung (CQS / 100)** | **73.9 / 100** | **87.0 / 100** | **91.8 / 100** | **86.9 / 100** |
+| **Tỷ lệ Đạt chuẩn (Pass Rate)** | **0.0%** (0 bài) | **80.0%** (468 bài) | **100.0%** (88 bài) | **78.4% (556 bài)** |
+| **Tỷ lệ Cần tối ưu (Warning Rate)** | **97.2%** (35 bài) | **17.9%** (105 bài) | **0.0%** (0 bài) | **19.7% (140 bài)** |
+| **Tỷ lệ Không đạt (Fail Rate)** | **2.8%** (1 bài cụt) | **2.1%** (12 bài) | **0.0%** (0 bài) | **1.8% (13 bài)** |
+| **📸 I. TIÊU CHUẨN KỸ THUẬT & ĐA PHƯƠNG TIỆN** | | | | |
+| **1. Thiếu ảnh đại diện (Featured Image)** *(Rule 1.1)* | 0 bài (100% có) 🟢 | **12 bài (2.1%)** 🔴 | 0 bài (100% có) 🟢 | **12 bài (1.7%)** |
+| **2. Không có ảnh trong thân bài (Zero Images)** | **8 bài (22.2%)** 🔴 | 0 bài (0%) 🟢 | 0 bài (0%) 🟢 | **8 bài (1.1%)** |
+| **3. Thiếu mật độ ảnh (< 1 ảnh / 500 từ)** *(Rule 1.2)* | **36 bài (100%)** 🔴 | **260 bài (44.4%)** 🟡 | **0 bài (100% đạt)** 🟢 | **296 bài (41.7%)** |
+| **4. Thin Content (< 1.000 từ)** *(Rule 2)* | 4 bài (11.1%) 🟡 | **86 bài (14.7%)** 🟡 | 0 bài (100% đạt) 🟢 | **90 bài (12.7%)** |
+| **5. Tiêu đề máy móc (> 20% số/icon)** *(Rule 5)* | 0 bài (0%) 🟢 | 5 bài (0.8%) 🟢 | 0 bài (0%) 🟢 | **5 bài (0.7%)** |
+| **✍️ II. BỘ 6 QUY TẮC VĂN PHONG & CHỐNG DẤU VẾT AI** | | | | |
+| **Quy tắc 1: Bỏ giọng Marketing (Hype/Buzzwords)** | 26 bài (72.2%) 🟡 | 119 bài (20.3%) 🟡 | 69 bài (78.4%) 🟡 | **214 bài (30.2%)** |
+| **Quy tắc 2: Thêm góc nhìn cá nhân (Insiders' Take)** | 0 bài (0%) 🟡 | 153 bài (26.2%) 🟢 | 0 bài (0%) 🟡 | **153 bài (21.6%)** |
+| **Quy tắc 3: Chỉnh nhịp câu (Sentence Rhythm & Flow)** | 5 bài lệch nhịp | 120 bài câu quá dài | 0 bài lệch nhịp 🟢 | **125 bài (17.6%)** |
+| **Quy tắc 4: Viết cụ thể (Số liệu, giá tiền, chi tiết)** | 35 bài đạt (97.2%) 🟢 | 462 bài đạt (79.0%) 🟢 | 84 bài đạt (95.5%) 🟢 | **581 bài (81.9%)** |
+| **Quy tắc 5: Viết như nói chuyện (Conversational Voice)** | 0 bài đạt (>30%) 🟡 | 472 bài đạt (80.7%) 🟢 | 22 bài đạt (25.0%) 🟡 | **494 bài (69.7%)** |
+| **Quy tắc 6.1: Mở bài sáo mòn AI (Cliché Lead)** | 3 bài (8.3%) | 0 bài (0%) 🟢 | 2 bài (2.3%) 🟢 | **5 bài (0.7%)** |
+| **Quy tắc 6.2: Kết luận thừa thãi kiểu AI** | 0 bài (0%) 🟢 | **53 bài (9.1%)** 🟡 | 0 bài (0%) 🟢 | **53 bài (7.5%)** |
 
 ---
 
-## 🔍 2. Phân Tích Chi Tiết Từng Website
+## 🔍 2. Phân Tích Chuyên Sâu Từng Site Dựa Trên Tiêu Chí Mới
 
-### 1. VibeMMO (`https://vibemmo.net`) — Niche: AI Agent, SaaS, Tự Động Hóa
-- **Điểm trung bình:** `61.2 / 100` | **Trạng thái:** 36 Warning (0 Pass, 0 Fail).
-- **Vấn đề cốt lõi lớn nhất (Nghiêm trọng):**
-  - **Thiếu hình ảnh minh họa trong bài (In-content Image Density Deficit):** 100% bài viết (36/36) đều có ảnh đại diện (Featured Image), nhưng **phần thân bài hoàn toàn không có ảnh minh họa hoặc chỉ có đúng 1 ảnh**. Với độ dài trung bình 1.200 - 2.100 từ, mỗi bài cần tối thiểu 3 - 5 hình ảnh/sơ đồ kiến trúc/infographic (tỉ lệ 1 ảnh/500 từ).
-- **Vấn đề văn phong:**
-  - 26 bài sử dụng lặp lại từ khóa quảng cáo sáo rỗng: *"vượt trội"*, *"giải pháp đỉnh cao"*, *"hàng đầu thế giới"*.
-  - 3 bài mở đầu bằng mô-típ AI quen thuộc: *"Trong kỷ nguyên số..."*.
-  - 4 bài cũ có độ dài dưới 1.000 từ.
+### 1. VibeMMO (`https://vibemmo.net`) — Chuyên Trang AI Agent, SaaS & Automation
+- **Điểm chất lượng (CQS):** `73.9 / 100` | **Tỷ lệ Pass:** `0.0%` (35 Warning, 1 Fail do bài ID 744 cụt <600w).
+- **Phân tích kỹ thuật & Đa phương tiện:**
+  - 100% bài viết đều có Featured Image đẹp, nhưng **100% bài viết thiếu ảnh minh họa trong thân bài**. Trung bình mỗi bài chỉ có **0.8 ảnh**, trong đó có tới 8 bài hoàn toàn **không có bất kỳ ảnh nào trong nội dung**.
+  - Các bài phân tích kiến trúc Multi-Agent Swarm (ID 728, ID 726) dài 1.500 - 2.100 từ rất cần sơ đồ workflow hoặc flowchart.
+- **Phân tích văn phong & Anti-AI:**
+  - Điểm mạnh: 97.2% bài viết có số liệu kỹ thuật, phiên bản framework, thông số benchmark cụ thể (Quy tắc 4 đạt xuất sắc).
+  - Điểm yếu: Văn phong còn mang tính học thuật/sách giáo khoa, thiếu tính đối thoại với bạn đọc (Quy tắc 5 đạt 0%), và 72.2% bài chứa buzzword quảng cáo quen thuộc (*"vượt trội"*, *"giải pháp đỉnh cao"*).
 
-### 2. MMDiDau (`https://mmdidau.com`) — Niche: Du Lịch & Ẩm Thực Việt Nam
-- **Điểm trung bình:** `81.5 / 100` | **Trạng thái:** 309 Pass (52.8%), 264 Warning (45.1%), 12 Fail (2.1%).
-- **Vấn đề cần xử lý:**
-  - **12 bài viết bị FAIL do thiếu hoàn toàn ảnh đại diện (Featured Image):** Các bài cũ ID `4142`, `3779`, `3776`, `3771`, `3767`,... cần được gắn ảnh đại diện ngay để hiển thị đúng trên Google Discover và mạng xã hội.
-  - **260 bài thiếu mật độ ảnh:** Nhiều bài trụ cột chất lượng rất cao (dài 2.500 - 3.200 từ) nhưng chỉ chèn 4 - 5 ảnh, thiếu 1 - 2 ảnh để đạt chuẩn 1 ảnh/500 từ.
-  - **86 bài Thin Content (< 1.000 từ):** Là các bài viết thuộc thế hệ cũ được đăng từ trước khi áp dụng tiêu chuẩn tối thiểu 1.000 từ.
-  - **53 bài kết luận sáo mòn:** Đoạn kết thúc bài lặp lại câu giáo điều AI: *"Hy vọng qua bài viết trên sẽ giúp ích cho bạn..."*, *"Tóm lại,..."*.
-  - **119 bài chứa hype/buzzword:** Các từ ngữ du lịch cảm tính phóng đại: *"tuyệt vời nhất"*, *"không thể bỏ lỡ"*, *"thiên đường hạ giới"*, *"thần thánh"*.
+### 2. MMDiDau (`https://mmdidau.com`) — Chuyên Trang Du Lịch & Ẩm Thực Việt Nam
+- **Điểm chất lượng (CQS):** `87.0 / 100` | **Tỷ lệ Pass:** `80.0%` (468 Pass, 105 Warning, 12 Fail).
+- **Phân tích kỹ thuật & Đa phương tiện:**
+  - **12 bài viết bị FAIL (P0):** Thiếu hoàn toàn Featured Image (ID `4142`, `3779`, `3776`, `3771`, `3767`,...).
+  - **260 bài viết thiếu mật độ ảnh:** Bài viết rất chi tiết (trung bình 1.757 từ, có bài 3.000 từ) nhưng mới có 3-4 ảnh, thiếu 1-2 ảnh để đạt chuẩn 1 ảnh/500 từ.
+  - **86 bài Thin Content (< 1.000 từ):** Là các bài viết ngắn của giai đoạn khởi tạo ban đầu.
+- **Phân tích văn phong & Anti-AI:**
+  - Điểm sáng lớn: 80.7% bài viết có văn phong trò chuyện gần gũi, xưng hô *"mình/bạn"* tự nhiên (Quy tắc 5). 153 bài viết có góc nhìn cá nhân rõ rệt (Quy tắc 2).
+  - Điểm cần khắc phục: 120 bài có tỷ lệ câu dài (>22 từ) chiếm trên 65% tổng số câu, tạo cảm giác đọc hơi nặng nề, cần ngắt câu ngắn để tăng nhịp điệu (Quy tắc 3). 53 bài có đoạn kết giáo điều AI (*"Hy vọng qua bài viết..."*).
 
-### 3. TripTip (`https://triptip.cc`) — Niche: Vietnam Travel Guides (English - Foreign Visitors)
-- **Điểm trung bình:** `87.9 / 100` | **Trạng thái:** 87 Pass (100.0% Đạt chuẩn cơ sở).
-- **Điểm mạnh vượt trội:**
-  - **Mật độ hình ảnh hoàn hảo:** 100% bài viết đều có từ 4 đến 5 hình ảnh chất lượng cao phân bổ đều đặn theo tỷ lệ 1 ảnh / 500 từ.
-  - **Độ sâu nội dung xuất sắc:** 100% bài viết đều đạt độ dài lý tưởng 1.800 - 2.500 từ (chuẩn Pillar & Cluster E-E-A-T).
-  - **Không có hiện tượng heading máy móc hay mở bài/kết luận AI.**
-- **Điểm cần tinh chỉnh (Văn phong):**
-  - 68 bài viết vẫn sử dụng cụm từ du lịch quen thuộc theo thói quen của copywriter/AI: *"hidden gem"*, *"must-visit"*, *"nestled in the heart of"*. Cần thay thế bằng góc nhìn thực tế của du khách bản địa (local insider insights) theo Quy tắc 1 & 4.
-
----
-
-## 📋 3. Danh Sách Bài Viết Vi Phạm Cần Ưu Tiên Xử Lý (Actionable Targets)
-
-### Nhóm 1: 12 Bài Viết Thiếu Ảnh Đại Diện (MMDiDau) — Độ ưu tiên: CỰC CAO (P0)
-1. **ID 4142**: [Chia sẻ kinh nghiệm đi Hàn Quốc tự túc](https://mmdidau.com/kinh-nghiem-di-han-quoc-tu-tuc) — Thiếu Featured Image + Thin Content (941w).
-2. **ID 3779**: [Giới thiệu về Bà Nà Hill – Những điều cần biết](https://mmdidau.com/gioi-thieu-ve-ba-na-hill) — Thiếu Featured Image + Thiếu ảnh trong bài (2/5 ảnh).
-3. **ID 3776**: [Quán bán bánh kẹp đà nẵng ngon nhất](https://mmdidau.com/banh-kep-da-nang) — Thiếu Featured Image + Thiếu ảnh trong bài (1/3 ảnh).
-4. **ID 3771**: [Top 10 Quán Ốc ngon Đà Nẵng](https://mmdidau.com/quan-oc-ngon-da-nang) — Thiếu Featured Image.
-5. **ID 3767**: [Top 10 Quán Bún Bò Đà Nẵng](https://mmdidau.com/quan-bun-bo-da-nang) — Thiếu Featured Image.
-6. *(Cùng 7 bài viết khác trong log `reports/content_audit_mmdidau.json`)*.
-
-### Nhóm 2: 36 Bài Viết VibeMMO Thiếu Ảnh Trong Thân Bài — Độ ưu tiên: CAO (P1)
-- **ID 728**: [Top 5 Frameworks AI Agent Multi-Agent](https://vibemmo.net/top-5-frameworks-agent-multi/) — 1.465 từ, **0 ảnh thân bài** (cần 3 ảnh).
-- **ID 667**: [Chia Sẻ Dữ Liệu Hội Thoại LLM](https://vibemmo.net/dsh-chat-share-deepseek-harness-plugin/) — 2.134 từ, **0 ảnh thân bài** (cần 5 ảnh).
-- **ID 726**: [Hướng Dẫn Kiếm Tiền MMO Tự Động Bằng AI Agent Swarm](https://vibemmo.net/huong-dan-kiem-tien-mmo/) — 1.618 từ, **0 ảnh thân bài** (cần 4 ảnh).
-- **ID 742**: [Xây Dựng Agent Trị](https://vibemmo.net/xay-dung-ai-agent/) — 1.234 từ, 1 ảnh (cần 3 ảnh) + Lead "trong kỷ nguyên số".
+### 3. TripTip (`https://triptip.cc`) — Cẩm Nang Du Lịch Việt Nam Cho Khách Nước Ngoài (English)
+- **Điểm chất lượng (CQS):** **`91.8 / 100`** | **Tỷ lệ Pass:** **`100.0%`** (88/88 bài Đạt Chuẩn).
+- **Phân tích kỹ thuật & Đa phương tiện:**
+  - **Đạt chuẩn 100% mọi tiêu chí kỹ thuật:** 100% bài có Featured Image; 100% bài đạt mật độ $\ge 1$ ảnh / 500w (trung bình 4.0 ảnh/bài); 100% bài dài trên 1.800 từ (trung bình 1.907 từ). Cấu trúc Heading tự nhiên 100%.
+- **Phân tích văn phong & Anti-AI:**
+  - Điểm mạnh: 95.5% bài viết có số liệu giá vé, tiền tệ VND/USD, khoảng cách km, tọa độ cực kỳ chi tiết (Quy tắc 4).
+  - Điểm cần gọt giũa: 69 bài viết (78.4%) vẫn dùng cụm từ du lịch sáo rỗng tiếng Anh: *"hidden gem"*, *"must-visit"*, *"nestled in the heart of"*. Cần thay bằng góc nhìn người địa phương (*"insider tip"*, *"less-frequented valley"*).
 
 ---
 
-## 🛠️ 4. Lộ Trình Khắc Phục Tự Động (Auto-Healing Roadmap)
+## 🛠️ 3. Kế Hoạch Hành Động Khắc Phục (Actionable Next Steps)
 
-Để đưa toàn bộ 708 bài viết trên cả 3 site về trạng thái **100% Pass** và điểm chất lượng $\ge 90/100$, hệ thống có thể triển khai các kịch bản tự động sau:
-
-1. **Auto-Inject In-Content Images cho VibeMMO (`vibemmo.net`):**
-   - Sử dụng module `modules/ai_image_generator` hoặc trích xuất sơ đồ kiến trúc AI/diagram/infographic để tự động chèn vào giữa các thẻ `<h2>` theo tỷ lệ 1 ảnh/500 từ.
-2. **Auto-Generate Featured Media cho 12 bài thiếu trên MMDiDau (`mmdidau.com`):**
-   - Sử dụng Unsplash API / Web Scraper để lấy hình ảnh du lịch đúng thực thể địa danh và set `_thumbnail_id` qua WP REST API.
-3. **Lọc sạch Marketing Buzzwords & AI Conclusion Cliches:**
-   - Chạy script regex thay thế tự động các từ sáo rỗng:
-     - *"vượt trội"* $\to$ loại bỏ hoặc thay bằng chi tiết kỹ thuật cụ thể.
-     - *"không thể bỏ lỡ"* $\to$ *"rất đáng để bạn thử ghé qua"*.
-     - *"Hy vọng qua bài viết trên..."* $\to$ chuyển thành bảng tóm tắt hành động hoặc lưu ý thực tế.
-4. **Làm sạch cụm từ "hidden gem" trên TripTip (`triptip.cc`):**
-   - Thay thế bằng các góc nhìn cá nhân như *"secluded spot"*, *"less-crowded area"*, *"local-favorite corner"*.
+1. **Giai đoạn 1 (Xử lý lỗi P0 - Fatal Failures):**
+   - Bổ sung ngay Featured Image cho 12 bài thiếu trên MMDiDau (`mmdidau.com`).
+2. **Giai đoạn 2 (Xử lý thiếu ảnh thân bài trên VibeMMO):**
+   - Inject tự động diagram kiến trúc / sơ đồ trực quan vào 36 bài của VibeMMO để xóa bỏ tình trạng 0% Pass.
+3. **Giai đoạn 3 (Làm sạch văn phong & AI Fingerprints):**
+   - Thay thế tự động các từ nối sáo rỗng (*"vượt trội"*, *"hidden gem"*, *"must-visit"*) bằng dẫn chứng cụ thể.
+   - Xóa bỏ 53 đoạn kết luận AI sáo mòn trên MMDiDau và thay bằng Checklist lưu ý thực tế.
 
 ---
 
-## 💻 5. Tích Hợp CLI & Tự Động Hóa Về Sau
+## 💻 4. Lệnh Kiểm Tra Bằng CLI
 
-Lệnh kiểm tra content audit đã được tích hợp trực tiếp vào Master CLI:
 ```bash
-# Audit toàn bộ các site
+# Audit toàn hệ thống với tiêu chuẩn tối ưu
 python cli/master_seo.py audit-content
 
-# Audit riêng từng site
+# Audit chi tiết từng site
 python cli/master_seo.py audit-content --site vibemmo
 python cli/master_seo.py audit-content --site mmdidau
 python cli/master_seo.py audit-content --site triptip
-
-# Giới hạn số bài audit kiểm tra nhanh
-python cli/master_seo.py audit-content --site mmdidau --max-posts 20
 ```
-
-Các file báo cáo chi tiết được lưu trữ tại:
-- Báo cáo tổng hợp: `reports/content_audit_summary.json`
-- Chi tiết VibeMMO: `reports/content_audit_vibemmo.json`
-- Chi tiết MMDiDau: `reports/content_audit_mmdidau.json`
-- Chi tiết TripTip: `reports/content_audit_triptip.json`

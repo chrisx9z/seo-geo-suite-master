@@ -83,6 +83,29 @@ AI_CONCLUSION_CLICHES_EN = [
     "in essence,", "as we have seen,"
 ]
 
+# Rule 2: Personal Perspective Markers (Selective)
+PERSPECTIVE_PATTERNS_VI = [
+    r"\b(tôi thấy|mình thấy|theo kinh nghiệm của mình|lời khuyên thật lòng|cá nhân tôi|trải nghiệm thực tế|điểm mình thích|điểm mình chưa ưng|lưu ý riêng|thực tế thì|lần đầu mình|mình khuyên|mình nhận thấy)\b"
+]
+PERSPECTIVE_PATTERNS_EN = [
+    r"\b(in my experience|i found that|personally,|honest take|what i liked|what i noticed|from my point of view|my recommendation|i would suggest|having visited|during my trip|i noticed)\b"
+]
+
+# Rule 4: Concrete Data & Specific Details
+DATA_PATTERNS = [
+    r"\b\d+([\.,]\d+)?\s*(vnđ|vnd|đ|k|triệu|nghìn|\$|usd|eur|%|km|m|ha|m2|kg|g|giờ|h|phút|ngày|tháng|năm|°c|bước)\b",
+    r"\b(giá vé|chi phí|khoảng|tầm)\s*\d+",
+    r"\b\d{1,2}:\d{2}\b"
+]
+
+# Rule 5: Conversational Voice Markers (>50% target)
+CONVERSATIONAL_WORDS_VI = [
+    r"\b(bạn|mình|chúng ta|nhé|nha|đấy|thực ra|nói thật|hãy thử|hãy cùng|hãy nhớ|đừng lo|bạn có thể|nếu bạn|cùng mình)\b"
+]
+CONVERSATIONAL_WORDS_EN = [
+    r"\b(you|your|we|our|let's|actually,|to be honest|here's why|don't worry|keep in mind|if you're|you'll|we'll)\b"
+]
+
 
 class ContentAuditor:
     """Audits WordPress content against repo content and anti-AI guidelines."""
@@ -220,53 +243,103 @@ class ContentAuditor:
         sentences = [s.strip() for s in re.split(r"[.!?\n]+", plain_text) if len(s.strip().split()) >= 3]
         sentence_lengths = [len(s.split()) for s in sentences]
         sentence_count = len(sentence_lengths)
+        short_count = sum(1 for l in sentence_lengths if l < 10)
+        med_count = sum(1 for l in sentence_lengths if 10 <= l <= 22)
+        long_count = sum(1 for l in sentence_lengths if l > 22)
+
         if sentence_count >= 10:
             avg_sentence_len = sum(sentence_lengths) / sentence_count
             variance = sum((l - avg_sentence_len) ** 2 for l in sentence_lengths) / sentence_count
             std_dev = math.sqrt(variance)
-            # A very low standard deviation (< 3.8) with moderate sentence count indicates robotic uniformity
-            rhythm_monotonous = bool(std_dev < 3.8)
+            short_pct = round((short_count / sentence_count) * 100, 1)
+            med_pct = round((med_count / sentence_count) * 100, 1)
+            long_pct = round((long_count / sentence_count) * 100, 1)
+            # A very low standard deviation (< 3.8) or excessive long sentences (>65%) indicates poor rhythm
+            rhythm_monotonous = bool(std_dev < 3.8 or long_pct > 65.0)
         else:
             avg_sentence_len = sum(sentence_lengths) / sentence_count if sentence_count > 0 else 0
             std_dev = 0
+            short_pct, med_pct, long_pct = 0.0, 0.0, 0.0
             rhythm_monotonous = False
 
-        # 9. Thin Content Check (Rule 2)
-        thin_content = word_count < 1000
+        # 9. Personal Perspective Analysis (Rule 2)
+        persp_matches = len(re.findall("|".join(PERSPECTIVE_PATTERNS_VI + PERSPECTIVE_PATTERNS_EN), plain_text, re.IGNORECASE))
+        has_personal_perspective = persp_matches > 0
 
-        # 10. Overall Violations List & Penalty Calculation
+        # 10. Concrete Specificity & Data (Rule 4)
+        concrete_data_matches = 0
+        for pat in DATA_PATTERNS:
+            concrete_data_matches += len(re.findall(pat, plain_text, re.IGNORECASE))
+        concrete_data_density = round((concrete_data_matches / (word_count / 1000.0)), 1) if word_count > 0 else 0.0
+        concrete_data_pass = concrete_data_density >= 2.0 or concrete_data_matches >= 4
+
+        # 11. Conversational Voice Analysis (Rule 5)
+        conv_matches = len(re.findall("|".join(CONVERSATIONAL_WORDS_VI + CONVERSATIONAL_WORDS_EN), plain_text, re.IGNORECASE))
+        conversational_ratio = round((conv_matches / sentence_count) * 100, 1) if sentence_count > 0 else 0.0
+        conversational_pass = conversational_ratio >= 30.0
+
+        # 12. Thin Content Check (Rule 2)
+        thin_content = word_count < 1000
+        severe_thin_content = word_count < 600
+
+        # 13. Overall Violations List & Penalty Calculation
         violations = []
         if not has_featured_image:
             violations.append({"rule": "Rule 1.1: Missing Featured Image", "severity": "HIGH", "desc": "Post has no featured image attached."})
+        
         if not img_density_pass:
-            violations.append({"rule": "Rule 1.2: Image Density Deficit", "severity": "HIGH", "desc": f"Found {in_content_img_count} images; required at least {required_images} (1 per 500w for {word_count} words)."})
+            if in_content_img_count == 0:
+                violations.append({"rule": "Rule 1.2: Zero In-Content Images", "severity": "HIGH", "desc": f"Post has 0 in-content images; required at least {required_images} (1 per 500w for {word_count} words)."})
+            else:
+                violations.append({"rule": "Rule 1.2: Image Density Deficit", "severity": "MEDIUM", "desc": f"Found {in_content_img_count} images; required at least {required_images} (1 per 500w for {word_count} words)."})
+
         if thin_content:
-            violations.append({"rule": "Rule 2: Thin Content", "severity": "HIGH" if word_count < 600 else "MEDIUM", "desc": f"Word count ({word_count}) is below minimum requirement of 1,000 words."})
+            violations.append({"rule": "Rule 2: Thin Content", "severity": "HIGH" if severe_thin_content else "MEDIUM", "desc": f"Word count ({word_count}) is below minimum requirement of 1,000 words."})
+        
         if not heading_standards_pass:
-            violations.append({"rule": "Rule 5: Robotic Heading Formatting", "severity": "HIGH", "desc": f"{len(numbered_or_icon_headings)}/{total_headings} headings ({heading_violation_ratio*100:.1f}%) have mechanical numbers/icons (max 20% allowed)."})
+            violations.append({"rule": "Rule 5: Robotic Heading Formatting", "severity": "MEDIUM", "desc": f"{len(numbered_or_icon_headings)}/{total_headings} headings ({heading_violation_ratio*100:.1f}%) have mechanical numbers/icons (max 20% allowed)."})
+        
         if found_buzzwords:
             total_bw = sum(item["count"] for item in found_buzzwords)
-            violations.append({"rule": "Rule 6.1: Marketing Hype & Buzzwords", "severity": "MEDIUM", "desc": f"Found {total_bw} instances of marketing buzzwords ({', '.join([item['buzzword'] for item in found_buzzwords[:3]])})."})
+            severity = "MEDIUM" if total_bw >= 3 else "LOW"
+            violations.append({"rule": "Rule 6.1: Marketing Hype & Buzzwords", "severity": severity, "desc": f"Found {total_bw} instances of marketing buzzwords ({', '.join([item['buzzword'] for item in found_buzzwords[:3]])})."})
+        
         if found_ai_leads:
             violations.append({"rule": "Rule 6.6: AI Cliché Lead", "severity": "MEDIUM", "desc": f"Intro contains textbook AI opening: {', '.join(found_ai_leads)}."})
+        
         if found_ai_conclusions:
             violations.append({"rule": "Rule 6.6: Redundant AI Conclusion", "severity": "MEDIUM", "desc": f"Ending contains textbook AI conclusion phrase: {', '.join(found_ai_conclusions)}."})
+        
         if rhythm_monotonous:
-            violations.append({"rule": "Rule 6.3: Monotonous Sentence Rhythm", "severity": "LOW", "desc": f"Sentence length std dev is unusually low ({std_dev:.1f}), indicating robotic sentence pacing."})
+            violations.append({"rule": "Rule 6.3: Monotonous / Overlong Sentence Rhythm", "severity": "LOW", "desc": f"Sentence lengths lack variation (Long sentences: {long_pct}%, std dev: {std_dev:.1f})."})
+        
+        if not concrete_data_pass and word_count >= 1000:
+            violations.append({"rule": "Rule 6.4: Low Concrete Specificity", "severity": "LOW", "desc": f"Low density of numbers/prices/concrete facts ({concrete_data_density} per 1k words)."})
+
+        if not conversational_pass and word_count >= 1000:
+            violations.append({"rule": "Rule 6.5: Low Conversational Voice", "severity": "LOW", "desc": f"Conversational marker ratio is low ({conversational_ratio}%)."})
+
         if len(found_fillers) >= 4:
             violations.append({"rule": "Rule 6.6: Excessive AI Filler Transitions", "severity": "LOW", "desc": f"Found {sum(f['count'] for f in found_fillers)} filler transitions ({', '.join([f['filler'] for f in found_fillers[:3]])})."})
 
         # Calculate score (100 base)
         penalty = 0
+        has_fatal_violation = not has_featured_image or severe_thin_content
         for v in violations:
             if v["severity"] == "HIGH":
                 penalty += 25
             elif v["severity"] == "MEDIUM":
-                penalty += 15
+                penalty += 12
             elif v["severity"] == "LOW":
                 penalty += 5
         score = max(0, 100 - penalty)
-        compliance_status = "PASS" if score >= 80 and not any(v["severity"] == "HIGH" for v in violations) else ("WARNING" if score >= 50 else "FAIL")
+        
+        if has_fatal_violation or score < 60:
+            compliance_status = "FAIL"
+        elif score >= 80 and not any(v["severity"] == "HIGH" for v in violations):
+            compliance_status = "PASS"
+        else:
+            compliance_status = "WARNING"
 
         return {
             "id": post_id,
@@ -288,7 +361,26 @@ class ContentAuditor:
             "found_fillers": found_fillers,
             "avg_sentence_len": round(avg_sentence_len, 1),
             "sentence_std_dev": round(std_dev, 2),
-            "rhythm_monotonous": rhythm_monotonous,
+            "sentence_rhythm": {
+                "short_pct": short_pct,
+                "med_pct": med_pct,
+                "long_pct": long_pct,
+                "monotonous": rhythm_monotonous
+            },
+            "personal_perspective": {
+                "count": persp_matches,
+                "has_perspective": has_personal_perspective
+            },
+            "concrete_data": {
+                "matches": concrete_data_matches,
+                "density_per_1kw": concrete_data_density,
+                "pass": concrete_data_pass
+            },
+            "conversational": {
+                "matches": conv_matches,
+                "ratio_pct": conversational_ratio,
+                "pass": conversational_pass
+            },
             "thin_content": thin_content,
             "violations": violations,
             "score": score,
@@ -328,10 +420,17 @@ class ContentAuditor:
         buzzwords_detected_total = sum(1 for r in results if len(r["found_buzzwords"]) > 0)
         ai_leads_total = sum(1 for r in results if len(r["found_ai_leads"]) > 0)
         ai_conclusions_total = sum(1 for r in results if len(r["found_ai_conclusions"]) > 0)
-        monotonous_rhythm_total = sum(1 for r in results if r["rhythm_monotonous"])
+        monotonous_rhythm_total = sum(1 for r in results if r["sentence_rhythm"]["monotonous"])
         
         avg_score = round(sum(r["score"] for r in results) / total_scanned, 1) if total_scanned > 0 else 0
         pass_rate = round((passed_posts / total_scanned) * 100, 1) if total_scanned > 0 else 0
+
+        zero_in_content_img_total = sum(1 for r in results if r["in_content_img_count"] == 0)
+        has_perspective_total = sum(1 for r in results if r["personal_perspective"]["has_perspective"])
+        concrete_data_pass_total = sum(1 for r in results if r["concrete_data"]["pass"])
+        conversational_pass_total = sum(1 for r in results if r["conversational"]["pass"])
+        avg_word_count = round(sum(r["word_count"] for r in results) / total_scanned, 0) if total_scanned > 0 else 0
+        avg_img_count = round(sum(r["in_content_img_count"] for r in results) / total_scanned, 1) if total_scanned > 0 else 0
 
         summary = {
             "site_id": site_id,
@@ -343,15 +442,21 @@ class ContentAuditor:
             "failed_posts": failed_posts,
             "pass_rate_pct": pass_rate,
             "average_score": avg_score,
+            "avg_word_count": avg_word_count,
+            "avg_img_count": avg_img_count,
             "metrics": {
                 "missing_featured_image": missing_featured_total,
+                "zero_in_content_images": zero_in_content_img_total,
                 "image_density_deficit": density_deficit_total,
                 "thin_content_less_1000w": thin_content_total,
                 "heading_robotic_formatting": heading_violating_total,
                 "marketing_buzzwords": buzzwords_detected_total,
+                "has_personal_perspective": has_perspective_total,
+                "monotonous_rhythm": monotonous_rhythm_total,
+                "concrete_data_pass": concrete_data_pass_total,
+                "conversational_pass": conversational_pass_total,
                 "ai_cliche_lead": ai_leads_total,
-                "ai_redundant_conclusion": ai_conclusions_total,
-                "monotonous_rhythm": monotonous_rhythm_total
+                "ai_redundant_conclusion": ai_conclusions_total
             },
             "posts": results
         }
@@ -360,11 +465,16 @@ class ContentAuditor:
         print(f"  Total Scanned: {total_scanned} posts")
         print(f"  Average Score: {avg_score}/100")
         print(f"  Pass Rate: {pass_rate}% ({passed_posts} Pass, {warning_posts} Warning, {failed_posts} Fail)")
+        print(f"  Avg Word Count: {avg_word_count} words | Avg Images: {avg_img_count} imgs")
         print(f"  Missing Featured Image: {missing_featured_total}")
+        print(f"  Zero In-Content Images: {zero_in_content_img_total}")
         print(f"  Image Density Deficit (<1 img/500w): {density_deficit_total}")
         print(f"  Thin Content (<1,000w): {thin_content_total}")
         print(f"  Robotic Headings (>20% numbers/icons): {heading_violating_total}")
         print(f"  Marketing Buzzwords: {buzzwords_detected_total}")
+        print(f"  Has Personal Perspective: {has_perspective_total}/{total_scanned}")
+        print(f"  Concrete Data Density Pass: {concrete_data_pass_total}/{total_scanned}")
+        print(f"  Conversational Tone Pass: {conversational_pass_total}/{total_scanned}")
         print(f"  AI Cliché Leads: {ai_leads_total}")
         print(f"  AI Redundant Conclusions: {ai_conclusions_total}")
 

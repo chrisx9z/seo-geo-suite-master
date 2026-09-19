@@ -799,6 +799,19 @@ def schedule_travel_site(site, plan_path=None, days=None, max_posts=None):
         )
         scheduler.run_batch(target_days=target_days, max_posts=max_posts)
 
+def audit_content_site(site, max_posts=None):
+    from modules.content_auditor.auditor import ContentAuditor
+    auditor = ContentAuditor()
+    report = auditor.audit_site(site, max_posts=max_posts)
+    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    rep_dir = os.path.join(base_dir, "reports")
+    os.makedirs(rep_dir, exist_ok=True)
+    report_path = os.path.join(rep_dir, f"content_audit_{site.get('site_id', 'unknown')}.json")
+    with open(report_path, "w", encoding="utf-8") as f:
+        json.dump(report, f, ensure_ascii=False, indent=2)
+    print(f"✅ Content audit report saved to {report_path}")
+    return report
+
 def main():
     parser = argparse.ArgumentParser(description="Master Auto SEO GEO Suite CLI")
     parser.add_argument("command", choices=[
@@ -808,7 +821,7 @@ def main():
         "inject-eeat", "heal-orphans", "warm-edge", "audit-links", 
         "audit-onpage", "schedule-travel", "clone-site",
         "audit-graph", "audit-arch", "audit-nav", "audit-sitemap-freshness", "generate-report",
-        "citability", "audit-injection", "check-ai-bots", "check-sitemap"
+        "citability", "audit-injection", "check-ai-bots", "check-sitemap", "audit-content"
     ], help="Action to perform")
     parser.add_argument("--site", default=None, help="Site ID or domain to target (omit to apply to ALL sites)")
     parser.add_argument("--from-site", default="mmdidau", help="Source site ID to clone from (for clone-site)")
@@ -911,6 +924,8 @@ def main():
             write_post_site(s, args.topic, args.category, args.status, args.date)
         elif args.command == "schedule-travel":
             schedule_travel_site(s, plan_path=args.plan, days=args.days, max_posts=args.max_posts)
+        elif args.command == "audit-content":
+            audit_content_site(s, max_posts=args.max_posts)
 
 if __name__ == "__main__":
     main()

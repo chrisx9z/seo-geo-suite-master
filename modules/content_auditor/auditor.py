@@ -105,6 +105,20 @@ CONVERSATIONAL_WORDS_VI = [
 CONVERSATIONAL_WORDS_EN = [
     r"\b(you|your|we|our|let's|actually,|to be honest|here's why|don't worry|keep in mind|if you're|you'll|we'll)\b"
 ]
+# Direct Answer / Key Takeaways Patterns (E-E-A-T & GEO)
+DIRECT_ANSWER_PATTERNS = [
+    r"geo-key-takeaways",
+    r"direct-answer",
+    r"key\s*takeaways",
+    r"câu\s*trả\s*lời\s*trực\s*tiếp",
+    r"tóm\s*tắt\s*định\s*lượng",
+    r"trả\s*lời\s*nhanh",
+    r"quick\s*answer",
+    r"at\s*a\s*glance",
+    r"essential\s*takeaways",
+    r"fast\s*facts",
+    r"class=[\"']lead[\"']"
+]
 
 
 class ContentAuditor:
@@ -186,6 +200,23 @@ class ContentAuditor:
         required_images = max(1, math.ceil(word_count / 500)) if word_count > 0 else 1
         img_density_pass = in_content_img_count >= required_images
         has_featured_image = bool(featured_media and featured_media > 0)
+
+        # Dual AVIF/WebP Syntax or Modern Formats
+        pictures = soup.find_all("picture")
+        has_avif = ".avif" in raw_html
+        has_webp = ".webp" in raw_html
+        has_dual_avif_webp = bool(len(pictures) > 0 or has_avif or (has_webp and in_content_img_count > 0))
+
+        # Direct Answer E-E-A-T Block
+        has_direct_answer = False
+        for pat in DIRECT_ANSWER_PATTERNS:
+            if re.search(pat, raw_html, re.I):
+                has_direct_answer = True
+                break
+        if not has_direct_answer:
+            first_p = soup.find("p")
+            if first_p and 40 <= len(first_p.get_text().split()) <= 100:
+                has_direct_answer = True
 
         # 3. Headings Audit
         headings = soup.find_all(["h1", "h2", "h3", "h4", "h5", "h6"])
@@ -382,6 +413,8 @@ class ContentAuditor:
                 "pass": conversational_pass
             },
             "thin_content": thin_content,
+            "has_dual_avif_webp": has_dual_avif_webp,
+            "has_direct_answer": has_direct_answer,
             "violations": violations,
             "score": score,
             "status": compliance_status
@@ -429,6 +462,12 @@ class ContentAuditor:
         has_perspective_total = sum(1 for r in results if r["personal_perspective"]["has_perspective"])
         concrete_data_pass_total = sum(1 for r in results if r["concrete_data"]["pass"])
         conversational_pass_total = sum(1 for r in results if r["conversational"]["pass"])
+        dual_avif_webp_total = sum(1 for r in results if r.get("has_dual_avif_webp", False))
+        direct_answer_total = sum(1 for r in results if r.get("has_direct_answer", False))
+        total_headings_site = sum(r["total_headings"] for r in results)
+        violating_headings_site = sum(r["numbered_or_icon_headings_count"] for r in results)
+        site_heading_violation_rate = round((violating_headings_site / total_headings_site * 100), 1) if total_headings_site > 0 else 0.0
+
         avg_word_count = round(sum(r["word_count"] for r in results) / total_scanned, 0) if total_scanned > 0 else 0
         avg_img_count = round(sum(r["in_content_img_count"] for r in results) / total_scanned, 1) if total_scanned > 0 else 0
 
@@ -444,10 +483,15 @@ class ContentAuditor:
             "average_score": avg_score,
             "avg_word_count": avg_word_count,
             "avg_img_count": avg_img_count,
+            "total_headings_site": total_headings_site,
+            "violating_headings_site": violating_headings_site,
+            "site_heading_violation_rate_pct": site_heading_violation_rate,
             "metrics": {
                 "missing_featured_image": missing_featured_total,
                 "zero_in_content_images": zero_in_content_img_total,
                 "image_density_deficit": density_deficit_total,
+                "dual_avif_webp": dual_avif_webp_total,
+                "direct_answer_eeat": direct_answer_total,
                 "thin_content_less_1000w": thin_content_total,
                 "heading_robotic_formatting": heading_violating_total,
                 "marketing_buzzwords": buzzwords_detected_total,
@@ -469,8 +513,10 @@ class ContentAuditor:
         print(f"  Missing Featured Image: {missing_featured_total}")
         print(f"  Zero In-Content Images: {zero_in_content_img_total}")
         print(f"  Image Density Deficit (<1 img/500w): {density_deficit_total}")
+        print(f"  Dual AVIF/WebP Format: {dual_avif_webp_total}/{total_scanned} ({(dual_avif_webp_total/total_scanned*100):.1f}%)")
+        print(f"  Direct Answer E-E-A-T: {direct_answer_total}/{total_scanned} ({(direct_answer_total/total_scanned*100):.1f}%)")
+        print(f"  Site Headings Number/Icon Rate: {site_heading_violation_rate}% ({violating_headings_site}/{total_headings_site})")
         print(f"  Thin Content (<1,000w): {thin_content_total}")
-        print(f"  Robotic Headings (>20% numbers/icons): {heading_violating_total}")
         print(f"  Marketing Buzzwords: {buzzwords_detected_total}")
         print(f"  Has Personal Perspective: {has_perspective_total}/{total_scanned}")
         print(f"  Concrete Data Density Pass: {concrete_data_pass_total}/{total_scanned}")

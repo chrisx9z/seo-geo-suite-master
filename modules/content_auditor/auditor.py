@@ -475,6 +475,7 @@ class ContentAuditor:
             "site_id": site_id,
             "site_name": name,
             "site_url": url,
+            "category": site.get("category", "PBN"),
             "total_posts_scanned": total_scanned,
             "passed_posts": passed_posts,
             "warning_posts": warning_posts,

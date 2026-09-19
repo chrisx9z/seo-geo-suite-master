@@ -13,8 +13,7 @@ Tài liệu này định nghĩa các nguyên tắc cốt lõi và tiêu chuẩn 
    - Thẻ `og:image` và `twitter:image` phải khớp với ảnh đại diện này.
 
 2. **Số lượng hình ảnh trong bài viết (In-Content Images):**
-   - **Tối thiểu:** `1 hình ảnh` minh họa chất lượng cao.
-   - **Tối đa:** `5 hình ảnh` chuyên nghiệp (để đảm bảo tốc độ tải trang Core Web Vitals tối ưu).
+   - **Tỉ lệ phân bổ bắt buộc:** **Mỗi 500 từ phải có ít nhất 1 hình ảnh** minh họa chất lượng cao (ví dụ: bài 1.500 từ có tối thiểu 3 ảnh, bài 2.000 từ có tối thiểu 4 ảnh, bài 2.500+ từ có tối thiểu 5 ảnh).
    - Tất cả hình ảnh trong bài phải có thuộc tính `alt="..."` mô tả chính xác thực thể và ngữ cảnh, có chứa từ khóa liên quan tự nhiên.
    - Ưu tiên ảnh chụp thực tế, infographic số liệu, sơ đồ kiến trúc quy trình, tuyệt đối không dùng ảnh chất lượng thấp hoặc text banner vỡ hạt.
 
@@ -75,5 +74,30 @@ Tài liệu này định nghĩa các nguyên tắc cốt lõi và tiêu chuẩn 
 
 ---
 
-*Quy tắc này có hiệu lực từ tháng 08/2026 và áp dụng cho toàn bộ codebase và workflow vận hành.*
+## 💎 6. Bộ 6 Quy Tắc Văn Phong Thực Chiến & Xóa Dấu Vết AI (Mặc Định Toàn Repo)
+
+Tất cả các module sinh bài, template và tác tử tạo nội dung trong repository bắt buộc phải tuân thủ 6 quy tắc văn phong sau đây:
+
+1. **Bỏ giọng marketing:**
+   - Triệt để loại bỏ từ ngữ phóng đại (hype), buzzword sáo rỗng, khẩu hiệu bán hàng và những câu văn nghe như quảng cáo (ví dụ cấm kỵ: *"giải pháp hoàn hảo đỉnh cao"*, *"bạn không thể bỏ lỡ"*, *"sự lựa chọn tuyệt vời nhất"*, *"bước ngoặt đột phá"*).
+
+2. **Thêm góc nhìn cá nhân (Áp dụng có chọn lọc):**
+   - Viết với quan điểm rõ ràng, dứt khoát, bớt thái độ trung lập ba phải và bớt những lời khuyên chung chung vô thưởng vô phạt. *Áp dụng có chọn lọc cho các đoạn đánh giá, review, so sánh, kinh nghiệm thực tế; không áp dụng máy móc cho tất cả các câu.*
+
+3. **Chỉnh nhịp câu:**
+   - Trộn câu ngắn, câu vừa và câu dài linh hoạt. Tuyệt đối không để câu nào cũng đều đều, bằng phẳng và quá trau chuốt hoàn hảo kiểu sách giáo khoa. Nhịp điệu phải sống động, dứt khoát.
+
+4. **Viết cụ thể hơn (Áp dụng có chọn lọc):**
+   - Thay các ý niệm trừu tượng, mơ hồ bằng số liệu, ví dụ minh họa, tình huống cụ thể và chi tiết thực tế (thay vì nói *"chi phí rất hợp lý"*, hãy nêu *"khoảng 35.000 - 50.000 VNĐ mỗi bát"* hoặc đưa ra tình huống thực chiến). *Áp dụng có chọn lọc, đúng lúc, đúng chỗ.*
+
+5. **Viết như đang nói chuyện (Áp dụng cho phần lớn trên 50%):**
+   - Dùng từ ngữ đơn giản, gần gũi, tự nhiên như đang ngồi giải thích trực tiếp cho một người bạn hiểu vấn đề. *Áp dụng cho trên 50% dung lượng bài viết, giữ lại phần còn lại cho tính chính xác kỹ thuật hoặc tính trang trọng cần thiết.*
+
+6. **Xóa sạch dấu vết AI:**
+   - Bỏ hoàn toàn các đoạn mở bài chung chung sáo mòn (kiểu *"Trong thời đại công nghệ số ngày nay..."*, *"Trong thế giới đầy biến động..."*).
+   - Loại bỏ các từ đệm vô nghĩa (filler words), bỏ việc lặp lại ý ở các đoạn sau, và cắt bỏ hoàn toàn các đoạn kết luận thừa thãi, giáo điều kiểu *"Tóm lại, qua bài viết trên chúng ta đã..."*. Đi thẳng vào vấn đề và kết thúc bằng giải pháp/hành động dứt khoát.
+
+---
+
+*Quy tắc này có hiệu lực từ tháng 08/2026, được cập nhật bổ sung tháng 09/2026 và là cấu hình mặc định bắt buộc cho toàn bộ repo, module sinh bài và tác tử.*
 

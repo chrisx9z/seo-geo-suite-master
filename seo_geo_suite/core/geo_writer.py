@@ -18,20 +18,26 @@ class GeoWriter:
             try:
                 from google import genai
                 client = genai.Client(api_key=self.api_key)
-                prompt = f"""Bạn là một chuyên gia hàng đầu thế giới về SEO và GEO (Generative Engine Optimization).
+                prompt = f"""Bạn là một chuyên gia hàng đầu về SEO, GEO (Generative Engine Optimization) và Content Writer thực chiến.
 Hãy viết một bài viết toàn diện, chuyên sâu chuẩn E-E-A-T bằng tiếng Việt về chủ đề: "{topic}".
 Từ khóa chính: "{target_keyword}"
 
-Yêu cầu định dạng bắt buộc cho GEO & SEO (Đảm bảo tối ưu hóa công cụ tìm kiếm và AI Search):
-1. ĐỘ DÀI & NỘI DUNG: Bài viết phải dài TỐI THIỂU 1.000 từ (không có giới hạn tối đa, phân tích càng sâu càng tốt dựa trên từ khóa). Tuyệt đối KHÔNG có "thin content".
-2. HÌNH ẢNH: Đề xuất và tích hợp từ 1 đến 5 vị trí hình ảnh chuyên nghiệp (kèm thẻ mô tả alt chuẩn SEO, hình minh họa sơ đồ/bảng số liệu).
-3. ẢNH ĐẠI DIỆN: Bắt buộc phải có ảnh đại diện (Featured Image) đại diện cho thực thể bài viết.
-4. TIÊU ĐỀ HEADING TỰ NHIÊN: Tuyệt đối KHÔNG đánh số cơ học (1., 2., 3., 1.1) cho các đề mục H2, H3. Hạn chế dùng icon ở tiêu đề. Tỷ lệ heading có số hoặc icon không được vượt quá 20%. Sử dụng câu văn phong tự nhiên, súc tích chuẩn báo chí.
-5. DIRECT ANSWER: Đoạn trả lời trực tiếp mở đầu (60-80 từ) giải quyết cốt lõi câu hỏi để AI trích dẫn làm Featured Snippet.
-6. BẢNG BIỂU: Bảng tóm tắt Key Takeaways / Số liệu chính dạng Markdown Table.
-7. PHÂN TÍCH CHUYÊN SÂU: Các phần H2, H3 phân tích chi tiết, số liệu thực tế, nghiên cứu ca bệnh (case study) và các bước thực thi rõ ràng.
-8. FAQ: Phần Hỏi & Đáp thường gặp gồm ít nhất 4 câu hỏi thực tế.
-9. KẾT LUẬN: Lời khuyên hành động thực tế cho độc giả.
+BỘ QUY TẮC BẮT BUỘC TOÀN REPO (Định dạng & Văn phong chống AI):
+1. ĐỘ DÀI & NỘI DUNG: Bài viết phải dài TỐI THIỂU 1.000 từ (khuyến khích 1.500 - 3.000 từ tùy chiều sâu chủ đề). Tuyệt đối KHÔNG có "thin content".
+2. HÌNH ẢNH (BẮT BUỘC): Cứ mỗi 500 từ bài viết phải có ít nhất 1 hình ảnh minh họa chất lượng cao (gắn thẻ alt chuẩn SEO chứa thực thể tự nhiên).
+3. ẢNH ĐẠI DIỆN: Đề xuất 1 Featured Image chủ đạo 16:9 đại diện cho thực thể bài viết.
+4. BỎ GIỌNG MARKETING: Triệt để loại bỏ từ ngữ hype, buzzwords sáo rỗng, khẩu hiệu bán hàng hay câu cú nghe như quảng cáo ("giải pháp đỉnh cao", "không thể bỏ lỡ", "hoàn hảo nhất").
+5. THÊM GÓC NHÌN CÁ NHÂN (Chọn lọc): Viết với quan điểm dứt khoát, rõ ràng, giảm bớt thái độ trung lập ba phải và lời khuyên chung chung. Áp dụng có chọn lọc cho các đoạn đánh giá, so sánh, nhận định chuyên môn.
+6. CHỈNH NHỊP CÂU: Trộn linh hoạt câu ngắn, vừa, dài. Tuyệt đối không để câu nào cũng đều đều, bằng phẳng và quá trau chuốt hoàn hảo.
+7. VIẾT CỤ THỂ HƠN (Chọn lọc): Thay các ý niệm mơ hồ bằng số liệu, ví dụ, tình huống thực tế và chi tiết đời thực.
+8. VIẾT NHƯ ĐANG NÓI CHUYỆN: Dùng từ ngữ đơn giản, tự nhiên, gần gũi như đang giải thích cho một người bạn hiểu vấn đề (chiếm trên 50% dung lượng bài viết).
+9. XÓA SẠCH DẤU VẾT AI:
+   - Cấm mở bài chung chung sáo mòn ("Trong thời đại số...", "Trong thế giới ngày nay..."). Đi thẳng vào vấn đề.
+   - Loại bỏ các từ đệm vô nghĩa (filler words) và không lặp lại ý.
+   - Cấm kết bài tóm tắt thừa thãi kiểu giáo điều ("Tóm lại, qua bài viết trên..."). Kết thúc bằng lời khuyên/hành động dứt khoát.
+10. TIÊU ĐỀ HEADING TỰ NHIÊN: Tuyệt đối KHÔNG đánh số cơ học (1., 2., 1.1) cho các đề mục. Hạn chế icon ở tiêu đề (tỷ lệ có số hoặc icon dưới 20%).
+11. DIRECT ANSWER: Đoạn trả lời trực tiếp mở đầu (60-80 từ) để AI trích dẫn làm Featured Snippet.
+12. BẢNG BIỂU & FAQ: Có ít nhất 1 bảng dữ liệu Markdown và 3-5 câu hỏi FAQ thực tế.
 """
                 resp = client.models.generate_content(
                     model="gemini-2.5-flash",

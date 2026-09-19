@@ -60,12 +60,49 @@
     "max_file_size_kb": 50,
     "require_featured_image": true,
     "require_in_content_illustration": true,
+    "min_images_per_500_words": 1,
     "aspect_ratio": "16:9",
     "width": 1200,
     "height": 675,
     "zero_cls_protection": true,
     "lazy_loading": true,
     "async_decoding": true
+  },
+  "writing_style_anti_ai": {
+    "enabled_by_default": true,
+    "rules": {
+      "no_marketing_voice": {
+        "enabled": true,
+        "description": "Strip hype, buzzwords, empty marketing slogans, and salesy expressions."
+      },
+      "selective_personal_perspective": {
+        "enabled": true,
+        "selective": true,
+        "description": "Write with clear, decisive opinions; reduce neutrality and generic advice where relevant."
+      },
+      "sentence_rhythm_variation": {
+        "enabled": true,
+        "description": "Blend short, medium, and long sentences; prevent robotic uniform cadence."
+      },
+      "concrete_examples_over_vague": {
+        "enabled": true,
+        "selective": true,
+        "description": "Replace abstract claims with specific numbers, real-world examples, and situational details."
+      },
+      "conversational_tone": {
+        "enabled": true,
+        "ratio_min": 0.50,
+        "description": "Use simple, natural language as if explaining to a friend for 50%+ of the content."
+      },
+      "strip_ai_fingerprints": {
+        "enabled": true,
+        "no_generic_intros": true,
+        "no_filler_words": true,
+        "no_idea_repetition": true,
+        "no_redundant_conclusions": true,
+        "description": "Eliminate classic AI intro cliches, filler transitions, idea looping, and summary conclusions."
+      }
+    }
   },
   "feature_5_internal_link_sentinel": {
     "enabled_by_default": true,

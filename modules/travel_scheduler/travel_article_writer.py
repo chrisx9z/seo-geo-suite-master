@@ -346,10 +346,10 @@ class TravelArticleWriter:
 
         captions = [
             f"Góc nhìn cận cảnh không gian trải nghiệm thực tế tại {dest}.",
-            f"Cảnh sắc thiên nhiên và không gian trải nghiệm ấn tượng được du khách ghi lại.",
-            f"Một góc check-in tuyệt đẹp không thể bỏ lỡ trong hành trình khám phá {dest}.",
-            f"Khung cảnh bình yên và thơ mộng tại {dest} qua ống kính du khách.",
-            f"Chi tiết không gian và nét văn hóa bản địa độc đáo tại {dest}."
+            f"Hình ảnh thực địa được du khách ghi nhận trong chuyến đi.",
+            f"Toàn cảnh khu vực trải nghiệm thực tế tại {dest}.",
+            f"Khung cảnh và nhịp sống đời thường tại {dest} qua góc máy thực tế.",
+            f"Chi tiết không gian và nét văn hóa bản địa tại {dest}."
         ]
 
         offset = 0

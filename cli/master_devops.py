@@ -17,6 +17,7 @@ import argparse
 import os
 import sys
 import json
+import subprocess
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
@@ -25,6 +26,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 try:
     from modules.vps_cloudflare_aapanel.vps_automation import CloudflareManager, AaPanelManager, WPCleaner, DevOpsOrchestrator
     from modules.migration.wp_clone_packager import WPClonePackager
+    from modules.codebase_security.auditor import CodebaseSecurityAuditor
 except ImportError as e:
     print(f"Warning: Module import error: {e}")
 
@@ -39,7 +41,10 @@ def main():
             "clone-site",
             "clean-posts-sql",
             "generate-vhost",
-            "provision"
+            "provision",
+            "security-audit",
+            "validate-findings",
+            "validate-ledger"
         ],
         help="DevOps action to perform"
     )
@@ -51,6 +56,10 @@ def main():
     parser.add_argument("--from-site", default="mmdidau", help="Source site ID in sites.json for cloning")
     parser.add_argument("--to-domain", default="triptip.cc", help="Target domain for cloned site")
     parser.add_argument("--to-brand", default="TripTip", help="Target brand name for cloned site")
+    parser.add_argument("--target", default=".", help="Target file or directory for security-audit")
+    parser.add_argument("--output", help="Optional output path to export findings.json")
+    parser.add_argument("--file", help="Path to findings.json or coverage-ledger.json for validation")
+    parser.add_argument("--validate", action="store_true", help="Run Cloudflare validator after audit")
 
     args = parser.parse_args()
 
@@ -112,6 +121,64 @@ def main():
         orchestrator = DevOpsOrchestrator()
         res = orchestrator.provision_new_site(args.domain, server_ip=args.ip, enable_proxy=args.proxy)
         print(f"[*] Provisioning plan generated successfully for {args.domain}.")
+
+    elif args.command == "security-audit":
+        auditor = CodebaseSecurityAuditor()
+        target = args.target
+        print(f"\n{'='*75}")
+        print(f"🛡️ CLOUDFLARE CODEBASE SECURITY AUDIT: {target}")
+        print(f"{'='*75}")
+        findings = auditor.scan_path(target)
+
+        if not findings:
+            print(f"✅ Zero high-risk vulnerabilities or exposed secrets found in: {target}\n")
+        else:
+            print(f"⚠️ Detected {len(findings)} potential security findings:\n")
+            for idx, f in enumerate(findings, 1):
+                sev = f['severity'].upper()
+                print(f"[{idx}] [{sev}] {f['title']}")
+                print(f"    File: {f['file']}:{f['line']}")
+                print(f"    Code: {f['snippet']}")
+                print(f"    Remediation: {f['remediation']}\n")
+
+        if args.output:
+            cf_json = auditor.to_cloudflare_findings_json(findings)
+            with open(args.output, "w", encoding="utf-8") as out_f:
+                json.dump(cf_json, out_f, indent=2)
+            print(f"[*] Exported Cloudflare findings to: {args.output}")
+
+            if args.validate:
+                ret, v_out, v_err = auditor.validate_with_cloudflare_validator(args.output)
+                if ret == 0:
+                    print(f"[*] Cloudflare Findings Validator: {v_out.strip()}")
+                else:
+                    print(f"[!] Validation Error:\n{v_err.strip()}")
+
+    elif args.command == "validate-findings":
+        if not args.file:
+            print("Error: --file <path_to_findings.json> is required.")
+            sys.exit(1)
+        auditor = CodebaseSecurityAuditor()
+        ret, out, err = auditor.validate_with_cloudflare_validator(args.file)
+        if ret == 0:
+            print(f"✅ PASS: {out.strip()}")
+        else:
+            print(f"❌ FAIL: {err.strip() or out.strip()}")
+            sys.exit(ret)
+
+    elif args.command == "validate-ledger":
+        if not args.file:
+            print("Error: --file <path_to_ledger.json> is required.")
+            sys.exit(1)
+        validator_script = os.path.join(
+            os.path.dirname(__file__), "..", ".agents", "skills", "security-audit", "validate-coverage-ledger.cjs"
+        )
+        p = subprocess.run(["node", validator_script, os.path.abspath(args.file)], capture_output=True, text=True, encoding="utf-8", errors="replace")
+        if p.returncode == 0:
+            print(f"✅ PASS: {p.stdout.strip()}")
+        else:
+            print(f"❌ FAIL: {p.stderr.strip() or p.stdout.strip()}")
+            sys.exit(p.returncode)
 
 if __name__ == "__main__":
     main()

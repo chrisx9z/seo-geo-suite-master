@@ -6,8 +6,10 @@ from typing import Dict, Any, List, Optional
 class GeoWriter:
     """Generates authoritative, GEO-optimized and SEO-compliant articles with JSON-LD Schemas."""
 
-    def __init__(self, api_key: Optional[str] = None):
+    def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None):
         self.api_key = api_key or os.environ.get("GEMINI_API_KEY", "")
+        # Defaults to Gemini 3.7 Flash (State of the art 2026 with Search Grounding)
+        self.model = model or os.environ.get("GEMINI_MODEL", "gemini-3.7-flash")
 
     def generate_article(self, topic: str, target_keyword: str, language: str = "vi", author: str = "Chuyên gia SEO/GEO") -> Dict[str, Any]:
         """Generates a complete GEO/SEO article with direct answer, structured tables, and JSON-LD schema."""
@@ -40,7 +42,7 @@ BỘ QUY TẮC BẮT BUỘC TOÀN REPO (Định dạng & Văn phong chống AI):
 12. BẢNG BIỂU & FAQ: Có ít nhất 1 bảng dữ liệu Markdown và 3-5 câu hỏi FAQ thực tế.
 """
                 resp = client.models.generate_content(
-                    model="gemini-2.5-flash",
+                    model=self.model,
                     contents=prompt
                 )
                 if resp and resp.text:

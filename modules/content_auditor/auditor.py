@@ -4,6 +4,7 @@ import json
 import time
 import os
 import sys
+import socket
 from typing import Dict, Any, List, Optional
 import requests
 from bs4 import BeautifulSoup
@@ -130,7 +131,7 @@ class ContentAuditor:
             "User-Agent": "Mozilla/5.0 Master-Auto-SEO-GEO-Suite ContentAuditor/2.0"
         }
 
-    def fetch_all_posts(self, site_url: str, max_posts: Optional[int] = None) -> List[Dict[str, Any]]:
+    def fetch_all_posts(self, site_url: str, max_posts: Optional[int] = None, host_ip: Optional[str] = None) -> List[Dict[str, Any]]:
         """Fetches all published posts from WordPress REST API."""
         base_url = site_url.rstrip("/")
         api_url = f"{base_url}/wp-json/wp/v2/posts"
@@ -138,35 +139,48 @@ class ContentAuditor:
         page = 1
         per_page = 100
 
-        while True:
-            params = {
-                "per_page": per_page,
-                "page": page,
-                "status": "publish",
-                "_fields": "id,date,link,title,content,excerpt,featured_media"
-            }
-            try:
-                resp = requests.get(api_url, params=params, headers=self.headers, timeout=self.timeout)
-                if resp.status_code != 200:
-                    break
-                
-                batch = resp.json()
-                if not batch or not isinstance(batch, list):
-                    break
+        orig_getaddrinfo = socket.getaddrinfo
+        if host_ip:
+            domain = base_url.replace("https://", "").replace("http://", "").split("/")[0]
+            def patched_getaddrinfo(h, port, *args, **kwargs):
+                if h == domain:
+                    return orig_getaddrinfo(host_ip, port, *args, **kwargs)
+                return orig_getaddrinfo(h, port, *args, **kwargs)
+            socket.getaddrinfo = patched_getaddrinfo
 
-                posts.extend(batch)
-                total_pages = int(resp.headers.get("X-WP-TotalPages", 1))
-                
-                if max_posts and len(posts) >= max_posts:
-                    posts = posts[:max_posts]
-                    break
+        try:
+            while True:
+                params = {
+                    "per_page": per_page,
+                    "page": page,
+                    "status": "publish",
+                    "_fields": "id,date,link,title,content,excerpt,featured_media"
+                }
+                try:
+                    resp = requests.get(api_url, params=params, headers=self.headers, timeout=self.timeout, verify=False if host_ip else True)
+                    if resp.status_code != 200:
+                        break
+                    
+                    batch = resp.json()
+                    if not batch or not isinstance(batch, list):
+                        break
 
-                if page >= total_pages:
+                    posts.extend(batch)
+                    total_pages = int(resp.headers.get("X-WP-TotalPages", 1))
+                    
+                    if max_posts and len(posts) >= max_posts:
+                        posts = posts[:max_posts]
+                        break
+
+                    if page >= total_pages:
+                        break
+                    page += 1
+                except Exception as e:
+                    print(f"  [!] Error fetching page {page} from {site_url}: {e}")
                     break
-                page += 1
-            except Exception as e:
-                print(f"  [!] Error fetching page {page} from {site_url}: {e}")
-                break
+        finally:
+            if host_ip:
+                socket.getaddrinfo = orig_getaddrinfo
 
         return posts
 
@@ -429,7 +443,8 @@ class ContentAuditor:
         print(f"🔍 Auditing Content for [{name}] ({url})")
         print(f"==================================================")
         
-        posts = self.fetch_all_posts(url, max_posts=max_posts)
+        host_ip = site.get("host_ip")
+        posts = self.fetch_all_posts(url, max_posts=max_posts, host_ip=host_ip)
         print(f"-> Fetched {len(posts)} published posts from {url}")
         
         results = []

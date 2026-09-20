@@ -15,6 +15,7 @@ import sys
 import json
 import time
 import requests
+from bs4 import BeautifulSoup
 from typing import Dict, Any, List, Optional
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
@@ -63,6 +64,16 @@ class TravelBatchScheduler:
             data={"log": self.admin_user, "pwd": self.admin_pass, "wp-submit": "Log In"},
             timeout=25
         )
+        if "confirm_admin_email" in r_login.url or "confirm_admin_email" in r_login.text:
+            try:
+                soup = BeautifulSoup(r_login.text, "html.parser")
+                links = [a.get("href") for a in soup.find_all("a", href=True)]
+                remind_link = next((l for l in links if "remind_me_later" in l or "confirm_admin_email" in l), None)
+                if remind_link:
+                    self.session.get(remind_link, timeout=15)
+            except Exception as e:
+                print(f"Warning: confirm_admin_email bypass failed: {e}")
+
         r_admin = self.session.get(f"{self.wp_url}/wp-admin/edit.php", timeout=25)
         m = re.search(r'"nonce":"([a-f0-9]+)"', r_admin.text)
         self.nonce = m.group(1) if m else ""

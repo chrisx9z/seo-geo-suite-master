@@ -777,6 +777,24 @@ def schedule_travel_site(site, plan_path=None, days=None, max_posts=None):
             plan_file=plan_path
         )
         scheduler.run_batch(target_days=target_days, max_posts=max_posts)
+    elif "nhatthegioi" in site.get("site_id", "") or "nhatthegioi" in site.get("url", ""):
+        from modules.travel_scheduler.nhatthegioi_batch_scheduler import NhatTheGioiBatchScheduler
+        if not plan_path:
+            plan_path = os.path.join(base_dir, "config", "nhatthegioi_30day_content_plan.json")
+            if not os.path.exists(plan_path):
+                plan_path = os.path.join(base_dir, "reports", "editorial_calendar_30_days.json")
+
+        if not os.path.exists(plan_path):
+            print(f"Error: Plan file not found at {plan_path}")
+            return
+
+        scheduler = NhatTheGioiBatchScheduler(
+            wp_url=site["url"],
+            admin_user=admin_user,
+            admin_pass=admin_pass,
+            plan_file=plan_path
+        )
+        scheduler.run_batch(target_days=target_days, max_posts=max_posts)
     else:
         from modules.travel_scheduler.travel_batch_scheduler import TravelBatchScheduler
         if not plan_path:

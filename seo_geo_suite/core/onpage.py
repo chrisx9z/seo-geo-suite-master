@@ -77,25 +77,37 @@ class OnpageChecker:
             if tag and tag.get("content"):
                 twitter_tags[name] = tag.get("content")
 
-        # 6. JSON-LD Schemas
+        # 6. JSON-LD Schemas (with @graph flattening for WordPress Yoast/RankMath)
         json_ld_schemas = []
         for script in soup.find_all("script", type="application/ld+json"):
             try:
-                data = json.loads(script.string or "{}")
-                json_ld_schemas.append(data)
+                raw = script.string or script.get_text() or "{}"
+                data = json.loads(raw)
             except Exception:
-                pass
+                continue
+            for node in (data if isinstance(data, list) else [data]):
+                if isinstance(node, dict) and isinstance(node.get("@graph"), list):
+                    json_ld_schemas.extend(node["@graph"])
+                else:
+                    json_ld_schemas.append(node)
 
         schema_types = []
         for s in json_ld_schemas:
             if isinstance(s, dict):
                 st = s.get("@type")
                 if st:
-                    schema_types.append(st if isinstance(st, str) else str(st))
+                    if isinstance(st, list):
+                        schema_types.extend([str(t) for t in st])
+                    else:
+                        schema_types.append(str(st))
             elif isinstance(s, list):
                 for item in s:
                     if isinstance(item, dict) and item.get("@type"):
-                        schema_types.append(item.get("@type"))
+                        it = item.get("@type")
+                        if isinstance(it, list):
+                            schema_types.extend([str(t) for t in it])
+                        else:
+                            schema_types.append(str(it))
 
         # 7. Images & Alt tags
         images = soup.find_all("img")

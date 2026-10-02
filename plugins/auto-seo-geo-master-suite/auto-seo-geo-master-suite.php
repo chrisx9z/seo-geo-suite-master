@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Auto SEO GEO Master Suite
  * Plugin URI: https://github.com/vibe-code/auto-seo-geo-suite
- * Description: Universal Multi-site SEO GEO Framework: PC 1170px Centered Header, Ultra-Modern Mobile Magazine Layout (Story Pills & Swipe Carousels), Zero-Overlap Multilingual Switcher, Dynamic 3-Language SEO Meta & Hreflang Engine.
- * Version: 5.1.0
+ * Description: Universal Multi-site SEO GEO Framework: PC 1170px Centered Header, Ultra-Modern Mobile Magazine Layout (Story Pills & Swipe Carousels), Zero-Overlap Multilingual Switcher, Dynamic 3-Language SEO Meta & Hreflang Engine, Auto Featured Image Fallback, Anti-AI Cliché Filter, and Dual AVIF/WebP Picture Wrapper.
+ * Version: 5.2.0
  * Author: Master SEO GEO Architecture Suite
  * Text Domain: auto-seo-geo
  * Domain Path: /languages
@@ -11,7 +11,7 @@
 if (!defined('ABSPATH')) exit;
 
 class Auto_SEO_GEO_Master_Suite {
-    private static $version = '5.1.0';
+    private static $version = '5.2.0';
     private static $site_config = null;
 
     public function __construct() {
@@ -36,6 +36,13 @@ class Auto_SEO_GEO_Master_Suite {
         add_filter('rank_math/frontend/title', array($this, 'filter_document_title'), 9999);
         add_filter('rank_math/frontend/description', array($this, 'filter_meta_description'), 9999);
         add_filter('language_attributes', array($this, 'filter_language_attributes'), 99);
+
+        // v5.2.0 Enhancements: Auto-Featured Image Fallback, Anti-AI Cliché Filter & Dual AVIF/WebP
+        add_action('save_post', array($this, 'auto_set_first_image_as_thumbnail'), 20, 2);
+        add_filter('post_thumbnail_html', array($this, 'fallback_post_thumbnail_html'), 20, 5);
+        add_filter('the_content', array($this, 'filter_anti_ai_content_cliches'), 15);
+        add_filter('the_content', array($this, 'auto_wrap_dual_avif_webp_picture'), 25);
+
         add_action('wp_head', array($this, 'output_master_css'), 9999);
         add_action('wp_footer', array($this, 'output_master_scripts'), 9999);
     }
@@ -994,6 +1001,84 @@ class Auto_SEO_GEO_Master_Suite {
         })();
         </script>
         <?php
+    }
+
+    /**
+     * v5.2.0: Automatically sets first in-content image as Featured Image if missing
+     */
+    public function auto_set_first_image_as_thumbnail($post_id, $post) {
+        if (wp_is_post_revision($post_id) || empty($post->post_content)) {
+            return;
+        }
+        if (has_post_thumbnail($post_id)) {
+            return;
+        }
+        if (preg_match('/<img[^>]+src=["\']([^"\']+)["\']/i', $post->post_content, $matches)) {
+            $img_url = $matches[1];
+            $attachment_id = attachment_url_to_postid($img_url);
+            if ($attachment_id) {
+                set_post_thumbnail($post_id, $attachment_id);
+            }
+        }
+    }
+
+    /**
+     * v5.2.0: Frontend fallback for post thumbnail if post has no thumbnail
+     */
+    public function fallback_post_thumbnail_html($html, $post_id, $post_thumbnail_id, $size, $attr) {
+        if (!empty($html)) {
+            return $html;
+        }
+        $post = get_post($post_id);
+        if (!$post || empty($post->post_content)) {
+            return $html;
+        }
+        if (preg_match('/<img[^>]+src=["\']([^"\']+)["\'][^>]*>/i', $post->post_content, $matches)) {
+            $src = $matches[1];
+            $alt = '';
+            if (preg_match('/alt=["\']([^"\']*)["\']/i', $matches[0], $alt_match)) {
+                $alt = esc_attr($alt_match[1]);
+            } else {
+                $alt = esc_attr($post->post_title);
+            }
+            return sprintf(
+                '<img src="%s" alt="%s" class="attachment-post-thumbnail size-post-thumbnail wp-post-image auto-geo-fallback" loading="lazy" decoding="async" />',
+                esc_url($src),
+                $alt
+            );
+        }
+        return $html;
+    }
+
+    /**
+     * v5.2.0: Anti-AI Cliché Filter on post content
+     * Strips redundant robotic AI conclusions like "Hy vọng qua bài viết..."
+     */
+    public function filter_anti_ai_content_cliches($content) {
+        if (!is_singular('post') || empty($content)) {
+            return $content;
+        }
+        $patterns = array(
+            '/<p[^>]*>\s*(?:<strong>)?\s*(?:Tóm lại|Hy vọng|Hi vọng|Nhìn chung|Có thể nói|Trên đây là)(?:,)?\s*(?:qua bài viết (?:này|trên)|với những chia sẻ trên|những thông tin trên|chúng tôi đã|bài viết đã).*?<\/p>/iu',
+            '/<p[^>]*>\s*(?:<strong>)?\s*Hy vọng qua bài viết.*?<\/p>/iu',
+            '/<p[^>]*>\s*(?:<strong>)?\s*Tóm lại,.*?(?:là một điểm đến|mang lại cho bạn).*?<\/p>/iu'
+        );
+        return preg_replace($patterns, '', $content);
+    }
+
+    /**
+     * v5.2.0: Auto-wrap standalone WebP images in Dual AVIF/WebP <picture> tags
+     */
+    public function auto_wrap_dual_avif_webp_picture($content) {
+        if (!is_singular('post') || empty($content)) {
+            return $content;
+        }
+        return preg_replace_callback('/(?<!<picture>)\s*(<img[^>]+src=["\']([^"\']+\.webp)["\'][^>]*>)/i', function($matches) {
+            $img_tag = $matches[1];
+            $webp_url = $matches[2];
+            $avif_url = str_replace('.webp', '.avif', $webp_url);
+            return '<picture><source srcset="' . esc_url($avif_url) . '" type="image/avif"><source srcset="' . esc_url($webp_url) . '" type="image/webp">' . $img_tag . '</picture>';
+        }, $content);
     }
 }
 

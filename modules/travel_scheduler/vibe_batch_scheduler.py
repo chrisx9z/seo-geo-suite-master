@@ -26,7 +26,8 @@ from modules.wp_ai_autopilot.autopilot_orchestrator import WpAiAutopilot
 from modules.content_crawler_pipeline.slug_optimizer import SlugOptimizer
 
 HOURLY_STAGGERS = [
-    "08:00:00", "11:00:00", "14:00:00", "17:00:00", "20:00:00"
+    "07:00:00", "08:30:00", "10:00:00", "11:30:00", "13:00:00",
+    "14:30:00", "16:00:00", "17:30:00", "19:00:00", "20:30:00"
 ]
 
 class VibeBatchScheduler:
@@ -42,7 +43,10 @@ class VibeBatchScheduler:
 
         self.log_file = log_file or os.path.join(base_dir, "cache", "scheduled_vibemmo_net.json")
         
+        import urllib3
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         self.session = requests.Session()
+        self.session.verify = False
         self.session.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) VibeBatchScheduler/1.0"})
         self.nonce = ""
         self._authenticate()
@@ -138,7 +142,7 @@ class VibeBatchScheduler:
             plan_data = json.load(f)
 
         clusters = plan_data.get("clusters", [])
-        base_date = datetime(2026, 9, 21)  # Starting from 2026-09-21
+        base_date = datetime(2026, 10, 8)  # Starting from 2026-10-08
 
         total_processed = 0
         print(f"\n========================================================")

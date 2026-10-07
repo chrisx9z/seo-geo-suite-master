@@ -54,7 +54,10 @@ class EnglishBatchScheduler:
             os.path.join(os.path.dirname(__file__), "..", "..", "cache", "scheduled_triptip_cc.json")
         )
         
+        import urllib3
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         self.session = requests.Session()
+        self.session.verify = False
         self.session.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) EnglishBatchScheduler/1.0"})
         self.nonce = ""
         self._authenticate()
@@ -288,7 +291,7 @@ class EnglishBatchScheduler:
             plan_data = json.load(f)
 
         clusters = plan_data.get("clusters", [])
-        base_date = datetime(2026, 9, 11)  # Starting tomorrow 2026-09-11
+        base_date = datetime(2026, 10, 8)  # Starting from 2026-10-08
 
         total_processed = 0
 

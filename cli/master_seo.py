@@ -90,7 +90,10 @@ def get_site(site_id):
     sys.exit(1)
 
 def get_site_session(site):
+    import urllib3
+    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
     session = requests.Session()
+    session.verify = False
     session.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Master-SEO-CLI/2.0"})
     
     host_ip = site.get("host_ip")
@@ -103,7 +106,6 @@ def get_site_session(site):
                 return orig_getaddrinfo(host_ip, port, *args, **kwargs)
             return orig_getaddrinfo(h, port, *args, **kwargs)
         socket.getaddrinfo = patched_getaddrinfo
-        session.verify = False
 
     admin_user = site.get("admin_user", os.getenv("WP_ADMIN_USER", "admin"))
     admin_pass = site.get("admin_pass") or site.get("admin_password") or os.getenv("WP_ADMIN_PASSWORD", "")
@@ -117,7 +119,7 @@ def get_site_session(site):
                         if val:
                             admin_pass = val
     r_login = session.post(f"{site['url']}/wp-login.php",
-        data={"log": admin_user, "pwd": admin_pass, "wp-submit": "Log In"}, timeout=20)
+        data={"log": admin_user, "pwd": admin_pass, "wp-submit": "Log In"}, timeout=25, verify=False)
     
     if "confirm_admin_email" in r_login.url or "confirm_admin_email" in r_login.text:
         try:
@@ -125,7 +127,7 @@ def get_site_session(site):
             links = [a.get("href") for a in soup.find_all("a", href=True)]
             remind_link = next((l for l in links if "remind_me_later" in l or "confirm_admin_email" in l), None)
             if remind_link:
-                session.get(remind_link, timeout=15)
+                session.get(remind_link, timeout=15, verify=False)
         except Exception:
             pass
 
@@ -880,6 +882,10 @@ def schedule_travel_site(site, plan_path=None, days=None, max_posts=None):
                 plan_path = os.path.join(base_dir, "docs", "MMDIDAU_30DAY_CONTENT_PLAN.json")
             elif "tobeigo" in site.get("site_id", "") or "tobeigo" in site.get("url", ""):
                 plan_path = os.path.join(base_dir, "docs", "TOBEIGO_30DAY_CONTENT_PLAN.json")
+            elif "zenshan" in site.get("site_id", "") or "zenshan" in site.get("url", ""):
+                plan_path = os.path.join(base_dir, "config", "zenshan_30day_content_plan.json")
+                if not os.path.exists(plan_path):
+                    plan_path = os.path.join(base_dir, "docs", "ZENSHAN_30DAY_CONTENT_PLAN.json")
             else:
                 plan_path = os.path.join(base_dir, "docs", f"{site.get('site_id')}_30DAY_CONTENT_PLAN.json")
 
@@ -918,7 +924,7 @@ def main():
         "audit-onpage", "schedule-travel", "clone-site",
         "audit-graph", "audit-arch", "audit-nav", "audit-sitemap-freshness", "generate-report",
         "citability", "audit-injection", "check-ai-bots", "check-sitemap", "audit-content",
-        "audit-redirects", "audit-page-network"
+        "audit-redirects", "audit-page-network", "schedule-10posts"
     ], help="Action to perform")
     parser.add_argument("--site", default=None, help="Site ID or domain to target (omit to apply to ALL sites)")
     parser.add_argument("--from-site", default="mmdidau", help="Source site ID to clone from (for clone-site)")
@@ -961,6 +967,39 @@ def main():
             print("Error: --url <competitor_url> is required for serp-gap.")
             sys.exit(1)
         analyze_serp_gap(args.url)
+        return
+
+    if args.command == "schedule-10posts":
+        from modules.travel_scheduler.network_10posts_scheduler import NetworkSchedulerManager
+        mgr = NetworkSchedulerManager()
+        if not args.site or args.site == "all":
+            if not args.days and not args.max_posts:
+                # Status overview
+                from modules.travel_scheduler.network_10posts_scheduler import SITE_SCHEDULER_REGISTRY
+                print(f"\n{'='*95}")
+                print(f" 🚀 MASTER AUTO SEO GEO SUITE — 10 POSTS/DAY NETWORK STATUS OVERVIEW")
+                print(f"{'='*95}")
+                print(f"{'Site ID':12} | {'URL':24} | {'Plan File':32} | {'Planned':7} | {'Scheduled':9}")
+                print(f"{'-'*12}-+-{'-'*24}-+-{'-'*32}-+-{'-'*7}-+-{'-'*9}")
+                for s in mgr.get_status_overview():
+                    print(f"{s['site_id']:12} | {s['url']:24} | {s['plan_file']:32} | {s['total_planned']:7} | {s['scheduled_in_cache']:9}")
+                print(f"{'='*95}\n")
+                return
+
+        target_days = None
+        if args.days and args.days.lower() != "all":
+            if "-" in str(args.days):
+                start, end = str(args.days).split("-")
+                target_days = list(range(int(start), int(end) + 1))
+            elif "," in str(args.days):
+                target_days = [int(x.strip()) for x in str(args.days).split(",")]
+            else:
+                target_days = [int(args.days)]
+
+        from modules.travel_scheduler.network_10posts_scheduler import SITE_SCHEDULER_REGISTRY
+        sites_to_run = list(SITE_SCHEDULER_REGISTRY.keys()) if (not args.site or args.site == "all") else [args.site]
+        for sid in sites_to_run:
+            mgr.run_site(sid, target_days=target_days, max_posts=args.max_posts)
         return
 
     targets = get_target_sites(args)

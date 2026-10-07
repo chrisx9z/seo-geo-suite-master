@@ -256,8 +256,14 @@ class WebsiteAuditor:
 
     def audit_redirects(self, domain_url: str, max_checks: int = 100) -> Dict[str, Any]:
         """Audits site-wide redirect chains and hops, detecting redirect loops and non-canonical hops."""
-        args = [domain_url, "--max-checks", str(max_checks), "--json"]
-        return self._run_upstream_script("redirect_checker.py", args, timeout=90)
+        res = self._run_upstream_script("redirect_checker.py", [domain_url, "--max-checks", str(max_checks), "--json"], timeout=90)
+        if isinstance(res, dict) and res.get("status") != "error":
+            return res
+        try:
+            from modules.redirect_sentinel import check_redirects
+            return check_redirects(domain_url)
+        except Exception:
+            return res
 
     def audit_page_network(self, url: str, probe: bool = True, llms_txt: bool = True) -> Dict[str, Any]:
         """Audits network calls of rendered pages: open first-party write endpoints and tag load."""

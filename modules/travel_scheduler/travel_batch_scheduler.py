@@ -30,7 +30,10 @@ class TravelBatchScheduler:
         self.plan_file = plan_file
         self.log_file = log_file or os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "cache", f"scheduled_{self._get_host_slug()}.json"))
         
+        import urllib3
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         self.session = requests.Session()
+        self.session.verify = False
         self.session.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) TravelBatchScheduler/1.0"})
         self.nonce = ""
         self._authenticate()

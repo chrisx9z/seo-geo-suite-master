@@ -1,785 +1,2581 @@
 [
   {
     "day": 1,
-    "date": "2026-09-20",
+    "date": "2026-10-08",
     "posts": [
       {
-        "title": "1000 loài hoa đẹp nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "1000 loài hoa đẹp nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của 1000 loài hoa đẹp nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of 1000 loài hoa đẹp nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-20T08:00:00"
+        "title": "Top 10 Top Kỷ Lục Guinness Kỳ Lạ Nhất Hành Tinh: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Top Kỷ Lục Guinness Kỳ Lạ Nhất Hành Tinh",
+        "slug": "top-10-top-ky-luc-guinness-ky-la-nhat-hanh-tinh-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-08T07:00:00",
+        "category_id": 1,
+        "lsi": "top kỷ lục guinness kỳ lạ nhất hành tinh, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "1000 câu đố khó nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "1000 câu đố khó nhất thế giới",
-        "secondary_keywords": [
-          "1000 câu đố khó nhất thế giới có đáp an"
-        ],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của 1000 câu đố khó nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of 1000 câu đố khó nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-20T11:30:00"
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Top Kỷ Lục Guinness Kỳ Lạ Nhất Hành Tinh",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Top Kỷ Lục Guinness Kỳ Lạ Nhất Hành Tinh",
+        "slug": "ky-luc-dung-dau-bang-ve-top-ky-luc-guinness-ky-la-nhat-hanh-tinh",
+        "schedule_date": "2026-10-08T08:30:00",
+        "category_id": 1,
+        "lsi": "top kỷ lục guinness kỳ lạ nhất hành tinh, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Top 50 nền kinh tế mạnh nhất the giới 2025",
-        "focus_keyword": "top 50 nền kinh tế mạnh nhất the giới 2025",
-        "secondary_keywords": [
-          "top 50 nền kinh tế mạnh nhất the giới"
-        ],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của top 50 nền kinh tế mạnh nhất the giới 2025.",
-        "image_prompt": "Professional photography, ultra high quality of top 50 nền kinh tế mạnh nhất the giới 2025, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-20T14:30:00"
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Top Kỷ Lục Guinness Kỳ Lạ Nhất Hành Tinh",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Top Kỷ Lục Guinness Kỳ Lạ Nhất Hành Tinh",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-top-ky-luc-guinness-ky-la-nhat-hanh-tinh",
+        "schedule_date": "2026-10-08T10:00:00",
+        "category_id": 1,
+        "lsi": "top kỷ lục guinness kỳ lạ nhất hành tinh, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Top 100 người giàu nhất việt nam",
-        "focus_keyword": "top 100 người giàu nhất việt nam",
-        "secondary_keywords": [
-          "top 100 người giàu nhất việt nam 2025"
-        ],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của top 100 người giàu nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of top 100 người giàu nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-20T17:30:00"
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Top Kỷ Lục Guinness Kỳ Lạ Nhất Hành Tinh",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Top Kỷ Lục Guinness Kỳ Lạ Nhất Hành Tinh",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-top-ky-luc-guinness-ky-la-nhat-hanh-tinh",
+        "schedule_date": "2026-10-08T11:30:00",
+        "category_id": 1,
+        "lsi": "top kỷ lục guinness kỳ lạ nhất hành tinh, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Phim ma kinh dị nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "phim ma kinh dị nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của phim ma kinh dị nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of phim ma kinh dị nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-20T20:00:00"
+        "title": "Sự Thật Đằng Sau Kỷ Lục Top Kỷ Lục Guinness Kỳ Lạ Nhất Hành Tinh Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Top Kỷ Lục Guinness Kỳ Lạ Nhất Hành Tinh Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-top-ky-luc-guinness-ky-la-nhat-hanh-tinh-ban-chua-biet",
+        "schedule_date": "2026-10-08T13:00:00",
+        "category_id": 1,
+        "lsi": "top kỷ lục guinness kỳ lạ nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Top Kỷ Lục Guinness Kỳ Lạ Nhất Hành Tinh",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Top Kỷ Lục Guinness Kỳ Lạ Nhất Hành Tinh",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-top-ky-luc-guinness-ky-la-nhat-hanh-tinh",
+        "schedule_date": "2026-10-08T14:30:00",
+        "category_id": 1,
+        "lsi": "top kỷ lục guinness kỳ lạ nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Top Kỷ Lục Guinness Kỳ Lạ Nhất Hành Tinh",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Top Kỷ Lục Guinness Kỳ Lạ Nhất Hành Tinh",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-top-ky-luc-guinness-ky-la-nhat-hanh-tinh",
+        "schedule_date": "2026-10-08T16:00:00",
+        "category_id": 1,
+        "lsi": "top kỷ lục guinness kỳ lạ nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Top Kỷ Lục Guinness Kỳ Lạ Nhất Hành Tinh",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Top Kỷ Lục Guinness Kỳ Lạ Nhất Hành Tinh",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-top-ky-luc-guinness-ky-la-nhat-hanh-tinh",
+        "schedule_date": "2026-10-08T17:30:00",
+        "category_id": 1,
+        "lsi": "top kỷ lục guinness kỳ lạ nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Top Kỷ Lục Guinness Kỳ Lạ Nhất Hành Tinh",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Top Kỷ Lục Guinness Kỳ Lạ Nhất Hành Tinh",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-top-ky-luc-guinness-ky-la-nhat-hanh-tinh",
+        "schedule_date": "2026-10-08T19:00:00",
+        "category_id": 1,
+        "lsi": "top kỷ lục guinness kỳ lạ nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Top Kỷ Lục Guinness Kỳ Lạ Nhất Hành Tinh: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Top Kỷ Lục Guinness Kỳ Lạ Nhất Hành Tinh",
+        "slug": "cam-nang-doc-gia-ve-top-ky-luc-guinness-ky-la-nhat-hanh-tinh-toan-canh-a-z",
+        "schedule_date": "2026-10-08T20:30:00",
+        "category_id": 1,
+        "lsi": "top kỷ lục guinness kỳ lạ nhất hành tinh, ky luc the gioi, chuyen la 2026"
       }
     ]
   },
   {
     "day": 2,
-    "date": "2026-09-21",
+    "date": "2026-10-09",
     "posts": [
       {
-        "title": "Top 10 kem chống nắng tốt nhất the giới",
-        "focus_keyword": "top 10 kem chống nắng tốt nhất the giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của top 10 kem chống nắng tốt nhất the giới.",
-        "image_prompt": "Professional photography, ultra high quality of top 10 kem chống nắng tốt nhất the giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-21T08:00:00"
+        "title": "Top 10 Những Đỉnh Núi Cao Nhất & Vực Sâu Nhất Đại Dương: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Những Đỉnh Núi Cao Nhất & Vực Sâu Nhất Đại Dương",
+        "slug": "top-10-nhung-dinh-nui-cao-nhat-vuc-sau-nhat-dai-duong-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-09T07:00:00",
+        "category_id": 1,
+        "lsi": "những đỉnh núi cao nhất & vực sâu nhất đại dương, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Phạm nhật vượng giàu thứ máy thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "phạm nhật vượng giàu thứ máy thế giới",
-        "secondary_keywords": [
-          "phạm nhật vượng giàu thứ máy thế giới 2025"
-        ],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của phạm nhật vượng giàu thứ máy thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of phạm nhật vượng giàu thứ máy thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-21T11:30:00"
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Những Đỉnh Núi Cao Nhất & Vực Sâu Nhất Đại Dương",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Những Đỉnh Núi Cao Nhất & Vực Sâu Nhất Đại Dương",
+        "slug": "ky-luc-dung-dau-bang-ve-nhung-dinh-nui-cao-nhat-vuc-sau-nhat-dai-duong",
+        "schedule_date": "2026-10-09T08:30:00",
+        "category_id": 1,
+        "lsi": "những đỉnh núi cao nhất & vực sâu nhất đại dương, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Top 10 bài hát hay nhất việt nam",
-        "focus_keyword": "top 10 bài hát hay nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của top 10 bài hát hay nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of top 10 bài hát hay nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-21T14:30:00"
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Đỉnh Núi Cao Nhất & Vực Sâu Nhất Đại Dương",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Đỉnh Núi Cao Nhất & Vực Sâu Nhất Đại Dương",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-nhung-dinh-nui-cao-nhat-vuc-sau-nhat-dai-duong",
+        "schedule_date": "2026-10-09T10:00:00",
+        "category_id": 1,
+        "lsi": "những đỉnh núi cao nhất & vực sâu nhất đại dương, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Truyện cổ tích việt nam hay nhất – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "truyện cổ tích việt nam hay nhất",
-        "secondary_keywords": [
-          "truyện cổ tích việt nam xưa hay nhất"
-        ],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của truyện cổ tích việt nam hay nhất.",
-        "image_prompt": "Professional photography, ultra high quality of truyện cổ tích việt nam hay nhất, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-21T17:30:00"
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Đỉnh Núi Cao Nhất & Vực Sâu Nhất Đại Dương",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Đỉnh Núi Cao Nhất & Vực Sâu Nhất Đại Dương",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-nhung-dinh-nui-cao-nhat-vuc-sau-nhat-dai-duong",
+        "schedule_date": "2026-10-09T11:30:00",
+        "category_id": 1,
+        "lsi": "những đỉnh núi cao nhất & vực sâu nhất đại dương, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Phim ma kinh dị nhất the giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "phim ma kinh dị nhất the giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của phim ma kinh dị nhất the giới.",
-        "image_prompt": "Professional photography, ultra high quality of phim ma kinh dị nhất the giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-21T20:00:00"
+        "title": "Sự Thật Đằng Sau Kỷ Lục Những Đỉnh Núi Cao Nhất & Vực Sâu Nhất Đại Dương Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Những Đỉnh Núi Cao Nhất & Vực Sâu Nhất Đại Dương Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-nhung-dinh-nui-cao-nhat-vuc-sau-nhat-dai-duong-ban-chua-biet",
+        "schedule_date": "2026-10-09T13:00:00",
+        "category_id": 1,
+        "lsi": "những đỉnh núi cao nhất & vực sâu nhất đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Đỉnh Núi Cao Nhất & Vực Sâu Nhất Đại Dương",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Đỉnh Núi Cao Nhất & Vực Sâu Nhất Đại Dương",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-nhung-dinh-nui-cao-nhat-vuc-sau-nhat-dai-duong",
+        "schedule_date": "2026-10-09T14:30:00",
+        "category_id": 1,
+        "lsi": "những đỉnh núi cao nhất & vực sâu nhất đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Những Đỉnh Núi Cao Nhất & Vực Sâu Nhất Đại Dương",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Những Đỉnh Núi Cao Nhất & Vực Sâu Nhất Đại Dương",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-nhung-dinh-nui-cao-nhat-vuc-sau-nhat-dai-duong",
+        "schedule_date": "2026-10-09T16:00:00",
+        "category_id": 1,
+        "lsi": "những đỉnh núi cao nhất & vực sâu nhất đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Đỉnh Núi Cao Nhất & Vực Sâu Nhất Đại Dương",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Đỉnh Núi Cao Nhất & Vực Sâu Nhất Đại Dương",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-nhung-dinh-nui-cao-nhat-vuc-sau-nhat-dai-duong",
+        "schedule_date": "2026-10-09T17:30:00",
+        "category_id": 1,
+        "lsi": "những đỉnh núi cao nhất & vực sâu nhất đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Đỉnh Núi Cao Nhất & Vực Sâu Nhất Đại Dương",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Đỉnh Núi Cao Nhất & Vực Sâu Nhất Đại Dương",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-nhung-dinh-nui-cao-nhat-vuc-sau-nhat-dai-duong",
+        "schedule_date": "2026-10-09T19:00:00",
+        "category_id": 1,
+        "lsi": "những đỉnh núi cao nhất & vực sâu nhất đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Những Đỉnh Núi Cao Nhất & Vực Sâu Nhất Đại Dương: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Những Đỉnh Núi Cao Nhất & Vực Sâu Nhất Đại Dương",
+        "slug": "cam-nang-doc-gia-ve-nhung-dinh-nui-cao-nhat-vuc-sau-nhat-dai-duong-toan-canh-a-z",
+        "schedule_date": "2026-10-09T20:30:00",
+        "category_id": 1,
+        "lsi": "những đỉnh núi cao nhất & vực sâu nhất đại dương, ky luc the gioi, chuyen la 2026"
       }
     ]
   },
   {
     "day": 3,
-    "date": "2026-09-22",
+    "date": "2026-10-10",
     "posts": [
       {
-        "title": "Top 100 quốc gia giàu nhất thế giới",
-        "focus_keyword": "top 100 quốc gia giàu nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của top 100 quốc gia giàu nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of top 100 quốc gia giàu nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-22T08:00:00"
+        "title": "Top 10 Kỷ Lục Việt Nam: Những Công Trình Đồ Sộ Nhất: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Kỷ Lục Việt Nam",
+        "slug": "top-10-ky-luc-viet-nam-nhung-cong-trinh-do-so-nhat-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-10T07:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục việt nam: những công trình đồ sộ nhất, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Gà chọi đẹp nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "gà chọi đẹp nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của gà chọi đẹp nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of gà chọi đẹp nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-22T11:30:00"
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Kỷ Lục Việt Nam: Những Công Trình Đồ Sộ Nhất",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Kỷ Lục Việt Nam",
+        "slug": "ky-luc-dung-dau-bang-ve-ky-luc-viet-nam-nhung-cong-trinh-do-so-nhat",
+        "schedule_date": "2026-10-10T08:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục việt nam: những công trình đồ sộ nhất, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Top 100 người đẹp trai nhất the giới 2025",
-        "focus_keyword": "top 100 người đẹp trai nhất the giới 2025",
-        "secondary_keywords": [
-          "top 100 người đẹp trai nhất the giới 2026"
-        ],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của top 100 người đẹp trai nhất the giới 2025.",
-        "image_prompt": "Professional photography, ultra high quality of top 100 người đẹp trai nhất the giới 2025, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-22T14:30:00"
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Kỷ Lục Việt Nam: Những Công Trình Đồ Sộ Nhất",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Kỷ Lục Việt Nam",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-ky-luc-viet-nam-nhung-cong-trinh-do-so-nhat",
+        "schedule_date": "2026-10-10T10:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục việt nam: những công trình đồ sộ nhất, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Thủy điện lớn nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "thủy điện lớn nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của thủy điện lớn nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of thủy điện lớn nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-22T17:30:00"
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Kỷ Lục Việt Nam: Những Công Trình Đồ Sộ Nhất",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Kỷ Lục Việt Nam",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-ky-luc-viet-nam-nhung-cong-trinh-do-so-nhat",
+        "schedule_date": "2026-10-10T11:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục việt nam: những công trình đồ sộ nhất, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Hòn đảo lớn nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "hòn đảo lớn nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của hòn đảo lớn nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of hòn đảo lớn nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-22T20:00:00"
+        "title": "Sự Thật Đằng Sau Kỷ Lục Kỷ Lục Việt Nam: Những Công Trình Đồ Sộ Nhất Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Kỷ Lục Việt Nam",
+        "slug": "su-that-dang-sau-ky-luc-ky-luc-viet-nam-nhung-cong-trinh-do-so-nhat-ban-chua-biet",
+        "schedule_date": "2026-10-10T13:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục việt nam: những công trình đồ sộ nhất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Kỷ Lục Việt Nam: Những Công Trình Đồ Sộ Nhất",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Kỷ Lục Việt Nam",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-ky-luc-viet-nam-nhung-cong-trinh-do-so-nhat",
+        "schedule_date": "2026-10-10T14:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục việt nam: những công trình đồ sộ nhất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Kỷ Lục Việt Nam: Những Công Trình Đồ Sộ Nhất",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Kỷ Lục Việt Nam",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-ky-luc-viet-nam-nhung-cong-trinh-do-so-nhat",
+        "schedule_date": "2026-10-10T16:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục việt nam: những công trình đồ sộ nhất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Kỷ Lục Việt Nam: Những Công Trình Đồ Sộ Nhất",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Kỷ Lục Việt Nam",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-ky-luc-viet-nam-nhung-cong-trinh-do-so-nhat",
+        "schedule_date": "2026-10-10T17:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục việt nam: những công trình đồ sộ nhất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Kỷ Lục Việt Nam: Những Công Trình Đồ Sộ Nhất",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Kỷ Lục Việt Nam",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-ky-luc-viet-nam-nhung-cong-trinh-do-so-nhat",
+        "schedule_date": "2026-10-10T19:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục việt nam: những công trình đồ sộ nhất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Kỷ Lục Việt Nam: Những Công Trình Đồ Sộ Nhất: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Kỷ Lục Việt Nam",
+        "slug": "cam-nang-doc-gia-ve-ky-luc-viet-nam-nhung-cong-trinh-do-so-nhat-toan-canh-a-z",
+        "schedule_date": "2026-10-10T20:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục việt nam: những công trình đồ sộ nhất, ky luc the gioi, chuyen la 2026"
       }
     ]
   },
   {
     "day": 4,
-    "date": "2026-09-23",
+    "date": "2026-10-11",
     "posts": [
       {
-        "title": "Nhóm nhạc nổi tiếng nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "nhóm nhạc nổi tiếng nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của nhóm nhạc nổi tiếng nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of nhóm nhạc nổi tiếng nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-23T08:00:00"
+        "title": "Top 10 Những Loài Động Vật Nhanh Nhất & Mạnh Nhất Tự Nhiên: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Những Loài Động Vật Nhanh Nhất & Mạnh Nhất Tự Nhiên",
+        "slug": "top-10-nhung-loai-dong-vat-nhanh-nhat-manh-nhat-tu-nhien-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-11T07:00:00",
+        "category_id": 1,
+        "lsi": "những loài động vật nhanh nhất & mạnh nhất tự nhiên, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Con chó xấu nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "con chó xấu nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của con chó xấu nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of con chó xấu nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-23T11:30:00"
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Những Loài Động Vật Nhanh Nhất & Mạnh Nhất Tự Nhiên",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Những Loài Động Vật Nhanh Nhất & Mạnh Nhất Tự Nhiên",
+        "slug": "ky-luc-dung-dau-bang-ve-nhung-loai-dong-vat-nhanh-nhat-manh-nhat-tu-nhien",
+        "schedule_date": "2026-10-11T08:30:00",
+        "category_id": 1,
+        "lsi": "những loài động vật nhanh nhất & mạnh nhất tự nhiên, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Trò chơi khó nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "trò chơi khó nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của trò chơi khó nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of trò chơi khó nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-23T14:30:00"
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Loài Động Vật Nhanh Nhất & Mạnh Nhất Tự Nhiên",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Loài Động Vật Nhanh Nhất & Mạnh Nhất Tự Nhiên",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-nhung-loai-dong-vat-nhanh-nhat-manh-nhat-tu-nhien",
+        "schedule_date": "2026-10-11T10:00:00",
+        "category_id": 1,
+        "lsi": "những loài động vật nhanh nhất & mạnh nhất tự nhiên, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Tin thể thao thế giới mới nhất – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "tin thể thao thế giới mới nhất",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của tin thể thao thế giới mới nhất.",
-        "image_prompt": "Professional photography, ultra high quality of tin thể thao thế giới mới nhất, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-23T17:30:00"
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Loài Động Vật Nhanh Nhất & Mạnh Nhất Tự Nhiên",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Loài Động Vật Nhanh Nhất & Mạnh Nhất Tự Nhiên",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-nhung-loai-dong-vat-nhanh-nhat-manh-nhat-tu-nhien",
+        "schedule_date": "2026-10-11T11:30:00",
+        "category_id": 1,
+        "lsi": "những loài động vật nhanh nhất & mạnh nhất tự nhiên, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Chó nhỏ nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "chó nhỏ nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của chó nhỏ nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of chó nhỏ nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-23T20:00:00"
+        "title": "Sự Thật Đằng Sau Kỷ Lục Những Loài Động Vật Nhanh Nhất & Mạnh Nhất Tự Nhiên Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Những Loài Động Vật Nhanh Nhất & Mạnh Nhất Tự Nhiên Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-nhung-loai-dong-vat-nhanh-nhat-manh-nhat-tu-nhien-ban-chua-biet",
+        "schedule_date": "2026-10-11T13:00:00",
+        "category_id": 1,
+        "lsi": "những loài động vật nhanh nhất & mạnh nhất tự nhiên, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Loài Động Vật Nhanh Nhất & Mạnh Nhất Tự Nhiên",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Loài Động Vật Nhanh Nhất & Mạnh Nhất Tự Nhiên",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-nhung-loai-dong-vat-nhanh-nhat-manh-nhat-tu-nhien",
+        "schedule_date": "2026-10-11T14:30:00",
+        "category_id": 1,
+        "lsi": "những loài động vật nhanh nhất & mạnh nhất tự nhiên, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Những Loài Động Vật Nhanh Nhất & Mạnh Nhất Tự Nhiên",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Những Loài Động Vật Nhanh Nhất & Mạnh Nhất Tự Nhiên",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-nhung-loai-dong-vat-nhanh-nhat-manh-nhat-tu-nhien",
+        "schedule_date": "2026-10-11T16:00:00",
+        "category_id": 1,
+        "lsi": "những loài động vật nhanh nhất & mạnh nhất tự nhiên, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Loài Động Vật Nhanh Nhất & Mạnh Nhất Tự Nhiên",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Loài Động Vật Nhanh Nhất & Mạnh Nhất Tự Nhiên",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-nhung-loai-dong-vat-nhanh-nhat-manh-nhat-tu-nhien",
+        "schedule_date": "2026-10-11T17:30:00",
+        "category_id": 1,
+        "lsi": "những loài động vật nhanh nhất & mạnh nhất tự nhiên, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Loài Động Vật Nhanh Nhất & Mạnh Nhất Tự Nhiên",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Loài Động Vật Nhanh Nhất & Mạnh Nhất Tự Nhiên",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-nhung-loai-dong-vat-nhanh-nhat-manh-nhat-tu-nhien",
+        "schedule_date": "2026-10-11T19:00:00",
+        "category_id": 1,
+        "lsi": "những loài động vật nhanh nhất & mạnh nhất tự nhiên, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Những Loài Động Vật Nhanh Nhất & Mạnh Nhất Tự Nhiên: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Những Loài Động Vật Nhanh Nhất & Mạnh Nhất Tự Nhiên",
+        "slug": "cam-nang-doc-gia-ve-nhung-loai-dong-vat-nhanh-nhat-manh-nhat-tu-nhien-toan-canh-a-z",
+        "schedule_date": "2026-10-11T20:30:00",
+        "category_id": 1,
+        "lsi": "những loài động vật nhanh nhất & mạnh nhất tự nhiên, ky luc the gioi, chuyen la 2026"
       }
     ]
   },
   {
     "day": 5,
-    "date": "2026-09-24",
+    "date": "2026-10-12",
     "posts": [
       {
-        "title": "Những loài hoa đẹp nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "những loài hoa đẹp nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của những loài hoa đẹp nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of những loài hoa đẹp nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-24T08:00:00"
+        "title": "Top 10 Bí Ẩn Tam Giác Quỷ Bermuda & Những Con Tàu Mất Tích: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Bí Ẩn Tam Giác Quỷ Bermuda & Những Con Tàu Mất Tích",
+        "slug": "top-10-bi-an-tam-giac-quy-bermuda-nhung-con-tau-mat-tich-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-12T07:00:00",
+        "category_id": 1,
+        "lsi": "bí ẩn tam giác quỷ bermuda & những con tàu mất tích, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Các sàn giao dịch tiền ảo lớn nhất the giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "các sàn giao dịch tiền ảo lớn nhất the giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của các sàn giao dịch tiền ảo lớn nhất the giới.",
-        "image_prompt": "Professional photography, ultra high quality of các sàn giao dịch tiền ảo lớn nhất the giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-24T11:30:00"
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Bí Ẩn Tam Giác Quỷ Bermuda & Những Con Tàu Mất Tích",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Bí Ẩn Tam Giác Quỷ Bermuda & Những Con Tàu Mất Tích",
+        "slug": "ky-luc-dung-dau-bang-ve-bi-an-tam-giac-quy-bermuda-nhung-con-tau-mat-tich",
+        "schedule_date": "2026-10-12T08:30:00",
+        "category_id": 1,
+        "lsi": "bí ẩn tam giác quỷ bermuda & những con tàu mất tích, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Tổng thống trẻ nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "tổng thống trẻ nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của tổng thống trẻ nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of tổng thống trẻ nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-24T14:30:00"
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Bí Ẩn Tam Giác Quỷ Bermuda & Những Con Tàu Mất Tích",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Bí Ẩn Tam Giác Quỷ Bermuda & Những Con Tàu Mất Tích",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-bi-an-tam-giac-quy-bermuda-nhung-con-tau-mat-tich",
+        "schedule_date": "2026-10-12T10:00:00",
+        "category_id": 1,
+        "lsi": "bí ẩn tam giác quỷ bermuda & những con tàu mất tích, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Tình hình thế giới mới nhất – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "tình hình thế giới mới nhất",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của tình hình thế giới mới nhất.",
-        "image_prompt": "Professional photography, ultra high quality of tình hình thế giới mới nhất, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-24T17:30:00"
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Bí Ẩn Tam Giác Quỷ Bermuda & Những Con Tàu Mất Tích",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Bí Ẩn Tam Giác Quỷ Bermuda & Những Con Tàu Mất Tích",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-bi-an-tam-giac-quy-bermuda-nhung-con-tau-mat-tich",
+        "schedule_date": "2026-10-12T11:30:00",
+        "category_id": 1,
+        "lsi": "bí ẩn tam giác quỷ bermuda & những con tàu mất tích, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Phim ma đáng sợ nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "phim ma đáng sợ nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của phim ma đáng sợ nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of phim ma đáng sợ nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-24T20:00:00"
+        "title": "Sự Thật Đằng Sau Kỷ Lục Bí Ẩn Tam Giác Quỷ Bermuda & Những Con Tàu Mất Tích Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Bí Ẩn Tam Giác Quỷ Bermuda & Những Con Tàu Mất Tích Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-bi-an-tam-giac-quy-bermuda-nhung-con-tau-mat-tich-ban-chua-biet",
+        "schedule_date": "2026-10-12T13:00:00",
+        "category_id": 1,
+        "lsi": "bí ẩn tam giác quỷ bermuda & những con tàu mất tích, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Bí Ẩn Tam Giác Quỷ Bermuda & Những Con Tàu Mất Tích",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Bí Ẩn Tam Giác Quỷ Bermuda & Những Con Tàu Mất Tích",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-bi-an-tam-giac-quy-bermuda-nhung-con-tau-mat-tich",
+        "schedule_date": "2026-10-12T14:30:00",
+        "category_id": 1,
+        "lsi": "bí ẩn tam giác quỷ bermuda & những con tàu mất tích, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Bí Ẩn Tam Giác Quỷ Bermuda & Những Con Tàu Mất Tích",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Bí Ẩn Tam Giác Quỷ Bermuda & Những Con Tàu Mất Tích",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-bi-an-tam-giac-quy-bermuda-nhung-con-tau-mat-tich",
+        "schedule_date": "2026-10-12T16:00:00",
+        "category_id": 1,
+        "lsi": "bí ẩn tam giác quỷ bermuda & những con tàu mất tích, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Bí Ẩn Tam Giác Quỷ Bermuda & Những Con Tàu Mất Tích",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Bí Ẩn Tam Giác Quỷ Bermuda & Những Con Tàu Mất Tích",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-bi-an-tam-giac-quy-bermuda-nhung-con-tau-mat-tich",
+        "schedule_date": "2026-10-12T17:30:00",
+        "category_id": 1,
+        "lsi": "bí ẩn tam giác quỷ bermuda & những con tàu mất tích, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Bí Ẩn Tam Giác Quỷ Bermuda & Những Con Tàu Mất Tích",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Bí Ẩn Tam Giác Quỷ Bermuda & Những Con Tàu Mất Tích",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-bi-an-tam-giac-quy-bermuda-nhung-con-tau-mat-tich",
+        "schedule_date": "2026-10-12T19:00:00",
+        "category_id": 1,
+        "lsi": "bí ẩn tam giác quỷ bermuda & những con tàu mất tích, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Bí Ẩn Tam Giác Quỷ Bermuda & Những Con Tàu Mất Tích: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Bí Ẩn Tam Giác Quỷ Bermuda & Những Con Tàu Mất Tích",
+        "slug": "cam-nang-doc-gia-ve-bi-an-tam-giac-quy-bermuda-nhung-con-tau-mat-tich-toan-canh-a-z",
+        "schedule_date": "2026-10-12T20:30:00",
+        "category_id": 1,
+        "lsi": "bí ẩn tam giác quỷ bermuda & những con tàu mất tích, ky luc the gioi, chuyen la 2026"
       }
     ]
   },
   {
     "day": 6,
-    "date": "2026-09-25",
+    "date": "2026-10-13",
     "posts": [
       {
-        "title": "Game hay nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "game hay nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của game hay nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of game hay nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-25T08:00:00"
+        "title": "Top 10 Những Cây Cầu Vượt Biển Dài Nhất Thế Giới: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Những Cây Cầu Vượt Biển Dài Nhất Thế Giới",
+        "slug": "top-10-nhung-cay-cau-vuot-bien-dai-nhat-the-gioi-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-13T07:00:00",
+        "category_id": 1,
+        "lsi": "những cây cầu vượt biển dài nhất thế giới, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Tin nóng thế giới mới nhất – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "tin nóng thế giới mới nhất",
-        "secondary_keywords": [
-          "tin nóng thế giới mới nhất hôm nay"
-        ],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của tin nóng thế giới mới nhất.",
-        "image_prompt": "Professional photography, ultra high quality of tin nóng thế giới mới nhất, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-25T11:30:00"
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Những Cây Cầu Vượt Biển Dài Nhất Thế Giới",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Những Cây Cầu Vượt Biển Dài Nhất Thế Giới",
+        "slug": "ky-luc-dung-dau-bang-ve-nhung-cay-cau-vuot-bien-dai-nhat-the-gioi",
+        "schedule_date": "2026-10-13T08:30:00",
+        "category_id": 1,
+        "lsi": "những cây cầu vượt biển dài nhất thế giới, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Họ nào nhiều nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "họ nào nhiều nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của họ nào nhiều nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of họ nào nhiều nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-25T14:30:00"
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Cây Cầu Vượt Biển Dài Nhất Thế Giới",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Cây Cầu Vượt Biển Dài Nhất Thế Giới",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-nhung-cay-cau-vuot-bien-dai-nhat-the-gioi",
+        "schedule_date": "2026-10-13T10:00:00",
+        "category_id": 1,
+        "lsi": "những cây cầu vượt biển dài nhất thế giới, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Thành phố đáng sống nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "thành phố đáng sống nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của thành phố đáng sống nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of thành phố đáng sống nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-25T17:30:00"
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Cây Cầu Vượt Biển Dài Nhất Thế Giới",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Cây Cầu Vượt Biển Dài Nhất Thế Giới",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-nhung-cay-cau-vuot-bien-dai-nhat-the-gioi",
+        "schedule_date": "2026-10-13T11:30:00",
+        "category_id": 1,
+        "lsi": "những cây cầu vượt biển dài nhất thế giới, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Sân bay lớn nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "sân bay lớn nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của sân bay lớn nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of sân bay lớn nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-25T20:00:00"
+        "title": "Sự Thật Đằng Sau Kỷ Lục Những Cây Cầu Vượt Biển Dài Nhất Thế Giới Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Những Cây Cầu Vượt Biển Dài Nhất Thế Giới Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-nhung-cay-cau-vuot-bien-dai-nhat-the-gioi-ban-chua-biet",
+        "schedule_date": "2026-10-13T13:00:00",
+        "category_id": 1,
+        "lsi": "những cây cầu vượt biển dài nhất thế giới, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Cây Cầu Vượt Biển Dài Nhất Thế Giới",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Cây Cầu Vượt Biển Dài Nhất Thế Giới",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-nhung-cay-cau-vuot-bien-dai-nhat-the-gioi",
+        "schedule_date": "2026-10-13T14:30:00",
+        "category_id": 1,
+        "lsi": "những cây cầu vượt biển dài nhất thế giới, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Những Cây Cầu Vượt Biển Dài Nhất Thế Giới",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Những Cây Cầu Vượt Biển Dài Nhất Thế Giới",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-nhung-cay-cau-vuot-bien-dai-nhat-the-gioi",
+        "schedule_date": "2026-10-13T16:00:00",
+        "category_id": 1,
+        "lsi": "những cây cầu vượt biển dài nhất thế giới, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Cây Cầu Vượt Biển Dài Nhất Thế Giới",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Cây Cầu Vượt Biển Dài Nhất Thế Giới",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-nhung-cay-cau-vuot-bien-dai-nhat-the-gioi",
+        "schedule_date": "2026-10-13T17:30:00",
+        "category_id": 1,
+        "lsi": "những cây cầu vượt biển dài nhất thế giới, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Cây Cầu Vượt Biển Dài Nhất Thế Giới",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Cây Cầu Vượt Biển Dài Nhất Thế Giới",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-nhung-cay-cau-vuot-bien-dai-nhat-the-gioi",
+        "schedule_date": "2026-10-13T19:00:00",
+        "category_id": 1,
+        "lsi": "những cây cầu vượt biển dài nhất thế giới, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Những Cây Cầu Vượt Biển Dài Nhất Thế Giới: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Những Cây Cầu Vượt Biển Dài Nhất Thế Giới",
+        "slug": "cam-nang-doc-gia-ve-nhung-cay-cau-vuot-bien-dai-nhat-the-gioi-toan-canh-a-z",
+        "schedule_date": "2026-10-13T20:30:00",
+        "category_id": 1,
+        "lsi": "những cây cầu vượt biển dài nhất thế giới, ky luc the gioi, chuyen la 2026"
       }
     ]
   },
   {
     "day": 7,
-    "date": "2026-09-26",
+    "date": "2026-10-14",
     "posts": [
       {
-        "title": "Cầu nào dài nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "cầu nào dài nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của cầu nào dài nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of cầu nào dài nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-26T08:00:00"
+        "title": "Top 10 Kỷ Lục Về Trí Nhớ & Những Bộ Não Thiên Tài: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Kỷ Lục Về Trí Nhớ & Những Bộ Não Thiên Tài",
+        "slug": "top-10-ky-luc-ve-tri-nho-nhung-bo-nao-thien-tai-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-14T07:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục về trí nhớ & những bộ não thiên tài, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Cáp treo dài nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "cáp treo dài nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của cáp treo dài nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of cáp treo dài nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-26T11:30:00"
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Kỷ Lục Về Trí Nhớ & Những Bộ Não Thiên Tài",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Kỷ Lục Về Trí Nhớ & Những Bộ Não Thiên Tài",
+        "slug": "ky-luc-dung-dau-bang-ve-ky-luc-ve-tri-nho-nhung-bo-nao-thien-tai",
+        "schedule_date": "2026-10-14T08:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục về trí nhớ & những bộ não thiên tài, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Hình ảnh bác hồ đẹp nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "hình ảnh bác hồ đẹp nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của hình ảnh bác hồ đẹp nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of hình ảnh bác hồ đẹp nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-26T14:30:00"
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Kỷ Lục Về Trí Nhớ & Những Bộ Não Thiên Tài",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Kỷ Lục Về Trí Nhớ & Những Bộ Não Thiên Tài",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-ky-luc-ve-tri-nho-nhung-bo-nao-thien-tai",
+        "schedule_date": "2026-10-14T10:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục về trí nhớ & những bộ não thiên tài, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Top 4 ngân hàng lớn nhất việt nam",
-        "focus_keyword": "top 4 ngân hàng lớn nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của top 4 ngân hàng lớn nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of top 4 ngân hàng lớn nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-26T17:30:00"
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Kỷ Lục Về Trí Nhớ & Những Bộ Não Thiên Tài",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Kỷ Lục Về Trí Nhớ & Những Bộ Não Thiên Tài",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-ky-luc-ve-tri-nho-nhung-bo-nao-thien-tai",
+        "schedule_date": "2026-10-14T11:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục về trí nhớ & những bộ não thiên tài, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Thầy thuốc đông y giỏi nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "thầy thuốc đông y giỏi nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của thầy thuốc đông y giỏi nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of thầy thuốc đông y giỏi nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-26T20:00:00"
+        "title": "Sự Thật Đằng Sau Kỷ Lục Kỷ Lục Về Trí Nhớ & Những Bộ Não Thiên Tài Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Kỷ Lục Về Trí Nhớ & Những Bộ Não Thiên Tài Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-ky-luc-ve-tri-nho-nhung-bo-nao-thien-tai-ban-chua-biet",
+        "schedule_date": "2026-10-14T13:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục về trí nhớ & những bộ não thiên tài, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Kỷ Lục Về Trí Nhớ & Những Bộ Não Thiên Tài",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Kỷ Lục Về Trí Nhớ & Những Bộ Não Thiên Tài",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-ky-luc-ve-tri-nho-nhung-bo-nao-thien-tai",
+        "schedule_date": "2026-10-14T14:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục về trí nhớ & những bộ não thiên tài, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Kỷ Lục Về Trí Nhớ & Những Bộ Não Thiên Tài",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Kỷ Lục Về Trí Nhớ & Những Bộ Não Thiên Tài",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-ky-luc-ve-tri-nho-nhung-bo-nao-thien-tai",
+        "schedule_date": "2026-10-14T16:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục về trí nhớ & những bộ não thiên tài, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Kỷ Lục Về Trí Nhớ & Những Bộ Não Thiên Tài",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Kỷ Lục Về Trí Nhớ & Những Bộ Não Thiên Tài",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-ky-luc-ve-tri-nho-nhung-bo-nao-thien-tai",
+        "schedule_date": "2026-10-14T17:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục về trí nhớ & những bộ não thiên tài, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Kỷ Lục Về Trí Nhớ & Những Bộ Não Thiên Tài",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Kỷ Lục Về Trí Nhớ & Những Bộ Não Thiên Tài",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-ky-luc-ve-tri-nho-nhung-bo-nao-thien-tai",
+        "schedule_date": "2026-10-14T19:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục về trí nhớ & những bộ não thiên tài, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Kỷ Lục Về Trí Nhớ & Những Bộ Não Thiên Tài: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Kỷ Lục Về Trí Nhớ & Những Bộ Não Thiên Tài",
+        "slug": "cam-nang-doc-gia-ve-ky-luc-ve-tri-nho-nhung-bo-nao-thien-tai-toan-canh-a-z",
+        "schedule_date": "2026-10-14T20:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục về trí nhớ & những bộ não thiên tài, ky luc the gioi, chuyen la 2026"
       }
     ]
   },
   {
     "day": 8,
-    "date": "2026-09-27",
+    "date": "2026-10-15",
     "posts": [
       {
-        "title": "Tượng phật cao nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "tượng phật cao nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của tượng phật cao nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of tượng phật cao nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-27T08:00:00"
+        "title": "Top 10 Những Hòn Đảo Bí Ẩn Không Ai Dám Đặt Chân Tới: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Những Hòn Đảo Bí Ẩn Không Ai Dám Đặt Chân Tới",
+        "slug": "top-10-nhung-hon-dao-bi-an-khong-ai-dam-dat-chan-toi-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-15T07:00:00",
+        "category_id": 1,
+        "lsi": "những hòn đảo bí ẩn không ai dám đặt chân tới, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Người cao tuổi nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "người cao tuổi nhất việt nam",
-        "secondary_keywords": [
-          "người cao tuổi nhất việt nam hiện nay còn sống"
-        ],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của người cao tuổi nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of người cao tuổi nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-27T11:30:00"
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Những Hòn Đảo Bí Ẩn Không Ai Dám Đặt Chân Tới",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Những Hòn Đảo Bí Ẩn Không Ai Dám Đặt Chân Tới",
+        "slug": "ky-luc-dung-dau-bang-ve-nhung-hon-dao-bi-an-khong-ai-dam-dat-chan-toi",
+        "schedule_date": "2026-10-15T08:30:00",
+        "category_id": 1,
+        "lsi": "những hòn đảo bí ẩn không ai dám đặt chân tới, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Toà nhà cao nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "toà nhà cao nhất việt nam",
-        "secondary_keywords": [
-          "toà nhà cao nhất việt nam ở đâu"
-        ],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của toà nhà cao nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of toà nhà cao nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-27T14:30:00"
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Hòn Đảo Bí Ẩn Không Ai Dám Đặt Chân Tới",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Hòn Đảo Bí Ẩn Không Ai Dám Đặt Chân Tới",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-nhung-hon-dao-bi-an-khong-ai-dam-dat-chan-toi",
+        "schedule_date": "2026-10-15T10:00:00",
+        "category_id": 1,
+        "lsi": "những hòn đảo bí ẩn không ai dám đặt chân tới, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Các loài hoa đẹp nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "các loài hoa đẹp nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của các loài hoa đẹp nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of các loài hoa đẹp nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-27T17:30:00"
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Hòn Đảo Bí Ẩn Không Ai Dám Đặt Chân Tới",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Hòn Đảo Bí Ẩn Không Ai Dám Đặt Chân Tới",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-nhung-hon-dao-bi-an-khong-ai-dam-dat-chan-toi",
+        "schedule_date": "2026-10-15T11:30:00",
+        "category_id": 1,
+        "lsi": "những hòn đảo bí ẩn không ai dám đặt chân tới, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Bảng xếp hạng game nhiều người chơi nhất the giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "bảng xếp hạng game nhiều người chơi nhất the giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của bảng xếp hạng game nhiều người chơi nhất the giới.",
-        "image_prompt": "Professional photography, ultra high quality of bảng xếp hạng game nhiều người chơi nhất the giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-27T20:00:00"
+        "title": "Sự Thật Đằng Sau Kỷ Lục Những Hòn Đảo Bí Ẩn Không Ai Dám Đặt Chân Tới Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Những Hòn Đảo Bí Ẩn Không Ai Dám Đặt Chân Tới Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-nhung-hon-dao-bi-an-khong-ai-dam-dat-chan-toi-ban-chua-biet",
+        "schedule_date": "2026-10-15T13:00:00",
+        "category_id": 1,
+        "lsi": "những hòn đảo bí ẩn không ai dám đặt chân tới, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Hòn Đảo Bí Ẩn Không Ai Dám Đặt Chân Tới",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Hòn Đảo Bí Ẩn Không Ai Dám Đặt Chân Tới",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-nhung-hon-dao-bi-an-khong-ai-dam-dat-chan-toi",
+        "schedule_date": "2026-10-15T14:30:00",
+        "category_id": 1,
+        "lsi": "những hòn đảo bí ẩn không ai dám đặt chân tới, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Những Hòn Đảo Bí Ẩn Không Ai Dám Đặt Chân Tới",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Những Hòn Đảo Bí Ẩn Không Ai Dám Đặt Chân Tới",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-nhung-hon-dao-bi-an-khong-ai-dam-dat-chan-toi",
+        "schedule_date": "2026-10-15T16:00:00",
+        "category_id": 1,
+        "lsi": "những hòn đảo bí ẩn không ai dám đặt chân tới, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Hòn Đảo Bí Ẩn Không Ai Dám Đặt Chân Tới",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Hòn Đảo Bí Ẩn Không Ai Dám Đặt Chân Tới",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-nhung-hon-dao-bi-an-khong-ai-dam-dat-chan-toi",
+        "schedule_date": "2026-10-15T17:30:00",
+        "category_id": 1,
+        "lsi": "những hòn đảo bí ẩn không ai dám đặt chân tới, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Hòn Đảo Bí Ẩn Không Ai Dám Đặt Chân Tới",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Hòn Đảo Bí Ẩn Không Ai Dám Đặt Chân Tới",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-nhung-hon-dao-bi-an-khong-ai-dam-dat-chan-toi",
+        "schedule_date": "2026-10-15T19:00:00",
+        "category_id": 1,
+        "lsi": "những hòn đảo bí ẩn không ai dám đặt chân tới, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Những Hòn Đảo Bí Ẩn Không Ai Dám Đặt Chân Tới: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Những Hòn Đảo Bí Ẩn Không Ai Dám Đặt Chân Tới",
+        "slug": "cam-nang-doc-gia-ve-nhung-hon-dao-bi-an-khong-ai-dam-dat-chan-toi-toan-canh-a-z",
+        "schedule_date": "2026-10-15T20:30:00",
+        "category_id": 1,
+        "lsi": "những hòn đảo bí ẩn không ai dám đặt chân tới, ky luc the gioi, chuyen la 2026"
       }
     ]
   },
   {
     "day": 9,
-    "date": "2026-09-28",
+    "date": "2026-10-16",
     "posts": [
       {
-        "title": "1001 bài toán khó nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "1001 bài toán khó nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của 1001 bài toán khó nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of 1001 bài toán khó nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-28T08:00:00"
+        "title": "Top 10 Những Tòa Nhà Chọc Trời Cao Nhất Nhân Loại: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Những Tòa Nhà Chọc Trời Cao Nhất Nhân Loại",
+        "slug": "top-10-nhung-toa-nha-choc-troi-cao-nhat-nhan-loai-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-16T07:00:00",
+        "category_id": 1,
+        "lsi": "những tòa nhà chọc trời cao nhất nhân loại, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Nước nghèo nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "nước nghèo nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của nước nghèo nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of nước nghèo nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-28T11:30:00"
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Những Tòa Nhà Chọc Trời Cao Nhất Nhân Loại",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Những Tòa Nhà Chọc Trời Cao Nhất Nhân Loại",
+        "slug": "ky-luc-dung-dau-bang-ve-nhung-toa-nha-choc-troi-cao-nhat-nhan-loai",
+        "schedule_date": "2026-10-16T08:30:00",
+        "category_id": 1,
+        "lsi": "những tòa nhà chọc trời cao nhất nhân loại, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Nơi nóng nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "nơi nóng nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của nơi nóng nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of nơi nóng nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-28T14:30:00"
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Tòa Nhà Chọc Trời Cao Nhất Nhân Loại",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Tòa Nhà Chọc Trời Cao Nhất Nhân Loại",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-nhung-toa-nha-choc-troi-cao-nhat-nhan-loai",
+        "schedule_date": "2026-10-16T10:00:00",
+        "category_id": 1,
+        "lsi": "những tòa nhà chọc trời cao nhất nhân loại, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Bảng xếp hạng tennis thế giới mới nhất – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "bảng xếp hạng tennis thế giới mới nhất",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của bảng xếp hạng tennis thế giới mới nhất.",
-        "image_prompt": "Professional photography, ultra high quality of bảng xếp hạng tennis thế giới mới nhất, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-28T17:30:00"
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Tòa Nhà Chọc Trời Cao Nhất Nhân Loại",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Tòa Nhà Chọc Trời Cao Nhất Nhân Loại",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-nhung-toa-nha-choc-troi-cao-nhat-nhan-loai",
+        "schedule_date": "2026-10-16T11:30:00",
+        "category_id": 1,
+        "lsi": "những tòa nhà chọc trời cao nhất nhân loại, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Ảnh đẹp nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "ảnh đẹp nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của ảnh đẹp nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of ảnh đẹp nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-28T20:00:00"
+        "title": "Sự Thật Đằng Sau Kỷ Lục Những Tòa Nhà Chọc Trời Cao Nhất Nhân Loại Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Những Tòa Nhà Chọc Trời Cao Nhất Nhân Loại Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-nhung-toa-nha-choc-troi-cao-nhat-nhan-loai-ban-chua-biet",
+        "schedule_date": "2026-10-16T13:00:00",
+        "category_id": 1,
+        "lsi": "những tòa nhà chọc trời cao nhất nhân loại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Tòa Nhà Chọc Trời Cao Nhất Nhân Loại",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Tòa Nhà Chọc Trời Cao Nhất Nhân Loại",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-nhung-toa-nha-choc-troi-cao-nhat-nhan-loai",
+        "schedule_date": "2026-10-16T14:30:00",
+        "category_id": 1,
+        "lsi": "những tòa nhà chọc trời cao nhất nhân loại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Những Tòa Nhà Chọc Trời Cao Nhất Nhân Loại",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Những Tòa Nhà Chọc Trời Cao Nhất Nhân Loại",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-nhung-toa-nha-choc-troi-cao-nhat-nhan-loai",
+        "schedule_date": "2026-10-16T16:00:00",
+        "category_id": 1,
+        "lsi": "những tòa nhà chọc trời cao nhất nhân loại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Tòa Nhà Chọc Trời Cao Nhất Nhân Loại",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Tòa Nhà Chọc Trời Cao Nhất Nhân Loại",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-nhung-toa-nha-choc-troi-cao-nhat-nhan-loai",
+        "schedule_date": "2026-10-16T17:30:00",
+        "category_id": 1,
+        "lsi": "những tòa nhà chọc trời cao nhất nhân loại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Tòa Nhà Chọc Trời Cao Nhất Nhân Loại",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Tòa Nhà Chọc Trời Cao Nhất Nhân Loại",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-nhung-toa-nha-choc-troi-cao-nhat-nhan-loai",
+        "schedule_date": "2026-10-16T19:00:00",
+        "category_id": 1,
+        "lsi": "những tòa nhà chọc trời cao nhất nhân loại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Những Tòa Nhà Chọc Trời Cao Nhất Nhân Loại: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Những Tòa Nhà Chọc Trời Cao Nhất Nhân Loại",
+        "slug": "cam-nang-doc-gia-ve-nhung-toa-nha-choc-troi-cao-nhat-nhan-loai-toan-canh-a-z",
+        "schedule_date": "2026-10-16T20:30:00",
+        "category_id": 1,
+        "lsi": "những tòa nhà chọc trời cao nhất nhân loại, ky luc the gioi, chuyen la 2026"
       }
     ]
   },
   {
     "day": 10,
-    "date": "2026-09-29",
+    "date": "2026-10-17",
     "posts": [
       {
-        "title": "Hình ảnh đẹp nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "hình ảnh đẹp nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của hình ảnh đẹp nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of hình ảnh đẹp nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-29T08:00:00"
+        "title": "Top 10 Khám Phá Hang Động Tự Nhiên Lớn Nhất Thế Giới Sơn Đoòng: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Khám Phá Hang Động Tự Nhiên Lớn Nhất Thế Giới Sơn Đoòng",
+        "slug": "top-10-kham-pha-hang-dong-tu-nhien-lon-nhat-the-gioi-son-doong-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-17T07:00:00",
+        "category_id": 1,
+        "lsi": "khám phá hang động tự nhiên lớn nhất thế giới sơn đoòng, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Xe mắc nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "xe mắc nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của xe mắc nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of xe mắc nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-29T11:30:00"
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Khám Phá Hang Động Tự Nhiên Lớn Nhất Thế Giới Sơn Đoòng",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Khám Phá Hang Động Tự Nhiên Lớn Nhất Thế Giới Sơn Đoòng",
+        "slug": "ky-luc-dung-dau-bang-ve-kham-pha-hang-dong-tu-nhien-lon-nhat-the-gioi-son-doong",
+        "schedule_date": "2026-10-17T08:30:00",
+        "category_id": 1,
+        "lsi": "khám phá hang động tự nhiên lớn nhất thế giới sơn đoòng, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Cá to nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "cá to nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của cá to nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of cá to nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-29T14:30:00"
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Khám Phá Hang Động Tự Nhiên Lớn Nhất Thế Giới Sơn Đoòng",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Khám Phá Hang Động Tự Nhiên Lớn Nhất Thế Giới Sơn Đoòng",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-kham-pha-hang-dong-tu-nhien-lon-nhat-the-gioi-son-doong",
+        "schedule_date": "2026-10-17T10:00:00",
+        "category_id": 1,
+        "lsi": "khám phá hang động tự nhiên lớn nhất thế giới sơn đoòng, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Con cá xấu nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "con cá xấu nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của con cá xấu nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of con cá xấu nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-29T17:30:00"
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Khám Phá Hang Động Tự Nhiên Lớn Nhất Thế Giới Sơn Đoòng",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Khám Phá Hang Động Tự Nhiên Lớn Nhất Thế Giới Sơn Đoòng",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-kham-pha-hang-dong-tu-nhien-lon-nhat-the-gioi-son-doong",
+        "schedule_date": "2026-10-17T11:30:00",
+        "category_id": 1,
+        "lsi": "khám phá hang động tự nhiên lớn nhất thế giới sơn đoòng, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Nhóm máu hiếm nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "nhóm máu hiếm nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của nhóm máu hiếm nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of nhóm máu hiếm nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-29T20:00:00"
+        "title": "Sự Thật Đằng Sau Kỷ Lục Khám Phá Hang Động Tự Nhiên Lớn Nhất Thế Giới Sơn Đoòng Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Khám Phá Hang Động Tự Nhiên Lớn Nhất Thế Giới Sơn Đoòng Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-kham-pha-hang-dong-tu-nhien-lon-nhat-the-gioi-son-doong-ban-chua-biet",
+        "schedule_date": "2026-10-17T13:00:00",
+        "category_id": 1,
+        "lsi": "khám phá hang động tự nhiên lớn nhất thế giới sơn đoòng, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Khám Phá Hang Động Tự Nhiên Lớn Nhất Thế Giới Sơn Đoòng",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Khám Phá Hang Động Tự Nhiên Lớn Nhất Thế Giới Sơn Đoòng",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-kham-pha-hang-dong-tu-nhien-lon-nhat-the-gioi-son-doong",
+        "schedule_date": "2026-10-17T14:30:00",
+        "category_id": 1,
+        "lsi": "khám phá hang động tự nhiên lớn nhất thế giới sơn đoòng, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Khám Phá Hang Động Tự Nhiên Lớn Nhất Thế Giới Sơn Đoòng",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Khám Phá Hang Động Tự Nhiên Lớn Nhất Thế Giới Sơn Đoòng",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-kham-pha-hang-dong-tu-nhien-lon-nhat-the-gioi-son-doong",
+        "schedule_date": "2026-10-17T16:00:00",
+        "category_id": 1,
+        "lsi": "khám phá hang động tự nhiên lớn nhất thế giới sơn đoòng, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Khám Phá Hang Động Tự Nhiên Lớn Nhất Thế Giới Sơn Đoòng",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Khám Phá Hang Động Tự Nhiên Lớn Nhất Thế Giới Sơn Đoòng",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-kham-pha-hang-dong-tu-nhien-lon-nhat-the-gioi-son-doong",
+        "schedule_date": "2026-10-17T17:30:00",
+        "category_id": 1,
+        "lsi": "khám phá hang động tự nhiên lớn nhất thế giới sơn đoòng, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Khám Phá Hang Động Tự Nhiên Lớn Nhất Thế Giới Sơn Đoòng",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Khám Phá Hang Động Tự Nhiên Lớn Nhất Thế Giới Sơn Đoòng",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-kham-pha-hang-dong-tu-nhien-lon-nhat-the-gioi-son-doong",
+        "schedule_date": "2026-10-17T19:00:00",
+        "category_id": 1,
+        "lsi": "khám phá hang động tự nhiên lớn nhất thế giới sơn đoòng, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Khám Phá Hang Động Tự Nhiên Lớn Nhất Thế Giới Sơn Đoòng: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Khám Phá Hang Động Tự Nhiên Lớn Nhất Thế Giới Sơn Đoòng",
+        "slug": "cam-nang-doc-gia-ve-kham-pha-hang-dong-tu-nhien-lon-nhat-the-gioi-son-doong-toan-canh-a-z",
+        "schedule_date": "2026-10-17T20:30:00",
+        "category_id": 1,
+        "lsi": "khám phá hang động tự nhiên lớn nhất thế giới sơn đoòng, ky luc the gioi, chuyen la 2026"
       }
     ]
   },
   {
     "day": 11,
-    "date": "2026-09-30",
+    "date": "2026-10-18",
     "posts": [
       {
-        "title": "Hoa hồng đẹp nhất the giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "hoa hồng đẹp nhất the giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của hoa hồng đẹp nhất the giới.",
-        "image_prompt": "Professional photography, ultra high quality of hoa hồng đẹp nhất the giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-30T08:00:00"
+        "title": "Top 10 Những Hiện Tượng Thời Tiết Cực Đoan Nhất Trái Đất: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Những Hiện Tượng Thời Tiết Cực Đoan Nhất Trái Đất",
+        "slug": "top-10-nhung-hien-tuong-thoi-tiet-cuc-doan-nhat-trai-dat-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-18T07:00:00",
+        "category_id": 1,
+        "lsi": "những hiện tượng thời tiết cực đoan nhất trái đất, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Top 10 cơn bão mạnh nhất việt nam",
-        "focus_keyword": "top 10 cơn bão mạnh nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của top 10 cơn bão mạnh nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of top 10 cơn bão mạnh nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-30T11:30:00"
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Những Hiện Tượng Thời Tiết Cực Đoan Nhất Trái Đất",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Những Hiện Tượng Thời Tiết Cực Đoan Nhất Trái Đất",
+        "slug": "ky-luc-dung-dau-bang-ve-nhung-hien-tuong-thoi-tiet-cuc-doan-nhat-trai-dat",
+        "schedule_date": "2026-10-18T08:30:00",
+        "category_id": 1,
+        "lsi": "những hiện tượng thời tiết cực đoan nhất trái đất, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Hình ảnh gái đẹp nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "hình ảnh gái đẹp nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của hình ảnh gái đẹp nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of hình ảnh gái đẹp nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-30T14:30:00"
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Hiện Tượng Thời Tiết Cực Đoan Nhất Trái Đất",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Hiện Tượng Thời Tiết Cực Đoan Nhất Trái Đất",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-nhung-hien-tuong-thoi-tiet-cuc-doan-nhat-trai-dat",
+        "schedule_date": "2026-10-18T10:00:00",
+        "category_id": 1,
+        "lsi": "những hiện tượng thời tiết cực đoan nhất trái đất, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Cây cầu dài nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "cây cầu dài nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của cây cầu dài nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of cây cầu dài nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-30T17:30:00"
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Hiện Tượng Thời Tiết Cực Đoan Nhất Trái Đất",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Hiện Tượng Thời Tiết Cực Đoan Nhất Trái Đất",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-nhung-hien-tuong-thoi-tiet-cuc-doan-nhat-trai-dat",
+        "schedule_date": "2026-10-18T11:30:00",
+        "category_id": 1,
+        "lsi": "những hiện tượng thời tiết cực đoan nhất trái đất, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Giáo sư trẻ nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "giáo sư trẻ nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của giáo sư trẻ nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of giáo sư trẻ nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-09-30T20:00:00"
+        "title": "Sự Thật Đằng Sau Kỷ Lục Những Hiện Tượng Thời Tiết Cực Đoan Nhất Trái Đất Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Những Hiện Tượng Thời Tiết Cực Đoan Nhất Trái Đất Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-nhung-hien-tuong-thoi-tiet-cuc-doan-nhat-trai-dat-ban-chua-biet",
+        "schedule_date": "2026-10-18T13:00:00",
+        "category_id": 1,
+        "lsi": "những hiện tượng thời tiết cực đoan nhất trái đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Hiện Tượng Thời Tiết Cực Đoan Nhất Trái Đất",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Hiện Tượng Thời Tiết Cực Đoan Nhất Trái Đất",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-nhung-hien-tuong-thoi-tiet-cuc-doan-nhat-trai-dat",
+        "schedule_date": "2026-10-18T14:30:00",
+        "category_id": 1,
+        "lsi": "những hiện tượng thời tiết cực đoan nhất trái đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Những Hiện Tượng Thời Tiết Cực Đoan Nhất Trái Đất",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Những Hiện Tượng Thời Tiết Cực Đoan Nhất Trái Đất",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-nhung-hien-tuong-thoi-tiet-cuc-doan-nhat-trai-dat",
+        "schedule_date": "2026-10-18T16:00:00",
+        "category_id": 1,
+        "lsi": "những hiện tượng thời tiết cực đoan nhất trái đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Hiện Tượng Thời Tiết Cực Đoan Nhất Trái Đất",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Hiện Tượng Thời Tiết Cực Đoan Nhất Trái Đất",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-nhung-hien-tuong-thoi-tiet-cuc-doan-nhat-trai-dat",
+        "schedule_date": "2026-10-18T17:30:00",
+        "category_id": 1,
+        "lsi": "những hiện tượng thời tiết cực đoan nhất trái đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Hiện Tượng Thời Tiết Cực Đoan Nhất Trái Đất",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Hiện Tượng Thời Tiết Cực Đoan Nhất Trái Đất",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-nhung-hien-tuong-thoi-tiet-cuc-doan-nhat-trai-dat",
+        "schedule_date": "2026-10-18T19:00:00",
+        "category_id": 1,
+        "lsi": "những hiện tượng thời tiết cực đoan nhất trái đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Những Hiện Tượng Thời Tiết Cực Đoan Nhất Trái Đất: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Những Hiện Tượng Thời Tiết Cực Đoan Nhất Trái Đất",
+        "slug": "cam-nang-doc-gia-ve-nhung-hien-tuong-thoi-tiet-cuc-doan-nhat-trai-dat-toan-canh-a-z",
+        "schedule_date": "2026-10-18T20:30:00",
+        "category_id": 1,
+        "lsi": "những hiện tượng thời tiết cực đoan nhất trái đất, ky luc the gioi, chuyen la 2026"
       }
     ]
   },
   {
     "day": 12,
-    "date": "2026-10-01",
+    "date": "2026-10-19",
     "posts": [
       {
-        "title": "Ca sĩ nổi tiếng nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "ca sĩ nổi tiếng nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của ca sĩ nổi tiếng nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of ca sĩ nổi tiếng nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-10-01T08:00:00"
+        "title": "Top 10 Các Kỷ Lục Tốc Độ Xe Hơi & Phương Tiện Giao Thông: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Các Kỷ Lục Tốc Độ Xe Hơi & Phương Tiện Giao Thông",
+        "slug": "top-10-cac-ky-luc-toc-do-xe-hoi-phuong-tien-giao-thong-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-19T07:00:00",
+        "category_id": 1,
+        "lsi": "các kỷ lục tốc độ xe hơi & phương tiện giao thông, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Cảng lớn nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "cảng lớn nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của cảng lớn nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of cảng lớn nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-10-01T11:30:00"
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Các Kỷ Lục Tốc Độ Xe Hơi & Phương Tiện Giao Thông",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Các Kỷ Lục Tốc Độ Xe Hơi & Phương Tiện Giao Thông",
+        "slug": "ky-luc-dung-dau-bang-ve-cac-ky-luc-toc-do-xe-hoi-phuong-tien-giao-thong",
+        "schedule_date": "2026-10-19T08:30:00",
+        "category_id": 1,
+        "lsi": "các kỷ lục tốc độ xe hơi & phương tiện giao thông, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Nhà máy thủy điện lớn nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "nhà máy thủy điện lớn nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của nhà máy thủy điện lớn nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of nhà máy thủy điện lớn nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-10-01T14:30:00"
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Các Kỷ Lục Tốc Độ Xe Hơi & Phương Tiện Giao Thông",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Các Kỷ Lục Tốc Độ Xe Hơi & Phương Tiện Giao Thông",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-cac-ky-luc-toc-do-xe-hoi-phuong-tien-giao-thong",
+        "schedule_date": "2026-10-19T10:00:00",
+        "category_id": 1,
+        "lsi": "các kỷ lục tốc độ xe hơi & phương tiện giao thông, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Hồ nước ngọt lớn nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "hồ nước ngọt lớn nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của hồ nước ngọt lớn nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of hồ nước ngọt lớn nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-10-01T17:30:00"
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Các Kỷ Lục Tốc Độ Xe Hơi & Phương Tiện Giao Thông",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Các Kỷ Lục Tốc Độ Xe Hơi & Phương Tiện Giao Thông",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-cac-ky-luc-toc-do-xe-hoi-phuong-tien-giao-thong",
+        "schedule_date": "2026-10-19T11:30:00",
+        "category_id": 1,
+        "lsi": "các kỷ lục tốc độ xe hơi & phương tiện giao thông, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Ảnh việt nam đẹp nhất – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "ảnh việt nam đẹp nhất",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của ảnh việt nam đẹp nhất.",
-        "image_prompt": "Professional photography, ultra high quality of ảnh việt nam đẹp nhất, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-10-01T20:00:00"
+        "title": "Sự Thật Đằng Sau Kỷ Lục Các Kỷ Lục Tốc Độ Xe Hơi & Phương Tiện Giao Thông Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Các Kỷ Lục Tốc Độ Xe Hơi & Phương Tiện Giao Thông Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-cac-ky-luc-toc-do-xe-hoi-phuong-tien-giao-thong-ban-chua-biet",
+        "schedule_date": "2026-10-19T13:00:00",
+        "category_id": 1,
+        "lsi": "các kỷ lục tốc độ xe hơi & phương tiện giao thông, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Các Kỷ Lục Tốc Độ Xe Hơi & Phương Tiện Giao Thông",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Các Kỷ Lục Tốc Độ Xe Hơi & Phương Tiện Giao Thông",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-cac-ky-luc-toc-do-xe-hoi-phuong-tien-giao-thong",
+        "schedule_date": "2026-10-19T14:30:00",
+        "category_id": 1,
+        "lsi": "các kỷ lục tốc độ xe hơi & phương tiện giao thông, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Các Kỷ Lục Tốc Độ Xe Hơi & Phương Tiện Giao Thông",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Các Kỷ Lục Tốc Độ Xe Hơi & Phương Tiện Giao Thông",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-cac-ky-luc-toc-do-xe-hoi-phuong-tien-giao-thong",
+        "schedule_date": "2026-10-19T16:00:00",
+        "category_id": 1,
+        "lsi": "các kỷ lục tốc độ xe hơi & phương tiện giao thông, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Các Kỷ Lục Tốc Độ Xe Hơi & Phương Tiện Giao Thông",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Các Kỷ Lục Tốc Độ Xe Hơi & Phương Tiện Giao Thông",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-cac-ky-luc-toc-do-xe-hoi-phuong-tien-giao-thong",
+        "schedule_date": "2026-10-19T17:30:00",
+        "category_id": 1,
+        "lsi": "các kỷ lục tốc độ xe hơi & phương tiện giao thông, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Các Kỷ Lục Tốc Độ Xe Hơi & Phương Tiện Giao Thông",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Các Kỷ Lục Tốc Độ Xe Hơi & Phương Tiện Giao Thông",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-cac-ky-luc-toc-do-xe-hoi-phuong-tien-giao-thong",
+        "schedule_date": "2026-10-19T19:00:00",
+        "category_id": 1,
+        "lsi": "các kỷ lục tốc độ xe hơi & phương tiện giao thông, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Các Kỷ Lục Tốc Độ Xe Hơi & Phương Tiện Giao Thông: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Các Kỷ Lục Tốc Độ Xe Hơi & Phương Tiện Giao Thông",
+        "slug": "cam-nang-doc-gia-ve-cac-ky-luc-toc-do-xe-hoi-phuong-tien-giao-thong-toan-canh-a-z",
+        "schedule_date": "2026-10-19T20:30:00",
+        "category_id": 1,
+        "lsi": "các kỷ lục tốc độ xe hơi & phương tiện giao thông, ky luc the gioi, chuyen la 2026"
       }
     ]
   },
   {
     "day": 13,
-    "date": "2026-10-02",
+    "date": "2026-10-20",
     "posts": [
       {
-        "title": "Phim kinh dị việt nam mới nhất – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "phim kinh dị việt nam mới nhất",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của phim kinh dị việt nam mới nhất.",
-        "image_prompt": "Professional photography, ultra high quality of phim kinh dị việt nam mới nhất, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-10-02T08:00:00"
+        "title": "Top 10 Những Bức Tranh & Cổ Vật Đắt Giá Nhất Lịch Sử: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Những Bức Tranh & Cổ Vật Đắt Giá Nhất Lịch Sử",
+        "slug": "top-10-nhung-buc-tranh-co-vat-dat-gia-nhat-lich-su-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-20T07:00:00",
+        "category_id": 1,
+        "lsi": "những bức tranh & cổ vật đắt giá nhất lịch sử, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Đập thủy điện lớn nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "đập thủy điện lớn nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của đập thủy điện lớn nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of đập thủy điện lớn nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-10-02T11:30:00"
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Những Bức Tranh & Cổ Vật Đắt Giá Nhất Lịch Sử",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Những Bức Tranh & Cổ Vật Đắt Giá Nhất Lịch Sử",
+        "slug": "ky-luc-dung-dau-bang-ve-nhung-buc-tranh-co-vat-dat-gia-nhat-lich-su",
+        "schedule_date": "2026-10-20T08:30:00",
+        "category_id": 1,
+        "lsi": "những bức tranh & cổ vật đắt giá nhất lịch sử, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Top 10 ngân hàng an toàn nhất việt nam",
-        "focus_keyword": "top 10 ngân hàng an toàn nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của top 10 ngân hàng an toàn nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of top 10 ngân hàng an toàn nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-10-02T14:30:00"
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Bức Tranh & Cổ Vật Đắt Giá Nhất Lịch Sử",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Bức Tranh & Cổ Vật Đắt Giá Nhất Lịch Sử",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-nhung-buc-tranh-co-vat-dat-gia-nhat-lich-su",
+        "schedule_date": "2026-10-20T10:00:00",
+        "category_id": 1,
+        "lsi": "những bức tranh & cổ vật đắt giá nhất lịch sử, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Ngân hàng nhiều người dùng nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "ngân hàng nhiều người dùng nhất việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của ngân hàng nhiều người dùng nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of ngân hàng nhiều người dùng nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-10-02T17:30:00"
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Bức Tranh & Cổ Vật Đắt Giá Nhất Lịch Sử",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Bức Tranh & Cổ Vật Đắt Giá Nhất Lịch Sử",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-nhung-buc-tranh-co-vat-dat-gia-nhat-lich-su",
+        "schedule_date": "2026-10-20T11:30:00",
+        "category_id": 1,
+        "lsi": "những bức tranh & cổ vật đắt giá nhất lịch sử, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Đồng hồ mặt trời duy nhất ở việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "đồng hồ mặt trời duy nhất ở việt nam",
-        "secondary_keywords": [],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của đồng hồ mặt trời duy nhất ở việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of đồng hồ mặt trời duy nhất ở việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-10-02T20:00:00"
+        "title": "Sự Thật Đằng Sau Kỷ Lục Những Bức Tranh & Cổ Vật Đắt Giá Nhất Lịch Sử Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Những Bức Tranh & Cổ Vật Đắt Giá Nhất Lịch Sử Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-nhung-buc-tranh-co-vat-dat-gia-nhat-lich-su-ban-chua-biet",
+        "schedule_date": "2026-10-20T13:00:00",
+        "category_id": 1,
+        "lsi": "những bức tranh & cổ vật đắt giá nhất lịch sử, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Bức Tranh & Cổ Vật Đắt Giá Nhất Lịch Sử",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Bức Tranh & Cổ Vật Đắt Giá Nhất Lịch Sử",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-nhung-buc-tranh-co-vat-dat-gia-nhat-lich-su",
+        "schedule_date": "2026-10-20T14:30:00",
+        "category_id": 1,
+        "lsi": "những bức tranh & cổ vật đắt giá nhất lịch sử, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Những Bức Tranh & Cổ Vật Đắt Giá Nhất Lịch Sử",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Những Bức Tranh & Cổ Vật Đắt Giá Nhất Lịch Sử",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-nhung-buc-tranh-co-vat-dat-gia-nhat-lich-su",
+        "schedule_date": "2026-10-20T16:00:00",
+        "category_id": 1,
+        "lsi": "những bức tranh & cổ vật đắt giá nhất lịch sử, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Bức Tranh & Cổ Vật Đắt Giá Nhất Lịch Sử",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Bức Tranh & Cổ Vật Đắt Giá Nhất Lịch Sử",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-nhung-buc-tranh-co-vat-dat-gia-nhat-lich-su",
+        "schedule_date": "2026-10-20T17:30:00",
+        "category_id": 1,
+        "lsi": "những bức tranh & cổ vật đắt giá nhất lịch sử, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Bức Tranh & Cổ Vật Đắt Giá Nhất Lịch Sử",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Bức Tranh & Cổ Vật Đắt Giá Nhất Lịch Sử",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-nhung-buc-tranh-co-vat-dat-gia-nhat-lich-su",
+        "schedule_date": "2026-10-20T19:00:00",
+        "category_id": 1,
+        "lsi": "những bức tranh & cổ vật đắt giá nhất lịch sử, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Những Bức Tranh & Cổ Vật Đắt Giá Nhất Lịch Sử: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Những Bức Tranh & Cổ Vật Đắt Giá Nhất Lịch Sử",
+        "slug": "cam-nang-doc-gia-ve-nhung-buc-tranh-co-vat-dat-gia-nhat-lich-su-toan-canh-a-z",
+        "schedule_date": "2026-10-20T20:30:00",
+        "category_id": 1,
+        "lsi": "những bức tranh & cổ vật đắt giá nhất lịch sử, ky luc the gioi, chuyen la 2026"
       }
     ]
   },
   {
     "day": 14,
-    "date": "2026-10-03",
+    "date": "2026-10-21",
     "posts": [
       {
-        "title": "Người đẹp nhất việt nam – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "người đẹp nhất việt nam",
-        "secondary_keywords": [
-          "ai là người đẹp nhất việt nam"
-        ],
-        "category": "Nhất Việt Nam",
-        "category_id": 24,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của người đẹp nhất việt nam.",
-        "image_prompt": "Professional photography, ultra high quality of người đẹp nhất việt nam, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-10-03T08:00:00"
+        "title": "Top 10 Những Thành Phố Cổ Đại Chìm Dưới Lòng Đại Dương: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Những Thành Phố Cổ Đại Chìm Dưới Lòng Đại Dương",
+        "slug": "top-10-nhung-thanh-pho-co-dai-chim-duoi-long-dai-duong-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-21T07:00:00",
+        "category_id": 1,
+        "lsi": "những thành phố cổ đại chìm dưới lòng đại dương, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Cây cao nhất thế giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "cây cao nhất thế giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của cây cao nhất thế giới.",
-        "image_prompt": "Professional photography, ultra high quality of cây cao nhất thế giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-10-03T11:30:00"
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Những Thành Phố Cổ Đại Chìm Dưới Lòng Đại Dương",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Những Thành Phố Cổ Đại Chìm Dưới Lòng Đại Dương",
+        "slug": "ky-luc-dung-dau-bang-ve-nhung-thanh-pho-co-dai-chim-duoi-long-dai-duong",
+        "schedule_date": "2026-10-21T08:30:00",
+        "category_id": 1,
+        "lsi": "những thành phố cổ đại chìm dưới lòng đại dương, ky luc the gioi, chuyen la 2026"
       },
       {
-        "title": "Hình ảnh phật đẹp nhất the giới – Top Kỷ Lục & Sự Thật Thú Vị 2026",
-        "focus_keyword": "hình ảnh phật đẹp nhất the giới",
-        "secondary_keywords": [],
-        "category": "Nhất thế giới",
-        "category_id": 27,
-        "direct_answer_focus": "Tóm tắt ngắn gọn số liệu kỷ lục chính xác của hình ảnh phật đẹp nhất the giới.",
-        "image_prompt": "Professional photography, ultra high quality of hình ảnh phật đẹp nhất the giới, vibrant colors, 8k resolution, 16:9 ratio.",
-        "schedule_date": "2026-10-03T14:30:00"
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Thành Phố Cổ Đại Chìm Dưới Lòng Đại Dương",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Thành Phố Cổ Đại Chìm Dưới Lòng Đại Dương",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-nhung-thanh-pho-co-dai-chim-duoi-long-dai-duong",
+        "schedule_date": "2026-10-21T10:00:00",
+        "category_id": 1,
+        "lsi": "những thành phố cổ đại chìm dưới lòng đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Thành Phố Cổ Đại Chìm Dưới Lòng Đại Dương",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Thành Phố Cổ Đại Chìm Dưới Lòng Đại Dương",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-nhung-thanh-pho-co-dai-chim-duoi-long-dai-duong",
+        "schedule_date": "2026-10-21T11:30:00",
+        "category_id": 1,
+        "lsi": "những thành phố cổ đại chìm dưới lòng đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Sự Thật Đằng Sau Kỷ Lục Những Thành Phố Cổ Đại Chìm Dưới Lòng Đại Dương Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Những Thành Phố Cổ Đại Chìm Dưới Lòng Đại Dương Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-nhung-thanh-pho-co-dai-chim-duoi-long-dai-duong-ban-chua-biet",
+        "schedule_date": "2026-10-21T13:00:00",
+        "category_id": 1,
+        "lsi": "những thành phố cổ đại chìm dưới lòng đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Thành Phố Cổ Đại Chìm Dưới Lòng Đại Dương",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Thành Phố Cổ Đại Chìm Dưới Lòng Đại Dương",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-nhung-thanh-pho-co-dai-chim-duoi-long-dai-duong",
+        "schedule_date": "2026-10-21T14:30:00",
+        "category_id": 1,
+        "lsi": "những thành phố cổ đại chìm dưới lòng đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Những Thành Phố Cổ Đại Chìm Dưới Lòng Đại Dương",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Những Thành Phố Cổ Đại Chìm Dưới Lòng Đại Dương",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-nhung-thanh-pho-co-dai-chim-duoi-long-dai-duong",
+        "schedule_date": "2026-10-21T16:00:00",
+        "category_id": 1,
+        "lsi": "những thành phố cổ đại chìm dưới lòng đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Thành Phố Cổ Đại Chìm Dưới Lòng Đại Dương",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Thành Phố Cổ Đại Chìm Dưới Lòng Đại Dương",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-nhung-thanh-pho-co-dai-chim-duoi-long-dai-duong",
+        "schedule_date": "2026-10-21T17:30:00",
+        "category_id": 1,
+        "lsi": "những thành phố cổ đại chìm dưới lòng đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Thành Phố Cổ Đại Chìm Dưới Lòng Đại Dương",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Thành Phố Cổ Đại Chìm Dưới Lòng Đại Dương",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-nhung-thanh-pho-co-dai-chim-duoi-long-dai-duong",
+        "schedule_date": "2026-10-21T19:00:00",
+        "category_id": 1,
+        "lsi": "những thành phố cổ đại chìm dưới lòng đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Những Thành Phố Cổ Đại Chìm Dưới Lòng Đại Dương: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Những Thành Phố Cổ Đại Chìm Dưới Lòng Đại Dương",
+        "slug": "cam-nang-doc-gia-ve-nhung-thanh-pho-co-dai-chim-duoi-long-dai-duong-toan-canh-a-z",
+        "schedule_date": "2026-10-21T20:30:00",
+        "category_id": 1,
+        "lsi": "những thành phố cổ đại chìm dưới lòng đại dương, ky luc the gioi, chuyen la 2026"
+      }
+    ]
+  },
+  {
+    "day": 15,
+    "date": "2026-10-22",
+    "posts": [
+      {
+        "title": "Top 10 Kỷ Lục Tuổi Thọ Của Con Người & Sinh Vật Trái Đất: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Kỷ Lục Tuổi Thọ Của Con Người & Sinh Vật Trái Đất",
+        "slug": "top-10-ky-luc-tuoi-tho-cua-con-nguoi-sinh-vat-trai-dat-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-22T07:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục tuổi thọ của con người & sinh vật trái đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Kỷ Lục Tuổi Thọ Của Con Người & Sinh Vật Trái Đất",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Kỷ Lục Tuổi Thọ Của Con Người & Sinh Vật Trái Đất",
+        "slug": "ky-luc-dung-dau-bang-ve-ky-luc-tuoi-tho-cua-con-nguoi-sinh-vat-trai-dat",
+        "schedule_date": "2026-10-22T08:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục tuổi thọ của con người & sinh vật trái đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Kỷ Lục Tuổi Thọ Của Con Người & Sinh Vật Trái Đất",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Kỷ Lục Tuổi Thọ Của Con Người & Sinh Vật Trái Đất",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-ky-luc-tuoi-tho-cua-con-nguoi-sinh-vat-trai-dat",
+        "schedule_date": "2026-10-22T10:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục tuổi thọ của con người & sinh vật trái đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Kỷ Lục Tuổi Thọ Của Con Người & Sinh Vật Trái Đất",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Kỷ Lục Tuổi Thọ Của Con Người & Sinh Vật Trái Đất",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-ky-luc-tuoi-tho-cua-con-nguoi-sinh-vat-trai-dat",
+        "schedule_date": "2026-10-22T11:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục tuổi thọ của con người & sinh vật trái đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Sự Thật Đằng Sau Kỷ Lục Kỷ Lục Tuổi Thọ Của Con Người & Sinh Vật Trái Đất Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Kỷ Lục Tuổi Thọ Của Con Người & Sinh Vật Trái Đất Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-ky-luc-tuoi-tho-cua-con-nguoi-sinh-vat-trai-dat-ban-chua-biet",
+        "schedule_date": "2026-10-22T13:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục tuổi thọ của con người & sinh vật trái đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Kỷ Lục Tuổi Thọ Của Con Người & Sinh Vật Trái Đất",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Kỷ Lục Tuổi Thọ Của Con Người & Sinh Vật Trái Đất",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-ky-luc-tuoi-tho-cua-con-nguoi-sinh-vat-trai-dat",
+        "schedule_date": "2026-10-22T14:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục tuổi thọ của con người & sinh vật trái đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Kỷ Lục Tuổi Thọ Của Con Người & Sinh Vật Trái Đất",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Kỷ Lục Tuổi Thọ Của Con Người & Sinh Vật Trái Đất",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-ky-luc-tuoi-tho-cua-con-nguoi-sinh-vat-trai-dat",
+        "schedule_date": "2026-10-22T16:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục tuổi thọ của con người & sinh vật trái đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Kỷ Lục Tuổi Thọ Của Con Người & Sinh Vật Trái Đất",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Kỷ Lục Tuổi Thọ Của Con Người & Sinh Vật Trái Đất",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-ky-luc-tuoi-tho-cua-con-nguoi-sinh-vat-trai-dat",
+        "schedule_date": "2026-10-22T17:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục tuổi thọ của con người & sinh vật trái đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Kỷ Lục Tuổi Thọ Của Con Người & Sinh Vật Trái Đất",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Kỷ Lục Tuổi Thọ Của Con Người & Sinh Vật Trái Đất",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-ky-luc-tuoi-tho-cua-con-nguoi-sinh-vat-trai-dat",
+        "schedule_date": "2026-10-22T19:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục tuổi thọ của con người & sinh vật trái đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Kỷ Lục Tuổi Thọ Của Con Người & Sinh Vật Trái Đất: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Kỷ Lục Tuổi Thọ Của Con Người & Sinh Vật Trái Đất",
+        "slug": "cam-nang-doc-gia-ve-ky-luc-tuoi-tho-cua-con-nguoi-sinh-vat-trai-dat-toan-canh-a-z",
+        "schedule_date": "2026-10-22T20:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục tuổi thọ của con người & sinh vật trái đất, ky luc the gioi, chuyen la 2026"
+      }
+    ]
+  },
+  {
+    "day": 16,
+    "date": "2026-10-23",
+    "posts": [
+      {
+        "title": "Top 10 Những Con Đường Hiểm Trở Nhất Thế Giới Thử Thách Tay Lái: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Những Con Đường Hiểm Trở Nhất Thế Giới Thử Thách Tay Lái",
+        "slug": "top-10-nhung-con-duong-hiem-tro-nhat-the-gioi-thu-thach-tay-lai-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-23T07:00:00",
+        "category_id": 1,
+        "lsi": "những con đường hiểm trở nhất thế giới thử thách tay lái, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Những Con Đường Hiểm Trở Nhất Thế Giới Thử Thách Tay Lái",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Những Con Đường Hiểm Trở Nhất Thế Giới Thử Thách Tay Lái",
+        "slug": "ky-luc-dung-dau-bang-ve-nhung-con-duong-hiem-tro-nhat-the-gioi-thu-thach-tay-lai",
+        "schedule_date": "2026-10-23T08:30:00",
+        "category_id": 1,
+        "lsi": "những con đường hiểm trở nhất thế giới thử thách tay lái, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Con Đường Hiểm Trở Nhất Thế Giới Thử Thách Tay Lái",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Con Đường Hiểm Trở Nhất Thế Giới Thử Thách Tay Lái",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-nhung-con-duong-hiem-tro-nhat-the-gioi-thu-thach-tay-lai",
+        "schedule_date": "2026-10-23T10:00:00",
+        "category_id": 1,
+        "lsi": "những con đường hiểm trở nhất thế giới thử thách tay lái, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Con Đường Hiểm Trở Nhất Thế Giới Thử Thách Tay Lái",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Con Đường Hiểm Trở Nhất Thế Giới Thử Thách Tay Lái",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-nhung-con-duong-hiem-tro-nhat-the-gioi-thu-thach-tay-lai",
+        "schedule_date": "2026-10-23T11:30:00",
+        "category_id": 1,
+        "lsi": "những con đường hiểm trở nhất thế giới thử thách tay lái, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Sự Thật Đằng Sau Kỷ Lục Những Con Đường Hiểm Trở Nhất Thế Giới Thử Thách Tay Lái Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Những Con Đường Hiểm Trở Nhất Thế Giới Thử Thách Tay Lái Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-nhung-con-duong-hiem-tro-nhat-the-gioi-thu-thach-tay-lai-ban-chua-biet",
+        "schedule_date": "2026-10-23T13:00:00",
+        "category_id": 1,
+        "lsi": "những con đường hiểm trở nhất thế giới thử thách tay lái, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Con Đường Hiểm Trở Nhất Thế Giới Thử Thách Tay Lái",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Con Đường Hiểm Trở Nhất Thế Giới Thử Thách Tay Lái",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-nhung-con-duong-hiem-tro-nhat-the-gioi-thu-thach-tay-lai",
+        "schedule_date": "2026-10-23T14:30:00",
+        "category_id": 1,
+        "lsi": "những con đường hiểm trở nhất thế giới thử thách tay lái, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Những Con Đường Hiểm Trở Nhất Thế Giới Thử Thách Tay Lái",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Những Con Đường Hiểm Trở Nhất Thế Giới Thử Thách Tay Lái",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-nhung-con-duong-hiem-tro-nhat-the-gioi-thu-thach-tay-lai",
+        "schedule_date": "2026-10-23T16:00:00",
+        "category_id": 1,
+        "lsi": "những con đường hiểm trở nhất thế giới thử thách tay lái, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Con Đường Hiểm Trở Nhất Thế Giới Thử Thách Tay Lái",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Con Đường Hiểm Trở Nhất Thế Giới Thử Thách Tay Lái",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-nhung-con-duong-hiem-tro-nhat-the-gioi-thu-thach-tay-lai",
+        "schedule_date": "2026-10-23T17:30:00",
+        "category_id": 1,
+        "lsi": "những con đường hiểm trở nhất thế giới thử thách tay lái, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Con Đường Hiểm Trở Nhất Thế Giới Thử Thách Tay Lái",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Con Đường Hiểm Trở Nhất Thế Giới Thử Thách Tay Lái",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-nhung-con-duong-hiem-tro-nhat-the-gioi-thu-thach-tay-lai",
+        "schedule_date": "2026-10-23T19:00:00",
+        "category_id": 1,
+        "lsi": "những con đường hiểm trở nhất thế giới thử thách tay lái, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Những Con Đường Hiểm Trở Nhất Thế Giới Thử Thách Tay Lái: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Những Con Đường Hiểm Trở Nhất Thế Giới Thử Thách Tay Lái",
+        "slug": "cam-nang-doc-gia-ve-nhung-con-duong-hiem-tro-nhat-the-gioi-thu-thach-tay-lai-toan-canh-a-z",
+        "schedule_date": "2026-10-23T20:30:00",
+        "category_id": 1,
+        "lsi": "những con đường hiểm trở nhất thế giới thử thách tay lái, ky luc the gioi, chuyen la 2026"
+      }
+    ]
+  },
+  {
+    "day": 17,
+    "date": "2026-10-24",
+    "posts": [
+      {
+        "title": "Top 10 Bí Ẩn Kim Tự Tháp Ai Cập & Kỹ Thuật Xây Dựng Cổ Đại: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Bí Ẩn Kim Tự Tháp Ai Cập & Kỹ Thuật Xây Dựng Cổ Đại",
+        "slug": "top-10-bi-an-kim-tu-thap-ai-cap-ky-thuat-xay-dung-co-dai-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-24T07:00:00",
+        "category_id": 1,
+        "lsi": "bí ẩn kim tự tháp ai cập & kỹ thuật xây dựng cổ đại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Bí Ẩn Kim Tự Tháp Ai Cập & Kỹ Thuật Xây Dựng Cổ Đại",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Bí Ẩn Kim Tự Tháp Ai Cập & Kỹ Thuật Xây Dựng Cổ Đại",
+        "slug": "ky-luc-dung-dau-bang-ve-bi-an-kim-tu-thap-ai-cap-ky-thuat-xay-dung-co-dai",
+        "schedule_date": "2026-10-24T08:30:00",
+        "category_id": 1,
+        "lsi": "bí ẩn kim tự tháp ai cập & kỹ thuật xây dựng cổ đại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Bí Ẩn Kim Tự Tháp Ai Cập & Kỹ Thuật Xây Dựng Cổ Đại",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Bí Ẩn Kim Tự Tháp Ai Cập & Kỹ Thuật Xây Dựng Cổ Đại",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-bi-an-kim-tu-thap-ai-cap-ky-thuat-xay-dung-co-dai",
+        "schedule_date": "2026-10-24T10:00:00",
+        "category_id": 1,
+        "lsi": "bí ẩn kim tự tháp ai cập & kỹ thuật xây dựng cổ đại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Bí Ẩn Kim Tự Tháp Ai Cập & Kỹ Thuật Xây Dựng Cổ Đại",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Bí Ẩn Kim Tự Tháp Ai Cập & Kỹ Thuật Xây Dựng Cổ Đại",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-bi-an-kim-tu-thap-ai-cap-ky-thuat-xay-dung-co-dai",
+        "schedule_date": "2026-10-24T11:30:00",
+        "category_id": 1,
+        "lsi": "bí ẩn kim tự tháp ai cập & kỹ thuật xây dựng cổ đại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Sự Thật Đằng Sau Kỷ Lục Bí Ẩn Kim Tự Tháp Ai Cập & Kỹ Thuật Xây Dựng Cổ Đại Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Bí Ẩn Kim Tự Tháp Ai Cập & Kỹ Thuật Xây Dựng Cổ Đại Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-bi-an-kim-tu-thap-ai-cap-ky-thuat-xay-dung-co-dai-ban-chua-biet",
+        "schedule_date": "2026-10-24T13:00:00",
+        "category_id": 1,
+        "lsi": "bí ẩn kim tự tháp ai cập & kỹ thuật xây dựng cổ đại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Bí Ẩn Kim Tự Tháp Ai Cập & Kỹ Thuật Xây Dựng Cổ Đại",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Bí Ẩn Kim Tự Tháp Ai Cập & Kỹ Thuật Xây Dựng Cổ Đại",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-bi-an-kim-tu-thap-ai-cap-ky-thuat-xay-dung-co-dai",
+        "schedule_date": "2026-10-24T14:30:00",
+        "category_id": 1,
+        "lsi": "bí ẩn kim tự tháp ai cập & kỹ thuật xây dựng cổ đại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Bí Ẩn Kim Tự Tháp Ai Cập & Kỹ Thuật Xây Dựng Cổ Đại",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Bí Ẩn Kim Tự Tháp Ai Cập & Kỹ Thuật Xây Dựng Cổ Đại",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-bi-an-kim-tu-thap-ai-cap-ky-thuat-xay-dung-co-dai",
+        "schedule_date": "2026-10-24T16:00:00",
+        "category_id": 1,
+        "lsi": "bí ẩn kim tự tháp ai cập & kỹ thuật xây dựng cổ đại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Bí Ẩn Kim Tự Tháp Ai Cập & Kỹ Thuật Xây Dựng Cổ Đại",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Bí Ẩn Kim Tự Tháp Ai Cập & Kỹ Thuật Xây Dựng Cổ Đại",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-bi-an-kim-tu-thap-ai-cap-ky-thuat-xay-dung-co-dai",
+        "schedule_date": "2026-10-24T17:30:00",
+        "category_id": 1,
+        "lsi": "bí ẩn kim tự tháp ai cập & kỹ thuật xây dựng cổ đại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Bí Ẩn Kim Tự Tháp Ai Cập & Kỹ Thuật Xây Dựng Cổ Đại",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Bí Ẩn Kim Tự Tháp Ai Cập & Kỹ Thuật Xây Dựng Cổ Đại",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-bi-an-kim-tu-thap-ai-cap-ky-thuat-xay-dung-co-dai",
+        "schedule_date": "2026-10-24T19:00:00",
+        "category_id": 1,
+        "lsi": "bí ẩn kim tự tháp ai cập & kỹ thuật xây dựng cổ đại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Bí Ẩn Kim Tự Tháp Ai Cập & Kỹ Thuật Xây Dựng Cổ Đại: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Bí Ẩn Kim Tự Tháp Ai Cập & Kỹ Thuật Xây Dựng Cổ Đại",
+        "slug": "cam-nang-doc-gia-ve-bi-an-kim-tu-thap-ai-cap-ky-thuat-xay-dung-co-dai-toan-canh-a-z",
+        "schedule_date": "2026-10-24T20:30:00",
+        "category_id": 1,
+        "lsi": "bí ẩn kim tự tháp ai cập & kỹ thuật xây dựng cổ đại, ky luc the gioi, chuyen la 2026"
+      }
+    ]
+  },
+  {
+    "day": 18,
+    "date": "2026-10-25",
+    "posts": [
+      {
+        "title": "Top 10 Những Thác Nước Hùng Vĩ & Tráng Lệ Nhất Năm Châu: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Những Thác Nước Hùng Vĩ & Tráng Lệ Nhất Năm Châu",
+        "slug": "top-10-nhung-thac-nuoc-hung-vi-trang-le-nhat-nam-chau-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-25T07:00:00",
+        "category_id": 1,
+        "lsi": "những thác nước hùng vĩ & tráng lệ nhất năm châu, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Những Thác Nước Hùng Vĩ & Tráng Lệ Nhất Năm Châu",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Những Thác Nước Hùng Vĩ & Tráng Lệ Nhất Năm Châu",
+        "slug": "ky-luc-dung-dau-bang-ve-nhung-thac-nuoc-hung-vi-trang-le-nhat-nam-chau",
+        "schedule_date": "2026-10-25T08:30:00",
+        "category_id": 1,
+        "lsi": "những thác nước hùng vĩ & tráng lệ nhất năm châu, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Thác Nước Hùng Vĩ & Tráng Lệ Nhất Năm Châu",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Thác Nước Hùng Vĩ & Tráng Lệ Nhất Năm Châu",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-nhung-thac-nuoc-hung-vi-trang-le-nhat-nam-chau",
+        "schedule_date": "2026-10-25T10:00:00",
+        "category_id": 1,
+        "lsi": "những thác nước hùng vĩ & tráng lệ nhất năm châu, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Thác Nước Hùng Vĩ & Tráng Lệ Nhất Năm Châu",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Thác Nước Hùng Vĩ & Tráng Lệ Nhất Năm Châu",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-nhung-thac-nuoc-hung-vi-trang-le-nhat-nam-chau",
+        "schedule_date": "2026-10-25T11:30:00",
+        "category_id": 1,
+        "lsi": "những thác nước hùng vĩ & tráng lệ nhất năm châu, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Sự Thật Đằng Sau Kỷ Lục Những Thác Nước Hùng Vĩ & Tráng Lệ Nhất Năm Châu Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Những Thác Nước Hùng Vĩ & Tráng Lệ Nhất Năm Châu Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-nhung-thac-nuoc-hung-vi-trang-le-nhat-nam-chau-ban-chua-biet",
+        "schedule_date": "2026-10-25T13:00:00",
+        "category_id": 1,
+        "lsi": "những thác nước hùng vĩ & tráng lệ nhất năm châu, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Thác Nước Hùng Vĩ & Tráng Lệ Nhất Năm Châu",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Thác Nước Hùng Vĩ & Tráng Lệ Nhất Năm Châu",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-nhung-thac-nuoc-hung-vi-trang-le-nhat-nam-chau",
+        "schedule_date": "2026-10-25T14:30:00",
+        "category_id": 1,
+        "lsi": "những thác nước hùng vĩ & tráng lệ nhất năm châu, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Những Thác Nước Hùng Vĩ & Tráng Lệ Nhất Năm Châu",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Những Thác Nước Hùng Vĩ & Tráng Lệ Nhất Năm Châu",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-nhung-thac-nuoc-hung-vi-trang-le-nhat-nam-chau",
+        "schedule_date": "2026-10-25T16:00:00",
+        "category_id": 1,
+        "lsi": "những thác nước hùng vĩ & tráng lệ nhất năm châu, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Thác Nước Hùng Vĩ & Tráng Lệ Nhất Năm Châu",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Thác Nước Hùng Vĩ & Tráng Lệ Nhất Năm Châu",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-nhung-thac-nuoc-hung-vi-trang-le-nhat-nam-chau",
+        "schedule_date": "2026-10-25T17:30:00",
+        "category_id": 1,
+        "lsi": "những thác nước hùng vĩ & tráng lệ nhất năm châu, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Thác Nước Hùng Vĩ & Tráng Lệ Nhất Năm Châu",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Thác Nước Hùng Vĩ & Tráng Lệ Nhất Năm Châu",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-nhung-thac-nuoc-hung-vi-trang-le-nhat-nam-chau",
+        "schedule_date": "2026-10-25T19:00:00",
+        "category_id": 1,
+        "lsi": "những thác nước hùng vĩ & tráng lệ nhất năm châu, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Những Thác Nước Hùng Vĩ & Tráng Lệ Nhất Năm Châu: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Những Thác Nước Hùng Vĩ & Tráng Lệ Nhất Năm Châu",
+        "slug": "cam-nang-doc-gia-ve-nhung-thac-nuoc-hung-vi-trang-le-nhat-nam-chau-toan-canh-a-z",
+        "schedule_date": "2026-10-25T20:30:00",
+        "category_id": 1,
+        "lsi": "những thác nước hùng vĩ & tráng lệ nhất năm châu, ky luc the gioi, chuyen la 2026"
+      }
+    ]
+  },
+  {
+    "day": 19,
+    "date": "2026-10-26",
+    "posts": [
+      {
+        "title": "Top 10 Kỷ Lục Bay Vào Không Gian & Trạm Vũ Trụ Quốc Tế: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Kỷ Lục Bay Vào Không Gian & Trạm Vũ Trụ Quốc Tế",
+        "slug": "top-10-ky-luc-bay-vao-khong-gian-tram-vu-tru-quoc-te-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-26T07:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục bay vào không gian & trạm vũ trụ quốc tế, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Kỷ Lục Bay Vào Không Gian & Trạm Vũ Trụ Quốc Tế",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Kỷ Lục Bay Vào Không Gian & Trạm Vũ Trụ Quốc Tế",
+        "slug": "ky-luc-dung-dau-bang-ve-ky-luc-bay-vao-khong-gian-tram-vu-tru-quoc-te",
+        "schedule_date": "2026-10-26T08:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục bay vào không gian & trạm vũ trụ quốc tế, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Kỷ Lục Bay Vào Không Gian & Trạm Vũ Trụ Quốc Tế",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Kỷ Lục Bay Vào Không Gian & Trạm Vũ Trụ Quốc Tế",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-ky-luc-bay-vao-khong-gian-tram-vu-tru-quoc-te",
+        "schedule_date": "2026-10-26T10:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục bay vào không gian & trạm vũ trụ quốc tế, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Kỷ Lục Bay Vào Không Gian & Trạm Vũ Trụ Quốc Tế",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Kỷ Lục Bay Vào Không Gian & Trạm Vũ Trụ Quốc Tế",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-ky-luc-bay-vao-khong-gian-tram-vu-tru-quoc-te",
+        "schedule_date": "2026-10-26T11:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục bay vào không gian & trạm vũ trụ quốc tế, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Sự Thật Đằng Sau Kỷ Lục Kỷ Lục Bay Vào Không Gian & Trạm Vũ Trụ Quốc Tế Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Kỷ Lục Bay Vào Không Gian & Trạm Vũ Trụ Quốc Tế Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-ky-luc-bay-vao-khong-gian-tram-vu-tru-quoc-te-ban-chua-biet",
+        "schedule_date": "2026-10-26T13:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục bay vào không gian & trạm vũ trụ quốc tế, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Kỷ Lục Bay Vào Không Gian & Trạm Vũ Trụ Quốc Tế",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Kỷ Lục Bay Vào Không Gian & Trạm Vũ Trụ Quốc Tế",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-ky-luc-bay-vao-khong-gian-tram-vu-tru-quoc-te",
+        "schedule_date": "2026-10-26T14:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục bay vào không gian & trạm vũ trụ quốc tế, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Kỷ Lục Bay Vào Không Gian & Trạm Vũ Trụ Quốc Tế",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Kỷ Lục Bay Vào Không Gian & Trạm Vũ Trụ Quốc Tế",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-ky-luc-bay-vao-khong-gian-tram-vu-tru-quoc-te",
+        "schedule_date": "2026-10-26T16:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục bay vào không gian & trạm vũ trụ quốc tế, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Kỷ Lục Bay Vào Không Gian & Trạm Vũ Trụ Quốc Tế",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Kỷ Lục Bay Vào Không Gian & Trạm Vũ Trụ Quốc Tế",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-ky-luc-bay-vao-khong-gian-tram-vu-tru-quoc-te",
+        "schedule_date": "2026-10-26T17:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục bay vào không gian & trạm vũ trụ quốc tế, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Kỷ Lục Bay Vào Không Gian & Trạm Vũ Trụ Quốc Tế",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Kỷ Lục Bay Vào Không Gian & Trạm Vũ Trụ Quốc Tế",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-ky-luc-bay-vao-khong-gian-tram-vu-tru-quoc-te",
+        "schedule_date": "2026-10-26T19:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục bay vào không gian & trạm vũ trụ quốc tế, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Kỷ Lục Bay Vào Không Gian & Trạm Vũ Trụ Quốc Tế: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Kỷ Lục Bay Vào Không Gian & Trạm Vũ Trụ Quốc Tế",
+        "slug": "cam-nang-doc-gia-ve-ky-luc-bay-vao-khong-gian-tram-vu-tru-quoc-te-toan-canh-a-z",
+        "schedule_date": "2026-10-26T20:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục bay vào không gian & trạm vũ trụ quốc tế, ky luc the gioi, chuyen la 2026"
+      }
+    ]
+  },
+  {
+    "day": 20,
+    "date": "2026-10-27",
+    "posts": [
+      {
+        "title": "Top 10 Những Loài Cây Lâu Năm & Khổng Lồ Nhất Hành Tinh: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Những Loài Cây Lâu Năm & Khổng Lồ Nhất Hành Tinh",
+        "slug": "top-10-nhung-loai-cay-lau-nam-khong-lo-nhat-hanh-tinh-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-27T07:00:00",
+        "category_id": 1,
+        "lsi": "những loài cây lâu năm & khổng lồ nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Những Loài Cây Lâu Năm & Khổng Lồ Nhất Hành Tinh",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Những Loài Cây Lâu Năm & Khổng Lồ Nhất Hành Tinh",
+        "slug": "ky-luc-dung-dau-bang-ve-nhung-loai-cay-lau-nam-khong-lo-nhat-hanh-tinh",
+        "schedule_date": "2026-10-27T08:30:00",
+        "category_id": 1,
+        "lsi": "những loài cây lâu năm & khổng lồ nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Loài Cây Lâu Năm & Khổng Lồ Nhất Hành Tinh",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Loài Cây Lâu Năm & Khổng Lồ Nhất Hành Tinh",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-nhung-loai-cay-lau-nam-khong-lo-nhat-hanh-tinh",
+        "schedule_date": "2026-10-27T10:00:00",
+        "category_id": 1,
+        "lsi": "những loài cây lâu năm & khổng lồ nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Loài Cây Lâu Năm & Khổng Lồ Nhất Hành Tinh",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Loài Cây Lâu Năm & Khổng Lồ Nhất Hành Tinh",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-nhung-loai-cay-lau-nam-khong-lo-nhat-hanh-tinh",
+        "schedule_date": "2026-10-27T11:30:00",
+        "category_id": 1,
+        "lsi": "những loài cây lâu năm & khổng lồ nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Sự Thật Đằng Sau Kỷ Lục Những Loài Cây Lâu Năm & Khổng Lồ Nhất Hành Tinh Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Những Loài Cây Lâu Năm & Khổng Lồ Nhất Hành Tinh Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-nhung-loai-cay-lau-nam-khong-lo-nhat-hanh-tinh-ban-chua-biet",
+        "schedule_date": "2026-10-27T13:00:00",
+        "category_id": 1,
+        "lsi": "những loài cây lâu năm & khổng lồ nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Loài Cây Lâu Năm & Khổng Lồ Nhất Hành Tinh",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Loài Cây Lâu Năm & Khổng Lồ Nhất Hành Tinh",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-nhung-loai-cay-lau-nam-khong-lo-nhat-hanh-tinh",
+        "schedule_date": "2026-10-27T14:30:00",
+        "category_id": 1,
+        "lsi": "những loài cây lâu năm & khổng lồ nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Những Loài Cây Lâu Năm & Khổng Lồ Nhất Hành Tinh",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Những Loài Cây Lâu Năm & Khổng Lồ Nhất Hành Tinh",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-nhung-loai-cay-lau-nam-khong-lo-nhat-hanh-tinh",
+        "schedule_date": "2026-10-27T16:00:00",
+        "category_id": 1,
+        "lsi": "những loài cây lâu năm & khổng lồ nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Loài Cây Lâu Năm & Khổng Lồ Nhất Hành Tinh",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Loài Cây Lâu Năm & Khổng Lồ Nhất Hành Tinh",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-nhung-loai-cay-lau-nam-khong-lo-nhat-hanh-tinh",
+        "schedule_date": "2026-10-27T17:30:00",
+        "category_id": 1,
+        "lsi": "những loài cây lâu năm & khổng lồ nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Loài Cây Lâu Năm & Khổng Lồ Nhất Hành Tinh",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Loài Cây Lâu Năm & Khổng Lồ Nhất Hành Tinh",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-nhung-loai-cay-lau-nam-khong-lo-nhat-hanh-tinh",
+        "schedule_date": "2026-10-27T19:00:00",
+        "category_id": 1,
+        "lsi": "những loài cây lâu năm & khổng lồ nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Những Loài Cây Lâu Năm & Khổng Lồ Nhất Hành Tinh: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Những Loài Cây Lâu Năm & Khổng Lồ Nhất Hành Tinh",
+        "slug": "cam-nang-doc-gia-ve-nhung-loai-cay-lau-nam-khong-lo-nhat-hanh-tinh-toan-canh-a-z",
+        "schedule_date": "2026-10-27T20:30:00",
+        "category_id": 1,
+        "lsi": "những loài cây lâu năm & khổng lồ nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      }
+    ]
+  },
+  {
+    "day": 21,
+    "date": "2026-10-28",
+    "posts": [
+      {
+        "title": "Top 10 Những Sân Bay Nguy Hiểm Nhất Thế Giới Cho Phi Công: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Những Sân Bay Nguy Hiểm Nhất Thế Giới Cho Phi Công",
+        "slug": "top-10-nhung-san-bay-nguy-hiem-nhat-the-gioi-cho-phi-cong-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-28T07:00:00",
+        "category_id": 1,
+        "lsi": "những sân bay nguy hiểm nhất thế giới cho phi công, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Những Sân Bay Nguy Hiểm Nhất Thế Giới Cho Phi Công",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Những Sân Bay Nguy Hiểm Nhất Thế Giới Cho Phi Công",
+        "slug": "ky-luc-dung-dau-bang-ve-nhung-san-bay-nguy-hiem-nhat-the-gioi-cho-phi-cong",
+        "schedule_date": "2026-10-28T08:30:00",
+        "category_id": 1,
+        "lsi": "những sân bay nguy hiểm nhất thế giới cho phi công, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Sân Bay Nguy Hiểm Nhất Thế Giới Cho Phi Công",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Sân Bay Nguy Hiểm Nhất Thế Giới Cho Phi Công",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-nhung-san-bay-nguy-hiem-nhat-the-gioi-cho-phi-cong",
+        "schedule_date": "2026-10-28T10:00:00",
+        "category_id": 1,
+        "lsi": "những sân bay nguy hiểm nhất thế giới cho phi công, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Sân Bay Nguy Hiểm Nhất Thế Giới Cho Phi Công",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Sân Bay Nguy Hiểm Nhất Thế Giới Cho Phi Công",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-nhung-san-bay-nguy-hiem-nhat-the-gioi-cho-phi-cong",
+        "schedule_date": "2026-10-28T11:30:00",
+        "category_id": 1,
+        "lsi": "những sân bay nguy hiểm nhất thế giới cho phi công, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Sự Thật Đằng Sau Kỷ Lục Những Sân Bay Nguy Hiểm Nhất Thế Giới Cho Phi Công Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Những Sân Bay Nguy Hiểm Nhất Thế Giới Cho Phi Công Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-nhung-san-bay-nguy-hiem-nhat-the-gioi-cho-phi-cong-ban-chua-biet",
+        "schedule_date": "2026-10-28T13:00:00",
+        "category_id": 1,
+        "lsi": "những sân bay nguy hiểm nhất thế giới cho phi công, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Sân Bay Nguy Hiểm Nhất Thế Giới Cho Phi Công",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Sân Bay Nguy Hiểm Nhất Thế Giới Cho Phi Công",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-nhung-san-bay-nguy-hiem-nhat-the-gioi-cho-phi-cong",
+        "schedule_date": "2026-10-28T14:30:00",
+        "category_id": 1,
+        "lsi": "những sân bay nguy hiểm nhất thế giới cho phi công, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Những Sân Bay Nguy Hiểm Nhất Thế Giới Cho Phi Công",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Những Sân Bay Nguy Hiểm Nhất Thế Giới Cho Phi Công",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-nhung-san-bay-nguy-hiem-nhat-the-gioi-cho-phi-cong",
+        "schedule_date": "2026-10-28T16:00:00",
+        "category_id": 1,
+        "lsi": "những sân bay nguy hiểm nhất thế giới cho phi công, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Sân Bay Nguy Hiểm Nhất Thế Giới Cho Phi Công",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Sân Bay Nguy Hiểm Nhất Thế Giới Cho Phi Công",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-nhung-san-bay-nguy-hiem-nhat-the-gioi-cho-phi-cong",
+        "schedule_date": "2026-10-28T17:30:00",
+        "category_id": 1,
+        "lsi": "những sân bay nguy hiểm nhất thế giới cho phi công, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Sân Bay Nguy Hiểm Nhất Thế Giới Cho Phi Công",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Sân Bay Nguy Hiểm Nhất Thế Giới Cho Phi Công",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-nhung-san-bay-nguy-hiem-nhat-the-gioi-cho-phi-cong",
+        "schedule_date": "2026-10-28T19:00:00",
+        "category_id": 1,
+        "lsi": "những sân bay nguy hiểm nhất thế giới cho phi công, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Những Sân Bay Nguy Hiểm Nhất Thế Giới Cho Phi Công: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Những Sân Bay Nguy Hiểm Nhất Thế Giới Cho Phi Công",
+        "slug": "cam-nang-doc-gia-ve-nhung-san-bay-nguy-hiem-nhat-the-gioi-cho-phi-cong-toan-canh-a-z",
+        "schedule_date": "2026-10-28T20:30:00",
+        "category_id": 1,
+        "lsi": "những sân bay nguy hiểm nhất thế giới cho phi công, ky luc the gioi, chuyen la 2026"
+      }
+    ]
+  },
+  {
+    "day": 22,
+    "date": "2026-10-29",
+    "posts": [
+      {
+        "title": "Top 10 Bí Ẩn Quái Vật Hồ Loch Ness & Sinh Vật Thần Thoại: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Bí Ẩn Quái Vật Hồ Loch Ness & Sinh Vật Thần Thoại",
+        "slug": "top-10-bi-an-quai-vat-ho-loch-ness-sinh-vat-than-thoai-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-29T07:00:00",
+        "category_id": 1,
+        "lsi": "bí ẩn quái vật hồ loch ness & sinh vật thần thoại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Bí Ẩn Quái Vật Hồ Loch Ness & Sinh Vật Thần Thoại",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Bí Ẩn Quái Vật Hồ Loch Ness & Sinh Vật Thần Thoại",
+        "slug": "ky-luc-dung-dau-bang-ve-bi-an-quai-vat-ho-loch-ness-sinh-vat-than-thoai",
+        "schedule_date": "2026-10-29T08:30:00",
+        "category_id": 1,
+        "lsi": "bí ẩn quái vật hồ loch ness & sinh vật thần thoại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Bí Ẩn Quái Vật Hồ Loch Ness & Sinh Vật Thần Thoại",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Bí Ẩn Quái Vật Hồ Loch Ness & Sinh Vật Thần Thoại",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-bi-an-quai-vat-ho-loch-ness-sinh-vat-than-thoai",
+        "schedule_date": "2026-10-29T10:00:00",
+        "category_id": 1,
+        "lsi": "bí ẩn quái vật hồ loch ness & sinh vật thần thoại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Bí Ẩn Quái Vật Hồ Loch Ness & Sinh Vật Thần Thoại",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Bí Ẩn Quái Vật Hồ Loch Ness & Sinh Vật Thần Thoại",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-bi-an-quai-vat-ho-loch-ness-sinh-vat-than-thoai",
+        "schedule_date": "2026-10-29T11:30:00",
+        "category_id": 1,
+        "lsi": "bí ẩn quái vật hồ loch ness & sinh vật thần thoại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Sự Thật Đằng Sau Kỷ Lục Bí Ẩn Quái Vật Hồ Loch Ness & Sinh Vật Thần Thoại Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Bí Ẩn Quái Vật Hồ Loch Ness & Sinh Vật Thần Thoại Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-bi-an-quai-vat-ho-loch-ness-sinh-vat-than-thoai-ban-chua-biet",
+        "schedule_date": "2026-10-29T13:00:00",
+        "category_id": 1,
+        "lsi": "bí ẩn quái vật hồ loch ness & sinh vật thần thoại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Bí Ẩn Quái Vật Hồ Loch Ness & Sinh Vật Thần Thoại",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Bí Ẩn Quái Vật Hồ Loch Ness & Sinh Vật Thần Thoại",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-bi-an-quai-vat-ho-loch-ness-sinh-vat-than-thoai",
+        "schedule_date": "2026-10-29T14:30:00",
+        "category_id": 1,
+        "lsi": "bí ẩn quái vật hồ loch ness & sinh vật thần thoại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Bí Ẩn Quái Vật Hồ Loch Ness & Sinh Vật Thần Thoại",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Bí Ẩn Quái Vật Hồ Loch Ness & Sinh Vật Thần Thoại",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-bi-an-quai-vat-ho-loch-ness-sinh-vat-than-thoai",
+        "schedule_date": "2026-10-29T16:00:00",
+        "category_id": 1,
+        "lsi": "bí ẩn quái vật hồ loch ness & sinh vật thần thoại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Bí Ẩn Quái Vật Hồ Loch Ness & Sinh Vật Thần Thoại",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Bí Ẩn Quái Vật Hồ Loch Ness & Sinh Vật Thần Thoại",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-bi-an-quai-vat-ho-loch-ness-sinh-vat-than-thoai",
+        "schedule_date": "2026-10-29T17:30:00",
+        "category_id": 1,
+        "lsi": "bí ẩn quái vật hồ loch ness & sinh vật thần thoại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Bí Ẩn Quái Vật Hồ Loch Ness & Sinh Vật Thần Thoại",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Bí Ẩn Quái Vật Hồ Loch Ness & Sinh Vật Thần Thoại",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-bi-an-quai-vat-ho-loch-ness-sinh-vat-than-thoai",
+        "schedule_date": "2026-10-29T19:00:00",
+        "category_id": 1,
+        "lsi": "bí ẩn quái vật hồ loch ness & sinh vật thần thoại, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Bí Ẩn Quái Vật Hồ Loch Ness & Sinh Vật Thần Thoại: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Bí Ẩn Quái Vật Hồ Loch Ness & Sinh Vật Thần Thoại",
+        "slug": "cam-nang-doc-gia-ve-bi-an-quai-vat-ho-loch-ness-sinh-vat-than-thoai-toan-canh-a-z",
+        "schedule_date": "2026-10-29T20:30:00",
+        "category_id": 1,
+        "lsi": "bí ẩn quái vật hồ loch ness & sinh vật thần thoại, ky luc the gioi, chuyen la 2026"
+      }
+    ]
+  },
+  {
+    "day": 23,
+    "date": "2026-10-30",
+    "posts": [
+      {
+        "title": "Top 10 Những Mỏ Kim Cương & Vàng Sâu Nhất Dưới Lòng Đất: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Những Mỏ Kim Cương & Vàng Sâu Nhất Dưới Lòng Đất",
+        "slug": "top-10-nhung-mo-kim-cuong-vang-sau-nhat-duoi-long-dat-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-30T07:00:00",
+        "category_id": 1,
+        "lsi": "những mỏ kim cương & vàng sâu nhất dưới lòng đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Những Mỏ Kim Cương & Vàng Sâu Nhất Dưới Lòng Đất",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Những Mỏ Kim Cương & Vàng Sâu Nhất Dưới Lòng Đất",
+        "slug": "ky-luc-dung-dau-bang-ve-nhung-mo-kim-cuong-vang-sau-nhat-duoi-long-dat",
+        "schedule_date": "2026-10-30T08:30:00",
+        "category_id": 1,
+        "lsi": "những mỏ kim cương & vàng sâu nhất dưới lòng đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Mỏ Kim Cương & Vàng Sâu Nhất Dưới Lòng Đất",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Mỏ Kim Cương & Vàng Sâu Nhất Dưới Lòng Đất",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-nhung-mo-kim-cuong-vang-sau-nhat-duoi-long-dat",
+        "schedule_date": "2026-10-30T10:00:00",
+        "category_id": 1,
+        "lsi": "những mỏ kim cương & vàng sâu nhất dưới lòng đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Mỏ Kim Cương & Vàng Sâu Nhất Dưới Lòng Đất",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Mỏ Kim Cương & Vàng Sâu Nhất Dưới Lòng Đất",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-nhung-mo-kim-cuong-vang-sau-nhat-duoi-long-dat",
+        "schedule_date": "2026-10-30T11:30:00",
+        "category_id": 1,
+        "lsi": "những mỏ kim cương & vàng sâu nhất dưới lòng đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Sự Thật Đằng Sau Kỷ Lục Những Mỏ Kim Cương & Vàng Sâu Nhất Dưới Lòng Đất Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Những Mỏ Kim Cương & Vàng Sâu Nhất Dưới Lòng Đất Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-nhung-mo-kim-cuong-vang-sau-nhat-duoi-long-dat-ban-chua-biet",
+        "schedule_date": "2026-10-30T13:00:00",
+        "category_id": 1,
+        "lsi": "những mỏ kim cương & vàng sâu nhất dưới lòng đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Mỏ Kim Cương & Vàng Sâu Nhất Dưới Lòng Đất",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Mỏ Kim Cương & Vàng Sâu Nhất Dưới Lòng Đất",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-nhung-mo-kim-cuong-vang-sau-nhat-duoi-long-dat",
+        "schedule_date": "2026-10-30T14:30:00",
+        "category_id": 1,
+        "lsi": "những mỏ kim cương & vàng sâu nhất dưới lòng đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Những Mỏ Kim Cương & Vàng Sâu Nhất Dưới Lòng Đất",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Những Mỏ Kim Cương & Vàng Sâu Nhất Dưới Lòng Đất",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-nhung-mo-kim-cuong-vang-sau-nhat-duoi-long-dat",
+        "schedule_date": "2026-10-30T16:00:00",
+        "category_id": 1,
+        "lsi": "những mỏ kim cương & vàng sâu nhất dưới lòng đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Mỏ Kim Cương & Vàng Sâu Nhất Dưới Lòng Đất",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Mỏ Kim Cương & Vàng Sâu Nhất Dưới Lòng Đất",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-nhung-mo-kim-cuong-vang-sau-nhat-duoi-long-dat",
+        "schedule_date": "2026-10-30T17:30:00",
+        "category_id": 1,
+        "lsi": "những mỏ kim cương & vàng sâu nhất dưới lòng đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Mỏ Kim Cương & Vàng Sâu Nhất Dưới Lòng Đất",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Mỏ Kim Cương & Vàng Sâu Nhất Dưới Lòng Đất",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-nhung-mo-kim-cuong-vang-sau-nhat-duoi-long-dat",
+        "schedule_date": "2026-10-30T19:00:00",
+        "category_id": 1,
+        "lsi": "những mỏ kim cương & vàng sâu nhất dưới lòng đất, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Những Mỏ Kim Cương & Vàng Sâu Nhất Dưới Lòng Đất: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Những Mỏ Kim Cương & Vàng Sâu Nhất Dưới Lòng Đất",
+        "slug": "cam-nang-doc-gia-ve-nhung-mo-kim-cuong-vang-sau-nhat-duoi-long-dat-toan-canh-a-z",
+        "schedule_date": "2026-10-30T20:30:00",
+        "category_id": 1,
+        "lsi": "những mỏ kim cương & vàng sâu nhất dưới lòng đất, ky luc the gioi, chuyen la 2026"
+      }
+    ]
+  },
+  {
+    "day": 24,
+    "date": "2026-10-31",
+    "posts": [
+      {
+        "title": "Top 10 Những Nhà Tù Kiên Cố Nhất Không Thể Vượt Ngục: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Những Nhà Tù Kiên Cố Nhất Không Thể Vượt Ngục",
+        "slug": "top-10-nhung-nha-tu-kien-co-nhat-khong-the-vuot-nguc-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-10-31T07:00:00",
+        "category_id": 1,
+        "lsi": "những nhà tù kiên cố nhất không thể vượt ngục, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Những Nhà Tù Kiên Cố Nhất Không Thể Vượt Ngục",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Những Nhà Tù Kiên Cố Nhất Không Thể Vượt Ngục",
+        "slug": "ky-luc-dung-dau-bang-ve-nhung-nha-tu-kien-co-nhat-khong-the-vuot-nguc",
+        "schedule_date": "2026-10-31T08:30:00",
+        "category_id": 1,
+        "lsi": "những nhà tù kiên cố nhất không thể vượt ngục, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Nhà Tù Kiên Cố Nhất Không Thể Vượt Ngục",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Nhà Tù Kiên Cố Nhất Không Thể Vượt Ngục",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-nhung-nha-tu-kien-co-nhat-khong-the-vuot-nguc",
+        "schedule_date": "2026-10-31T10:00:00",
+        "category_id": 1,
+        "lsi": "những nhà tù kiên cố nhất không thể vượt ngục, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Nhà Tù Kiên Cố Nhất Không Thể Vượt Ngục",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Nhà Tù Kiên Cố Nhất Không Thể Vượt Ngục",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-nhung-nha-tu-kien-co-nhat-khong-the-vuot-nguc",
+        "schedule_date": "2026-10-31T11:30:00",
+        "category_id": 1,
+        "lsi": "những nhà tù kiên cố nhất không thể vượt ngục, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Sự Thật Đằng Sau Kỷ Lục Những Nhà Tù Kiên Cố Nhất Không Thể Vượt Ngục Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Những Nhà Tù Kiên Cố Nhất Không Thể Vượt Ngục Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-nhung-nha-tu-kien-co-nhat-khong-the-vuot-nguc-ban-chua-biet",
+        "schedule_date": "2026-10-31T13:00:00",
+        "category_id": 1,
+        "lsi": "những nhà tù kiên cố nhất không thể vượt ngục, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Nhà Tù Kiên Cố Nhất Không Thể Vượt Ngục",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Nhà Tù Kiên Cố Nhất Không Thể Vượt Ngục",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-nhung-nha-tu-kien-co-nhat-khong-the-vuot-nguc",
+        "schedule_date": "2026-10-31T14:30:00",
+        "category_id": 1,
+        "lsi": "những nhà tù kiên cố nhất không thể vượt ngục, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Những Nhà Tù Kiên Cố Nhất Không Thể Vượt Ngục",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Những Nhà Tù Kiên Cố Nhất Không Thể Vượt Ngục",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-nhung-nha-tu-kien-co-nhat-khong-the-vuot-nguc",
+        "schedule_date": "2026-10-31T16:00:00",
+        "category_id": 1,
+        "lsi": "những nhà tù kiên cố nhất không thể vượt ngục, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Nhà Tù Kiên Cố Nhất Không Thể Vượt Ngục",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Nhà Tù Kiên Cố Nhất Không Thể Vượt Ngục",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-nhung-nha-tu-kien-co-nhat-khong-the-vuot-nguc",
+        "schedule_date": "2026-10-31T17:30:00",
+        "category_id": 1,
+        "lsi": "những nhà tù kiên cố nhất không thể vượt ngục, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Nhà Tù Kiên Cố Nhất Không Thể Vượt Ngục",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Nhà Tù Kiên Cố Nhất Không Thể Vượt Ngục",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-nhung-nha-tu-kien-co-nhat-khong-the-vuot-nguc",
+        "schedule_date": "2026-10-31T19:00:00",
+        "category_id": 1,
+        "lsi": "những nhà tù kiên cố nhất không thể vượt ngục, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Những Nhà Tù Kiên Cố Nhất Không Thể Vượt Ngục: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Những Nhà Tù Kiên Cố Nhất Không Thể Vượt Ngục",
+        "slug": "cam-nang-doc-gia-ve-nhung-nha-tu-kien-co-nhat-khong-the-vuot-nguc-toan-canh-a-z",
+        "schedule_date": "2026-10-31T20:30:00",
+        "category_id": 1,
+        "lsi": "những nhà tù kiên cố nhất không thể vượt ngục, ky luc the gioi, chuyen la 2026"
+      }
+    ]
+  },
+  {
+    "day": 25,
+    "date": "2026-11-01",
+    "posts": [
+      {
+        "title": "Top 10 Kỷ Lục Nhịn Ăn Nhịn Thở Của Dị Nhân Thế Giới: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Kỷ Lục Nhịn Ăn Nhịn Thở Của Dị Nhân Thế Giới",
+        "slug": "top-10-ky-luc-nhin-an-nhin-tho-cua-di-nhan-the-gioi-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-11-01T07:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục nhịn ăn nhịn thở của dị nhân thế giới, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Kỷ Lục Nhịn Ăn Nhịn Thở Của Dị Nhân Thế Giới",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Kỷ Lục Nhịn Ăn Nhịn Thở Của Dị Nhân Thế Giới",
+        "slug": "ky-luc-dung-dau-bang-ve-ky-luc-nhin-an-nhin-tho-cua-di-nhan-the-gioi",
+        "schedule_date": "2026-11-01T08:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục nhịn ăn nhịn thở của dị nhân thế giới, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Kỷ Lục Nhịn Ăn Nhịn Thở Của Dị Nhân Thế Giới",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Kỷ Lục Nhịn Ăn Nhịn Thở Của Dị Nhân Thế Giới",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-ky-luc-nhin-an-nhin-tho-cua-di-nhan-the-gioi",
+        "schedule_date": "2026-11-01T10:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục nhịn ăn nhịn thở của dị nhân thế giới, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Kỷ Lục Nhịn Ăn Nhịn Thở Của Dị Nhân Thế Giới",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Kỷ Lục Nhịn Ăn Nhịn Thở Của Dị Nhân Thế Giới",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-ky-luc-nhin-an-nhin-tho-cua-di-nhan-the-gioi",
+        "schedule_date": "2026-11-01T11:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục nhịn ăn nhịn thở của dị nhân thế giới, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Sự Thật Đằng Sau Kỷ Lục Kỷ Lục Nhịn Ăn Nhịn Thở Của Dị Nhân Thế Giới Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Kỷ Lục Nhịn Ăn Nhịn Thở Của Dị Nhân Thế Giới Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-ky-luc-nhin-an-nhin-tho-cua-di-nhan-the-gioi-ban-chua-biet",
+        "schedule_date": "2026-11-01T13:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục nhịn ăn nhịn thở của dị nhân thế giới, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Kỷ Lục Nhịn Ăn Nhịn Thở Của Dị Nhân Thế Giới",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Kỷ Lục Nhịn Ăn Nhịn Thở Của Dị Nhân Thế Giới",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-ky-luc-nhin-an-nhin-tho-cua-di-nhan-the-gioi",
+        "schedule_date": "2026-11-01T14:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục nhịn ăn nhịn thở của dị nhân thế giới, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Kỷ Lục Nhịn Ăn Nhịn Thở Của Dị Nhân Thế Giới",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Kỷ Lục Nhịn Ăn Nhịn Thở Của Dị Nhân Thế Giới",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-ky-luc-nhin-an-nhin-tho-cua-di-nhan-the-gioi",
+        "schedule_date": "2026-11-01T16:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục nhịn ăn nhịn thở của dị nhân thế giới, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Kỷ Lục Nhịn Ăn Nhịn Thở Của Dị Nhân Thế Giới",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Kỷ Lục Nhịn Ăn Nhịn Thở Của Dị Nhân Thế Giới",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-ky-luc-nhin-an-nhin-tho-cua-di-nhan-the-gioi",
+        "schedule_date": "2026-11-01T17:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục nhịn ăn nhịn thở của dị nhân thế giới, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Kỷ Lục Nhịn Ăn Nhịn Thở Của Dị Nhân Thế Giới",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Kỷ Lục Nhịn Ăn Nhịn Thở Của Dị Nhân Thế Giới",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-ky-luc-nhin-an-nhin-tho-cua-di-nhan-the-gioi",
+        "schedule_date": "2026-11-01T19:00:00",
+        "category_id": 1,
+        "lsi": "kỷ lục nhịn ăn nhịn thở của dị nhân thế giới, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Kỷ Lục Nhịn Ăn Nhịn Thở Của Dị Nhân Thế Giới: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Kỷ Lục Nhịn Ăn Nhịn Thở Của Dị Nhân Thế Giới",
+        "slug": "cam-nang-doc-gia-ve-ky-luc-nhin-an-nhin-tho-cua-di-nhan-the-gioi-toan-canh-a-z",
+        "schedule_date": "2026-11-01T20:30:00",
+        "category_id": 1,
+        "lsi": "kỷ lục nhịn ăn nhịn thở của dị nhân thế giới, ky luc the gioi, chuyen la 2026"
+      }
+    ]
+  },
+  {
+    "day": 26,
+    "date": "2026-11-02",
+    "posts": [
+      {
+        "title": "Top 10 Những Ngôi Chùa & Nhà Thờ Độc Đáo Nhất Việt Nam: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Những Ngôi Chùa & Nhà Thờ Độc Đáo Nhất Việt Nam",
+        "slug": "top-10-nhung-ngoi-chua-nha-tho-doc-dao-nhat-viet-nam-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-11-02T07:00:00",
+        "category_id": 1,
+        "lsi": "những ngôi chùa & nhà thờ độc đáo nhất việt nam, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Những Ngôi Chùa & Nhà Thờ Độc Đáo Nhất Việt Nam",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Những Ngôi Chùa & Nhà Thờ Độc Đáo Nhất Việt Nam",
+        "slug": "ky-luc-dung-dau-bang-ve-nhung-ngoi-chua-nha-tho-doc-dao-nhat-viet-nam",
+        "schedule_date": "2026-11-02T08:30:00",
+        "category_id": 1,
+        "lsi": "những ngôi chùa & nhà thờ độc đáo nhất việt nam, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Ngôi Chùa & Nhà Thờ Độc Đáo Nhất Việt Nam",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Ngôi Chùa & Nhà Thờ Độc Đáo Nhất Việt Nam",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-nhung-ngoi-chua-nha-tho-doc-dao-nhat-viet-nam",
+        "schedule_date": "2026-11-02T10:00:00",
+        "category_id": 1,
+        "lsi": "những ngôi chùa & nhà thờ độc đáo nhất việt nam, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Ngôi Chùa & Nhà Thờ Độc Đáo Nhất Việt Nam",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Ngôi Chùa & Nhà Thờ Độc Đáo Nhất Việt Nam",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-nhung-ngoi-chua-nha-tho-doc-dao-nhat-viet-nam",
+        "schedule_date": "2026-11-02T11:30:00",
+        "category_id": 1,
+        "lsi": "những ngôi chùa & nhà thờ độc đáo nhất việt nam, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Sự Thật Đằng Sau Kỷ Lục Những Ngôi Chùa & Nhà Thờ Độc Đáo Nhất Việt Nam Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Những Ngôi Chùa & Nhà Thờ Độc Đáo Nhất Việt Nam Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-nhung-ngoi-chua-nha-tho-doc-dao-nhat-viet-nam-ban-chua-biet",
+        "schedule_date": "2026-11-02T13:00:00",
+        "category_id": 1,
+        "lsi": "những ngôi chùa & nhà thờ độc đáo nhất việt nam, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Ngôi Chùa & Nhà Thờ Độc Đáo Nhất Việt Nam",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Ngôi Chùa & Nhà Thờ Độc Đáo Nhất Việt Nam",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-nhung-ngoi-chua-nha-tho-doc-dao-nhat-viet-nam",
+        "schedule_date": "2026-11-02T14:30:00",
+        "category_id": 1,
+        "lsi": "những ngôi chùa & nhà thờ độc đáo nhất việt nam, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Những Ngôi Chùa & Nhà Thờ Độc Đáo Nhất Việt Nam",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Những Ngôi Chùa & Nhà Thờ Độc Đáo Nhất Việt Nam",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-nhung-ngoi-chua-nha-tho-doc-dao-nhat-viet-nam",
+        "schedule_date": "2026-11-02T16:00:00",
+        "category_id": 1,
+        "lsi": "những ngôi chùa & nhà thờ độc đáo nhất việt nam, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Ngôi Chùa & Nhà Thờ Độc Đáo Nhất Việt Nam",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Ngôi Chùa & Nhà Thờ Độc Đáo Nhất Việt Nam",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-nhung-ngoi-chua-nha-tho-doc-dao-nhat-viet-nam",
+        "schedule_date": "2026-11-02T17:30:00",
+        "category_id": 1,
+        "lsi": "những ngôi chùa & nhà thờ độc đáo nhất việt nam, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Ngôi Chùa & Nhà Thờ Độc Đáo Nhất Việt Nam",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Ngôi Chùa & Nhà Thờ Độc Đáo Nhất Việt Nam",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-nhung-ngoi-chua-nha-tho-doc-dao-nhat-viet-nam",
+        "schedule_date": "2026-11-02T19:00:00",
+        "category_id": 1,
+        "lsi": "những ngôi chùa & nhà thờ độc đáo nhất việt nam, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Những Ngôi Chùa & Nhà Thờ Độc Đáo Nhất Việt Nam: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Những Ngôi Chùa & Nhà Thờ Độc Đáo Nhất Việt Nam",
+        "slug": "cam-nang-doc-gia-ve-nhung-ngoi-chua-nha-tho-doc-dao-nhat-viet-nam-toan-canh-a-z",
+        "schedule_date": "2026-11-02T20:30:00",
+        "category_id": 1,
+        "lsi": "những ngôi chùa & nhà thờ độc đáo nhất việt nam, ky luc the gioi, chuyen la 2026"
+      }
+    ]
+  },
+  {
+    "day": 27,
+    "date": "2026-11-03",
+    "posts": [
+      {
+        "title": "Top 10 Những Tàu Ngầm Hạt Nhân Sâu Nhất Lòng Đại Dương: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Những Tàu Ngầm Hạt Nhân Sâu Nhất Lòng Đại Dương",
+        "slug": "top-10-nhung-tau-ngam-hat-nhan-sau-nhat-long-dai-duong-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-11-03T07:00:00",
+        "category_id": 1,
+        "lsi": "những tàu ngầm hạt nhân sâu nhất lòng đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Những Tàu Ngầm Hạt Nhân Sâu Nhất Lòng Đại Dương",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Những Tàu Ngầm Hạt Nhân Sâu Nhất Lòng Đại Dương",
+        "slug": "ky-luc-dung-dau-bang-ve-nhung-tau-ngam-hat-nhan-sau-nhat-long-dai-duong",
+        "schedule_date": "2026-11-03T08:30:00",
+        "category_id": 1,
+        "lsi": "những tàu ngầm hạt nhân sâu nhất lòng đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Tàu Ngầm Hạt Nhân Sâu Nhất Lòng Đại Dương",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Tàu Ngầm Hạt Nhân Sâu Nhất Lòng Đại Dương",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-nhung-tau-ngam-hat-nhan-sau-nhat-long-dai-duong",
+        "schedule_date": "2026-11-03T10:00:00",
+        "category_id": 1,
+        "lsi": "những tàu ngầm hạt nhân sâu nhất lòng đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Tàu Ngầm Hạt Nhân Sâu Nhất Lòng Đại Dương",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Tàu Ngầm Hạt Nhân Sâu Nhất Lòng Đại Dương",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-nhung-tau-ngam-hat-nhan-sau-nhat-long-dai-duong",
+        "schedule_date": "2026-11-03T11:30:00",
+        "category_id": 1,
+        "lsi": "những tàu ngầm hạt nhân sâu nhất lòng đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Sự Thật Đằng Sau Kỷ Lục Những Tàu Ngầm Hạt Nhân Sâu Nhất Lòng Đại Dương Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Những Tàu Ngầm Hạt Nhân Sâu Nhất Lòng Đại Dương Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-nhung-tau-ngam-hat-nhan-sau-nhat-long-dai-duong-ban-chua-biet",
+        "schedule_date": "2026-11-03T13:00:00",
+        "category_id": 1,
+        "lsi": "những tàu ngầm hạt nhân sâu nhất lòng đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Tàu Ngầm Hạt Nhân Sâu Nhất Lòng Đại Dương",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Tàu Ngầm Hạt Nhân Sâu Nhất Lòng Đại Dương",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-nhung-tau-ngam-hat-nhan-sau-nhat-long-dai-duong",
+        "schedule_date": "2026-11-03T14:30:00",
+        "category_id": 1,
+        "lsi": "những tàu ngầm hạt nhân sâu nhất lòng đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Những Tàu Ngầm Hạt Nhân Sâu Nhất Lòng Đại Dương",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Những Tàu Ngầm Hạt Nhân Sâu Nhất Lòng Đại Dương",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-nhung-tau-ngam-hat-nhan-sau-nhat-long-dai-duong",
+        "schedule_date": "2026-11-03T16:00:00",
+        "category_id": 1,
+        "lsi": "những tàu ngầm hạt nhân sâu nhất lòng đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Tàu Ngầm Hạt Nhân Sâu Nhất Lòng Đại Dương",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Tàu Ngầm Hạt Nhân Sâu Nhất Lòng Đại Dương",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-nhung-tau-ngam-hat-nhan-sau-nhat-long-dai-duong",
+        "schedule_date": "2026-11-03T17:30:00",
+        "category_id": 1,
+        "lsi": "những tàu ngầm hạt nhân sâu nhất lòng đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Tàu Ngầm Hạt Nhân Sâu Nhất Lòng Đại Dương",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Tàu Ngầm Hạt Nhân Sâu Nhất Lòng Đại Dương",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-nhung-tau-ngam-hat-nhan-sau-nhat-long-dai-duong",
+        "schedule_date": "2026-11-03T19:00:00",
+        "category_id": 1,
+        "lsi": "những tàu ngầm hạt nhân sâu nhất lòng đại dương, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Những Tàu Ngầm Hạt Nhân Sâu Nhất Lòng Đại Dương: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Những Tàu Ngầm Hạt Nhân Sâu Nhất Lòng Đại Dương",
+        "slug": "cam-nang-doc-gia-ve-nhung-tau-ngam-hat-nhan-sau-nhat-long-dai-duong-toan-canh-a-z",
+        "schedule_date": "2026-11-03T20:30:00",
+        "category_id": 1,
+        "lsi": "những tàu ngầm hạt nhân sâu nhất lòng đại dương, ky luc the gioi, chuyen la 2026"
+      }
+    ]
+  },
+  {
+    "day": 28,
+    "date": "2026-11-04",
+    "posts": [
+      {
+        "title": "Top 10 Những Bức Tượng Phật Khổng Lồ Nổi Tiếng Châu Á: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Những Bức Tượng Phật Khổng Lồ Nổi Tiếng Châu Á",
+        "slug": "top-10-nhung-buc-tuong-phat-khong-lo-noi-tieng-chau-a-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-11-04T07:00:00",
+        "category_id": 1,
+        "lsi": "những bức tượng phật khổng lồ nổi tiếng châu á, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Những Bức Tượng Phật Khổng Lồ Nổi Tiếng Châu Á",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Những Bức Tượng Phật Khổng Lồ Nổi Tiếng Châu Á",
+        "slug": "ky-luc-dung-dau-bang-ve-nhung-buc-tuong-phat-khong-lo-noi-tieng-chau-a",
+        "schedule_date": "2026-11-04T08:30:00",
+        "category_id": 1,
+        "lsi": "những bức tượng phật khổng lồ nổi tiếng châu á, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Bức Tượng Phật Khổng Lồ Nổi Tiếng Châu Á",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Bức Tượng Phật Khổng Lồ Nổi Tiếng Châu Á",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-nhung-buc-tuong-phat-khong-lo-noi-tieng-chau-a",
+        "schedule_date": "2026-11-04T10:00:00",
+        "category_id": 1,
+        "lsi": "những bức tượng phật khổng lồ nổi tiếng châu á, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Bức Tượng Phật Khổng Lồ Nổi Tiếng Châu Á",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Bức Tượng Phật Khổng Lồ Nổi Tiếng Châu Á",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-nhung-buc-tuong-phat-khong-lo-noi-tieng-chau-a",
+        "schedule_date": "2026-11-04T11:30:00",
+        "category_id": 1,
+        "lsi": "những bức tượng phật khổng lồ nổi tiếng châu á, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Sự Thật Đằng Sau Kỷ Lục Những Bức Tượng Phật Khổng Lồ Nổi Tiếng Châu Á Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Những Bức Tượng Phật Khổng Lồ Nổi Tiếng Châu Á Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-nhung-buc-tuong-phat-khong-lo-noi-tieng-chau-a-ban-chua-biet",
+        "schedule_date": "2026-11-04T13:00:00",
+        "category_id": 1,
+        "lsi": "những bức tượng phật khổng lồ nổi tiếng châu á, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Bức Tượng Phật Khổng Lồ Nổi Tiếng Châu Á",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Bức Tượng Phật Khổng Lồ Nổi Tiếng Châu Á",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-nhung-buc-tuong-phat-khong-lo-noi-tieng-chau-a",
+        "schedule_date": "2026-11-04T14:30:00",
+        "category_id": 1,
+        "lsi": "những bức tượng phật khổng lồ nổi tiếng châu á, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Những Bức Tượng Phật Khổng Lồ Nổi Tiếng Châu Á",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Những Bức Tượng Phật Khổng Lồ Nổi Tiếng Châu Á",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-nhung-buc-tuong-phat-khong-lo-noi-tieng-chau-a",
+        "schedule_date": "2026-11-04T16:00:00",
+        "category_id": 1,
+        "lsi": "những bức tượng phật khổng lồ nổi tiếng châu á, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Bức Tượng Phật Khổng Lồ Nổi Tiếng Châu Á",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Bức Tượng Phật Khổng Lồ Nổi Tiếng Châu Á",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-nhung-buc-tuong-phat-khong-lo-noi-tieng-chau-a",
+        "schedule_date": "2026-11-04T17:30:00",
+        "category_id": 1,
+        "lsi": "những bức tượng phật khổng lồ nổi tiếng châu á, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Bức Tượng Phật Khổng Lồ Nổi Tiếng Châu Á",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Bức Tượng Phật Khổng Lồ Nổi Tiếng Châu Á",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-nhung-buc-tuong-phat-khong-lo-noi-tieng-chau-a",
+        "schedule_date": "2026-11-04T19:00:00",
+        "category_id": 1,
+        "lsi": "những bức tượng phật khổng lồ nổi tiếng châu á, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Những Bức Tượng Phật Khổng Lồ Nổi Tiếng Châu Á: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Những Bức Tượng Phật Khổng Lồ Nổi Tiếng Châu Á",
+        "slug": "cam-nang-doc-gia-ve-nhung-buc-tuong-phat-khong-lo-noi-tieng-chau-a-toan-canh-a-z",
+        "schedule_date": "2026-11-04T20:30:00",
+        "category_id": 1,
+        "lsi": "những bức tượng phật khổng lồ nổi tiếng châu á, ky luc the gioi, chuyen la 2026"
+      }
+    ]
+  },
+  {
+    "day": 29,
+    "date": "2026-11-05",
+    "posts": [
+      {
+        "title": "Top 10 Những Vùng Đất Nóng Nhất & Lạnh Nhất Hành Tinh: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Những Vùng Đất Nóng Nhất & Lạnh Nhất Hành Tinh",
+        "slug": "top-10-nhung-vung-dat-nong-nhat-lanh-nhat-hanh-tinh-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-11-05T07:00:00",
+        "category_id": 1,
+        "lsi": "những vùng đất nóng nhất & lạnh nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Những Vùng Đất Nóng Nhất & Lạnh Nhất Hành Tinh",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Những Vùng Đất Nóng Nhất & Lạnh Nhất Hành Tinh",
+        "slug": "ky-luc-dung-dau-bang-ve-nhung-vung-dat-nong-nhat-lanh-nhat-hanh-tinh",
+        "schedule_date": "2026-11-05T08:30:00",
+        "category_id": 1,
+        "lsi": "những vùng đất nóng nhất & lạnh nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Vùng Đất Nóng Nhất & Lạnh Nhất Hành Tinh",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Những Vùng Đất Nóng Nhất & Lạnh Nhất Hành Tinh",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-nhung-vung-dat-nong-nhat-lanh-nhat-hanh-tinh",
+        "schedule_date": "2026-11-05T10:00:00",
+        "category_id": 1,
+        "lsi": "những vùng đất nóng nhất & lạnh nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Vùng Đất Nóng Nhất & Lạnh Nhất Hành Tinh",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Những Vùng Đất Nóng Nhất & Lạnh Nhất Hành Tinh",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-nhung-vung-dat-nong-nhat-lanh-nhat-hanh-tinh",
+        "schedule_date": "2026-11-05T11:30:00",
+        "category_id": 1,
+        "lsi": "những vùng đất nóng nhất & lạnh nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Sự Thật Đằng Sau Kỷ Lục Những Vùng Đất Nóng Nhất & Lạnh Nhất Hành Tinh Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Những Vùng Đất Nóng Nhất & Lạnh Nhất Hành Tinh Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-nhung-vung-dat-nong-nhat-lanh-nhat-hanh-tinh-ban-chua-biet",
+        "schedule_date": "2026-11-05T13:00:00",
+        "category_id": 1,
+        "lsi": "những vùng đất nóng nhất & lạnh nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Vùng Đất Nóng Nhất & Lạnh Nhất Hành Tinh",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Những Vùng Đất Nóng Nhất & Lạnh Nhất Hành Tinh",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-nhung-vung-dat-nong-nhat-lanh-nhat-hanh-tinh",
+        "schedule_date": "2026-11-05T14:30:00",
+        "category_id": 1,
+        "lsi": "những vùng đất nóng nhất & lạnh nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Những Vùng Đất Nóng Nhất & Lạnh Nhất Hành Tinh",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Những Vùng Đất Nóng Nhất & Lạnh Nhất Hành Tinh",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-nhung-vung-dat-nong-nhat-lanh-nhat-hanh-tinh",
+        "schedule_date": "2026-11-05T16:00:00",
+        "category_id": 1,
+        "lsi": "những vùng đất nóng nhất & lạnh nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Vùng Đất Nóng Nhất & Lạnh Nhất Hành Tinh",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Những Vùng Đất Nóng Nhất & Lạnh Nhất Hành Tinh",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-nhung-vung-dat-nong-nhat-lanh-nhat-hanh-tinh",
+        "schedule_date": "2026-11-05T17:30:00",
+        "category_id": 1,
+        "lsi": "những vùng đất nóng nhất & lạnh nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Vùng Đất Nóng Nhất & Lạnh Nhất Hành Tinh",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Những Vùng Đất Nóng Nhất & Lạnh Nhất Hành Tinh",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-nhung-vung-dat-nong-nhat-lanh-nhat-hanh-tinh",
+        "schedule_date": "2026-11-05T19:00:00",
+        "category_id": 1,
+        "lsi": "những vùng đất nóng nhất & lạnh nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Những Vùng Đất Nóng Nhất & Lạnh Nhất Hành Tinh: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Những Vùng Đất Nóng Nhất & Lạnh Nhất Hành Tinh",
+        "slug": "cam-nang-doc-gia-ve-nhung-vung-dat-nong-nhat-lanh-nhat-hanh-tinh-toan-canh-a-z",
+        "schedule_date": "2026-11-05T20:30:00",
+        "category_id": 1,
+        "lsi": "những vùng đất nóng nhất & lạnh nhất hành tinh, ky luc the gioi, chuyen la 2026"
+      }
+    ]
+  },
+  {
+    "day": 30,
+    "date": "2026-11-06",
+    "posts": [
+      {
+        "title": "Top 10 Tổng Kết 300 Kỷ Lục Độc Đáo Nhất Thế Giới Năm 2026: Khám Phá Chi Tiết 2026",
+        "keyword": "Top 10 Tổng Kết 300 Kỷ Lục Độc Đáo Nhất Thế Giới Năm 2026",
+        "slug": "top-10-tong-ket-300-ky-luc-doc-dao-nhat-the-gioi-nam-2026-kham-pha-chi-tiet-2026",
+        "schedule_date": "2026-11-06T07:00:00",
+        "category_id": 1,
+        "lsi": "tổng kết 300 kỷ lục độc đáo nhất thế giới năm 2026, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Đứng Đầu Bảng Về Tổng Kết 300 Kỷ Lục Độc Đáo Nhất Thế Giới Năm 2026",
+        "keyword": "Kỷ Lục Đứng Đầu Bảng Về Tổng Kết 300 Kỷ Lục Độc Đáo Nhất Thế Giới Năm 2026",
+        "slug": "ky-luc-dung-dau-bang-ve-tong-ket-300-ky-luc-doc-dao-nhat-the-gioi-nam-2026",
+        "schedule_date": "2026-11-06T08:30:00",
+        "category_id": 1,
+        "lsi": "tổng kết 300 kỷ lục độc đáo nhất thế giới năm 2026, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Tổng Kết 300 Kỷ Lục Độc Đáo Nhất Thế Giới Năm 2026",
+        "keyword": "Những Bí Ẩn Chưa Có Lời Giải Đáp Về Tổng Kết 300 Kỷ Lục Độc Đáo Nhất Thế Giới Năm 2026",
+        "slug": "nhung-bi-an-chua-co-loi-giai-dap-ve-tong-ket-300-ky-luc-doc-dao-nhat-the-gioi-nam-2026",
+        "schedule_date": "2026-11-06T10:00:00",
+        "category_id": 1,
+        "lsi": "tổng kết 300 kỷ lục độc đáo nhất thế giới năm 2026, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "So Sánh Các Kỷ Lục Nổi Bật Trong Tổng Kết 300 Kỷ Lục Độc Đáo Nhất Thế Giới Năm 2026",
+        "keyword": "So Sánh Các Kỷ Lục Nổi Bật Trong Tổng Kết 300 Kỷ Lục Độc Đáo Nhất Thế Giới Năm 2026",
+        "slug": "so-sanh-cac-ky-luc-noi-bat-trong-tong-ket-300-ky-luc-doc-dao-nhat-the-gioi-nam-2026",
+        "schedule_date": "2026-11-06T11:30:00",
+        "category_id": 1,
+        "lsi": "tổng kết 300 kỷ lục độc đáo nhất thế giới năm 2026, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Sự Thật Đằng Sau Kỷ Lục Tổng Kết 300 Kỷ Lục Độc Đáo Nhất Thế Giới Năm 2026 Bạn Chưa Biết",
+        "keyword": "Sự Thật Đằng Sau Kỷ Lục Tổng Kết 300 Kỷ Lục Độc Đáo Nhất Thế Giới Năm 2026 Bạn Chưa Biết",
+        "slug": "su-that-dang-sau-ky-luc-tong-ket-300-ky-luc-doc-dao-nhat-the-gioi-nam-2026-ban-chua-biet",
+        "schedule_date": "2026-11-06T13:00:00",
+        "category_id": 1,
+        "lsi": "tổng kết 300 kỷ lục độc đáo nhất thế giới năm 2026, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Tổng Kết 300 Kỷ Lục Độc Đáo Nhất Thế Giới Năm 2026",
+        "keyword": "Top 5 Nhân Vật Hoặc Địa Danh Gắn Liền Với Tổng Kết 300 Kỷ Lục Độc Đáo Nhất Thế Giới Năm 2026",
+        "slug": "top-5-nhan-vat-hoac-dia-danh-gan-lien-voi-tong-ket-300-ky-luc-doc-dao-nhat-the-gioi-nam-2026",
+        "schedule_date": "2026-11-06T14:30:00",
+        "category_id": 1,
+        "lsi": "tổng kết 300 kỷ lục độc đáo nhất thế giới năm 2026, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Hành Trình Chinh Phục Đỉnh Cao Của Tổng Kết 300 Kỷ Lục Độc Đáo Nhất Thế Giới Năm 2026",
+        "keyword": "Hành Trình Chinh Phục Đỉnh Cao Của Tổng Kết 300 Kỷ Lục Độc Đáo Nhất Thế Giới Năm 2026",
+        "slug": "hanh-trinh-chinh-phuc-dinh-cao-cua-tong-ket-300-ky-luc-doc-dao-nhat-the-gioi-nam-2026",
+        "schedule_date": "2026-11-06T16:00:00",
+        "category_id": 1,
+        "lsi": "tổng kết 300 kỷ lục độc đáo nhất thế giới năm 2026, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Tổng Kết 300 Kỷ Lục Độc Đáo Nhất Thế Giới Năm 2026",
+        "keyword": "Những Câu Chuyện Hậu Trường Kỳ Thú Về Tổng Kết 300 Kỷ Lục Độc Đáo Nhất Thế Giới Năm 2026",
+        "slug": "nhung-cau-chuyen-hau-truong-ky-thu-ve-tong-ket-300-ky-luc-doc-dao-nhat-the-gioi-nam-2026",
+        "schedule_date": "2026-11-06T17:30:00",
+        "category_id": 1,
+        "lsi": "tổng kết 300 kỷ lục độc đáo nhất thế giới năm 2026, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Tổng Kết 300 Kỷ Lục Độc Đáo Nhất Thế Giới Năm 2026",
+        "keyword": "Kỷ Lục Mới Được Thiết Lập Gần Đây Về Tổng Kết 300 Kỷ Lục Độc Đáo Nhất Thế Giới Năm 2026",
+        "slug": "ky-luc-moi-duoc-thiet-lap-gan-day-ve-tong-ket-300-ky-luc-doc-dao-nhat-the-gioi-nam-2026",
+        "schedule_date": "2026-11-06T19:00:00",
+        "category_id": 1,
+        "lsi": "tổng kết 300 kỷ lục độc đáo nhất thế giới năm 2026, ky luc the gioi, chuyen la 2026"
+      },
+      {
+        "title": "Cẩm Nang Độc Giả Về Tổng Kết 300 Kỷ Lục Độc Đáo Nhất Thế Giới Năm 2026: Toàn Cảnh A-Z",
+        "keyword": "Cẩm Nang Độc Giả Về Tổng Kết 300 Kỷ Lục Độc Đáo Nhất Thế Giới Năm 2026",
+        "slug": "cam-nang-doc-gia-ve-tong-ket-300-ky-luc-doc-dao-nhat-the-gioi-nam-2026-toan-canh-a-z",
+        "schedule_date": "2026-11-06T20:30:00",
+        "category_id": 1,
+        "lsi": "tổng kết 300 kỷ lục độc đáo nhất thế giới năm 2026, ky luc the gioi, chuyen la 2026"
       }
     ]
   }

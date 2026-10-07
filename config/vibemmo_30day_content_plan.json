@@ -3,8 +3,8 @@
   "site_url": "https://vibemmo.net",
   "plan_title": "VibeMMO 30-Day AI & MMO Mastery Content Plan 2026",
   "total_days": 30,
-  "articles_per_day": 5,
-  "total_articles": 150,
+  "articles_per_day": 10,
+  "total_articles": 300,
   "clusters": [
     {
       "day": 1,
@@ -42,6 +42,36 @@
           "toi-uu-chi-phi-multi-agent-hybrid-slm-llm",
           "Commercial",
           "reduce llm api costs, hybrid slm llm architecture, cost effective ai agents"
+        ],
+        [
+          "Xây Dựng Hệ Thống Multi-Agent Với AutoGen: Hướng Dẫn Từng Bước 2026",
+          "autogen-multi-agent-setup-huong-dan",
+          "HuongDan",
+          "autogen microsoft, setup autogen python, multi-agent conversation"
+        ],
+        [
+          "Tối Ưu Bộ Nhớ Dài Hạn Mem0 Cho AI Agent Trong Ứng Dụng Thực Tế",
+          "toi-uu-mem0-long-term-memory-ai-agent",
+          "DanhGia",
+          "mem0 ai, long term memory llm, tich hop mem0 python"
+        ],
+        [
+          "Đánh Giá Framework MetaGPT Cho Đội Ngũ Lập Trình Viên Ảo 2026",
+          "danh-gia-metagpt-lap-trinh-vien-ao",
+          "DanhGia",
+          "metagpt review, lap trinh vien ao, multi agent software company"
+        ],
+        [
+          "Chiến Lược Human-in-the-Loop Kiểm Soát Quyết Định AI Agent An Toàn",
+          "chien-luoc-human-in-the-loop-ai-agent",
+          "KienThuc",
+          "human in the loop ai, kiem soat agent, safety guardrails"
+        ],
+        [
+          "Tích Hợp Tool Calling Vào LlamaIndex Cho Agent Truy Xuất Dữ Liệu",
+          "tool-calling-llamaindex-agent-data",
+          "HuongDan",
+          "llamaindex tool calling, agentic rag, truy xuat du lieu doanh nghiep"
         ]
       ]
     },
@@ -81,6 +111,36 @@
           "lo-trinh-tro-thanh-ai-engineer-dinh-cao-2026",
           "Informational",
           "ai engineer roadmap 2026, skills needed for ai engineer, transition to ai developer"
+        ],
+        [
+          "AI Pair Programming: Quy Trình Làm Việc Hiệu Quả Gấp 5 Lần 2026",
+          "ai-pair-programming-quy-trinh-hieu-qua",
+          "KienThuc",
+          "ai pair programming, lap trinh cung ai, cursor vs copilot"
+        ],
+        [
+          "Tự Động Viết Unit Test & CI/CD Với AI Code Assistant",
+          "tu-dong-viet-unit-test-cicd-ai",
+          "HuongDan",
+          "unit test tu dong bang ai, pytest ai, automated test suite"
+        ],
+        [
+          "Refactor Mã Nguồn Cũ Bằng Claude 3.7 Sonnet: Chiến Lược Thực Chiến",
+          "refactor-legacy-code-claude-37",
+          "HuongDan",
+          "refactor ma nguon cu, clean code ai, claude 37 sonnet code"
+        ],
+        [
+          "Chuyển Đổi Figma Sang Code React/Tailwind Tự Động Trong 3 Phút",
+          "chuyen-figma-sang-react-tailwind-ai",
+          "CongCu",
+          "figma to code ai, v0 dev, bolt new figma export"
+        ],
+        [
+          "Tạo API Backend Hoàn Chỉnh Bằng AI Prompting: Best Practices 2026",
+          "tao-backend-api-bang-ai-prompting",
+          "KienThuc",
+          "fastapi ai generate, backend prompt engineering, swagger api ai"
         ]
       ]
     },
@@ -120,6 +180,36 @@
           "khai-thac-micro-freelancing-ai-upwork-fiverr",
           "Informational",
           "freelance with ai tools, upwork ai gigs, high paying fiverr services 2026"
+        ],
+        [
+          "10 Ý Tưởng Kinh Doanh AI Micro-Services Cho Người Mới Bắt Đầu",
+          "10-y-tuong-kinh-doanh-ai-micro-services",
+          "MMO",
+          "ai micro service mmo, y tuong kinh doanh ai, kiem tien online 2026"
+        ],
+        [
+          "Xây Dựng Website Tự Động Tổng Hợp Tin Tức Thu Hút 100K Traffic",
+          "xay-dung-web-tong-hop-tin-tuc-tu-dong",
+          "HuongDan",
+          "auto news aggregator, traffic web tu dong, rss ai auto post"
+        ],
+        [
+          "Khai Thác Dịch Vụ SEO Tự Động Hóa Cho Doanh Nghiệp Địa Phương",
+          "dich-vu-seo-tu-dong-doanh-nghiep-local",
+          "MMO",
+          "local seo automation, dich vu seo ai, kiem tien agency seo"
+        ],
+        [
+          "Tự Động Hóa Bán Hàng Drop Servicing Với AI Agent Chăm Sóc Khách",
+          "drop-servicing-ai-agent-cham-soc-khach",
+          "ChienLuoc",
+          "drop servicing ai, chatbot chot don, automation agency"
+        ],
+        [
+          "Kiếm Tiền Bằng Cách Xây Dựng Prompt Template & Custom GPTs",
+          "kiem-tien-ban-prompt-custom-gpts",
+          "MMO",
+          "ban prompt gpt, custom gpt store, monetization gpts"
         ]
       ]
     },
@@ -159,6 +249,36 @@
           "top-5-cong-cu-tu-dong-hoa-n8n-make-zapier",
           "Commercial",
           "n8n vs make vs zapier, best nocode automation tool, self hosted n8n"
+        ],
+        [
+          "Đánh Giá Công Cụ Tạo Video Runway Gen-3 Alpha vs Luma Dream Machine",
+          "so-sanh-runway-gen3-vs-luma-dream",
+          "SoSanh",
+          "runway gen 3 review, luma dream machine, ai video generator 2026"
+        ],
+        [
+          "Midjourney v7 vs DALL-E 3: Cuộc Chiến Đồ Họa AI Nào Dành Cho Bạn?",
+          "midjourney-v7-vs-dalle-3-so-sanh",
+          "SoSanh",
+          "midjourney v7 review, dalle 3 so sanh, tao anh ai chuyen nghiep"
+        ],
+        [
+          "Top 5 Công Cụ Tách Âm Thanh & Làm Sạch Giọng Nói AI Chuẩn Studio",
+          "top-5-cong-cu-tach-am-thanh-ai-studio",
+          "TopList",
+          "tach am thanh ai, clean voice vocal remover, adobe podcast ai"
+        ],
+        [
+          "ElevenLabs vs PlayHT: Nền Tảng Lồng Tiếng AI Nào Đạt Đỉnh Cảm Xúc?",
+          "elevenlabs-vs-playht-voice-ai",
+          "SoSanh",
+          "elevenlabs review, voice cloning ai, giong doc cam xuc"
+        ],
+        [
+          "Đánh Giá Chi Tiết Claude 3.7 vs GPT-4o Cho Nhu Cầu Doanh Nghiệp",
+          "danh-gia-claude-37-vs-gpt4o-doanh-nghiep",
+          "DanhGia",
+          "claude 37 sonnet vs gpt 4o, danh gia llm doanh nghiep, so sanh ai"
         ]
       ]
     },
@@ -198,6 +318,36 @@
           "chien-luoc-dinh-gia-saas-pricing-strategy-2026",
           "Commercial",
           "saas pricing models, usage based pricing llm, freemium vs free trial"
+        ],
+        [
+          "Kiến Trúc Kỹ Thuật Đằng Sau Một Micro-SaaS AI Triệu Đô",
+          "kien-truc-micro-saas-ai-trieu-do",
+          "KienThuc",
+          "micro saas architecture, nextjs supabase stripe, ai saas boilerplates"
+        ],
+        [
+          "Cách Triển Khai Thanh Toán Toàn Cầu Stripe & Lemon Squeezy Cho SaaS",
+          "trien-khai-stripe-lemon-squeezy-saas",
+          "HuongDan",
+          "lemon squeezy viet nam, stripe saas billing, tich hop thanh toan"
+        ],
+        [
+          "Bảo Vệ API Key & Chống Bào Token Miễn Phí Trong Ứng Dụng AI",
+          "bao-ve-api-key-chong-bao-token-saas",
+          "BaoMat",
+          "rate limiting ai api, bao mat api key, chong gian lan saas"
+        ],
+        [
+          "Chiến Lược Ra Mắt Sản Phẩm Trên Product Hunt Đạt Top 1 Trong Ngày",
+          "chien-luoc-launch-product-hunt-top-1",
+          "ChienLuoc",
+          "product hunt launch checklist, top 1 product of the day, marketing saas"
+        ],
+        [
+          "Tự Động Hóa Onboarding Người Dùng Mới Tăng Tỷ Lệ Giữ Chân 40%",
+          "tu-dong-hoa-onboarding-user-saas",
+          "ChienLuoc",
+          "user onboarding email sequence, tang retention rate, product-led growth"
         ]
       ]
     },
@@ -237,6 +387,36 @@
           "chien-luoc-kiem-tien-kep-youtube-affiliate-khoa-hoc",
           "Commercial",
           "monetize faceless channel, high ticket affiliate youtube, digital product funnel"
+        ],
+        [
+          "Quy Trình Tạo 100 Video TikTok Ngắn Trong 1 Giờ Bằng CapCut & Make",
+          "tao-100-video-tiktok-capcut-make",
+          "HuongDan",
+          "capcut auto batch, tiktok faceless channel, make automation video"
+        ],
+        [
+          "Sử Dụng AI Sáng Tạo Nội Dung Kể Chuyện Lịch Sử Hút Triệu View",
+          "ai-sang-tao-video-lich-su-trieu-view",
+          "KienThuc",
+          "lich su ai video, youtube automation niches, storytelling ai script"
+        ],
+        [
+          "Tối Ưu SEO Cho Video YouTube Bằng VidIQ & TubeBuddy AI",
+          "toi-uu-seo-youtube-vidiq-tubebuddy",
+          "HuongDan",
+          "vidiq ai title generator, tubebuddy tags, tang view youtube"
+        ],
+        [
+          "Chuyển Đổi Giọng Đọc AI Sang Ngữ Điệu Tự Nhiên Không Bị Bóp Tương Tác",
+          "chuyen-giong-ai-tu-nhien-khong-bop-reach",
+          "Meo",
+          "giong doc ai khong bop reach, bypass tiktok ai flag, human-like voice"
+        ],
+        [
+          "Cách Kiếm Tiền Từ Quỹ Sáng Tạo TikTok & Tiếp Thị Liên Kết Affiliate",
+          "kiem-tien-tiktok-creativity-program-affiliate",
+          "MMO",
+          "tiktok creativity program beta, tiktok shop affiliate, mmo video ngan"
         ]
       ]
     },
@@ -276,6 +456,36 @@
           "fine-tune-slm-doanh-nghiep-lora-unsloth",
           "Informational",
           "fine tune llm with lora, unsloth fast training, customize open source model"
+        ],
+        [
+          "Cài Đặt Ollama Trên Windows & Linux Chạy Offline Cực Nhẹ",
+          "cai-dat-ollama-chay-local-offline",
+          "HuongDan",
+          "ollama tutorial, cai dat llm local, chay ai offline pc"
+        ],
+        [
+          "So Sánh Hiệu Năng Llama 3.3 70B vs Qwen 2.5 Trên Card Đồ Họa RTX",
+          "so-sanh-llama-33-vs-qwen-25-rtx",
+          "DanhGia",
+          "llama 33 70b vs qwen 25, benchmark rtx 4090 ai, local llm performance"
+        ],
+        [
+          "Kỹ Thuật Quantization GGUF: Giảm VRAM Mà Không Mất Độ Chính Xác",
+          "ky-thuat-quantization-gguf-giam-vram",
+          "KienThuc",
+          "gguf 4bit 8bit quantization, giam vram chay local, llama cpp"
+        ],
+        [
+          "Xây Dựng Giao Diện Chatbot Riêng Cho Local LLM Bằng Open-WebUI",
+          "xay-dung-chatbot-open-webui-local",
+          "HuongDan",
+          "open webui docker, chatbot local cho cong ty, giao dien gpt local"
+        ],
+        [
+          "Fine-Tuning Mô Hình Ngôn Ngữ Cục Bộ Với LoRA & Unsloth",
+          "fine-tuning-local-llm-lora-unsloth",
+          "HuongDan",
+          "unsloth fine tuning, lora llama training, huan luyen ai chuyen sau"
         ]
       ]
     },
@@ -315,6 +525,36 @@
           "trien-khai-deepseek-r1-distill-cuc-bo-may-tinh",
           "Informational",
           "run deepseek r1 distill locally, ollama deepseek r1 8b 14b, local reasoning ai"
+        ],
+        [
+          "Cơ Chế Suy Luận Chain-of-Thought (CoT) Của DeepSeek R1 Hoạt Động Ra Sao?",
+          "co-che-suy-luan-chain-of-thought-deepseek",
+          "KienThuc",
+          "deepseek r1 reasoning, chain of thought explain, co che suy luan ai"
+        ],
+        [
+          "Chạy DeepSeek R1 Bản Distill 14B Trên Máy Tính Cá Nhân Hiệu Quả",
+          "chay-deepseek-r1-distill-14b-pc",
+          "HuongDan",
+          "deepseek r1 distill 14b, chay deepseek local, ollama deepseek r1"
+        ],
+        [
+          "Ứng Dụng DeepSeek R1 Giải Toán & Lập Trình Thuật Toán Phức Tạp",
+          "ung-dung-deepseek-r1-giai-toan-thuat-toan",
+          "UngDung",
+          "deepseek giai toan, coding benchmark deepseek, logic reasoning"
+        ],
+        [
+          "So Sánh DeepSeek R1 vs OpenAI o1 & o3-mini: Ai Là Vua Suy Luận?",
+          "so-sanh-deepseek-r1-vs-openai-o1-o3",
+          "SoSanh",
+          "deepseek r1 vs openai o1, o3 mini benchmark, reasoning king 2026"
+        ],
+        [
+          "Cách Prompting Để Kích Hoạt Tư Duy Logic Đỉnh Cao Của Reasoning Models",
+          "prompting-kich-hoat-tu-duy-reasoning-models",
+          "Prompt",
+          "reasoning model prompting, deepseek r1 prompt guide, system prompt logic"
         ]
       ]
     },
@@ -354,6 +594,36 @@
           "xay-dung-topic-cluster-tu-dong-cosine-similarity-tfidf",
           "Informational",
           "automated topic clusters, semantic keyword clustering python, programmatic internal linking"
+        ],
+        [
+          "Chiến Lược Tối Ưu Citability Cho Bài Viết Được Perplexity Trích Dẫn",
+          "chien-luoc-citability-perplexity-trich-dan",
+          "SEO",
+          "geo citability, perplexity citation, toi uu trich dan ai engine"
+        ],
+        [
+          "Tạo File llms.txt Chuẩn Để AI Crawlers Đọc Hiểu Toàn Bộ Website",
+          "tao-file-llmstxt-chuan-ai-crawler",
+          "HuongDan",
+          "llms txt specification, huong dan tao llms txt, ai bot indexing"
+        ],
+        [
+          "Schema Markup Nâng Cao: Tăng Khả Năng Xuất Hiện Trên SearchGPT",
+          "schema-markup-nang-cao-searchgpt",
+          "SEO",
+          "searchgpt seo, structured data ai, json ld enterprise"
+        ],
+        [
+          "Audit Khả Năng Truy Cập Của AI Bot (GPTBot, ClaudeBot, PerplexityBot)",
+          "audit-ai-bot-access-gptbot-claudebot",
+          "Audit",
+          "ai crawler access, robots txt ai bots, kiem tra bot chan"
+        ],
+        [
+          "Tái Cấu Trúc Nội Dung Theo Phong Cách Direct Answer Thân Thiện Với GEO",
+          "tai-cau-truc-noi-dung-direct-answer-geo",
+          "ChienLuoc",
+          "direct answer block, eeat geo content, cau truc cau tra loi nhanh"
         ]
       ]
     },
@@ -393,6 +663,36 @@
           "backtesting-chien-luoc-vectorbt-backtrader-overfitting",
           "Informational",
           "vectorbt tutorial python, backtesting trading strategy, avoid curve fitting quant"
+        ],
+        [
+          "Xây Dựng Bot Giao Dịch Grid Trading Tự Động Trên Binance Bằng Python",
+          "xay-dung-bot-grid-trading-binance-python",
+          "HuongDan",
+          "binance grid bot python, ccxt crypto bot, bot giao dich tu dong"
+        ],
+        [
+          "Ứng Dụng Mô Hình AI Dự Báo Biến Động Giá & Quản Trị Rủi Ro Vốn",
+          "ai-du-bao-bien-dong-gia-quan-tri-von",
+          "KienThuc",
+          "risk management quant, du bao bien dong ai, drawdown control"
+        ],
+        [
+          "Tích Hợp Tín Hiệu TradingView Webhook Vào Bot Điện Thoại Telegram",
+          "tich-hop-tradingview-webhook-telegram-bot",
+          "HuongDan",
+          "tradingview alert webhook, telegram trading bot, pine script signal"
+        ],
+        [
+          "Backtest Chiến Lược Đầu Tư Với Thư Viện Backtrader & VectorBT",
+          "backtest-chien-luoc-backtrader-vectorbt",
+          "HuongDan",
+          "backtest chien luoc trade, vectorbt python, backtrader crypto"
+        ],
+        [
+          "Những Cạm Bẫy Nguy Hiểm Khi Sử Dụng Bot Giao Dịch AI Cần Tránh",
+          "cam-bay-nguy-hiem-bot-giao-dich-ai",
+          "LuuY",
+          "cam bay bot trade, overfitting quant, rui ro thi truong crypto"
         ]
       ]
     },
@@ -432,6 +732,36 @@
           "xay-dung-pheu-ban-hang-tu-dong-chatbot-ai",
           "Commercial",
           "ai sales funnel, conversational marketing bot, lead qualification with llm"
+        ],
+        [
+          "Tự Động Hóa Quản Lý Lịch Đăng Mạng Xã Hội Đa Kênh Với N8n",
+          "tu-dong-hoa-lich-dang-social-n8n",
+          "HuongDan",
+          "n8n social media auto post, schedule facebook linkedin, multi platform"
+        ],
+        [
+          "Tạo Chuỗi Email Nuôi Dưỡng Khách Hàng Tự Động Phân Đoạn Theo Hành Vi",
+          "chuoi-email-nuoi-duong-khach-hang-ai",
+          "Email",
+          "email marketing automation, behavioral email segmentation, mailerlite ai"
+        ],
+        [
+          "Tự Động Tạo Báo Cáo Hiệu Quả Quảng Cáo Facebook & Google Hàng Tuần",
+          "tu-dong-bao-cao-ads-facebook-google",
+          "BaoCao",
+          "automated ads report, google data studio looker, python marketing report"
+        ],
+        [
+          "Xây Dựng Chatbot Chốt Đơn Tự Động Trên Messenger & Instagram Direct",
+          "chatbot-chot-don-messenger-instagram",
+          "Chatbot",
+          "chatbot ban hang instagram, manychat ai integration, tu dong tu van"
+        ],
+        [
+          "Quy Trình Tạo Bài Viết Blog Chuẩn SEO Hàng Loạt Tự Động Publish",
+          "quy-trinh-tao-blog-seo-hang-loat-auto",
+          "HuongDan",
+          "auto blogging wordpress, bulk seo article generation, n8n wp rest api"
         ]
       ]
     },
@@ -471,6 +801,36 @@
           "case-study-tu-dong-hoa-90-phan-tram-cskh-multi-agent",
           "Informational",
           "ai customer support case study, automated ticket resolution, b2b multi agent enterprise"
+        ],
+        [
+          "Quản Lý Xung Đột & Đồng Bộ Trạng Thái Giữa Các Agent Trong Hệ Thống",
+          "quan-ly-xung-dot-dong-bo-trang-thai-agent",
+          "KienThuc",
+          "agent conflict resolution, state synchronization, distributed agent swarms"
+        ],
+        [
+          "Thiết Kế Hệ Thống Event-Driven Cho Agentic Architecture Với Kafka",
+          "thiet-ke-event-driven-agent-kafka",
+          "KienThuc",
+          "event driven architecture, apache kafka ai agents, async message queue"
+        ],
+        [
+          "Mô Hình Đánh Giá Chất Lượng Phản Hồi Tự Động (LLM-as-a-Judge)",
+          "mo-hinh-danh-gia-llm-as-a-judge",
+          "KienThuc",
+          "llm as a judge, danh gia chat luong ai, automated evaluation metric"
+        ],
+        [
+          "Bảo Vệ Hệ Thống Multi-Agent Khỏi Prompt Injection Độc Hại",
+          "bao-ve-multi-agent-prompt-injection",
+          "BaoMat",
+          "prompt injection defense, guardrails multi agent, secure llm pipeline"
+        ],
+        [
+          "Chiến Lược Tái Sử Dụng Context & Caching Giảm 70% Chi Phí Agent",
+          "chien-luoc-context-caching-giam-chi-phi",
+          "ToiUu",
+          "prompt caching anthropic, openai context cache, giam chi phi api"
         ]
       ]
     },
@@ -510,6 +870,36 @@
           "xay-dung-cong-dong-tra-phi-skool-discord-newsletter",
           "Commercial",
           "paid community skool, monetize discord community, exclusive ai insider newsletter"
+        ],
+        [
+          "Tự Động Tổng Hợp Top Bài Viết Công Nghệ Đáng Chú Ý Mỗi Tuần",
+          "tu-dong-tong-hop-top-bai-viet-cong-nghe",
+          "TongHop",
+          "weekly tech curation, automated newsletter, substack ai tools"
+        ],
+        [
+          "Cách Viết Tiêu Đề Email Đạt Tỷ Lệ Mở Trên 45% Nhờ Trí Tuệ Nhân Tạo",
+          "viet-tieu-de-email-mo-tren-45-phan-tram",
+          "Email",
+          "email subject line ai, tang open rate email, copywrite newsletter"
+        ],
+        [
+          "Tích Hợp Beehiiv API Tự Động Gửi Bản Tin Cho Danh Sách Độc Giả",
+          "tich-hop-beehiiv-api-tu-dong-gui-ban-tin",
+          "HuongDan",
+          "beehiiv api integration, newsletter platform, tu dong hoa email list"
+        ],
+        [
+          "Chiến Lược Thu Hút 10,000 Người Đăng Ký Bản Tin Đầu Tiên Miễn Phí",
+          "thu-hut-10000-nguoi-dang-ky-newsletter",
+          "ChienLuoc",
+          "grow email list fast, lead magnet newsletter, referral program"
+        ],
+        [
+          "Mô Hình Kiếm Tiền Từ Tài Trợ (Sponsorship) & Bản Tin Trả Phí",
+          "kiem-tien-sponsorship-newsletter-tra-phi",
+          "MMO",
+          "newsletter sponsorship rate, paid newsletter model, kiem tien beehiiv"
         ]
       ]
     },
@@ -549,6 +939,36 @@
           "danh-gia-toi-uu-prompt-bang-dspy-python",
           "Informational",
           "dspy tutorial python, automated prompt optimization, compile prompts with dspy"
+        ],
+        [
+          "Kỹ Thuật Few-Shot & Meta-Prompting Đạt Độ Chính Xác Cao Nhất",
+          "few-shot-meta-prompting-chinh-xac",
+          "Prompt",
+          "few shot prompting, meta prompting techniques, advance prompt guide"
+        ],
+        [
+          "Xây Dựng Bộ Quy Tắc System Prompt Chuẩn Phòng Thủ Bẻ Khóa Jailbreak",
+          "system-prompt-phong-thu-jailbreak",
+          "BaoMat",
+          "anti jailbreak system prompt, secure prompt engineering, guardrails"
+        ],
+        [
+          "Tự Động Hóa Kiểm Thử Prompt Bằng Promptfoo & CI/CD Pipeline",
+          "kiem-thu-prompt-bang-promptfoo-cicd",
+          "HuongDan",
+          "promptfoo automated testing, llm test framework, continuous eval"
+        ],
+        [
+          "Cách Tạo Prompt Viết Văn Tự Nhiên Không Bị Phát Hiện Là AI",
+          "prompt-viet-van-tu-nhien-khong-lo-ai",
+          "Meo",
+          "undetectable ai prompt, viet van tu nhien nhu nguoi, bypass ai detection"
+        ],
+        [
+          "Cẩm Nang Prompting Cho Lập Trình Viên: Từ Ý Tưởng Đến Clean Code",
+          "cam-nang-prompting-lap-trinh-clean-code",
+          "KienThuc",
+          "coding prompt engineer, clean code generation, prompt for developer"
         ]
       ]
     },
@@ -588,6 +1008,36 @@
           "chien-luoc-xay-dung-50-niche-site-ve-tinh-thu-nhap",
           "Informational",
           "satellite niche site empire, programmatic pbn safe seo, scalable affiliate income"
+        ],
+        [
+          "Xây Dựng Website Đánh Giá Sản Phẩm Công Nghệ Tự Động Đính Kèm Link",
+          "web-danh-gia-cong-nghe-tu-dong-affiliate",
+          "HuongDan",
+          "auto affiliate review site, amazon associate ai, tiep thi lien ket cong nghe"
+        ],
+        [
+          "Tối Ưu Hóa Tỷ Lệ Click (CTR) Cho Nút Kêu Gọi Hành Động (CTA)",
+          "toi-uu-ctr-nut-cta-affiliate",
+          "ChienLuoc",
+          "call to action optimization, tang conversion rate, nut mua hang dep"
+        ],
+        [
+          "Cách Theo Dõi Doanh Thu Tiếp Thị Liên Kết Tập Trung Một Nơi",
+          "theo-doi-doanh-thu-affiliate-tap-trung",
+          "HuongDan",
+          "affiliate tracking dashboard, track click link affiliate, postback webhook"
+        ],
+        [
+          "Tự Động Tạo Bảng So Sánh Sản Phẩm Tăng Chuyển Đổi Mua Hàng",
+          "tao-bang-so-sanh-san-pham-tang-chuyen-doi",
+          "HuongDan",
+          "comparison table generator, so sanh tinh nang gia, tang doanh so"
+        ],
+        [
+          "Chiến Lược Chọn Ngách Affiliate Thu Nhập Bền Vững Hoa Hồng Cao",
+          "chien-luoc-chon-ngach-affiliate-hoa-hong-cao",
+          "ChienLuoc",
+          "high paying affiliate niches, recurring affiliate programs, chon ngach mmo"
         ]
       ]
     },
@@ -627,6 +1077,36 @@
           "tu-host-stable-diffusion-comfyui-cloud-gpu",
           "Informational",
           "comfyui cloud setup, runpod stable diffusion, affordable cloud gpu for ai art"
+        ],
+        [
+          "Kỹ Thuật Viết Prompt Tạo Ảnh Siêu Chân Thực Bằng Midjourney v7",
+          "prompt-tao-anh-sieu-thuc-midjourney-v7",
+          "HuongDan",
+          "midjourney v7 photorealistic prompt, camera settings prompt, anh thuc te"
+        ],
+        [
+          "Tạo Bộ Nhận Diện Thương Hiệu Hoàn Chỉnh Bằng AI Trong 30 Phút",
+          "tao-brand-identity-bang-ai-30-phut",
+          "HuongDan",
+          "brand identity ai, tao logo bang ai, brand color palette"
+        ],
+        [
+          "Thiết Kế Banner Quảng Cáo Đạt Chuẩn 0-CLS & Tải Siêu Nhanh",
+          "thiet-ke-banner-zero-cls-tai-nhanh",
+          "ThietKe",
+          "zero cls banner webp, toi uu hinh anh web, responsive graphic"
+        ],
+        [
+          "Tự Động Xóa Phông Nền & Nâng Cấp Độ Phân Giải Ảnh Lên 4K",
+          "tu-dong-xoa-nen-upscale-anh-4k",
+          "CongCu",
+          "upscale 4k ai, xoa phong nen tu dong, rembg python"
+        ],
+        [
+          "Cách Tạo Vector SVG Bằng AI Dễ Dàng Tùy Biến Cho Lập Trình Viên",
+          "tao-vector-svg-bang-ai-cho-dev",
+          "HuongDan",
+          "vectorizer ai, tao svg bang ai, icon vector web"
         ]
       ]
     },
@@ -666,6 +1146,36 @@
           "giam-thieu-ao-tuong-hallucination-he-thong-rag",
           "Informational",
           "prevent llm hallucination, rag evaluation ragas, factual accuracy verification"
+        ],
+        [
+          "So Sánh Các Cơ Sở Dữ Liệu Vector Hàng Đầu: Pinecone, Qdrant, Chroma",
+          "so-sanh-vector-db-pinecone-qdrant-chroma",
+          "SoSanh",
+          "pinecone vs qdrant vs chroma, so sanh vector database, rag storage"
+        ],
+        [
+          "Kỹ Thuật Chunking Dữ Liệu Thông Minh Nâng Cao Độ Chính Xác RAG",
+          "ky-thuat-chunking-du-lieu-thong-minh-rag",
+          "KienThuc",
+          "semantic chunking, recursive text splitter, toi uu retrieval rag"
+        ],
+        [
+          "Triển Khai Hybrid Search: Kết Hợp BM25 Keyword & Dense Vector Search",
+          "trien-khai-hybrid-search-bm25-vector",
+          "HuongDan",
+          "hybrid search rag, bm25 algorithm, dense retrieval pinecone"
+        ],
+        [
+          "Ứng Dụng Reranker (Cohere, BGE) Tăng Cường Kết Quả Tìm Kiếm RAG",
+          "ung-dung-reranker-tang-cuong-rag",
+          "KienThuc",
+          "cohere rerank, bge reranker, nang cao do chinh xac tim kiem"
+        ],
+        [
+          "Đo Lường & Đánh Giá Hiệu Năng RAG Bằng Thư Viện Ragas",
+          "danh-gia-hieu-nang-rag-bang-ragas",
+          "HuongDan",
+          "ragas evaluation framework, faithfulness answer relevance, rag test"
         ]
       ]
     },
@@ -705,6 +1215,36 @@
           "tu-dong-hoa-cham-soc-khach-hang-shopify-n8n",
           "Informational",
           "shopify automated fulfillment, n8n shopify workflow, auto reply order tracking"
+        ],
+        [
+          "Nghiên Cứu Sản Phẩm & Ý Tưởng Thiết Kế POD Thịnh Hành Bằng AI",
+          "nghien-cuu-y-tuong-pod-thinh-hanh-ai",
+          "HuongDan",
+          "print on demand trending niche, nghien cuu san pham ai, etsy trend"
+        ],
+        [
+          "Tự Động Tạo Mockup Sản Phẩm Chất Lượng Cao Đăng Lên Cửa Hàng",
+          "tu-dong-tao-mockup-san-pham-ai",
+          "HuongDan",
+          "mockup generator ai, printful printify auto, hinh anh san pham pod"
+        ],
+        [
+          "Tối Ưu SEO Cửa Hàng Shopify & Etsy Đạt Thứ Hạng Cao Tự Nhiên",
+          "toi-uu-seo-shopify-etsy-thu-hang-cao",
+          "SEO",
+          "etsy seo ai, shopify product description, tang traffic ban hang"
+        ],
+        [
+          "Đồng Bộ Đơn Hàng Tự Động Từ Nền Tảng Bán Hàng Về Nhà In POD",
+          "dong-bo-don-hang-tu-dong-ve-nha-in",
+          "HuongDan",
+          "order fulfillment automation, zapier pod shopify, tu dong gui don in"
+        ],
+        [
+          "Cách Xử Lý Đánh Giá Của Khách Hàng Tự Động Bằng AI Chăm Sóc Khách",
+          "xu-ly-danh-gia-khach-hang-tu-dong-ai",
+          "CSKH",
+          "auto reply customer review, cham soc khach hang ai, customer service"
         ]
       ]
     },
@@ -744,6 +1284,36 @@
           "top-5-thu-vien-python-xu-ly-am-thanh-voice-ai",
           "Commercial",
           "python audio libraries, whisper torchaudio soundfile, speech synthesis python"
+        ],
+        [
+          "Tạo Nhạc Nền Miễn Phí Bản Quyền Cho Video & Game Bằng Suno AI",
+          "tao-nhac-nen-khong-ban-quyen-suno-ai",
+          "HuongDan",
+          "suno ai music prompt, nhac nen khong ban quyen, tao beat bang ai"
+        ],
+        [
+          "Sử Dụng Udio AI Để Sáng Tác Bài Hát Hoàn Chỉnh Với Lời Ca Độc Đáo",
+          "sang-tac-bai-hat-hoan-chinh-udio-ai",
+          "HuongDan",
+          "udio ai prompt guide, sang tac nhac tu dong, full track generator"
+        ],
+        [
+          "Kỹ Thuật Tách Beat & Vocals Bằng AI Cho Nhà Sản Xuất Âm Nhạc",
+          "ky-thuat-tach-beat-vocals-ai",
+          "HuongDan",
+          "demucs stem separation, tach loi bai hat, audio isolation"
+        ],
+        [
+          "Cách Tạo Podcast Tự Động Bằng Hai Giọng Đọc AI Tranh Luận Sôi Nổi",
+          "tao-podcast-tu-dong-hai-giong-doc-ai",
+          "HuongDan",
+          "notebooklm podcast style, ai podcast generation, automated audio show"
+        ],
+        [
+          "Tối Ưu Chất Lượng Âm Thanh Đạt Chuẩn Phát Hành Spotify & Apple Music",
+          "toi-uu-am-thanh-chuan-spotify-apple",
+          "KienThuc",
+          "audio mastering ai, lufs standard spotify, xu ly am thanh chuyen nghiep"
         ]
       ]
     },
@@ -783,6 +1353,36 @@
           "ky-thuat-ngat-loi-tu-nhien-barge-in-voice-ai",
           "Informational",
           "voice ai barge in handling, conversational turn taking, interruptible speech agent"
+        ],
+        [
+          "Xây Dựng Trợ Lý Điện Thoại AI Đàm Thoại Bằng OpenAI Realtime API",
+          "tro-ly-dien-thoai-openai-realtime-api",
+          "HuongDan",
+          "openai realtime api voice, websocket voice agent, tro ly ao nghe goi"
+        ],
+        [
+          "Tối Ưu Độ Trễ Giọng Nói Xuống Dưới 300ms Cho Đàm Thoại Thời Gian Thực",
+          "toi-uu-do-tre-giong-noi-duoi-300ms",
+          "KienThuc",
+          "low latency voice ai, websocket audio stream, realtime voice response"
+        ],
+        [
+          "Tích Hợp Voice Agent Vào Tổng Đài Doanh Nghiệp Twilio & Asterisk",
+          "tich-hop-voice-agent-tong-dai-twilio",
+          "HuongDan",
+          "twilio voice ai integration, asterisk voip chatbot, tong dai thong minh"
+        ],
+        [
+          "Nhận Diện Cảm Xúc Giọng Nói Người Gọi Để Điều Hướng Kịch Bản",
+          "nhan-dien-cam-xuc-giong-noi-nguoi-goi",
+          "KienThuc",
+          "voice emotion detection, sentiment analysis speech, kich ban linh hoat"
+        ],
+        [
+          "Bảo Mật Xác Thực Sinh Trắc Học Giọng Nói Chống Giả Mạo Deepfake",
+          "bao-mat-xac-thuc-giong-noi-chong-deepfake",
+          "BaoMat",
+          "voice biometrics security, anti deepfake audio, xac thuc danh tinh"
         ]
       ]
     },
@@ -822,6 +1422,36 @@
           "ky-thuat-nen-ngu-canh-context-compression-tai-lieu-dai",
           "Informational",
           "llm context compression, long document summarization, token budget optimization"
+        ],
+        [
+          "Xây Dựng Cổng Định Tuyến AI (LLM Gateway) Với LiteLLM & Portkey",
+          "cong-dinh-tuyen-llm-gateway-litellm",
+          "HuongDan",
+          "litellm gateway setup, portkey ai proxy, fallbacks load balancing"
+        ],
+        [
+          "Chiến Lược Tối Ưu Hóa Prompt Giảm 50% Token Mà Giữ Nguyên Ý Nghĩa",
+          "toi-uu-prompt-giam-50-phan-tram-token",
+          "ToiUu",
+          "prompt compression, giam token usage, toi uu chi phi api"
+        ],
+        [
+          "Mô Hình Định Giá & Hạn Mức Sử Dụng Dành Cho Khách Hàng SaaS B2B",
+          "mo-hinh-dinh-gia-rate-limit-saas-b2b",
+          "ChienLuoc",
+          "token billing model, credit system saas, tier pricing strategy"
+        ],
+        [
+          "Sử Dụng Semantic Caching Giảm Độ Trễ Phản Hồi Về 0 Giây",
+          "semantic-caching-giam-do-tre-phan-hoi",
+          "HuongDan",
+          "gptcache redis semantic caching, cache ket qua llm, giam chi phi"
+        ],
+        [
+          "Báo Cáo & Giám Sát Chi Phí Token Theo Thời Gian Thực Cho Đội Ngũ",
+          "giam-sat-chi-phi-token-thoi-gian-thuc",
+          "QuanLy",
+          "llm cost tracking, helicone langfuse observability, giam sat ngan sach"
         ]
       ]
     },
@@ -861,6 +1491,36 @@
           "dang-ky-tich-hop-lemonsqueezy-stripe-san-pham-so",
           "Commercial",
           "lemonsqueezy merchant of record, stripe integration digital products, global payment setup"
+        ],
+        [
+          "Xây Dựng Cấu Trúc Khóa Học Trực Tuyến Chuyên Sâu Tự Động Bằng AI",
+          "xay-dung-cau-truc-khoa-hoc-chuyen-sau-ai",
+          "HuongDan",
+          "course curriculum ai generator, tao khoa hoc truc tuyen, giao trinh"
+        ],
+        [
+          "Tự Động Tạo Slide Bài Giảng Chuyên Nghiệp Bằng Gamma & Beautiful.ai",
+          "tao-slide-bai-giang-gamma-ai",
+          "CongCu",
+          "gamma app slide generator, beautiful ai presentation, slide thuyet trinh"
+        ],
+        [
+          "Tạo Video Bài Giảng Hoàn Chỉnh Với Avatar Người Ảo HeyGen & D-ID",
+          "tao-video-bai-giang-avatar-heygen",
+          "HuongDan",
+          "heygen avatar video, d-id talking head, quay video khong can camera"
+        ],
+        [
+          "Viết & Xuất Bản Ebook Chuẩn Định Dạng Kindle & PDF Bằng AI",
+          "xuat-ban-ebook-kindle-pdf-bang-ai",
+          "HuongDan",
+          "ebook writing ai, kindle direct publishing kdp, sach dien tu"
+        ],
+        [
+          "Tự Động Hóa Hệ Thống Bài Tập & Chấm Điểm Cho Học Viên Trực Tuyến",
+          "tu-dong-hoa-bai-tap-cham-diem-hoc-vien",
+          "HuongDan",
+          "automated quiz grader, lms ai integration, danh gia nang luc hoc vien"
         ]
       ]
     },
@@ -900,6 +1560,36 @@
           "thiet-lap-moi-truong-ai-co-lap-dev-containers-docker",
           "Informational",
           "secure ai coding environment, dev containers vscode, sandbox untrusted ai code"
+        ],
+        [
+          "Đánh Giá Chi Tiết Cursor AI: Tính Năng Composer & Tab Completion Thần Thánh",
+          "danh-gia-chi-tiet-cursor-ai-composer",
+          "DanhGia",
+          "cursor ai editor review, composer multi file edit, cursor rules"
+        ],
+        [
+          "Windsurf Cascade Flow: Khám Phá Trình Biên Tập Mã Của Codeium",
+          "windsurf-cascade-flow-codeium-review",
+          "DanhGia",
+          "windsurf editor codeium, cascade flow ai, so sanh cursor windsurf"
+        ],
+        [
+          "Thiết Lập File .cursorrules Chuẩn Mực Cho Dự Án Đội Nhóm",
+          "thiet-lap-file-cursorrules-chuan-muc",
+          "HuongDan",
+          "cursorrules best practices, system prompt cursor, quy chuan code team"
+        ],
+        [
+          "Tận Dụng AI Terminal Tự Động Sửa Lỗi Lệnh & Quản Trị Hệ Thống",
+          "tan-dung-ai-terminal-tu-dong-sua-loi",
+          "HuongDan",
+          "ai terminal warp, command line ai assistant, sua loi bash tu dong"
+        ],
+        [
+          "Top Phím Tắt & Mẹo Đẩy Tốc Độ Viết Code Lên Tối Đa Trong Cursor",
+          "top-phim-tat-meo-viet-code-cursor",
+          "Meo",
+          "cursor keyboard shortcuts, code speedup tips, meo lap trinh cursor"
         ]
       ]
     },
@@ -939,6 +1629,36 @@
           "chien-luoc-tuan-thu-chuan-an-toan-gdpr-ai-act",
           "Commercial",
           "eu ai act compliance, gdpr compliance for generative ai, enterprise ai governance"
+        ],
+        [
+          "Phát Hiện & Ngăn Chặn Các Đòn Tấn Công Gián Tiếp (Indirect Prompt Injection)",
+          "ngan-chan-indirect-prompt-injection",
+          "BaoMat",
+          "indirect prompt injection, threat modeling llm, bao ve du lieu ai"
+        ],
+        [
+          "Bảo Vệ Dữ Liệu Riêng Tư & Chống Rò Rỉ PII Khi Gọi API Mô Hình Lớn",
+          "bao-ve-du-lieu-pii-khi-goi-api-ai",
+          "BaoMat",
+          "pii masking anonymization, gdpr compliance ai, an toan thong tin"
+        ],
+        [
+          "Xây Dựng Tường Lửa Cho Ứng Dụng AI Bằng NeMo Guardrails Của NVIDIA",
+          "xay-dung-tuong-lua-ai-nemo-guardrails",
+          "HuongDan",
+          "nvidia nemo guardrails, ai firewall, kiem soat noi dung llm"
+        ],
+        [
+          "Kiểm Thử Xâm Nhập Ứng Dụng AI: Phương Pháp Red Teaming Chuyên Nghiệp",
+          "kiem-thu-xam-nhap-ai-red-teaming",
+          "KienThuc",
+          "red teaming llm, penetration test ai application, owasp top 10 llm"
+        ],
+        [
+          "Quy Chuẩn An Toàn Khi Trao Quyền Thực Thi Lệnh Cho AI Agent Tự Trị",
+          "quy-chuan-an-toan-cho-agent-tu-tri",
+          "KienThuc",
+          "agent execution safety, sandboxing docker, phan quyen an toan"
         ]
       ]
     },
@@ -978,6 +1698,36 @@
           "tu-dong-hoa-hop-dong-hoa-don-crm-ai",
           "Informational",
           "freelance crm automation, automated invoicing contracts, client onboarding workflow"
+        ],
+        [
+          "Cách Xây Dựng Profile Freelance Đỉnh Cao Thu Hút Khách Hàng Quốc Tế",
+          "xay-dung-profile-freelance-quoc-te",
+          "ChienLuoc",
+          "upwork profile optimization, fiverr gig seo, thu hut khach hang tay"
+        ],
+        [
+          "Quy Trình Hoàn Thành Dự Án Khách Hàng Nhanh Hơn 3 Lần Nhờ AI",
+          "hoan-thanh-du-an-freelance-nhanh-3-lan",
+          "QuyTrinh",
+          "freelance workflow speedup, giao du an dung han, nang cao nang suat"
+        ],
+        [
+          "Cách Định Giá Dịch Vụ Theo Giá Trị Mang Lại Thay Vì Tính Theo Giờ",
+          "dinh-gia-dich-vu-theo-gia-tri-value-based",
+          "ChienLuoc",
+          "value based pricing freelance, thoat khoi ban gio, tang thu nhap"
+        ],
+        [
+          "Tự Động Hóa Soạn Thảo Hợp Đồng & Đề Xuất Dự Án Chuẩn Chỉnh",
+          "tu-dong-soan-thao-hop-dong-de-xuat",
+          "HuongDan",
+          "proposal writing ai, freelance contract template, chot hop dong"
+        ],
+        [
+          "Chuyển Đổi Từ Freelance Đơn Lẻ Sang Mô Hình Agency Tự Vận Hành",
+          "chuyen-doi-freelance-sang-agency-tu-van-hanh",
+          "ChienLuoc",
+          "scale freelance to agency, agency automation, xay dung he thong"
         ]
       ]
     },
@@ -1017,6 +1767,36 @@
           "xay-dung-cong-cu-tim-kiem-noi-bo-doanh-nghiep-ai",
           "Informational",
           "enterprise semantic search engine, replace elasticsearch with vector db, internal knowledge search"
+        ],
+        [
+          "Nguyên Lý Hoạt Động Của Không Gian Vector & Phép Đo Cosine Similarity",
+          "nguyen-ly-khong-gian-vector-cosine-similarity",
+          "KienThuc",
+          "cosine similarity math, vector embedding space, do tuong dong ngu nghia"
+        ],
+        [
+          "So Sánh Các Mô Hình Embeddings Mới Nhất: OpenAI, BGE, Voyage AI",
+          "so-sanh-cac-mo-hinh-embeddings-moi-nhat",
+          "SoSanh",
+          "openai text embedding 3, bge large, voyage ai benchmark"
+        ],
+        [
+          "Kỹ Thuật Đa Tầng Semantic Search Kết Hợp Metadata Filtering",
+          "semantic-search-da-tang-metadata-filtering",
+          "HuongDan",
+          "metadata filtering vector, multi stage retrieval, tim kiem chinh xac"
+        ],
+        [
+          "Giảm Chi Phí Lưu Trữ Vector Bằng Kỹ Thuật Product Quantization (PQ)",
+          "giam-chi-phi-vector-product-quantization",
+          "KienThuc",
+          "product quantization ivfpq, scale vector db, toi uu chi phi"
+        ],
+        [
+          "Tối Ưu Hóa Embeddings Đa Ngôn Ngữ Phù Hợp Với Tiếng Việt",
+          "toi-uu-embeddings-da-ngon-ngu-tieng-viet",
+          "KienThuc",
+          "vietnamese embedding benchmark, da ngon ngu semantic, nlp tieng viet"
         ]
       ]
     },
@@ -1056,6 +1836,36 @@
           "kinh-doanh-dich-vu-video-quang-cao-ai-thuong-hieu",
           "Commercial",
           "commercial ai video agency, selling ai video ads, high margin video production"
+        ],
+        [
+          "Kỹ Thuật Điều Khiển Chuyển Động Camera Trong Video AI Bằng Camera Motion",
+          "dieu-khien-camera-motion-video-ai",
+          "HuongDan",
+          "camera motion prompts, pan tilt zoom runway, goc may dien anh"
+        ],
+        [
+          "Tạo Nhân Vật Đồng Nhất Xuyên Suốt Mọi Cảnh Quay Bằng AI",
+          "tao-nhan-vat-dong-nhat-xuyen-suot-video",
+          "HuongDan",
+          "consistent character ai video, lora face consistency, giu mat dien vien"
+        ],
+        [
+          "Sử Dụng AI Để Lên Kịch Bản & Phân Cảnh (Storyboard) Hoàn Hảo",
+          "len-kich-ban-storyboard-bang-ai",
+          "HuongDan",
+          "ai storyboarding, phan canh kich ban phim, visual scriptwriting"
+        ],
+        [
+          "Ghép Nối & Dựng Hậu Kỳ Video Bằng AI Trong Premiere & DaVinci Resolve",
+          "dung-hau-ky-video-ai-davinci-premiere",
+          "HuongDan",
+          "davinci resolve ai tools, premiere pro ai editing, color grading ai"
+        ],
+        [
+          "Quy Trình Tạo Phim Ngắn Hoạt Hình 3D Hoàn Chỉnh Chỉ Bằng Lời Nhắc",
+          "quy-trinh-tao-phim-hoat-hinh-3d-ai",
+          "QuyTrinh",
+          "3d animation ai workflow, tao phim hoat hinh, blender ai pipeline"
         ]
       ]
     },
@@ -1095,6 +1905,36 @@
           "phan-tich-hai-long-nguy-co-nghi-viec-nhan-su-ml",
           "Commercial",
           "employee churn prediction ml, sentiment analysis internal surveys, talent retention ai"
+        ],
+        [
+          "Tự Động Hóa Quét & Đánh Giá CV Ứng Viên Bằng AI Tránh Thiên Vị",
+          "tu-dong-quet-danh-gia-cv-ai",
+          "HuongDan",
+          "ai resume screening, ats recruitment ai, danh gia ho so ung vien"
+        ],
+        [
+          "Xây Dựng Kịch Bản Phỏng Vấn Sàng Lọc Cá Nhân Hóa Từng Ứng Viên",
+          "kich-ban-phong-van-ca-nhan-hoa-ai",
+          "HuongDan",
+          "interview question generator, ca nhan hoa phong van, danh gia ky nang"
+        ],
+        [
+          "Bot Phỏng Vấn Ảo Sơ Loại Tự Động Ghi Âm & Tổng Hợp Điểm Mạnh Yếu",
+          "bot-phong-van-ao-so-loai-tu-dong",
+          "HuongDan",
+          "virtual interviewer bot, automated interview summary, scorecard tuyen dung"
+        ],
+        [
+          "Tối Ưu Hóa Mô Tả Công Việc (JD) Thu Hút Nhân Tài Hàng Đầu",
+          "toi-uu-mo-ta-cong-viec-jd-thu-hut",
+          "HuongDan",
+          "job description optimization, jd thu hut ung vien, copywriting tuyen dung"
+        ],
+        [
+          "Quy Trình Tự Động Hóa Đào Tạo Hội Nhập (Onboarding) Nhân Viên Mới",
+          "tu-dong-dao-tao-onboarding-nhan-vien-moi",
+          "QuyTrinh",
+          "employee onboarding automation, noi bo training ai, huong dan nhan vien"
         ]
       ]
     },
@@ -1134,6 +1974,36 @@
           "tich-hop-webhooks-realtime-kich-hoat-ai-agents",
           "Informational",
           "realtime webhooks ai agents, event driven architecture llm, trigger autonomous workflows"
+        ],
+        [
+          "Xây Dựng Webhook Bảo Mật Có Chữ Ký Xác Thực (HMAC Signature)",
+          "xay-dung-webhook-bao-mat-hmac-signature",
+          "BaoMat",
+          "hmac webhook verification, secure webhook n8n, xac thuc webhook"
+        ],
+        [
+          "Kỹ Thuật Xử Lý Hàng Đợi (Queue) & Thử Lại (Retry) Tự Động Khi API Lỗi",
+          "xu-ly-hang-doi-retry-tu-dong-api-loi",
+          "KienThuc",
+          "queue management n8n, exponential backoff retry, xu ly loi tu dong"
+        ],
+        [
+          "Tích Hợp PostgreSQL Với N8n Để Xử Lý Hàng Triệu Dòng Dữ Liệu",
+          "tich-hop-postgresql-n8n-du-lieu-lon",
+          "HuongDan",
+          "postgresql n8n integration, xu ly du lieu lon, bulk data transform"
+        ],
+        [
+          "Tự Động Hóa Quy Trình Đa Chi Nhánh Phức Hợp Với Sub-Workflows",
+          "quy-trinh-da-chi-nhanh-sub-workflows",
+          "KienThuc",
+          "sub workflow n8n, modular automation design, quy trinh phuc hop"
+        ],
+        [
+          "Tự Host N8n Trên VPS Cá Nhân Tiết Kiệm Chi Phí Hàng Tháng",
+          "tu-host-n8n-tren-vps-tiet-kiem-chi-phi",
+          "HuongDan",
+          "self host n8n docker vps, setup n8n mien phi, tu dong hoa gia re"
         ]
       ]
     },
@@ -1173,6 +2043,36 @@
           "tuyen-ngon-nha-sang-lap-ai-solopreneur-cong-ty-trieu-do",
           "Informational",
           "one person billion dollar company, ai solopreneur manifesto, solo founder leverage"
+        ],
+        [
+          "Khám Phá Tiến Trình Nghiên Cứu AGI Của OpenAI, Google & Anthropic",
+          "tien-trinh-nghien-cuu-agi-openai-google",
+          "KienThuc",
+          "agi roadmap 2026, artificial general intelligence, tuong lai tri tue nhan tao"
+        ],
+        [
+          "Tác Động Của Siêu Trí Tuệ Đối Với Nền Kinh Tế & Nghề Nghiệp Tương Lai",
+          "tac-dong-sieu-tri-tue-kinh-te-nghe-nghiep",
+          "KienThuc",
+          "ai economic impact, viec lam trong ky nguyen ai, tuong lai xa hoi"
+        ],
+        [
+          "Chuẩn Bị Kỹ Năng Gì Để Không Bị Thay Thế Trong Kỷ Nguyên Trí Tuệ Mới?",
+          "ky-nang-khong-bi-thay-the-ky-nguyen-ai",
+          "ChienLuoc",
+          "future skills ai era, tu duy phan bien, thich nghi cong nghe"
+        ],
+        [
+          "Đạo Đức AI & Những Ranh Giới Đỏ Trong Phát Triển Công Nghệ Tự Trị",
+          "dao-duc-ai-ranh-gioi-do-cong-nghe-tu-tri",
+          "KienThuc",
+          "ai alignment safety, dao duc tri tue nhan tao, red lines in ai"
+        ],
+        [
+          "Tổng Kết Lộ Trình 30 Ngày Tự Động Hóa: Bước Tiếp Theo Dành Cho Bạn",
+          "tong-ket-lo-trinh-30-ngay-tu-dong-hoa",
+          "TongKet",
+          "lo trinh hoc ai automation, tong ket 300 bai viet, buoc tiep theo mmo"
         ]
       ]
     }

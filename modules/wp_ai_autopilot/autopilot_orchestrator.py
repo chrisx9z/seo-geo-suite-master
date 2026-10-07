@@ -30,7 +30,10 @@ class WpAiAutopilot:
         self.admin_user = admin_user or os.getenv("WP_ADMIN_USER", "admin")
         self.admin_pass = admin_pass or os.getenv("WP_ADMIN_PASSWORD", "")
         
+        import urllib3
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         self.session = requests.Session()
+        self.session.verify = False
         self.session.headers.update({"User-Agent": "Mozilla/5.0 Wp-AI-Autopilot"})
         self.nonce = ""
         self._authenticate()

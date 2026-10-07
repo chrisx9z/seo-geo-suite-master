@@ -262,6 +262,44 @@ def run_report(url: str, format: str = "html", previous: str = None, accent: str
     else:
         console.print(f"[bold red]❌ Xuất báo cáo thất bại:[/] {res.get('error')}")
 
+def run_redirects(url: str, max_checks: int = 100):
+    console.print(f"[bold cyan]🔀 Đang kiểm tra chuỗi chuyển hướng (Redirect Chains & Hops) cho:[/] [yellow]{url}[/]")
+    auditor = WebsiteAuditor()
+    res = auditor.audit_redirects(url, max_checks=max_checks)
+    if isinstance(res, dict) and "site" in res:
+        chains = res.get("chains", [])
+        loops = res.get("loops", [])
+        console.print(f"  • Chuỗi redirect phát hiện: {len(chains)}")
+        console.print(f"  • Vòng lặp redirect (Loop): {len(loops)}")
+        issues = res.get("issues", [])
+        if issues:
+            console.print(f"[bold red]⚠️ Cảnh báo chuyển hướng ({len(issues)}):[/]")
+            for iss in issues[:5]:
+                console.print(f"    - [red]{iss}[/]")
+        else:
+            console.print("[bold green]✅ Hệ thống URL và chuyển hướng 301/302 sạch, không có loop![/]")
+    else:
+        console.print(f"Result: {json.dumps(res, indent=2, ensure_ascii=False)[:500]}")
+
+def run_page_network(url: str):
+    console.print(f"[bold cyan]🌐 Đang phân tích Network Call, Thẻ nhúng & Open Endpoints cho:[/] [yellow]{url}[/]")
+    auditor = WebsiteAuditor()
+    res = auditor.audit_page_network(url)
+    if isinstance(res, dict) and ("pages" in res or "endpoints" in res or "network" in res or "open_endpoints" in res):
+        open_endpoints = res.get("open_endpoints", [])
+        tags = res.get("third_party_tags", [])
+        console.print(f"  • Open Write Endpoints: {len(open_endpoints)}")
+        console.print(f"  • Third-Party Tag Load: {len(tags)}")
+        issues = res.get("issues", [])
+        if issues:
+            console.print(f"[bold red]⚠️ Vấn đề bảo mật & hiệu năng network ({len(issues)}):[/]")
+            for iss in issues[:5]:
+                console.print(f"    - [red]{iss}[/]")
+        else:
+            console.print("[bold green]✅ Toàn bộ network call trang web an toàn, nhẹ và tối ưu![/]")
+    else:
+        console.print(f"Result: {json.dumps(res, indent=2, ensure_ascii=False)[:500]}")
+
 def main():
     show_banner()
     parser = argparse.ArgumentParser(description="SEO & GEO Master Suite CLI")
@@ -326,6 +364,15 @@ def main():
     rep_parser.add_argument("--previous", default=None, help="Đường dẫn file JSON audit trước để so sánh delta")
     rep_parser.add_argument("--accent", default=None, help="Mã màu thương hiệu (#0057B7, #FF6A1A...)")
 
+    # 13. Redirects
+    red_parser = subparsers.add_parser("redirects", help="Kiểm tra chuỗi chuyển hướng (Redirect Chains & Hops)")
+    red_parser.add_argument("url", nargs="?", default=None, help="URL website")
+    red_parser.add_argument("--max-checks", type=int, default=100, help="Số link chuyển hướng tối đa cần theo dõi (mặc định: 100)")
+
+    # 14. Page Network
+    net_parser = subparsers.add_parser("network", help="Phân tích cuộc gọi mạng, open endpoints & tag load của trang")
+    net_parser.add_argument("url", nargs="?", default=None, help="URL website")
+
     args = parser.parse_args()
 
     if args.command == "onpage":
@@ -382,6 +429,16 @@ def main():
             console.print("[bold red]❌ Vui lòng cung cấp URL website.[/]")
             return
         run_report(args.url, format=args.format, previous=args.previous, accent=args.accent)
+    elif args.command == "redirects":
+        if not args.url:
+            console.print("[bold red]❌ Vui lòng cung cấp URL website.[/]")
+            return
+        run_redirects(args.url, max_checks=args.max_checks)
+    elif args.command == "network":
+        if not args.url:
+            console.print("[bold red]❌ Vui lòng cung cấp URL website.[/]")
+            return
+        run_page_network(args.url)
     elif args.command == "dashboard":
         console.print("[bold green]🚀 Đang khởi động Web Dashboard tại http://localhost:8000 ...[/]")
         os.system(f"{sys.executable} -m uvicorn seo_geo_suite.dashboard.app:app --host 0.0.0.0 --port 8000 --reload")

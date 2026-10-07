@@ -90,6 +90,7 @@ def fetch_robots_txt(url: str, timeout: int = 15) -> dict:
         "url": robots_url,
         "status": None,
         "raw": None,
+        "cloudflare_managed": False,
         "user_agents": {},
         "sitemaps": [],
         "crawl_delays": {},
@@ -123,6 +124,17 @@ def fetch_robots_txt(url: str, timeout: int = 15) -> dict:
             return result
 
         result["raw"] = resp.text
+        # Cloudflare's managed robots.txt prepends this block to the origin
+        # file and disallows GPTBot, ClaudeBot, Google-Extended and others,
+        # often without the site owner realising it is switched on.
+        result["cloudflare_managed"] = (
+            "# begin cloudflare managed content" in (resp.text or "").lower()
+        )
+        if result["cloudflare_managed"]:
+            result["issues"].append(
+                "⚠️ Cloudflare Managed Robots.txt detected (# BEGIN Cloudflare Managed Content). "
+                "Cloudflare edge WAF / AI Scraper protection is automatically prepending crawler blocks before origin robots.txt."
+            )
         _parse_robots(resp.text, result)
 
     except requests.exceptions.RequestException as e:

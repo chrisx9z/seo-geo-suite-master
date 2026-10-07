@@ -253,3 +253,24 @@ class WebsiteAuditor:
             }
         except Exception as e:
             return {"status": "error", "error": str(e)}
+
+    def audit_redirects(self, domain_url: str, max_checks: int = 100) -> Dict[str, Any]:
+        """Audits site-wide redirect chains and hops, detecting redirect loops and non-canonical hops."""
+        args = [domain_url, "--max-checks", str(max_checks), "--json"]
+        return self._run_upstream_script("redirect_checker.py", args, timeout=90)
+
+    def audit_page_network(self, url: str, probe: bool = True, llms_txt: bool = True) -> Dict[str, Any]:
+        """Audits network calls of rendered pages: open first-party write endpoints and tag load."""
+        args = [url, "--json"]
+        if llms_txt:
+            args.append("--llms-txt")
+        if not probe:
+            args.append("--no-probe")
+        return self._run_upstream_script("page_network.py", args, timeout=90)
+
+    def audit_link_opportunities(self, graph_path: str, target_url: str, terms: List[str] = None, limit: int = 25) -> Dict[str, Any]:
+        """Finds pages that mention a target's topic or keyword but do not link to the money page."""
+        args = ["--graph", graph_path, "--target", target_url, "--limit", str(limit), "--json"]
+        if terms:
+            args.extend(["--terms"] + terms)
+        return self._run_upstream_script("link_opportunities.py", args, timeout=90)

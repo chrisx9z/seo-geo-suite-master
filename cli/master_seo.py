@@ -589,6 +589,54 @@ def generate_report_site(site, target_url=None, format="html", previous=None, ac
     else:
         print(f"❌ Report generation failed: {res.get('error')}")
 
+def audit_redirects_site(site, target_url=None):
+    url = target_url or site['url']
+    print(f"\n{'='*75}")
+    print(f"🔀 SITE-WIDE REDIRECT CHAINS & HOPS AUDIT: {url}")
+    print(f"{'='*75}")
+    from seo_geo_suite.core.auditor import WebsiteAuditor
+    auditor = WebsiteAuditor()
+    res = auditor.audit_redirects(url)
+    if isinstance(res, dict) and "site" in res:
+        print(f"Target: {res.get('site')}")
+        chains = res.get("chains", [])
+        loops = res.get("loops", [])
+        print(f"  • Redirect Chains Found: {len(chains)}")
+        print(f"  • Redirect Loops Found: {len(loops)}")
+        issues = res.get("issues", [])
+        if issues:
+            print(f"  ⚠️ Redirect Issues ({len(issues)}):")
+            for iss in issues[:5]:
+                print(f"    - {iss}")
+        else:
+            print("  ✅ Zero redirect loops or excessive chains detected!")
+    else:
+        print(f"Result: {json.dumps(res, indent=2, ensure_ascii=False)[:500]}")
+
+def audit_page_network_site(site, target_url=None):
+    url = target_url or site['url']
+    print(f"\n{'='*75}")
+    print(f"🌐 PAGE NETWORK, OPEN ENDPOINTS & TAG AUDIT: {url}")
+    print(f"{'='*75}")
+    from seo_geo_suite.core.auditor import WebsiteAuditor
+    auditor = WebsiteAuditor()
+    res = auditor.audit_page_network(url)
+    if isinstance(res, dict) and ("pages" in res or "endpoints" in res or "network" in res or "open_endpoints" in res):
+        print(f"Rendered Page Network for: {url}")
+        open_endpoints = res.get("open_endpoints", [])
+        print(f"  • Open Write/Sensitive Endpoints: {len(open_endpoints)}")
+        tags = res.get("third_party_tags", [])
+        print(f"  • Third-Party Tag Load: {len(tags)}")
+        issues = res.get("issues", [])
+        if issues:
+            print(f"  ⚠️ Network Issues ({len(issues)}):")
+            for iss in issues[:5]:
+                print(f"    - {iss}")
+        else:
+            print("  ✅ Page network calls are secure, clean and lightweight!")
+    else:
+        print(f"Result: {json.dumps(res, indent=2, ensure_ascii=False)[:500]}")
+
 def audit_citability_site(site, target_url=None):
     url = target_url or site['url']
     print(f"\n{'='*75}")
@@ -869,7 +917,8 @@ def main():
         "inject-eeat", "heal-orphans", "warm-edge", "audit-links", 
         "audit-onpage", "schedule-travel", "clone-site",
         "audit-graph", "audit-arch", "audit-nav", "audit-sitemap-freshness", "generate-report",
-        "citability", "audit-injection", "check-ai-bots", "check-sitemap", "audit-content"
+        "citability", "audit-injection", "check-ai-bots", "check-sitemap", "audit-content",
+        "audit-redirects", "audit-page-network"
     ], help="Action to perform")
     parser.add_argument("--site", default=None, help="Site ID or domain to target (omit to apply to ALL sites)")
     parser.add_argument("--from-site", default="mmdidau", help="Source site ID to clone from (for clone-site)")
@@ -974,6 +1023,10 @@ def main():
             schedule_travel_site(s, plan_path=args.plan, days=args.days, max_posts=args.max_posts)
         elif args.command == "audit-content":
             audit_content_site(s, max_posts=args.max_posts)
+        elif args.command == "audit-redirects":
+            audit_redirects_site(s, target_url=args.url)
+        elif args.command == "audit-page-network":
+            audit_page_network_site(s, target_url=args.url)
 
 if __name__ == "__main__":
     main()

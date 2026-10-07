@@ -1,22 +1,19 @@
 # XianxiaBlender — Project Status
 
-Updated at: 2026-09-08 21:15:00+07:00
+Updated at: 2026-09-25 21:05:00+07:00
 
 ## 1. CURRENT PHASE
-**PHASE 12A COMPLETE — READY FOR CODEX REVIEW**  
+**PHASE 12C COMPLETE — 3D TACTICAL FORMATION VISUALIZER & CHAPTER 2 VERIFICATION**  
+**PHASE 12C VISUAL CUES: 3D INNER ZONE JADE RING, OUTER ICE RING, AMBER UNIT RING (PASS)**  
+**PHASE 12B TEST SUITE: 6/6 GROUPS PASSED (100%)**  
 **PHASE 12A TEST SUITE: 6/6 GROUPS PASSED (100%)**  
-**PHASE 12A QA GATE: 12/12 STEPS PASSED (100%)**  
-**PHASE 12A CLEAN-ROOM RELEASE: PASSED**  
-**PHASE 11B CODEX REVIEW: PASS**  
-**PHASE 11B COMPLETE: 6/6 TEST GROUPS, 12/12 QA, CLEAN-ROOM, PACKAGE, SMOKE PASSED**  
-**PHASE 11A CODEX REVIEW: PASS**  
-**PHASE 10D CORRECTIVE V01 CODEX REVIEW: PASS**  
-**PHASE 10C CODEX REVIEW: PASS**  
-**PHASE 10B CODEX REVIEW: PASS**  
-**PHASE 10A CODEX REVIEW: PASS**  
+**CONTINUOUS QA GATE: 12/12 STEPS PASSED (100% TRONG 24.42s)**  
+**CLEAN-ROOM SANDBOXED RELEASE: PASSED (3.43s)**  
+**KARMA ENGINE SUITE: 23/23 GROUPS PASSED (100%)**  
+**CHAPTER 1 PROGRESSION SUITE: 6/6 GROUPS PASSED (100%)**  
 **RUNTIME SYSTEM: GODOT 4.7.2 (FORWARD+ / VULKAN) STANDALONE WINDOWS DISTRIBUTION**  
-**BENCHMARK ENVIRONMENT: NVIDIA GeForce RTX 5070 Ti, Windows 11, Vulkan 1.4.341**  
-**PROJECT STATUS: PHASE 12A COMPLETE — READY FOR CODEX REVIEW**  
+**BENCHMARK ENVIRONMENT: NVIDIA GeForce RTX 5070 Ti, Intel Core i9-14900K, Vulkan 1.4.351**  
+**PROJECT STATUS: PHASE 12C COMPLETE — ZERO REGRESSION, READY FOR RELEASE**  
 
 ---
 
@@ -123,7 +120,7 @@ Updated at: 2026-09-08 21:15:00+07:00
 - **Nâng Cấp Thư Viện Hệ Thống & Python**:
   - Cập nhật `numpy` (2.5.3) và `tqdm` (4.70.1).
 - **Kiểm Thử & Đóng Gói Toàn Diện**:
-  - QA Gate: **12/12 Steps PASSED (100% trong 25.9s)**.
+  - QA Gate: **12/12 Steps PASSED (100% trong 27.04s)**.
   - Runtime Slice & Performance QA: **100% PASS (FPS mượt mà 140+ FPS, bộ nhớ 85MB < 500MB)**.
   - Karma Engine Suite: **23/23 Groups PASS**.
   - Chapter 2 Slice Regression: **6/6 Groups PASS**.
@@ -131,5 +128,28 @@ Updated at: 2026-09-08 21:15:00+07:00
 
 ---
 
-PROJECT STATUS: ULTRA GRAPHICS PIPELINE & COMPONENT UPGRADE COMPLETE — 100% VERIFIED
+## 7. TIẾN TRÌNH CHIẾN DỊCH TOÀN BỘ HỒI 2 & BỘ TEST DÀNH RIÊNG (PHASE 12B — 100% PASS)
+- **Chuỗi Kịch Bản Hồi 2 Liền Mạch (Ải 1 -> Ải 2 -> Ải 3 -> Đại Thắng)**:
+  - **Ải 1 (`chapter_2_mission_01`): Tuyết Nhai Quyết Chiến** (Ngưỡng 4 lính lõi): $2,100$ điểm, Hạng S, 3/3 ★. Thắng trận mở khóa Ải 2, Ải 3 vẫn khóa an toàn.
+  - **Ải 2 (`chapter_2_mission_02`): Tuyết Sơn Trảm Yêu** (Ngưỡng 5 lính lõi): $2,150$ điểm, Hạng S, 3/3 ★. Thắng trận mở khóa Ải 3 đỉnh phong.
+  - **Ải 3 (`chapter_2_mission_03`): Tuyết Nhai Đỉnh Phong** (Ngưỡng 3 lính cảm tử): $2,050$ điểm, Hạng S, 3/3 ★. Hoàn thành toàn bộ Hồi 2 (`is_chapter_2_cleared() == true`).
+- **Giao Diện Tổng Kết Đại Thắng Hồi 2 & Nút Chuyển Màn Tự Động**:
+  - `btn_next_mission` chuyển trạng thái mượt mà: `[ Tiếp Theo: Ải 2 ]` -> `[ Tiếp Theo: Ải 3 ]` -> `[ Hoàn Thành Hồi 2 ]`.
+  - Nhấp Hoàn Thành Hồi 2 tự động mở bảng `chapter_summary_overlay` với tiêu đề `TỔNG KẾT HỒI 2: TUYẾT NHAI QUYẾT CHIẾN`.
+  - Hiển thị đầy đủ 3 thẻ ải, tổng điểm Hồi 2: $6,300$ Điểm (Hạng S), Tinh Thông Toàn Phần: `9/9 ★ [★ TOÀN BÍCH]`.
+- **Bộ Kiểm Thử Tự Động Phase 12B (`test_phase_12b_chapter2_campaign.gd`)**:
+  - Group 1: Tính toàn vẹn Catalog & Cách ly Hồi 1 / Thử Thách (PASS).
+  - Group 2: Khóa mở tuần tự (Ải 1 -> Ải 2 -> Ải 3) & Bất biến khi Thất bại (PASS).
+  - Group 3: Chơi chiến dịch hoàn chỉnh (1 -> 2 -> 3) & Mô phỏng chiến đấu 24-frame (PASS).
+  - Group 4: Trình diễn Bảng Tổng Kết Hồi 2 & Tổng hợp chỉ số (PASS).
+  - Group 5: Chu kỳ Lưu/Tải Save Schema v3 & Bất biến kỷ lục đơn điệu (PASS).
+  - Group 6: Điều hướng màn hình kết quả, nút Hồi 2 & Phòng chống hồi quy (PASS).
+- **Phòng Ngừa Rò Rỉ & Vệ Sinh Quy Trình**:
+  - Dọn dẹp con `remove_child(c)` trước khi `c.queue_free()` loại bỏ hoàn toàn nguy cơ nhân đôi thẻ kết quả khi vẽ lại đồng bộ.
+  - 0 tiến trình mồ côi Godot sau toàn bộ quy trình kiểm thử.
+
+---
+
+PROJECT STATUS: PHASE 12B CHAPTER 2 FULL CAMPAIGN & MASTERY VERIFIED — 100% PASS
+
 

@@ -46,9 +46,19 @@ class WpAiAutopilot:
 
     def _authenticate(self):
         try:
-            self.session.post(f"{self.wp_url}/wp-login.php",
-                data={"log": self.admin_user, "pwd": self.admin_pass, "wp-submit": "Log In"}, timeout=10)
-            r_admin = self.session.get(f"{self.wp_url}/wp-admin/edit.php", timeout=10)
+            r_login = self.session.post(f"{self.wp_url}/wp-login.php",
+                data={"log": self.admin_user, "pwd": self.admin_pass, "wp-submit": "Log In"}, timeout=15)
+            if "confirm_admin_email" in r_login.url or "confirm_admin_email" in r_login.text:
+                try:
+                    from bs4 import BeautifulSoup
+                    soup = BeautifulSoup(r_login.text, "html.parser")
+                    links = [a.get("href") for a in soup.find_all("a", href=True)]
+                    remind_link = next((l for l in links if "remind_me_later" in l or "confirm_admin_email" in l), None)
+                    if remind_link:
+                        self.session.get(remind_link, timeout=15)
+                except Exception:
+                    pass
+            r_admin = self.session.get(f"{self.wp_url}/wp-admin/edit.php", timeout=15)
             m = re.search(r'"nonce":"([a-f0-9]+)"', r_admin.text)
             self.nonce = m.group(1) if m else ""
         except Exception:
@@ -67,7 +77,7 @@ class WpAiAutopilot:
             "X-WP-Nonce": self.nonce
         }
         with open(file_path, "rb") as f_img:
-            r = self.session.post(upload_url, headers=headers, data=f_img, timeout=30)
+            r = self.session.post(upload_url, headers=headers, data=f_img, timeout=60)
             if r.status_code in [200, 201]:
                 m_data = r.json()
                 mid = m_data.get("id")
@@ -174,7 +184,7 @@ class WpAiAutopilot:
             f"{self.wp_url}/wp-json/wp/v2/posts",
             headers={"X-WP-Nonce": self.nonce},
             json=payload,
-            timeout=30
+            timeout=60
         )
 
         post_id = None

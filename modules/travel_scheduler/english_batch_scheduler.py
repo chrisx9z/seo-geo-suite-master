@@ -89,6 +89,16 @@ class EnglishBatchScheduler:
                     data={"log": self.admin_user, "pwd": self.admin_pass, "wp-submit": "Log In"},
                     timeout=60
                 )
+                if "confirm_admin_email" in r_login.url or "confirm_admin_email" in r_login.text:
+                    try:
+                        from bs4 import BeautifulSoup
+                        soup = BeautifulSoup(r_login.text, "html.parser")
+                        links = [a.get("href") for a in soup.find_all("a", href=True)]
+                        remind_link = next((l for l in links if "remind_me_later" in l or "confirm_admin_email" in l), None)
+                        if remind_link:
+                            self.session.get(remind_link, timeout=15)
+                    except Exception:
+                        pass
                 r_admin = self.session.get(f"{self.wp_url}/wp-admin/edit.php", timeout=60)
                 m = re.search(r'"nonce":"([a-f0-9]+)"', r_admin.text)
                 self.nonce = m.group(1) if m else ""

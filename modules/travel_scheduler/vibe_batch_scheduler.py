@@ -52,6 +52,8 @@ class VibeBatchScheduler:
         self._authenticate()
 
         self.autopilot = WpAiAutopilot(wp_url=self.wp_url, admin_user=self.admin_user, admin_pass=self.admin_pass)
+        self.autopilot.session = self.session
+        self.autopilot.nonce = self.nonce
         self.scheduled_log = self._load_log()
 
     def _load_log(self) -> Dict[str, Any]:
@@ -69,26 +71,55 @@ class VibeBatchScheduler:
             json.dump(self.scheduled_log, f, ensure_ascii=False, indent=2)
 
     def _authenticate(self):
-        print(f"[*] Authenticating to {self.wp_url} as {self.admin_user}...")
-        try:
-            self.session.post(
-                f"{self.wp_url}/wp-login.php",
-                data={"log": self.admin_user, "pwd": self.admin_pass, "wp-submit": "Log In"},
-                timeout=25
-            )
-            r_admin = self.session.get(f"{self.wp_url}/wp-admin/edit.php", timeout=25)
-            m = re.search(r'"nonce":"([a-f0-9]+)"', r_admin.text)
-            self.nonce = m.group(1) if m else ""
-            if self.nonce:
-                print(f"  [+] Authenticated successfully. Nonce: {self.nonce}")
-            else:
-                print(f"  [!] Warning: Nonce extraction failed for {self.wp_url}")
-        except Exception as e:
-            print(f"  [!] Auth exception: {e}")
+        for attempt in range(1, 6):
+            try:
+                print(f"[*] Authenticating to {self.wp_url} as {self.admin_user} (Attempt {attempt}/5)...")
+                r_login = self.session.post(
+                    f"{self.wp_url}/wp-login.php",
+                    data={"log": self.admin_user, "pwd": self.admin_pass, "wp-submit": "Log In"},
+                    timeout=35
+                )
+                if "confirm_admin_email" in r_login.url or "confirm_admin_email" in r_login.text:
+                    try:
+                        from bs4 import BeautifulSoup
+                        soup = BeautifulSoup(r_login.text, "html.parser")
+                        links = [a.get("href") for a in soup.find_all("a", href=True)]
+                        remind_link = next((l for l in links if "remind_me_later" in l or "confirm_admin_email" in l), None)
+                        if remind_link:
+                            self.session.get(remind_link, timeout=15)
+                    except Exception as e:
+                        print(f"Warning: confirm_admin_email bypass failed: {e}")
 
-    def post_exists(self, slug: str) -> bool:
+                r_admin = self.session.get(f"{self.wp_url}/wp-admin/edit.php", timeout=35)
+                m = re.search(r'"nonce":"([a-f0-9]+)"', r_admin.text)
+                self.nonce = m.group(1) if m else ""
+                if not self.nonce:
+                    r_post_new = self.session.get(f"{self.wp_url}/wp-admin/post-new.php", timeout=35)
+                    m2 = re.search(r'wpApiSettings\s*=\s*\{.*?"nonce":"([a-f0-9]+)"', r_post_new.text, re.DOTALL)
+                    if m2:
+                        self.nonce = m2.group(1)
+
+                if self.nonce:
+                    print(f"  [+] Authenticated successfully. Nonce: {self.nonce}")
+                    if hasattr(self, 'autopilot') and self.autopilot:
+                        self.autopilot.session = self.session
+                        self.autopilot.nonce = self.nonce
+                    return
+                else:
+                    print(f"  [!] Warning: Nonce extraction failed for {self.wp_url}. Retrying...")
+                    time.sleep(3)
+            except Exception as e:
+                print(f"  [-] Auth attempt {attempt} failed: {e}. Retrying in 3s...")
+                time.sleep(3)
+        print(f"Warning: Failed to authenticate to {self.wp_url} after 5 attempts.")
+
+    def post_exists(self, slug: str, schedule_date: str = "", topic: str = "") -> bool:
         for p in self.scheduled_log.get("scheduled_posts", []):
             if p.get("slug") == slug:
+                return True
+            if schedule_date and p.get("schedule_date") == schedule_date:
+                return True
+            if topic and (p.get("title", "").strip().lower() == topic.strip().lower() or topic.strip().lower() in p.get("title", "").strip().lower()):
                 return True
         try:
             headers = {"X-WP-Nonce": self.nonce} if self.nonce else {}
@@ -100,8 +131,8 @@ class VibeBatchScheduler:
         return False
 
     def schedule_single_post(self, topic: str, slug: str, category_id: int, schedule_date: str, day_num: int, cluster_name: str) -> Optional[Dict[str, Any]]:
-        if self.post_exists(slug):
-            print(f"  [SKIP] Post '{slug}' already scheduled or exists.")
+        if self.post_exists(slug, schedule_date=schedule_date, topic=topic):
+            print(f"  [SKIP] Post '{slug}' ({schedule_date}) already scheduled or exists.")
             return None
 
         print(f"\n---> [Day {day_num}] Processing: {topic}")

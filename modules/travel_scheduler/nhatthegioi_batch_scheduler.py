@@ -88,18 +88,18 @@ class NhatTheGioiBatchScheduler:
             r_login = self.session.post(
                 f"{self.wp_url}/wp-login.php",
                 data={"log": self.admin_user, "pwd": self.admin_pass, "wp-submit": "Log In"},
-                timeout=25,
+                timeout=30,
                 verify=False
             )
             # Handle admin email confirmation if prompted
-            if "confirm_admin_email" in r_login.url:
+            if "confirm_admin_email" in r_login.url or "confirm_admin_email" in r_login.text:
                 soup = BeautifulSoup(r_login.text, "html.parser")
                 links = [a.get("href") for a in soup.find_all("a", href=True)]
                 remind_link = next((l for l in links if "remind_me_later" in l or "confirm_admin_email" in l), None)
                 if remind_link:
-                    self.session.get(remind_link, verify=False, timeout=15)
+                    self.session.get(remind_link, verify=False, timeout=30)
 
-            r_admin = self.session.get(f"{self.wp_url}/wp-admin/edit.php", timeout=25, verify=False)
+            r_admin = self.session.get(f"{self.wp_url}/wp-admin/edit.php", timeout=30, verify=False)
             m = re.search(r'"nonce":"([a-f0-9]+)"', r_admin.text)
             self.nonce = m.group(1) if m else ""
             if self.nonce:
@@ -112,13 +112,17 @@ class NhatTheGioiBatchScheduler:
         except Exception as e:
             print(f"  [!] Auth exception: {e}")
 
-    def post_exists(self, slug: str) -> bool:
+    def post_exists(self, slug: str, schedule_date: str = "", title: str = "") -> bool:
         for p in self.scheduled_log.get("scheduled_posts", []):
             if p.get("slug") == slug:
                 return True
+            if schedule_date and p.get("schedule_date") == schedule_date:
+                return True
+            if title and (p.get("title", "").strip().lower() == title.strip().lower() or title.strip().lower() in p.get("title", "").strip().lower()):
+                return True
         try:
             headers = {"X-WP-Nonce": self.nonce} if self.nonce else {}
-            r = self.session.get(f"{self.wp_url}/wp-json/wp/v2/posts?slug={slug}&status=any", headers=headers, timeout=10, verify=False)
+            r = self.session.get(f"{self.wp_url}/wp-json/wp/v2/posts?slug={slug}&status=any", headers=headers, timeout=15, verify=False)
             if r.status_code == 200 and len(r.json()) > 0:
                 return True
         except Exception:
@@ -126,8 +130,8 @@ class NhatTheGioiBatchScheduler:
         return False
 
     def schedule_single_post(self, topic: str, slug: str, category_id: int, schedule_date: str, day_num: int, cluster_name: str) -> Optional[Dict[str, Any]]:
-        if self.post_exists(slug):
-            print(f"  [SKIP] Post '{slug}' already scheduled or exists.")
+        if self.post_exists(slug, schedule_date=schedule_date, title=topic):
+            print(f"  [SKIP] Post '{slug}' ({schedule_date}) already scheduled or exists.")
             return None
 
         print(f"\n---> [Day {day_num}] Processing: {topic}")

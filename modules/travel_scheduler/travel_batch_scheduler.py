@@ -61,29 +61,38 @@ class TravelBatchScheduler:
             json.dump(self.scheduled_log, f, ensure_ascii=False, indent=2)
 
     def _authenticate(self):
-        print(f"Authenticating to {self.wp_url} as {self.admin_user}...")
-        r_login = self.session.post(
-            f"{self.wp_url}/wp-login.php",
-            data={"log": self.admin_user, "pwd": self.admin_pass, "wp-submit": "Log In"},
-            timeout=25
-        )
-        if "confirm_admin_email" in r_login.url or "confirm_admin_email" in r_login.text:
+        for attempt in range(1, 6):
             try:
-                soup = BeautifulSoup(r_login.text, "html.parser")
-                links = [a.get("href") for a in soup.find_all("a", href=True)]
-                remind_link = next((l for l in links if "remind_me_later" in l or "confirm_admin_email" in l), None)
-                if remind_link:
-                    self.session.get(remind_link, timeout=15)
-            except Exception as e:
-                print(f"Warning: confirm_admin_email bypass failed: {e}")
+                print(f"[*] Authenticating to {self.wp_url} as {self.admin_user} (Attempt {attempt}/5)...")
+                r_login = self.session.post(
+                    f"{self.wp_url}/wp-login.php",
+                    data={"log": self.admin_user, "pwd": self.admin_pass, "wp-submit": "Log In"},
+                    timeout=30
+                )
+                if "confirm_admin_email" in r_login.url or "confirm_admin_email" in r_login.text:
+                    try:
+                        soup = BeautifulSoup(r_login.text, "html.parser")
+                        links = [a.get("href") for a in soup.find_all("a", href=True)]
+                        remind_link = next((l for l in links if "remind_me_later" in l or "confirm_admin_email" in l), None)
+                        if remind_link:
+                            self.session.get(remind_link, timeout=15)
+                    except Exception as e:
+                        print(f"Warning: confirm_admin_email bypass failed: {e}")
 
-        r_admin = self.session.get(f"{self.wp_url}/wp-admin/edit.php", timeout=25)
-        m = re.search(r'"nonce":"([a-f0-9]+)"', r_admin.text)
-        self.nonce = m.group(1) if m else ""
-        if not self.nonce:
-            print(f"Warning: Nonce extraction failed for {self.wp_url}")
-        else:
-            print(f"Authenticated successfully. Nonce acquired.")
+                r_admin = self.session.get(f"{self.wp_url}/wp-admin/edit.php", timeout=30)
+                m = re.search(r'"nonce":"([a-f0-9]+)"', r_admin.text)
+                self.nonce = m.group(1) if m else ""
+                if not self.nonce:
+                    r_post_new = self.session.get(f"{self.wp_url}/wp-admin/post-new.php", timeout=30)
+                    m2 = re.search(r'wpApiSettings\s*=\s*\{.*?"nonce":"([a-f0-9]+)"', r_post_new.text, re.DOTALL)
+                    if m2:
+                        self.nonce = m2.group(1)
+                print(f"  [+] Authenticated successfully. Nonce: {self.nonce or 'None'}")
+                return
+            except Exception as e:
+                print(f"  [-] Auth attempt {attempt} failed: {e}. Retrying in 3s...")
+                time.sleep(3)
+        print(f"Warning: Failed to authenticate to {self.wp_url} after 5 attempts.")
 
     def upload_image(self, file_path: str, alt_text: str, title: str) -> Optional[Dict[str, Any]]:
         """Uploads WebP photo to WordPress Media Library via REST API."""

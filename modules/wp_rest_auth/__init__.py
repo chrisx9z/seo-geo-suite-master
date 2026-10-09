@@ -4,7 +4,7 @@ Reliable WordPress REST nonce for cookie-authenticated sessions.
 
 Bug fixed: pipelines used `re.search(r'"nonce":"([a-f0-9]+)"', admin_html)`, which returns the
 FIRST nonce on the page. On sites where another plugin prints its own nonce earlier
-(tobeigo, zenshan) that is not the `wp_rest` nonce, and every REST call answers
+(seen on several network sites) that is not the `wp_rest` nonce, and every REST call answers
 403 `rest_cookie_invalid_nonce`.
 
 Order: admin-ajax `rest-nonce` (core endpoint that returns exactly the wp_rest nonce),

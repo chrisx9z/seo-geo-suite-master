@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
 WP Clone Packager Engine v1.0.1
-Automated cloning tool: connects to source site (mmdidau.com),
+Automated cloning tool: connects to source site (source site from private config),
 deploys WP Site Porter, runs diagnostics, exports converted database (with serialized search-replace),
-exports themes & plugins, and packages everything locally for triptip.cc.
+exports themes & plugins, and packages everything locally for the target domain.
 """
 
 import os
@@ -17,7 +17,7 @@ from bs4 import BeautifulSoup
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
 class WPClonePackager:
-    def __init__(self, source_site_id='mmdidau', target_domain='triptip.cc', target_name='TripTip'):
+    def __init__(self, source_site_id: str, target_domain: str, target_name: str):
         self.source_site_id = source_site_id
         self.target_domain = target_domain
         self.target_name = target_name

@@ -1,24 +1,24 @@
 # 📘 TỔNG HỢP LỖI THƯỜNG GẶP, GIẢI PHÁP & KINH NGHIỆM TỐI ƯU (LESSONS LEARNED & BEST PRACTICES)
 
-> **Tài liệu lưu trữ nội bộ:** Ghi nhớ các lỗi thực tế đã phát sinh, nguyên nhân gốc rễ (Root Cause), giải pháp triệt để và bộ quy tắc chuẩn cho các dự án **VibeMMO.net** và **Kinh Dịch Web App**.
+> **Tài liệu lưu trữ nội bộ:** Ghi nhớ các lỗi thực tế đã phát sinh, nguyên nhân gốc rễ (Root Cause), giải pháp triệt để và bộ quy tắc chuẩn cho các dự án **Site A** và **Kinh Dịch Web App**.
 
 ---
 
 ## 📑 MỤC LỤC
-1. [Dự án 1: Website VibeMMO.net (WordPress, Theme Soledad, Multilingual & SEO)](#1-dự-án-1-website-vibemmonet)
+1. [Dự án 1: Website Site A (WordPress, Theme Soledad, Multilingual & SEO)](#1-dự-án-1-website-site-a)
    - [Lỗi 1: Tab trình duyệt hiện dấu `-` & Thiếu Meta SEO 3 ngôn ngữ](#lỗi-1-tab-trình-duyệt-hiện-dấu----thiếu-meta-seo-3-ngôn-ngữ)
    - [Lỗi 2: Header bị lệch hẳn sang trái trên màn hình PC lớn](#lỗi-2-header-bị-lệch-hẳn-sang-trái-trên-màn-hình-pc-lớn)
    - [Lỗi 3: Giao diện Mobile kéo dài dằng dặc, chữ menu đè lên nhau](#lỗi-3-giao-diện-mobile-kéo-dài-dằng-dặc-chữ-menu-đè-lên-nhau)
    - [Lỗi 4: Nút chuyển ngôn ngữ bị Google Translate dịch đè mất nhãn](#lỗi-4-nút-chuyển-ngôn-ngữ-bị-google-translate-dịch-đè-mất-nhãn)
    - [Lỗi 5: Đánh số Heading quá nhiều (Văn phong AI) & Ảnh minh họa kém chuyên nghiệp](#lỗi-5-đánh-số-heading-quá-nhiều-văn-phong-ai--ảnh-minh-họa-kém-chuyên-nghiệp)
-2. [Dự án 2: Ứng Dụng Kinh Dịch / Bát Tự Web (`d:\Vibe Code\Kinh Dịch\web`)](#2-dự-án-2-ứng-dụng-kinh-dịch--bát-tự-web)
+2. [Dự án 2: Ứng Dụng Kinh Dịch / Bát Tự Web (`<workspace>/kinh-dich/web`)](#2-dự-án-2-ứng-dụng-kinh-dịch--bát-tự-web)
    - [Lỗi 1: Chữ Hán-Việt bị dính liền không có dấu cách (ĐinhHợi, NhâmThìn)](#lỗi-1-chữ-hán-việt-bị-dính-liền-không-có-dấu-cách-đinhhợi-nhâmthìn)
    - [Lỗi 2: Khối "Đại Vận" bị khoảng trống lớn bên phải gây mất cân đối](#lỗi-2-khối-đại-vận-bị-khoảng-trống-lớn-bên-phải-gây-mất-cân-đối)
 3. [Quy Trình Kiểm Tra Chuẩn Trước Khi Bàn Giao (Checklist)](#3-quy-trình-kiểm-tra-chuẩn-trước-khi-bàn-giao-checklist)
 
 ---
 
-## 1. DỰ ÁN 1: WEBSITE VIBEMMO.NET
+## 1. DỰ ÁN 1: WEBSITE SITE A
 
 ### Lỗi 1: Tab trình duyệt hiện dấu `-` & Thiếu Meta SEO 3 ngôn ngữ
 * **Hiện tượng:** Tiêu đề tab trình duyệt chỉ hiện đúng một dấu gạch ngang (`-`), chia sẻ mạng xã hội không có mô tả (No description).
@@ -26,11 +26,11 @@
   - Trường `blogname` và `blogdescription` trong database WordPress (`wp_options`) bị để rỗng.
   - Rank Math / Theme lấy mặc định `%sitename% - %sitedesc%` dẫn đến chuỗi `-`.
 * **Giải pháp đã xử lý:**
-  1. Cập nhật `blogname` = `VibeMMO` và `blogdescription` = `Cổng Thông Tin Trí Tuệ Nhân Tạo & Kiếm Tiền Online MMO 2026`.
-  2. Xây dựng bộ lọc dynamic hook `pre_get_document_title` & `rank_math/frontend/title` trong plugin `vibemmo-header-nav-master` để tự động render chuẩn Title / Description / Keywords / OpenGraph theo đúng ngôn ngữ người dùng đang xem:
-     - **VI:** `VibeMMO - Cổng Thông Tin Trí Tuệ Nhân Tạo & AI MMO Hàng Đầu`
-     - **EN:** `VibeMMO - Leading AI News, Top AI Tools & Digital Wealth Hub`
-     - **ZH:** `VibeMMO - 前沿人工智能资讯、AI工具评测与出海商业门户`
+  1. Cập nhật `blogname` = `SiteA` và `blogdescription` = `Cổng Thông Tin Trí Tuệ Nhân Tạo & Kiếm Tiền Online MMO 2026`.
+  2. Xây dựng bộ lọc dynamic hook `pre_get_document_title` & `rank_math/frontend/title` trong plugin `site-header-nav-master` để tự động render chuẩn Title / Description / Keywords / OpenGraph theo đúng ngôn ngữ người dùng đang xem:
+     - **VI:** `SiteA - Cổng Thông Tin Trí Tuệ Nhân Tạo & AI MMO Hàng Đầu`
+     - **EN:** `SiteA - Leading AI News, Top AI Tools & Digital Wealth Hub`
+     - **ZH:** `SiteA - 前沿人工智能资讯、AI工具评测与出海商业门户`
 
 ---
 
@@ -78,7 +78,7 @@
 
 ---
 
-## 2. DỰ ÁN 2: ỨNG DỤNG KINH DỊCH / BÁT TỰ WEB (`d:\Vibe Code\Kinh Dịch\web`)
+## 2. DỰ ÁN 2: ỨNG DỤNG KINH DỊCH / BÁT TỰ WEB (`<workspace>/kinh-dich/web`)
 
 ### Lỗi 1: Chữ Hán-Việt bị dính liền không có dấu cách (ĐinhHợi, NhâmThìn)
 * **Hiện tượng:** Khối Thai nguyên hiển thị `ĐinhHợi`, Cung Mệnh hiển thị `NhâmThìn`, Cách cục hiển thị `Chính Tài格`.

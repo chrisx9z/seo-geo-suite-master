@@ -41,7 +41,7 @@ class EnglishTravelWriter:
 
     def generate_image_html(self, img_url: str, alt_text: str, caption: str) -> str:
         return f'''
-<figure class="wp-block-image size-large triptip-photo-wrapper" style="margin: 36px 0;">
+<figure class="wp-block-image size-large tg-photo-wrapper" style="margin: 36px 0;">
   <img src="{img_url}" alt="{alt_text}" loading="lazy" decoding="async" width="1200" height="675" style="width: 100%; height: auto; border-radius: 8px; aspect-ratio: 16/9; object-fit: cover; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);" />
   <figcaption class="wp-element-caption" style="font-size: 14px; color: #64748b; margin-top: 10px; text-align: center; font-style: italic;">{caption}</figcaption>
 </figure>'''
@@ -98,11 +98,11 @@ class EnglishTravelWriter:
         meta_desc = f"Comprehensive international traveler guide to {kw}. Learn official procedures, costs, mistakes to avoid, and essential practical tips."
 
         content = f'''
-<p class="triptip-lead" style="font-size: 18px; line-height: 1.7; color: #1e293b; font-weight: 400;">
+<p class="tg-lead" style="font-size: 18px; line-height: 1.7; color: #1e293b; font-weight: 400;">
 Few travel preparations make as significant an impact on the success of your journey through Southeast Asia as getting your logistics sorted before stepping onto the tarmac. From navigating evolving immigration portals and picking the right telecommunications networks to understanding local banking nuances, mastering <strong>{kw}</strong> transforms what could be an administrative headache into a seamless, worry-free adventure across Vietnam.
 </p>
 
-<div class="triptip-callout-box" style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 22px 26px; border-radius: 6px; margin: 30px 0;">
+<div class="tg-callout-box" style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 22px 26px; border-radius: 6px; margin: 30px 0;">
   <h3 style="margin-top: 0; color: #15803d; font-size: 20px;">💡 Quick Key Takeaways & Essential Facts</h3>
   <ul style="margin-bottom: 0; padding-left: 20px; line-height: 1.85; color: #166534; font-size: 15.5px;">
     <li><strong>Official Channels:</strong> Always prioritize authentic government platforms over commercial third-party agencies that inflate processing fees.</li>
@@ -249,20 +249,20 @@ Equip your smartphone with these five indispensable apps before departing:
 </ul>
 
 <h2>Frequently Asked Questions About {kw}</h2>
-<div class="triptip-faq-section" style="margin-top: 24px;">
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+<div class="tg-faq-section" style="margin-top: 24px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">How far in advance should I complete these arrangements?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">It is strongly advisable to submit all applications 2 to 3 weeks prior to departure. While standard processing typically completes within 3 to 5 business days, peak travel months and statutory holiday closures (especially during the Vietnamese Lunar New Year in January/February) can cause administrative backlogs.</p>
   </div>
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">Can I extend my stay once I am inside Vietnam?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">In-country visa extensions are tightly regulated. Travelers wishing to extend their journey typically conduct a short "visa run" across the border to Cambodia or Laos, or take a budget flight to Bangkok or Kuala Lumpur before re-entering on a fresh 90-day multiple-entry e-visa.</p>
   </div>
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">Do I need to carry physical cash at all times?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">Yes, keeping 500,000 to 1,000,000 VND ($20–$40 USD) in small denominations on your person is essential for local market fruit vendors, street-side coffee stalls, Grab motorbike tips, and public restrooms.</p>
   </div>
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">Is travel insurance mandatory for entering Vietnam?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">While immigration officials rarely ask to inspect policy documents at the border, comprehensive travel insurance covering emergency medical evacuation and motorbike accidents is critical. Ensure your policy covers riding two-wheelers if you plan to drive a scooter along the Ha Giang Loop or Hai Van Pass.</p>
   </div>
@@ -286,11 +286,11 @@ Equip your smartphone with these five indispensable apps before departing:
         meta_desc = f"The definitive route for {kw}. Includes day-by-day sightseeing, transportation logistics between hubs, budget breakdowns, and insider secrets."
 
         content = f'''
-<p class="triptip-lead" style="font-size: 18px; line-height: 1.7; color: #1e293b; font-weight: 400;">
+<p class="tg-lead" style="font-size: 18px; line-height: 1.7; color: #1e293b; font-weight: 400;">
 Few travel destinations on earth deliver the breathtaking geographic contrast and cultural intensity of Vietnam. Stretching over 1,650 kilometers from the jagged limestone peaks of the Chinese border down to the tropical waterways of the Gulf of Thailand, this S-shaped nation rewards curious explorers at every turn. Whether you are mapping out your very first journey or returning for a deeper expedition, this comprehensive <strong>{kw}</strong> provides the definitive, battle-tested route planner.
 </p>
 
-<div class="triptip-callout-box" style="background: #f8fafc; border-left: 4px solid #0284c7; padding: 22px 26px; border-radius: 6px; margin: 30px 0;">
+<div class="tg-callout-box" style="background: #f8fafc; border-left: 4px solid #0284c7; padding: 22px 26px; border-radius: 6px; margin: 30px 0;">
   <h3 style="margin-top: 0; color: #0369a1; font-size: 20px;">⚡ Route Overview & Strategic Planning Takeaways</h3>
   <ul style="margin-bottom: 0; padding-left: 20px; line-height: 1.85; color: #334155; font-size: 15.5px;">
     <li><strong>Ideal Travel Pace:</strong> Allocate 2 to 3 nights per destination base to avoid spending your holiday living out of a suitcase.</li>
@@ -446,20 +446,20 @@ Vietnam spans three distinct climate zones, meaning the weather varies drastical
 </ul>
 
 <h2>Frequently Asked Questions About {kw}</h2>
-<div class="triptip-faq-section" style="margin-top: 24px;">
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+<div class="tg-faq-section" style="margin-top: 24px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">Should I travel North-to-South or South-to-North?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">Both directions work splendidly. North-to-South (Hanoi to Saigon) immerses you in ancient history, colonial quarters, and karst wonders before concluding in the sunny tropical south. South-to-North lets you finish amid the majestic mountain peaks of the north.</p>
   </div>
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">How far in advance should I book internal trains and cruises?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">Overnight luxury cruises in Ha Long and Lan Ha Bay, as well as 4-berth soft sleeper train cabins, should be booked 3 to 6 weeks in advance, especially during the high season from October through April.</p>
   </div>
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">Is two weeks enough time to see Vietnam?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">Two weeks is the sweet spot for a classic introductory itinerary covering Hanoi, Halong or Lan Ha Bay, Ninh Binh, Hoi An, Hue, and Saigon. If you wish to add adventurous extensions like the Ha Giang Loop or Phong Nha caves, allocate at least 3 weeks.</p>
   </div>
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">Is Vietnam safe for solo and female travelers?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">Vietnam is widely regarded as one of the safest travel destinations in Southeast Asia. Violent crime is extremely rare. Basic precautions like using Grab instead of unmetered street taxis and safeguarding your phone from drive-by purse snatchers in crowded urban corners will ensure a trouble-free holiday.</p>
   </div>
@@ -483,11 +483,11 @@ Vietnam spans three distinct climate zones, meaning the weather varies drastical
         meta_desc = f"Complete traveler guide to {kw}. Discover opening times, ticket prices, photography spots, historical insights, and insider tips for an authentic visit."
 
         content = f'''
-<p class="triptip-lead" style="font-size: 18px; line-height: 1.7; color: #1e293b; font-weight: 400;">
+<p class="tg-lead" style="font-size: 18px; line-height: 1.7; color: #1e293b; font-weight: 400;">
 Few places in Southeast Asia offer the mesmerizing blend of natural wonder, historic gravitas, and vibrant street culture found across Vietnam. Whether you are gazing upon towering limestone spires rising out of tranquil rivers, walking beneath centuries-old golden pagoda eaves, or exploring remote highland frontier passes, experiencing <strong>{kw}</strong> stands out as a genuine bucket-list highlight of any journey. This comprehensive guide covers everything from history and visiting logistics to photography vantage points and crowd-avoidance tactics.
 </p>
 
-<div class="triptip-callout-box" style="background: #f8fafc; border-left: 4px solid #f59e0b; padding: 22px 26px; border-radius: 6px; margin: 30px 0;">
+<div class="tg-callout-box" style="background: #f8fafc; border-left: 4px solid #f59e0b; padding: 22px 26px; border-radius: 6px; margin: 30px 0;">
   <h3 style="margin-top: 0; color: #d97706; font-size: 20px;">📍 Essential Visitor Information at a Glance</h3>
   <ul style="margin-bottom: 0; padding-left: 20px; line-height: 1.85; color: #334155; font-size: 15.5px;">
     <li><strong>Location / Region:</strong> Situated in {cluster}, conveniently accessible via local transit or organized day excursions.</li>
@@ -651,20 +651,20 @@ Exploring Vietnam's natural sanctuaries requires mindfulness to ensure these pri
 Engaging certified local community guides not only provides fascinating historical commentary and hidden trail insights, but also channels vital tourism revenue directly into rural ethnic families. Tip your local guide generously (100,000 to 200,000 VND / $4–$8 USD) to reward their knowledge and hospitality.
 </p>
 <h2>Frequently Asked Questions About {kw}</h2>
-<div class="triptip-faq-section" style="margin-top: 24px;">
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+<div class="tg-faq-section" style="margin-top: 24px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">What should I wear when visiting this site?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">Wear lightweight, breathable cotton or linen clothing, comfortable walking or hiking shoes with good grip, and a wide-brim sun hat. When entering sacred temple shrines or memorial halls, modest attire covering both shoulders and knees is strictly mandatory.</p>
   </div>
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">Are restrooms and food available on-site?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">Yes, clean public restrooms, beverage kiosks selling chilled bottled water and fresh coconuts, and souvenir stalls are located near the main ticketing entrance. Bring a small packet of pocket tissues and a 5,000 VND note for attendant facilities.</p>
   </div>
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">Is it suitable for young children and elderly travelers?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">The lower courtyard and boat excursion areas are gentle and accessible. However, upper mountain summit trails feature steep, uneven stone steps without handrails in certain sections, requiring caution and sturdy footwear.</p>
   </div>
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">What is the best time of year to visit?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">Spring (February to April) and Autumn (September to November) provide the most pleasant conditions, characterized by moderate temperatures, clear skies, and brilliant green or golden rice paddies.</p>
   </div>
@@ -688,11 +688,11 @@ Engaging certified local community guides not only provides fascinating historic
         meta_desc = f"Ultimate foodie guide to {kw}. Learn where to find the most authentic stalls, flavor profiles, how to order like a local, and dining etiquette."
 
         content = f'''
-<p class="triptip-lead" style="font-size: 18px; line-height: 1.7; color: #1e293b; font-weight: 400;">
+<p class="tg-lead" style="font-size: 18px; line-height: 1.7; color: #1e293b; font-weight: 400;">
 Vietnamese gastronomy is revered worldwide for its extraordinary pursuit of balance: crisp herbs, slow-simmered broths, smoky grilled meats, and nuanced dipping sauces harmonizing sweet, salty, sour, bitter, and umami in every bite. Far from an afterthought, dining in Vietnam is an all-consuming cultural obsession. When it comes to <strong>{kw}</strong>, you are experiencing one of the country's most iconic culinary pillars. Here is your definitive guide to understanding its flavors, discovering legendary stalls, and feasting like an insider.
 </p>
 
-<div class="triptip-callout-box" style="background: #fffbeb; border-left: 4px solid #f59e0b; padding: 22px 26px; border-radius: 6px; margin: 30px 0;">
+<div class="tg-callout-box" style="background: #fffbeb; border-left: 4px solid #f59e0b; padding: 22px 26px; border-radius: 6px; margin: 30px 0;">
   <h3 style="margin-top: 0; color: #b45309; font-size: 20px;">🥢 Foodie Quick Facts & Ordering Secrets</h3>
   <ul style="margin-bottom: 0; padding-left: 20px; line-height: 1.85; color: #78350f; font-size: 15.5px;">
     <li><strong>Standard Price Range:</strong> 35,000 – 65,000 VND ($1.40 – $2.60 USD) at sidewalk stalls | 90,000 – 160,000 VND at sit-down dining venues.</li>
@@ -835,20 +835,20 @@ Navigating Vietnam's street food landscape safely is easy once you follow a few 
 </ul>
 
 <h2>Frequently Asked Questions About {kw}</h2>
-<div class="triptip-faq-section" style="margin-top: 24px;">
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+<div class="tg-faq-section" style="margin-top: 24px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">Is street food safe for sensitive Western stomachs?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">Yes, by following simple rules: eat at busy stalls with high local turnover where food is cooked fresh to order in boiling broth or over hot coals. If you are cautious about raw herbs, simply submerge them directly into the piping-hot broth for ten seconds to sanitize them.</p>
   </div>
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">How do I order if the vendor speaks no English?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">Most authentic street stalls only prepare one signature dish. Simply hold up your fingers to indicate the number of bowls desired, smile warmly, and say "Một tô" (one bowl) or "Hai tô" (two bowls). A friendly smile and thumbs-up are universally understood.</p>
   </div>
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">Can vegetarians and vegans eat well in Vietnam?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">Absolutely! Vietnam has a profound Buddhist vegetarian tradition known as "Ăn Chay". Look for signs reading "Cơm Chay" or "Quán Chay" which serve sensational plant-based dishes crafted from tofu, wild mushrooms, lotus seeds, and mock meats, particularly on the 1st and 15th of every lunar month.</p>
   </div>
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">How much should I budget daily for food?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">A daily budget of $10 to $15 USD allows you to eat three hearty street food meals, drink two specialty Vietnamese coffees, and enjoy fresh tropical fruits. A mid-range budget of $25 to $40 USD opens up boutique cafes, craft breweries, and sit-down seafood feasts.</p>
   </div>
@@ -872,11 +872,11 @@ Navigating Vietnam's street food landscape safely is easy once you follow a few 
         meta_desc = f"In-depth cultural guide to {kw}. Understand Vietnamese customs, heritage, respectful social etiquette, and traveler tips."
 
         content = f'''
-<p class="triptip-lead" style="font-size: 18px; line-height: 1.7; color: #1e293b; font-weight: 400;">
+<p class="tg-lead" style="font-size: 18px; line-height: 1.7; color: #1e293b; font-weight: 400;">
 Behind Vietnam’s breathtaking natural scenery lies a culture of remarkable depth, forged through thousands of years of dynastic history, agrarian rhythms, and deep spiritual communion with ancestral lineage. Understanding <strong>{kw}</strong> unlocks an authentic window into how ancient customs, spiritual philosophies, and social etiquette continue to guide daily life in modern Vietnam. Here is your cultural roadmap to experiencing this heritage with genuine insight and respect.
 </p>
 
-<div class="triptip-callout-box" style="background: #fdf4ff; border-left: 4px solid #a855f7; padding: 22px 26px; border-radius: 6px; margin: 30px 0;">
+<div class="tg-callout-box" style="background: #fdf4ff; border-left: 4px solid #a855f7; padding: 22px 26px; border-radius: 6px; margin: 30px 0;">
   <h3 style="margin-top: 0; color: #7e22ce; font-size: 20px;">🌸 Cultural Insights & Respectful Manners</h3>
   <ul style="margin-bottom: 0; padding-left: 20px; line-height: 1.85; color: #581c87; font-size: 15.5px;">
     <li><strong>The Concept of Face (Thể Diện):</strong> Avoiding public confrontation, speaking gently, and preserving interpersonal harmony are core social values.</li>
@@ -995,20 +995,20 @@ Everyday Vietnamese life remains subtly steered by enduring folk superstitions a
 Before commencing major endeavors—such as grand hotel openings, wedding ceremonies, or embarking on long overseas voyages—families regularly consult Buddhist monks or traditional geomancers to determine the most auspicious calendar hour (Giờ Hoàng Đạo). Understanding these subtle spiritual customs deepens your appreciation for the harmonious rhythms of Vietnamese culture.
 </p>
 <h2>Frequently Asked Questions About {kw}</h2>
-<div class="triptip-faq-section" style="margin-top: 24px;">
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+<div class="tg-faq-section" style="margin-top: 24px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">How should I address people politely in Vietnam?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">Vietnamese uses an intricate system of family-based pronouns. For everyday tourist interactions, greeting people with a gentle nod and a warm "Xin chào" (pronounced <em>sin chow</em>) and saying "Cảm ơn" (pronounced <em>kahm uhn</em>) for thank you will delight locals everywhere.</p>
   </div>
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">Is tipping customary in Vietnamese culture?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">Tipping was not traditionally part of Vietnamese life, but has become warmly appreciated in international tourism settings. Leaving 20,000 to 50,000 VND ($1–$2 USD) for spa masseuses, tour guides, and private drivers is a generous gesture rewarding attentive service.</p>
   </div>
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">How should travelers behave during the Tet holiday?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">Tet is a family-centric time. During the first three days, many shops and street stalls close. Travelers should plan ahead, book hotels and transport weeks in advance, and greet locals with "Chúc Mừng Năm Mới" (Happy New Year). Avoid haggling aggressively or displaying anger, as bad tempers during Tet are believed to bring misfortune for the entire year.</p>
   </div>
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">Can foreign visitors wear the traditional Ao Dai?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">Yes, absolutely! Vietnamese locals love seeing foreign guests wear the elegant Ao Dai tunic. Wearing one to visit historic sites like the Hue Citadel or the Old Quarter of Hoi An is viewed as a wonderful sign of respect and cultural appreciation.</p>
   </div>
@@ -1032,11 +1032,11 @@ Before commencing major endeavors—such as grand hotel openings, wedding ceremo
         meta_desc = f"Curated traveler guide to {kw}. Discover the top areas to stay, recommended properties for all budgets, amenities, and booking strategies."
 
         content = f'''
-<p class="triptip-lead" style="font-size: 18px; line-height: 1.7; color: #1e293b; font-weight: 400;">
+<p class="tg-lead" style="font-size: 18px; line-height: 1.7; color: #1e293b; font-weight: 400;">
 Selecting the right base is often the single most critical decision that shapes your travel memories in Southeast Asia. Vietnam’s hospitality scene has emerged as one of the world's most compelling, marrying French colonial nostalgia and cutting-edge sustainable architecture with legendary Asian warmth. Whether your dream getaway involves private cliffside infinity pools overlooking turquoise bays, characterful boutique townhouses in historic quarters, or authentic rural homestays, this definitive guide to <strong>{kw}</strong> will help you choose your ideal sanctuary.
 </p>
 
-<div class="triptip-callout-box" style="background: #f0fdfa; border-left: 4px solid #0d9488; padding: 22px 26px; border-radius: 6px; margin: 30px 0;">
+<div class="tg-callout-box" style="background: #f0fdfa; border-left: 4px solid #0d9488; padding: 22px 26px; border-radius: 6px; margin: 30px 0;">
   <h3 style="margin-top: 0; color: #0f766e; font-size: 20px;">🏨 Accommodation Comparison & Booking Secrets</h3>
   <ul style="margin-bottom: 0; padding-left: 20px; line-height: 1.85; color: #134e4a; font-size: 15.5px;">
     <li><strong>Location Priority:</strong> Proximity to pedestrian promenades and street dining beats isolated luxury unless seeking total peaceful seclusion.</li>
@@ -1187,20 +1187,20 @@ Navigating check-in procedures in Vietnam is straightforward once you know stand
 </ul>
 
 <h2>Frequently Asked Questions About {kw}</h2>
-<div class="triptip-faq-section" style="margin-top: 24px;">
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+<div class="tg-faq-section" style="margin-top: 24px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">Do hotels in Vietnam require passports to be held at reception?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">By Vietnamese law, accommodations must register foreign guests with local immigration police. Many hotels prefer keeping passports overnight or making photocopies upon check-in. If you prefer keeping your physical passport, politely ask if they can photocopy it immediately and return the original book.</p>
   </div>
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">Is tipping hotel staff expected in Vietnam?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">While tipping is not formally mandated, leaving 20,000 to 50,000 VND ($1–$2 USD) per day for housekeeping or bellhops is warmly received and rewards exceptional attentiveness.</p>
   </div>
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">Is breakfast typically included in room rates?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">Yes, the vast majority of mid-range boutique hotels and luxury resorts in Vietnam include an impressive complimentary buffet breakfast combining Western staples (eggs, pastries, fresh fruits) with hot authentic noodle stations (Pho, Bun Cha) and traditional Vietnamese drip coffee.</p>
   </div>
-  <div class="triptip-faq-item" style="margin-bottom: 22px;">
+  <div class="tg-faq-item" style="margin-bottom: 22px;">
     <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 8px;">How far in advance should I book peak season rooms?</h3>
     <p style="color: #475569; line-height: 1.75; font-size: 15px;">For travel between December and April, as well as during public holidays like Lunar New Year (Tet) and National Day (September 2), reserve popular boutique hotels and high-demand eco-lodges at least 2 to 3 months in advance to guarantee availability.</p>
   </div>

@@ -133,7 +133,7 @@ def remove_accents(input_str: str) -> str:
 
 class RealImageFetcher:
     def __init__(self, cache_dir: Optional[str] = None):
-        self.headers = {"User-Agent": "MMDiDauTravelApp/1.0 (https://mmdidau.com; admin@mmdidau.com)"}
+        self.headers = {"User-Agent": os.getenv("IMAGE_FETCHER_UA", "SeoGeoSuiteImageFetcher/1.0 (+https://example.com/contact)")}
         self.cache_dir = cache_dir or os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "cache", "travel_images"))
         os.makedirs(self.cache_dir, exist_ok=True)
 

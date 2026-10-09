@@ -1,16 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-NhatTheGioiBatchScheduler - Automated Content Scheduler for NhatTheGioi.com
-Portal: "Nhất Thế Giới - Top List Kỷ Lục Thú Vị Nhất 2026"
+DirectIPBatchScheduler - content scheduler for sites whose public DNS points to a proxy/CDN
+and must be reached on the origin server directly.
 
 Enforces:
-- Direct IP routing (217.216.36.229) for nhatthegioi.com
+- Optional direct-origin routing: pass `direct_ip` (from private/sites.local.json) to pin the
+  site's hostname to that IP for this process only
 - Bypass WordPress admin email confirmation screen
-- Top List, World Record, Vietnam Record, Curiosity content
-- 5 Articles per Day staggered at prime reading hours (08:00, 11:30, 14:30, 17:30, 20:00)
-- High quality 16:9 WebP images with Zero-CLS
-- RankMath 100/100 Standards (> 1,200 words, FAQ Schema, TOC, Outbound citations)
-- Status: "future" for scheduled release
+- Top-list / record / curiosity content via WpAiAutopilot
+- 5 articles per day staggered at prime reading hours (08:00, 11:30, 14:30, 17:30, 20:00)
+- Status "future" for scheduled release
 """
 
 import os
@@ -19,6 +18,7 @@ import json
 import time
 import re
 import socket
+from urllib.parse import urlparse
 from datetime import datetime, timedelta
 import requests
 import urllib3
@@ -30,14 +30,17 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 sys.stdout.reconfigure(encoding='utf-8', line_buffering=True)
 sys.stderr.reconfigure(encoding='utf-8', line_buffering=True)
 
-# Patch DNS resolution for nhatthegioi.com to VPS IP
-orig_getaddrinfo = socket.getaddrinfo
-def patched_getaddrinfo(host, port, *args, **kwargs):
-    if host in ["nhatthegioi.com", "www.nhatthegioi.com"]:
-        return orig_getaddrinfo("217.216.36.229", port, *args, **kwargs)
-    return orig_getaddrinfo(host, port, *args, **kwargs)
+_orig_getaddrinfo = socket.getaddrinfo
 
-socket.getaddrinfo = patched_getaddrinfo
+
+def pin_host_to_ip(host: str, ip: str) -> None:
+    """Resolve `host` (and www.`host`) to `ip` for this process (origin bypass of proxy DNS)."""
+    hosts = {host, host[4:] if host.startswith("www.") else f"www.{host}"}
+
+    def _patched(h, port, *args, **kwargs):
+        return _orig_getaddrinfo(ip if h in hosts else h, port, *args, **kwargs)
+
+    socket.getaddrinfo = _patched
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 from modules.wp_rest_auth import get_rest_nonce  # noqa: E402
@@ -48,19 +51,22 @@ HOURLY_STAGGERS = [
     "08:00:00", "11:30:00", "14:30:00", "17:30:00", "20:00:00"
 ]
 
-class NhatTheGioiBatchScheduler:
-    def __init__(self, wp_url: str = "https://nhatthegioi.com", admin_user: Optional[str] = None, admin_pass: Optional[str] = None, plan_file: Optional[str] = None, log_file: Optional[str] = None):
+class DirectIPBatchScheduler:
+    def __init__(self, wp_url: str, admin_user: Optional[str] = None, admin_pass: Optional[str] = None, plan_file: Optional[str] = None, log_file: Optional[str] = None, direct_ip: Optional[str] = None):
         self.wp_url = wp_url.rstrip("/")
+        self.direct_ip = direct_ip or os.environ.get("WP_DIRECT_IP", "")
+        if self.direct_ip:
+            pin_host_to_ip(urlparse(self.wp_url).hostname or "", self.direct_ip)
         self.admin_user = admin_user or os.environ.get("WP_ADMIN_USER", "")
         self.admin_pass = admin_pass or os.environ.get("WP_ADMIN_PASS", "")
         
         base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-        self.plan_file = plan_file or os.path.join(base_dir, "config", "nhatthegioi_30day_content_plan.json")
-        self.log_file = log_file or os.path.join(base_dir, "cache", "scheduled_nhatthegioi_com.json")
+        self.plan_file = plan_file or os.path.join(base_dir, "private", "plans", f"{urlparse(self.wp_url).hostname}.json")
+        self.log_file = log_file or os.path.join(base_dir, "cache", f"scheduled_{(urlparse(self.wp_url).hostname or 'site').replace('.', '_')}.json")
         
         self.session = requests.Session()
         self.session.verify = False
-        self.session.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) NhatTheGioiBatchScheduler/1.0"})
+        self.session.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) DirectIPBatchScheduler/1.0"})
         self.nonce = ""
         self._authenticate()
 
@@ -84,7 +90,7 @@ class NhatTheGioiBatchScheduler:
             json.dump(self.scheduled_log, f, ensure_ascii=False, indent=2)
 
     def _authenticate(self):
-        print(f"[*] Authenticating to {self.wp_url} (217.216.36.229) as {self.admin_user}...")
+        print(f"[*] Authenticating to {self.wp_url} as {self.admin_user}...")
         try:
             r_login = self.session.post(
                 f"{self.wp_url}/wp-login.php",
@@ -182,8 +188,8 @@ class NhatTheGioiBatchScheduler:
 
     def run_batch(self, target_days: Optional[List[int]] = None, max_posts: Optional[int] = None):
         print(f"\n{'='*75}")
-        print(f"🚀 NHATTHEGIOI.COM BATCH SCHEDULER ENGINE")
-        print(f"Target URL: {self.wp_url} (Direct IP: 217.216.36.229)")
+        print(f"DIRECT-IP BATCH SCHEDULER ENGINE")
+        print(f"Target URL: {self.wp_url} (Direct IP: {self.direct_ip or 'DNS'})")
         print(f"Plan File:  {self.plan_file}")
         print(f"Log File:   {self.log_file}")
         print(f"{'='*75}\n")
@@ -211,7 +217,7 @@ class NhatTheGioiBatchScheduler:
 
                 topic = post.get("title", "")
                 cat_id = post.get("category_id", 27)
-                cat_name = post.get("category", "Nhất thế giới")
+                cat_name = post.get("category", "Uncategorized")
                 schedule_date = post.get("schedule_date", "")
 
                 slug = generate_core_keyword_slug(post.get("focus_keyword", topic))
@@ -229,7 +235,7 @@ class NhatTheGioiBatchScheduler:
                     time.sleep(2)
 
         print(f"\n{'='*75}")
-        print(f"🎉 BATCH SCHEDULING COMPLETE FOR NHATTHEGIOI.COM")
+        print(f"BATCH SCHEDULING COMPLETE FOR {self.wp_url}")
         print(f"Total Newly Scheduled: {processed}")
         print(f"Lifetime Scheduled:    {self.scheduled_log.get('total_scheduled', 0)}")
         print(f"{'='*75}\n")

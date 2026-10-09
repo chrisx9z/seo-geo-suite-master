@@ -2,7 +2,7 @@
 """
 Live-site junk audit & cleanup (uses the same rules as the pre-publish gate).
 
-    python -m modules.content_quality_gate.audit_cli --site mmdidau            # report only
+    python -m modules.content_quality_gate.audit_cli --site <site_id>          # report only
     python -m modules.content_quality_gate.audit_cli --site all --apply        # fix
 
 --apply:

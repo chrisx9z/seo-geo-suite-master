@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-English Travel Batch Scheduler Engine for TripTip.cc
+English Travel Batch Scheduler Engine
 Automated high-quality scheduler for Vietnam Travel (English Edition):
-- Reads config/triptip_30day_content_plan.json
+- Reads the site's plan file (private/plans/<site_id>.json, see modules/site_registry.py)
 - Staggers 10 articles per day across natural publication hours
 - Fetches real photos & converts to 16:9 WebP (< 250KB)
 - Uploads to WordPress Media Library
@@ -14,6 +14,7 @@ import os
 import re
 import sys
 import json
+from urllib.parse import urlparse
 import time
 from datetime import datetime, timedelta
 import requests
@@ -53,7 +54,7 @@ class EnglishBatchScheduler:
         self.admin_pass = admin_pass
         self.plan_file = plan_file
         self.log_file = log_file or os.path.abspath(
-            os.path.join(os.path.dirname(__file__), "..", "..", "cache", "scheduled_triptip_cc.json")
+            os.path.join(os.path.dirname(__file__), "..", "..", "cache", f"scheduled_{(urlparse(self.wp_url).hostname or "site").replace(".", "_")}.json")
         )
         
         import urllib3
@@ -371,17 +372,17 @@ class EnglishBatchScheduler:
 
 if __name__ == "__main__":
     import argparse
-    parser = argparse.ArgumentParser(description="TripTip.cc English Travel Batch Scheduler")
+    parser = argparse.ArgumentParser(description="English Travel Batch Scheduler")
+    parser.add_argument("--site", required=True, help="site_id in private/sites.local.json")
     parser.add_argument("--days", default="1-10", help="Day range to schedule (e.g. 1-10, 1,2,3, or all)")
     parser.add_argument("--max-posts", type=int, default=None, help="Maximum posts to process")
     args = parser.parse_args()
 
-    plan_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "config", "triptip_30day_content_plan.json"))
-    
-    # Load credentials
-    conf_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "private", "sites.local.json"))
-    with open(conf_file, "r", encoding="utf-8") as f:
-        site = next(s for s in json.load(f)["sites"] if s["site_id"] == "triptip")
+    from modules.site_registry import find_site, plan_path as _plan_path, cache_path as _cache_path
+    site = find_site(args.site)
+    if not site:
+        raise SystemExit(f"site '{args.site}' not found in private/sites.local.json")
+    plan_path = _plan_path(site)
 
     target_days = None
     if args.days:
@@ -397,6 +398,7 @@ if __name__ == "__main__":
         wp_url=site["url"],
         admin_user=site["admin_user"],
         admin_pass=site["admin_pass"],
-        plan_file=plan_path
+        plan_file=plan_path,
+        log_file=_cache_path(site)
     )
     scheduler.run_batch(target_days=target_days, max_posts=args.max_posts)

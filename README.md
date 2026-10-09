@@ -133,22 +133,22 @@ seo-geo-suite-master/
 python cli/master_seo.py optimize-all
 
 # Hoặc tối ưu cho 1 site cụ thể:
-python cli/master_seo.py optimize --site "vibemmo"
+python cli/master_seo.py optimize --site "my-site"
 
 # Đẩy IndexNow tức thì lên Bing/IndexNow:
-python cli/master_seo.py fast-index --site "mmdidau"
+python cli/master_seo.py fast-index --site "my-site"
 
 # Quét và tự động liên kết nội bộ thông minh:
-python cli/master_seo.py auto-link --site "triptip"
+python cli/master_seo.py auto-link --site "my-site"
 
 # Quét xung đột từ khóa (Cannibalization):
 python cli/master_seo.py cannibalization --site "all"
 
 # Cứu bài viết mồ côi (Orphan posts):
-python cli/master_seo.py heal-orphans --site "mmdidau"
+python cli/master_seo.py heal-orphans --site "my-site"
 
 # Viết và đăng bài tự động chuẩn SEO 1000+ từ:
-python cli/master_seo.py write-post --site "vibemmo" --topic "Top Game MMO Đáng Chơi 2026" --category 4 --status publish
+python cli/master_seo.py write-post --site "my-site" --topic "Top Game MMO Đáng Chơi 2026" --category 4 --status publish
 
 # Đánh giá cấu trúc trích dẫn AI (GEO Citability Score):
 python cli/master_seo.py citability --url "https://example.com/guide"
@@ -157,10 +157,10 @@ python cli/master_seo.py citability --url "https://example.com/guide"
 python cli/master_seo.py audit-injection --url "https://example.com"
 
 # Kiểm tra WAF / Tường lửa có chặn AI Search Bots hay không:
-python cli/master_seo.py check-ai-bots --site "mmdidau"
+python cli/master_seo.py check-ai-bots --site "my-site"
 
 # Kiểm tra sitemap sâu, độ tươi <lastmod> và link lỗi 404:
-python cli/master_seo.py check-sitemap --site "mmdidau"
+python cli/master_seo.py check-sitemap --site "my-site"
 ```
 
 #### 4. Sử Dụng Gói Cloud & VPS DevOps
@@ -209,7 +209,7 @@ wp-clean-posts domain-moi.com --force
 python cli/master_seo.py optimize-all
 
 # 自动生成 1000+ 字 GEO 标准文章并发布
-python cli/master_seo.py write-post --site "vibemmo" --topic "2026 年最佳 MMO 游戏推荐"
+python cli/master_seo.py write-post --site "my-site" --topic "2026 年最佳 MMO 游戏推荐"
 ```
 
 ---

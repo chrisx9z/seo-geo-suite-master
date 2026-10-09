@@ -57,7 +57,7 @@ temp_wp_rocket/
 *.tmp
 
 # === Project-specific excludes ===
-vibemmo_*/
+*_export/
 *_assets/
 Newspaper-child.zip
 Newspaper-child/

@@ -126,3 +126,13 @@ Mọi pipeline/script/tác tử đăng bài **bắt buộc** gọi `enforce_publ
 
 *Quy tắc này có hiệu lực từ tháng 08/2026, được cập nhật bổ sung tháng 09/2026 và 10/2026 (Quality Gate), và là cấu hình mặc định bắt buộc cho toàn bộ repo, module sinh bài và tác tử.*
 
+
+---
+
+## 🔒 8. Không Lưu Dữ Liệu Cá Nhân / Dữ Liệu Site Trên Repo (MẶC ĐỊNH BẮT BUỘC)
+
+- Repo chỉ chứa **code và tài liệu chung**. Tuyệt đối không commit: domain/site_id/tên thương hiệu thật, IP server, user/mật khẩu admin, content plan, báo cáo audit, đường dẫn máy cá nhân.
+- Mọi dữ liệu site nằm trong thư mục **`private/`** (đã gitignore): `private/sites.local.json` (kèm `scheduler`, `plan_file`, `cache_file`, `direct_ip`, `theme`), `private/plans/<site_id>.json`, `private/docs/`.
+- Code đọc site qua [`modules/site_registry.py`](modules/site_registry.py); không viết `if "<tên-site>" in url` trong code.
+- Ví dụ trong README/docs dùng placeholder: `--site "my-site"`, `example.com`, `<site_id>`.
+- **Chốt chặn tự động:** `python -m modules.privacy_guard` (lấy danh sách token cấm từ `private/sites.local.json`) chạy trong `tests/test_no_private_data.py` và pre-commit hook (`git config core.hooksPath .githooks`). Có rò rỉ thì commit bị chặn.

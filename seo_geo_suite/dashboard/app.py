@@ -109,8 +109,7 @@ async def api_autopilot_sites():
                         sites.append({
                             "site_id": s.get("site_id", ""),
                             "name": s.get("name", s.get("site_id", "")),
-                            "url": s.get("url", ""),
-                            "admin_user": s.get("admin_user", "admin")
+                            "url": s.get("url", "")
                         })
                     if sites:
                         break

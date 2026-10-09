@@ -5,9 +5,9 @@ Every publishing pipeline calls `enforce_publish_payload()` right before
 
 | Pipeline | Site(s) | Hook |
 |---|---|---|
-| `wp_ai_autopilot/autopilot_orchestrator.py` | nhatthegioi, vibemmo (via their batch schedulers) | `produce_and_publish()` → returns `status=blocked_junk` |
-| `travel_scheduler/travel_batch_scheduler.py` | mmdidau, tobeigo | `schedule_single_post()` → returns `None` |
-| `travel_scheduler/english_batch_scheduler.py` | triptip | `schedule_single_post()` → returns `None` |
+| `wp_ai_autopilot/autopilot_orchestrator.py` | sites with `scheduler: direct_ip` / `vibe` | `produce_and_publish()` → returns `status=blocked_junk` |
+| `travel_scheduler/travel_batch_scheduler.py` | sites with `scheduler: travel` | `schedule_single_post()` → returns `None` |
+| `travel_scheduler/english_batch_scheduler.py` | sites with `scheduler: english` | `schedule_single_post()` → returns `None` |
 
 ## The gate blocks (post is never published)
 - Mad-Libs boilerplate: fake "Guinness", "Vị trí Quán Quân", generic
@@ -28,7 +28,7 @@ Every publishing pipeline calls `enforce_publish_payload()` right before
 ## Cleaning up existing posts
 ```bash
 python -m modules.content_quality_gate.audit_cli --site all            # report only -> reports/quality_gate_<site>.json
-python -m modules.content_quality_gate.audit_cli --site mmdidau --apply
+python -m modules.content_quality_gate.audit_cli --site <site_id> --apply
 ```
 With `--apply`, junk posts are moved to **draft** (you can undo this), and slugs are
 renamed. WordPress keeps the old slug in `_wp_old_slug`, so old URLs 301-redirect.

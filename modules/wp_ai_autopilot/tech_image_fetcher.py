@@ -66,7 +66,7 @@ def remove_accents(input_str: str) -> str:
 
 class TechImageFetcher:
     def __init__(self, cache_dir: Optional[str] = None):
-        self.headers = {"User-Agent": "VibeMMOBot/2.0 (contact@vibemmo.net; enterprise seo)"}
+        self.headers = {"User-Agent": os.getenv("IMAGE_FETCHER_UA", "SeoGeoSuiteImageFetcher/2.0 (+https://example.com/contact)")}
         base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
         self.cache_dir = cache_dir or os.path.join(base_dir, "cache", "tech_images")
         os.makedirs(self.cache_dir, exist_ok=True)

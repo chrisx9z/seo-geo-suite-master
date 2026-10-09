@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-VibeBatchScheduler - Automated Content Scheduler for VibeMMO.net
+VibeBatchScheduler - Automated content scheduler for AI / SaaS / tech portals
 Enforces:
 - 30-Day Content Plan across 5 Categories (AI, SaaS, MMO, Tools, Tech)
 - 5 Articles per Day staggered at prime reading hours (08:00, 11:00, 14:00, 17:00, 20:00)
@@ -12,6 +12,7 @@ Enforces:
 import os
 import sys
 import json
+from urllib.parse import urlparse
 import time
 import re
 from datetime import datetime, timedelta
@@ -38,11 +39,10 @@ class VibeBatchScheduler:
         self.admin_pass = admin_pass
         
         base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-        self.plan_file = plan_file or os.path.join(base_dir, "config", "vibemmo_30day_content_plan.json")
-        if not os.path.exists(self.plan_file):
-            self.plan_file = os.path.join(base_dir, "docs", "VIBEMMO_30DAY_CONTENT_PLAN.json")
+        # plan/cache paths come from private/sites.local.json via modules.site_registry
+        self.plan_file = plan_file or os.path.join(base_dir, "private", "plans", f"{urlparse(self.wp_url).hostname}.json")
 
-        self.log_file = log_file or os.path.join(base_dir, "cache", "scheduled_vibemmo_net.json")
+        self.log_file = log_file or os.path.join(base_dir, "cache", f"scheduled_{(urlparse(self.wp_url).hostname or "site").replace(".", "_")}.json")
         
         import urllib3
         urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -180,7 +180,7 @@ class VibeBatchScheduler:
 
         total_processed = 0
         print(f"\n========================================================")
-        print(f" STARTING VIBEMMO BATCH SCHEDULER FOR: {self.wp_url}")
+        print(f" STARTING BATCH SCHEDULER FOR: {self.wp_url}")
         print(f" Plan File: {self.plan_file}")
         print(f" Total Clusters: {len(clusters)} days planned")
         print(f"========================================================")
@@ -197,7 +197,7 @@ class VibeBatchScheduler:
             cat_id = c.get("category_id", 4)
 
             print(f"\n========================================================")
-            print(f" SCHEDULING VIBEMMO DAY {day_num:02d} ({date_str})")
+            print(f" SCHEDULING DAY {day_num:02d} ({date_str})")
             print(f" Pillar: {pillar} | Cluster: {cluster_name}")
             print(f" Category ID: {cat_id}")
             print(f"========================================================")
@@ -224,7 +224,7 @@ class VibeBatchScheduler:
                     time.sleep(2)
 
         print(f"\n========================================================")
-        print(f" VIBEMMO BATCH COMPLETED! Total posts scheduled: {total_processed}")
+        print(f" BATCH COMPLETED! Total posts scheduled: {total_processed}")
         print(f" Lifetime scheduled: {self.scheduled_log['total_scheduled']} posts.")
         print(f" Log saved at: {self.log_file}")
         print(f"========================================================")

@@ -828,85 +828,15 @@ def schedule_travel_site(site, plan_path=None, days=None, max_posts=None):
         elif str(days).lower() != "all":
             target_days = [int(days)]
 
-    if "vibemmo" in site.get("site_id", "") or "vibemmo" in site.get("url", ""):
-        from modules.travel_scheduler.vibe_batch_scheduler import VibeBatchScheduler
-        if not plan_path:
-            plan_path = os.path.join(base_dir, "config", "vibemmo_30day_content_plan.json")
-            if not os.path.exists(plan_path):
-                plan_path = os.path.join(base_dir, "docs", "VIBEMMO_30DAY_CONTENT_PLAN.json")
-
-        if not os.path.exists(plan_path):
-            print(f"Error: Plan file not found at {plan_path}")
-            return
-
-        scheduler = VibeBatchScheduler(
-            wp_url=site["url"],
-            admin_user=admin_user,
-            admin_pass=admin_pass,
-            plan_file=plan_path
-        )
-        scheduler.run_batch(target_days=target_days, max_posts=max_posts)
-    elif "triptip" in site.get("site_id", "") or "triptip" in site.get("url", ""):
-        from modules.travel_scheduler.english_batch_scheduler import EnglishBatchScheduler
-        if not plan_path:
-            plan_path = os.path.join(base_dir, "config", "triptip_30day_content_plan.json")
-            if not os.path.exists(plan_path):
-                plan_path = os.path.join(base_dir, "docs", "TRIPTIP_30DAY_CONTENT_PLAN.json")
-
-        if not os.path.exists(plan_path):
-            print(f"Error: Plan file not found at {plan_path}")
-            return
-
-        scheduler = EnglishBatchScheduler(
-            wp_url=site["url"],
-            admin_user=admin_user,
-            admin_pass=admin_pass,
-            plan_file=plan_path
-        )
-        scheduler.run_batch(target_days=target_days, max_posts=max_posts)
-    elif "nhatthegioi" in site.get("site_id", "") or "nhatthegioi" in site.get("url", ""):
-        from modules.travel_scheduler.nhatthegioi_batch_scheduler import NhatTheGioiBatchScheduler
-        if not plan_path:
-            plan_path = os.path.join(base_dir, "config", "nhatthegioi_30day_content_plan.json")
-            if not os.path.exists(plan_path):
-                plan_path = os.path.join(base_dir, "reports", "editorial_calendar_30_days.json")
-
-        if not os.path.exists(plan_path):
-            print(f"Error: Plan file not found at {plan_path}")
-            return
-
-        scheduler = NhatTheGioiBatchScheduler(
-            wp_url=site["url"],
-            admin_user=admin_user,
-            admin_pass=admin_pass,
-            plan_file=plan_path
-        )
-        scheduler.run_batch(target_days=target_days, max_posts=max_posts)
-    else:
-        from modules.travel_scheduler.travel_batch_scheduler import TravelBatchScheduler
-        if not plan_path:
-            if "mmdidau" in site.get("site_id", "") or "mmdidau" in site.get("url", ""):
-                plan_path = os.path.join(base_dir, "docs", "MMDIDAU_30DAY_CONTENT_PLAN.json")
-            elif "tobeigo" in site.get("site_id", "") or "tobeigo" in site.get("url", ""):
-                plan_path = os.path.join(base_dir, "docs", "TOBEIGO_30DAY_CONTENT_PLAN.json")
-            elif "zenshan" in site.get("site_id", "") or "zenshan" in site.get("url", ""):
-                plan_path = os.path.join(base_dir, "config", "zenshan_30day_content_plan.json")
-                if not os.path.exists(plan_path):
-                    plan_path = os.path.join(base_dir, "docs", "ZENSHAN_30DAY_CONTENT_PLAN.json")
-            else:
-                plan_path = os.path.join(base_dir, "docs", f"{site.get('site_id')}_30DAY_CONTENT_PLAN.json")
-
-        if not os.path.exists(plan_path):
-            print(f"Error: Plan file not found at {plan_path}")
-            return
-
-        scheduler = TravelBatchScheduler(
-            wp_url=site["url"],
-            admin_user=admin_user,
-            admin_pass=admin_pass,
-            plan_file=plan_path
-        )
-        scheduler.run_batch(target_days=target_days, max_posts=max_posts)
+    # Scheduler type, plan file and cache file come from private/sites.local.json
+    # (keys: scheduler, plan_file, cache_file, direct_ip) - never hard-code sites here.
+    from modules.site_registry import build_scheduler, plan_path as _plan_path
+    plan_path = plan_path or _plan_path(site)
+    if not os.path.exists(plan_path):
+        print(f"Error: Plan file not found at {plan_path}")
+        return
+    scheduler = build_scheduler(site, plan_file=plan_path)
+    scheduler.run_batch(target_days=target_days, max_posts=max_posts)
 
 def audit_content_site(site, max_posts=None):
     from modules.content_auditor.auditor import ContentAuditor
@@ -934,9 +864,9 @@ def main():
         "audit-redirects", "audit-page-network", "schedule-10posts"
     ], help="Action to perform")
     parser.add_argument("--site", default=None, help="Site ID or domain to target (omit to apply to ALL sites)")
-    parser.add_argument("--from-site", default="mmdidau", help="Source site ID to clone from (for clone-site)")
-    parser.add_argument("--to-domain", default="triptip.cc", help="Target domain to clone to (for clone-site)")
-    parser.add_argument("--to-brand", default="TripTip", help="Target brand name (for clone-site)")
+    parser.add_argument("--from-site", default=None, help="Source site ID to clone from (for clone-site)")
+    parser.add_argument("--to-domain", default=None, help="Target domain to clone to (for clone-site)")
+    parser.add_argument("--to-brand", default=None, help="Target brand name (for clone-site)")
     parser.add_argument("--days", help="Day number or range for travel scheduler (e.g. 1, 1-5, all)")
     parser.add_argument("--plan", help="Custom path to content plan JSON")
     parser.add_argument("--max-posts", type=int, default=None, help="Maximum posts to schedule in this run")
@@ -961,10 +891,13 @@ def main():
 
     if args.command == "clone-site":
         from modules.migration.wp_clone_packager import WPClonePackager
+        if not (args.from_site and args.to_domain and args.to_brand):
+            print("Error: clone-site requires --from-site, --to-domain and --to-brand.")
+            sys.exit(1)
         packager = WPClonePackager(
-            source_site_id=args.from_site or "mmdidau",
-            target_domain=args.to_domain or "triptip.cc",
-            target_name=args.to_brand or "TripTip"
+            source_site_id=args.from_site,
+            target_domain=args.to_domain,
+            target_name=args.to_brand
         )
         packager.run_all()
         return
@@ -982,7 +915,6 @@ def main():
         if not args.site or args.site == "all":
             if not args.days and not args.max_posts:
                 # Status overview
-                from modules.travel_scheduler.network_10posts_scheduler import SITE_SCHEDULER_REGISTRY
                 print(f"\n{'='*95}")
                 print(f" 🚀 MASTER AUTO SEO GEO SUITE — 10 POSTS/DAY NETWORK STATUS OVERVIEW")
                 print(f"{'='*95}")

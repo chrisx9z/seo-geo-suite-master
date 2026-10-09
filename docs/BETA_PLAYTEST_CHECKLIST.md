@@ -48,7 +48,7 @@ Toàn bộ gói cài đặt được đóng gói độc lập trong thư mục `
 ### B. Tiêu Chuẩn Khởi Động Sạch (Clean-Room Standard)
 - Người chơi có thể sao chép toàn bộ thư mục `build/windows/` sang bất kỳ thư mục rỗng nào trên máy tính.
 - Nhờ có cờ `_sc_` (Self-Contained), game tự động lưu dữ liệu cục bộ vào `editor_data/user/campaign_save.json` ngay trong thư mục game, **tuyệt đối không ghi đè** hay rò rỉ dữ liệu sang thư mục hệ thống của Windows (`%APPDATA%`).
-- Không phụ thuộc vào đường dẫn của máy phát triển (`d:\Vibe Code\Antigravity`), không yêu cầu quyền Administrator.
+- Không phụ thuộc vào đường dẫn của máy phát triển (thư mục làm việc cục bộ), không yêu cầu quyền Administrator.
 
 ---
 

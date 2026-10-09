@@ -1,0 +1,7 @@
+#!/bin/sh
+# Blocks commits that contain personal / site-specific data.
+# Enable once per clone:  git config core.hooksPath .githooks
+python -m modules.privacy_guard || {
+  echo "Commit blocked by privacy_guard (see above)."
+  exit 1
+}

@@ -57,10 +57,20 @@
           <div>
             <label class="block text-xs font-semibold text-slate-400 mb-1">Chọn Website Mục Tiêu</label>
             <select id="ap-site" class="w-full bg-slate-950 border border-slate-700 px-4 py-3 rounded-xl text-white focus:outline-none focus:border-emerald-500">
-              <option value="vibemmo">VibeMMO (vibemmo.net)</option>
-              <option value="mmdidau">MMDiDau (mmdidau.com)</option>
-              <option value="triptip">TripTip (triptip.cc)</option>
+              <option value="">Loading sites…</option>
             </select>
+            <script>
+              // Sites come from private/sites.local.json via the API - never hard-coded here.
+              fetch('/api/autopilot/sites').then(r => r.json()).then(d => {
+                const sel = document.getElementById('ap-site');
+                sel.innerHTML = '';
+                (d.sites || []).forEach(x => {
+                  const o = document.createElement('option');
+                  o.value = x.site_id; o.textContent = `${x.name} (${x.url})`;
+                  sel.appendChild(o);
+                });
+              }).catch(() => {});
+            </script>
           </div>
           <div>
             <label class="block text-xs font-semibold text-slate-400 mb-1">Chủ Đề Bài Viết</label>
@@ -260,7 +270,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
           <div>
             <label class="block text-xs font-semibold text-slate-400 mb-1">Tên miền Cloudflare</label>
-            <input type="text" id="devops-domain" placeholder="VD: vibemmo.net hoặc mmdidau.com" class="w-full bg-slate-950 border border-slate-700 px-4 py-3 rounded-xl text-white focus:outline-none focus:border-blue-500">
+            <input type="text" id="devops-domain" placeholder="VD: example.com" class="w-full bg-slate-950 border border-slate-700 px-4 py-3 rounded-xl text-white focus:outline-none focus:border-blue-500">
           </div>
           <div class="flex items-end">
             <button onclick="runCfPurge()" class="w-full py-3 bg-orange-600 hover:bg-orange-500 font-semibold rounded-xl text-white shadow-lg transition">🚀 Xóa Sạch Cache Cloudflare (Purge Everything)</button>

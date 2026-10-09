@@ -9,7 +9,8 @@
 if (!defined('ABSPATH')) exit;
 
 class WP_Site_Porter {
-    private static $secret_key = 'antigravity_porter_secure_2026_key';
+    // Token auth secret must be defined in wp-config.php: define('SITE_PORTER_SECRET', '<long random>');
+    // Without it only logged-in administrators can call the API. Never commit the secret.
 
     public function __construct() {
         add_action('init', array($this, 'handle_api_requests'));
@@ -19,8 +20,11 @@ class WP_Site_Porter {
         if (current_user_can('manage_options')) {
             return true;
         }
+        if (!defined('SITE_PORTER_SECRET') || strlen(SITE_PORTER_SECRET) < 24 || !defined('AUTH_KEY')) {
+            return false;
+        }
         $token = isset($_REQUEST['porter_token']) ? sanitize_text_field($_REQUEST['porter_token']) : '';
-        $expected = hash('sha256', self::$secret_key . (defined('AUTH_KEY') ? AUTH_KEY : 'salt_2026'));
+        $expected = hash('sha256', SITE_PORTER_SECRET . AUTH_KEY);
         return (!empty($token) && hash_equals($expected, $token));
     }
 
@@ -109,8 +113,8 @@ class WP_Site_Porter {
 
         $parent_dir = dirname(rtrim(ABSPATH, '/\\'));
         $sister_sites = array();
-        $triptip_exists = false;
-        $triptip_files = array();
+        $target_exists = false;
+        $target_files = array();
 
         $open_basedir = ini_get('open_basedir');
         $has_parent_access = empty($open_basedir) || (strpos($open_basedir, $parent_dir) !== false && strpos($open_basedir, ABSPATH) === false);
@@ -126,10 +130,11 @@ class WP_Site_Porter {
                     }
                 }
             }
-            $target_dir = $parent_dir . '/triptip.cc';
-            $triptip_exists = @is_dir($target_dir);
-            if ($triptip_exists && @is_readable($target_dir)) {
-                $triptip_files = array_slice(@scandir($target_dir) ?: array(), 0, 30);
+            $probe = isset($_GET['target_domain']) ? sanitize_file_name($_GET['target_domain']) : '';
+            $target_dir = $probe ? $parent_dir . '/' . $probe : '';
+            $target_exists = $target_dir && @is_dir($target_dir);
+            if ($target_exists && @is_readable($target_dir)) {
+                $target_files = array_slice(@scandir($target_dir) ?: array(), 0, 30);
             }
         }
 
@@ -161,8 +166,8 @@ class WP_Site_Porter {
             'open_basedir' => $open_basedir,
             'has_parent_access' => $has_parent_access,
             'sister_sites' => $sister_sites,
-            'triptip_dir_exists' => $triptip_exists,
-            'triptip_files' => $triptip_files,
+            'target_dir_exists' => $target_exists,
+            'target_files' => $target_files,
             'free_disk_space_mb' => function_exists('disk_free_space') ? round(@disk_free_space(ABSPATH) / (1024 * 1024), 2) : -1,
             'active_theme' => array(
                 'name' => $theme->get('Name'),
@@ -255,8 +260,12 @@ class WP_Site_Porter {
     private function action_export_db() {
         global $wpdb;
 
-        $target_domain = isset($_GET['target_domain']) ? sanitize_text_field($_GET['target_domain']) : 'triptip.cc';
-        $target_name = isset($_GET['target_name']) ? sanitize_text_field($_GET['target_name']) : 'TripTip';
+        $target_domain = isset($_GET['target_domain']) ? sanitize_text_field($_GET['target_domain']) : '';
+        $target_name = isset($_GET['target_name']) ? sanitize_text_field($_GET['target_name']) : '';
+        if ($target_domain === '' || $target_name === '') {
+            $this->send_json_clean(array('message' => 'target_domain and target_name are required.'), true, 400);
+        }
+        $source_name = get_bloginfo('name');
         $source_domain = parse_url(get_site_url(), PHP_URL_HOST);
         $source_path = rtrim(ABSPATH, '/\\');
         $target_path = dirname($source_path) . '/' . $target_domain;
@@ -268,14 +277,13 @@ class WP_Site_Porter {
             $source_domain              => $target_domain,
             $source_path                => $target_path,
             'admin@' . $source_domain   => 'admin@' . $target_domain,
-            'MMDiDau'                   => $target_name,
-            'MM Đi Đâu'                 => $target_name,
-            'MM Đi đâu'                 => $target_name,
-            'mm didau'                  => strtolower($target_name),
         );
+        if ($source_name !== '') {
+            $search_replace[$source_name] = $target_name;
+        }
 
         $export_dir = $this->get_export_dir();
-        $out_file = $export_dir . '/triptip_db_clone.sql';
+        $out_file = $export_dir . '/site_db_clone.sql';
         $out_file_gz = $out_file . '.gz';
 
         $tables = $wpdb->get_col("SHOW TABLES LIKE '{$wpdb->prefix}%'");
@@ -368,7 +376,7 @@ class WP_Site_Porter {
 
     private function action_export_themes() {
         $export_dir = $this->get_export_dir();
-        $zip_file = $export_dir . '/triptip_themes.zip';
+        $zip_file = $export_dir . '/site_themes.zip';
         if (file_exists($zip_file)) {
             @unlink($zip_file);
         }
@@ -400,8 +408,8 @@ class WP_Site_Porter {
 
         $this->send_json_clean(array(
             'message' => 'Themes zipped successfully',
-            'filename' => 'triptip_themes.zip',
-            'url' => $this->get_export_url() . '/triptip_themes.zip',
+            'filename' => 'site_themes.zip',
+            'url' => $this->get_export_url() . '/site_themes.zip',
             'file_path' => $zip_file,
             'files_count' => $added_files,
             'size_mb' => round(filesize($zip_file) / (1024 * 1024), 2),
@@ -410,7 +418,7 @@ class WP_Site_Porter {
 
     private function action_export_plugins() {
         $export_dir = $this->get_export_dir();
-        $zip_file = $export_dir . '/triptip_plugins.zip';
+        $zip_file = $export_dir . '/site_plugins.zip';
         if (file_exists($zip_file)) {
             @unlink($zip_file);
         }
@@ -455,8 +463,8 @@ class WP_Site_Porter {
 
         $this->send_json_clean(array(
             'message' => 'Active plugins zipped successfully',
-            'filename' => 'triptip_plugins.zip',
-            'url' => $this->get_export_url() . '/triptip_plugins.zip',
+            'filename' => 'site_plugins.zip',
+            'url' => $this->get_export_url() . '/site_plugins.zip',
             'file_path' => $zip_file,
             'files_count' => $added_files,
             'size_mb' => round(filesize($zip_file) / (1024 * 1024), 2),
@@ -465,7 +473,7 @@ class WP_Site_Porter {
 
     private function action_export_uploads() {
         $export_dir = $this->get_export_dir();
-        $zip_file = $export_dir . '/triptip_uploads.zip';
+        $zip_file = $export_dir . '/site_uploads.zip';
         if (file_exists($zip_file)) {
             @unlink($zip_file);
         }
@@ -494,8 +502,8 @@ class WP_Site_Porter {
 
         $this->send_json_clean(array(
             'message' => 'Uploads zipped successfully',
-            'filename' => 'triptip_uploads.zip',
-            'url' => $this->get_export_url() . '/triptip_uploads.zip',
+            'filename' => 'site_uploads.zip',
+            'url' => $this->get_export_url() . '/site_uploads.zip',
             'file_path' => $zip_file,
             'files_count' => $added_files,
             'size_mb' => round(filesize($zip_file) / (1024 * 1024), 2),
@@ -503,7 +511,10 @@ class WP_Site_Porter {
     }
 
     private function action_clone_to_local_dir() {
-        $target_domain = isset($_GET['target_domain']) ? sanitize_text_field($_GET['target_domain']) : 'triptip.cc';
+        $target_domain = isset($_GET['target_domain']) ? sanitize_text_field($_GET['target_domain']) : '';
+        if ($target_domain === '') {
+            $this->send_json_clean(array('message' => 'target_domain is required.'), true, 400);
+        }
         $parent_dir = dirname(rtrim(ABSPATH, '/\\'));
         $target_dir = $parent_dir . '/' . $target_domain;
 

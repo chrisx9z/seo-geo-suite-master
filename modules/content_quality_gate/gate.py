@@ -307,8 +307,13 @@ def check_post(title: str, content: str, keyword: str = "", slug: str = "",
         coverage = len(covered) / len(toks)
         if coverage < MIN_KEYWORD_COVERAGE:
             issues.append(f"off_topic_body:coverage={coverage:.0%}")
-        headings = " ".join(re.findall(r"<h[2-4][^>]*>(.*?)</h[2-4]>", content, flags=re.S | re.I)).lower()
-        headings = _strip_tags(headings).lower()
+        heading_parts = re.findall(r"<h[2-4][^>]*>(.*?)</h[2-4]>", content, flags=re.S | re.I)
+        # Legacy/classic posts use a standalone bold paragraph as a sub-heading.
+        for pseudo in re.findall(r"<p[^>]*>\s*<(?:strong|b)>(.*?)</(?:strong|b)>\s*</p>", content, flags=re.S | re.I):
+            if "<strong" not in pseudo.lower() and "<b>" not in pseudo.lower() \
+                    and 0 < len(_strip_tags(pseudo).split()) <= 15:
+                heading_parts.append(pseudo)
+        headings = _strip_tags(" ".join(heading_parts)).lower()
         if headings:
             h_cov = sum(1 for t in toks if t in headings) / len(toks)
             if h_cov == 0:

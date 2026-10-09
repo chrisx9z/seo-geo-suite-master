@@ -19,10 +19,11 @@ from .article_writer import ArticleWriter
 from .tech_image_fetcher import TechImageFetcher
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+from modules.wp_rest_auth import get_rest_nonce  # noqa: E402
 from modules.content_crawler_pipeline.slug_optimizer import SlugOptimizer
 from modules.internal_linking.link_engine import InternalLinkEngine
 from modules.fast_indexing.instant_indexer import InstantIndexer
-from modules.content_quality_gate import enforce_publish_payload, JunkContentError
+from modules.content_quality_gate import enforce_publish_payload, JunkContentError, check_post
 
 class WpAiAutopilot:
     def __init__(self, wp_url: str, admin_user: Optional[str] = None, admin_pass: Optional[str] = None):
@@ -62,6 +63,8 @@ class WpAiAutopilot:
             r_admin = self.session.get(f"{self.wp_url}/wp-admin/edit.php", timeout=15)
             m = re.search(r'"nonce":"([a-f0-9]+)"', r_admin.text)
             self.nonce = m.group(1) if m else ""
+            # verified wp_rest nonce (first-match regex can grab another plugin's nonce)
+            self.nonce = get_rest_nonce(self.session, self.wp_url) or self.nonce
         except Exception:
             self.nonce = ""
 
@@ -134,21 +137,22 @@ class WpAiAutopilot:
             local_file = os.path.join(out_dir, f"{slug}.html")
             with open(local_file, "w", encoding="utf-8") as f:
                 f.write(f"<!-- Title: {seo_title} -->\n<!-- Meta: {meta_desc} -->\n<!-- Focus Keyword: {focus_keyword} -->\n" + html_content)
+            gate = check_post(seo_title, html_content, keyword=focus_keyword, slug=slug)
             print(f"\n✨ [DRY RUN] Bài viết và hình ảnh WebP đã được tạo thành công cục bộ!")
             print(f"  💾 Tệp HTML: {local_file}")
             print(f"  🖼️ Featured Banner: {banner_path}")
-            print(f"  📊 In-Content Diagram: {diagram_path}")
+            print(f"  🛡️ Quality Gate: {'PASS' if gate.passed else 'BLOCK ' + ', '.join(gate.issues)}")
             print(f"{'='*70}\n")
             return {
                 "status": "dry_run_success",
                 "post_id": 0,
                 "title": seo_title,
-                "slug": slug,
+                "slug": gate.slug or slug,
                 "link": local_file,
                 "words": word_count,
                 "focus_keyword": focus_keyword,
                 "banner_path": banner_path,
-                "diagram_path": diagram_path
+                "quality_gate": {"passed": gate.passed, "issues": gate.issues, "repairs": gate.repairs},
             }
 
         # Step 4: Internal Linking

@@ -40,6 +40,7 @@ def patched_getaddrinfo(host, port, *args, **kwargs):
 socket.getaddrinfo = patched_getaddrinfo
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+from modules.wp_rest_auth import get_rest_nonce  # noqa: E402
 from modules.wp_ai_autopilot.autopilot_orchestrator import WpAiAutopilot
 from modules.content_crawler_pipeline.slug_optimizer import generate_core_keyword_slug
 
@@ -102,6 +103,8 @@ class NhatTheGioiBatchScheduler:
             r_admin = self.session.get(f"{self.wp_url}/wp-admin/edit.php", timeout=30, verify=False)
             m = re.search(r'"nonce":"([a-f0-9]+)"', r_admin.text)
             self.nonce = m.group(1) if m else ""
+            # verified wp_rest nonce (first-match regex can grab another plugin's nonce)
+            self.nonce = get_rest_nonce(self.session, self.wp_url) or self.nonce
             if self.nonce:
                 print(f"  [+] Authenticated successfully. Nonce: {self.nonce}")
                 if hasattr(self, 'autopilot') and self.autopilot:

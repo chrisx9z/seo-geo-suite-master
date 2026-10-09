@@ -19,6 +19,7 @@ from bs4 import BeautifulSoup
 from typing import Dict, Any, List, Optional
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+from modules.wp_rest_auth import get_rest_nonce  # noqa: E402
 from modules.travel_scheduler.real_image_fetcher import RealImageFetcher
 from modules.travel_scheduler.travel_article_writer import TravelArticleWriter
 from modules.content_quality_gate import enforce_publish_payload, JunkContentError
@@ -83,6 +84,8 @@ class TravelBatchScheduler:
                 r_admin = self.session.get(f"{self.wp_url}/wp-admin/edit.php", timeout=30)
                 m = re.search(r'"nonce":"([a-f0-9]+)"', r_admin.text)
                 self.nonce = m.group(1) if m else ""
+                # verified wp_rest nonce (first-match regex can grab another plugin's nonce)
+                self.nonce = get_rest_nonce(self.session, self.wp_url) or self.nonce
                 if not self.nonce:
                     r_post_new = self.session.get(f"{self.wp_url}/wp-admin/post-new.php", timeout=30)
                     m2 = re.search(r'wpApiSettings\s*=\s*\{.*?"nonce":"([a-f0-9]+)"', r_post_new.text, re.DOTALL)

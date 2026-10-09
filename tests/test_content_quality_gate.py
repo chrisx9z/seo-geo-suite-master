@@ -97,3 +97,14 @@ def test_enforce_raises_and_repairs():
             "slug": "kinh-nghiem-du-lich-phu-quoc-tu-tuc-2026"}
     enforce_publish_payload(good, keyword="du lịch phú quốc", log=lambda *_: None)
     assert good["slug"] == "kinh-nghiem-du-lich-phu-quoc"
+
+
+def test_bold_paragraph_pseudo_headings_count_as_headings():
+    kw = "cách nấu phở bò"
+    body = _body(kw).replace(f"<h2>{kw.title()} là gì</h2>", f"<p><strong>{kw.title()} như thế nào?</strong></p>")
+    res = check_post("Cách nấu phở bò", body, keyword=kw)
+    assert "no_headings" not in res.issues
+    assert not any("keyword_absent_from_headings" in i for i in res.issues)
+    mixed = _body(kw).replace(f"<h2>{kw.title()} là gì</h2>",
+                              "<p><strong>a</strong> nấu phở bò <strong>b</strong></p>")
+    assert "no_headings" in check_post("Cách nấu phở bò", mixed, keyword=kw).issues

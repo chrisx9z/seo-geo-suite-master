@@ -28,6 +28,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 # Import local modules
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from modules.wp_rest_auth import get_rest_nonce  # noqa: E402
 try:
     from modules.fast_indexing.instant_indexer import InstantIndexer
     from modules.internal_linking.link_engine import InternalLinkEngine
@@ -217,6 +218,8 @@ def auto_link_site(site):
     import re
     m = re.search(r'"nonce":"([a-f0-9]+)"', r_admin.text)
     wp_nonce = m.group(1) if m else ""
+    # verified wp_rest nonce (first-match regex can grab another plugin's nonce)
+    wp_nonce = get_rest_nonce(session, site['url']) or wp_nonce
     
     r_posts = session.get(f"{site['url']}/wp-json/wp/v2/posts?per_page=50")
     posts = r_posts.json() if r_posts.status_code == 200 else []
@@ -319,6 +322,8 @@ def inject_eeat_site(site, post_id=665, persona="ai_engineer"):
     import re
     m = re.search(r'"nonce":"([a-f0-9]+)"', r_admin.text)
     wp_nonce = m.group(1) if m else ""
+    # verified wp_rest nonce (first-match regex can grab another plugin's nonce)
+    wp_nonce = get_rest_nonce(session, site['url']) or wp_nonce
     mgr = EeatPersonaManager()
     author_box = mgr.generate_author_box_html(persona)
     r_post = session.get(f"{site['url']}/wp-json/wp/v2/posts/{post_id}")
@@ -340,6 +345,8 @@ def heal_orphans_site(site):
     import re
     m = re.search(r'"nonce":"([a-f0-9]+)"', r_admin.text)
     wp_nonce = m.group(1) if m else ""
+    # verified wp_rest nonce (first-match regex can grab another plugin's nonce)
+    wp_nonce = get_rest_nonce(session, site['url']) or wp_nonce
     r_posts = session.get(f"{site['url']}/wp-json/wp/v2/posts?per_page=50")
     posts = r_posts.json() if r_posts.status_code == 200 else []
     silo_builder = SemanticSiloBuilder(cluster_threshold=0.20)

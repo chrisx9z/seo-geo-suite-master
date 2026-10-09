@@ -26,6 +26,7 @@ import urllib3
 BASE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(0, BASE)
 from modules.content_quality_gate.gate import check_post  # noqa: E402
+from modules.wp_rest_auth import get_rest_nonce  # noqa: E402
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -46,11 +47,14 @@ def _login(site: Dict[str, Any]) -> requests.Session:
     url = site["url"].rstrip("/")
     s.post(f"{url}/wp-login.php", data={"log": site.get("admin_user"),
            "pwd": site.get("admin_pass") or site.get("admin_password"), "wp-submit": "Log In"}, timeout=30)
+    if not any(c.name.startswith("wordpress_logged_in") for c in s.cookies):
+        raise RuntimeError(f"WP login failed for {url} (check admin_user/admin_pass in sites config)")
     r = s.get(f"{url}/wp-admin/post-new.php", timeout=30)
     m = re.search(r'"nonce":"([a-f0-9]+)"', r.text)
-    if not m:
+    nonce = get_rest_nonce(s, url) or (m.group(1) if m else "")
+    if not nonce:
         raise RuntimeError(f"Login/nonce failed for {url}")
-    s.headers["X-WP-Nonce"] = m.group(1)
+    s.headers["X-WP-Nonce"] = nonce
     return s
 
 

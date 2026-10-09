@@ -2,7 +2,7 @@
 from .autopilot_orchestrator import WpAiAutopilot
 from .article_writer import ArticleWriter, ArticleWriter as WpAiArticleWriter
 from .keyword_researcher import KeywordResearcher, KeywordResearcher as WpAiKeywordResearcher
-from .banner_generator import WebPBannerGenerator, WebPBannerGenerator as WpAiBannerGenerator
+from .tech_image_fetcher import TechImageFetcher, TechImageFetcher as WebPBannerGenerator, TechImageFetcher as WpAiBannerGenerator
 
 __all__ = [
     "WpAiAutopilot",
@@ -10,6 +10,7 @@ __all__ = [
     "WpAiArticleWriter",
     "KeywordResearcher",
     "WpAiKeywordResearcher",
+    "TechImageFetcher",
     "WebPBannerGenerator",
     "WpAiBannerGenerator",
 ]

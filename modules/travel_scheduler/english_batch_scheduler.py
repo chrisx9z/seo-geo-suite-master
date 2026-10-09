@@ -25,6 +25,7 @@ sys.stderr.reconfigure(encoding='utf-8', line_buffering=True)
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 from modules.travel_scheduler.real_image_fetcher import RealImageFetcher
 from modules.travel_scheduler.english_travel_writer import EnglishTravelWriter
+from modules.content_quality_gate import enforce_publish_payload, JunkContentError
 
 HOURLY_STAGGERS = [
     "07:15:00", "08:45:00", "10:15:00", "11:45:00", "13:15:00",
@@ -245,6 +246,13 @@ class EnglishBatchScheduler:
         }
         if featured_media_id:
             payload["featured_media"] = featured_media_id
+
+        # Mandatory junk-content gate (no bypass)
+        try:
+            enforce_publish_payload(payload, keyword=keyword, destination=cluster_name)
+        except JunkContentError:
+            return None
+        slug = payload["slug"]
 
         headers = {}
         if self.nonce:

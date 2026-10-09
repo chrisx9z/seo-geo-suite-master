@@ -16,12 +16,13 @@ from typing import Dict, Any, Optional
 
 from .keyword_researcher import KeywordResearcher
 from .article_writer import ArticleWriter
-from .banner_generator import WebPBannerGenerator
+from .tech_image_fetcher import TechImageFetcher
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 from modules.content_crawler_pipeline.slug_optimizer import SlugOptimizer
 from modules.internal_linking.link_engine import InternalLinkEngine
 from modules.fast_indexing.instant_indexer import InstantIndexer
+from modules.content_quality_gate import enforce_publish_payload, JunkContentError
 
 class WpAiAutopilot:
     def __init__(self, wp_url: str, admin_user: Optional[str] = None, admin_pass: Optional[str] = None):
@@ -40,7 +41,7 @@ class WpAiAutopilot:
 
         self.researcher = KeywordResearcher()
         self.writer = ArticleWriter()
-        self.banner_gen = WebPBannerGenerator()
+        self.image_fetcher = TechImageFetcher()
         self.link_engine = InternalLinkEngine(max_links_per_post=3)
         self.indexer = InstantIndexer(host=self.host)
 
@@ -102,22 +103,22 @@ class WpAiAutopilot:
         print(f"  ⭐ Focus Keyword: {focus_keyword}")
         print(f"  🔗 Core Keyword Slug: /{slug}/")
 
-        # Step 2: Generate BOTH Featured Image & In-Content Technical Diagram (< 50KB)
-        print("\n[2/6] Generating 2 Professional WebP Images (< 50KB each)...")
-        banner_path = self.banner_gen.generate_banner(topic, category="TECH & AI", slug=slug)
-        diagram_path = self.banner_gen.generate_in_content_illustration(focus_keyword=focus_keyword, slug=slug)
+        # Step 2: Fetch Authentic Photography (Hardware, Workstation, Server, Code)
+        print("\n[2/6] Fetching Authentic 16:9 Zero-CLS WebP Photo (< 100KB)...")
+        photo_info = self.image_fetcher.get_real_photo_for_post(topic, focus_keyword=focus_keyword, slug=slug)
+        banner_path = photo_info["local_path"] if photo_info else ""
+        diagram_url = ""
 
         if dry_run:
-            diagram_url = f"file://{os.path.abspath(diagram_path)}"
             featured_id = None
         else:
-            featured_upload = self.upload_webp_media(banner_path, alt_text=f"{focus_keyword} ảnh đại diện", title=f"{focus_keyword} Banner")
-            diagram_upload = self.upload_webp_media(diagram_path, alt_text=f"{focus_keyword} sơ đồ kiến trúc kỹ thuật chi tiết", title=f"{focus_keyword} Architecture Diagram")
-            diagram_url = diagram_upload["url"] if diagram_upload else ""
-            featured_id = featured_upload["id"] if featured_upload else None
+            featured_id = None
+            if banner_path and os.path.exists(banner_path):
+                featured_upload = self.upload_webp_media(banner_path, alt_text=f"{topic} ảnh minh họa thực tế", title=f"{topic} Featured Image")
+                featured_id = featured_upload["id"] if featured_upload else None
 
-        # Step 3: Write Deep Article (> 1,000 words guaranteed)
-        print("\n[3/6] Synthesizing Deep Structured Content (Enforcing > 1,000 Words & RankMath)...")
+        # Step 3: Write Deep Article (> 1,800 words guaranteed via Gemini)
+        print("\n[3/6] Synthesizing Deep Structured Content (Enforcing > 1,800 Words & RankMath)...")
         article_data = self.writer.write_article(topic, outline_data, content_img_url=diagram_url)
         seo_title = article_data["title"]
         meta_desc = article_data["meta_description"]
@@ -179,6 +180,13 @@ class WpAiAutopilot:
             payload["featured_media"] = featured_id
         if status == "future" and schedule_date:
             payload["date"] = schedule_date
+
+        # Mandatory junk-content gate (no bypass): blocks off-topic/boilerplate posts, fixes slug
+        try:
+            enforce_publish_payload(payload, keyword=focus_keyword)
+        except JunkContentError as e:
+            return {"status": "blocked_junk", "message": str(e), "issues": e.issues, "title": seo_title, "slug": slug}
+        slug = payload["slug"]
 
         r_pub = self.session.post(
             f"{self.wp_url}/wp-json/wp/v2/posts",

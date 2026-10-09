@@ -15,10 +15,24 @@ class KeywordResearcher:
         Extracts primary keyword, secondary keywords, search intent,
         and constructs an Onpage SEO outline.
         """
+        # Clean topic and extract coherent entity without naive slicing
         cleaned = re.sub(r"[\(\)\[\]\{\}\:\?\!\|\,\.]", " ", topic)
         words = [w.strip() for w in cleaned.split() if len(w.strip()) > 0]
         
-        primary_kw = " ".join(words[:5]) if len(words) >= 5 else topic
+        # Stop-words and dangling conjunctions that must never end a keyword
+        dangling_terms = {"&", "và", "va", "hoặc", "hoac", "cho", "cua", "của", "với", "voi", "bang", "bằng", "-", "vs", "the", "and", "or", "in", "for"}
+        
+        if len(words) <= 7:
+            primary_kw = topic.strip()
+        else:
+            # Pick first 6-7 meaningful words, trimming any trailing conjunction
+            selected_words = words[:7]
+            while selected_words and selected_words[-1].lower() in dangling_terms:
+                selected_words.pop()
+            primary_kw = " ".join(selected_words) if selected_words else topic.strip()
+        
+        # Clean trailing symbols
+        primary_kw = re.sub(r"\s*[&\-\:\,\/]+$", "", primary_kw).strip()
         
         # Build secondary / LSI keyword pool
         lsi_keywords = [

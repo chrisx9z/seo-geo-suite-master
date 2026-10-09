@@ -21,6 +21,7 @@ from typing import Dict, Any, List, Optional
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 from modules.travel_scheduler.real_image_fetcher import RealImageFetcher
 from modules.travel_scheduler.travel_article_writer import TravelArticleWriter
+from modules.content_quality_gate import enforce_publish_payload, JunkContentError
 
 class TravelBatchScheduler:
     def __init__(self, wp_url: str, admin_user: str, admin_pass: str, plan_file: str, log_file: Optional[str] = None):
@@ -224,6 +225,13 @@ class TravelBatchScheduler:
         }
         if featured_media_id:
             payload["featured_media"] = featured_media_id
+
+        # Mandatory junk-content gate (no bypass)
+        try:
+            enforce_publish_payload(payload, keyword=keyword, destination=topic_name)
+        except JunkContentError:
+            return None
+        slug = payload["slug"]
 
         for attempt in range(1, 4):
             try:

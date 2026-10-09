@@ -37,7 +37,8 @@ class OnpageChecker:
         soup = BeautifulSoup(html, "html.parser")
         
         # 1. Title
-        title_tag = soup.find("title")
+        # Ignore <title> inside inline SVG/MathML (icon labels), per ultimate-seo-geo 1.21.1
+        title_tag = next((t for t in soup.find_all("title") if not t.find_parent(["svg", "math"])), None)
         title_text = title_tag.get_text().strip() if title_tag else ""
         title_len = len(title_text)
         title_status = "pass" if 30 <= title_len <= 65 else ("warning" if title_len > 0 else "error")
@@ -79,7 +80,9 @@ class OnpageChecker:
 
         # 6. JSON-LD Schemas (with @graph flattening for WordPress Yoast/RankMath)
         json_ld_schemas = []
-        for script in soup.find_all("script", type="application/ld+json"):
+        # Case-insensitive, whitespace-tolerant type match (application/LD+json), per upstream 1.21.1
+        ld_scripts = soup.find_all("script", type=lambda v: bool(v) and v.strip().lower() == "application/ld+json")
+        for script in ld_scripts:
             try:
                 raw = script.string or script.get_text() or "{}"
                 data = json.loads(raw)

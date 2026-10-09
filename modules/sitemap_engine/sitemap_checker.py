@@ -36,6 +36,11 @@ except ImportError:
     print(json.dumps({"error": "requests required: pip install requests"}))
     sys.exit(1)
 
+try:
+    from modules.ai_crawler_access.url_safety import get_validated
+except ImportError:  # run as a standalone script next to url_safety.py
+    from url_safety import get_validated  # noqa: E402  (stdlib-only)
+
 USER_AGENT = "Mozilla/5.0 (compatible; UltimateSEO-Sitemap/1.8)"
 
 SEARCH_URL_PATTERNS = re.compile(
@@ -47,16 +52,42 @@ FACETED_URL_PATTERNS = re.compile(
 TEMPLATE_PLACEHOLDER = re.compile(r"\{[^}]+\}")
 
 
+TLS_ERROR = "tls_verification_failed"
+
+
+def _tls_reason(exc: Exception) -> str:
+    return f"{TLS_ERROR}: {str(exc)[:160]}"
+
+
+def _follow(method, url: str, timeout: int, **kwargs):
+    """One request per hop, each hop checked by url_safety: (response, hops, error).
+
+    TLS certificates are always verified (requests' default). A certificate
+    that fails is returned as a stated error, never retried unverified: the
+    script used to switch certificate checks off here, which hid broken certificates that
+    browsers and Googlebot do not ignore, and printed InsecureRequestWarning.
+    """
+    calls = []
+
+    def one(u):
+        calls.append(u)
+        return method(u, timeout=timeout, headers={"User-Agent": USER_AGENT},
+                      allow_redirects=False, **kwargs)
+
+    response, error = get_validated(one, url)
+    return response, max(len(calls) - 1, 0), error
+
+
 def _fetch(url: str, timeout: int = 12) -> tuple[int | None, str]:
+    """(status, body), or (None, reason) when the fetch failed or was refused."""
     try:
-        r = requests.get(
-            url,
-            timeout=timeout,
-            headers={"User-Agent": USER_AGENT},
-            allow_redirects=True,
-        )
+        r, _hops, error = _follow(requests.get, url, timeout)
+        if error:
+            return None, error
         return r.status_code, r.text or ""
-    except Exception as e:
+    except requests.exceptions.SSLError as e:
+        return None, _tls_reason(e)
+    except requests.exceptions.RequestException as e:
         return None, str(e)
 
 
@@ -64,22 +95,17 @@ def _head_check(url: str, timeout: int = 10) -> dict:
     """HEAD request with GET fallback; returns status info."""
     result = {"url": url, "status": None, "error": None, "redirect": None, "soft_404": False}
     try:
-        resp = requests.head(
-            url, timeout=timeout,
-            headers={"User-Agent": USER_AGENT},
-            allow_redirects=True, verify=False,
-        )
-        if resp.status_code == 405:
-            resp = requests.get(
-                url, timeout=timeout,
-                headers={"User-Agent": USER_AGENT},
-                allow_redirects=True, verify=False, stream=True,
-            )
+        resp, hops, error = _follow(requests.head, url, timeout)
+        if not error and resp.status_code == 405:
+            resp, hops, error = _follow(requests.get, url, timeout, stream=True)
+        if error:
+            result["error"] = error
+            return result
         result["status"] = resp.status_code
-        if resp.history:
+        if hops:
             result["redirect"] = {
                 "from": url, "to": resp.url,
-                "hops": len(resp.history),
+                "hops": hops,
             }
         if resp.status_code == 200 and resp.headers.get("content-type", "").startswith("text/html"):
             body = ""
@@ -102,6 +128,10 @@ def _head_check(url: str, timeout: int = 10) -> dict:
                             break
     except requests.exceptions.Timeout:
         result["error"] = "timeout"
+    except requests.exceptions.SSLError as e:
+        # SSLError is a ConnectionError: catch it first so a bad certificate
+        # is named, not filed as "connection_failed".
+        result["error"] = _tls_reason(e)
     except requests.exceptions.ConnectionError:
         result["error"] = "connection_failed"
     except requests.exceptions.RequestException as e:
@@ -530,6 +560,7 @@ def check_sitemaps(
             {
                 "severity": "warning",
                 "finding": f"robots.txt not reachable (HTTP {robots_code}).",
+                **({"evidence": body[:200]} if robots_code is None and body else {}),
                 "fix": "Publish robots.txt with Sitemap: directives.",
             }
         )
@@ -568,6 +599,7 @@ def check_sitemaps(
             {
                 "severity": "critical",
                 "finding": f"Primary sitemap returned HTTP {sc}: {primary}",
+                **({"evidence": xml[:200]} if sc is None and xml else {}),
                 "fix": "Fix sitemap URL or server response.",
             }
         )
@@ -712,6 +744,17 @@ def check_sitemaps(
                     "Return a real 404/410 status code instead of 200 for pages that don't "
                     "exist. Soft 404s waste crawl budget and confuse search engines."
                 ),
+            })
+
+        tls = [e for e in health["errors"] if str(e.get("error", "")).startswith(TLS_ERROR)]
+        if tls:
+            out["issues"].append({
+                "severity": "high",
+                "finding": f"{len(tls)} sitemap URL(s) failed TLS certificate verification.",
+                "evidence": "; ".join(f"{e['url']}: {e['error']}" for e in tls[:3])
+                            + (f"; and {len(tls) - 3} more" if len(tls) > 3 else ""),
+                "fix": ("Serve a valid certificate chain for these hosts (check expiry, hostname and the "
+                        "intermediate certificate). Browsers and crawlers refuse the page as it is."),
             })
 
         if nred > 3:

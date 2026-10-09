@@ -50,6 +50,7 @@ AI_CRAWLER_ROLES = {
     "MistralAI-Training": "training",
     "Bytespider": "training",
     "CCBot": "training",
+    "cohere-ai": "training",           # Cohere model data; no search product to be cited from
 }
 AI_CRAWLERS = list(AI_CRAWLER_ROLES)
 

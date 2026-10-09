@@ -11,8 +11,8 @@ from __future__ import annotations
 import ipaddress
 import socket
 from dataclasses import dataclass, field
-from typing import Iterable
-from urllib.parse import urlparse, urlunparse
+from typing import Callable, Iterable
+from urllib.parse import urljoin, urlparse, urlunparse
 
 
 ALLOWED_SCHEMES = {"http", "https"}
@@ -38,8 +38,6 @@ def normalize_url(url: str) -> str:
     if not parsed.scheme:
         value = f"https://{value}"
         parsed = urlparse(value)
-    if parsed.scheme.lower() not in ALLOWED_SCHEMES:
-        return value
     if not parsed.hostname:
         return value
 
@@ -50,13 +48,16 @@ def normalize_url(url: str) -> str:
         # validate_url will return a clear failure for the original hostname.
         host = parsed.hostname.rstrip(".").lower()
 
-    netloc = host
     try:
         port = parsed.port
     except ValueError:
+        # "http://x:99999/" or "http://x:abc/": left as given for validate_url to refuse.
         return value
+    # urlparse strips the brackets from an IPv6 literal; without them
+    # "2606:4700::1111" reads as a host plus port and the URL is refused.
+    netloc = f"[{host}]" if ":" in host else host
     if port is not None:
-        netloc = f"{host}:{port}"
+        netloc = f"{netloc}:{port}"
     if parsed.username:
         userinfo = parsed.username
         if parsed.password:
@@ -132,7 +133,18 @@ def _host_literal_ip(host: str) -> ipaddress._BaseAddress | None:
         return None
 
 
+# Carrier-grade NAT shared space (RFC 6598). Not public, and ipaddress reports
+# it as neither private nor global, so the flags below let it through.
+_CGNAT = ipaddress.ip_network("100.64.0.0/10")
+
+
 def _is_blocked_ip(ip: ipaddress._BaseAddress) -> bool:
+    # ::ffff:127.0.0.1 is 127.0.0.1; judge an IPv4-mapped address as its IPv4 self.
+    mapped = getattr(ip, "ipv4_mapped", None)
+    if mapped is not None:
+        ip = mapped
+    if ip.version == 4 and ip in _CGNAT:
+        return True
     return any(
         (
             ip.is_private,
@@ -171,6 +183,12 @@ def validate_url(url: str, *, resolve_dns: bool = True) -> UrlSafetyResult:
         return UrlSafetyResult(False, url, normalized, "missing hostname")
     if parsed.username or parsed.password:
         return UrlSafetyResult(False, url, normalized, "URL credentials are not allowed")
+    try:
+        parsed.port
+    except ValueError:
+        # Refuse, never raise: a redirect's Location header is remote input, and an
+        # exception here used to abort the whole fetch (or a whole report run).
+        return UrlSafetyResult(False, url, normalized, "invalid port")
 
     hostname = parsed.hostname.rstrip(".").lower()
     try:
@@ -203,6 +221,32 @@ def validate_url(url: str, *, resolve_dns: bool = True) -> UrlSafetyResult:
     return UrlSafetyResult(ok, url, normalized, reason, hostname, resolved)
 
 
+MAX_REDIRECTS = 10
+
+
+def get_validated(get: Callable, url: str, max_redirects: int = MAX_REDIRECTS):
+    """Fetch url, following redirects one validated hop at a time: (response, None) or (None, error).
+
+    `get(url)` must make a single request WITHOUT following redirects (for requests:
+    `lambda u: requests.get(u, allow_redirects=False, ...)`), and return an object
+    with .url, .headers and .is_redirect. Validating only the first URL and letting
+    the client follow redirects checks nothing: a public page that 302s to
+    169.254.169.254 is then fetched. Network errors from `get` propagate.
+    """
+    current = url
+    for hop in range(max_redirects + 1):
+        safe = validate_url(current)
+        if not safe.ok:
+            where = "" if hop == 0 else f" (redirect {hop} to {current[:120]})"
+            return None, f"URL safety check failed: {safe.reason}{where}"
+        response = get(safe.normalized_url)
+        location = response.headers.get("Location")
+        if not (response.is_redirect and location):
+            return response, None
+        current = urljoin(response.url, location)
+    return None, f"too many redirects (over {max_redirects})"
+
+
 def validate_redirect_chain(urls: Iterable[str]) -> UrlSafetyResult:
     """Validate every URL in a redirect chain to prevent redirect rebinding."""
     last = ""
@@ -215,3 +259,34 @@ def validate_redirect_chain(urls: Iterable[str]) -> UrlSafetyResult:
             return result
     return UrlSafetyResult(True, last, last)
 
+
+# Link crawlers: an href that is not a page to fetch.
+_NON_PAGE_SCHEMES = ("#", "javascript:", "mailto:", "tel:", "sms:", "data:")
+# Cloudflare Email Obfuscation rewrites every mailto: into a link to this path,
+# decoded by script in a browser. It answers 404 to anything else by design, so
+# a crawler that follows it reports a broken link on every page that shows an
+# email address.
+_OBFUSCATED_EMAIL_PATH = "/cdn-cgi/l/email-protection"
+
+
+def is_crawlable_href(href: str) -> bool:
+    """False for fragments, non-HTTP schemes and Cloudflare's obfuscated mailto links."""
+    value = (href or "").strip()
+    if not value or value.lower().startswith(_NON_PAGE_SCHEMES):
+        return False
+    return _OBFUSCATED_EMAIL_PATH not in urlparse(value).path
+
+
+# Statuses that mean "the server would not show this to a crawler", not "the
+# page is gone". From another host, any of them: Yelp, LinkedIn (999) and most
+# review sites answer this way to every bot. From the audited site itself only
+# 401 (a login-gated page, e.g. /account in the navigation) and 429 (its own
+# rate limiter throttling the crawl): a site that 403s its own public pages has
+# a real problem, so an internal 403 is still an error.
+REFUSAL_STATUSES = frozenset({401, 403, 429, 999})
+_INTERNAL_REFUSAL_STATUSES = frozenset({401, 429})
+
+
+def is_refusal(status, internal: bool) -> bool:
+    """True when status says the crawler was refused, so the link is unverified, not broken."""
+    return status in (_INTERNAL_REFUSAL_STATUSES if internal else REFUSAL_STATUSES)

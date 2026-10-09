@@ -302,8 +302,12 @@ def check_post(title: str, content: str, keyword: str = "", slug: str = "",
 
     # 5. Title / keyword vs body relevance
     toks = keyword_tokens(keyword)
+    # Legacy RankMath keywords are often stored without diacritics ("thue xe may da nang"):
+    # compare accent-insensitively in that case instead of flagging the post as off-topic.
+    fold = (lambda s: _ascii(s).lower()) if toks and keyword.strip() == _ascii(keyword).strip() else (lambda s: s)
     if toks:
-        covered = [t for t in toks if t in text_low]
+        body_cmp = fold(text_low)
+        covered = [t for t in toks if t in body_cmp]
         coverage = len(covered) / len(toks)
         if coverage < MIN_KEYWORD_COVERAGE:
             issues.append(f"off_topic_body:coverage={coverage:.0%}")
@@ -313,7 +317,7 @@ def check_post(title: str, content: str, keyword: str = "", slug: str = "",
             if "<strong" not in pseudo.lower() and "<b>" not in pseudo.lower() \
                     and 0 < len(_strip_tags(pseudo).split()) <= 15:
                 heading_parts.append(pseudo)
-        headings = _strip_tags(" ".join(heading_parts)).lower()
+        headings = fold(_strip_tags(" ".join(heading_parts)).lower())
         if headings:
             h_cov = sum(1 for t in toks if t in headings) / len(toks)
             if h_cov == 0:
@@ -345,22 +349,35 @@ def check_post(title: str, content: str, keyword: str = "", slug: str = "",
 
 
 def enforce_publish_payload(payload: Dict[str, Any], keyword: str = "", destination: str = "",
-                            log=print) -> Dict[str, Any]:
+                            log=print, site_url: str = "") -> Dict[str, Any]:
     """Validate + repair a WP REST post payload in-place. Raises JunkContentError.
 
     This is the single mandatory entry point used by all publishing pipelines.
+    With `site_url`, the article is also checked against that site's sentence corpus
+    (cache/spin_corpus/) and blocked when it is a re-skinned template of earlier posts.
     """
     title = _strip_tags(str(payload.get("title", "")))
     kw = keyword or (payload.get("meta") or {}).get("rank_math_focus_keyword", "") or title
     res = check_post(title=title, content=str(payload.get("content", "")), keyword=kw,
                      slug=str(payload.get("slug", "")), destination=destination)
-    if not res.passed:
-        log(f"  [QUALITY GATE] BLOCKED '{title[:70]}': {', '.join(res.issues)}")
-        raise JunkContentError(res.issues)
+    issues = list(res.issues)
+    corpus = None
+    if site_url:
+        from .spin import SpinCorpus, SPIN_JUNK_RATIO
+        corpus = SpinCorpus(site_url)
+        ratio = corpus.ratio(title, kw, res.content)
+        if ratio >= SPIN_JUNK_RATIO:
+            issues.append(f"templated_spin:{ratio:.0%}")
+    if issues:
+        log(f"  [QUALITY GATE] BLOCKED '{title[:70]}': {', '.join(issues)}")
+        raise JunkContentError(issues)
     payload["content"] = res.content
     if res.slug:
         payload["slug"] = res.slug
     if res.repairs:
         log(f"  [QUALITY GATE] Repaired: {', '.join(res.repairs)}")
+    if corpus is not None:
+        corpus.add(title, kw, res.content)
+        corpus.save()
     log(f"  [QUALITY GATE] PASSED ({res.word_count} words)")
     return payload

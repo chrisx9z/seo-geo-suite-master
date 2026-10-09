@@ -187,7 +187,7 @@ class WpAiAutopilot:
 
         # Mandatory junk-content gate (no bypass): blocks off-topic/boilerplate posts, fixes slug
         try:
-            enforce_publish_payload(payload, keyword=focus_keyword)
+            enforce_publish_payload(payload, keyword=focus_keyword, site_url=self.wp_url)
         except JunkContentError as e:
             return {"status": "blocked_junk", "message": str(e), "issues": e.issues, "title": seo_title, "slug": slug}
         slug = payload["slug"]

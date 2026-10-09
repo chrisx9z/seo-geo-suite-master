@@ -253,7 +253,7 @@ class EnglishBatchScheduler:
 
         # Mandatory junk-content gate (no bypass)
         try:
-            enforce_publish_payload(payload, keyword=keyword, destination=cluster_name)
+            enforce_publish_payload(payload, keyword=keyword, destination=cluster_name, site_url=self.wp_url)
         except JunkContentError:
             return None
         slug = payload["slug"]

@@ -231,7 +231,7 @@ class TravelBatchScheduler:
 
         # Mandatory junk-content gate (no bypass)
         try:
-            enforce_publish_payload(payload, keyword=keyword, destination=topic_name)
+            enforce_publish_payload(payload, keyword=keyword, destination=topic_name, site_url=self.wp_url)
         except JunkContentError:
             return None
         slug = payload["slug"]

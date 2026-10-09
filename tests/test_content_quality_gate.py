@@ -108,3 +108,22 @@ def test_bold_paragraph_pseudo_headings_count_as_headings():
     mixed = _body(kw).replace(f"<h2>{kw.title()} là gì</h2>",
                               "<p><strong>a</strong> nấu phở bò <strong>b</strong></p>")
     assert "no_headings" in check_post("Cách nấu phở bò", mixed, keyword=kw).issues
+
+
+def test_ascii_legacy_keyword_matches_accented_body():
+    body = _body("thuê xe máy đà nẵng")
+    res = check_post("Các địa điểm thuê xe máy Đà Nẵng", body, keyword="Thue xe may da nang")
+    assert not any(i.startswith(("off_topic_body", "keyword_absent")) for i in res.issues), res.issues
+
+
+def test_template_spin_detected_across_posts():
+    from modules.content_quality_gate.spin import template_spin_ratios
+    tpl = ("<h2>{k}</h2>" + "".join(
+        f"<p>Khung cảnh thiên nhiên tráng lệ cùng những góc sống ảo kiểu {w} luôn có sức hút mê hoặc với tín đồ xê dịch.</p>"
+        for w in "một hai ba bốn năm sáu bảy tám chín mười mươi trăm".split()))
+    posts = [{"id": n, "title": {"raw": k}, "content": {"raw": tpl.format(k=k)}, "meta": {}}
+             for n, k in enumerate(["Bà Nà", "Mũi Né", "Cát Bà", "Sa Pa", "Hội An"])]
+    posts.append({"id": 99, "title": {"raw": "Phở bò"}, "meta": {},
+                  "content": {"raw": _body("phở bò hà nội")}})
+    r = template_spin_ratios(posts)
+    assert all(r[n] >= 0.9 for n in range(5)) and r[99] == 0

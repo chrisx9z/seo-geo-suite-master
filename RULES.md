@@ -99,5 +99,30 @@ Tất cả các module sinh bài, template và tác tử tạo nội dung trong 
 
 ---
 
-*Quy tắc này có hiệu lực từ tháng 08/2026, được cập nhật bổ sung tháng 09/2026 và là cấu hình mặc định bắt buộc cho toàn bộ repo, module sinh bài và tác tử.*
+## 🛡️ 7. Cơ Chế Loại Bỏ Content Rác — Quality Gate (MẶC ĐỊNH BẮT BUỘC, KHÔNG CÓ CỜ TẮT)
+
+Mọi pipeline/script/tác tử đăng bài **bắt buộc** gọi `enforce_publish_payload()` từ `modules/content_quality_gate` ngay trước khi `POST /wp-json/wp/v2/posts`. Bài không qua gate **không được xuất bản**. Code mới đăng bài mà không gọi gate là vi phạm quy tắc.
+
+1. **Định nghĩa content rác (bị chặn):**
+   - Tiêu đề một chủ đề nhưng nội dung không liên quan / không diễn giải đúng keyword + tiêu đề (thân bài phủ < 60% token từ khóa, hoặc không heading nào chứa từ khóa).
+   - Khuôn mẫu Mad-Libs nhồi từ khóa: "Đạt chuẩn xác thực Guinness", "Vị trí Quán Quân", "Khám phá toàn diện về <keyword> với đầy đủ số liệu", "Hạng Mục / Tiêu Chí", "Cẩm Nang Kỹ Thuật & Thực Chiến", template "Bước 1 – Khởi Tạo Ý Tưởng".
+   - Tiêu đề "Top N" nhưng không có danh sách thực sự.
+   - Nội dung/hình ảnh liên quan chính trị Việt Nam trong tiêu đề hoặc ảnh (tên thành phố "TP. Hồ Chí Minh" / "đường Hồ Chí Minh" vẫn hợp lệ).
+   - Bài mỏng (< 600 từ, ngưỡng cứng của gate; chuẩn biên tập vẫn là ≥ 1.000 từ) hoặc > 15% câu lặp lại.
+   - Ảnh placeholder dạng text thuần.
+
+2. **Tự động sửa (không chặn):**
+   - Gỡ đoạn văn mô tả sai địa lý copy từ điểm đến khác ("cách trung tâm thủ đô không quá xa", "dãy núi đá vôi triệu năm tuổi", "towering limestone spires"… trên điểm đến không phải karst).
+   - Gỡ đoạn chính trị nằm trong thân bài.
+   - Chuẩn hóa slug thành **short keyword slug**: ASCII không dấu, ≤ 7 từ, không năm, không mã `038`/`8211`, không từ cụt (`…-nhat-the` → `…-nhat-the-gioi`), cắt sau cụm "nhất thế giới / Việt Nam / châu Á". Slug đã chuẩn giữ nguyên để không đổi URL vô ích.
+
+3. **Rà soát bài cũ:** `python -m modules.content_quality_gate.audit_cli --site <id|all>` (chỉ báo cáo) → `--apply` (bài rác chuyển **draft**, không xóa cứng; đổi slug dùng `_wp_old_slug` để 301).
+
+4. **Template sinh bài:** cấm hard-code đặc điểm địa lý/lịch sử của một địa danh cụ thể vào template dùng chung. Mô tả phải dùng biến `{dest}` hoặc dữ liệu riêng của địa danh.
+
+5. **Kiểm thử:** mọi thay đổi luật gate phải giữ `python -m pytest tests/test_content_quality_gate.py` pass.
+
+---
+
+*Quy tắc này có hiệu lực từ tháng 08/2026, được cập nhật bổ sung tháng 09/2026 và 10/2026 (Quality Gate), và là cấu hình mặc định bắt buộc cho toàn bộ repo, module sinh bài và tác tử.*
 

@@ -23,7 +23,8 @@ class Auto_SEO_GEO_Master_Suite {
         add_action('init', array($this, 'handle_news_sitemap'));
         add_action('post_updated', array($this, 'track_slug_changes'), 10, 3);
         add_action('template_redirect', array($this, 'handle_automatic_slug_301_redirect'), 1);
-        add_action('template_redirect', array($this, 'auto_heal_404_fuzzy_redirect'));
+        // Disable fuzzy 404 guessing to avoid SEO Soft-404 penalties on drafted/removed content
+        add_filter('do_redirect_guess_404_permalink', '__return_false');
         add_action('wp_head', array($this, 'render_head_seo_tags'), 1);
         add_action('wp_head', array($this, 'render_self_canonical'), 2);
         add_action('wp_head', array($this, 'render_site_favicon'), 2);
@@ -216,40 +217,11 @@ class Auto_SEO_GEO_Master_Suite {
     }
 
     /**
-     * Auto 404 Healer with Fuzzy 301 Redirect
+     * Auto 404 Healer (Disabled to prevent SEO Soft-404 penalties and cross-topic redirects)
      */
     public function auto_heal_404_fuzzy_redirect() {
-        if (!is_404()) {
-            return;
-        }
-        $req_uri = trim($_SERVER['REQUEST_URI'] ?? '', '/');
-        $slug = sanitize_title(basename(parse_url($req_uri, PHP_URL_PATH)));
-        if (empty($slug)) {
-            return;
-        }
-
-        $all_posts = get_posts(array(
-            'numberposts' => 100,
-            'post_status' => 'publish',
-            'fields' => 'ids'
-        ));
-
-        $best_id = null;
-        $highest_percent = 0;
-
-        foreach ($all_posts as $pid) {
-            $post_slug = get_post_field('post_name', $pid);
-            similar_text($slug, $post_slug, $percent);
-            if ($percent > $highest_percent) {
-                $highest_percent = $percent;
-                $best_id = $pid;
-            }
-        }
-
-        if ($best_id && $highest_percent >= 35) {
-            wp_redirect(get_permalink($best_id), 301);
-            exit;
-        }
+        // Disabled: fuzzy character matching generates soft 404 penalties on search engines.
+        return;
     }
 
     

@@ -124,8 +124,12 @@ def audit_site(site: Dict[str, Any], apply: bool, scope=frozenset({"junk", "repa
                       if (k == "status" and scope & {"junk", "spin"}) or (k == "content" and "repair" in scope)
                       or (k == "slug" and "slug" in scope)}
             if update and (ids is None or p["id"] in ids):
-                r = s.post(f"{url}/wp-json/wp/v2/posts/{p['id']}", json=update, timeout=60)
-                report.setdefault("applied", []).append({"id": p["id"], "fields": list(update), "http": r.status_code})
+                try:
+                    r = s.post(f"{url}/wp-json/wp/v2/posts/{p['id']}", json=update, timeout=90)
+                    report.setdefault("applied", []).append({"id": p["id"], "fields": list(update), "http": r.status_code})
+                except Exception as exc:
+                    print(f"  [WARN] Failed to update post {p['id']}: {exc}")
+                    report.setdefault("applied", []).append({"id": p["id"], "fields": list(update), "http": 0, "error": str(exc)})
     applied = report.get("applied", [])
     print(f"[{url}] total={report['total']} junk={len(report['junk'])} templated_spin={len(report['templated_spin'])} "
           f"needs_fix={len(report['needs_fix'])} repaired={len(report['repaired'])} "

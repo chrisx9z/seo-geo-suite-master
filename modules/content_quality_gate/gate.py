@@ -116,11 +116,15 @@ SLUG_FILLER_PREFIX = re.compile(
 )
 SLUG_FILLER_SUFFIX = re.compile(
     r"(-chi-tiet-nhat-hien-nay|-chi-tiet-nhat|-hien-nay|-moi-nhat|-tron-goi|-tu-a-(toi|den)-z|-a-z|"
-    r"-cuc-chi-tiet|-khong-the-bo-qua|-phai-thuong-thuc|-ly-tuong-nhat|-tu-tuc|-20\d\d)$"
+    r"-cuc-chi-tiet|-khong-the-bo-qua|-phai-thuong-thuc|-ly-tuong-nhat|-tu-tuc|"
+    r"-chuan-vi|-tru-danh|-mon-ngon|-an-la-ghien|-sieu-ngon|-hap-dan|-20\d\d)$"
 )
 SLUG_LOW_VALUE = {"chi", "tiet", "sieu", "va", "cua", "cac", "nhung",
                   "dot", "pha", "complete", "ultimate", "guide", "vs"}
-DANGLING_TAIL = {"the", "va", "cua", "cho", "cac", "nhung", "mot", "o", "tai", "voi", "trong", "khi", "nao", "la"}
+DANGLING_TAIL = {
+    "the", "va", "cua", "cho", "cac", "nhung", "mot", "o", "tai", "voi", "trong", "khi", "nao", "la",
+    "to", "in", "for", "and", "of", "with", "on", "at", "from", "by", "a", "an", "or", "is",
+}
 
 
 # --------------------------------------------------------------------------- #
@@ -177,8 +181,6 @@ def normalize_slug(slug: str, keyword: str = "") -> str:
         words = [w for w in words if w not in SLUG_LOW_VALUE] or words
     while len(words) > MAX_SLUG_WORDS and (words[0].isdigit() or words[0] in SLUG_LEAD_FILLER):
         words.pop(0)
-    if len(words) > MAX_SLUG_WORDS:
-        words = [w for w in words if w not in SLUG_LEAD_FILLER] or words
     words = words[:MAX_SLUG_WORDS]
     while words and (words[-1] in DANGLING_TAIL or words[-1].isdigit()):
         words.pop()

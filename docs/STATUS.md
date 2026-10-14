@@ -217,12 +217,15 @@ Updated at: 2026-10-15 03:08:00+07:00
   - Gỡ bỏ hoàn toàn script ngầm `random-post-publish-time` trên toàn bộ 6 site, dọn sạch cron job `rppt_final_cron_hook`.
   - Khắc phục các dị thường ngày trong DB (`post_modified < post_date`).
   - Sửa lỗi theme Newspaper gán nhầm CSS class `updated` cho ngày đăng (`get_the_time`).
-- **Kiến Trúc Triển Khai (`plugins/date-schema-sitemap-sync.php` & `auto-seo-geo-master-suite.php`)**:
-  - Triển khai **Must-Use Plugin (`wp-content/mu-plugins/date-schema-sitemap-sync.php`)** trên toàn bộ 6 site trong mạng lưới.
-  - Chuẩn hóa Single Source of Truth lấy trực tiếp từ `post_date` và `post_modified` trong Database với định dạng ISO 8601 kèm múi giờ (`+07:00`).
-  - Tích hợp bộ lọc Output Buffer tự động chuẩn hóa thẻ `<head>` meta tags, deduplicate và đổi class `entry-date updated` thành `entry-date published` khớp với ngày xuất bản.
-  - Tắt sitemap cache tĩnh quá hạn (`rank_math/sitemap/enable_caching -> false`) và xóa toàn bộ file XML cache cũ trong `uploads/rank-math/`.
-  - Bổ sung `<lastmod>` chuẩn ISO 8601 vào Google News XML sitemap của `auto-seo-geo-master-suite`.
+- **Kiến Trúc Triển Khai (`plugins/date-schema-sitemap-sync.php` & `auto-seo-geo-master-suite.php` v5.3.0)**:
+  - Tích hợp mặc định Single Source of Truth Date, Schema & Sitemap Engine trực tiếp vào plugin lõi `Auto_SEO_GEO_Master_Suite` v5.3.0 và Must-Use Plugin (`wp-content/mu-plugins/date-schema-sitemap-sync.php`).
+  - **Tự động phòng chống và tự sửa (Self-Healing Anomaly Guard)**:
+    - Hook `wp_insert_post_data`: Khi lưu bài viết, nếu phát hiện `post_modified < post_date`, tự động ép `post_modified = post_date` ngay lập tức trước khi ghi vào Database.
+    - Rogue Plugin & Cron Watchdog: Tự động phát hiện và vô hiệu hóa các plugin/script fake ngày (`random-post-publish-time`) và xóa cron ngầm `rppt_final_cron_hook`.
+    - Auto Mu-Plugin Deployer: Tự động cài đặt và duy trì `date-schema-sitemap-sync.php` trong thư mục `wp-content/mu-plugins/`.
+    - Output Buffer Date & Microdata Normalizer: Tự động sửa lỗi theme Newspaper (`entry-date updated` -> `entry-date published`) và deduplicate thẻ `<head>` meta tags.
+  - **Module Python Tự Động Hóa (`modules/auto_healer/datetime_schema_healer.py`)**:
+    - Cung cấp `DateTimeSchemaHealer` phục vụ audit 4 chiều (UI, Meta, Schema, Sitemap), tự động phát hiện lệch pha ngày giờ và sinh mã SQL sửa chữa DB.
 - **Kết Quả Kiểm Thử Thực Tế Mạng Lưới (Live Audit 6/6 Sites)**:
   - `Site #1`: Meta [PASS], Schema [PASS], Sitemap [PASS], UI Bug [FIXED]
   - `Site #2`: Meta [PASS], Schema [PASS], Sitemap [PASS], UI Bug [FIXED]
@@ -230,11 +233,11 @@ Updated at: 2026-10-15 03:08:00+07:00
   - `Site #4`: Meta [PASS], Schema [PASS], Sitemap [PASS], UI Bug [FIXED]
   - `Site #5`: Meta [PASS], Schema [PASS], Sitemap [PASS], UI Bug [FIXED]
   - `Site #6`: Meta [PASS], Schema [PASS], Sitemap [PASS], UI Bug [FIXED]
-  - Bảo mật & Unit Tests: `privacy_guard` OK, 28/28 pytest PASS (100%).
+  - Bảo mật & Unit Tests: `privacy_guard` OK, 36/36 pytest PASS (100%).
 
 ---
 
-PROJECT STATUS: PHASE 17 NETWORK-WIDE DATE/TIME & SCHEMA SYNCHRONIZATION VERIFIED — 100% PASS
+PROJECT STATUS: PHASE 17 NETWORK-WIDE DATE/TIME & SCHEMA SYNCHRONIZATION AND AUTO-HEALER DEFAULTED — 100% PASS
 
 
 

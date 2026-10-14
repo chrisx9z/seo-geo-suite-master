@@ -3,7 +3,7 @@
  * Plugin Name: Auto SEO GEO Master Suite
  * Plugin URI: https://github.com/vibe-code/auto-seo-geo-suite
  * Description: Universal Multi-site SEO GEO Framework: PC 1170px Centered Header, Ultra-Modern Mobile Magazine Layout (Story Pills & Swipe Carousels), Zero-Overlap Multilingual Switcher, Dynamic 3-Language SEO Meta & Hreflang Engine, Auto Featured Image Fallback, Anti-AI Cliché Filter, and Dual AVIF/WebP Picture Wrapper.
- * Version: 5.2.0
+ * Version: 5.3.0
  * Author: Master SEO GEO Architecture Suite
  * Text Domain: auto-seo-geo
  * Domain Path: /languages
@@ -11,7 +11,7 @@
 if (!defined('ABSPATH')) exit;
 
 class Auto_SEO_GEO_Master_Suite {
-    private static $version = '5.2.0';
+    private static $version = '5.3.0';
     private static $site_config = null;
 
     public function __construct() {
@@ -43,6 +43,18 @@ class Auto_SEO_GEO_Master_Suite {
         add_filter('post_thumbnail_html', array($this, 'fallback_post_thumbnail_html'), 20, 5);
         add_filter('the_content', array($this, 'filter_anti_ai_content_cliches'), 15);
         add_filter('the_content', array($this, 'auto_wrap_dual_avif_webp_picture'), 25);
+
+        // v5.3.0 Enhancements: Single Source of Truth Date, Schema & Sitemap Engine, Auto-Healing Anomaly Guard
+        add_filter('wp_insert_post_data', array($this, 'auto_heal_post_date_anomalies'), 10, 2);
+        add_filter('rank_math/opengraph/facebook/article_published_time', array($this, 'filter_og_published_time'), 9999);
+        add_filter('rank_math/opengraph/facebook/article_modified_time', array($this, 'filter_og_modified_time'), 9999);
+        add_filter('rank_math/snippet/rich_snippet_article_entity', array($this, 'filter_schema_article_entity'), 9999);
+        add_filter('rank_math/json_ld', array($this, 'filter_all_json_ld_schemas'), 9999, 2);
+        add_filter('rank_math/sitemap/enable_caching', '__return_false', 9999);
+        add_filter('rank_math/sitemap/entry', array($this, 'filter_sitemap_entry'), 9999, 3);
+        add_action('template_redirect', array($this, 'start_date_sync_buffer'), 1);
+        add_action('admin_init', array($this, 'run_date_integrity_watchdog'));
+        add_action('init', array($this, 'ensure_mu_plugin_installed'));
 
         add_action('wp_head', array($this, 'output_master_css'), 9999);
         add_action('wp_footer', array($this, 'output_master_scripts'), 9999);
@@ -1056,6 +1068,197 @@ class Auto_SEO_GEO_Master_Suite {
             $avif_url = str_replace('.webp', '.avif', $webp_url);
             return '<picture><source srcset="' . esc_url($avif_url) . '" type="image/avif"><source srcset="' . esc_url($webp_url) . '" type="image/webp">' . $img_tag . '</picture>';
         }, $content);
+    }
+
+    /**
+     * v5.3.0: Single Source of Truth Date Resolver
+     */
+    public static function get_canonical_dates($post = null) {
+        $p = get_post($post);
+        if (!$p) return null;
+
+        $pub_c = get_post_time('c', false, $p);
+        $mod_c = get_post_modified_time('c', false, $p);
+
+        if (strtotime($mod_c) < strtotime($pub_c)) {
+            $mod_c = $pub_c;
+        }
+
+        return array(
+            'published' => $pub_c,
+            'modified'  => $mod_c,
+            'published_ts' => strtotime($pub_c),
+            'modified_ts'  => strtotime($mod_c),
+            'has_been_modified' => (strtotime($mod_c) > (strtotime($pub_c) + 300))
+        );
+    }
+
+    /**
+     * v5.3.0: Auto-heal post date anomalies on insert/update
+     * Guarantees post_modified is never older than post_date
+     */
+    public function auto_heal_post_date_anomalies($data, $postarr) {
+        if (!empty($data['post_date']) && !empty($data['post_modified'])) {
+            $ts_date = strtotime($data['post_date']);
+            $ts_mod  = strtotime($data['post_modified']);
+            if ($ts_mod < $ts_date) {
+                $data['post_modified'] = $data['post_date'];
+                if (!empty($data['post_date_gmt'])) {
+                    $data['post_modified_gmt'] = $data['post_date_gmt'];
+                }
+            }
+        }
+        return $data;
+    }
+
+    public function filter_og_published_time($time) {
+        $dates = self::get_canonical_dates();
+        return $dates ? $dates['published'] : $time;
+    }
+
+    public function filter_og_modified_time($time) {
+        $dates = self::get_canonical_dates();
+        return $dates ? $dates['modified'] : $time;
+    }
+
+    public function filter_schema_article_entity($entity) {
+        $dates = self::get_canonical_dates();
+        if ($dates && is_array($entity)) {
+            $entity['datePublished'] = $dates['published'];
+            $entity['dateModified']  = $dates['modified'];
+        }
+        return $entity;
+    }
+
+    public function filter_all_json_ld_schemas($data, $context) {
+        if (!is_singular('post')) {
+            return $data;
+        }
+        $dates = self::get_canonical_dates();
+        if (!$dates || !is_array($data)) {
+            return $data;
+        }
+
+        foreach ($data as $key => &$node) {
+            if (is_array($node)) {
+                if (isset($node['datePublished'])) {
+                    $node['datePublished'] = $dates['published'];
+                }
+                if (isset($node['dateModified'])) {
+                    $node['dateModified'] = $dates['modified'];
+                }
+            }
+        }
+        return $data;
+    }
+
+    public function filter_sitemap_entry($url, $type, $object) {
+        if ($type === 'post' && is_object($object) && isset($object->ID)) {
+            $dates = self::get_canonical_dates($object);
+            if ($dates) {
+                $url['mod'] = $dates['modified'];
+            }
+        }
+        return $url;
+    }
+
+    public function start_date_sync_buffer() {
+        if (!is_singular('post') || is_admin() || wp_doing_ajax() || (defined('REST_REQUEST') && REST_REQUEST)) {
+            return;
+        }
+        ob_start(array($this, 'process_html_date_sync'));
+    }
+
+    public function process_html_date_sync($html) {
+        if (empty($html) || !is_singular('post')) {
+            return $html;
+        }
+        $dates = self::get_canonical_dates();
+        if (!$dates) {
+            return $html;
+        }
+
+        $pub = esc_attr($dates['published']);
+        $mod = esc_attr($dates['modified']);
+
+        // 1. DEDUPLICATE / NORMALIZE HTML META TAGS IN <head>
+        $html = preg_replace('/<meta\s+property=["\']article:published_time["\'][^>]*>/i', '', $html);
+        $html = preg_replace('/<meta\s+property=["\']article:modified_time["\'][^>]*>/i', '', $html);
+        $html = preg_replace('/<meta\s+property=["\']og:updated_time["\'][^>]*>/i', '', $html);
+
+        $meta_tags  = "\n<!-- Single Source of Truth Date Synchronization -->\n";
+        $meta_tags .= '<meta property="article:published_time" content="' . $pub . '" />' . "\n";
+        $meta_tags .= '<meta property="article:modified_time" content="' . $mod . '" />' . "\n";
+        $meta_tags .= '<meta property="og:updated_time" content="' . $mod . '" />' . "\n";
+
+        if (stripos($html, '</head>') !== false) {
+            $html = preg_replace('/<\/head>/i', $meta_tags . '</head>', $html, 1);
+        }
+
+        // 2. FIX UI MICRODATA / THEME CLASS BUGS
+        // Fix Newspaper theme: class="entry-date updated td-module-date" -> class="entry-date published td-module-date"
+        $html = preg_replace(
+            '/(<time[^>]*class=["\'][^"\']*\bentry-date\b)\s+updated(\b[^"\']*["\'])/i',
+            '$1 published$2',
+            $html
+        );
+
+        // Ensure datetime attribute on entry-date published matches $dates['published']
+        $html = preg_replace(
+            '/(<time[^>]*class=["\'][^"\']*\bentry-date\b[^"\']*["\'][^>]*)\bdatetime=["\'][^"\']+["\']/i',
+            '$1datetime="' . $pub . '"',
+            $html
+        );
+
+        return $html;
+    }
+
+    /**
+     * Watchdog to detect and neutralize rogue date-faking plugins/crons
+     */
+    public function run_date_integrity_watchdog() {
+        if (!current_user_can('manage_options')) return;
+
+        // Check rogue plugins
+        $rogue_plugins = array('random-post-publish-time/random-post-publish-time.php', 'random-post-publish-time.php');
+        require_once ABSPATH . 'wp-admin/includes/plugin.php';
+        foreach ($rogue_plugins as $r) {
+            if (is_plugin_active($r)) {
+                deactivate_plugins($r, true);
+            }
+        }
+
+        // Check rogue cron
+        if (wp_next_scheduled('rppt_final_cron_hook')) {
+            wp_clear_scheduled_hook('rppt_final_cron_hook');
+        }
+
+        // Clear stale Rank Math sitemap files if any exist
+        $upload_dir = wp_upload_dir();
+        $rm_cache_dir = $upload_dir['basedir'] . '/rank-math';
+        if (is_dir($rm_cache_dir)) {
+            $files = glob($rm_cache_dir . '/*.xml');
+            if (!empty($files)) {
+                foreach ($files as $f) {
+                    if (is_file($f)) @unlink($f);
+                }
+            }
+        }
+    }
+
+    /**
+     * Self-installs date-schema-sitemap-sync.php into mu-plugins
+     */
+    public function ensure_mu_plugin_installed() {
+        $mu_dir = WPMU_PLUGIN_DIR;
+        if (!is_dir($mu_dir)) {
+            @mkdir($mu_dir, 0755, true);
+        }
+        $dest = $mu_dir . '/date-schema-sitemap-sync.php';
+        $src  = WP_PLUGIN_DIR . '/date-schema-sitemap-sync.php';
+        if (!file_exists($dest) && file_exists($src)) {
+            @copy($src, $dest);
+        }
     }
 }
 

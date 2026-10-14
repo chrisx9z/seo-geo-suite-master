@@ -11,6 +11,9 @@ if (!defined('ABSPATH')) exit;
 class Single_Source_Date_Sync {
 
     public function __construct() {
+        // 0. Auto-Heal Post Date Anomalies on Insert / Update
+        add_filter('wp_insert_post_data', array($this, 'auto_heal_post_date_anomalies'), 10, 2);
+
         // 1. Rank Math OpenGraph Facebook / Twitter Meta
         add_filter('rank_math/opengraph/facebook/article_published_time', array($this, 'filter_og_published_time'), 9999);
         add_filter('rank_math/opengraph/facebook/article_modified_time', array($this, 'filter_og_modified_time'), 9999);
@@ -25,6 +28,43 @@ class Single_Source_Date_Sync {
 
         // 4. HTML Meta & UI Normalization via Output Buffer
         add_action('template_redirect', array($this, 'start_output_buffer'), 1);
+
+        // 5. Watchdog to eliminate rogue plugins and cron hooks
+        add_action('admin_init', array($this, 'run_watchdog'));
+    }
+
+    /**
+     * Auto-heal post date anomalies on insert/update
+     */
+    public function auto_heal_post_date_anomalies($data, $postarr) {
+        if (!empty($data['post_date']) && !empty($data['post_modified'])) {
+            $ts_date = strtotime($data['post_date']);
+            $ts_mod  = strtotime($data['post_modified']);
+            if ($ts_mod < $ts_date) {
+                $data['post_modified'] = $data['post_date'];
+                if (!empty($data['post_date_gmt'])) {
+                    $data['post_modified_gmt'] = $data['post_date_gmt'];
+                }
+            }
+        }
+        return $data;
+    }
+
+    /**
+     * Watchdog to remove rogue plugins and cron hooks
+     */
+    public function run_watchdog() {
+        if (!current_user_can('manage_options')) return;
+        $rogue_plugins = array('random-post-publish-time/random-post-publish-time.php', 'random-post-publish-time.php');
+        require_once ABSPATH . 'wp-admin/includes/plugin.php';
+        foreach ($rogue_plugins as $r) {
+            if (is_plugin_active($r)) {
+                deactivate_plugins($r, true);
+            }
+        }
+        if (wp_next_scheduled('rppt_final_cron_hook')) {
+            wp_clear_scheduled_hook('rppt_final_cron_hook');
+        }
     }
 
     /**

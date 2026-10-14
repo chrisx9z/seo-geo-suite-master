@@ -1,19 +1,21 @@
 # XianxiaBlender — Project Status
 
-Updated at: 2026-09-25 21:05:00+07:00
+Updated at: 2026-10-15 03:08:00+07:00
 
 ## 1. CURRENT PHASE
-**PHASE 12C COMPLETE — 3D TACTICAL FORMATION VISUALIZER & CHAPTER 2 VERIFICATION**  
-**PHASE 12C VISUAL CUES: 3D INNER ZONE JADE RING, OUTER ICE RING, AMBER UNIT RING (PASS)**  
-**PHASE 12B TEST SUITE: 6/6 GROUPS PASSED (100%)**  
-**PHASE 12A TEST SUITE: 6/6 GROUPS PASSED (100%)**  
-**CONTINUOUS QA GATE: 12/12 STEPS PASSED (100% TRONG 24.42s)**  
-**CLEAN-ROOM SANDBOXED RELEASE: PASSED (3.43s)**  
+**PHASE 16 COMPLETE — 3D STARLIGHT OCTAGRAM ARRAY, CORE DISCIPLE MARTIAL QI HALOS & SPIRITUAL ARRAY EMPOWERMENT (PHÁ GIỚI GIẢ)**  
+**3D/2D TACTICAL GRAPHICS: 3D STARLIGHT OCTAGRAM RING, CORE DISCIPLE CLASS HALOS & SPIRES, BOSS INNER BLOOD-QI SEAL, 3-RAY CLEAVE THREAT FAN (PASS)**  
+**SPIRITUAL ARRAY EMPOWERMENT & 4TH DOCTRINE: [✨ TỤ KHÍ] ([E]), THẤT TINH BẮC ĐẨU TRẬN ([X]), LINH PHÙ HỘ TRẬN ([V]) (PASS)**  
+**SMART TACTICAL ASSIST & FORMATION SYNERGY: [⚡ TRỢ TRẬN] ([Z]), LƯỠNG NGHI / TAM TÀI / TỨ TƯỢNG TRẬN (PASS)**  
+**SWORD QI CALLIGRAPHY SHADER V2, 3D IMPACT QI PILLAR & HEAVENLY SEAL SHOCKWAVE (PASS)**  
+**PHASE 12B & 12A TEST SUITES: 6/6 GROUPS PASSED (100%)**  
+**GAME-FEEL & TACTICAL READABILITY SUITES: 7/7 GROUPS PASSED (100%)**  
+**CONTINUOUS QA GATE: 12/12 STEPS PASSED (100%)**  
+**CLEAN-ROOM SANDBOXED RELEASE: PASSED**  
 **KARMA ENGINE SUITE: 23/23 GROUPS PASSED (100%)**  
-**CHAPTER 1 PROGRESSION SUITE: 6/6 GROUPS PASSED (100%)**  
 **RUNTIME SYSTEM: GODOT 4.7.2 (FORWARD+ / VULKAN) STANDALONE WINDOWS DISTRIBUTION**  
 **BENCHMARK ENVIRONMENT: NVIDIA GeForce RTX 5070 Ti, Intel Core i9-14900K, Vulkan 1.4.351**  
-**PROJECT STATUS: PHASE 12C COMPLETE — ZERO REGRESSION, READY FOR RELEASE**  
+**PROJECT STATUS: PHASE 16 COMPLETE — ZERO REGRESSION, READY FOR RELEASE**  
 
 ---
 
@@ -60,8 +62,8 @@ Updated at: 2026-09-25 21:05:00+07:00
 4. **Phase 10C Campaign Progression Suite (`test_phase_10c_campaign_progression.gd`)** — PASS (Exit Code 0, 6/6 Groups)
 5. **Phase 10B First-Playable Suite (`test_phase_10b_first_playable.gd`)** — PASS (Exit Code 0, 6/6 Groups)
 6. **Phase 10A Vertical Slice Suite (`test_phase_10a_vertical_slice.gd`)** — PASS (Exit Code 0, 6/6 Groups)
-7. **Continuous QA Gate Pipeline (`tools/run_qa_gate.ps1`)** — PASS (12/12 Steps in 37.44s)
-8. **Clean-Room Sandboxed Execution (`tools/test_cleanroom_release.ps1`)** — PASS (All checks in 4.66s)
+7. **Continuous QA Gate Pipeline (`tools/run_qa_gate.ps1`)** — PASS (12/12 Steps)
+8. **Clean-Room Sandboxed Execution (`tools/test_cleanroom_release.ps1`)** — PASS (All checks)
 9. **Release Packaging & Manifests (`tools/build_release.ps1 -VerifyOnly`)** — PASS (9 artifacts synchronized, 0 errors)
 10. **Smoke Test (`Run_Smoke_Test.bat`)** — PASS (Exit Code 0)
 11. **Process Hygiene Audit (`Get-Process *Godot*`)** — CLEAN (0 orphan processes)
@@ -120,7 +122,7 @@ Updated at: 2026-09-25 21:05:00+07:00
 - **Nâng Cấp Thư Viện Hệ Thống & Python**:
   - Cập nhật `numpy` (2.5.3) và `tqdm` (4.70.1).
 - **Kiểm Thử & Đóng Gói Toàn Diện**:
-  - QA Gate: **12/12 Steps PASSED (100% trong 27.04s)**.
+  - QA Gate: **12/12 Steps PASSED (100%)**.
   - Runtime Slice & Performance QA: **100% PASS (FPS mượt mà 140+ FPS, bộ nhớ 85MB < 500MB)**.
   - Karma Engine Suite: **23/23 Groups PASS**.
   - Chapter 2 Slice Regression: **6/6 Groups PASS**.
@@ -144,12 +146,98 @@ Updated at: 2026-09-25 21:05:00+07:00
   - Group 4: Trình diễn Bảng Tổng Kết Hồi 2 & Tổng hợp chỉ số (PASS).
   - Group 5: Chu kỳ Lưu/Tải Save Schema v3 & Bất biến kỷ lục đơn điệu (PASS).
   - Group 6: Điều hướng màn hình kết quả, nút Hồi 2 & Phòng chống hồi quy (PASS).
-- **Phòng Ngừa Rò Rỉ & Vệ Sinh Quy Trình**:
-  - Dọn dẹp con `remove_child(c)` trước khi `c.queue_free()` loại bỏ hoàn toàn nguy cơ nhân đôi thẻ kết quả khi vẽ lại đồng bộ.
-  - 0 tiến trình mồ côi Godot sau toàn bộ quy trình kiểm thử.
 
 ---
 
-PROJECT STATUS: PHASE 12B CHAPTER 2 FULL CAMPAIGN & MASTERY VERIFIED — 100% PASS
+## 8. NÂNG CẤP ĐỒ HỌA & TRẢI NGHIỆM CHƠI CHO PHÁ GIỚI GIẢ (PHASE 13 — 100% PASS)
+- **Shader Kiếm Khí Thư Pháp Đa Tầng (`game/assets/shaders/ribbon_trim.gdshader`)**:
+  - Tích hợp 2 sóng linh khí đối lưu (`qi_wave_1`, `qi_wave_2`) chạy dọc quỹ đạo đao quang, kết hợp hiệu ứng tách sợi lông bút ở đuôi kiếm (`tail_bristle`), hào quang viền lục ngọc (`jade_tint`) và điểm tụ sáng mũi kiếm (`tip_flash`).
+- **Hiệu Ứng Chấn Kích 3D Đa Tầng & Linh Tuyết Môi Trường (`game/scripts/GameFeelController.gd`)**:
+  - Mở rộng `ImpactAccentRoot` tại `(1.7500, 0.2000, -0.4500)` với vòng sóng xung kích ngoại vi (`ImpactOuterShockwave`) và cột sáng linh khí bốc cao (`ImpactQiPillar`) khi trảm kích tại Frame 5.
+  - Bổ sung hệ thống `AmbientQiMotes` (`MultiMeshInstance3D` gồm 36 hạt linh tuyết & tiên khí) trôi lơ lửng trên sa trường, tự động tạm dừng khi bật chế độ `Reduce Motion`.
+  - Nâng cấp bộ tổng hợp âm thanh PCM 16-bit với hòa âm chuông ngọc / cổ cầm (`wav_hover` + bậc hòa âm 2 & 3).
+- **Bảng Màu Vật Liệu & Viền Sáng Tiên Khí (`game/scripts/MaterialPaletteController.gd`)**:
+  - Tăng cường `rim` cho Boss (`0.50`), Đệ tử (`0.36`), mặt tuyết/mái ngói (`0.18`), và bổ sung phát xạ ánh kim nhẹ trên thần binh (`MAT_Boss_Weapon`, `MAT_Boss_Gold`, `MAT_Soldier_Steel`, `MAT_Soldier_Gold`).
+- **Trải Nghiệm Điều Khiển Chiến Thuật (`FormationController.gd` & `BattleHUD.gd`)**:
+  - Thêm vòng chỉ thị 3D `UnitHoverRing` màu lam băng dưới chân đệ tử khi di chuột qua, kèm hiệu ứng nhịp thở trên cả vòng chọn và vòng trỏ.
+  - Hiển thị danh xưng binh chủng (*Tiên Phong Thiết Giáp*, *Thanh Vân Kiếm Khách*, *Huyền Thiết Thương Binh*, *Thần Tiễn Cung Thủ*) và cự ly trực tiếp trên HUD ngay khi trỏ chuột hoặc chọn quân.
+  - Bổ sung nút `[⇄ Đổi Quân]` (`BtnCycleUnit`) trên thanh công cụ đội hình, bố trí lại vị trí cao độ (`offset_top = -122..-86`) đảm bảo 0% chồng lấp với bảng phụ đề.
+
+---
+
+## 9. ĐỒ HỌA TRẬN PHÁP LIÊN KẾT & PHÁT TRIỂN LỐI CHƠI HỢP KÍCH (PHASE 14 — 100% PASS)
+- **Mạch Trận Pháp Hợp Kích 2D/3D & Đường Quỹ Đạo Bố Trận (`BattleHUD.gd`)**:
+  - Vẽ trực tiếp các mạch linh khí nối kết toàn bộ đệ tử đứng trong Vùng Lõi ($R \le 3.5\text{m}$) với nhau và với tâm trảm kích `(1.7500, 0.2000, -0.4500)`, tự động chuyển sang sắc kim hoàng rực rỡ khi kích hoạt trận pháp đa hệ phái ($\ge 2$ binh chủng).
+  - Hiển thị đường vector quỹ đạo điều quân từ vị trí gốc tới vị trí dự kiến khi đang chỉnh đội hình (`is_formation_dirty()`), giúp người chơi quan sát trực quan biên độ di chuyển trước khi bấm Xác Nhận.
+- **Hào Quang Ma Uy 3D & Kim Cang Hộ Thể 3D (`FormationController.gd`)**:
+  - Bổ sung vòng hào quang `BossAuraRing` đỏ chu sa (`inner_radius=0.88m`, `outer_radius=1.04m`) co giãn nhịp nhàng dưới chân Thủ Lĩnh `CHAR_Boss`.
+  - Bổ sung pháp tướng 3D `ElixirShield_<Unit>` (vòng kim quang + trụ sáng bảo hộ bán trong suốt) bao quanh đệ tử ngay khi ban phát `Hồi Xuân Đan` (`[H]`).
+- **Lối Chơi Trợ Trận Thông Minh (`[⚡ Trợ Trận]` / Phím `[Z]`) & Thưởng Trận Pháp Hợp Kích**:
+  - Nút `[⚡ Trợ Trận]` (`BtnAutoAssist`) và phím tắt `[Z]` tự động chọn đệ tử ngoài vùng lõi và điều động vào tọa độ chiến thuật hợp lệ bên trong $R \le 3.5\text{m}$.
+  - Hệ thống `get_core_formation_synergy()` tự động nhận diện số hệ phái trong Vùng Lõi (*Độc Hành Trận*, *Lưỡng Nghi Kiếm Trận*, *Tam Tài Hộ Sơn Trận*, *Tứ Tượng Tinh Tú Đại Trận*) và ban thưởng thêm Linh Lực tu luyện (`+30..+80 LL`) cùng Linh Thạch (`+40..+110 LT`) khi chiến thắng mà không làm thay đổi công thức điểm canonical.
+
+---
+
+## 10. LA BÀN BÁT QUÁI 3D, LUỒNG TRẢM KÍCH MA QUÂN & BÀY TRẬN CHIẾN THUẬT (PHASE 15 — 100% PASS)
+- **La Bàn Bát Quái 3D & Đài Cộng Hưởng Tâm Trận (`FormationController.gd`)**:
+  - Bổ sung `ImpactCompassRing` (bát giác xoay quanh tâm điểm $R=1.2\text{m}$) và `CoreResonanceBeacon` (trụ liên hoa linh khí tại `(1.7500, 0.0400, -0.4500)`), tự động biến đổi màu sắc theo bậc Trận Pháp Hợp Kích (từ Lam Ngọc sang Hoàng Kim Tinh Tú khi đủ 4 hệ phái).
+  - Bảo vệ tuyệt đối vật liệu trong suốt của các node VFX/Tactical (`ImpactQiPillar`, `CoreResonanceBeacon`) trong `MaterialPaletteController._match_by_node_name()`.
+  - Nâng cấp phát sáng kim bảo ấm áp cho chi tiết vàng cổ đình (`MAT_Env_Gold`).
+- **Luồng Trảm Kích Ma Quân 2D/3D (`BattleHUD.gd`)**:
+  - Vẽ trực tiếp vector hướng chém từ `CHAR_Boss` `(5.5, 0.20, 0.5)` tới tâm điểm `(1.7500, 0.2000, -0.4500)` kèm mũi tên cảnh báo chu sa và vòng bát quái 2D đồng bộ với la bàn 3D.
+- **Lối Chơi Bày Trận Chiến Thuật (`[☯ Bày Trận]` / Phím `[X]`) & Linh Phù Hộ Trận (`[V]`)**:
+  - Nút `[☯ Bày Trận]` (`BtnPresetDoctrine`) và phím `[X]` gọi `cycle_tactical_formation_preset()`, luân chuyển 3 thế trận mẫu (*Chính Quy Phá Trận*, *Tứ Tượng Tinh Tú Trận 4 Binh Chủng*, *Thiết Bích Hộ Sơn Trận*) tự động dàn quân hợp lệ theo ngưỡng từng ải.
+  - Phím `[V]` (`apply_tactical_talisman_blessing()`) khai mở *Bùa Truyền Âm* ban chúc phúc *Thiên Đạo Hộ Trận* (`+35 Linh Lực`, `+15 Đức Độ`).
+
+---
+
+## 11. ĐẠI TRẬN TINH TÚ BÁT GIÁC 3D, HÀO QUANG ĐỆ TỬ VÙNG LÕI & TỤ KHÍ HỘ TRẬN (PHASE 16 — 100% PASS)
+- **Đại Trận Tinh Tú Bát Giác 3D & Huyết Ấn Ma Quân (`FormationController.gd`)**:
+  - Bổ sung vòng pháp trận bát giác ngoại vi `TacticalStarlightOctagram` ($R = 3.38\text{m}$, 8 cạnh) xoay ngược chiều kim đồng hồ bao quanh Vùng Lõi, đồng bộ màu sắc với cấp độ Trận Pháp Hợp Kích và tỏa kim quang rực rỡ khi kích hoạt *Tụ Khí Hộ Trận*.
+  - Bổ sung pháp ấn nội tâm `BossAuraInnerSeal` (bát giác xoay ngược chiều dưới chân `CHAR_Boss`), kết hợp với `BossAuraRing` tạo thành Huyết Ấn Ma Quân 2 tầng.
+- **Hào Quang Hệ Phái 3D Dưới Chân Đệ Tử Vùng Lõi (`CoreUnitHalo_<unit_name>`)**:
+  - Tự động kích hoạt hào quang bát giác dưới chân (`CoreClassFootRing`) và trụ linh khí hướng thiên (`CoreClassSpire`) cho toàn bộ đệ tử đứng trong Vùng Lõi ($R \le 3.5\text{m}$), phân biệt rõ 4 hệ phái:
+    - *Tiên Phong Thiết Giáp* (`Vanguard`): Kim Hoàng (`Color(1.00, 0.78, 0.25)`).
+    - *Thanh Vân Kiếm Khách* (`Swordsman`): Lục Ngọc (`Color(0.20, 0.95, 0.72)`).
+    - *Huyền Thiết Thương Binh* (`Spear`): Lam Thiên (`Color(0.32, 0.82, 1.00)`).
+    - *Thần Tiễn Cung Thủ* (`Archer`): Bích Lục (`Color(0.48, 0.98, 0.58)`).
+- **Ấn Chấn Thiên Địa Bát Giác 3D Khi Va Chạm (`ImpactHeavenlySeal` — `GameFeelController.gd`)**:
+  - Tại Frame 5–6 va chạm ở `(1.7500, 0.2000, -0.4500)`, kích phát pháp ấn bát giác hoàng kim `ImpactHeavenlySeal` bung mở từ `scale 0.55 -> 2.85` và xoay tròn đồng bộ cùng `ImpactQiPillar`.
+- **Nâng Cấp Sa Bàn Chiến Thuật 2D (`_draw_tactical_overlay()` — `BattleHUD.gd`)**:
+  - Vẽ hào quang 2D theo màu hệ phái quanh từng đệ tử Vùng Lõi, mở rộng luồng cảnh báo trảm kích của Boss thành quạt 3 tia (*3-Ray Boss Cleave Threat Fan*), và hiển thị vòng kim quang kép quanh La Bàn Bát Quái khi đã *Tụ Khí*.
+- **Lối Chơi Tụ Khí Hộ Trận (`[✨ Tụ Khí]` / Phím `[E]`) & Thế Trận Thứ 4 (*Thất Tinh Bắc Đẩu Trận*)**:
+  - Nút `[✨ Tụ Khí]` (`BtnEmpowerArray`) và phím `[E]` gọi `empower_core_formation_array()`: truyền `25 Linh Lực` (hoặc `1 Hàn Băng Thảo`) vào tâm trận, lập tức ban **Kim Cang Hộ Thể (`ElixirShield_<Unit>`)** cho đệ tử tiên phong trong Vùng Lõi, cộng thêm **`+25 Linh Lực`, `+35 Linh Thạch`** vào thưởng Hợp Kích và ban `+10 Đức Độ, +10 Uy Danh`.
+  - Mở rộng `cycle_tactical_formation_preset()` (`[☯ Bày Trận]` / `[X]`) lên **4 thế trận kinh điển**, bổ sung **Thất Tinh Bắc Đẩu Trận (7 Tinh Tú Quy Tâm)** hội tụ 7 đệ tử tinh nhuệ thuộc cả 4 hệ phái vào Vùng Lõi.
+
+---
+
+## 12. HỆ THỐNG ĐỒNG BỘ NGÀY GIỜ SINGLE SOURCE OF TRUTH & CHỐNG LỆCH SCHEMA/SITEMAP (PHASE 17 — 100% PASS)
+- **Bản Chất Lỗi Khắc Phục (Entity Fact-Check & Vibe Coding Desynchronization)**:
+  - Khắc phục sự bất đồng bộ giữa 4 kênh thời gian: Giao diện UI (`<time>`), Thẻ HTML Meta (`article:published_time`, `article:modified_time`, `og:updated_time`), Dữ liệu có cấu trúc Schema JSON-LD (`datePublished`, `dateModified`) và Sơ đồ trang web Sitemap XML (`<lastmod>`).
+  - Gỡ bỏ hoàn toàn script ngầm `random-post-publish-time` trên toàn bộ 6 site, dọn sạch cron job `rppt_final_cron_hook`.
+  - Khắc phục các dị thường ngày trong DB (`post_modified < post_date`).
+  - Sửa lỗi theme Newspaper gán nhầm CSS class `updated` cho ngày đăng (`get_the_time`).
+- **Kiến Trúc Triển Khai (`plugins/date-schema-sitemap-sync.php` & `auto-seo-geo-master-suite.php`)**:
+  - Triển khai **Must-Use Plugin (`wp-content/mu-plugins/date-schema-sitemap-sync.php`)** trên toàn bộ 6 site trong mạng lưới.
+  - Chuẩn hóa Single Source of Truth lấy trực tiếp từ `post_date` và `post_modified` trong Database với định dạng ISO 8601 kèm múi giờ (`+07:00`).
+  - Tích hợp bộ lọc Output Buffer tự động chuẩn hóa thẻ `<head>` meta tags, deduplicate và đổi class `entry-date updated` thành `entry-date published` khớp với ngày xuất bản.
+  - Tắt sitemap cache tĩnh quá hạn (`rank_math/sitemap/enable_caching -> false`) và xóa toàn bộ file XML cache cũ trong `uploads/rank-math/`.
+  - Bổ sung `<lastmod>` chuẩn ISO 8601 vào Google News XML sitemap của `auto-seo-geo-master-suite`.
+- **Kết Quả Kiểm Thử Thực Tế Mạng Lưới (Live Audit 6/6 Sites)**:
+  - `Site #1`: Meta [PASS], Schema [PASS], Sitemap [PASS], UI Bug [FIXED]
+  - `Site #2`: Meta [PASS], Schema [PASS], Sitemap [PASS], UI Bug [FIXED]
+  - `Site #3`: Meta [PASS], Schema [PASS], Sitemap [PASS], UI Bug [FIXED]
+  - `Site #4`: Meta [PASS], Schema [PASS], Sitemap [PASS], UI Bug [FIXED]
+  - `Site #5`: Meta [PASS], Schema [PASS], Sitemap [PASS], UI Bug [FIXED]
+  - `Site #6`: Meta [PASS], Schema [PASS], Sitemap [PASS], UI Bug [FIXED]
+  - Bảo mật & Unit Tests: `privacy_guard` OK, 28/28 pytest PASS (100%).
+
+---
+
+PROJECT STATUS: PHASE 17 NETWORK-WIDE DATE/TIME & SCHEMA SYNCHRONIZATION VERIFIED — 100% PASS
+
+
+
+
 
 

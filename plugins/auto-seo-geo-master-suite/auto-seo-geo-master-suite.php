@@ -118,10 +118,15 @@ class Auto_SEO_GEO_Master_Suite {
             echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">' . "\n";
             foreach ($recent_posts as $p) {
                 $url = get_permalink($p->ID);
-                $pub_date = get_the_date('c', $p->ID);
+                $pub_date = get_post_time('c', false, $p);
+                $mod_date = get_post_modified_time('c', false, $p);
+                if (strtotime($mod_date) < strtotime($pub_date)) {
+                    $mod_date = $pub_date;
+                }
                 $title = htmlspecialchars($p->post_title, ENT_XML1, 'UTF-8');
                 echo "  <url>\n";
                 echo "    <loc>{$url}</loc>\n";
+                echo "    <lastmod>{$mod_date}</lastmod>\n";
                 echo "    <news:news>\n";
                 echo "      <news:publication>\n";
                 echo "        <news:name>" . htmlspecialchars($site_name, ENT_XML1, 'UTF-8') . "</news:name>\n";

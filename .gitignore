@@ -121,3 +121,4 @@ work/
 run_player.bat
 run_qa*.bat
 assets/
+*.xlsx

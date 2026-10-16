@@ -17,6 +17,7 @@ from typing import Dict, Any, Optional
 from .keyword_researcher import KeywordResearcher
 from .article_writer import ArticleWriter
 from .tech_image_fetcher import TechImageFetcher
+from .vibe_image_composer import VibeImageComposer
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 from modules.wp_rest_auth import get_rest_nonce  # noqa: E402
@@ -43,6 +44,7 @@ class WpAiAutopilot:
         self.researcher = KeywordResearcher()
         self.writer = ArticleWriter()
         self.image_fetcher = TechImageFetcher()
+        self.image_composer = VibeImageComposer()
         self.link_engine = InternalLinkEngine(max_links_per_post=3)
         self.indexer = InstantIndexer(host=self.host)
 
@@ -91,7 +93,18 @@ class WpAiAutopilot:
                 return {"id": mid, "url": source_url}
         return None
 
-    def produce_and_publish(self, topic: str, category_ids: list = [4], status: str = "publish", schedule_date: Optional[str] = None, dry_run: bool = False) -> Dict[str, Any]:
+    def produce_and_publish(
+        self,
+        topic: str,
+        category_ids: list = [4],
+        status: str = "publish",
+        schedule_date: Optional[str] = None,
+        dry_run: bool = False,
+        focus_keyword: Optional[str] = None,
+        slug: Optional[str] = None,
+        banner_path: Optional[str] = None,
+        category_name: str = "Trí Tuệ Nhân Tạo & AI"
+    ) -> Dict[str, Any]:
         print(f"\n{'='*70}")
         mode_str = "[DRY-RUN LOCAL PREVIEW]" if dry_run else f"STRICT RANKMATH SEO STANDARDS FOR {self.host.upper()}"
         print(f"🤖 WP AI AUTOPILOT: {mode_str}")
@@ -100,16 +113,29 @@ class WpAiAutopilot:
 
         # Step 1: Research Keywords & Slug
         print("\n[1/6] Keyword Research & Core Keyword Slug extraction...")
-        outline_data = self.researcher.analyze_topic(topic)
-        focus_keyword = outline_data["primary_keyword"]
-        slug = SlugOptimizer.extract_core_slug(focus_keyword)
+        if focus_keyword:
+            outline_data = {"primary_keyword": focus_keyword, "topic": topic}
+        else:
+            outline_data = self.researcher.analyze_topic(topic)
+            focus_keyword = outline_data["primary_keyword"]
+
+        if not slug:
+            slug = SlugOptimizer.extract_core_slug(focus_keyword)
+
         print(f"  ⭐ Focus Keyword: {focus_keyword}")
         print(f"  🔗 Core Keyword Slug: /{slug}/")
 
-        # Step 2: Fetch Authentic Photography (Hardware, Workstation, Server, Code)
-        print("\n[2/6] Fetching Authentic 16:9 Zero-CLS WebP Photo (< 100KB)...")
-        photo_info = self.image_fetcher.get_real_photo_for_post(topic, focus_keyword=focus_keyword, slug=slug)
-        banner_path = photo_info["local_path"] if photo_info else ""
+        # Step 2: Fetch / Generate Brand-Tailored 16:9 Zero-CLS WebP Photo (< 80KB)
+        print("\n[2/6] Generating Unique Professional 16:9 WebP Banner (< 80KB)...")
+        if not banner_path or not os.path.exists(banner_path):
+            banner_path = self.image_composer.compose_banner(
+                title=topic,
+                category_name=category_name,
+                primary_kw=focus_keyword,
+                slug=slug,
+                site_domain=self.host
+            )
+
         diagram_url = ""
 
         if dry_run:
@@ -117,12 +143,16 @@ class WpAiAutopilot:
         else:
             featured_id = None
             if banner_path and os.path.exists(banner_path):
-                featured_upload = self.upload_webp_media(banner_path, alt_text=f"{topic} ảnh minh họa thực tế", title=f"{topic} Featured Image")
+                featured_upload = self.upload_webp_media(
+                    banner_path,
+                    alt_text=f"{focus_keyword} - {topic}"[:100],
+                    title=f"{topic} Featured Image"
+                )
                 featured_id = featured_upload["id"] if featured_upload else None
 
         # Step 3: Write Deep Article (> 1,800 words guaranteed via Gemini)
         print("\n[3/6] Synthesizing Deep Structured Content (Enforcing > 1,800 Words & RankMath)...")
-        article_data = self.writer.write_article(topic, outline_data, content_img_url=diagram_url)
+        article_data = self.writer.write_article(topic, outline_data, content_img_url=diagram_url, category_name=category_name)
         seo_title = article_data["title"]
         meta_desc = article_data["meta_description"]
         html_content = article_data["content"]

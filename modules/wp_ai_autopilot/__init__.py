@@ -4,6 +4,8 @@ from .article_writer import ArticleWriter, ArticleWriter as WpAiArticleWriter
 from .keyword_researcher import KeywordResearcher, KeywordResearcher as WpAiKeywordResearcher
 from .tech_image_fetcher import TechImageFetcher, TechImageFetcher as WebPBannerGenerator, TechImageFetcher as WpAiBannerGenerator
 
+from .vibe_image_composer import VibeImageComposer
+
 __all__ = [
     "WpAiAutopilot",
     "ArticleWriter",
@@ -13,4 +15,5 @@ __all__ = [
     "TechImageFetcher",
     "WebPBannerGenerator",
     "WpAiBannerGenerator",
+    "VibeImageComposer",
 ]

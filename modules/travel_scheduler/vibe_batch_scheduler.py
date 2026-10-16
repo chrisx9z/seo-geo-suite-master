@@ -133,19 +133,22 @@ class VibeBatchScheduler:
             pass
         return False
 
-    def schedule_single_post(self, topic: str, slug: str, category_id: int, schedule_date: str, day_num: int, cluster_name: str) -> Optional[Dict[str, Any]]:
+    def schedule_single_post(self, topic: str, slug: str, category_id: int, schedule_date: str, day_num: int, cluster_name: str, focus_keyword: Optional[str] = None, category_name: str = "Trí Tuệ Nhân Tạo & AI") -> Optional[Dict[str, Any]]:
         if self.post_exists(slug, schedule_date=schedule_date, topic=topic):
             print(f"  [SKIP] Post '{slug}' ({schedule_date}) already scheduled or exists.")
             return None
 
         print(f"\n---> [Day {day_num}] Processing: {topic}")
-        print(f"     Slug: {slug} | Date: {schedule_date} | Category ID: {category_id}")
+        print(f"     Slug: {slug} | Date: {schedule_date} | Category ID: {category_id} | Focus KW: {focus_keyword}")
 
         res = self.autopilot.produce_and_publish(
             topic=topic,
             category_ids=[category_id],
             status="future",
-            schedule_date=schedule_date
+            schedule_date=schedule_date,
+            focus_keyword=focus_keyword,
+            slug=slug,
+            category_name=category_name
         )
 
         if res.get("status") == "success":

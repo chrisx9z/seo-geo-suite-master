@@ -362,6 +362,7 @@ class Auto_SEO_GEO_Master_Suite {
         if (did_action('rank_math/head') || defined('WPSEO_VERSION')) {
             return;
         }
+        remove_action('wp_head', 'rel_canonical');
         if (is_front_page() || is_home()) {
             echo '<link rel="canonical" href="' . esc_url(home_url('/')) . '" />' . "\n";
         } elseif (is_singular('post') || is_page()) {
@@ -573,6 +574,62 @@ class Auto_SEO_GEO_Master_Suite {
                     ),
                 );
                 echo '<script type="application/ld+json">' . wp_json_encode($home_schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>' . "\n";
+            }
+        } elseif ((is_singular('post') || is_page()) && !did_action('rank_math/head') && !defined('WPSEO_VERSION')) {
+            $post = get_post();
+            if ($post) {
+                $rm_desc = get_post_meta($post->ID, 'rank_math_description', true);
+                if (empty($rm_desc)) {
+                    $rm_desc = !empty($post->post_excerpt) ? wp_strip_all_tags($post->post_excerpt) : wp_trim_words(wp_strip_all_tags($post->post_content), 26, '...');
+                }
+                $dates = self::get_canonical_dates($post);
+                $thumb_url = get_the_post_thumbnail_url($post->ID, 'full');
+                echo '<meta name="description" content="' . esc_attr($rm_desc) . '" />' . "\n";
+                echo '<meta property="og:type" content="article" />' . "\n";
+                echo '<meta property="og:title" content="' . esc_attr(get_the_title($post)) . '" />' . "\n";
+                echo '<meta property="og:description" content="' . esc_attr($rm_desc) . '" />' . "\n";
+                echo '<meta property="og:url" content="' . esc_url($clean_url) . '" />' . "\n";
+                if ($thumb_url) {
+                    echo '<meta property="og:image" content="' . esc_url($thumb_url) . '" />' . "\n";
+                }
+                $article_node = $this->filter_schema_article_entity(array(
+                    '@type'            => 'Article',
+                    '@id'              => $clean_url . '#article',
+                    'headline'         => get_the_title($post),
+                    'description'      => $rm_desc,
+                    'url'              => $clean_url,
+                    'mainEntityOfPage' => array('@id' => $clean_url),
+                    'datePublished'    => $dates ? $dates['published'] : get_post_time('c', false, $post),
+                    'dateModified'     => $dates ? $dates['modified'] : get_post_modified_time('c', false, $post),
+                    'author'           => array(
+                        '@type' => 'Organization',
+                        'name'  => get_bloginfo('name'),
+                        'url'   => home_url('/'),
+                    ),
+                    'publisher'        => array(
+                        '@type' => 'Organization',
+                        '@id'   => home_url('/#organization'),
+                        'name'  => get_bloginfo('name'),
+                        'url'   => home_url('/'),
+                    ),
+                ));
+                if ($thumb_url) {
+                    $article_node['image'] = array('@type' => 'ImageObject', 'url' => $thumb_url);
+                }
+                $graph = array($article_node);
+                $faq_entities = self::extract_faq_entities_from_html($post->post_content);
+                if (!empty($faq_entities)) {
+                    $graph[] = array(
+                        '@type'      => 'FAQPage',
+                        '@id'        => $clean_url . '#faq',
+                        'mainEntity' => $faq_entities,
+                    );
+                }
+                $post_schema = array(
+                    '@context' => 'https://schema.org',
+                    '@graph'   => $graph,
+                );
+                echo '<script type="application/ld+json">' . wp_json_encode($post_schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>' . "\n";
             }
         }
 
@@ -1401,6 +1458,40 @@ class Auto_SEO_GEO_Master_Suite {
         return $entity;
     }
 
+    public static function extract_faq_entities_from_html($html) {
+        if (empty($html)) {
+            return array();
+        }
+        $entities = array();
+        $patterns = array(
+            '/<h[3-4][^>]*>(.*?\?)<\/h[3-4]>\s*(?:<div[^>]*>\s*)?<p[^>]*>(.*?)<\/p>/is',
+            '/<p[^>]*>\s*<(?:strong|b)>(.*?\?)<\/(?:strong|b)>\s*<\/p>\s*<p[^>]*>(.*?)<\/p>/is',
+            '/<li>\s*<(?:strong|b)>(.*?\?)<\/(?:strong|b)>[:\s-]*([^<]+)<\/li>/is',
+        );
+        foreach ($patterns as $pat) {
+            if (preg_match_all($pat, $html, $matches, PREG_SET_ORDER)) {
+                foreach ($matches as $m) {
+                    $q = trim(wp_strip_all_tags($m[1]));
+                    $a = trim(wp_strip_all_tags($m[2]));
+                    if (mb_strlen($q, 'UTF-8') >= 10 && mb_strlen($a, 'UTF-8') >= 20) {
+                        $entities[] = array(
+                            '@type' => 'Question',
+                            'name'  => $q,
+                            'acceptedAnswer' => array(
+                                '@type' => 'Answer',
+                                'text'  => $a,
+                            ),
+                        );
+                        if (count($entities) >= 6) {
+                            return $entities;
+                        }
+                    }
+                }
+            }
+        }
+        return $entities;
+    }
+
     public function filter_all_json_ld_schemas($data, $context) {
         if (!is_singular('post')) {
             return $data;
@@ -1410,6 +1501,7 @@ class Auto_SEO_GEO_Master_Suite {
             return $data;
         }
 
+        $has_faq_node = false;
         foreach ($data as $key => &$node) {
             if (is_array($node)) {
                 if (isset($node['datePublished'])) {
@@ -1417,6 +1509,23 @@ class Auto_SEO_GEO_Master_Suite {
                 }
                 if (isset($node['dateModified'])) {
                     $node['dateModified'] = $dates['modified'];
+                }
+                if (isset($node['@type']) && $node['@type'] === 'FAQPage') {
+                    $has_faq_node = true;
+                }
+            }
+        }
+        if (!$has_faq_node) {
+            $post = get_post();
+            if ($post && !empty($post->post_content)) {
+                $faq_entities = self::extract_faq_entities_from_html($post->post_content);
+                if (!empty($faq_entities)) {
+                    $clean_url = strtok(get_permalink($post->ID), '?');
+                    $data['FAQPage'] = array(
+                        '@type'      => 'FAQPage',
+                        '@id'        => $clean_url . '#faq',
+                        'mainEntity' => $faq_entities,
+                    );
                 }
             }
         }

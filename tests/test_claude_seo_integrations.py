@@ -396,3 +396,45 @@ def test_vietnamese_internal_linking_cannibalization_and_wikidata_geo():
     assert "https://www.wikidata.org/wiki/Q513" in uris     # Mount Everest
 
 
+def test_semantic_silo_link_graph_and_vietnamese_citability():
+    from modules.semantic_silo.silo_builder import SemanticSiloBuilder
+    from modules.citability_engine.citability_checker import QUESTION_START, SPECIFIC
+
+    silo = SemanticSiloBuilder(cluster_threshold=0.25)
+    posts = [
+        {
+            "id": 10,
+            "title": {"rendered": "Kinh nghiệm du lịch Đà Nẵng tự túc"},
+            "slug": "du-lich-da-nang-tu-tuc",
+            "link": "https://example.com/du-lich-da-nang-tu-tuc/",
+            "content": {"rendered": '<p>Xem thêm <a href="https://example.com/dia-diem-an-uong-da-nang/">ẩm thực Đà Nẵng</a>.</p>'},
+        },
+        {
+            "id": 11,
+            "title": {"rendered": "Địa điểm ăn uống Đà Nẵng ngon rẻ"},
+            "slug": "dia-diem-an-uong-da-nang",
+            "link": "https://example.com/dia-diem-an-uong-da-nang/",
+            "content": {"rendered": '<p>Quay lại <a href="https://example.com/du-lich-da-nang-tu-tuc/">cẩm nang Đà Nẵng</a>.</p>'},
+        },
+        {
+            "id": 12,
+            "title": {"rendered": "Hướng dẫn cài đặt Docker trên Ubuntu"},
+            "slug": "cai-dat-docker-ubuntu",
+            "link": "https://example.com/cai-dat-docker-ubuntu/",
+            "content": {"rendered": "<p>Bài viết độc lập chưa có liên kết.</p>"},
+        },
+    ]
+    res = silo.build_cluster_graph(posts)
+    assert res["total_clusters"] == 1
+    assert res["link_graph"]["true_orphan_count"] == 1
+    assert res["link_graph"]["true_orphan_posts"][0]["id"] == 12
+
+    box = silo.build_related_cluster_box_html(res["clusters"][0]["cluster_members"], lang="vi")
+    assert "asg-topic-cluster-box" in box
+
+    assert QUESTION_START.search("Làm thế nào để tối ưu tốc độ website?")
+    assert QUESTION_START.search("Chi phí đi Phú Quốc hết bao nhiêu?")
+    assert SPECIFIC.search("Theo báo cáo thống kê mới nhất từ UNESCO")
+
+
+

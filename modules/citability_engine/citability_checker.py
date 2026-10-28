@@ -83,8 +83,11 @@ BLOCKS = HEADINGS + PROSE + STRUCTURED + ("blockquote",)
 WORD = re.compile(r"[^\W_][\w'’-]*", re.UNICODE)
 SENTENCE_END = re.compile(r"[.!?](?:[\"'”’)\]]*)(?=\s|$)")
 QUESTION_START = re.compile(
-    r"^(what|how|why|when|where|which|who|whose|can|could|does|do|did|is|are|was|were|should|will|would)\b", re.I)
-SPECIFIC = re.compile(r"\d|according to|\bsource[sd]?:|\bstudy\b|\bsurvey\b|\breport(?:s|ed)?\b|\bdata\b", re.I)
+    r"^(what|how|why|when|where|which|who|whose|can|could|does|do|did|is|are|was|were|should|will|would|"
+    r"làm sao|làm thế nào|tại sao|vì sao|khi nào|ở đâu|bao nhiêu|có nên|nên chọn|cách nào|là gì)\b|\?\s*$", re.I)
+SPECIFIC = re.compile(
+    r"\d|according to|\bsource[sd]?:|\bstudy\b|\bsurvey\b|\breport(?:s|ed)?\b|\bdata\b|"
+    r"\btheo\b|nguồn:|nghiên cứu|khảo sát|báo cáo|số liệu|thống kê|tiêu chuẩn|công bố", re.I)
 
 
 def words(text: str) -> list:

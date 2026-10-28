@@ -10,6 +10,8 @@
  */
 if (!defined('ABSPATH')) exit;
 
+if (!class_exists('Auto_SEO_GEO_Master_Suite')) :
+
 class Auto_SEO_GEO_Master_Suite {
     private static $version = '5.4.0';
     private static $site_config = null;
@@ -26,8 +28,8 @@ class Auto_SEO_GEO_Master_Suite {
         add_action('template_redirect', array($this, 'handle_automatic_slug_301_redirect'), 1);
         // Disable fuzzy 404 guessing to avoid SEO Soft-404 penalties on drafted/removed content
         add_filter('do_redirect_guess_404_permalink', '__return_false');
-        add_action('wp_head', array($this, 'render_head_seo_tags'), 1);
-        add_action('wp_head', array($this, 'render_self_canonical'), 2);
+        add_action('wp_head', array($this, 'render_head_seo_tags'), 5);
+        add_action('wp_head', array($this, 'render_self_canonical'), 5);
         add_action('wp_head', array($this, 'render_site_favicon'), 2);
         add_filter('rank_math/canonical', array($this, 'filter_rankmath_canonical'), 9999);
         if (!shortcode_exists('ez-toc')) {
@@ -79,13 +81,18 @@ class Auto_SEO_GEO_Master_Suite {
 
     /**
      * Responds ONLY to the authentic IndexNow key verification file (/<md5_key>.txt)
+     * and persists the static key file in ABSPATH for Nginx/OpenLiteSpeed direct serving.
      */
     public function handle_indexnow_verification() {
+        $host = parse_url(home_url(), PHP_URL_HOST);
+        $expected_key = md5('indexnow_key_' . $host);
+        $static_key_file = ABSPATH . $expected_key . '.txt';
+        if (!file_exists($static_key_file)) {
+            @file_put_contents($static_key_file, $expected_key);
+        }
         $uri = trim($_SERVER['REQUEST_URI'] ?? '', '/');
         $path = parse_url($uri, PHP_URL_PATH);
         if (preg_match('/^([a-f0-9]{32})\.txt$/i', $path, $matches)) {
-            $host = parse_url(home_url(), PHP_URL_HOST);
-            $expected_key = md5('indexnow_key_' . $host);
             if (strtolower($matches[1]) === strtolower($expected_key)) {
                 header('Content-Type: text/plain; charset=utf-8');
                 header('X-Robots-Tag: noindex');
@@ -96,9 +103,61 @@ class Auto_SEO_GEO_Master_Suite {
     }
 
     /**
-     * v5.4.0: Dynamic /llms.txt endpoint for Agentic Browsing & Lighthouse 13.5 GenAI Audit
+     * Builds the Markdown content for /llms.txt
+     */
+    public function build_llms_txt_markdown() {
+        $site_name = get_bloginfo('name') ?: parse_url(home_url(), PHP_URL_HOST);
+        $site_desc = get_bloginfo('description') ?: 'Official Knowledge Base & Editorial Guides';
+        $md  = "# {$site_name}\n\n";
+        $md .= "> {$site_desc}\n\n";
+
+        $cats = get_categories(array('hide_empty' => true, 'number' => 15));
+        if (!empty($cats)) {
+            $md .= "## Core Categories\n\n";
+            foreach ($cats as $cat) {
+                $cat_url = get_category_link($cat->term_id);
+                $cat_desc = !empty($cat->description) ? wp_strip_all_tags($cat->description) : "Curated articles and deep-dive guides in {$cat->name}.";
+                $md .= "- [{$cat->name}]({$cat_url}): {$cat_desc}\n";
+            }
+            $md .= "\n";
+        }
+
+        $recent = get_posts(array('numberposts' => 25, 'post_status' => 'publish'));
+        if (!empty($recent)) {
+            $md .= "## Featured Guides & Articles\n\n";
+            foreach ($recent as $p) {
+                $p_url = get_permalink($p->ID);
+                $p_title = wp_strip_all_tags($p->post_title);
+                $excerpt = has_excerpt($p->ID) ? wp_strip_all_tags(get_the_excerpt($p)) : wp_trim_words(wp_strip_all_tags(strip_shortcodes($p->post_content)), 22, '...');
+                $excerpt = preg_replace('/\s+/', ' ', trim($excerpt));
+                $md .= "- [{$p_title}]({$p_url}): {$excerpt}\n";
+            }
+            $md .= "\n";
+        }
+
+        $md .= "## Sitemaps & Feeds\n\n";
+        $md .= "- [XML Sitemap](" . home_url('/sitemap_index.xml') . "): Primary index of all canonical pages and posts.\n";
+        $md .= "- [Google News Sitemap](" . home_url('/news-sitemap.xml') . "): Real-time news and editorial updates.\n";
+        return $md;
+    }
+
+    /**
+     * v5.4.0: Dynamic + Static /llms.txt endpoint for Agentic Browsing & Lighthouse 13.5 GenAI Audit
      */
     public function handle_llms_txt_endpoint() {
+        $llms_file = ABSPATH . 'llms.txt';
+        if (!file_exists($llms_file) || (time() - (int) @filemtime($llms_file)) > 3600 || get_option('asg_master_suite_ver') !== self::$version) {
+            @file_put_contents($llms_file, $this->build_llms_txt_markdown());
+            if (get_option('asg_master_suite_ver') !== self::$version) {
+                update_option('asg_master_suite_ver', self::$version);
+                if (function_exists('rocket_clean_domain')) {
+                    @rocket_clean_domain();
+                }
+                if (function_exists('wp_cache_flush')) {
+                    @wp_cache_flush();
+                }
+            }
+        }
         $uri = trim($_SERVER['REQUEST_URI'] ?? '', '/');
         $path = parse_url($uri, PHP_URL_PATH);
         if ($path !== 'llms.txt') {
@@ -107,39 +166,7 @@ class Auto_SEO_GEO_Master_Suite {
         header('Content-Type: text/plain; charset=utf-8');
         header('X-Content-Signal: ai-train=yes, search=yes, ai-input=yes');
         header('Cache-Control: public, max-age=3600');
-
-        $site_name = get_bloginfo('name') ?: parse_url(home_url(), PHP_URL_HOST);
-        $site_desc = get_bloginfo('description') ?: 'Official Knowledge Base & Editorial Guides';
-        echo "# {$site_name}\n\n";
-        echo "> {$site_desc}\n\n";
-
-        $cats = get_categories(array('hide_empty' => true, 'number' => 15));
-        if (!empty($cats)) {
-            echo "## Core Categories\n\n";
-            foreach ($cats as $cat) {
-                $cat_url = get_category_link($cat->term_id);
-                $cat_desc = !empty($cat->description) ? wp_strip_all_tags($cat->description) : "Curated articles and deep-dive guides in {$cat->name}.";
-                echo "- [{$cat->name}]({$cat_url}): {$cat_desc}\n";
-            }
-            echo "\n";
-        }
-
-        $recent = get_posts(array('numberposts' => 25, 'post_status' => 'publish'));
-        if (!empty($recent)) {
-            echo "## Featured Guides & Articles\n\n";
-            foreach ($recent as $p) {
-                $p_url = get_permalink($p->ID);
-                $p_title = wp_strip_all_tags($p->post_title);
-                $excerpt = has_excerpt($p->ID) ? wp_strip_all_tags(get_the_excerpt($p)) : wp_trim_words(wp_strip_all_tags(strip_shortcodes($p->post_content)), 22, '...');
-                $excerpt = preg_replace('/\s+/', ' ', trim($excerpt));
-                echo "- [{$p_title}]({$p_url}): {$excerpt}\n";
-            }
-            echo "\n";
-        }
-
-        echo "## Sitemaps & Feeds\n\n";
-        echo "- [XML Sitemap](" . home_url('/sitemap_index.xml') . "): Primary index of all canonical pages and posts.\n";
-        echo "- [Google News Sitemap](" . home_url('/news-sitemap.xml') . "): Real-time news and editorial updates.\n";
+        echo $this->build_llms_txt_markdown();
         exit;
     }
 
@@ -332,10 +359,12 @@ class Auto_SEO_GEO_Master_Suite {
      * Avoids duplicate <link rel="canonical"> when RankMath is already rendering one.
      */
     public function render_self_canonical() {
-        if (class_exists('RankMath') || defined('RANK_MATH_VERSION')) {
+        if (did_action('rank_math/head') || defined('WPSEO_VERSION')) {
             return;
         }
-        if (is_singular('post') || is_page()) {
+        if (is_front_page() || is_home()) {
+            echo '<link rel="canonical" href="' . esc_url(home_url('/')) . '" />' . "\n";
+        } elseif (is_singular('post') || is_page()) {
             $canonical_url = strtok(get_permalink(), '?');
             echo '<link rel="canonical" href="' . esc_url($canonical_url) . '" />' . "\n";
         }
@@ -474,13 +503,13 @@ class Auto_SEO_GEO_Master_Suite {
         $lang = self::get_current_lang();
         $seo = isset(self::$site_config['seo'][$lang]) ? self::$site_config['seo'][$lang] : self::$site_config['seo']['vi'];
         if (is_front_page() || is_home()) {
-            return $seo['title'];
+            return rtrim($seo['title'], ' -|');
         }
         if (is_singular()) {
             $post_title = get_the_title();
-            return $post_title ? $post_title . ' - ' . get_bloginfo('name') : $seo['title'];
+            return rtrim($post_title ? $post_title . ' - ' . get_bloginfo('name') : $seo['title'], ' -|');
         }
-        return !empty($title) && $title !== '-' ? $title . ' - ' . get_bloginfo('name') : $seo['title'];
+        return rtrim(!empty($title) && $title !== '-' ? $title . ' - ' . get_bloginfo('name') : $seo['title'], ' -|');
     }
 
     public function filter_meta_description($description) {
@@ -523,6 +552,28 @@ class Auto_SEO_GEO_Master_Suite {
             echo '<meta property="og:site_name" content="' . esc_attr(get_bloginfo('name')) . '" />' . "\n";
             echo '<meta name="twitter:title" content="' . esc_attr($seo['title']) . '" />' . "\n";
             echo '<meta name="twitter:description" content="' . esc_attr($seo['description']) . '" />' . "\n";
+            if (!did_action('rank_math/head') && !defined('WPSEO_VERSION')) {
+                $home_schema = array(
+                    '@context' => 'https://schema.org',
+                    '@graph' => array(
+                        array(
+                            '@type' => 'Organization',
+                            '@id'   => home_url('/#organization'),
+                            'name'  => get_bloginfo('name'),
+                            'url'   => home_url('/'),
+                        ),
+                        array(
+                            '@type'       => 'WebSite',
+                            '@id'         => home_url('/#website'),
+                            'url'         => home_url('/'),
+                            'name'        => get_bloginfo('name'),
+                            'description' => $seo['description'],
+                            'publisher'   => array('@id' => home_url('/#organization')),
+                        ),
+                    ),
+                );
+                echo '<script type="application/ld+json">' . wp_json_encode($home_schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>' . "\n";
+            }
         }
 
         // v5.4.0: Only emit canonical self-referencing hreflang + x-default (never emit fake ?lang= query URLs that canonicalize back to base URL)
@@ -945,6 +996,9 @@ class Auto_SEO_GEO_Master_Suite {
         $lang = self::get_current_lang();
         $seo = isset(self::$site_config['seo'][$lang]) ? self::$site_config['seo'][$lang] : self::$site_config['seo']['vi'];
         $brand = self::$site_config['brand'];
+        if (is_front_page() || is_home()) {
+            echo '<h1 class="asg-home-h1" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">' . esc_html(rtrim($seo['title'], ' -|')) . '</h1>' . "\n";
+        }
         ?>
         <div id="google_translate_element" style="display:none;" class="notranslate" translate="no"></div>
         <script type="text/javascript">
@@ -1144,7 +1198,8 @@ class Auto_SEO_GEO_Master_Suite {
      * Strips zero-width LLM watermarks and redundant robotic AI conclusions.
      */
     public function filter_anti_ai_content_cliches($content) {
-        if (!is_singular('post') || empty($content)) {
+        $is_rest = (defined('REST_REQUEST') && REST_REQUEST);
+        if ((!is_singular('post') && !$is_rest) || empty($content)) {
             return $content;
         }
         // Strip zero-width & bidirectional invisible watermarks
@@ -1154,7 +1209,69 @@ class Auto_SEO_GEO_Master_Suite {
             '/<p[^>]*>\s*(?:<strong>)?\s*Hy vọng qua bài viết.*?<\/p>/iu',
             '/<p[^>]*>\s*(?:<strong>)?\s*Tóm lại,.*?(?:là một điểm đến|mang lại cho bạn).*?<\/p>/iu'
         );
-        return preg_replace($patterns, '', $content);
+        $content = preg_replace($patterns, '', $content);
+        return $this->inject_topic_cluster_silo_links($content);
+    }
+
+    /**
+     * v5.4.0: Circular Topic-Cluster Silo Internal Linker (Zero Orphan Pages Architecture)
+     * Links each post to the next 3 sibling posts in its primary category ring so every post
+     * across the site is guaranteed >= 3 incoming internal links (in_degree >= 3).
+     */
+    public function inject_topic_cluster_silo_links($content) {
+        $is_rest = (defined('REST_REQUEST') && REST_REQUEST);
+        if ((!is_singular('post') && !$is_rest) || strpos($content, 'asg-topic-cluster-box') !== false) {
+            return $content;
+        }
+        $post = get_post();
+        if (!$post) {
+            return $content;
+        }
+        $cats = wp_get_post_categories($post->ID);
+        $query_args = array(
+            'post_type'      => 'post',
+            'post_status'    => 'publish',
+            'posts_per_page' => 250,
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+            'fields'         => 'ids',
+        );
+        if (!empty($cats)) {
+            $query_args['category__in'] = array((int) $cats[0]);
+        }
+        $ids = get_posts($query_args);
+        if (empty($ids) || count($ids) < 2) {
+            return $content;
+        }
+        $count = count($ids);
+        $pos = array_search((int) $post->ID, array_map('intval', $ids), true);
+        if ($pos === false) {
+            $pos = 0;
+        }
+        $selected_ids = array();
+        for ($step = 1; $step <= min(3, $count - 1); $step++) {
+            $next_id = (int) $ids[($pos + $step) % $count];
+            if ($next_id !== (int) $post->ID && !in_array($next_id, $selected_ids, true)) {
+                $selected_ids[] = $next_id;
+            }
+        }
+        if (empty($selected_ids)) {
+            return $content;
+        }
+        $is_en = (self::get_site_primary_lang() === 'en');
+        $heading = $is_en ? 'Related In-Depth Guides in This Topic Cluster' : 'Bài Viết Chuyên Sâu Cùng Chủ Đề';
+        $box  = "\n" . '<aside class="asg-topic-cluster-box" style="background:#f8fafc;border-left:4px solid #0284c7;padding:16px 20px;margin:26px 0;border-radius:8px;">' . "\n";
+        $box .= '  <p style="margin:0 0 10px 0;font-weight:700;color:#0f172a;font-size:1.04em;">📚 ' . esc_html($heading) . ':</p>' . "\n";
+        $box .= '  <ul style="margin:0;padding-left:20px;line-height:1.75;">' . "\n";
+        foreach ($selected_ids as $sid) {
+            $s_url   = get_permalink($sid);
+            $s_title = get_the_title($sid);
+            if ($s_url && $s_title) {
+                $box .= '    <li style="margin:4px 0;"><a href="' . esc_url($s_url) . '" class="autolink-cluster" style="color:#0369a1;font-weight:600;text-decoration:none;">' . esc_html($s_title) . '</a></li>' . "\n";
+            }
+        }
+        $box .= '  </ul>' . "\n" . '</aside>' . "\n";
+        return $content . $box;
     }
 
     /**
@@ -1417,3 +1534,4 @@ class Auto_SEO_GEO_Master_Suite {
 }
 
 new Auto_SEO_GEO_Master_Suite();
+endif;

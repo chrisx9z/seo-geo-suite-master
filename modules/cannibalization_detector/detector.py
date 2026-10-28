@@ -16,11 +16,15 @@ import unicodedata
 from collections import Counter
 from typing import Any, Dict, List
 
+_INTENT_STOP_PHRASES = (
+    "kinh nghiem", "huong dan", "cam nang", "chi tiet", "toan dien", "tong hop",
+    "complete guide", "ultimate guide", "how to",
+)
+
 _INTENT_STOPWORDS = {
     "va", "cua", "cho", "cac", "nhung", "mot", "la", "co", "tai", "voi", "trong", "khi",
     "nao", "gi", "moi", "nhat", "2024", "2025", "2026", "top", "hay", "dep", "cach",
-    "kinh", "nghiem", "huong", "dan", "cam", "nang", "review", "chi", "tiet", "tu", "den",
-    "toan", "dien", "tong", "hop", " the", "and", "for", "with", "guide", "best", "complete",
+    "review", "tu", "den", "the", "and", "for", "with", "guide", "best", "complete",
     "ultimate", "how", "what", "from", "into",
 }
 
@@ -40,9 +44,11 @@ def _normalize_intent_text(text: str) -> str:
     ascii_s = "".join(c for c in nfkd if not unicodedata.combining(c)).lower()
     ascii_s = re.sub(r"[^a-z0-9\s]", " ", ascii_s)
     ascii_s = re.sub(r"\s+", " ", ascii_s).strip()
+    for phrase in _INTENT_STOP_PHRASES:
+        ascii_s = re.sub(rf"\b{re.escape(phrase)}\b", " ", ascii_s)
     for rx, rep in _SYNONYM_PATTERNS:
         ascii_s = rx.sub(rep, ascii_s)
-    return ascii_s
+    return re.sub(r"\s+", " ", ascii_s).strip()
 
 
 def _intent_tokens(text: str) -> List[str]:

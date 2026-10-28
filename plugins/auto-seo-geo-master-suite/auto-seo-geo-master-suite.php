@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Auto SEO GEO Master Suite
  * Plugin URI: https://github.com/vibe-code/auto-seo-geo-suite
- * Description: Universal Multi-site SEO GEO Framework: PC 1170px Centered Header, Ultra-Modern Mobile Magazine Layout (Story Pills & Swipe Carousels), Zero-Overlap Multilingual Switcher, Dynamic 3-Language SEO Meta & Hreflang Engine, Auto Featured Image Fallback, Anti-AI Cliché Filter, and Dual AVIF/WebP Picture Wrapper.
- * Version: 5.3.0
+ * Description: Universal Multi-site SEO GEO Framework: PC 1170px Centered Header, Ultra-Modern Mobile Magazine Layout, Zero-Overlap Multilingual Switcher, Self-Referencing Canonical & Hreflang Guard, Dynamic /llms.txt Agentic Endpoint, Speculation Rules API, LCP FetchPriority Booster, Auto Featured Image Fallback, Anti-AI Cliché & Watermark Filter.
+ * Version: 5.4.0
  * Author: Master SEO GEO Architecture Suite
  * Text Domain: auto-seo-geo
  * Domain Path: /languages
@@ -11,7 +11,7 @@
 if (!defined('ABSPATH')) exit;
 
 class Auto_SEO_GEO_Master_Suite {
-    private static $version = '5.3.0';
+    private static $version = '5.4.0';
     private static $site_config = null;
 
     public function __construct() {
@@ -19,6 +19,7 @@ class Auto_SEO_GEO_Master_Suite {
         add_action('init', array($this, 'handle_lang_cookie'));
         add_action('init', array($this, 'register_rankmath_rest_fields'));
         add_action('init', array($this, 'handle_indexnow_verification'));
+        add_action('init', array($this, 'handle_llms_txt_endpoint'));
         add_action('publish_post', array($this, 'auto_ping_indexnow_on_publish'), 10, 2);
         add_action('init', array($this, 'handle_news_sitemap'));
         add_action('post_updated', array($this, 'track_slug_changes'), 10, 3);
@@ -38,13 +39,13 @@ class Auto_SEO_GEO_Master_Suite {
         add_filter('rank_math/frontend/description', array($this, 'filter_meta_description'), 9999);
         add_filter('language_attributes', array($this, 'filter_language_attributes'), 99);
 
-        // v5.2.0 Enhancements: Auto-Featured Image Fallback, Anti-AI Cliché Filter & Dual AVIF/WebP
+        // v5.2.0 - v5.4.0 Enhancements: Auto-Featured Image Fallback, LCP FetchPriority, Anti-AI Cliché & Watermark Filter
         add_action('save_post', array($this, 'auto_set_first_image_as_thumbnail'), 20, 2);
         add_filter('post_thumbnail_html', array($this, 'fallback_post_thumbnail_html'), 20, 5);
         add_filter('the_content', array($this, 'filter_anti_ai_content_cliches'), 15);
-        add_filter('the_content', array($this, 'auto_wrap_dual_avif_webp_picture'), 25);
+        // Dual AVIF/WebP wrapper removed to prevent 404 broken image icons (v5.2.1)
 
-        // v5.3.0 Enhancements: Single Source of Truth Date, Schema & Sitemap Engine, Auto-Healing Anomaly Guard
+        // v5.3.0 - v5.4.0 Enhancements: Single Source of Truth Date, Schema & Sitemap Engine, Speculation Rules API
         add_filter('wp_insert_post_data', array($this, 'auto_heal_post_date_anomalies'), 10, 2);
         add_filter('rank_math/opengraph/facebook/article_published_time', array($this, 'filter_og_published_time'), 9999);
         add_filter('rank_math/opengraph/facebook/article_modified_time', array($this, 'filter_og_modified_time'), 9999);
@@ -58,21 +59,88 @@ class Auto_SEO_GEO_Master_Suite {
 
         add_action('wp_head', array($this, 'output_master_css'), 9999);
         add_action('wp_footer', array($this, 'output_master_scripts'), 9999);
+        add_action('wp_footer', array($this, 'render_speculation_rules'), 9998);
     }
 
-    
     /**
-     * Responds to IndexNow key verification requests (e.g. /<32_char_hex>.txt)
+     * Helper: Determine primary language code ('en' or 'vi') for the current site
+     */
+    public static function get_site_primary_lang() {
+        $locale = function_exists('get_locale') ? get_locale() : 'vi';
+        if (stripos($locale, 'en') === 0) {
+            return 'en';
+        }
+        $wplang = function_exists('get_option') ? (string) get_option('WPLANG', '') : '';
+        if (stripos($wplang, 'en') === 0) {
+            return 'en';
+        }
+        return 'vi';
+    }
+
+    /**
+     * Responds ONLY to the authentic IndexNow key verification file (/<md5_key>.txt)
      */
     public function handle_indexnow_verification() {
         $uri = trim($_SERVER['REQUEST_URI'] ?? '', '/');
         $path = parse_url($uri, PHP_URL_PATH);
-        if (preg_match('/^([a-f0-9]{16,64})\.txt$/i', $path, $matches)) {
-            header('Content-Type: text/plain; charset=utf-8');
-            header('X-Robots-Tag: noindex');
-            echo $matches[1];
-            exit;
+        if (preg_match('/^([a-f0-9]{32})\.txt$/i', $path, $matches)) {
+            $host = parse_url(home_url(), PHP_URL_HOST);
+            $expected_key = md5('indexnow_key_' . $host);
+            if (strtolower($matches[1]) === strtolower($expected_key)) {
+                header('Content-Type: text/plain; charset=utf-8');
+                header('X-Robots-Tag: noindex');
+                echo $expected_key;
+                exit;
+            }
         }
+    }
+
+    /**
+     * v5.4.0: Dynamic /llms.txt endpoint for Agentic Browsing & Lighthouse 13.5 GenAI Audit
+     */
+    public function handle_llms_txt_endpoint() {
+        $uri = trim($_SERVER['REQUEST_URI'] ?? '', '/');
+        $path = parse_url($uri, PHP_URL_PATH);
+        if ($path !== 'llms.txt') {
+            return;
+        }
+        header('Content-Type: text/plain; charset=utf-8');
+        header('X-Content-Signal: ai-train=yes, search=yes, ai-input=yes');
+        header('Cache-Control: public, max-age=3600');
+
+        $site_name = get_bloginfo('name') ?: parse_url(home_url(), PHP_URL_HOST);
+        $site_desc = get_bloginfo('description') ?: 'Official Knowledge Base & Editorial Guides';
+        echo "# {$site_name}\n\n";
+        echo "> {$site_desc}\n\n";
+
+        $cats = get_categories(array('hide_empty' => true, 'number' => 15));
+        if (!empty($cats)) {
+            echo "## Core Categories\n\n";
+            foreach ($cats as $cat) {
+                $cat_url = get_category_link($cat->term_id);
+                $cat_desc = !empty($cat->description) ? wp_strip_all_tags($cat->description) : "Curated articles and deep-dive guides in {$cat->name}.";
+                echo "- [{$cat->name}]({$cat_url}): {$cat_desc}\n";
+            }
+            echo "\n";
+        }
+
+        $recent = get_posts(array('numberposts' => 25, 'post_status' => 'publish'));
+        if (!empty($recent)) {
+            echo "## Featured Guides & Articles\n\n";
+            foreach ($recent as $p) {
+                $p_url = get_permalink($p->ID);
+                $p_title = wp_strip_all_tags($p->post_title);
+                $excerpt = has_excerpt($p->ID) ? wp_strip_all_tags(get_the_excerpt($p)) : wp_trim_words(wp_strip_all_tags(strip_shortcodes($p->post_content)), 22, '...');
+                $excerpt = preg_replace('/\s+/', ' ', trim($excerpt));
+                echo "- [{$p_title}]({$p_url}): {$excerpt}\n";
+            }
+            echo "\n";
+        }
+
+        echo "## Sitemaps & Feeds\n\n";
+        echo "- [XML Sitemap](" . home_url('/sitemap_index.xml') . "): Primary index of all canonical pages and posts.\n";
+        echo "- [Google News Sitemap](" . home_url('/news-sitemap.xml') . "): Real-time news and editorial updates.\n";
+        exit;
     }
 
     /**
@@ -126,6 +194,7 @@ class Auto_SEO_GEO_Master_Suite {
             }
 
             $site_name = get_bloginfo('name');
+            $news_lang = self::get_site_primary_lang();
             echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
             echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">' . "\n";
             foreach ($recent_posts as $p) {
@@ -142,7 +211,7 @@ class Auto_SEO_GEO_Master_Suite {
                 echo "    <news:news>\n";
                 echo "      <news:publication>\n";
                 echo "        <news:name>" . htmlspecialchars($site_name, ENT_XML1, 'UTF-8') . "</news:name>\n";
-                echo "        <news:language>vi</news:language>\n";
+                echo "        <news:language>{$news_lang}</news:language>\n";
                 echo "      </news:publication>\n";
                 echo "      <news:publication_date>{$pub_date}</news:publication_date>\n";
                 echo "      <news:title>{$title}</news:title>\n";
@@ -259,9 +328,13 @@ class Auto_SEO_GEO_Master_Suite {
 
     
     /**
-     * Rule 4: Self-referencing Canonical tag (strips query parameters)
+     * Rule 4: Self-referencing Canonical tag (strips query parameters).
+     * Avoids duplicate <link rel="canonical"> when RankMath is already rendering one.
      */
     public function render_self_canonical() {
+        if (class_exists('RankMath') || defined('RANK_MATH_VERSION')) {
+            return;
+        }
         if (is_singular('post') || is_page()) {
             $canonical_url = strtok(get_permalink(), '?');
             echo '<link rel="canonical" href="' . esc_url($canonical_url) . '" />' . "\n";
@@ -313,7 +386,27 @@ class Auto_SEO_GEO_Master_Suite {
     private static function load_configuration() {
         $site_name = get_bloginfo('name');
         $site_desc = get_bloginfo('description');
-        
+        $ctx = strtolower($site_name . ' ' . $site_desc);
+        $is_travel = (strpos($ctx, 'du lịch') !== false || strpos($ctx, 'travel') !== false || strpos($ctx, 'trip') !== false || strpos($ctx, 'hành trình') !== false);
+        $is_records = (strpos($ctx, 'kỷ lục') !== false || strpos($ctx, 'nhất thế giới') !== false || strpos($ctx, 'world record') !== false);
+
+        if ($is_travel) {
+            $default_vi_title = !empty($site_name) ? ($site_name . (!empty($site_desc) ? ' - ' . $site_desc : ' - Cẩm Nang Du Lịch & Trải Nghiệm Thực Tế')) : 'Cẩm Nang Du Lịch & Trải Nghiệm';
+            $default_vi_desc  = !empty($site_desc) ? $site_desc : 'Chuyên trang chia sẻ kinh nghiệm du lịch tự túc, lịch trình chi tiết, ẩm thực địa phương và điểm đến hấp dẫn.';
+            $default_en_title = !empty($site_name) ? ($site_name . (!empty($site_desc) ? ' - ' . $site_desc : ' - Authentic Travel Guides & Itineraries')) : 'Authentic Travel Guides & Itineraries';
+            $default_en_desc  = !empty($site_desc) ? $site_desc : 'Expert travel itineraries, local food guides, budget tips, and destination reviews.';
+        } elseif ($is_records) {
+            $default_vi_title = !empty($site_name) ? ($site_name . (!empty($site_desc) ? ' - ' . $site_desc : ' - Khám Phá Kỷ Lục & Kỳ Quan Thế Giới')) : 'Khám Phá Kỷ Lục & Kỳ Quan Thế Giới';
+            $default_vi_desc  = !empty($site_desc) ? $site_desc : 'Bách khoa toàn thư về những kỷ lục thế giới, kỳ quan thiên nhiên, công trình vĩ đại và khám phá khoa học.';
+            $default_en_title = !empty($site_name) ? ($site_name . ' - World Records & Wonders Encyclopedia') : 'World Records & Wonders Encyclopedia';
+            $default_en_desc  = 'Comprehensive encyclopedia of world records, natural wonders, engineering marvels, and scientific facts.';
+        } else {
+            $default_vi_title = !empty($site_name) ? ($site_name . (!empty($site_desc) ? ' - ' . $site_desc : ' - Cổng Thông Tin Công Nghệ & AI')) : 'Cổng Thông Tin Công Nghệ & AI';
+            $default_vi_desc  = !empty($site_desc) ? $site_desc : 'Chuyên trang cập nhật tin tức công nghệ, thủ thuật phần mềm, AI và giải pháp tự động hóa.';
+            $default_en_title = !empty($site_name) ? ($site_name . ' - Leading Tech & AI Innovation Hub') : 'Leading Tech & AI Innovation Hub';
+            $default_en_desc  = 'The premier hub for cutting-edge Artificial Intelligence insights, tech reviews, and automated systems.';
+        }
+
         self::$site_config = array(
             'brand' => array(
                 'favicon' => get_site_icon_url(512),
@@ -322,28 +415,29 @@ class Auto_SEO_GEO_Master_Suite {
             ),
             'seo' => array(
                 'vi' => array(
-                    'title' => !empty($site_name) ? $site_name . ' - ' . $site_desc : 'Cổng Thông Tin Công Nghệ & AI',
+                    'title' => $default_vi_title,
                     'tagline' => $site_desc,
-                    'description' => !empty($site_desc) ? $site_desc : 'Chuyên trang cập nhật tin tức công nghệ, AI và giải pháp tự động hóa.',
-                    'keywords' => 'công nghệ, trí tuệ nhân tạo, AI tools, SaaS, tự động hóa'
+                    'description' => $default_vi_desc,
+                    'keywords' => $is_travel ? 'du lịch tự túc, kinh nghiệm du lịch, lịch trình, ẩm thực' : ($is_records ? 'kỷ lục thế giới, nhất thế giới, kỳ quan, khám phá' : 'công nghệ, trí tuệ nhân tạo, AI tools, thủ thuật số')
                 ),
                 'en' => array(
-                    'title' => !empty($site_name) ? $site_name . ' - Leading Tech & AI Innovation Hub' : 'Leading Tech & AI Innovation Hub',
-                    'tagline' => 'The Future of Technology & Automated Systems',
-                    'description' => 'The premier hub for cutting-edge Artificial Intelligence insights, tech reviews, and automated systems.',
-                    'keywords' => 'artificial intelligence, tech innovation, top AI tools, automation'
+                    'title' => $default_en_title,
+                    'tagline' => $site_desc ?: 'Expert Guides & Insights',
+                    'description' => $default_en_desc,
+                    'keywords' => $is_travel ? 'travel guide, itinerary, budget travel, destination tips' : 'artificial intelligence, tech innovation, top AI tools, automation'
                 ),
                 'zh' => array(
-                    'title' => !empty($site_name) ? $site_name . ' - 前沿科技与人工智能商业门户' : '前沿科技与人工智能商业门户',
-                    'tagline' => '聚焦最新科技前沿与数字化商业',
-                    'description' => '领先的科技与人工智能商业门户，专注于前沿技术洞察与数字化商业策略。',
-                    'keywords' => '人工智能, 科技资讯, 数字化商业, 自动化'
+                    'title' => !empty($site_name) ? $site_name . ' - 权威指南与深度解析' : '权威指南与深度解析',
+                    'tagline' => $site_desc ?: '权威指南与深度解析',
+                    'description' => $default_en_desc,
+                    'keywords' => '深度指南, 实用攻略, 权威解析'
                 )
             )
         );
     }
 
     public static function get_current_lang() {
+        $primary = self::get_site_primary_lang();
         if (!empty($_GET['lang']) && in_array($_GET['lang'], array('vi', 'en', 'zh'))) {
             return sanitize_text_field($_GET['lang']);
         }
@@ -355,10 +449,7 @@ class Auto_SEO_GEO_Master_Suite {
             if (strpos($_COOKIE['googtrans'], 'en') !== false) return 'en';
             if (strpos($_COOKIE['googtrans'], 'vi') !== false) return 'vi';
         }
-        $browser_lang = !empty($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? $_SERVER['HTTP_ACCEPT_LANGUAGE'] : '';
-        if (preg_match('/^(zh|zh-cn|zh-tw|zh-hk)/i', $browser_lang)) return 'zh';
-        if (preg_match('/^(en|en-us|en-gb)/i', $browser_lang)) return 'en';
-        return 'vi';
+        return $primary;
     }
 
     public function handle_lang_cookie() {
@@ -411,16 +502,13 @@ class Auto_SEO_GEO_Master_Suite {
     public function render_head_seo_tags() {
         global $wp;
         $lang = self::get_current_lang();
-        $seo = isset(self::$site_config['seo'][$lang]) ? self::$site_config['seo'][$lang] : self::$site_config['seo']['vi'];
+        $primary_lang = self::get_site_primary_lang();
+        $seo = isset(self::$site_config['seo'][$lang]) ? self::$site_config['seo'][$lang] : self::$site_config['seo'][$primary_lang];
         $brand = self::$site_config['brand'];
 
-        $current_url = home_url(add_query_arg(array(), $wp->request));
+        $current_url = (is_singular('post') || is_page()) ? strtok(get_permalink(), '?') : home_url(add_query_arg(array(), $wp->request));
         $clean_url = remove_query_arg('lang', $current_url);
         $clean_url = ($clean_url === home_url() || $clean_url === home_url('/')) ? home_url('/') : trailingslashit($clean_url);
-
-        $url_vi = add_query_arg('lang', 'vi', $clean_url);
-        $url_en = add_query_arg('lang', 'en', $clean_url);
-        $url_zh = add_query_arg('lang', 'zh', $clean_url);
 
         if (!empty($brand['favicon'])) {
             echo '<link rel="icon" type="image/png" sizes="512x512" href="' . esc_url($brand['favicon']) . '" />' . "\n";
@@ -437,11 +525,14 @@ class Auto_SEO_GEO_Master_Suite {
             echo '<meta name="twitter:description" content="' . esc_attr($seo['description']) . '" />' . "\n";
         }
 
-        echo '<link rel="alternate" hreflang="vi" href="' . esc_url($url_vi) . '" />' . "\n";
-        echo '<link rel="alternate" hreflang="en" href="' . esc_url($url_en) . '" />' . "\n";
-        echo '<link rel="alternate" hreflang="zh-CN" href="' . esc_url($url_zh) . '" />' . "\n";
-        echo '<link rel="alternate" hreflang="zh" href="' . esc_url($url_zh) . '" />' . "\n";
-        echo '<link rel="alternate" hreflang="x-default" href="' . esc_url($url_en) . '" />' . "\n";
+        // v5.4.0: Only emit canonical self-referencing hreflang + x-default (never emit fake ?lang= query URLs that canonicalize back to base URL)
+        $alternates = apply_filters('asg_hreflang_alternates', array(
+            $primary_lang => $clean_url,
+            'x-default'   => $clean_url,
+        ), $clean_url);
+        foreach ($alternates as $hreflang_code => $href_url) {
+            echo '<link rel="alternate" hreflang="' . esc_attr($hreflang_code) . '" href="' . esc_url($href_url) . '" />' . "\n";
+        }
     }
 
     public function output_master_css() {
@@ -1012,10 +1103,16 @@ class Auto_SEO_GEO_Master_Suite {
     }
 
     /**
-     * v5.2.0: Frontend fallback for post thumbnail if post has no thumbnail
+     * v5.4.0: Frontend fallback & LCP FetchPriority booster for post thumbnail
      */
     public function fallback_post_thumbnail_html($html, $post_id, $post_thumbnail_id, $size, $attr) {
         if (!empty($html)) {
+            if (is_singular('post') && get_queried_object_id() === (int) $post_id) {
+                $html = preg_replace('/\bloading=["\']lazy["\']/i', 'loading="eager" fetchpriority="high"', $html);
+                if (stripos($html, 'fetchpriority=') === false) {
+                    $html = preg_replace('/<img\b/i', '<img fetchpriority="high"', $html, 1);
+                }
+            }
             return $html;
         }
         $post = get_post($post_id);
@@ -1030,23 +1127,28 @@ class Auto_SEO_GEO_Master_Suite {
             } else {
                 $alt = esc_attr($post->post_title);
             }
+            $is_lcp = (is_singular('post') && get_queried_object_id() === (int) $post_id);
+            $loading_attrs = $is_lcp ? 'loading="eager" fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"';
             return sprintf(
-                '<img src="%s" alt="%s" class="attachment-post-thumbnail size-post-thumbnail wp-post-image auto-geo-fallback" loading="lazy" decoding="async" />',
+                '<img src="%s" alt="%s" class="attachment-post-thumbnail size-post-thumbnail wp-post-image auto-geo-fallback" %s />',
                 esc_url($src),
-                $alt
+                $alt,
+                $loading_attrs
             );
         }
         return $html;
     }
 
     /**
-     * v5.2.0: Anti-AI Cliché Filter on post content
-     * Strips redundant robotic AI conclusions like "Hy vọng qua bài viết..."
+     * v5.4.0: Anti-AI Cliché & Invisible Watermark Filter on post content
+     * Strips zero-width LLM watermarks and redundant robotic AI conclusions.
      */
     public function filter_anti_ai_content_cliches($content) {
         if (!is_singular('post') || empty($content)) {
             return $content;
         }
+        // Strip zero-width & bidirectional invisible watermarks
+        $content = preg_replace('/[\x{200B}-\x{200F}\x{202A}-\x{202E}\x{2060}-\x{2064}\x{FEFF}]/u', '', $content);
         $patterns = array(
             '/<p[^>]*>\s*(?:<strong>)?\s*(?:Tóm lại|Hy vọng|Hi vọng|Nhìn chung|Có thể nói|Trên đây là)(?:,)?\s*(?:qua bài viết (?:này|trên)|với những chia sẻ trên|những thông tin trên|chúng tôi đã|bài viết đã).*?<\/p>/iu',
             '/<p[^>]*>\s*(?:<strong>)?\s*Hy vọng qua bài viết.*?<\/p>/iu',
@@ -1056,18 +1158,37 @@ class Auto_SEO_GEO_Master_Suite {
     }
 
     /**
-     * v5.2.0: Auto-wrap standalone WebP images in Dual AVIF/WebP <picture> tags
+     * v5.4.0: Speculation Rules API for instant next-page navigation (CWV LCP booster)
+     */
+    public function render_speculation_rules() {
+        if (is_admin() || is_user_logged_in()) {
+            return;
+        }
+        $rules = array(
+            'prefetch' => array(
+                array(
+                    'source' => 'document',
+                    'where' => array(
+                        'and' => array(
+                            array('href_matches' => '/*'),
+                            array('not' => array('href_matches' => '/wp-admin/*')),
+                            array('not' => array('href_matches' => '/wp-login.php*')),
+                            array('not' => array('href_matches' => '/*\\?*(^|&)add-to-cart=*')),
+                            array('not' => array('selector_matches' => '[rel~=nofollow]'))
+                        )
+                    ),
+                    'eagerness' => 'moderate'
+                )
+            )
+        );
+        echo '<script type="speculationrules">' . wp_json_encode($rules, JSON_UNESCAPED_SLASHES) . '</script>' . "\n";
+    }
+
+    /**
+     * v5.2.0: Standalone WebP delivery - Native clean <img> tags without 404 AVIF
      */
     public function auto_wrap_dual_avif_webp_picture($content) {
-        if (!is_singular('post') || empty($content)) {
-            return $content;
-        }
-        return preg_replace_callback('/(?<!<picture>)\s*(<img[^>]+src=["\']([^"\']+\.webp)["\'][^>]*>)/i', function($matches) {
-            $img_tag = $matches[1];
-            $webp_url = $matches[2];
-            $avif_url = str_replace('.webp', '.avif', $webp_url);
-            return '<picture><source srcset="' . esc_url($avif_url) . '" type="image/avif"><source srcset="' . esc_url($webp_url) . '" type="image/webp">' . $img_tag . '</picture>';
-        }, $content);
+        return $content;
     }
 
     /**
@@ -1122,10 +1243,43 @@ class Auto_SEO_GEO_Master_Suite {
     }
 
     public function filter_schema_article_entity($entity) {
+        if (!is_array($entity)) {
+            return $entity;
+        }
         $dates = self::get_canonical_dates();
-        if ($dates && is_array($entity)) {
+        if ($dates) {
             $entity['datePublished'] = $dates['published'];
             $entity['dateModified']  = $dates['modified'];
+        }
+        // v5.4.0 GEO Schema Enrichment: SpeakableSpecification, wordCount, isAccessibleForFree & Citations
+        $entity['isAccessibleForFree'] = true;
+        $entity['speakable'] = array(
+            '@type' => 'SpeakableSpecification',
+            'cssSelector' => array('.entry-title', '.geo-quotable-summary', 'article p:first-of-type')
+        );
+        $post = get_post();
+        if ($post && !empty($post->post_content)) {
+            $plain_text = trim(wp_strip_all_tags(strip_shortcodes($post->post_content)));
+            $words = preg_split('/\s+/u', $plain_text, -1, PREG_SPLIT_NO_EMPTY);
+            if (!empty($words)) {
+                $entity['wordCount'] = count($words);
+            }
+            if (preg_match_all('/<a[^>]+href=["\'](https?:\/\/[^"\'>\s]+)["\']/i', $post->post_content, $matches)) {
+                $auth_domains = array('wikipedia.org', 'wikidata.org', 'w3.org', 'ietf.org', 'arxiv.org', 'developers.google.com', 'unesco.org', 'nasa.gov', 'github.com', '.gov', '.edu');
+                $citations = array();
+                foreach ($matches[1] as $u) {
+                    $u_low = strtolower($u);
+                    foreach ($auth_domains as $d) {
+                        if (strpos($u_low, $d) !== false && !in_array($u, $citations, true)) {
+                            $citations[] = $u;
+                            break;
+                        }
+                    }
+                }
+                if (!empty($citations)) {
+                    $entity['citation'] = array_slice($citations, 0, 10);
+                }
+            }
         }
         return $entity;
     }

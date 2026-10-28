@@ -27,7 +27,7 @@ from modules.fast_indexing.instant_indexer import InstantIndexer
 from modules.content_quality_gate import enforce_publish_payload, JunkContentError, check_post
 
 class WpAiAutopilot:
-    def __init__(self, wp_url: str, admin_user: Optional[str] = None, admin_pass: Optional[str] = None):
+    def __init__(self, wp_url: str, admin_user: Optional[str] = None, admin_pass: Optional[str] = None, session: Optional[requests.Session] = None, nonce: str = ""):
         self.wp_url = wp_url.rstrip("/")
         self.host = self.wp_url.replace("https://", "").replace("http://", "").strip("/ ")
         self.admin_user = admin_user or os.getenv("WP_ADMIN_USER", "admin")
@@ -35,11 +35,12 @@ class WpAiAutopilot:
         
         import urllib3
         urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-        self.session = requests.Session()
+        self.session = session or requests.Session()
         self.session.verify = False
         self.session.headers.update({"User-Agent": "Mozilla/5.0 Wp-AI-Autopilot"})
-        self.nonce = ""
-        self._authenticate()
+        self.nonce = nonce or ""
+        if not self.nonce and self.admin_pass:
+            self._authenticate()
 
         self.researcher = KeywordResearcher()
         self.writer = ArticleWriter()
@@ -160,6 +161,60 @@ class WpAiAutopilot:
         print(f"  📝 SEO Title: {seo_title} ({len(seo_title)} chars)")
         print(f"  📄 Meta Description: {meta_desc} ({len(meta_desc)} chars)")
         print(f"  📊 Word Count: {word_count} words (Strictly No Thin Content)")
+
+        # Step 3.5: Enforce Image Density Rule (Strict: at least 1 image per 500 words)
+        target_diagrams = max(2, min(5, word_count // 500))
+        print(f"\n[3.5/6] Enforcing Image Density: Generating {target_diagrams} Contextual 16:9 WebP Diagrams (>= 1 image / 500 words)...")
+
+        h2_matches = list(re.finditer(r'<h2[^>]*>(.*?)</h2>', html_content, re.IGNORECASE))
+        diagram_types = ["workflow", "matrix", "checklist", "troubleshoot", "workflow"]
+
+        if h2_matches:
+            step_stride = max(1, len(h2_matches) // target_diagrams)
+            selected_indices = [min(i * step_stride, len(h2_matches) - 1) for i in range(target_diagrams)]
+            seen_idx = set()
+            unique_indices = []
+            for idx in selected_indices:
+                if idx not in seen_idx:
+                    unique_indices.append(idx)
+                    seen_idx.add(idx)
+
+            for fig_idx, h2_pos_idx in enumerate(reversed(unique_indices), 1):
+                match_obj = h2_matches[h2_pos_idx]
+                raw_h2_text = re.sub(r'<[^>]+>', '', match_obj.group(1)).strip()
+                dtype = diagram_types[(len(unique_indices) - fig_idx) % len(diagram_types)]
+                fig_num = len(unique_indices) - fig_idx + 1
+
+                fig_path, fig_alt, fig_caption = self.image_composer.compose_content_diagram(
+                    topic=topic,
+                    section_title=raw_h2_text,
+                    diagram_type=dtype,
+                    category_name=category_name,
+                    primary_kw=focus_keyword,
+                    slug=slug,
+                    figure_idx=fig_num,
+                    site_domain=self.host
+                )
+
+                if dry_run:
+                    img_src = fig_path
+                else:
+                    fig_upload = self.upload_webp_media(
+                        fig_path,
+                        alt_text=fig_alt[:100],
+                        title=f"{topic} - Hinh {fig_num}"
+                    )
+                    img_src = fig_upload.get("url", "") if fig_upload else ""
+
+                if img_src:
+                    fig_html = f'\n<figure class="wp-block-image size-large"><img src="{img_src}" alt="{fig_alt}" width="1200" height="675" loading="lazy" class="aligncenter size-large" /><figcaption>{fig_caption}</figcaption></figure>\n'
+                    sub_text = html_content[match_obj.end():]
+                    p_match = re.search(r'</p>', sub_text, re.IGNORECASE)
+                    if p_match:
+                        insert_at = match_obj.end() + p_match.end()
+                    else:
+                        insert_at = match_obj.end()
+                    html_content = html_content[:insert_at] + fig_html + html_content[insert_at:]
 
         if dry_run:
             out_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "output", "posts"))

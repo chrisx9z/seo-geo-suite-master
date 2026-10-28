@@ -31,9 +31,11 @@ import unicodedata
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Tuple
 
+from .humanizer import strip_invisible, humanize
+
 MIN_WORDS = 600
 MAX_SLUG_WORDS = 7
-MIN_KEYWORD_COVERAGE = 0.6
+MIN_KEYWORD_COVERAGE = 0.4
 MAX_DUPLICATE_SENTENCE_RATIO = 0.15
 
 
@@ -122,9 +124,31 @@ SLUG_FILLER_SUFFIX = re.compile(
 SLUG_LOW_VALUE = {"chi", "tiet", "sieu", "va", "cua", "cac", "nhung",
                   "dot", "pha", "complete", "ultimate", "guide", "vs"}
 DANGLING_TAIL = {
-    "the", "va", "cua", "cho", "cac", "nhung", "mot", "o", "tai", "voi", "trong", "khi", "nao", "la",
-    "to", "in", "for", "and", "of", "with", "on", "at", "from", "by", "a", "an", "or", "is",
+    "the", "va", "cua", "cho", "cac", "nhung", "mot", "tai", "voi", "trong", "khi", "nao", "la",
+    "to", "for", "and", "of", "with", "on", "at", "from", "by", "or", "is",
 }
+
+
+def _slug_missing_d(slug: str, keyword: str) -> bool:
+    """Return True if `slug` dropped Vietnamese 'đ' (e.g. 'ao' instead of 'dao' for 'đảo')."""
+    if not slug or not keyword or ("đ" not in keyword.lower()):
+        return False
+    slug_tokens = set(re.findall(r"[a-z0-9]+", slug.lower()))
+    kw_words = re.findall(r"[a-zà-ỹ0-9]+", keyword.lower())
+    non_d_ascii = set()
+    d_dropped = set()
+    for w in kw_words:
+        asc = _ascii(w)
+        if "đ" in w:
+            dropped = unicodedata.normalize("NFKD", w.replace("đ", "")).encode("ascii", "ignore").decode("ascii")
+            if dropped and dropped != asc:
+                d_dropped.add(dropped)
+        else:
+            non_d_ascii.add(asc)
+    for tok in d_dropped:
+        if tok in slug_tokens and tok not in non_d_ascii:
+            return True
+    return False
 
 
 # --------------------------------------------------------------------------- #
@@ -153,6 +177,8 @@ def keyword_tokens(keyword: str) -> List[str]:
 
 def normalize_slug(slug: str, keyword: str = "") -> str:
     """Return a clean short-keyword slug (ASCII, <= MAX_SLUG_WORDS words)."""
+    if slug and keyword and _slug_missing_d(slug, keyword):
+        slug = ""
     base = slug or keyword or ""
     base = _ascii(html.unescape(base)).lower()
     base = re.sub(r"[^a-z0-9]+", "-", base).strip("-")
@@ -187,7 +213,7 @@ def normalize_slug(slug: str, keyword: str = "") -> str:
     return "-".join(words)
 
 
-def is_bad_slug(slug: str) -> bool:
+def is_bad_slug(slug: str, keyword: str = "") -> bool:
     """True only for slugs that violate the short-keyword-slug standard (avoid needless URL churn)."""
     words = [w for w in (slug or "").split("-") if w]
     return (
@@ -197,6 +223,7 @@ def is_bad_slug(slug: str) -> bool:
         or any(w in SLUG_DROP or re.fullmatch(r"20\d\d", w) for w in words)
         or words[-1] in DANGLING_TAIL
         or bool(SLUG_FILLER_SUFFIX.search(slug))
+        or _slug_missing_d(slug, keyword)
     )
 
 
@@ -255,7 +282,16 @@ def check_post(title: str, content: str, keyword: str = "", slug: str = "",
     issues: List[str] = []
     repairs: List[str] = []
 
-    # --- Auto-repair: geographic hallucinations -------------------------------
+    # --- Auto-repair: invisible Unicode watermarks, AI clichés & geographic hallucinations -
+    content, invis_removed = strip_invisible(content or "")
+    if invis_removed:
+        repairs.append(f"stripped_invisible_chars:{invis_removed}")
+
+    hum = humanize(content)
+    if hum["change_count"] > 0:
+        content = hum["cleaned"]
+        repairs.append(f"humanized_cliches:{hum['change_count']}")
+
     context = " ".join([title, keyword, destination])
     content, removed = strip_geo_hallucinations(content or "", context)
     if removed:
@@ -323,7 +359,23 @@ def check_post(title: str, content: str, keyword: str = "", slug: str = "",
         if headings:
             h_cov = sum(1 for t in toks if t in headings) / len(toks)
             if h_cov == 0:
-                issues.append(f"keyword_absent_from_headings:{h_cov:.0%}")
+                def _inject_kw(m: re.Match) -> str:
+                    tag = m.group(1)
+                    attrs = m.group(2) or ""
+                    inner = m.group(3)
+                    return f"<{tag}{attrs}>{inner}: {keyword.title()}</{tag}>"
+
+                new_content, n_subs = re.subn(r"<(h[23])(\s+[^>]*)?>(.*?)</\1>", _inject_kw, content, count=1, flags=re.S | re.I)
+                if n_subs > 0:
+                    content = new_content
+                    repairs.append(f"injected_heading_keyword:{keyword}")
+                    heading_parts = re.findall(r"<h[2-4][^>]*>(.*?)</h[2-4]>", content, flags=re.S | re.I)
+                    headings = fold(_strip_tags(" ".join(heading_parts)).lower())
+                    h_cov = sum(1 for t in toks if t in headings) / len(toks)
+                    if h_cov == 0:
+                        issues.append(f"keyword_absent_from_headings:{h_cov:.0%}")
+                else:
+                    issues.append(f"keyword_absent_from_headings:{h_cov:.0%}")
         else:
             issues.append("no_headings")
 
@@ -342,7 +394,7 @@ def check_post(title: str, content: str, keyword: str = "", slug: str = "",
         issues.append("placeholder_text_image")
 
     # --- Slug normalisation (auto-repair) ------------------------------------
-    new_slug = normalize_slug(slug, keyword) if (not slug or is_bad_slug(slug)) else slug
+    new_slug = normalize_slug(slug, keyword) if (not slug or is_bad_slug(slug, keyword)) else slug
     if slug and new_slug and new_slug != slug:
         repairs.append(f"slug:{slug}->{new_slug}")
 

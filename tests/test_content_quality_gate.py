@@ -127,3 +127,17 @@ def test_template_spin_detected_across_posts():
                   "content": {"raw": _body("phở bò hà nội")}})
     r = template_spin_ratios(posts)
     assert all(r[n] >= 0.9 for n in range(5)) and r[99] == 0
+
+
+def test_heading_keyword_auto_repaired():
+    # Body has headings, but none contains keyword tokens
+    kw = "mở tài khoản ngân hàng online"
+    body = "<h2>Quy Trình Định Danh eKYC Tại Nhà</h2>" + "".join(
+        f"<p>Đoạn hướng dẫn số {i} với dữ liệu mở tài khoản ngân hàng online chi tiết và rõ ràng.</p>"
+        for i in range(35)
+    )
+    res = check_post("Hướng dẫn mở tài khoản eKYC", body, keyword=kw)
+    assert res.passed, res.issues
+    assert any("injected_heading_keyword" in r for r in res.repairs)
+    assert kw.title() in res.content
+

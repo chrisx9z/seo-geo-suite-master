@@ -144,17 +144,27 @@ class TravelBatchScheduler:
                 time.sleep(4)
         return None
 
-    def post_exists(self, slug: str) -> bool:
-        """Checks if a post with this slug is already scheduled or published."""
+    def post_exists(self, slug: str, keyword: str = "") -> bool:
+        """Checks if a post with this slug or keyword is already scheduled or published."""
+        clean_kw = keyword.lower().strip()
         # Check in local log first
         for p in self.scheduled_log.get("scheduled_posts", []):
-            if p.get("slug") == slug:
+            p_slug = p.get("slug", "")
+            p_kw = p.get("keyword", "").lower().strip()
+            if p_slug == slug or (clean_kw and p_kw == clean_kw):
+                return True
+            if p_slug and (slug.startswith(p_slug) or p_slug.startswith(slug)):
                 return True
         # Check via WordPress REST
         try:
             r = self.session.get(f"{self.wp_url}/wp-json/wp/v2/posts?slug={slug}&status=any", headers={"X-WP-Nonce": self.nonce}, timeout=15)
             if r.status_code == 200 and len(r.json()) > 0:
                 return True
+            if len(slug) > 28:
+                short_slug = slug[:28]
+                r2 = self.session.get(f"{self.wp_url}/wp-json/wp/v2/posts?slug={short_slug}&status=any", headers={"X-WP-Nonce": self.nonce}, timeout=15)
+                if r2.status_code == 200 and len(r2.json()) > 0:
+                    return True
         except Exception:
             pass
         return False
@@ -166,8 +176,8 @@ class TravelBatchScheduler:
         category_id = post_info.get("category_id", 76)
         lsi = post_info.get("lsi", "")
 
-        if self.post_exists(slug):
-            print(f"  [SKIP] Post '{slug}' already exists or scheduled.")
+        if self.post_exists(slug, keyword):
+            print(f"  [SKIP] Post '{slug}' ({keyword}) already exists or scheduled.")
             return None
 
         print(f"\n---> Processing: {keyword}")

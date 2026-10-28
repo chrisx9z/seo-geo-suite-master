@@ -16,6 +16,7 @@ from __future__ import annotations
 import importlib
 import json
 import os
+from urllib.parse import urlparse
 from typing import Any, Dict, List, Optional
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -25,6 +26,7 @@ SCHEDULERS = {
     "travel": ("modules.travel_scheduler.travel_batch_scheduler", "TravelBatchScheduler"),
     "english": ("modules.travel_scheduler.english_batch_scheduler", "EnglishBatchScheduler"),
     "vibe": ("modules.travel_scheduler.vibe_batch_scheduler", "VibeBatchScheduler"),
+    "tech": ("modules.travel_scheduler.vibe_batch_scheduler", "VibeBatchScheduler"),
     "direct_ip": ("modules.travel_scheduler.direct_ip_batch_scheduler", "DirectIPBatchScheduler"),
 }
 
@@ -56,7 +58,13 @@ def plan_path(site: Dict[str, Any]) -> str:
 
 
 def cache_path(site: Dict[str, Any]) -> str:
-    return _abs(site.get("cache_file") or os.path.join("cache", f"scheduled_{site.get('site_id')}.json"))
+    if site.get("cache_file"):
+        return _abs(site["cache_file"])
+    host = (urlparse(site.get("url", "")).hostname or "").replace(".", "_")
+    c_host = _abs(os.path.join("cache", f"scheduled_{host}.json"))
+    if os.path.exists(c_host):
+        return c_host
+    return _abs(os.path.join("cache", f"scheduled_{site.get('site_id')}.json"))
 
 
 def scheduler_class(site: Dict[str, Any]):

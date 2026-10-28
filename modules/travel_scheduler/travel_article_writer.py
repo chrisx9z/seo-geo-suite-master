@@ -17,7 +17,80 @@ from typing import Dict, Any, List, Optional
 
 class TravelArticleWriter:
     def __init__(self):
-        pass
+        self.api_key = os.environ.get("GEMINI_API_KEY", "")
+        if not self.api_key:
+            env_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".env"))
+            if os.path.exists(env_file):
+                with open(env_file, "r", encoding="utf-8") as f:
+                    for line in f:
+                        if line.startswith("GEMINI_API_KEY="):
+                            self.api_key = line.split("=", 1)[1].strip()
+                            break
+
+    def _generate_via_gemini(self, keyword: str, topic: str, destination: str, lsi: str, seo_title: str) -> Optional[str]:
+        """Generates rich, authentic Vietnamese travel articles via Gemini to avoid template spin."""
+        if not self.api_key:
+            return None
+        try:
+            import time
+            from google import genai
+            client = genai.Client(api_key=self.api_key)
+
+            clean_dest = self.extract_clean_dest(keyword, destination)
+            prompt = f"""Bạn là Chuyên gia Du lịch & Ẩm thực Việt Nam (Senior Travel Editor & Local Guide).
+Hãy viết một bài viết cẩm nang du lịch chuyên sâu, đậm chất trải nghiệm thực tế, ngôn từ cuốn hút và sinh động 100% bằng tiếng Việt về chủ đề:
+"{topic or keyword}"
+Từ khóa chính: "{keyword}" (BẮT BUỘC: Lồng ghép từ khóa chính này tự nhiên trong đoạn văn mở đầu và ở ít nhất một tiêu đề <h2> chính).
+Địa danh / Điểm đến: "{clean_dest}"
+LSI Keywords: "{lsi}"
+
+TIÊU CHUẨN NỘI DUNG (CHỐNG SPIN, CHỐNG BOILERPLATE):
+1. KHÔNG MỞ ĐẦU SÁO RỖNG:
+   Tuyệt đối tránh các câu rập khuôn như: "Trong hành trình khám phá...", "Được mệnh danh là...", "Nếu bạn đang tìm kiếm...", "Nhắc đến...", "Có thể nói rằng...".
+   Hãy mở bài trực diện bằng không gian, nhịp sống, cảnh sắc hoặc nét độc đáo khó quên của điểm đến này.
+2. NỘI DUNG CHUYÊN SÂU (> 1,700 từ):
+   - Cung cấp thông tin thực tế, hữu ích: đường đi, phương tiện di chuyển, thời điểm lý tưởng nhất trong năm, bảng giá vé/chi phí tham khảo cụ thể (VND).
+   - Trải nghiệm nổi bật: ngắm cảnh, check-in, hoạt động vui chơi, ẩm thực địa phương (món ăn đặc sản phải thử, quán ăn gợi ý).
+   - Lưu ý quan trọng cho du khách: trang phục, văn hóa địa phương, an toàn, mẹo tiết kiệm chi phí.
+   - Bảng tổng hợp chi phí dự kiến hoặc lịch trình gợi ý bằng thẻ <table> có <thead>, <tbody> và CSS gọn gàng.
+   - Mục FAQ: Giải đáp 3-4 thắc mắc phổ biến nhất của du khách về {keyword}.
+3. ĐỊNH DẠNG:
+   - Dùng các thẻ HTML chuẩn: <h2>, <h3>, <p>, <ul>, <li>, <strong>, <table>, <tr>, <th>, <td>.
+   - KHÔNG bọc bài viết trong khối mã ```html ... ```.
+"""
+            models_to_try = [
+                "gemini-flash-lite-latest",
+                "gemini-3.5-flash-lite",
+                "gemini-3.8-flash"
+            ]
+
+            html_body = ""
+            for attempt in range(1, 4):
+                for m in models_to_try:
+                    try:
+                        resp = client.models.generate_content(model=m, contents=prompt)
+                        if resp and resp.text:
+                            raw = resp.text.strip()
+                            if raw.startswith("```html"):
+                                raw = raw[7:]
+                            if raw.startswith("```"):
+                                raw = raw[3:]
+                            if raw.endswith("```"):
+                                raw = raw[:-3]
+                            html_body = raw.strip()
+                            break
+                    except Exception as e:
+                        time.sleep(1)
+                if html_body:
+                    break
+                if attempt < 3:
+                    time.sleep(3 * attempt)
+
+            return html_body if html_body else None
+
+        except Exception as e:
+            print(f"             [-] Gemini generation error: {e}. Falling back to template.")
+            return None
 
     DEST_MAP = [
         ("hà giang", "Hà Giang"), ("mộc châu", "Mộc Châu"), ("mai châu", "Mai Châu"),
@@ -27,7 +100,24 @@ class TravelArticleWriter:
         ("huế", "Huế"), ("quảng bình", "Quảng Bình"), ("phong nha", "Phong Nha"),
         ("quy nhơn", "Quy Nhơn"), ("bình định", "Quy Nhơn"), ("phú yên", "Phú Yên"),
         ("nha trang", "Nha Trang"), ("đà lạt", "Đà Lạt"), ("ninh bình", "Ninh Bình"),
-        ("sa pa", "Sa Pa"), ("sapa", "Sa Pa")
+        ("sa pa", "Sa Pa"), ("sapa", "Sa Pa"), ("phú quốc", "Phú Quốc"),
+        ("vũng tàu", "Vũng Tàu"), ("côn đảo", "Côn Đảo"), ("phan thiết", "Phan Thiết"),
+        ("mũi né", "Mũi Né"), ("tây ninh", "Tây Ninh"), ("cần thơ", "Cần Thơ"),
+        ("bến tre", "Bến Tre"), ("mỹ tho", "Mỹ Tho"), ("tiền giang", "Tiền Giang"),
+        ("an giang", "An Giang"), ("châu đốc", "Châu Đốc"), ("cà mau", "Cà Mau"),
+        ("hà tiên", "Hà Tiên"), ("nam du", "Nam Du"), ("bình ba", "Bình Ba"),
+        ("bình hưng", "Bình Hưng"), ("vĩnh hy", "Vĩnh Hy"), ("ninh thuận", "Ninh Thuận"),
+        ("măng đen", "Măng Đen"), ("kon tum", "Kon Tum"), ("gia lai", "Gia Lai"),
+        ("pleiku", "Pleiku"), ("buôn ma thuột", "Buôn Ma Thuột"), ("đắk lắk", "Đắk Lắk"),
+        ("tà đùng", "Tà Đùng"), ("bảo lộc", "Bảo Lộc"), ("tam đảo", "Tam Đảo"),
+        ("cô tô", "Cô Tô"), ("bình liêu", "Bình Liêu"), ("mù cang chải", "Mù Cang Chải"),
+        ("tà xùa", "Tà Xùa"), ("y tý", "Y Tý"), ("bắc hà", "Bắc Hà"),
+        ("pù luông", "Pù Luông"), ("hải phòng", "Hải Phòng"), ("ninh chữ", "Ninh Chữ"),
+        ("bangkok", "Bangkok"), ("chiang mai", "Chiang Mai"), ("pattaya", "Pattaya"),
+        ("phuket", "Phuket"), ("thái lan", "Thái Lan"), ("singapore", "Singapore"),
+        ("kuala lumpur", "Kuala Lumpur"), ("penang", "Penang"), ("malaysia", "Malaysia"),
+        ("siem reap", "Siem Reap"), ("phnom penh", "Phnom Penh"), ("koh rong", "Koh Rong"),
+        ("campuchia", "Campuchia"), ("bali", "Bali"), ("indonesia", "Indonesia")
     ]
 
     CURATED_TITLES = {
@@ -158,37 +248,41 @@ class TravelArticleWriter:
             if kw_d in text:
                 return clean_name
         t = re.sub(r"\b202[0-9]\b", "", topic).strip()
+        t = re.sub(r"\b(du lịch|cẩm nang|kinh nghiệm|khám phá|tự túc|trọn gói|chi tiết|từ a-z|từ a đến z)\b", "", t, flags=re.IGNORECASE).strip()
         t = re.sub(r"\s*(hùng vĩ|thơ mộng|biển đẹp|phụ cận|đáng sống|hoài niệm|biển xanh|ngàn hoa|cố đô)\s*", "", t, flags=re.IGNORECASE).strip()
         if "&" in t:
-            return t.split("&")[0].strip()
-        return t.strip() if t else "Việt Nam"
+            t = t.split("&")[0].strip()
+        t = re.sub(r"\s+", " ", t).strip(" -–:,")
+        return t if t else "Việt Nam"
 
     def detect_intent(self, keyword: str, topic: str = "") -> str:
         text = f"{keyword} {topic}".lower()
-        if any(w in text for w in ["thuê xe", "xe máy", "xe đạp", "xe điện", "xe khách", "ga tàu", "tàu hỏa", "phượt bằng xe máy"]):
+        if any(w in text for w in ["thuê xe", "xe máy", "xe đạp", "xe điện", "xe khách", "ga tàu", "tàu hỏa", "phượt bằng xe máy", "tàu cao tốc"]):
             return "THUE_XE"
-        if any(w in text for w in ["đặc sản", "món ngon", "ăn ở đâu", "ăn gì", "quán ăn", "ẩm thực", "uống gì", "cơm cháy", "thịt dê", "ốc núi", "thắng cố", "lẩu", "food tour", "chè khoai", "bánh bèo", "bánh xèo", "bún chả cá", "chợ cồn", "chợ hàn", "vỉa hè", "chợ đêm", "chợ đông ba"]):
+        if any(w in text for w in ["đặc sản", "món ngon", "ăn ở đâu", "ăn gì", "quán ăn", "ẩm thực", "uống gì", "cơm cháy", "thịt dê", "ốc núi", "thắng cố", "lẩu", "food tour", "chè khoai", "bánh bèo", "bánh xèo", "bún chả cá", "chợ cồn", "chợ hàn", "vỉa hè", "chợ đêm", "chợ đông ba", "bò tơ", "muối tôm", "bánh tráng", "kẹo dừa", "hủ tiếu", "cháo cá", "cua biển", "bún nước lèo", "bánh canh", "bánh căn", "bánh ướt", "gỏi cá"]):
             return "AM_THUC"
         if any(w in text for w in ["homestay", "khách sạn", "resort", "nghỉ dưỡng", "villa", "bungalow", "ở đâu đẹp", "đặt phòng", "view núi", "view hồ", "view biển", "flc"]):
             return "LUU_TRU"
         if any(w in text for w in ["lịch trình", "ngày 1 đêm", "ngày 2 đêm", "ngày 3 đêm", "ngày 4 đêm", "kế hoạch", "tour tự túc", "2n1đ", "3n2đ", "4n3đ"]):
             return "LICH_TRINH"
-        if any(w in text for w in ["chùa", "đền", "chiêm bái", "tâm linh", "di tích", "lăng khải định", "lăng minh mạng", "lăng tự đức", "lăng bác", "đại nội", "hoàng thành", "tháp đôi", "tháp bánh ít"]):
+        if any(w in text for w in ["chùa", "đền", "chiêm bái", "tâm linh", "lăng khải định", "lăng minh mạng", "lăng tự đức", "lăng bác", "đại nội", "hoàng thành", "tháp bánh ít", "tòa thánh", "cao đài", "miếu bà", "nhà thờ", "thiền viện"]) and not any(x in text for x in ["cáp treo", "petronas", "cồn phụng", "kuala lumpur"]):
             return "TAM_LINH"
         if any(w in text for w in ["mùa nào đẹp", "thời điểm", "thời tiết", "tháng mấy", "mùa đẹp nhất", "mùa hoa", "mùa hái mận", "mùa rêu", "lịch phun lửa"]):
             return "THOI_DIEM"
-        if any(w in text for w in ["check in", "check-in", "săn mây", "sống ảo", "đèo", "dốc", "hẻm", "thác", "hang", "động", "cột cờ", "rừng thông", "đồi chè", "bảo tàng", "làng gốm", "làng rau", "làng hương", "làng đá", "vịnh", "bãi biển", "cù lao", "eo gió", "kỳ co", "ghềnh ráng", "hòn khô", "đồi cát", "sông chày", "suối nước moọc", "suối khoáng", "đỉnh pha luông", "hồ quan sơn", "hồ tây", "hồ thang hen", "hồ bản viết", "bán đảo sơn trà", "rừng dừa"]):
+        if any(w in text for w in ["check in", "check-in", "săn mây", "sống ảo", "đèo", "dốc", "hẻm", "thác", "hang", "động", "cột cờ", "rừng thông", "đồi chè", "bảo tàng", "làng gốm", "làng rau", "làng hương", "làng đá", "vịnh", "bãi biển", "cù lao", "eo gió", "kỳ co", "ghềnh ráng", "hòn khô", "đồi cát", "sông chày", "suối nước moọc", "suối khoáng", "đỉnh pha luông", "hồ quan sơn", "hồ tây", "hồ thang hen", "hồ bản viết", "bán đảo sơn trà", "rừng dừa", "suối", "thung lũng", "vườn trái cây", "chợ nổi", "cồn", "trại rắn", "cáp treo", "tháp đôi", "đảo"]):
             return "CHECK_IN"
         return "CAM_NANG"
 
     def clean_subject(self, keyword: str) -> str:
         s = re.sub(r"\b202[0-9]\b", "", keyword, flags=re.IGNORECASE).strip()
+        s = re.sub(r"\btự túc\b", "", s, flags=re.IGNORECASE).strip()
         s = re.sub(r"\s+", " ", s).strip()
         prefixes = [
             "kinh nghiệm du lịch", "kinh nghiệm đi lễ", "kinh nghiệm đi", "kinh nghiệm phượt",
             "cẩm nang du lịch", "cẩm nang chiêm bái", "cẩm nang khám phá", "cẩm nang", "kinh nghiệm",
             "lịch trình du lịch", "lịch trình", "thuê xe máy", "thuê xe", "chinh phục",
-            "check in", "check-in", "khám phá", "review", "top", "hướng dẫn", "tham quan"
+            "check in", "check-in", "khám phá", "review", "top", "hướng dẫn", "tham quan",
+            "du lịch", "đi chơi", "vui chơi"
         ]
         suffixes = [
             "tự túc từ a đến z", "tự túc từ a-z", "tự túc", "từ a đến z", "từ a-z", "mới nhất", "toàn tập",
@@ -267,10 +361,12 @@ class TravelArticleWriter:
         if intent == "THUE_XE":
             t = f"Thuê Xe Máy {dest_name} Giao Tận Nơi: Bảng Giá 2026 & Mẹo Nhận Xe"
         elif intent == "AM_THUC":
-            if any(w in kw_lower for w in ["bún chả cá", "bánh xèo", "chè khoai", "bánh bèo"]):
+            if any(w in kw_lower for w in ["bún", "bánh", "chè", "cháo", "lẩu", "gỏi", "cua", "ốc", "bò", "dê", "gà", "cơm", "hủ tiếu", "mì", "phở", "kẹo", "muối", "rượu", "nem", "chả"]):
                 t = f"Thưởng Thức {subj}: Top Quán Ngon Chuẩn Vị Bản Địa 2026"
+            elif "chợ" in kw_lower or "phố" in kw_lower or "food tour" in kw_lower:
+                t = f"Khám Phá {subj}: Thiên Đường Ẩm Thực & Món Ngon Phải Thử 2026"
             else:
-                t = f"Ăn Gì Ở {dest_name}? Top Món Ngon Đặc Sản Phải Thử Mới Nhất 2026"
+                t = f"Ăn Gì Ở {dest_name}? Khám Phá {subj} Ngon Nức Tiếng 2026"
         elif intent == "LUU_TRU":
             type_stay = "Resort" if "resort" in kw_lower else ("Khách Sạn" if "khách sạn" in kw_lower else "Homestay")
             t = f"Top {type_stay} {dest_name} View Cực Đẹp: Không Gian Chill, Giá Tốt 2026"
@@ -312,62 +408,80 @@ class TravelArticleWriter:
     def distribute_images(self, html: str, image_urls: List[str], title: str, dest: str) -> str:
         """
         Distributes images across the article so that every ~400-500 words has an authentic photo.
-        - Image 1: Cover photo before [ez-toc]
-        - Image 2..N: Evenly distributed after paragraphs throughout the body
+        - Image 1: Cover photo before first H2 or replacing {img1}
+        - Image 2..N: Evenly distributed under H2 headings throughout the body
         """
         if not image_urls:
             return html.replace("{img1}", "").replace("{img2}", "")
 
-        # 1. First image replaces {img1} (Featured cover before TOC)
-        img1_html = f"""
-<figure class="wp-block-image size-large" style="margin: 24px 0;">
-  <img src="{image_urls[0]}" alt="{title}" width="1200" height="675" loading="lazy" decoding="async" style="aspect-ratio: 16/9; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);" />
+        # Check if {img1} placeholder exists (template renderer)
+        if "{img1}" in html:
+            img1_html = f"""
+<figure class="wp-block-image size-large tg-photo-wrapper" style="margin: 28px 0;">
+  <img src="{image_urls[0]}" alt="{title} - Khám phá {dest}" width="1920" height="1080" loading="lazy" decoding="async" style="aspect-ratio: 16/9; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);" />
   <figcaption style="text-align: center; font-size: 0.9em; color: #64748b; margin-top: 8px; font-style: italic;">Hình ảnh thực tế tại {dest} được du khách ghi lại trong chuyến đi.</figcaption>
 </figure>
 """
-        html = html.replace("{img1}", img1_html).replace("{img2}", "")
+            html = html.replace("{img1}", img1_html).replace("{img2}", "")
+            remaining_imgs = image_urls[1:]
+        else:
+            # For Gemini-generated content: insert cover photo right before the first <h2> or after opening paragraph
+            first_h2 = re.search(r'<h2[^>]*>', html, re.IGNORECASE)
+            img1_html = f"""
+<figure class="wp-block-image size-large tg-photo-wrapper" style="margin: 28px 0;">
+  <img src="{image_urls[0]}" alt="{title} - Toàn cảnh {dest}" width="1920" height="1080" loading="lazy" decoding="async" style="aspect-ratio: 16/9; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);" />
+  <figcaption style="text-align: center; font-size: 0.9em; color: #64748b; margin-top: 8px; font-style: italic;">Toàn cảnh cảnh sắc và không gian trải nghiệm thực tế tại {dest}.</figcaption>
+</figure>
+"""
+            if first_h2:
+                pos = first_h2.start()
+                html = html[:pos] + "\n" + img1_html + "\n" + html[pos:]
+            else:
+                html = img1_html + "\n" + html
+            remaining_imgs = image_urls[1:]
 
-        remaining_imgs = image_urls[1:]
         if not remaining_imgs:
             return html
 
-        # Find paragraphs after [ez-toc] to distribute remaining images evenly
-        paragraphs = list(re.finditer(r'</p>', html, flags=re.IGNORECASE))
-        num_p = len(paragraphs)
-        num_imgs = len(remaining_imgs)
-
-        if num_p <= num_imgs:
-            insert_indices = list(range(num_p))
-        else:
-            step = num_p / (num_imgs + 1)
-            insert_indices = [int(round(step * (i + 1))) for i in range(num_imgs)]
-            insert_indices = [min(idx, num_p - 1) for idx in insert_indices]
-            insert_indices = sorted(list(set(insert_indices)))
-
-        captions = [
-            f"Góc nhìn cận cảnh không gian trải nghiệm thực tế tại {dest}.",
-            f"Hình ảnh thực địa được du khách ghi nhận trong chuyến đi.",
-            f"Toàn cảnh khu vực trải nghiệm thực tế tại {dest}.",
-            f"Khung cảnh và nhịp sống đời thường tại {dest} qua góc máy thực tế.",
-            f"Chi tiết không gian và nét văn hóa bản địa tại {dest}."
-        ]
-
-        offset = 0
-        for i, p_idx in enumerate(insert_indices):
-            if i >= len(remaining_imgs):
-                break
-            img_url = remaining_imgs[i]
-            cap = captions[i % len(captions)]
-            img_tag = f"""
-<figure class="wp-block-image size-large" style="margin: 32px 0;">
-  <img src="{img_url}" alt="{title} - Góc nhìn thực tế {i+2}" width="1200" height="675" loading="lazy" decoding="async" style="aspect-ratio: 16/9; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);" />
-  <figcaption style="text-align: center; font-size: 0.9em; color: #64748b; margin-top: 8px; font-style: italic;">{cap}</figcaption>
+        # Distribute remaining images under <h2> headings
+        h2_matches = list(re.finditer(r'<h2[^>]*>(.*?)</h2>', html, re.IGNORECASE))
+        if len(h2_matches) >= 2:
+            eligible_h2s = h2_matches[1:] if len(h2_matches) > 1 else h2_matches
+            stride = max(1, len(eligible_h2s) // len(remaining_imgs))
+            offset = 0
+            for i, img_url in enumerate(remaining_imgs):
+                target_idx = min(i * stride, len(eligible_h2s) - 1)
+                m = eligible_h2s[target_idx]
+                alt_text = f"{title} - Góc nhìn thực tế {i+2}"
+                cap_text = f"Hình ảnh thực địa chi tiết không gian trải nghiệm tại {dest} được du khách ghi lại."
+                fig_tag = f"""
+<figure class="wp-block-image size-large tg-photo-wrapper" style="margin: 32px 0;">
+  <img src="{img_url}" alt="{alt_text}" width="1920" height="1080" loading="lazy" decoding="async" style="aspect-ratio: 16/9; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);" />
+  <figcaption style="text-align: center; font-size: 0.9em; color: #64748b; margin-top: 8px; font-style: italic;">{cap_text}</figcaption>
 </figure>
 """
-            m = paragraphs[p_idx]
-            pos = m.end()
-            html = html[:pos + offset] + "\n" + img_tag + "\n" + html[pos + offset:]
-            offset += len(img_tag) + 2
+                insert_pos = m.end() + offset
+                html = html[:insert_pos] + "\n" + fig_tag + "\n" + html[insert_pos:]
+                offset += len(fig_tag) + 2
+        else:
+            paragraphs = list(re.finditer(r'</p>', html, flags=re.IGNORECASE))
+            if paragraphs:
+                num_p = len(paragraphs)
+                num_imgs = len(remaining_imgs)
+                step = max(1, num_p // (num_imgs + 1))
+                offset = 0
+                for i, img_url in enumerate(remaining_imgs):
+                    target_p = min((i + 1) * step, num_p - 1)
+                    m = paragraphs[target_p]
+                    fig_tag = f"""
+<figure class="wp-block-image size-large tg-photo-wrapper" style="margin: 32px 0;">
+  <img src="{img_url}" alt="{title} - Góc nhìn thực tế {i+2}" width="1920" height="1080" loading="lazy" decoding="async" style="aspect-ratio: 16/9; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);" />
+  <figcaption style="text-align: center; font-size: 0.9em; color: #64748b; margin-top: 8px; font-style: italic;">Khung cảnh thực tế tại {dest}.</figcaption>
+</figure>
+"""
+                    insert_pos = m.end() + offset
+                    html = html[:insert_pos] + "\n" + fig_tag + "\n" + html[insert_pos:]
+                    offset += len(fig_tag) + 2
 
         return html
 
@@ -398,8 +512,12 @@ class TravelArticleWriter:
             if content_img_url:
                 all_imgs.append(content_img_url)
 
-        # Dispatch to specialized renderers with placeholders
-        if detected_intent == "THUE_XE":
+        # Try Gemini first for bespoke, rich, non-repetitive prose
+        gemini_body = self._generate_via_gemini(keyword, topic, destination, lsi, seo_title)
+        if gemini_body:
+            raw_body = gemini_body
+        # Fallback to specialized renderers with placeholders
+        elif detected_intent == "THUE_XE":
             raw_body = self._render_thue_xe(keyword, dest_clean, "{img1}", "{img2}")
         elif detected_intent == "AM_THUC":
             raw_body = self._render_am_thuc(keyword, dest_clean, "{img1}", "{img2}")
@@ -765,7 +883,7 @@ Hành trình chiêm bái và vãn cảnh tại quần thể danh thắng tâm li
 
 [ez-toc]
 
-<h2 style="color: #0f172a; margin-top: 36px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Giá Trị Lịch Sử Ngàn Năm Và Vị Thế Phong Thủy Đắc Địa</h2>
+<h2 style="color: #0f172a; margin-top: 36px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Giá Trị Lịch Sử Và Không Gian Tâm Linh Tại {keyword.title()}</h2>
 <p>
 Quần thể danh thắng tâm linh tọa lạc trên sườn núi đá vôi hùng vĩ, được bao bọc bởi những thung lũng xanh mướt và dòng sông uốn lượn tạo nên thế đất phong thủy tiền thủy hậu sơn vững chãi. Trải qua hàng ngàn năm lịch sử thăng trầm gắn liền với các triều đại Đinh, Tiền Lê và Lý, nơi đây được xem là cái nôi gìn giữ mạch nguồn Phật giáo thiêng liêng của dân tộc.
 </p>
@@ -866,7 +984,10 @@ Khung cảnh thiên nhiên tráng lệ cùng những góc sống ảo triệu li
 
 [ez-toc]
 
-<h2 style="color: #0f172a; margin-top: 36px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Vẻ Đẹp Phong Cảnh Tự Nhiên Và Sức Hút Kỳ Vĩ</h2>
+<h2 style="color: #0f172a; margin-top: 36px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Vẻ Đẹp Phong Cảnh Và Sức Hút Của {keyword.title()}</h2>
+<p>
+Khi ghé thăm {keyword}, du khách sẽ được tận mắt chiêm ngưỡng cảnh quan độc đáo, không gian thiên nhiên trong lành và những nét văn hóa địa phương đặc sắc của {dest}.
+</p>
 <p>
 Tọa lạc tại vị trí đắc địa nơi giao thoa giữa núi non trùng điệp và đồng bằng trù phú, cảnh quan nơi đây mở ra một bức tranh thủy mặc sống động đến ngỡ ngàng. Đứng từ trên cao nhìn xuống, những dãy núi đá vôi vươn thẳng lên nền trời xanh biếc, bao bọc lấy những dòng sông êm đềm và thảm lúa vàng óng ả trải dài tít tắp.
 </p>
@@ -969,7 +1090,7 @@ Hãy mang theo một chai nước lọc nhỏ và chiếc quạt cầm tay trong
 
 [ez-toc]
 
-<h2 style="color: #0f172a; margin-top: 36px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Tinh Hoa Ẩm Thực Bản Địa Và Câu Chuyện Sản Vật Vùng Miền</h2>
+<h2 style="color: #0f172a; margin-top: 36px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Tinh Hoa Hương Vị Bản Địa: {keyword.title()}</h2>
 <p>
 Nét đặc sắc tạo nên linh hồn cho ẩm thực nơi đây chính là nguồn nguyên liệu tươi ngon được nuôi thả hoàn toàn tự nhiên giữa núi đồi. Các loài động vật thường xuyên leo trèo trên các vách đá vôi dốc đứng và ăn các loại lá cây thuốc quý trong rừng, nhờ vậy thớ thịt luôn săn chắc, thơm ngọt tự nhiên và hầu như không có mỡ thừa.
 </p>
@@ -1081,7 +1202,10 @@ Hành trình khám phá <strong>{keyword}</strong> luôn mang lại những tr�
 
 [ez-toc]
 
-<h2 style="color: #0f172a; margin-top: 36px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Tổng Quan Về Điểm Đến Và Sức Hút Kỳ Vĩ</h2>
+<h2 style="color: #0f172a; margin-top: 36px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Tổng Quan Cẩm Nang Khám Phá {keyword.title()}</h2>
+<p>
+Hành trình trải nghiệm {keyword} luôn mang đến cho du khách những ấn tượng khó phai về cảnh sắc và con người tại {dest}.
+</p>
 <p>
 Được thiên nhiên ưu ái ban tặng cảnh quan tuyệt mỹ cùng bề dày truyền thống văn hóa địa phương, {dest} luôn nằm trong danh sách những tọa độ trải nghiệm đáng giá nhất. Sự hài hòa giữa cảnh sắc khoáng đạt trong lành cùng sự nồng hậu của người dân bản địa mang lại cho du khách cảm giác thư thái và nguồn năng lượng tích cực sau những ngày làm việc tất bật.
 </p>

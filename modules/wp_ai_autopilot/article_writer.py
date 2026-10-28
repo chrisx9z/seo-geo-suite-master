@@ -50,16 +50,64 @@ class ArticleWriter:
         from google import genai
         client = genai.Client(api_key=self.api_key)
 
-        is_troubleshooting_or_howto = any(w in (topic + " " + category_name + " " + focus_keyword).lower() for w in [
+        combined_ctx = (topic + " " + category_name + " " + focus_keyword).lower()
+        is_travel = any(w in combined_ctx for w in [
+            "du lịch", "lịch trình", "khách sạn", "homestay", "resort", "địa điểm", "ăn gì", "chơi gì",
+            "travel", "itinerary", "hotel", "beach", "island", "flight", "visa", "backpack", "phượt"
+        ])
+        is_world_record = any(w in combined_ctx for w in [
+            "nhất thế giới", "kỷ lục", "hành tinh", "vũ trụ", "đại dương", "lớn nhất", "cao nhất", "sâu nhất", "dài nhất"
+        ])
+        is_troubleshooting_or_howto = any(w in combined_ctx for w in [
             "sửa lỗi", "khắc phục", "hướng dẫn", "cách làm", "cách dùng", "làm thế nào", "tại sao", "làm sao",
             "excel", "word", "powerpoint", "máy tính", "windows", "iphone", "android", "vneid", "bảo hiểm", "zalo", "facebook", "cccd", "mẹo vặt"
         ]) and not any(w in (topic + " " + focus_keyword).lower() for w in ["ai mmo", "chat gpt", "gemini", "claude", "midjourney", "suno", "kling"])
 
-        if is_troubleshooting_or_howto:
+        if is_travel:
+            prompt = f"""Bạn là Biên tập viên Du lịch & Lữ hành Thực địa Cao cấp (Senior Travel & Destination Editor).
+Hãy viết một bài cẩm nang du lịch thực tế, chi tiết, giàu trải nghiệm thực địa 100% về chủ đề:
+"{topic}"
+Từ khóa chính: "{focus_keyword}" (BẮT BUỘC: Lồng ghép từ khóa chính này vào ít nhất một tiêu đề <h2> chính và trong 100 từ đầu tiên).
+Chuyên mục: "{category_name or 'Cẩm Nang Du Lịch'}"
+
+BỘ QUY TẮC BẮT BUỘC ĐỂ KHÔNG BỊ COI LÀ NỘI DUNG RÁC (ANTI-BOILERPLATE, ANTI-AI CLICHE):
+1. CẤM TUYỆT ĐỐI CÂU MỞ BÀI SÁO RỖNG VÀ CẤM BỊA ĐẶT ĐỊA LÝ (không gắn núi đá vôi karst hay cố đô cho vùng biển/đô thị không có thật).
+   Mở bài đi thẳng vào đặc trưng nổi bật nhất của điểm đến, thời điểm lý tưởng nhất để đi và tổng quan chi phí/lịch trình thực tế.
+2. NỘI DUNG CHUYÊN SÂU (> 1,600 từ):
+   - Hướng dẫn di chuyển thực tế (chặng bay/xe, thời gian di chuyển, mức giá tham khảo).
+   - Lịch trình gợi ý hoặc danh sách tọa độ trải nghiệm/ẩm thực đặc sắc nhất kèm địa chỉ, khung giờ mở cửa và mẹo tránh đông đúc.
+   - Bảng tổng hợp chi phí dự kiến hoặc so sánh các lựa chọn bằng thẻ <table>.
+   - Kinh nghiệm đặt phòng, lưu ý an toàn và văn hóa bản địa.
+   - FAQ giải đáp 3-4 câu hỏi thực tế của du khách.
+3. ĐỊNH DẠNG:
+   - Dùng HTML semantic: <h2>, <h3>, <p>, <ul>, <li>, <table>.
+   - Có shortcode [ez-toc] ở đầu sau đoạn mở bài.
+
+Đầu ra trả về trực tiếp mã HTML cho bài viết (không bao bọc trong ```html ... ```).
+"""
+        elif is_world_record:
+            prompt = f"""Bạn là Biên tập viên Khoa học & Bách khoa Kỷ lục Thế giới (Senior Encyclopedia & Science Editor).
+Hãy viết một bài phân tích chuyên sâu, chính xác về mặt số liệu khoa học/lịch sử/địa lý 100% bằng tiếng Việt về chủ đề:
+"{topic}"
+Từ khóa chính: "{focus_keyword}" (BẮT BUỘC: Lồng ghép từ khóa chính này vào ít nhất một tiêu đề <h2> chính và trong 100 từ đầu tiên).
+Chuyên mục: "{category_name or 'Kỷ Lục & Khám Phá Thế Giới'}"
+
+BỘ QUY TẮC BẮT BUỘC (ANTI-BOILERPLATE, ANTI-AI CLICHE):
+1. CẤM TUYỆT ĐỐI các cụm từ khuôn mẫu giả tạo ("Chuẩn xác thực Guinness", "Vị trí Quán Quân / Á Quân" lắp ghép máy móc).
+2. NỘI DUNG CHUYÊN SÂU (> 1,600 từ):
+   - Giải thích rõ thông số đo đạc thực tế (kích thước, độ cao/sâu, niên đại, tọa độ địa lý, đơn vị nghiên cứu công bố).
+   - Danh sách phân tích chi tiết từng kỷ lục/hạng mục kèm bối cảnh khoa học, lịch sử hình thành và điểm độc đáo.
+   - Bảng đối chiếu thông số kỹ thuật/địa lý trực quan bằng thẻ <table>.
+   - FAQ giải đáp 3-4 câu hỏi khoa học thú vị liên quan.
+3. ĐỊNH DẠNG: Dùng HTML semantic <h2>, <h3>, <p>, <ul>, <li>, <table>; có [ez-toc] sau mở bài.
+
+Đầu ra trả về trực tiếp mã HTML cho bài viết (không bao bọc trong ```html ... ```).
+"""
+        elif is_troubleshooting_or_howto:
             prompt = f"""Bạn là Chuyên gia Kỹ thuật Phần mềm & Thủ thuật Số Cao Cấp (Senior IT Specialist & Practical Tech Advisor).
 Hãy viết một bài viết cẩm nang hướng dẫn thực hành và khắc phục sự cố cực kỳ chi tiết, dễ hiểu, thực tế và chuẩn xác 100% bằng tiếng Việt về chủ đề:
 "{topic}"
-Từ khóa chính: "{focus_keyword}"
+Từ khóa chính: "{focus_keyword}" (BẮT BUỘC: Lồng ghép từ khóa chính này vào ít nhất một tiêu đề <h2> chính và trong 100 từ đầu tiên).
 Chuyên mục: "{category_name or 'Thủ Thuật & Xử Lý Sự Cố'}"
 
 BỘ QUY TẮC BẮT BUỘC ĐỂ KHÔNG BỊ COI LÀ NỘI DUNG RÁC (ANTI-BOILERPLATE, ANTI-AI CLICHE):
@@ -84,7 +132,7 @@ BỘ QUY TẮC BẮT BUỘC ĐỂ KHÔNG BỊ COI LÀ NỘI DUNG RÁC (ANTI-BOIL
             prompt = f"""Bạn là Kỹ sư Trưởng AI & Chuyên gia Kỹ thuật Phần mềm thực chiến (Enterprise Tech Lead).
 Hãy viết một bài viết cẩm nang kỹ thuật cực kỳ chi tiết, thực tế, sâu sắc và thực chiến 100% bằng tiếng Việt về chủ đề:
 "{topic}"
-Từ khóa chính: "{focus_keyword}"
+Từ khóa chính: "{focus_keyword}" (BẮT BUỘC: Lồng ghép từ khóa chính này vào ít nhất một tiêu đề <h2> chính và trong 100 từ đầu tiên).
 Chuyên mục: "{category_name or 'Trí Tuệ Nhân Tạo & AI'}"
 
 BỘ QUY TẮC BẮT BUỘC ĐỂ KHÔNG BỊ COI LÀ NỘI DUNG RÁC (ANTI-BOILERPLATE, ANTI-AI CLICHE):
@@ -104,7 +152,12 @@ BỘ QUY TẮC BẮT BUỘC ĐỂ KHÔNG BỊ COI LÀ NỘI DUNG RÁC (ANTI-BOIL
 
 Đầu ra trả về trực tiếp mã HTML cho bài viết (không bao bọc trong ```html ... ```).
 """
-        models_to_try = ["gemini-3.5-flash-lite", "gemini-3.8-flash", "gemini-3.7-flash"]
+        models_to_try = [
+            "gemini-flash-lite-latest",
+            "gemini-3.1-flash-lite",
+            "gemini-flash-latest",
+            "gemini-3.1-flash-lite-preview"
+        ]
         for attempt in range(1, 4):
             for m in models_to_try:
                 try:
@@ -137,10 +190,6 @@ BỘ QUY TẮC BẮT BUỘC ĐỂ KHÔNG BỊ COI LÀ NỘI DUNG RÁC (ANTI-BOIL
         cleaned_topic = re.sub(r'[\s\&\,\:\;\-\/]+$', '', topic).strip()
         seo_title = cleaned_topic
 
-        meta_desc = f"Khám phá toàn tập {cleaned_topic}: Thông tin chi tiết, phân tích chuyên sâu và cẩm nang hữu ích cập nhật mới nhất 2026."
-        if len(meta_desc) > 160:
-            meta_desc = meta_desc[:157] + "..."
-
         # Generate authentic content with Gemini
         print(f"  [*] Generating authentic content via Gemini for: {topic}...")
         try:
@@ -150,6 +199,22 @@ BỘ QUY TẮC BẮT BUỘC ĐỂ KHÔNG BỊ COI LÀ NỘI DUNG RÁC (ANTI-BOIL
             raise
 
         content = raw_body
+
+        # Extract authentic meta description from the first substantive paragraph
+        first_p_matches = re.findall(r"<p[^>]*>(.*?)</p>", content, flags=re.I | re.S)
+        meta_desc = ""
+        for p_html in first_p_matches:
+            p_text = re.sub(r"<[^>]+>", " ", p_html)
+            p_text = re.sub(r"\[/?ez-toc\]", "", p_text, flags=re.I)
+            p_text = re.sub(r"\s+", " ", p_text).strip()
+            if len(p_text) >= 60:
+                meta_desc = p_text
+                break
+        if not meta_desc:
+            meta_desc = re.sub(r"\s+", " ", re.sub(r"<[^>]+>|\[/?ez-toc\]", " ", content)).strip()
+        if len(meta_desc) > 158:
+            cut = meta_desc[:155].rsplit(" ", 1)[0]
+            meta_desc = (cut if len(cut) >= 80 else meta_desc[:155]) + "..."
 
         clean_words = re.sub(r"<[^>]+>", " ", content).split()
         word_count = len(clean_words)

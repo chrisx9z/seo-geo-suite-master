@@ -409,56 +409,54 @@ class VibeImageComposer:
             draw.ellipse([(cx - 8, cy - 8), (cx + 8, cy + 8)], fill=(255, 255, 255))
 
     def compose_banner(self, title: str, category_name: str, primary_kw: str, slug: str, site_domain: str = "") -> str:
+        # STRICT RULE: ZERO TEXT-CARD BANNERS. Fetch real authentic photography!
+        from .tech_image_fetcher import TechImageFetcher
+        fetcher = TechImageFetcher(cache_dir=self.output_dir)
+        photo_info = fetcher.get_real_photo_for_post(topic=title, focus_keyword=primary_kw, slug=slug, seed_index=0)
+        if photo_info and os.path.exists(photo_info["local_path"]):
+            print(f"  [+] Real Authentic Photo Banner: {os.path.basename(photo_info['local_path'])} ({os.path.getsize(photo_info['local_path'])/1024:.1f} KB)")
+            return photo_info["local_path"]
+            
+        # Clean abstract fallback with ZERO text overlay
         width, height = 1200, 675
         profile = self.get_profile_for_keyword(primary_kw, category_name=category_name)
-        
         img = self.create_gradient_canvas(width, height, profile["bg_top"], profile["bg_bot"])
         draw = ImageDraw.Draw(img)
-        
         self.draw_tech_grid(draw, width, height, profile["accent"])
-        self.draw_motif(draw, profile["motif"], cx=970, cy=337, primary=profile["primary"], accent=profile["accent"])
-        
-        draw.rectangle([(70, 65), (420, 102)], fill=(profile["bg_bot"][0] + 15, profile["bg_bot"][1] + 15, profile["bg_bot"][2] + 20), outline=profile["primary"], width=1)
-        draw.text((85, 73), f"// {category_name.upper()}  •  2026", font=self.font_badge, fill=profile["accent"])
-        draw.text((70, 125), f"▶ CHỦ ĐỀ CỐT LÕI: {profile['tag']}", font=self.font_mono, fill=(156, 163, 175))
-        
-        words = title.split()
-        lines, current = [], []
-        for w in words:
-            test_line = " ".join(current + [w])
-            if len(test_line) <= 34:
-                current.append(w)
-            else:
-                lines.append(" ".join(current))
-                current = [w]
-        if current:
-            lines.append(" ".join(current))
-            
-        y_pos = 175
-        for idx, line in enumerate(lines[:3]):
-            fill_col = (255, 255, 255) if idx < 2 else profile["accent"]
-            draw.text((70, y_pos), line, font=self.font_title_mid, fill=fill_col)
-            y_pos += 48
-            
-        y_pos = max(y_pos + 15, 360)
-        kw_display = primary_kw.upper()
-        draw.rectangle([(70, y_pos), (520, y_pos + 46)], fill=(profile["bg_top"][0] + 25, profile["bg_top"][1] + 25, profile["bg_top"][2] + 30), outline=profile["accent"], width=2)
-        draw.text((85, y_pos + 12), f"FOCUS KEYWORD: {kw_display}", font=self.font_badge, fill=(255, 255, 255))
-        
-        y_bot = height - 105
-        draw.line([(70, y_bot - 20), (740, y_bot - 20)], fill=(profile["accent"][0]//3, profile["accent"][1]//3, profile["accent"][2]//3), width=1)
-        draw.text((70, y_bot), "✓ FACT-CHECKED 2026", font=self.font_badge, fill=profile["primary"])
-        draw.text((275, y_bot), "✓ HƯỚNG DẪN THỰC THI", font=self.font_badge, fill=(209, 213, 219))
-        draw.text((495, y_bot), "✓ TỐI ƯU HIỆU SUẤT", font=self.font_badge, fill=profile["accent"])
-        
-        # Watermark
-        domain_tag = site_domain.upper() if site_domain else "TECH PORTAL"
-        watermark_text = f"{domain_tag}  |  DIGITAL AUTOMATION & AI SAAS INTELLIGENCE"
-        draw.text((70, y_bot + 32), watermark_text, font=self.font_mono, fill=(107, 114, 128))
-        
+        self.draw_motif(draw, profile["motif"], cx=600, cy=337, primary=profile["primary"], accent=profile["accent"])
         out_path = os.path.join(self.output_dir, f"{slug}-featured.webp")
         img.save(out_path, "WEBP", quality=85, method=6)
-        
-        file_size_kb = os.path.getsize(out_path) / 1024
-        print(f"  [+] Generated Unique WebP Banner: {os.path.basename(out_path)} ({file_size_kb:.1f} KB)")
         return out_path
+
+    def compose_content_diagram(
+        self,
+        topic: str,
+        section_title: str,
+        diagram_type: str,
+        category_name: str,
+        primary_kw: str,
+        slug: str,
+        figure_idx: int,
+        site_domain: str = ""
+    ) -> Tuple[str, str, str]:
+        # STRICT RULE: ZERO TEXT-CARD BANNERS. Fetch real authentic photography!
+        from .tech_image_fetcher import TechImageFetcher
+        fetcher = TechImageFetcher(cache_dir=self.output_dir)
+        photo_info = fetcher.get_real_photo_for_post(topic=topic, focus_keyword=primary_kw, slug=slug, seed_index=figure_idx)
+        if photo_info and os.path.exists(photo_info["local_path"]):
+            alt_text = f"{topic} - Ảnh minh họa thực tế hình {figure_idx}"
+            figcaption = f"Hình ảnh thực tế minh họa: {section_title}."
+            print(f"  [+] Real Authentic Content Photo {figure_idx}: {os.path.basename(photo_info['local_path'])} ({os.path.getsize(photo_info['local_path'])/1024:.1f} KB)")
+            return photo_info["local_path"], alt_text, figcaption
+
+        # Clean abstract fallback with ZERO text overlay
+        width, height = 1200, 675
+        profile = self.get_profile_for_keyword(primary_kw, category_name=category_name)
+        img = self.create_gradient_canvas(width, height, profile["bg_top"], profile["bg_bot"])
+        draw = ImageDraw.Draw(img)
+        self.draw_tech_grid(draw, width, height, profile["accent"])
+        out_path = os.path.join(self.output_dir, f"{slug}-fig{figure_idx}.webp")
+        img.save(out_path, "WEBP", quality=85, method=6)
+        alt_text = f"{topic} - Hình {figure_idx}"
+        figcaption = f"Hình minh họa: {section_title}."
+        return out_path, alt_text, figcaption

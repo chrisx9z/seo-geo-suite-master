@@ -52,9 +52,13 @@ class VibeBatchScheduler:
         self.nonce = ""
         self._authenticate()
 
-        self.autopilot = WpAiAutopilot(wp_url=self.wp_url, admin_user=self.admin_user, admin_pass=self.admin_pass)
-        self.autopilot.session = self.session
-        self.autopilot.nonce = self.nonce
+        self.autopilot = WpAiAutopilot(
+            wp_url=self.wp_url,
+            admin_user=self.admin_user,
+            admin_pass=self.admin_pass,
+            session=self.session,
+            nonce=self.nonce
+        )
         self.scheduled_log = self._load_log()
 
     def _load_log(self) -> Dict[str, Any]:
@@ -122,7 +126,7 @@ class VibeBatchScheduler:
                 return True
             if schedule_date and p.get("schedule_date") == schedule_date:
                 return True
-            if topic and (p.get("title", "").strip().lower() == topic.strip().lower() or topic.strip().lower() in p.get("title", "").strip().lower()):
+            if topic and p.get("title", "").strip().lower() == topic.strip().lower():
                 return True
         try:
             headers = {"X-WP-Nonce": self.nonce} if self.nonce else {}

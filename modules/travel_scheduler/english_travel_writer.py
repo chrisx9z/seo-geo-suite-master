@@ -9,13 +9,106 @@ Generates in-depth, authoritative English travel guides tailored for internation
 - 100% RankMath SEO optimized with schema, rich H2/H3 hierarchies, comparison tables, and FAQ sections
 """
 
+import os
+import time
 import re
 import random
 from typing import Dict, Any, List, Optional, Tuple
 
 class EnglishTravelWriter:
     def __init__(self):
-        pass
+        self.api_key = os.environ.get("GEMINI_API_KEY", "")
+        if not self.api_key:
+            env_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".env"))
+            if os.path.exists(env_file):
+                with open(env_file, "r", encoding="utf-8") as f:
+                    for line in f:
+                        if line.startswith("GEMINI_API_KEY="):
+                            self.api_key = line.split("=", 1)[1].strip()
+                            break
+
+    def _generate_via_gemini(self, title: str, keyword: str, cluster: str, images: List[str]) -> Optional[Tuple[str, str]]:
+        """Generates authentic, high-retention English travel articles via Gemini."""
+        if not self.api_key:
+            return None
+        try:
+            import time
+            from google import genai
+            client = genai.Client(api_key=self.api_key)
+
+            prompt = f"""You are a veteran travel writer and senior editor for Lonely Planet and Conde Nast Traveler specializing in Vietnam.
+Write an authoritative, deeply engaging, authentic travel guide in fluent English for the article:
+Title: "{title}"
+Focus Keyword: "{keyword}" (MANDATORY: Naturally embed this exact keyword in the first 100 words and in at least one <h2> heading).
+Cluster / Context: "{cluster}"
+
+QUALITY & EDITORIAL STANDARDS (STRICTLY ENFORCED):
+1. NO AI CLICHES OR LAZY OPENINGS:
+   Never start with generic cliches like "Vietnam is a land of contrasts...", "Nestled in the heart of...", "Looking for the ultimate guide...", "In this article...", "When traveling to...".
+   Open immediately with sensory atmosphere, cultural context, or immediate traveler reality.
+2. IN-DEPTH COMPREHENSIVE LENGTH (> 1,600 words):
+   - Provide concrete, actionable insights (transport options, realistic pricing in USD and VND, seasonal timing, insider tips, cultural etiquette).
+   - If covering a hotel/resort: review architecture, room categories, dining experiences, spa/wellness, location pros/cons, and who it is best suited for.
+   - If covering an itinerary: detailed day-by-day steps with morning, afternoon, evening activities and transfer logistics.
+   - If covering food: signature dishes, street-food stalls, etiquette, flavor profiles.
+   - Include a comparison table with <table>, <thead>, <tbody> with clean styling.
+   - Include a FAQ section with 3-4 practical questions and answers under <h2>Frequently Asked Questions About {keyword}</h2>.
+3. FORMATTING:
+   - Output valid semantic HTML: <h2>, <h3>, <p>, <ul>, <li>, <strong>, <table>.
+   - Do NOT wrap the output in ```html ... ``` code blocks.
+"""
+            models_to_try = [
+                "gemini-flash-lite-latest",
+                "gemini-3.5-flash-lite",
+                "gemini-3.8-flash"
+            ]
+
+            html_body = ""
+            for attempt in range(1, 4):
+                for m in models_to_try:
+                    try:
+                        resp = client.models.generate_content(model=m, contents=prompt)
+                        if resp and resp.text:
+                            raw = resp.text.strip()
+                            if raw.startswith("```html"):
+                                raw = raw[7:]
+                            if raw.startswith("```"):
+                                raw = raw[3:]
+                            if raw.endswith("```"):
+                                raw = raw[:-3]
+                            html_body = raw.strip()
+                            break
+                    except Exception as e:
+                        time.sleep(1)
+                if html_body:
+                    break
+                if attempt < 3:
+                    time.sleep(3 * attempt)
+
+            if not html_body:
+                return None
+
+            # Distribute in-content images under <h2> headings
+            h2_matches = list(re.finditer(r'<h2[^>]*>(.*?)</h2>', html_body, re.IGNORECASE))
+            if h2_matches and images:
+                stride = max(1, len(h2_matches) // (len(images) + 1))
+                for i, img_url in enumerate(images):
+                    target_h2_idx = min((i + 1) * stride, len(h2_matches) - 1)
+                    match_obj = h2_matches[target_h2_idx]
+                    alt = f"{keyword} - visual illustration {i+1}"
+                    caption = f"Scenic highlights and authentic traveler experiences for {keyword}."
+                    fig_html = self.generate_image_html(img_url, alt, caption)
+                    insert_pos = match_obj.end()
+                    html_body = html_body[:insert_pos] + "\n" + fig_html + "\n" + html_body[insert_pos:]
+                    # Re-scan h2 matches after string mutation
+                    h2_matches = list(re.finditer(r'<h2[^>]*>(.*?)</h2>', html_body, re.IGNORECASE))
+
+            meta_desc = f"Curated travel guide to {keyword}. Explore itineraries, local highlights, dining, stays, and expert tips for Vietnam."
+            return html_body, meta_desc
+
+        except Exception as e:
+            print(f"             [-] Gemini generation error: {e}. Falling back to template.")
+            return None
 
     def detect_category_intent(self, keyword: str, topic: str) -> str:
         k = (keyword + " " + topic).lower()
@@ -42,7 +135,7 @@ class EnglishTravelWriter:
     def generate_image_html(self, img_url: str, alt_text: str, caption: str) -> str:
         return f'''
 <figure class="wp-block-image size-large tg-photo-wrapper" style="margin: 36px 0;">
-  <img src="{img_url}" alt="{alt_text}" loading="lazy" decoding="async" width="1200" height="675" style="width: 100%; height: auto; border-radius: 8px; aspect-ratio: 16/9; object-fit: cover; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);" />
+  <img src="{img_url}" alt="{alt_text}" loading="lazy" decoding="async" width="1920" height="1080" style="width: 100%; height: auto; border-radius: 8px; aspect-ratio: 16/9; object-fit: cover; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);" />
   <figcaption class="wp-element-caption" style="font-size: 14px; color: #64748b; margin-top: 10px; text-align: center; font-style: italic;">{caption}</figcaption>
 </figure>'''
 
@@ -54,6 +147,23 @@ class EnglishTravelWriter:
         pillar = post_info.get("pillar", "")
         lsi = post_info.get("lsi", "")
         intent_type = self.detect_category_intent(keyword, cluster_name)
+
+        # Try Gemini first for deep, authentic, non-repetitive prose
+        gemini_res = self._generate_via_gemini(title, keyword, cluster_name, image_urls)
+        if gemini_res:
+            content, meta_desc = gemini_res
+            clean_text = re.sub(r'<[^>]+>', ' ', content)
+            word_count = len(clean_text.split())
+            return {
+                "title": title,
+                "slug": slug,
+                "content": content,
+                "word_count": word_count,
+                "meta_description": meta_desc,
+                "focus_keyword": keyword,
+                "intent": intent_type,
+                "image_count": len(image_urls)
+            }
 
         if intent_type == "ITINERARY":
             content, meta_desc = self._render_itinerary_guide(title, keyword, cluster_name, lsi, image_urls)
@@ -484,7 +594,7 @@ Vietnam spans three distinct climate zones, meaning the weather varies drastical
 
         content = f'''
 <p class="tg-lead" style="font-size: 18px; line-height: 1.7; color: #1e293b; font-weight: 400;">
-Few places in Southeast Asia offer the mesmerizing blend of natural wonder, historic gravitas, and vibrant street culture found across Vietnam. Whether you are gazing upon towering limestone spires rising out of tranquil rivers, walking beneath centuries-old golden pagoda eaves, or exploring remote highland frontier passes, experiencing <strong>{kw}</strong> stands out as a genuine bucket-list highlight of any journey. This comprehensive guide covers everything from history and visiting logistics to photography vantage points and crowd-avoidance tactics.
+Few places in Southeast Asia offer the mesmerizing blend of natural beauty, historic heritage, and vibrant local life found across Vietnam. Whether you are walking beneath centuries-old architecture, exploring dramatic regional landscapes, or immersing yourself in local street life, experiencing <strong>{kw}</strong> stands out as a genuine bucket-list highlight of any journey. This comprehensive guide covers everything from cultural context and visiting logistics to photography vantage points and crowd-avoidance tactics.
 </p>
 
 <div class="tg-callout-box" style="background: #f8fafc; border-left: 4px solid #f59e0b; padding: 22px 26px; border-radius: 6px; margin: 30px 0;">

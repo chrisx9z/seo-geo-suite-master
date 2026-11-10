@@ -26,6 +26,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..",
 from modules.wp_rest_auth import get_rest_nonce  # noqa: E402
 from modules.wp_ai_autopilot.autopilot_orchestrator import WpAiAutopilot
 from modules.content_crawler_pipeline.slug_optimizer import SlugOptimizer
+from modules.content_quality_gate import check_keyword_cannibalization, normalize_keyword_key
 
 HOURLY_STAGGERS = [
     "07:00:00", "08:30:00", "10:00:00", "11:30:00", "13:00:00",
@@ -120,13 +121,23 @@ class VibeBatchScheduler:
                 time.sleep(3)
         print(f"Warning: Failed to authenticate to {self.wp_url} after 5 attempts.")
 
-    def post_exists(self, slug: str, schedule_date: str = "", topic: str = "") -> bool:
+    def post_exists(self, slug: str, schedule_date: str = "", topic: str = "", focus_keyword: str = "") -> bool:
+        kw = focus_keyword or (topic.split(":")[0].strip() if ":" in topic else topic)
+        passed_can, can_issues = check_keyword_cannibalization(
+            site_url=self.wp_url, keyword=kw, slug=slug, title=topic
+        )
+        if not passed_can:
+            print(f"  [ANTI-CANNIBALIZATION] Blocked '{slug}' ({kw}): {', '.join(can_issues)}")
+            return True
+        clean_kw = normalize_keyword_key(kw)
         for p in self.scheduled_log.get("scheduled_posts", []):
             if p.get("slug") == slug:
                 return True
             if schedule_date and p.get("schedule_date") == schedule_date:
                 return True
             if topic and p.get("title", "").strip().lower() == topic.strip().lower():
+                return True
+            if clean_kw and normalize_keyword_key(p.get("keyword", "")) == clean_kw:
                 return True
         try:
             headers = {"X-WP-Nonce": self.nonce} if self.nonce else {}
@@ -138,7 +149,7 @@ class VibeBatchScheduler:
         return False
 
     def schedule_single_post(self, topic: str, slug: str, category_id: int, schedule_date: str, day_num: int, cluster_name: str, focus_keyword: Optional[str] = None, category_name: str = "Trí Tuệ Nhân Tạo & AI") -> Optional[Dict[str, Any]]:
-        if self.post_exists(slug, schedule_date=schedule_date, topic=topic):
+        if self.post_exists(slug, schedule_date=schedule_date, topic=topic, focus_keyword=focus_keyword or ""):
             print(f"  [SKIP] Post '{slug}' ({schedule_date}) already scheduled or exists.")
             return None
 

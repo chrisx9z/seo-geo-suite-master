@@ -166,12 +166,96 @@ VIETNAM_LANDMARK_MAP = {
     "bali": "Bali Indonesia landscape temple",
     "ubud": "Ubud Bali rice terrace monkey forest",
     "tegallalang": "Tegallalang Rice Terrace Bali",
+    "tegalalang": "Tegallalang Rice Terrace Bali",
     "tanah lot": "Tanah Lot Temple Bali",
     "uluwatu": "Uluwatu Temple Bali cliff",
     "nusa penida": "Kelingking Beach Nusa Penida Bali",
+    "kelingking": "Kelingking Beach Nusa Penida Bali",
+    "lempuyang": "Pura Lempuyang Temple Bali",
+    "babi guling": "Babi Guling roast pork Bali",
+    "bebek": "Bebek Betutu duck Bali",
+    "monkey forest": "Ubud Monkey Forest Bali",
+    "tukad cepung": "Bali waterfall canyon",
     "kuta": "Kuta Beach Bali sunset",
     "seminyak": "Seminyak Bali beach",
-    "canggu": "Canggu Bali beach"
+    "canggu": "Canggu Bali beach",
+    # Taiwan Landmarks
+    "dai loan": "Taipei 101 Taiwan skyline",
+    "cuu phan": "Jiufen Old Street Taiwan lantern",
+    "jiufen": "Jiufen Old Street Taiwan",
+    "thap phan": "Shifen Sky Lantern Taiwan railway",
+    "shifen": "Shifen Sky Lantern Taiwan",
+    "taipei 101": "Taipei 101 Taiwan",
+    "shilin": "Shilin Night Market Taipei",
+    "si lam": "Shilin Night Market Taipei",
+    "nhat nguyet": "Sun Moon Lake Taiwan",
+    "sun moon lake": "Sun Moon Lake Taiwan",
+    "thanh canh": "Cingjing Farm Taiwan",
+    "cingjing": "Cingjing Farm Taiwan",
+    "cung dien quoc gia": "National Palace Museum Taipei",
+    "co cung dai bac": "National Palace Museum Taipei",
+    "hau dong": "Houtong Cat Village Taiwan",
+    "houtong": "Houtong Cat Village Taiwan",
+    "easycard": "Taiwan High Speed Rail train",
+    "thsr": "Taiwan High Speed Rail train",
+    # China Landmarks
+    "trung quoc": "Great Wall of China Beijing",
+    "phuong hoang co tran": "Fenghuang Ancient Town China",
+    "da giang": "Fenghuang Ancient Town China",
+    "truong gia gioi": "Zhangjiajie National Forest Park",
+    "thien mon son": "Tianmen Mountain Zhangjiajie",
+    "cau kinh truong gia gioi": "Zhangjiajie Glass Bridge",
+    "van ly truong thanh": "Great Wall of China Badaling",
+    "bat dat linh": "Badaling Great Wall Beijing",
+    "tu cam thanh": "Forbidden City Beijing",
+    "co cung bac kinh": "Forbidden City Beijing",
+    "ben thuong hai": "The Bund Shanghai skyline",
+    "minh chau phuong dong": "Oriental Pearl Tower Shanghai",
+    "dong phuong minh chau": "Oriental Pearl Tower Shanghai",
+    "o tran": "Wuzhen Water Town China",
+    "vit quay bac kinh": "Peking duck Beijing",
+    "haidilao": "Chinese hot pot",
+    "tieu long bao": "Xiaolongbao dumplings",
+    "alipay": "Shanghai Lujiazui skyline",
+    "esim trung quoc": "Beijing CBD skyline China",
+    # Japan Landmarks
+    "nui phu si": "Mount Fuji Chureito Pagoda Japan",
+    "phu si": "Mount Fuji Japan",
+    "kiyomizu": "Kiyomizu dera Kyoto Japan",
+    "chua thanh thuy": "Kiyomizu dera Kyoto Japan",
+    "arashiyama": "Arashiyama Bamboo Grove Kyoto",
+    "rung tre arashiyama": "Arashiyama Bamboo Grove Kyoto",
+    "lau dai osaka": "Osaka Castle Japan",
+    "dotonbori": "Dotonbori Osaka night",
+    "fushimi inari": "Fushimi Inari Taisha torii Kyoto",
+    "shibuya": "Shibuya Crossing Tokyo Japan",
+    "tsukiji": "Tsukiji Market sushi Tokyo",
+    "shinkansen": "Shinkansen bullet train Japan",
+    "shirakawago": "Shirakawa go village Japan",
+    # South Korea Landmarks
+    "gyeongbokgung": "Gyeongbokgung Palace Seoul",
+    "canh phuc cung": "Gyeongbokgung Palace Seoul",
+    "dao nami": "Nami Island Korea autumn",
+    "bukchon hanok": "Bukchon Hanok Village Seoul",
+    "thap namsan": "N Seoul Tower Namsan",
+    "myeongdong": "Myeongdong night market Seoul",
+    "gamcheon": "Gamcheon Culture Village Busan",
+    "haeundae": "Haeundae Beach Busan Korea",
+    "hallasan": "Hallasan Mountain Jeju Island",
+    "cheonjiyeon": "Cheonjiyeon Waterfall Jeju",
+    "t money": "Seoul Metro subway station Korea",
+    # Laos Landmarks
+    "luang prabang": "Luang Prabang Laos",
+    "kuang si": "Kuang Si Falls Luang Prabang",
+    "xieng thong": "Wat Xieng Thong Luang Prabang",
+    "vang vieng": "Vang Vieng karst landscape Laos",
+    "blue lagoon": "Blue Lagoon Vang Vieng Laos",
+    "patuxay": "Patuxay monument Vientiane",
+    "that luang": "Pha That Luang Vientiane Laos",
+    "that luong": "Pha That Luang Vientiane Laos",
+    "xieng khuan": "Buddha Park Vientiane Laos",
+    "boten": "Laos China Railway train",
+    "lap lao": "Larb Lao traditional food"
 }
 
 VIETNAM_TOPIC_MAP = {
@@ -260,8 +344,18 @@ class RealImageFetcher:
             target_country = "Singapore"
         elif any(w in clean_kw or w in clean_dest for w in ["malaysia", "kuala lumpur", "penang", "malacca", "genting"]):
             target_country = "Malaysia"
-        elif any(w in clean_kw or w in clean_dest for w in ["bali", "indonesia", "ubud", "uluwatu", "tanah lot"]):
-            target_country = "Bali Indonesia" 
+        elif any(w in clean_kw or w in clean_dest for w in ["bali", "indonesia", "ubud", "uluwatu", "tanah lot", "nusa penida", "lempuyang"]):
+            target_country = "Bali Indonesia"
+        elif any(w in clean_kw or w in clean_dest for w in ["dai loan", "taiwan", "taipei", "jiufen", "cuu phan", "shifen", "thap phan", "sun moon lake", "nhat nguyet", "cingjing", "houtong", "shilin"]):
+            target_country = "Taiwan"
+        elif any(w in clean_kw or w in clean_dest for w in ["trung quoc", "china", "bac kinh", "beijing", "thuong hai", "shanghai", "truong gia gioi", "zhangjiajie", "phuong hoang", "van ly truong thanh", "tu cam thanh", "o tran"]):
+            target_country = "China"
+        elif any(w in clean_kw or w in clean_dest for w in ["nhat ban", "japan", "tokyo", "kyoto", "osaka", "phu si", "kiyomizu", "arashiyama", "dotonbori", "fushimi", "shibuya", "tsukiji", "shinkansen", "shirakawago"]):
+            target_country = "Japan"
+        elif any(w in clean_kw or w in clean_dest for w in ["han quoc", "korea", "seoul", "busan", "jeju", "nami", "gyeongbokgung", "bukchon", "namsan", "myeongdong", "gamcheon", "haeundae", "hallasan", "cheonjiyeon"]):
+            target_country = "South Korea"
+        elif any(w in clean_kw or w in clean_dest for w in ["luang prabang", "vang vieng", "vieng chan", "vientiane", "kuang si", "xieng thong", "patuxay", "that luang", "that luong", "xieng khuan", "boten", "du lich lao", "am thuc lao"]):
+            target_country = "Laos"
 
         # 1. Match specific landmarks (sorted by longest key first, add up to 3)
         matched_landmarks = 0
@@ -440,15 +534,42 @@ class RealImageFetcher:
                 target_country = "Malaysia"
             elif any(w in clean_kw_low or w in clean_dest_low for w in ["bali", "indonesia", "ubud"]):
                 target_country = "Bali Indonesia"
+            elif any(w in clean_kw_low or w in clean_dest_low for w in ["dai loan", "taiwan", "taipei", "jiufen", "shifen"]):
+                target_country = "Taiwan"
+            elif any(w in clean_kw_low or w in clean_dest_low for w in ["trung quoc", "china", "bac kinh", "beijing", "thuong hai", "shanghai", "truong gia gioi", "phuong hoang"]):
+                target_country = "China"
+            elif any(w in clean_kw_low or w in clean_dest_low for w in ["nhat ban", "japan", "tokyo", "kyoto", "osaka", "phu si", "kiyomizu", "arashiyama", "dotonbori", "fushimi", "shibuya", "tsukiji", "shinkansen", "shirakawago"]):
+                target_country = "Japan"
+            elif any(w in clean_kw_low or w in clean_dest_low for w in ["han quoc", "korea", "seoul", "busan", "jeju", "nami", "gyeongbokgung", "bukchon", "namsan", "myeongdong", "gamcheon", "haeundae", "hallasan", "cheonjiyeon"]):
+                target_country = "South Korea"
+            elif any(w in clean_kw_low or w in clean_dest_low for w in ["luang prabang", "vang vieng", "vieng chan", "vientiane", "kuang si", "xieng thong", "patuxay", "that luang", "that luong", "xieng khuan", "boten", "du lich lao", "am thuc lao"]):
+                target_country = "Laos"
             fallback_queries = [
                 f"{target_country} landmark",
                 f"{target_country} tourism",
                 f"{target_country} city",
                 f"{target_country} travel",
+                f"{target_country} architecture",
+                f"{target_country} street",
+                f"{target_country} nature",
+                f"{target_country} temple",
+                f"{target_country} mountain",
+                f"{target_country} river",
                 target_country
             ]
+            if target_country == "Vietnam":
+                fallback_queries.extend([
+                    "Hanoi Old Quarter architecture",
+                    "Hoi An Ancient Town lantern",
+                    "Ha Long Bay Vietnam boat",
+                    "Sapa terraced rice fields",
+                    "Hue Imperial City Vietnam",
+                    "Da Nang Golden Bridge",
+                    "Ninh Binh Tam Coc river",
+                    "Saigon Ho Chi Minh City skyline"
+                ])
             for fq in fallback_queries:
-                extra = self.search_wikimedia_images(fq, limit=15)
+                extra = self.search_wikimedia_images(fq, limit=40)
                 for p in extra:
                     u = p.get("orig_url") or p["url"]
                     if u not in seen_urls:
@@ -456,7 +577,7 @@ class RealImageFetcher:
                         assigned_slug = self.used_images.get(u)
                         if not assigned_slug or assigned_slug == slug:
                             unique_photos.append(p)
-                if len(unique_photos) >= count:
+                if len(unique_photos) >= count * 2:
                     break
 
         if not unique_photos:

@@ -22,7 +22,12 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..",
 from modules.wp_rest_auth import get_rest_nonce  # noqa: E402
 from modules.travel_scheduler.real_image_fetcher import RealImageFetcher
 from modules.travel_scheduler.travel_article_writer import TravelArticleWriter
-from modules.content_quality_gate import enforce_publish_payload, JunkContentError
+from modules.content_quality_gate import (
+    enforce_publish_payload,
+    JunkContentError,
+    check_keyword_cannibalization,
+    normalize_keyword_key,
+)
 
 class TravelBatchScheduler:
     def __init__(self, wp_url: str, admin_user: str, admin_pass: str, plan_file: str, log_file: Optional[str] = None):
@@ -145,12 +150,18 @@ class TravelBatchScheduler:
         return None
 
     def post_exists(self, slug: str, keyword: str = "") -> bool:
-        """Checks if a post with this slug or keyword is already scheduled or published."""
-        clean_kw = keyword.lower().strip()
+        """Checks if a post with this slug or keyword is already scheduled or published (same-site or cross-site)."""
+        clean_kw = normalize_keyword_key(keyword)
+        passed_can, can_issues = check_keyword_cannibalization(
+            site_url=self.wp_url, keyword=keyword, slug=slug
+        )
+        if not passed_can:
+            print(f"  [ANTI-CANNIBALIZATION] Blocked '{slug}' ({keyword}): {', '.join(can_issues)}")
+            return True
         # Check in local log first
         for p in self.scheduled_log.get("scheduled_posts", []):
             p_slug = p.get("slug", "")
-            p_kw = p.get("keyword", "").lower().strip()
+            p_kw = normalize_keyword_key(p.get("keyword", ""))
             if p_slug == slug or (clean_kw and p_kw == clean_kw):
                 return True
             if p_slug and (slug.startswith(p_slug) or p_slug.startswith(slug)):
@@ -297,10 +308,13 @@ class TravelBatchScheduler:
 
     def run_batch(self, target_days: Optional[List[int]] = None, max_posts: Optional[int] = None):
         """Runs the scheduling batch for specified day numbers or entire plan."""
+        from datetime import datetime, timedelta
         with open(self.plan_file, "r", encoding="utf-8") as f:
             plan = json.load(f)
 
         count = 0
+        tomorrow = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0) + timedelta(days=1)
+        day_offset = 0
         print(f"\n====================================================================")
         print(f"STARTING TRAVEL BATCH SCHEDULER FOR: {self.wp_url}")
         print(f"Plan file: {self.plan_file}")
@@ -311,12 +325,22 @@ class TravelBatchScheduler:
             if target_days and day_num not in target_days:
                 continue
 
-            topic = day_data.get("topic", "")
+            target_date_str = (tomorrow + timedelta(days=day_offset)).strftime("%Y-%m-%d")
+            day_offset += 1
+            topic = day_data.get("topic") or day_data.get("destination", "")
             posts = day_data.get("posts", [])
-            print(f"\n>>> Day {day_num}: {topic} ({len(posts)} posts planned)")
+            print(f"\n>>> Day {day_num} ({target_date_str}): {topic} ({len(posts)} posts planned)")
 
             for p_idx, post in enumerate(posts):
                 post["day"] = day_num
+                sd = post.get("schedule_date", "")
+                if "T" in sd:
+                    date_part, time_part = sd.split("T", 1)
+                    try:
+                        if datetime.strptime(date_part, "%Y-%m-%d") < tomorrow:
+                            post["schedule_date"] = f"{target_date_str}T{time_part}"
+                    except Exception:
+                        post["schedule_date"] = f"{target_date_str}T{time_part}"
                 res = self.schedule_single_post(post, topic, post_idx=p_idx)
                 if res:
                     count += 1

@@ -27,7 +27,12 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..",
 from modules.wp_rest_auth import get_rest_nonce  # noqa: E402
 from modules.travel_scheduler.real_image_fetcher import RealImageFetcher
 from modules.travel_scheduler.english_travel_writer import EnglishTravelWriter
-from modules.content_quality_gate import enforce_publish_payload, JunkContentError
+from modules.content_quality_gate import (
+    enforce_publish_payload,
+    JunkContentError,
+    check_keyword_cannibalization,
+    normalize_keyword_key,
+)
 
 HOURLY_STAGGERS = [
     "07:15:00", "08:45:00", "10:15:00", "11:45:00", "13:15:00",
@@ -170,10 +175,26 @@ class EnglishBatchScheduler:
                 time.sleep(4)
         return None
 
-    def post_exists(self, slug: str) -> bool:
+    def post_exists(self, slug: str, keyword: str = "") -> bool:
+        passed_can, can_issues = check_keyword_cannibalization(
+            site_url=self.wp_url, keyword=keyword, slug=slug
+        )
+        if not passed_can:
+            print(f"  [ANTI-CANNIBALIZATION] Blocked '{slug}' ({keyword}): {', '.join(can_issues)}")
+            return True
+        clean_kw = normalize_keyword_key(keyword)
         for p in self.scheduled_log.get("scheduled_posts", []):
             if p.get("slug") == slug:
                 return True
+            if clean_kw and normalize_keyword_key(p.get("keyword", "")) == clean_kw:
+                return True
+        try:
+            headers = {"X-WP-Nonce": self.nonce} if self.nonce else {}
+            r = self.session.get(f"{self.wp_url}/wp-json/wp/v2/posts?slug={slug}&status=any", headers=headers, timeout=15)
+            if r.status_code == 200 and len(r.json()) > 0:
+                return True
+        except Exception:
+            pass
         return False
 
     def schedule_single_post(self, post_info: Dict[str, Any], cluster_name: str, pillar: str, cat_slug: str, post_idx: int = 0) -> Optional[Dict[str, Any]]:
@@ -184,8 +205,8 @@ class EnglishBatchScheduler:
         lsi = post_info.get("lsi", "")
         cat_id = CATEGORY_SLUG_TO_ID.get(cat_slug, 76)
 
-        if self.post_exists(slug):
-            print(f"  [SKIP] Post '{slug}' already exists in scheduled log.")
+        if self.post_exists(slug, keyword=keyword):
+            print(f"  [SKIP] Post '{slug}' already exists in scheduled log or WordPress.")
             return None
 
         print(f"\n---> [{post_info.get('day_num')}/30 - #{post_idx+1}] Processing: {title}")
@@ -316,6 +337,8 @@ class EnglishBatchScheduler:
         base_date = datetime(2026, 10, 8)  # Starting from 2026-10-08
 
         total_processed = 0
+        tomorrow = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0) + timedelta(days=1)
+        day_offset = 0
 
         for c in clusters:
             day_num = c["day"]
@@ -323,6 +346,9 @@ class EnglishBatchScheduler:
                 continue
 
             day_date = base_date + timedelta(days=day_num - 1)
+            if day_date < tomorrow:
+                day_date = tomorrow + timedelta(days=day_offset)
+            day_offset += 1
             date_str = day_date.strftime("%Y-%m-%d")
             cluster_name = c["cluster_name"]
             pillar = c.get("pillar", "")

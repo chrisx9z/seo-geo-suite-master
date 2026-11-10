@@ -46,6 +46,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..",
 from modules.wp_rest_auth import get_rest_nonce  # noqa: E402
 from modules.wp_ai_autopilot.autopilot_orchestrator import WpAiAutopilot
 from modules.content_crawler_pipeline.slug_optimizer import generate_core_keyword_slug
+from modules.content_quality_gate import check_keyword_cannibalization, normalize_keyword_key
 
 HOURLY_STAGGERS = [
     "08:00:00", "11:30:00", "14:30:00", "17:30:00", "20:00:00"
@@ -122,12 +123,19 @@ class DirectIPBatchScheduler:
             print(f"  [!] Auth exception: {e}")
 
     def post_exists(self, slug: str, schedule_date: str = "", title: str = "") -> bool:
+        passed_can, can_issues = check_keyword_cannibalization(
+            site_url=self.wp_url, keyword=title, slug=slug, title=title
+        )
+        if not passed_can:
+            print(f"  [ANTI-CANNIBALIZATION] Blocked '{slug}' ({title}): {', '.join(can_issues)}")
+            return True
+        clean_title = normalize_keyword_key(title)
         for p in self.scheduled_log.get("scheduled_posts", []):
             if p.get("slug") == slug:
                 return True
             if schedule_date and p.get("schedule_date") == schedule_date:
                 return True
-            if title and (p.get("title", "").strip().lower() == title.strip().lower() or title.strip().lower() in p.get("title", "").strip().lower()):
+            if clean_title and normalize_keyword_key(p.get("keyword") or p.get("title", "")) == clean_title:
                 return True
         try:
             headers = {"X-WP-Nonce": self.nonce} if self.nonce else {}
@@ -202,25 +210,39 @@ class DirectIPBatchScheduler:
             days_data = json.load(f)
 
         processed = 0
+        tomorrow = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0) + timedelta(days=1)
+        day_offset = 0
+
         for day_item in days_data:
             day_num = day_item.get("day")
             if target_days and day_num not in target_days:
                 continue
 
             day_posts = day_item.get("posts", [])
-            print(f"\n>>> Processing Day {day_num} ({day_item.get('date')}) - Total: {len(day_posts)} posts")
+            target_date_str = (tomorrow + timedelta(days=day_offset)).strftime("%Y-%m-%d")
+            day_offset += 1
+            print(f"\n>>> Processing Day {day_num} ({target_date_str}) - Total: {len(day_posts)} posts")
 
             for post in day_posts:
                 if max_posts and processed >= max_posts:
                     print(f"\n[INFO] Reached maximum requested posts ({max_posts}). Stopping.")
                     return
 
-                topic = post.get("title", "")
+                topic = post.get("title") or post.get("topic", "")
                 cat_id = post.get("category_id", 27)
-                cat_name = post.get("category", "Uncategorized")
+                cat_name = post.get("category") or post.get("cat_name", "Uncategorized")
                 schedule_date = post.get("schedule_date", "")
+                if "T" in schedule_date:
+                    date_part, time_part = schedule_date.split("T", 1)
+                    try:
+                        if datetime.strptime(date_part, "%Y-%m-%d") < tomorrow:
+                            schedule_date = f"{target_date_str}T{time_part}"
+                    except Exception:
+                        schedule_date = f"{target_date_str}T{time_part}"
+                else:
+                    schedule_date = f"{target_date_str}T08:00:00"
 
-                slug = generate_core_keyword_slug(post.get("focus_keyword", topic))
+                slug = post.get("slug") or generate_core_keyword_slug(post.get("focus_keyword") or post.get("primary_kw") or topic)
 
                 rec = self.schedule_single_post(
                     topic=topic,

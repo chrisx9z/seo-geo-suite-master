@@ -418,10 +418,18 @@ def enforce_publish_payload(payload: Dict[str, Any], keyword: str = "", destinat
     corpus = None
     if site_url:
         from .spin import SpinCorpus, SPIN_JUNK_RATIO
+        from .cannibalization import check_keyword_cannibalization
         corpus = SpinCorpus(site_url)
         ratio = corpus.ratio(title, kw, res.content)
         if ratio >= SPIN_JUNK_RATIO:
             issues.append(f"templated_spin:{ratio:.0%}")
+        _, can_issues = check_keyword_cannibalization(
+            site_url=site_url,
+            keyword=kw,
+            slug=res.slug or str(payload.get("slug", "")),
+            title=title,
+        )
+        issues.extend(can_issues)
     if issues:
         log(f"  [QUALITY GATE] BLOCKED '{title[:70]}': {', '.join(issues)}")
         raise JunkContentError(issues)

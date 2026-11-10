@@ -21,3 +21,8 @@ from .parasite_risk import (  # noqa: F401
     classify_parasite_sections,
     scan_parasite_risk,
 )
+from .cannibalization import (  # noqa: F401
+    check_keyword_cannibalization,
+    core_entity_key,
+    normalize_keyword_key,
+)

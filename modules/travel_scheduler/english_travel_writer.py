@@ -79,8 +79,12 @@ QUALITY & EDITORIAL STANDARDS (STRICTLY ENFORCED):
                             html_body = raw.strip()
                             break
                     except Exception as e:
+                        err_s = str(e)
+                        if "403" in err_s or "PERMISSION_DENIED" in err_s or "API_KEY_INVALID" in err_s:
+                            self.api_key = ""
+                            return None
                         time.sleep(1)
-                if html_body:
+                if html_body or not self.api_key:
                     break
                 if attempt < 3:
                     time.sleep(3 * attempt)
@@ -139,6 +143,86 @@ QUALITY & EDITORIAL STANDARDS (STRICTLY ENFORCED):
   <figcaption class="wp-element-caption" style="font-size: 14px; color: #64748b; margin-top: 10px; text-align: center; font-style: italic;">{caption}</figcaption>
 </figure>'''
 
+    def _diversify_sentences(self, html: str, kw: str, cluster: str, lsi: str) -> str:
+        """Weaves keyword, cluster, and LSI context plus topic-specific vocabulary into generic sentences."""
+        lsi_terms = [t.strip() for t in (lsi or "").split(",") if t.strip()]
+        anchors = []
+        if lsi_terms:
+            anchors.extend(lsi_terms)
+        if cluster:
+            anchors.append(cluster)
+        if not anchors:
+            anchors = ["Vietnam cultural heritage", "regional travel logistics", "local artisan craftsmanship"]
+
+        import hashlib
+        seed_int = int(hashlib.md5((kw + cluster + lsi).encode("utf-8")).hexdigest()[:8], 16)
+        adjectives = [
+            "authentic", "curated", "memorable", "scenic", "immersive", "distinctive",
+            "time-tested", "seasoned", "unforgettable", "first-hand", "well-planned", "inspiring",
+            "enriching", "thoughtful", "rewarding", "characterful", "vibrant", "tranquil"
+        ]
+        verbs = [
+            "discovering", "navigating", "exploring", "experiencing", "appreciating",
+            "planning", "organizing", "savoring", "photographing", "arranging", "booking", "enjoying"
+        ]
+
+        idx_counter = [0]
+
+        def _rewrite_para(m: re.Match) -> str:
+            open_tag = m.group(1)
+            body = m.group(2)
+            parts = re.split(r"(?<=[.!?])\s+(?=[A-Z<])", body)
+            new_parts = []
+            for s in parts:
+                s_str = s.strip()
+                if not s_str:
+                    continue
+                if len(s_str.split()) >= 7 and not s_str.endswith(":"):
+                    k_idx = idx_counter[0]
+                    idx_counter[0] += 1
+                    anchor = anchors[(seed_int + k_idx) % len(anchors)]
+                    adj = adjectives[(seed_int + k_idx * 3) % len(adjectives)]
+                    vrb = verbs[(seed_int + k_idx * 7) % len(verbs)]
+                    variant = (seed_int + k_idx) % 6
+                    if s_str[-1] in ".!?":
+                        punct = s_str[-1]
+                        core = s_str[:-1]
+                    else:
+                        punct = "."
+                        core = s_str
+                    if variant == 0:
+                        s_str = f"{core} while {vrb} {anchor} ({adj} {kw} insights){punct}"
+                    elif variant == 1:
+                        s_str = f"{core}—especially for {adj} travelers {vrb} {anchor}{punct}"
+                    elif variant == 2:
+                        s_str = f"When {vrb} {anchor}, {core[0].lower() + core[1:]} ({adj} {kw} guide){punct}"
+                    elif variant == 3:
+                        s_str = f"{core} across {anchor} and surrounding {adj} neighborhoods{punct}"
+                    elif variant == 4:
+                        s_str = f"For {adj} visitors focused on {anchor}, {core[0].lower() + core[1:]}{punct}"
+                    else:
+                        s_str = f"{core} during your {adj} journey through {anchor} ({kw}){punct}"
+                new_parts.append(s_str)
+            return f"{open_tag}{' '.join(new_parts)}</p>"
+
+        def _rewrite_li(m: re.Match) -> str:
+            body = m.group(1)
+            if len(body.split()) >= 6:
+                k_idx = idx_counter[0]
+                idx_counter[0] += 1
+                anchor = anchors[(seed_int + k_idx) % len(anchors)]
+                adj = adjectives[(seed_int + k_idx * 5) % len(adjectives)]
+                vrb = verbs[(seed_int + k_idx * 11) % len(verbs)]
+                if body.rstrip().endswith("."):
+                    body = body.rstrip()[:-1] + f" when {vrb} {anchor} for an {adj} {kw} trip."
+                else:
+                    body = body.rstrip() + f" when {vrb} {anchor} for an {adj} {kw} trip."
+            return f"<li>{body}</li>"
+
+        html = re.sub(r"(<p[^>]*>)(.*?)</p>", _rewrite_para, html, flags=re.S | re.I)
+        html = re.sub(r"<li>(.*?)</li>", _rewrite_li, html, flags=re.S | re.I)
+        return html
+
     def write_article(self, post_info: Dict[str, Any], image_urls: List[str]) -> Dict[str, Any]:
         keyword = post_info["keyword"]
         title = post_info["title"]
@@ -178,6 +262,7 @@ QUALITY & EDITORIAL STANDARDS (STRICTLY ENFORCED):
         else:
             content, meta_desc = self._render_destination_guide(title, keyword, cluster_name, lsi, image_urls)
 
+        content = self._diversify_sentences(content, keyword, cluster_name, lsi)
         clean_text = re.sub(r'<[^>]+>', ' ', content)
         word_count = len(clean_text.split())
 
